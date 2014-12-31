@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{67E5C4D0-996D-4CD3-A366-F136691393BB}</ProjectGuid>
+    <RootNamespace>OpenGL_Framework</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>C:\Libraries\FBX SDK\2015.1\include;C:\Libraries\boost_1_55_0;Projects\Libraries\BulletPhysics\bullet-2.82\include;Projects\Libraries\GLEW\glew-1.10.0\include;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\include;Projects\Libraries\Lua\luabind-0.9.1;Projects\Libraries\SDL\SDL2-2.0.1\include;Projects\Libraries\SDL\SDL2_image-2.0.0\include;Projects\Libraries\SDL\SDL2_ttf-2.0.12\include;Projects\Libraries\SDL\SDL2_mixer-2.0.0\include;Projects\Libraries\SDL\SDL2_net-2.0.0\include;Projects\Sources\C++\Other\Stdafx</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Stdafx.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>Stdafx.h</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Libraries\FBX SDK\2015.1\lib\vs2013\x86\debug;Projects\Libraries\BulletPhysics\bullet-2.82\lib\Debug;C:\Libraries\boost_1_55_0\stage\lib;Projects\Libraries\GLEW\glew-1.10.0\lib\Release\Win32;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\lib;Projects\Libraries\SDL\SDL2-2.0.1\lib\x86;Projects\Libraries\SDL\SDL2_image-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_ttf-2.0.12\lib\x86;Projects\Libraries\SDL\SDL2_mixer-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_net-2.0.0\lib\x86</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>C:\Libraries\FBX SDK\2015.1\include;C:\Libraries\boost_1_55_0;Projects\Libraries\BulletPhysics\bullet-2.82\include;Projects\Libraries\GLEW\glew-1.10.0\include;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\include;Projects\Libraries\Lua\luabind-0.9.1;Projects\Libraries\SDL\SDL2-2.0.1\include;Projects\Libraries\SDL\SDL2_image-2.0.0\include;Projects\Libraries\SDL\SDL2_ttf-2.0.12\include;Projects\Libraries\SDL\SDL2_mixer-2.0.0\include;Projects\Libraries\SDL\SDL2_net-2.0.0\include;Projects\Sources\C++\Other\Stdafx</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Stdafx.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>Stdafx.h</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Libraries\FBX SDK\2015.1\lib\vs2013\x86\release;Projects\Libraries\BulletPhysics\bullet-2.82\lib\Release;C:\Libraries\boost_1_55_0\stage\lib;Projects\Libraries\GLEW\glew-1.10.0\lib\Release\Win32;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\lib;Projects\Libraries\SDL\SDL2-2.0.1\lib\x86;Projects\Libraries\SDL\SDL2_image-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_ttf-2.0.12\lib\x86;Projects\Libraries\SDL\SDL2_mixer-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_net-2.0.0\lib\x86</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ConnectWars.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\TitleScene.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Camera.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Orthographic\OrthographicCamera.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\PerspectiveCamera.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\Test\TestCamera.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Camera\Manager\CameraManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Camera\Manager\CameraManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\Detection\Detection2D.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\Detection\Detection3D.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\SpaceDivision\Quadtree\Cell\Cell.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\SpaceDivision\Quadtree\Cell\CellImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\SpaceDivision\Quadtree\Creater\CollisionListCreater.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\SpaceDivision\Quadtree\Creater\CollisionListCreaterImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\SpaceDivision\Quadtree\Manager\QuadtreeManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\SpaceDivision\Quadtree\Manager\QuadtreeManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\SpaceDivision\Quadtree\Object\TreeObject.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Common\CommonHelper.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Debug\Helper\DebugHelper.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Debug\String\DebugString.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Debug\String\DebugStringImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Event\Manager\EventManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Event\Manager\EventManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Event\Window\BaseWindowEvent.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Event\Window\Main\MainWindowEvent.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Font\FontManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Font\FontManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Framework\Framework.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Framework\FrameworkImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\GameObject\GameObject.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\GameObject\Manager\GameObjectManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\GameObject\Manager\GameObjectManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\GameObject\Message\Dispatcher\MessageDispatcher.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\GameObject\Message\Dispatcher\MessageDispatcherImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\GameObject\Message\Telegram\Telegram.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Gamepad\Factory\GamepadFactory.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Gamepad\Gamepad\Gamepad.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Gamepad\Gamepad\XInput\XInput.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Gamepad\Manager\GamepadManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Gamepad\Manager\GamepadManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Keyboard\KeyboardManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Keyboard\KeyboardManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Mouse\MouseManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Mouse\MouseManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Json\JsonDefine.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Json\JsonObject.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Lua\LuaStateManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Lua\LuaStateManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Define\MathDefine.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Easing\Easing.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Fuzzy\Fuzzy.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Matrix\Matrix3x3.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Matrix\Matrix4x4.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Quaternion\Quaternion.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Math\MathAll.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Vector\Vector2.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Vector\Vector3.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Vector\Vector4.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Memory\List\MemoryList.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Memory\Manager\MemoryManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Memory\Pool\General\GeneralMemoryPool.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Memory\Pool\MemoryPool.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Model\FBX\FbxDefine.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Model\FBX\Loader\FbxLoader.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Model\FBX\Loader\FbxLoaderImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Model\OBJ\Loader\ObjLoader.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Model\OBJ\Loader\ObjLoaderImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Model\OBJ\ObjDefine.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Model\SelfMade\Loader\ModelLoader.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Model\SelfMade\ModelDefine.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\NeuralNetwork\FeedFoward\ThreeLayerFeedForward.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\NeuralNetwork\Layer\Layer.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\OpenGL\Manager\OpenGlManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\OpenGL\Manager\OpenGlManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\OpenGL\OpenGlDefine.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Particle\System\Manager\ParticleSystemManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Particle\System\Manager\ParticleSystemManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Particle\System\ParticleSystem.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Particle\System\ParticleSystemImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Path\PathAnalizer.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\Body\Rigid\Rigidbody.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\Body\Soft\Joint\AngularJoint.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\Body\Soft\Joint\LinearJoint.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\Body\Soft\SoftBody.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\CollisionShape.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Concave\Compound\CompoundShape.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Concave\ConcaveTriangleMesh\ConcaveTriangleMeshShape.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Concave\InfinitePlane\InfinitePlaneShape.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Box\BoxShape.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Capsule\CapsuleShape.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Cone\ConeShape.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\ConvexHull\ConvexHullShape.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\MultiSphere\MultiSphereShape.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Sphere\SphereShape.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\Engine\PhysicsEngine.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\Engine\PhysicsEngineImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\PhysicsDefine.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Random\RandomGenerator.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Random\RandomGeneratorImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Scene\BaseScene.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Scene\Manager\SceneManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Scene\Manager\SceneManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\SDL\SdlManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\Common\Frame\FrameBuffer.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\GLSL\GlslDefine.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\GLSL\Object\GlslObject.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\GLSL\Object\Manager\GlslObjectManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\GLSL\Object\Manager\GlslObjectManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\GLSL\Uniform\Manager\UniformBufferManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\GLSL\Uniform\Manager\UniformBufferManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\GLSL\Uniform\UniformBuffer.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Singleton\Assert\AssertSingleton.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Singleton\Assert\AssertSingletonImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Singleton\Singleton.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Singleton\SingletonImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Sound\SoundManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Sound\SoundManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\State\Machine\StateMachine.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\State\Machine\StateMachineImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\State\State.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Task\FunctionObject\TaskFunctionObject.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Task\System\General\GeneralTaskSystem.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Task\System\Special\SpecialTaskSystem.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Task\System\Special\SpecialTaskSystemImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Task\Task.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Texture\Manager\TextureManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Texture\Manager\TextureManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Texture\TextureDefine.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Timer\TimeManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Timer\TimeManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Window\Manager\WindowManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Window\Manager\WindowManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Window\Window\BaseWindow.h" />
+    <ClInclude Include="Projects\Sources\C++\Other\StaticLibrary\StaticLibrary.h" />
+    <ClInclude Include="Projects\Sources\C++\Other\Stdafx\Stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\class.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\class_info.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\class_registry.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\class_rep.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\create_class.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\error.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\exception_handler.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\function.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\inheritance.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\link_compatibility.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\object_rep.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\open.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\pcall.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\scope.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\stack_content_by_name.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\weak_ref.cpp" />
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\wrapper_base.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ConnectWars.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\TitleScene.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Camera\Camera\Orthographic\OrthographicCamera.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\PerspectiveCamera.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\Test\TestCamera.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Camera\Manager\CameraManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Collision\Detection\Detection2D.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Collision\Detection\Detection3D.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Common\CommonHelper.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Debug\Helper\DebugHelper.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Debug\String\DebugString.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Event\Manager\EventManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Event\Window\BaseWindowEvent.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Event\Window\Main\MainWindowEvent.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Font\FontManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Framework\Framework.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\GameObject\GameObject.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\GameObject\Manager\GameObjectManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\GameObject\Message\Dispatcher\MessageDispatcher.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Input\Gamepad\Factory\GamepadFactory.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Input\Gamepad\Gamepad\Gamepad.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Input\Gamepad\Gamepad\XInput\XInput.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Input\Gamepad\Manager\GamepadManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Input\Keyboard\KeyboardManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Input\Mouse\MouseManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Lua\LuaStateManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Define\MathDefine.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Easing\Easing.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Fuzzy\Fuzzy.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Matrix\Matrix3x3.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Matrix\Matrix4x4.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Quaternion\Quaternion.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Vector\Vector2.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Vector\Vector3.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Vector\Vector4.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Memory\List\MemoryList.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Model\FBX\Loader\FbxLoader.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Model\OBJ\Loader\ObjLoader.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Model\SelfMade\Loader\ModelLoader.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\NeuralNetwork\FeedFoward\ThreeLayerFeedForward.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\NeuralNetwork\Layer\Layer.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\OpenGL\Manager\OpenGlManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Particle\System\Manager\ParticleSystemManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Particle\System\ParticleSystem.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Path\PathAnalizer.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\Body\Rigid\RigidBody.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\Body\Soft\Joint\AngularJoing.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\Body\Soft\Joint\LinearJoint.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\Body\Soft\SoftBody.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\CollisionShape.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Concave\Compound\CompoundShape.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Concave\ConcaveTriangleMesh\ConcaveTriangleMeshShape.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Concave\InfinitePlane\InfinitePlaneShape.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Box\BoxShape.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Capsule\CapsuleShape.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Cone\ConeShape.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\ConvexHull\ConvexHullShape.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\MultiSphere\MultiSphereShape.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Sphere\SphereShape.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\Engine\PhysicsEngine.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Random\RandomGenerator.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Scene\BaseScene.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Scene\Manager\SceneManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\SDL\SdlManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Shader\Common\Frame\FrameBuffer.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Shader\GLSL\Object\GlslObject.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Shader\GLSL\Object\Manager\GlslObjectManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Shader\GLSL\Uniform\Manager\UniformBufferManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Shader\GLSL\Uniform\UniformBuffer.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Sound\SoundManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Task\System\General\GeneralTaskSystem.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Texture\Manager\TextureManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Timer\TimeManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Window\Manager\WindowManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Window\Window\BaseWindow.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Other\Main\Main.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Other\Stdafx\Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\OpenGL\OpenGLData.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Window\MainWindowData.json" />
+    <None Include="Projects\Shaders\GLSL\Debug\DebugString.frag" />
+    <None Include="Projects\Shaders\GLSL\Debug\DebugString.geom" />
+    <None Include="Projects\Shaders\GLSL\Debug\DebugString.vert" />
+    <None Include="Projects\Shaders\GLSL\Particle\Particle.frag" />
+    <None Include="Projects\Shaders\GLSL\Particle\Particle.geom" />
+    <None Include="Projects\Shaders\GLSL\Particle\Particle.vert" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

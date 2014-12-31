@@ -1,0 +1,1130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Libraries">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Libraries\LuaBind">
+      <UniqueIdentifier>{834b0719-8b07-4910-b995-c3a3d37edfbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++">
+      <UniqueIdentifier>{74821ddd-e91e-43e0-99bb-5a89f03292d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Lua">
+      <UniqueIdentifier>{b0e836ec-1489-40d1-9bbb-ecee051fdf89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library">
+      <UniqueIdentifier>{077a98f1-9201-43f5-a5f9-fb2b12e66748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game">
+      <UniqueIdentifier>{c745c74c-d224-4982-8b5f-6a706c271f09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Other">
+      <UniqueIdentifier>{e09b1e23-8d95-467d-9b52-a111d5689354}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Other\Stdafx">
+      <UniqueIdentifier>{4e74c567-969c-451d-9c73-11dd1f29611d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Memory">
+      <UniqueIdentifier>{1be6a24c-9eb0-4e0e-8a2e-dbd5d518b080}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Memory\Manager">
+      <UniqueIdentifier>{b8ebca20-fe36-4c5d-8019-1d80c634ac84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Memory\List">
+      <UniqueIdentifier>{4a20660c-5ae2-4854-9cd4-c2762b88fbdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Memory\Pool">
+      <UniqueIdentifier>{716b48de-1dea-4713-8a89-e9a6f12b48b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Memory\Pool\General">
+      <UniqueIdentifier>{29e8e860-0d08-405b-8992-d7c5f49ade7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Other\Main">
+      <UniqueIdentifier>{66e19ad4-83fb-401c-8853-f6c09f791a26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Other\StaticLibrary">
+      <UniqueIdentifier>{091c1b8c-6452-4e93-a166-073f7b4f1a65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Framework">
+      <UniqueIdentifier>{817b735f-e1a6-47ff-a08a-8f47b49ce3b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Window">
+      <UniqueIdentifier>{2a73ced3-03fb-44f7-a038-8c21ee046589}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Debug">
+      <UniqueIdentifier>{fe79b158-b773-4f0a-90df-3708b2e0c444}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\SDL">
+      <UniqueIdentifier>{46ac43dd-9a72-48b2-97fc-9c0df3093956}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Singleton">
+      <UniqueIdentifier>{fec2e01f-ec92-4798-aeeb-f6726d13b0e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Singleton\Assert">
+      <UniqueIdentifier>{023ace24-8102-41de-9fea-7a0904068c24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Debug\Helper">
+      <UniqueIdentifier>{6a2639cb-e77f-49c3-a38b-81db39d79be4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Event">
+      <UniqueIdentifier>{55f612c3-e995-4347-b863-35fb608c7c8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Event\Manager">
+      <UniqueIdentifier>{da21ba5a-e845-4479-9cfe-7a2ccf6be96a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Event\Window">
+      <UniqueIdentifier>{318f8155-c3dd-4c02-bd68-fa9e7714a998}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Event\Window\Main">
+      <UniqueIdentifier>{e1bf7c3a-c7e2-494f-b604-0cbeccf6c66f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Timer">
+      <UniqueIdentifier>{afa38b84-5e8e-4788-aabd-48d6c50c358f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\OpenGL">
+      <UniqueIdentifier>{32bd34f1-b2d9-4eaf-a2a2-d0f289da3c05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\OpenGL\Manager">
+      <UniqueIdentifier>{99c0661b-acb2-4344-a975-c11296774837}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\JSON">
+      <UniqueIdentifier>{19e75f93-236b-4e79-af15-7f1e6fc211db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Input">
+      <UniqueIdentifier>{e0b72519-4234-42f8-822e-84939ee4e864}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Input\Keyboard">
+      <UniqueIdentifier>{6a4cffd3-0b5d-4db5-98f6-66ceb69e1d88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Input\Mouse">
+      <UniqueIdentifier>{89585b22-75cb-4bab-aa26-d5fb38e64ff9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Input\Gamepad">
+      <UniqueIdentifier>{4ba0f2a6-2f44-4c2c-9ab1-0b671b32b928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Input\Gamepad\Manager">
+      <UniqueIdentifier>{b3c80d35-e0a6-46ef-a328-3112a02f4f7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Input\Gamepad\Factory">
+      <UniqueIdentifier>{20123855-c0a1-40c8-b359-645ecd2541c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Input\Gamepad\Gamepad">
+      <UniqueIdentifier>{eb595258-679d-4e1f-bd4a-ef9a2f565bb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Input\Gamepad\Gamepad\XInput">
+      <UniqueIdentifier>{46360dd5-41d2-4283-87c7-6ecb442a6081}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Sound">
+      <UniqueIdentifier>{e79c7eda-be21-4dd2-bc87-69b05b106dfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Window\Manager">
+      <UniqueIdentifier>{70019873-dc9a-42d6-9ff2-56d5dac3c74f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Window\Window">
+      <UniqueIdentifier>{58c81b58-d02f-4948-b90b-a05c6c8dbcc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Texture">
+      <UniqueIdentifier>{492aaae6-08ce-4361-915b-7a01516c2cb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Texture\Manager">
+      <UniqueIdentifier>{d73195da-cd4a-45d1-ade1-9b4178849715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Font">
+      <UniqueIdentifier>{6cac47e3-5938-4e2a-9eae-c222b2dc59a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Shader">
+      <UniqueIdentifier>{5f822e75-e1ae-48e3-a496-845d8c713489}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Shader\GLSL">
+      <UniqueIdentifier>{d04fca7c-26a3-46b6-b487-ff31b4c67292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Shader\GLSL\Object">
+      <UniqueIdentifier>{6c55b92f-7b5b-43ef-ae8a-258ff26bef10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Shader\GLSL\Object\Manager">
+      <UniqueIdentifier>{bd8d8103-d87d-48f3-b969-022a56c42d54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Shader\GLSL\Uniform">
+      <UniqueIdentifier>{32d72938-8360-43a4-8d18-9fb80cd16761}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Shader\GLSL\Uniform\Manager">
+      <UniqueIdentifier>{b50a769b-f4b6-4ac8-9032-4c4f1f7b1488}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Math">
+      <UniqueIdentifier>{30837dd3-8474-4afe-95f6-12bb11d7e6b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Math\Vector">
+      <UniqueIdentifier>{deb03006-b3ed-4565-bd42-db172c36ec88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Math\Matrix">
+      <UniqueIdentifier>{05c5d3d0-5b9a-4eb9-a941-fccee012d80c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Math\Quaternion">
+      <UniqueIdentifier>{95ed2b06-0cea-4874-8f7e-43858721c412}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Math\Fuzzy">
+      <UniqueIdentifier>{f6736a50-3bbb-4125-a9ba-50c3f2d49672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Math\Define">
+      <UniqueIdentifier>{dd4275f2-c5fe-4e9e-947d-bd7c8b302559}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Math\Easing">
+      <UniqueIdentifier>{e1e47c6e-51a2-4f0e-9483-acb412d8dc4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Random">
+      <UniqueIdentifier>{99835a1c-a1f6-4054-9991-5de7c2f3eab9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Model">
+      <UniqueIdentifier>{30953256-d729-4bdc-9548-83fb439e4db8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Model\OBJ">
+      <UniqueIdentifier>{fa9d306b-ba25-415c-9124-500e58212b19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Model\OBJ\Loader">
+      <UniqueIdentifier>{06b8496f-89a4-425c-942f-1fcc64f586ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Common">
+      <UniqueIdentifier>{7a943dc6-f5a2-4570-9707-de0e75395718}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Model\FBX">
+      <UniqueIdentifier>{5ee4a512-512a-440d-8070-47e4b5fd24de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Model\FBX\Loader">
+      <UniqueIdentifier>{0da2ee5a-0a24-4294-ab6d-eb758c3ae0ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Path">
+      <UniqueIdentifier>{e968351b-5493-441e-a967-22c39dc0ae83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Model\SelfMade">
+      <UniqueIdentifier>{638c9aad-88b4-4082-bd65-53185c4d4ee6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Model\SelfMade\Loader">
+      <UniqueIdentifier>{882dfaee-1ec4-413d-b102-071529b39c34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Collision">
+      <UniqueIdentifier>{aeedad97-be9a-495b-955b-7358169ce682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Collision\Detection">
+      <UniqueIdentifier>{624b17c2-a811-461e-a625-99b0587c1af0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Collision\SpaceDivision">
+      <UniqueIdentifier>{4e4926d1-ca78-446b-b93e-d7cf52032e38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Collision\SpaceDivision\Quadtree">
+      <UniqueIdentifier>{dbd51211-0cab-4b99-8fda-b81e640b3165}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Collision\SpaceDivision\Quadtree\Cell">
+      <UniqueIdentifier>{1044fffa-b9bd-4918-9795-ce63819e5dbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Collision\SpaceDivision\Quadtree\Object">
+      <UniqueIdentifier>{22dfb997-d915-4cf8-8f6e-479421d9f6fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Collision\SpaceDivision\Quadtree\Creater">
+      <UniqueIdentifier>{53231c68-b3fd-4078-a655-95c0dd9e2c5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Collision\SpaceDivision\Quadtree\Manager">
+      <UniqueIdentifier>{68b9b04f-59b8-4990-a9e1-5689ebbfab42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Lua">
+      <UniqueIdentifier>{777e3dba-7a8f-4039-a17d-ddace98e81ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics">
+      <UniqueIdentifier>{0d5afa33-e4a1-4312-ae8d-2aba35565e7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\Engine">
+      <UniqueIdentifier>{34ba8cd3-a230-47a0-8161-f96b247744bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\CollisionShape">
+      <UniqueIdentifier>{e8871dbb-88a8-48c8-9d12-b29d3bcbbf79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\Body">
+      <UniqueIdentifier>{99ff19f2-b1e2-4c78-8fbe-1cfad83fc720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\Body\Soft">
+      <UniqueIdentifier>{319fb4c0-3a89-4d20-ba0d-209886279728}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\Body\Rigid">
+      <UniqueIdentifier>{6dcf09a3-49d1-4d61-977f-c017cad14542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\Body\Soft\Joint">
+      <UniqueIdentifier>{6f664d33-7c5f-4bdb-8424-10dc91b50f22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\CollisionShape\Convex">
+      <UniqueIdentifier>{9d98e08f-bba1-42d9-9e50-ef766814f59c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\CollisionShape\Concave">
+      <UniqueIdentifier>{d5e2ad8d-25d8-48c1-9bf0-13c22dbb7534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\CollisionShape\Convex\Box">
+      <UniqueIdentifier>{4e966a38-5f71-43e4-a07f-f2f3f537620e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\CollisionShape\Convex\Capsule">
+      <UniqueIdentifier>{0b009da8-19c7-4cb6-8672-dade7fe2c98f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\CollisionShape\Convex\Cone">
+      <UniqueIdentifier>{cd8da9bd-98c6-4d27-aadc-d0d3838dd183}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\CollisionShape\Convex\ConvexHull">
+      <UniqueIdentifier>{17b76c15-b881-46f5-96bc-f9e15c6005c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\CollisionShape\Convex\Sphere">
+      <UniqueIdentifier>{67938b8d-bb3c-4fad-abc3-daf8703149e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\CollisionShape\Concave\Compound">
+      <UniqueIdentifier>{424d7682-b2e9-4607-9604-ede15cce2167}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\CollisionShape\Concave\ConcaveTriangleMesh">
+      <UniqueIdentifier>{9fea8a51-6800-472b-954e-b3c65a15cc89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\CollisionShape\Concave\InfinitePlane">
+      <UniqueIdentifier>{e8c87d74-724b-409a-8a0f-d63ca615696e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Physics\CollisionShape\Convex\MultiSphere">
+      <UniqueIdentifier>{2fba6c05-38ed-42cd-aa0f-2212a01fd5c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Shader\Common">
+      <UniqueIdentifier>{d8c7b93a-ffb5-4e5e-afff-238bcf998e5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Shader\Common\Frame">
+      <UniqueIdentifier>{e19a8148-9c0a-4644-b3a0-7397b94f19e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Debug\String">
+      <UniqueIdentifier>{be09584d-ec09-4f9e-8f53-29bdc9943c18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders">
+      <UniqueIdentifier>{b8a93952-3943-45a2-97c1-c072e2270715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Particle">
+      <UniqueIdentifier>{092afc37-3782-4f11-9f7b-15732b190e4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Particle\System">
+      <UniqueIdentifier>{524d70b2-2b54-4ff3-9bcf-93f6b5c90815}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Particle\System\Manager">
+      <UniqueIdentifier>{5fb42cbb-7f9a-4ea4-aa08-8e00b99831e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders\GLSL">
+      <UniqueIdentifier>{04eff106-4993-4148-af89-fa4d4239cc61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders\GLSL\Particle">
+      <UniqueIdentifier>{f7aa9ef3-38d5-45cc-b63d-ee40a9f140cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders\GLSL\Debug">
+      <UniqueIdentifier>{ccab02d9-b1df-4533-bd19-f6f2fef611bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Camera">
+      <UniqueIdentifier>{1b6ca14b-abc2-4800-aec9-29709219a1f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Camera\Manager">
+      <UniqueIdentifier>{1bf607da-4b0a-47f7-99fe-5d8af10d659c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Camera\Camera">
+      <UniqueIdentifier>{b2ae9ce4-c2f6-4ccf-a67f-a30554a42f63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Camera\Camera\Orthographic">
+      <UniqueIdentifier>{e7b6000d-b69a-4141-b0d5-e12ad2702717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Camera\Camera\Perspective">
+      <UniqueIdentifier>{02b680b0-ef24-47e2-9b61-0a89ceac7a2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Camera\Camera\Perspective\Test">
+      <UniqueIdentifier>{f9c1ed5b-4225-4e3a-8958-cd52b51efbd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas">
+      <UniqueIdentifier>{5acc8f72-d14e-4732-bfc2-1be59d16f40f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars">
+      <UniqueIdentifier>{8c17afaa-a5e9-4758-92dd-5445aaf66885}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\Window">
+      <UniqueIdentifier>{091b6915-5dbf-4fd4-9bf0-6827bc5ae354}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\OpenGL">
+      <UniqueIdentifier>{fd4517bd-6147-406c-ae17-26a7557727bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Scene">
+      <UniqueIdentifier>{0ecc847e-7cd2-4d3d-9347-8df88eff40f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Scene\Manager">
+      <UniqueIdentifier>{14975b28-931c-4edf-b8a4-139127a8ccfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars">
+      <UniqueIdentifier>{ce375975-0551-478a-bb69-f5fd7a59824c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Scene">
+      <UniqueIdentifier>{19f30680-e9f0-44e0-8e44-452229257a50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Task">
+      <UniqueIdentifier>{ca32226e-9331-4a3a-af8b-43b12dfbe4db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Task\FunctionObject">
+      <UniqueIdentifier>{cda46665-f502-4e67-a4a1-f2b783eefb67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Task\System">
+      <UniqueIdentifier>{437613ce-5754-4cbc-821e-92c0f77454ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Task\System\General">
+      <UniqueIdentifier>{69ac3800-bc0c-4758-84f9-c001dc14cc99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Task\System\Special">
+      <UniqueIdentifier>{1fa6e11e-ab45-45e2-bc0a-a6434cfafa96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\State">
+      <UniqueIdentifier>{17ea4bd9-883c-4b74-9941-10ffcae7b963}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\State\Machine">
+      <UniqueIdentifier>{a24cdd57-6ac5-41aa-844e-1b4f9f2f5ebe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\NeuralNetwork">
+      <UniqueIdentifier>{763de051-1977-497c-8766-52c066baf457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\NeuralNetwork\Layer">
+      <UniqueIdentifier>{470a8614-6280-4b5a-bfaa-c1a55f4ffa0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\NeuralNetwork\FeedFoward">
+      <UniqueIdentifier>{801b1fd9-224d-44d8-b7f1-eafae2d910be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\GameObject">
+      <UniqueIdentifier>{27708df3-5667-465f-babe-67d22b08bb92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\GameObject\Manager">
+      <UniqueIdentifier>{71f4a60e-8e91-42e5-9346-025eafc18db8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\GameObject\Message">
+      <UniqueIdentifier>{c65f4ce1-ea30-47b1-83d0-73018bdafc09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\GameObject\Message\Telegram">
+      <UniqueIdentifier>{e6fa9d2e-b56d-40e9-94cc-22a191b603c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\GameObject\Message\Dispatcher">
+      <UniqueIdentifier>{b3ad17c0-fb54-433b-b5aa-66ac1432bc39}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Projects\Sources\C++\Other\Stdafx\Stdafx.h">
+      <Filter>Sources\C++\Other\Stdafx</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Memory\List\MemoryList.h">
+      <Filter>Sources\C++\Library\Memory\List</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Memory\Manager\MemoryManager.h">
+      <Filter>Sources\C++\Library\Memory\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Memory\Pool\MemoryPool.h">
+      <Filter>Sources\C++\Library\Memory\Pool</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Memory\Pool\General\GeneralMemoryPool.h">
+      <Filter>Sources\C++\Library\Memory\Pool\General</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Other\StaticLibrary\StaticLibrary.h">
+      <Filter>Sources\C++\Other\StaticLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Framework\Framework.h">
+      <Filter>Sources\C++\Library\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Framework\FrameworkImpl.h">
+      <Filter>Sources\C++\Library\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Json\JsonDefine.h">
+      <Filter>Sources\C++\Library\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Json\JsonObject.h">
+      <Filter>Sources\C++\Library\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\SDL\SdlManager.h">
+      <Filter>Sources\C++\Library\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Singleton\SingletonImpl.h">
+      <Filter>Sources\C++\Library\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Singleton\Singleton.h">
+      <Filter>Sources\C++\Library\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Singleton\Assert\AssertSingleton.h">
+      <Filter>Sources\C++\Library\Singleton\Assert</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Singleton\Assert\AssertSingletonImpl.h">
+      <Filter>Sources\C++\Library\Singleton\Assert</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Event\Manager\EventManager.h">
+      <Filter>Sources\C++\Library\Event\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Event\Manager\EventManagerImpl.h">
+      <Filter>Sources\C++\Library\Event\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Event\Window\BaseWindowEvent.h">
+      <Filter>Sources\C++\Library\Event\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Event\Window\Main\MainWindowEvent.h">
+      <Filter>Sources\C++\Library\Event\Window\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Timer\TimeManager.h">
+      <Filter>Sources\C++\Library\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Timer\TimeManagerImpl.h">
+      <Filter>Sources\C++\Library\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\OpenGL\Manager\OpenGlManagerImpl.h">
+      <Filter>Sources\C++\Library\OpenGL\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\OpenGL\Manager\OpenGlManager.h">
+      <Filter>Sources\C++\Library\OpenGL\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\OpenGL\OpenGlDefine.h">
+      <Filter>Sources\C++\Library\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Keyboard\KeyboardManager.h">
+      <Filter>Sources\C++\Library\Input\Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Keyboard\KeyboardManagerImpl.h">
+      <Filter>Sources\C++\Library\Input\Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Mouse\MouseManager.h">
+      <Filter>Sources\C++\Library\Input\Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Mouse\MouseManagerImpl.h">
+      <Filter>Sources\C++\Library\Input\Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Gamepad\Manager\GamepadManager.h">
+      <Filter>Sources\C++\Library\Input\Gamepad\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Gamepad\Manager\GamepadManagerImpl.h">
+      <Filter>Sources\C++\Library\Input\Gamepad\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Gamepad\Factory\GamepadFactory.h">
+      <Filter>Sources\C++\Library\Input\Gamepad\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Gamepad\Gamepad\Gamepad.h">
+      <Filter>Sources\C++\Library\Input\Gamepad\Gamepad</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Input\Gamepad\Gamepad\XInput\XInput.h">
+      <Filter>Sources\C++\Library\Input\Gamepad\Gamepad\XInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Sound\SoundManager.h">
+      <Filter>Sources\C++\Library\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Sound\SoundManagerImpl.h">
+      <Filter>Sources\C++\Library\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Window\Window\BaseWindow.h">
+      <Filter>Sources\C++\Library\Window\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Window\Manager\WindowManager.h">
+      <Filter>Sources\C++\Library\Window\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Window\Manager\WindowManagerImpl.h">
+      <Filter>Sources\C++\Library\Window\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Texture\Manager\TextureManager.h">
+      <Filter>Sources\C++\Library\Texture\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Texture\Manager\TextureManagerImpl.h">
+      <Filter>Sources\C++\Library\Texture\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Texture\TextureDefine.h">
+      <Filter>Sources\C++\Library\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Font\FontManager.h">
+      <Filter>Sources\C++\Library\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Font\FontManagerImpl.h">
+      <Filter>Sources\C++\Library\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Debug\Helper\DebugHelper.h">
+      <Filter>Sources\C++\Library\Debug\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\GLSL\Object\GlslObject.h">
+      <Filter>Sources\C++\Library\Shader\GLSL\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\GLSL\Object\Manager\GlslObjectManager.h">
+      <Filter>Sources\C++\Library\Shader\GLSL\Object\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\GLSL\Object\Manager\GlslObjectManagerImpl.h">
+      <Filter>Sources\C++\Library\Shader\GLSL\Object\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\GLSL\Uniform\UniformBuffer.h">
+      <Filter>Sources\C++\Library\Shader\GLSL\Uniform</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\GLSL\GlslDefine.h">
+      <Filter>Sources\C++\Library\Shader\GLSL</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\GLSL\Uniform\Manager\UniformBufferManager.h">
+      <Filter>Sources\C++\Library\Shader\GLSL\Uniform\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\GLSL\Uniform\Manager\UniformBufferManagerImpl.h">
+      <Filter>Sources\C++\Library\Shader\GLSL\Uniform\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Define\MathDefine.h">
+      <Filter>Sources\C++\Library\Math\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Easing\Easing.h">
+      <Filter>Sources\C++\Library\Math\Easing</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Fuzzy\Fuzzy.h">
+      <Filter>Sources\C++\Library\Math\Fuzzy</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Matrix\Matrix4x4.h">
+      <Filter>Sources\C++\Library\Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Matrix\Matrix3x3.h">
+      <Filter>Sources\C++\Library\Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Quaternion\Quaternion.h">
+      <Filter>Sources\C++\Library\Math\Quaternion</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Vector\Vector3.h">
+      <Filter>Sources\C++\Library\Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Vector\Vector4.h">
+      <Filter>Sources\C++\Library\Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Math\Vector\Vector2.h">
+      <Filter>Sources\C++\Library\Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Math\MathAll.h">
+      <Filter>Sources\C++\Library\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Random\RandomGenerator.h">
+      <Filter>Sources\C++\Library\Random</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Random\RandomGeneratorImpl.h">
+      <Filter>Sources\C++\Library\Random</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Model\OBJ\Loader\ObjLoader.h">
+      <Filter>Sources\C++\Library\Model\OBJ\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Model\OBJ\Loader\ObjLoaderImpl.h">
+      <Filter>Sources\C++\Library\Model\OBJ\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Model\OBJ\ObjDefine.h">
+      <Filter>Sources\C++\Library\Model\OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Common\CommonHelper.h">
+      <Filter>Sources\C++\Library\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Model\FBX\FbxDefine.h">
+      <Filter>Sources\C++\Library\Model\FBX</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Model\FBX\Loader\FbxLoader.h">
+      <Filter>Sources\C++\Library\Model\FBX\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Model\FBX\Loader\FbxLoaderImpl.h">
+      <Filter>Sources\C++\Library\Model\FBX\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Path\PathAnalizer.h">
+      <Filter>Sources\C++\Library\Path</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Model\SelfMade\ModelDefine.h">
+      <Filter>Sources\C++\Library\Model\SelfMade</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Model\SelfMade\Loader\ModelLoader.h">
+      <Filter>Sources\C++\Library\Model\SelfMade\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\Detection\Detection2D.h">
+      <Filter>Sources\C++\Library\Collision\Detection</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\Detection\Detection3D.h">
+      <Filter>Sources\C++\Library\Collision\Detection</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\SpaceDivision\Quadtree\Object\TreeObject.h">
+      <Filter>Sources\C++\Library\Collision\SpaceDivision\Quadtree\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\SpaceDivision\Quadtree\Cell\Cell.h">
+      <Filter>Sources\C++\Library\Collision\SpaceDivision\Quadtree\Cell</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\SpaceDivision\Quadtree\Cell\CellImpl.h">
+      <Filter>Sources\C++\Library\Collision\SpaceDivision\Quadtree\Cell</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\SpaceDivision\Quadtree\Creater\CollisionListCreater.h">
+      <Filter>Sources\C++\Library\Collision\SpaceDivision\Quadtree\Creater</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\SpaceDivision\Quadtree\Creater\CollisionListCreaterImpl.h">
+      <Filter>Sources\C++\Library\Collision\SpaceDivision\Quadtree\Creater</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\SpaceDivision\Quadtree\Manager\QuadtreeManager.h">
+      <Filter>Sources\C++\Library\Collision\SpaceDivision\Quadtree\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Collision\SpaceDivision\Quadtree\Manager\QuadtreeManagerImpl.h">
+      <Filter>Sources\C++\Library\Collision\SpaceDivision\Quadtree\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Lua\LuaStateManager.h">
+      <Filter>Sources\C++\Library\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Lua\LuaStateManagerImpl.h">
+      <Filter>Sources\C++\Library\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\PhysicsDefine.h">
+      <Filter>Sources\C++\Library\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\Engine\PhysicsEngine.h">
+      <Filter>Sources\C++\Library\Physics\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\Engine\PhysicsEngineImpl.h">
+      <Filter>Sources\C++\Library\Physics\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\CollisionShape.h">
+      <Filter>Sources\C++\Library\Physics\CollisionShape</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\Body\Soft\SoftBody.h">
+      <Filter>Sources\C++\Library\Physics\Body\Soft</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\Body\Soft\Joint\AngularJoint.h">
+      <Filter>Sources\C++\Library\Physics\Body\Soft\Joint</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\Body\Soft\Joint\LinearJoint.h">
+      <Filter>Sources\C++\Library\Physics\Body\Soft\Joint</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\Body\Rigid\Rigidbody.h">
+      <Filter>Sources\C++\Library\Physics\Body\Rigid</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Box\BoxShape.h">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Convex\Box</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Capsule\CapsuleShape.h">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Convex\Capsule</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Cone\ConeShape.h">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Convex\Cone</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\ConvexHull\ConvexHullShape.h">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Convex\ConvexHull</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\MultiSphere\MultiSphereShape.h">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Convex\MultiSphere</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Sphere\SphereShape.h">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Convex\Sphere</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Concave\InfinitePlane\InfinitePlaneShape.h">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Concave\InfinitePlane</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Concave\ConcaveTriangleMesh\ConcaveTriangleMeshShape.h">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Concave\ConcaveTriangleMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Physics\CollisionShape\Concave\Compound\CompoundShape.h">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Concave\Compound</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Shader\Common\Frame\FrameBuffer.h">
+      <Filter>Sources\C++\Library\Shader\Common\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Debug\String\DebugString.h">
+      <Filter>Sources\C++\Library\Debug\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Debug\String\DebugStringImpl.h">
+      <Filter>Sources\C++\Library\Debug\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Particle\System\ParticleSystem.h">
+      <Filter>Sources\C++\Library\Particle\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Particle\System\ParticleSystemImpl.h">
+      <Filter>Sources\C++\Library\Particle\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Particle\System\Manager\ParticleSystemManager.h">
+      <Filter>Sources\C++\Library\Particle\System\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Particle\System\Manager\ParticleSystemManagerImpl.h">
+      <Filter>Sources\C++\Library\Particle\System\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\PerspectiveCamera.h">
+      <Filter>Sources\C++\Library\Camera\Camera\Perspective</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\Test\TestCamera.h">
+      <Filter>Sources\C++\Library\Camera\Camera\Perspective\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Orthographic\OrthographicCamera.h">
+      <Filter>Sources\C++\Library\Camera\Camera\Orthographic</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Camera.h">
+      <Filter>Sources\C++\Library\Camera\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Camera\Manager\CameraManager.h">
+      <Filter>Sources\C++\Library\Camera\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Camera\Manager\CameraManagerImpl.h">
+      <Filter>Sources\C++\Library\Camera\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Scene\Manager\SceneManager.h">
+      <Filter>Sources\C++\Library\Scene\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Scene\Manager\SceneManagerImpl.h">
+      <Filter>Sources\C++\Library\Scene\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Scene\BaseScene.h">
+      <Filter>Sources\C++\Library\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ConnectWars.h">
+      <Filter>Sources\C++\Game\ConnectWars</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\TitleScene.h">
+      <Filter>Sources\C++\Game\ConnectWars\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Task\Task.h">
+      <Filter>Sources\C++\Library\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Task\FunctionObject\TaskFunctionObject.h">
+      <Filter>Sources\C++\Library\Task\FunctionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Task\System\Special\SpecialTaskSystem.h">
+      <Filter>Sources\C++\Library\Task\System\Special</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Task\System\Special\SpecialTaskSystemImpl.h">
+      <Filter>Sources\C++\Library\Task\System\Special</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Task\System\General\GeneralTaskSystem.h">
+      <Filter>Sources\C++\Library\Task\System\General</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\State\State.h">
+      <Filter>Sources\C++\Library\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\State\Machine\StateMachineImpl.h">
+      <Filter>Sources\C++\Library\State\Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\State\Machine\StateMachine.h">
+      <Filter>Sources\C++\Library\State\Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\NeuralNetwork\FeedFoward\ThreeLayerFeedForward.h">
+      <Filter>Sources\C++\Library\NeuralNetwork\FeedFoward</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\NeuralNetwork\Layer\Layer.h">
+      <Filter>Sources\C++\Library\NeuralNetwork\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\GameObject\Message\Telegram\Telegram.h">
+      <Filter>Sources\C++\Library\GameObject\Message\Telegram</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\GameObject\GameObject.h">
+      <Filter>Sources\C++\Library\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\GameObject\Message\Dispatcher\MessageDispatcher.h">
+      <Filter>Sources\C++\Library\GameObject\Message\Dispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\GameObject\Message\Dispatcher\MessageDispatcherImpl.h">
+      <Filter>Sources\C++\Library\GameObject\Message\Dispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\GameObject\Manager\GameObjectManagerImpl.h">
+      <Filter>Sources\C++\Library\GameObject\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\GameObject\Manager\GameObjectManager.h">
+      <Filter>Sources\C++\Library\GameObject\Manager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Projects\Sources\C++\Other\Stdafx\Stdafx.cpp">
+      <Filter>Sources\C++\Other\Stdafx</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Memory\List\MemoryList.cpp">
+      <Filter>Sources\C++\Library\Memory\List</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Other\Main\Main.cpp">
+      <Filter>Sources\C++\Other\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Framework\Framework.cpp">
+      <Filter>Sources\C++\Library\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\SDL\SdlManager.cpp">
+      <Filter>Sources\C++\Library\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Event\Manager\EventManager.cpp">
+      <Filter>Sources\C++\Library\Event\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Event\Window\BaseWindowEvent.cpp">
+      <Filter>Sources\C++\Library\Event\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Event\Window\Main\MainWindowEvent.cpp">
+      <Filter>Sources\C++\Library\Event\Window\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Timer\TimeManager.cpp">
+      <Filter>Sources\C++\Library\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\OpenGL\Manager\OpenGlManager.cpp">
+      <Filter>Sources\C++\Library\OpenGL\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Input\Keyboard\KeyboardManager.cpp">
+      <Filter>Sources\C++\Library\Input\Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Input\Mouse\MouseManager.cpp">
+      <Filter>Sources\C++\Library\Input\Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Input\Gamepad\Manager\GamepadManager.cpp">
+      <Filter>Sources\C++\Library\Input\Gamepad\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Input\Gamepad\Factory\GamepadFactory.cpp">
+      <Filter>Sources\C++\Library\Input\Gamepad\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Input\Gamepad\Gamepad\Gamepad.cpp">
+      <Filter>Sources\C++\Library\Input\Gamepad\Gamepad</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Input\Gamepad\Gamepad\XInput\XInput.cpp">
+      <Filter>Sources\C++\Library\Input\Gamepad\Gamepad\XInput</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Sound\SoundManager.cpp">
+      <Filter>Sources\C++\Library\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Window\Window\BaseWindow.cpp">
+      <Filter>Sources\C++\Library\Window\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Window\Manager\WindowManager.cpp">
+      <Filter>Sources\C++\Library\Window\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Texture\Manager\TextureManager.cpp">
+      <Filter>Sources\C++\Library\Texture\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Font\FontManager.cpp">
+      <Filter>Sources\C++\Library\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Debug\Helper\DebugHelper.cpp">
+      <Filter>Sources\C++\Library\Debug\Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Shader\GLSL\Object\GlslObject.cpp">
+      <Filter>Sources\C++\Library\Shader\GLSL\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Shader\GLSL\Object\Manager\GlslObjectManager.cpp">
+      <Filter>Sources\C++\Library\Shader\GLSL\Object\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Shader\GLSL\Uniform\UniformBuffer.cpp">
+      <Filter>Sources\C++\Library\Shader\GLSL\Uniform</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Shader\GLSL\Uniform\Manager\UniformBufferManager.cpp">
+      <Filter>Sources\C++\Library\Shader\GLSL\Uniform\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Define\MathDefine.cpp">
+      <Filter>Sources\C++\Library\Math\Define</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Easing\Easing.cpp">
+      <Filter>Sources\C++\Library\Math\Easing</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Fuzzy\Fuzzy.cpp">
+      <Filter>Sources\C++\Library\Math\Fuzzy</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Matrix\Matrix4x4.cpp">
+      <Filter>Sources\C++\Library\Math\Matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Matrix\Matrix3x3.cpp">
+      <Filter>Sources\C++\Library\Math\Matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Quaternion\Quaternion.cpp">
+      <Filter>Sources\C++\Library\Math\Quaternion</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Vector\Vector4.cpp">
+      <Filter>Sources\C++\Library\Math\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Vector\Vector2.cpp">
+      <Filter>Sources\C++\Library\Math\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Math\Vector\Vector3.cpp">
+      <Filter>Sources\C++\Library\Math\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Random\RandomGenerator.cpp">
+      <Filter>Sources\C++\Library\Random</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Model\OBJ\Loader\ObjLoader.cpp">
+      <Filter>Sources\C++\Library\Model\OBJ\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Common\CommonHelper.cpp">
+      <Filter>Sources\C++\Library\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Model\FBX\Loader\FbxLoader.cpp">
+      <Filter>Sources\C++\Library\Model\FBX\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Path\PathAnalizer.cpp">
+      <Filter>Sources\C++\Library\Path</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Model\SelfMade\Loader\ModelLoader.cpp">
+      <Filter>Sources\C++\Library\Model\SelfMade\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Collision\Detection\Detection2D.cpp">
+      <Filter>Sources\C++\Library\Collision\Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Collision\Detection\Detection3D.cpp">
+      <Filter>Sources\C++\Library\Collision\Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Lua\LuaStateManager.cpp">
+      <Filter>Sources\C++\Library\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\pcall.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\scope.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\stack_content_by_name.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\weak_ref.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\wrapper_base.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\class.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\class_info.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\class_registry.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\class_rep.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\create_class.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\error.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\exception_handler.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\function.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\inheritance.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\link_compatibility.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\object_rep.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\open.cpp">
+      <Filter>Libraries\LuaBind</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\Engine\PhysicsEngine.cpp">
+      <Filter>Sources\C++\Library\Physics\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\CollisionShape.cpp">
+      <Filter>Sources\C++\Library\Physics\CollisionShape</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\Body\Soft\SoftBody.cpp">
+      <Filter>Sources\C++\Library\Physics\Body\Soft</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\Body\Soft\Joint\AngularJoing.cpp">
+      <Filter>Sources\C++\Library\Physics\Body\Soft\Joint</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\Body\Soft\Joint\LinearJoint.cpp">
+      <Filter>Sources\C++\Library\Physics\Body\Soft\Joint</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\Body\Rigid\RigidBody.cpp">
+      <Filter>Sources\C++\Library\Physics\Body\Rigid</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Box\BoxShape.cpp">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Convex\Box</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Capsule\CapsuleShape.cpp">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Convex\Capsule</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Cone\ConeShape.cpp">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Convex\Cone</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\ConvexHull\ConvexHullShape.cpp">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Convex\ConvexHull</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\MultiSphere\MultiSphereShape.cpp">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Convex\MultiSphere</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Convex\Sphere\SphereShape.cpp">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Convex\Sphere</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Concave\InfinitePlane\InfinitePlaneShape.cpp">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Concave\InfinitePlane</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Concave\ConcaveTriangleMesh\ConcaveTriangleMeshShape.cpp">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Concave\ConcaveTriangleMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Physics\CollisionShape\Concave\Compound\CompoundShape.cpp">
+      <Filter>Sources\C++\Library\Physics\CollisionShape\Concave\Compound</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Shader\Common\Frame\FrameBuffer.cpp">
+      <Filter>Sources\C++\Library\Shader\Common\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Debug\String\DebugString.cpp">
+      <Filter>Sources\C++\Library\Debug\String</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Particle\System\ParticleSystem.cpp">
+      <Filter>Sources\C++\Library\Particle\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Particle\System\Manager\ParticleSystemManager.cpp">
+      <Filter>Sources\C++\Library\Particle\System\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\PerspectiveCamera.cpp">
+      <Filter>Sources\C++\Library\Camera\Camera\Perspective</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\Test\TestCamera.cpp">
+      <Filter>Sources\C++\Library\Camera\Camera\Perspective\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Camera\Camera\Orthographic\OrthographicCamera.cpp">
+      <Filter>Sources\C++\Library\Camera\Camera\Orthographic</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Camera\Manager\CameraManager.cpp">
+      <Filter>Sources\C++\Library\Camera\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Scene\Manager\SceneManager.cpp">
+      <Filter>Sources\C++\Library\Scene\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Scene\BaseScene.cpp">
+      <Filter>Sources\C++\Library\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ConnectWars.cpp">
+      <Filter>Sources\C++\Game\ConnectWars</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\TitleScene.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Task\System\General\GeneralTaskSystem.cpp">
+      <Filter>Sources\C++\Library\Task\System\General</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\NeuralNetwork\FeedFoward\ThreeLayerFeedForward.cpp">
+      <Filter>Sources\C++\Library\NeuralNetwork\FeedFoward</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\NeuralNetwork\Layer\Layer.cpp">
+      <Filter>Sources\C++\Library\NeuralNetwork\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\GameObject\GameObject.cpp">
+      <Filter>Sources\C++\Library\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\GameObject\Message\Dispatcher\MessageDispatcher.cpp">
+      <Filter>Sources\C++\Library\GameObject\Message\Dispatcher</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\GameObject\Manager\GameObjectManager.cpp">
+      <Filter>Sources\C++\Library\GameObject\Manager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Projects\Shaders\GLSL\Debug\DebugString.geom">
+      <Filter>Resources\Shaders\GLSL\Debug</Filter>
+    </None>
+    <None Include="Projects\Shaders\GLSL\Debug\DebugString.vert">
+      <Filter>Resources\Shaders\GLSL\Debug</Filter>
+    </None>
+    <None Include="Projects\Shaders\GLSL\Debug\DebugString.frag">
+      <Filter>Resources\Shaders\GLSL\Debug</Filter>
+    </None>
+    <None Include="Projects\Shaders\GLSL\Particle\Particle.vert">
+      <Filter>Resources\Shaders\GLSL\Particle</Filter>
+    </None>
+    <None Include="Projects\Shaders\GLSL\Particle\Particle.frag">
+      <Filter>Resources\Shaders\GLSL\Particle</Filter>
+    </None>
+    <None Include="Projects\Shaders\GLSL\Particle\Particle.geom">
+      <Filter>Resources\Shaders\GLSL\Particle</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Window\MainWindowData.json">
+      <Filter>Resources\GameDatas\ConnectWars\Window</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\OpenGL\OpenGLData.json">
+      <Filter>Resources\GameDatas\ConnectWars\OpenGL</Filter>
+    </None>
+  </ItemGroup>
+</Project>
