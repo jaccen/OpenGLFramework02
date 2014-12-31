@@ -1,0 +1,4 @@
+<map id="UtilityMath::S_Quaternion::s_ConverMatrix4ToQuaternion" name="UtilityMath::S_Quaternion::s_ConverMatrix4ToQuaternion">
+<area shape="rect" id="node2" href="$struct_utility_math_1_1_s___matrix4.html#a844d2c8ca822471c86e75913a83fc6e7" title="転置行列を取得する " alt="" coords="256,5,407,47"/>
+<area shape="rect" id="node3" href="$struct_utility_math_1_1_s___matrix4.html#afbd5fdb195d4328df5b9b5f2a36f2f4d" title="転置行列化する " alt="" coords="455,5,605,47"/>
+</map>

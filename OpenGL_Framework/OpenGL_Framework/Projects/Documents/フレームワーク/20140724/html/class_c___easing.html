@@ -1,0 +1,1855 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: C_Easing クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="class_c___easing-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">C_Easing クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>イージング  
+ <a href="class_c___easing.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_easing_8h_source.html">Easing.h</a>&gt;</code></p>
+<div class="dynheader">
+C_Easing 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___easing__coll__graph.png" border="0" usemap="#_c___easing_coll__map" alt="Collaboration graph"/></div>
+<map name="_c___easing_coll__map" id="_c___easing_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a981ab55e16a5d16aaf8b4505a769c2a9"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a981ab55e16a5d16aaf8b4505a769c2a9">s_Linear</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a981ab55e16a5d16aaf8b4505a769c2a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">線形( 一次 )補間を行う  <a href="#a981ab55e16a5d16aaf8b4505a769c2a9">[詳解]</a><br /></td></tr>
+<tr class="separator:a981ab55e16a5d16aaf8b4505a769c2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ce7ade3cadf74d2ada337ce3ea4906a"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a4ce7ade3cadf74d2ada337ce3ea4906a">s_EaseInQuadratic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a4ce7ade3cadf74d2ada337ce3ea4906a"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズインの二次補間を行う  <a href="#a4ce7ade3cadf74d2ada337ce3ea4906a">[詳解]</a><br /></td></tr>
+<tr class="separator:a4ce7ade3cadf74d2ada337ce3ea4906a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63c2261055c0f870a7c1c885ac8aa840"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a63c2261055c0f870a7c1c885ac8aa840">s_EaseOutQuadratic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a63c2261055c0f870a7c1c885ac8aa840"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズアウトの二次補間を行う  <a href="#a63c2261055c0f870a7c1c885ac8aa840">[詳解]</a><br /></td></tr>
+<tr class="separator:a63c2261055c0f870a7c1c885ac8aa840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a056454f36bf04d29141561decfa447"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a7a056454f36bf04d29141561decfa447">s_EaseInOutQuadratic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a7a056454f36bf04d29141561decfa447"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズイン・アウトの二次補間を行う  <a href="#a7a056454f36bf04d29141561decfa447">[詳解]</a><br /></td></tr>
+<tr class="separator:a7a056454f36bf04d29141561decfa447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a29e660907212eecd609374d88b25ad"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a2a29e660907212eecd609374d88b25ad">s_EaseInCubic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a2a29e660907212eecd609374d88b25ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズインの三次補間を行う  <a href="#a2a29e660907212eecd609374d88b25ad">[詳解]</a><br /></td></tr>
+<tr class="separator:a2a29e660907212eecd609374d88b25ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5253dcdd9a653a25dc7b9bc804e3302"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#af5253dcdd9a653a25dc7b9bc804e3302">s_EaseOutCubic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:af5253dcdd9a653a25dc7b9bc804e3302"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズアウトの三次補間を行う  <a href="#af5253dcdd9a653a25dc7b9bc804e3302">[詳解]</a><br /></td></tr>
+<tr class="separator:af5253dcdd9a653a25dc7b9bc804e3302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0113e348892808196a9e31258b2e9a91"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a0113e348892808196a9e31258b2e9a91">s_EaseInOutCubic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a0113e348892808196a9e31258b2e9a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズイン・アウトの三次補間を行う  <a href="#a0113e348892808196a9e31258b2e9a91">[詳解]</a><br /></td></tr>
+<tr class="separator:a0113e348892808196a9e31258b2e9a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a391ecaac657ca5e2a22e53e7052a597f"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a391ecaac657ca5e2a22e53e7052a597f">s_EaseInQuartic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a391ecaac657ca5e2a22e53e7052a597f"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズインの四次補間を行う  <a href="#a391ecaac657ca5e2a22e53e7052a597f">[詳解]</a><br /></td></tr>
+<tr class="separator:a391ecaac657ca5e2a22e53e7052a597f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5cc8b4bdc6e993ff8758602513d12c1"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#ad5cc8b4bdc6e993ff8758602513d12c1">s_EaseOutQuartic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:ad5cc8b4bdc6e993ff8758602513d12c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズアウトの四次補間を行う  <a href="#ad5cc8b4bdc6e993ff8758602513d12c1">[詳解]</a><br /></td></tr>
+<tr class="separator:ad5cc8b4bdc6e993ff8758602513d12c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76539b42083c7a390c5a8b60fd33987a"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a76539b42083c7a390c5a8b60fd33987a">s_EaseInOutQuartic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a76539b42083c7a390c5a8b60fd33987a"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズイン・アウトの四次補間を行う  <a href="#a76539b42083c7a390c5a8b60fd33987a">[詳解]</a><br /></td></tr>
+<tr class="separator:a76539b42083c7a390c5a8b60fd33987a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93242e69fa790975aac3474bfb2dd458"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a93242e69fa790975aac3474bfb2dd458">s_EaseInQuintic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a93242e69fa790975aac3474bfb2dd458"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズインの五次補間を行う  <a href="#a93242e69fa790975aac3474bfb2dd458">[詳解]</a><br /></td></tr>
+<tr class="separator:a93242e69fa790975aac3474bfb2dd458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb625626a3bc29dc2b0859de0cce3765"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#aeb625626a3bc29dc2b0859de0cce3765">s_EaseOutQuintic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:aeb625626a3bc29dc2b0859de0cce3765"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズアウトの五次補間を行う  <a href="#aeb625626a3bc29dc2b0859de0cce3765">[詳解]</a><br /></td></tr>
+<tr class="separator:aeb625626a3bc29dc2b0859de0cce3765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaf1c284e7221b67d6ca62438902a4e6"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#adaf1c284e7221b67d6ca62438902a4e6">s_EaseInOutQuintic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:adaf1c284e7221b67d6ca62438902a4e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズイン・アウトの五次補間を行う  <a href="#adaf1c284e7221b67d6ca62438902a4e6">[詳解]</a><br /></td></tr>
+<tr class="separator:adaf1c284e7221b67d6ca62438902a4e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2878afb40c97bfaba2897b0c0df6ec14"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a2878afb40c97bfaba2897b0c0df6ec14">s_EaseInSine</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a2878afb40c97bfaba2897b0c0df6ec14"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズインのサイン補間を行う  <a href="#a2878afb40c97bfaba2897b0c0df6ec14">[詳解]</a><br /></td></tr>
+<tr class="separator:a2878afb40c97bfaba2897b0c0df6ec14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6156a378a1458843c6d1516529a6677d"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a6156a378a1458843c6d1516529a6677d">s_EaseOutSine</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a6156a378a1458843c6d1516529a6677d"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズアウトのサイン補間を行う  <a href="#a6156a378a1458843c6d1516529a6677d">[詳解]</a><br /></td></tr>
+<tr class="separator:a6156a378a1458843c6d1516529a6677d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ffcd5046947d139ba57b42f4bf23084"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a3ffcd5046947d139ba57b42f4bf23084">s_EaseInOutSine</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a3ffcd5046947d139ba57b42f4bf23084"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズイン・アウトのサイン補間を行う  <a href="#a3ffcd5046947d139ba57b42f4bf23084">[詳解]</a><br /></td></tr>
+<tr class="separator:a3ffcd5046947d139ba57b42f4bf23084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac554de92f8238625d24ff5d760e11e6d"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#ac554de92f8238625d24ff5d760e11e6d">s_EaseInExponential</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:ac554de92f8238625d24ff5d760e11e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズインの指数補間を行う  <a href="#ac554de92f8238625d24ff5d760e11e6d">[詳解]</a><br /></td></tr>
+<tr class="separator:ac554de92f8238625d24ff5d760e11e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a308ea0ce3b8802e024088f1a9914764f"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a308ea0ce3b8802e024088f1a9914764f">s_EaseOutExponential</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a308ea0ce3b8802e024088f1a9914764f"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズアウトの指数補間を行う  <a href="#a308ea0ce3b8802e024088f1a9914764f">[詳解]</a><br /></td></tr>
+<tr class="separator:a308ea0ce3b8802e024088f1a9914764f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b6317bfec47d27f28be376bd485b0d6"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a7b6317bfec47d27f28be376bd485b0d6">s_EaseInOutExponential</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a7b6317bfec47d27f28be376bd485b0d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズイン・アウトの指数補間を行う  <a href="#a7b6317bfec47d27f28be376bd485b0d6">[詳解]</a><br /></td></tr>
+<tr class="separator:a7b6317bfec47d27f28be376bd485b0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85c962f6449f3ac34608bda02cfd6abf"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a85c962f6449f3ac34608bda02cfd6abf">s_EaseInCircular</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a85c962f6449f3ac34608bda02cfd6abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズインの円弧補間を行う  <a href="#a85c962f6449f3ac34608bda02cfd6abf">[詳解]</a><br /></td></tr>
+<tr class="separator:a85c962f6449f3ac34608bda02cfd6abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a63c9c67070704d32397964f61093cc"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a4a63c9c67070704d32397964f61093cc">s_EaseOutCircular</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a4a63c9c67070704d32397964f61093cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズアウトの円弧補間を行う  <a href="#a4a63c9c67070704d32397964f61093cc">[詳解]</a><br /></td></tr>
+<tr class="separator:a4a63c9c67070704d32397964f61093cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f38cceae00ae0e6a18b91881bfdc2ef"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a7f38cceae00ae0e6a18b91881bfdc2ef">s_EaseInOutCircular</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a7f38cceae00ae0e6a18b91881bfdc2ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズイン・アウトの円弧補間を行う  <a href="#a7f38cceae00ae0e6a18b91881bfdc2ef">[詳解]</a><br /></td></tr>
+<tr class="separator:a7f38cceae00ae0e6a18b91881bfdc2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1862dd88aadafbafac71133afb244df9"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a1862dd88aadafbafac71133afb244df9">s_EaseInBack</a> (float start, float end, float coefficient, float stress=1.70158f)</td></tr>
+<tr class="memdesc:a1862dd88aadafbafac71133afb244df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズインのバック補間を行う  <a href="#a1862dd88aadafbafac71133afb244df9">[詳解]</a><br /></td></tr>
+<tr class="separator:a1862dd88aadafbafac71133afb244df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77df9c0368ebc0657ca94f50f8adb44d"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a77df9c0368ebc0657ca94f50f8adb44d">s_EaseOutBack</a> (float start, float end, float coefficient, float stress=1.70158f)</td></tr>
+<tr class="memdesc:a77df9c0368ebc0657ca94f50f8adb44d"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズアウトのバック補間を行う  <a href="#a77df9c0368ebc0657ca94f50f8adb44d">[詳解]</a><br /></td></tr>
+<tr class="separator:a77df9c0368ebc0657ca94f50f8adb44d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d181c5b0b22ed8e150e4c44e75e5427"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a9d181c5b0b22ed8e150e4c44e75e5427">s_EaseInOutBack</a> (float start, float end, float coefficient, float stress=1.70158f)</td></tr>
+<tr class="memdesc:a9d181c5b0b22ed8e150e4c44e75e5427"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズイン・アウトのバック補間を行う  <a href="#a9d181c5b0b22ed8e150e4c44e75e5427">[詳解]</a><br /></td></tr>
+<tr class="separator:a9d181c5b0b22ed8e150e4c44e75e5427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbaf3c8b917ecc726966b8fa7e0c0706"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#abbaf3c8b917ecc726966b8fa7e0c0706">s_EaseInBounce</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:abbaf3c8b917ecc726966b8fa7e0c0706"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズインのバウンス補間を行う  <a href="#abbaf3c8b917ecc726966b8fa7e0c0706">[詳解]</a><br /></td></tr>
+<tr class="separator:abbaf3c8b917ecc726966b8fa7e0c0706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fac575f9a23dda596a60bf544923673"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a3fac575f9a23dda596a60bf544923673">s_EaseOutBounce</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a3fac575f9a23dda596a60bf544923673"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズアウトのバウンス補間を行う  <a href="#a3fac575f9a23dda596a60bf544923673">[詳解]</a><br /></td></tr>
+<tr class="separator:a3fac575f9a23dda596a60bf544923673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cfd64832ec1e4a959bb0631a9345881"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a9cfd64832ec1e4a959bb0631a9345881">s_EaseInOutBounce</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a9cfd64832ec1e4a959bb0631a9345881"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズイン・アウトのバウンス補間を行う  <a href="#a9cfd64832ec1e4a959bb0631a9345881">[詳解]</a><br /></td></tr>
+<tr class="separator:a9cfd64832ec1e4a959bb0631a9345881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd99530f1ae391e108714aa5a3405b1b"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#acd99530f1ae391e108714aa5a3405b1b">s_EaseInElastic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:acd99530f1ae391e108714aa5a3405b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズインのイラスティック補間を行う  <a href="#acd99530f1ae391e108714aa5a3405b1b">[詳解]</a><br /></td></tr>
+<tr class="separator:acd99530f1ae391e108714aa5a3405b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab60cae8a2ae3afe06908ea88984fe576"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#ab60cae8a2ae3afe06908ea88984fe576">s_EaseOutElastic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:ab60cae8a2ae3afe06908ea88984fe576"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズアウトのイラスティック補間を行う  <a href="#ab60cae8a2ae3afe06908ea88984fe576">[詳解]</a><br /></td></tr>
+<tr class="separator:ab60cae8a2ae3afe06908ea88984fe576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b07e8051dc666b2fcf5091a99c4f18b"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___easing.html#a8b07e8051dc666b2fcf5091a99c4f18b">s_EaseInOutElastic</a> (float start, float end, float coefficient)</td></tr>
+<tr class="memdesc:a8b07e8051dc666b2fcf5091a99c4f18b"><td class="mdescLeft">&#160;</td><td class="mdescRight">イーズイン・アウトのイラスティック補間を行う  <a href="#a8b07e8051dc666b2fcf5091a99c4f18b">[詳解]</a><br /></td></tr>
+<tr class="separator:a8b07e8051dc666b2fcf5091a99c4f18b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>イージング </p>
+<p>イージングの関数をまとめたユーティリティクラス </p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a1862dd88aadafbafac71133afb244df9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInBack </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>stress</em> = <code>1.70158f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズインのバック補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+    <tr><td class="paramname">圧力</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abbaf3c8b917ecc726966b8fa7e0c0706"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInBounce </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズインのバウンス補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___easing_abbaf3c8b917ecc726966b8fa7e0c0706_cgraph.png" border="0" usemap="#class_c___easing_abbaf3c8b917ecc726966b8fa7e0c0706_cgraph" alt=""/></div>
+<map name="class_c___easing_abbaf3c8b917ecc726966b8fa7e0c0706_cgraph" id="class_c___easing_abbaf3c8b917ecc726966b8fa7e0c0706_cgraph">
+<area shape="rect" id="node2" href="class_c___easing.html#a3fac575f9a23dda596a60bf544923673" title="イーズアウトのバウンス補間を行う " alt="" coords="237,5,432,32"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___easing_abbaf3c8b917ecc726966b8fa7e0c0706_icgraph.png" border="0" usemap="#class_c___easing_abbaf3c8b917ecc726966b8fa7e0c0706_icgraph" alt=""/></div>
+<map name="class_c___easing_abbaf3c8b917ecc726966b8fa7e0c0706_icgraph" id="class_c___easing_abbaf3c8b917ecc726966b8fa7e0c0706_icgraph">
+<area shape="rect" id="node2" href="class_c___easing.html#a9cfd64832ec1e4a959bb0631a9345881" title="イーズイン・アウトのバウンス補間を行う " alt="" coords="237,5,443,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a85c962f6449f3ac34608bda02cfd6abf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInCircular </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズインの円弧補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2a29e660907212eecd609374d88b25ad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInCubic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズインの三次補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acd99530f1ae391e108714aa5a3405b1b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInElastic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズインのイラスティック補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac554de92f8238625d24ff5d760e11e6d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInExponential </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズインの指数補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9d181c5b0b22ed8e150e4c44e75e5427"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInOutBack </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>stress</em> = <code>1.70158f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズイン・アウトのバック補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+    <tr><td class="paramname">圧力</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9cfd64832ec1e4a959bb0631a9345881"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInOutBounce </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズイン・アウトのバウンス補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___easing_a9cfd64832ec1e4a959bb0631a9345881_cgraph.png" border="0" usemap="#class_c___easing_a9cfd64832ec1e4a959bb0631a9345881_cgraph" alt=""/></div>
+<map name="class_c___easing_a9cfd64832ec1e4a959bb0631a9345881_cgraph" id="class_c___easing_a9cfd64832ec1e4a959bb0631a9345881_cgraph">
+<area shape="rect" id="node2" href="class_c___easing.html#abbaf3c8b917ecc726966b8fa7e0c0706" title="イーズインのバウンス補間を行う " alt="" coords="259,5,443,32"/><area shape="rect" id="node3" href="class_c___easing.html#a3fac575f9a23dda596a60bf544923673" title="イーズアウトのバウンス補間を行う " alt="" coords="491,31,685,57"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7f38cceae00ae0e6a18b91881bfdc2ef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInOutCircular </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズイン・アウトの円弧補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0113e348892808196a9e31258b2e9a91"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInOutCubic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズイン・アウトの三次補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8b07e8051dc666b2fcf5091a99c4f18b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInOutElastic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズイン・アウトのイラスティック補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7b6317bfec47d27f28be376bd485b0d6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInOutExponential </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズイン・アウトの指数補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7a056454f36bf04d29141561decfa447"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInOutQuadratic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズイン・アウトの二次補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a76539b42083c7a390c5a8b60fd33987a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInOutQuartic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズイン・アウトの四次補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adaf1c284e7221b67d6ca62438902a4e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInOutQuintic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズイン・アウトの五次補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3ffcd5046947d139ba57b42f4bf23084"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInOutSine </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズイン・アウトのサイン補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4ce7ade3cadf74d2ada337ce3ea4906a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInQuadratic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズインの二次補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a391ecaac657ca5e2a22e53e7052a597f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInQuartic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズインの四次補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a93242e69fa790975aac3474bfb2dd458"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInQuintic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズインの五次補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2878afb40c97bfaba2897b0c0df6ec14"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseInSine </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズインのサイン補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a77df9c0368ebc0657ca94f50f8adb44d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseOutBack </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>stress</em> = <code>1.70158f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズアウトのバック補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+    <tr><td class="paramname">圧力</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3fac575f9a23dda596a60bf544923673"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseOutBounce </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズアウトのバウンス補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___easing_a3fac575f9a23dda596a60bf544923673_icgraph.png" border="0" usemap="#class_c___easing_a3fac575f9a23dda596a60bf544923673_icgraph" alt=""/></div>
+<map name="class_c___easing_a3fac575f9a23dda596a60bf544923673_icgraph" id="class_c___easing_a3fac575f9a23dda596a60bf544923673_icgraph">
+<area shape="rect" id="node2" href="class_c___easing.html#abbaf3c8b917ecc726966b8fa7e0c0706" title="イーズインのバウンス補間を行う " alt="" coords="248,5,432,32"/><area shape="rect" id="node3" href="class_c___easing.html#a9cfd64832ec1e4a959bb0631a9345881" title="イーズイン・アウトのバウンス補間を行う " alt="" coords="480,31,685,57"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4a63c9c67070704d32397964f61093cc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseOutCircular </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズアウトの円弧補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af5253dcdd9a653a25dc7b9bc804e3302"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseOutCubic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズアウトの三次補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab60cae8a2ae3afe06908ea88984fe576"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseOutElastic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズアウトのイラスティック補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a308ea0ce3b8802e024088f1a9914764f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseOutExponential </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズアウトの指数補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a63c2261055c0f870a7c1c885ac8aa840"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseOutQuadratic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズアウトの二次補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad5cc8b4bdc6e993ff8758602513d12c1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseOutQuartic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズアウトの四次補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aeb625626a3bc29dc2b0859de0cce3765"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseOutQuintic </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズアウトの五次補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6156a378a1458843c6d1516529a6677d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_EaseOutSine </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>イーズアウトのサイン補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a981ab55e16a5d16aaf8b4505a769c2a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float C_Easing::s_Linear </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>線形( 一次 )補間を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始値</td><td></td></tr>
+    <tr><td class="paramname">終了値</td><td></td></tr>
+    <tr><td class="paramname">補間係数(</td><td>0 〜 1 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>開始時の値と終了時の値を補完した値 </dd></dl>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="_easing_8h_source.html">Easing.h</a></li>
+<li><a class="el" href="_easing_8cpp.html">Easing.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分52秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

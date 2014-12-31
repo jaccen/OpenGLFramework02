@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: PrimitiveManager.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">PrimitiveManager.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_primitive_manager_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* 二重インクルード防止 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* ヘッダファイル */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_automatic_singleton_8h.html">AutomaticSingleton.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/* 前方宣言 */</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="class_c___base_shader.html">C_BaseShader</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/* 名前空間を設定 */</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>UtilityMath</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">/* 前方宣言 */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">struct </span>S_Vector3;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">struct </span>S_Vector4;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">struct </span>S_Matrix4;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_c___primitive_manager.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c___primitive_manager.html">C_PrimitiveManager</a> : <span class="keyword">public</span> <a class="code" href="class_c___automatic_singleton.html">C_AutomaticSingleton</a>&lt;C_PrimitiveManager&gt;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625">   34</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625">ePrimitive</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625a23113c5155f6631a2731b8c47d3b45e3">   36</a></span>&#160;        <a class="code" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625a23113c5155f6631a2731b8c47d3b45e3">PRIMITIVE_POINT</a>,                                                                        </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625a066d8e340e97762576a21d8787ba626f">   37</a></span>&#160;        <a class="code" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625a066d8e340e97762576a21d8787ba626f">PRIMITIVE_LINE</a>,                                                                         </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625a7911312e0a19505e625177acf2da6b1c">   38</a></span>&#160;        <a class="code" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625a7911312e0a19505e625177acf2da6b1c">PRIMITIVE_TRIANGLE</a>,                                                                     </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625aaf800bc35eeeb3c8b39f5b60502a7eb1">   39</a></span>&#160;        <a class="code" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625aaf800bc35eeeb3c8b39f5b60502a7eb1">PRIMITIVE_QUADRANGLE</a>,                                                                   </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625a9d1bd048691590a3d671f097b858fe73">   41</a></span>&#160;        <a class="code" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625a9d1bd048691590a3d671f097b858fe73">PRIMITIVE_TOTAL_NUMBER</a>,                                                                 </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    };</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="class_c___primitive_manager.html#a10921edcc129802f5b9e4d37a1fbdf9d">C_PrimitiveManager</a>();                                                                       <span class="comment">// コンストラクタ</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_c___primitive_manager.html#a919b277fa3a80861e00b68c2f5e05f95">~C_PrimitiveManager</a>() <span class="keyword">override</span>;                                                             <span class="comment">// デストラクタ</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___primitive_manager.html#ac32ba5059003997173172537333b9d47">Initialize</a>();                                                                          <span class="comment">// 初期化処理</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___primitive_manager.html#a7b6ecb5717a53df1ff6c57e7a7a2cd7e">Finalize</a>();                                                                            <span class="comment">// 終了処理</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___primitive_manager.html#af8b8678e18a207b510ba0959dd51779c">Draw</a>(<a class="code" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625">ePrimitive</a> primitive,                                                             <span class="comment">// 描画処理</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;              <a class="code" href="struct_utility_math_1_1_s___vector3.html">UtilityMath::S_Vector3</a>* pPosition,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;              <a class="code" href="struct_utility_math_1_1_s___vector4.html">UtilityMath::S_Vector4</a>* pColor,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;              <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix4.html">UtilityMath::S_Matrix4</a>&amp; rModelViewProjectionMatrix);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::array&lt;unsigned int, PRIMITIVE_TOTAL_NUMBER&gt; vertexArrayObjects_;                       </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::array&lt;std::array&lt;unsigned int, 2&gt;, <a class="code" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625a9d1bd048691590a3d671f097b858fe73">PRIMITIVE_TOTAL_NUMBER</a>&gt; vertexBufferObjects_;       </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    std::unique_ptr&lt;C_BaseShader&gt; upShader_;                                                    </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> CreateVertexArrayObject(<a class="code" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625">ePrimitive</a> primitive,                                          <span class="comment">// 頂点配列オブジェクトを作成</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                 <span class="keywordtype">int</span> vertexNumber);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> RewriteVertex(<a class="code" href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625">ePrimitive</a> primitive,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                       <a class="code" href="struct_utility_math_1_1_s___vector3.html">UtilityMath::S_Vector3</a>* pPositions,                                      <span class="comment">// 頂点の書き換え処理</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                       <a class="code" href="struct_utility_math_1_1_s___vector4.html">UtilityMath::S_Vector4</a>* pColors,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                       <span class="keywordtype">int</span> vertexNumber);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="ttc" id="class_c___primitive_manager_html_a7b6ecb5717a53df1ff6c57e7a7a2cd7e"><div class="ttname"><a href="class_c___primitive_manager.html#a7b6ecb5717a53df1ff6c57e7a7a2cd7e">C_PrimitiveManager::Finalize</a></div><div class="ttdeci">void Finalize()</div><div class="ttdoc">各図形の終了処理を行う </div><div class="ttdef"><b>Definition:</b> PrimitiveManager.cpp:84</div></div>
+<div class="ttc" id="class_c___primitive_manager_html_a919b277fa3a80861e00b68c2f5e05f95"><div class="ttname"><a href="class_c___primitive_manager.html#a919b277fa3a80861e00b68c2f5e05f95">C_PrimitiveManager::~C_PrimitiveManager</a></div><div class="ttdeci">~C_PrimitiveManager() override</div><div class="ttdoc">デストラクタ </div><div class="ttdef"><b>Definition:</b> PrimitiveManager.cpp:30</div></div>
+<div class="ttc" id="class_c___base_shader_html"><div class="ttname"><a href="class_c___base_shader.html">C_BaseShader</a></div><div class="ttdoc">ベースシェーダー </div><div class="ttdef"><b>Definition:</b> BaseShader.h:34</div></div>
+<div class="ttc" id="class_c___primitive_manager_html_a35fe06fcc17f0f1e0744f5ee26933625"><div class="ttname"><a href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625">C_PrimitiveManager::ePrimitive</a></div><div class="ttdeci">ePrimitive</div><div class="ttdef"><b>Definition:</b> PrimitiveManager.h:34</div></div>
+<div class="ttc" id="class_c___automatic_singleton_html"><div class="ttname"><a href="class_c___automatic_singleton.html">C_AutomaticSingleton</a></div><div class="ttdoc">オートマティックシングルトン </div><div class="ttdef"><b>Definition:</b> AutomaticSingleton.h:13</div></div>
+<div class="ttc" id="class_c___primitive_manager_html_a10921edcc129802f5b9e4d37a1fbdf9d"><div class="ttname"><a href="class_c___primitive_manager.html#a10921edcc129802f5b9e4d37a1fbdf9d">C_PrimitiveManager::C_PrimitiveManager</a></div><div class="ttdeci">C_PrimitiveManager()</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> PrimitiveManager.cpp:15</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix4_html"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix4.html">UtilityMath::S_Matrix4</a></div><div class="ttdoc">マトリクス4 </div><div class="ttdef"><b>Definition:</b> Matrix4.h:25</div></div>
+<div class="ttc" id="class_c___primitive_manager_html_af8b8678e18a207b510ba0959dd51779c"><div class="ttname"><a href="class_c___primitive_manager.html#af8b8678e18a207b510ba0959dd51779c">C_PrimitiveManager::Draw</a></div><div class="ttdeci">void Draw(ePrimitive primitive, UtilityMath::S_Vector3 *pPosition, UtilityMath::S_Vector4 *pColor, const UtilityMath::S_Matrix4 &amp;rModelViewProjectionMatrix)</div><div class="ttdoc">指定したプリミティブの描画を行う </div><div class="ttdef"><b>Definition:</b> PrimitiveManager.cpp:104</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html">UtilityMath::S_Vector4</a></div><div class="ttdoc">ベクター4 </div><div class="ttdef"><b>Definition:</b> Vector4.h:23</div></div>
+<div class="ttc" id="class_c___primitive_manager_html_a35fe06fcc17f0f1e0744f5ee26933625a7911312e0a19505e625177acf2da6b1c"><div class="ttname"><a href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625a7911312e0a19505e625177acf2da6b1c">C_PrimitiveManager::PRIMITIVE_TRIANGLE</a></div><div class="ttdoc">三角形 </div><div class="ttdef"><b>Definition:</b> PrimitiveManager.h:38</div></div>
+<div class="ttc" id="class_c___primitive_manager_html"><div class="ttname"><a href="class_c___primitive_manager.html">C_PrimitiveManager</a></div><div class="ttdoc">プリミティブマネージャー </div><div class="ttdef"><b>Definition:</b> PrimitiveManager.h:29</div></div>
+<div class="ttc" id="class_c___primitive_manager_html_a35fe06fcc17f0f1e0744f5ee26933625a066d8e340e97762576a21d8787ba626f"><div class="ttname"><a href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625a066d8e340e97762576a21d8787ba626f">C_PrimitiveManager::PRIMITIVE_LINE</a></div><div class="ttdoc">線 </div><div class="ttdef"><b>Definition:</b> PrimitiveManager.h:37</div></div>
+<div class="ttc" id="class_c___primitive_manager_html_ac32ba5059003997173172537333b9d47"><div class="ttname"><a href="class_c___primitive_manager.html#ac32ba5059003997173172537333b9d47">C_PrimitiveManager::Initialize</a></div><div class="ttdeci">bool Initialize()</div><div class="ttdoc">各図形の初期化処理を行う </div><div class="ttdef"><b>Definition:</b> PrimitiveManager.cpp:43</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector3_html"><div class="ttname"><a href="struct_utility_math_1_1_s___vector3.html">UtilityMath::S_Vector3</a></div><div class="ttdoc">ベクター3 </div><div class="ttdef"><b>Definition:</b> Vector3.h:19</div></div>
+<div class="ttc" id="_automatic_singleton_8h_html"><div class="ttname"><a href="_automatic_singleton_8h.html">AutomaticSingleton.h</a></div></div>
+<div class="ttc" id="class_c___primitive_manager_html_a35fe06fcc17f0f1e0744f5ee26933625a23113c5155f6631a2731b8c47d3b45e3"><div class="ttname"><a href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625a23113c5155f6631a2731b8c47d3b45e3">C_PrimitiveManager::PRIMITIVE_POINT</a></div><div class="ttdoc">点 </div><div class="ttdef"><b>Definition:</b> PrimitiveManager.h:36</div></div>
+<div class="ttc" id="class_c___primitive_manager_html_a35fe06fcc17f0f1e0744f5ee26933625a9d1bd048691590a3d671f097b858fe73"><div class="ttname"><a href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625a9d1bd048691590a3d671f097b858fe73">C_PrimitiveManager::PRIMITIVE_TOTAL_NUMBER</a></div><div class="ttdoc">図形の総数 </div><div class="ttdef"><b>Definition:</b> PrimitiveManager.h:41</div></div>
+<div class="ttc" id="class_c___primitive_manager_html_a35fe06fcc17f0f1e0744f5ee26933625aaf800bc35eeeb3c8b39f5b60502a7eb1"><div class="ttname"><a href="class_c___primitive_manager.html#a35fe06fcc17f0f1e0744f5ee26933625aaf800bc35eeeb3c8b39f5b60502a7eb1">C_PrimitiveManager::PRIMITIVE_QUADRANGLE</a></div><div class="ttdoc">四角形 </div><div class="ttdef"><b>Definition:</b> PrimitiveManager.h:39</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分49秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

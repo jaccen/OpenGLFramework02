@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: Gamepad.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Gamepad.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_gamepad_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* 二重インクルード防止 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_c___gamepad.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c___gamepad.html">C_Gamepad</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4">   15</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4">eButton</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4ad3a7fa8cc36c5c24c0a4d2e0db56cb84">   17</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4ad3a7fa8cc36c5c24c0a4d2e0db56cb84">BUTTON_FOUR_UP</a>,                                                 </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a4ac2520771ed37574de9dd8c527b8db0">   18</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a4ac2520771ed37574de9dd8c527b8db0">BUTTON_FOUR_DOWN</a>,                                               </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a844ee84625d67a7bcc648754dc603a04">   19</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a844ee84625d67a7bcc648754dc603a04">BUTTON_FOUR_LEFT</a>,                                               </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a82e17093cd1724bd3746b2e72a41f1d1">   20</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a82e17093cd1724bd3746b2e72a41f1d1">BUTTON_FOUR_RIGHT</a>,                                              </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4ab963f1651d54879b3674b8703dc2fbac">   21</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4ab963f1651d54879b3674b8703dc2fbac">BUTTON_CROSS_UP</a>,                                                </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a33e1aa6a9d4177417c439d12b4c7648a">   22</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a33e1aa6a9d4177417c439d12b4c7648a">BUTTON_CROSS_DOWN</a>,                                              </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a818d2739a25ed80ddb962e00a36ab9d5">   23</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a818d2739a25ed80ddb962e00a36ab9d5">BUTTON_CROSS_LEFT</a>,                                              </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4ab85ff18d8f9fdc627301e45970bc5764">   24</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4ab85ff18d8f9fdc627301e45970bc5764">BUTTON_CROSS_RIGHT</a>,                                             </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a26d154de54710ba77ebe470358084c2e">   25</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a26d154de54710ba77ebe470358084c2e">BUTTON_START</a>,                                                   </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a4640e5ce3b74777133eece14cdeca44f">   26</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a4640e5ce3b74777133eece14cdeca44f">BUTTON_SELECT</a>,                                                  </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a384f51f0a1967153399430b17de03d3f">   27</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a384f51f0a1967153399430b17de03d3f">BUTTON_SHOULDER_1_LEFT</a>,                                         </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4ab57b67e35a41ab896dea9b87882cb5ec">   28</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4ab57b67e35a41ab896dea9b87882cb5ec">BUTTON_SHOULDER_1_RIGHT</a>,                                        </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a69b2bf51eb2ad62ad0c262332fcfbe52">   29</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a69b2bf51eb2ad62ad0c262332fcfbe52">BUTTON_SHOULDER_2_LEFT</a>,                                         </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a15fd5e140dcc6d31326416c9608516ba">   30</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a15fd5e140dcc6d31326416c9608516ba">BUTTON_SHOULDER_2_RIGHT</a>,                                        </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4abf015c96b1663e149755d5b266839d19">   32</a></span>&#160;        <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4abf015c96b1663e149755d5b266839d19">BUTTON_TOTAL_NUMBER</a>,                                            </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    };</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">   36</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">eStick</a></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199ea95d59ab88845f0cab7e5fa44e4bc43f1">   38</a></span>&#160;        <a class="code" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199ea95d59ab88845f0cab7e5fa44e4bc43f1">STICK_LEFT</a>,                                                     </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199ea0dfd44e64301869383ef5ec9c03fa077">   39</a></span>&#160;        <a class="code" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199ea0dfd44e64301869383ef5ec9c03fa077">STICK_RIGHT</a>,                                                    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199ea25ea21670e5f58f91e3245157e5847e6">   41</a></span>&#160;        <a class="code" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199ea25ea21670e5f58f91e3245157e5847e6">STICK_TOTAL_NUMBER</a>,                                             </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    };</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">/* 定数 */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#a99de647cc10444d672f317d518e3dbda">   45</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t <a class="code" href="class_c___gamepad.html#a99de647cc10444d672f317d518e3dbda">s_STICK_DEAD_ZONE</a>;                             </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#a34c0a1ddd76c50022fd8c74dcc478613">   46</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t <a class="code" href="class_c___gamepad.html#a34c0a1ddd76c50022fd8c74dcc478613">s_STICK_PUSH_MAX</a>;                              </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#a3ee22a908c86d802a9cd4bffe3369b9d">   47</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t <a class="code" href="class_c___gamepad.html#a3ee22a908c86d802a9cd4bffe3369b9d">s_STICK_PUSH_MINI</a>;                             </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="class_c___gamepad.html#a49cd1f43479ae65fee9fc485a60fef7e">C_Gamepad</a>(SDL_Joystick* pGamepad);                                  <span class="comment">// コンストラクタ</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_c___gamepad.html#af2b50f5356a8ea654b5eb0f926a66934">~C_Gamepad</a>();                                               <span class="comment">// デストラクタ</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_c___gamepad.html#add01f2b55ef273e45227157a3eab8e3f">Update</a>() = 0;                                          <span class="comment">// 更新処理</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___gamepad.html#a722760fd78758f85268e492f4890ce25">Finalize</a>();                                                    <span class="comment">// 終了処理</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">/* ゲッター */</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_c___gamepad.html#a2263c4e382b0fa118c473b15d7441d17">GetButtonPressingCount</a>(<a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4">eButton</a> button) <span class="keyword">const</span>;                   <span class="comment">// ボタンの押しているフレーム数を取得</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_c___gamepad.html#a8cc0a908d34bd107b5bd974b6e49f449">GetButtonReleasingCount</a>(<a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4">eButton</a> button) <span class="keyword">const</span>;                  <span class="comment">// ボタンの離しているフレーム数を取得</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_c___gamepad.html#aa4bbf5d33b4cb89e51b490f60154bfaa">GetStickXComponent</a>(<a class="code" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">eStick</a> stick1) <span class="keyword">const</span>;                        <span class="comment">// スティックのX成分を取得</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_c___gamepad.html#a3cfb3c8ff068be335af954d7c7563381">GetStickYComponent</a>(<a class="code" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">eStick</a> stick) <span class="keyword">const</span>;                         <span class="comment">// スティックのY成分を取得</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_c___gamepad.html#ab79c836c1a0d892ffe54947cedb8cd46">GetStickPushingCount</a>(<a class="code" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">eStick</a> stick) <span class="keyword">const</span>;                       <span class="comment">// スティックを倒しているフレーム数を取得</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_c___gamepad.html#a0130b2fdead61655a5e139e4fc4fa9ed">GetStickReleasingCount</a>(<a class="code" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">eStick</a> stick) <span class="keyword">const</span>;                     <span class="comment">// スティックを倒していないフレーム数を取得</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#ab708ce8bb33d614f969dccb370a02f7b">   62</a></span>&#160;    SDL_Joystick* <a class="code" href="class_c___gamepad.html#ab708ce8bb33d614f969dccb370a02f7b">pGamepad_</a>;                                            </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#af7507c50932f9dfe36ea57c14ae0e591">   63</a></span>&#160;    std::array&lt;int, BUTTON_TOTAL_NUMBER&gt; <a class="code" href="class_c___gamepad.html#af7507c50932f9dfe36ea57c14ae0e591">buttonPressingCounts_</a>;         </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#a7fc773c8f537f289fc2a10d74868e919">   64</a></span>&#160;    std::array&lt;int, BUTTON_TOTAL_NUMBER&gt; <a class="code" href="class_c___gamepad.html#a7fc773c8f537f289fc2a10d74868e919">buttonReleasingCounts_</a>;        </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#a63bc3361bd53ba1f47008e2412e9c464">   65</a></span>&#160;    std::array&lt;int, STICK_TOTAL_NUMBER&gt; <a class="code" href="class_c___gamepad.html#a63bc3361bd53ba1f47008e2412e9c464">stickComponentX_</a>;               </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#acb068d21dcd62f52c2ae7fc8daabfe64">   66</a></span>&#160;    std::array&lt;int, STICK_TOTAL_NUMBER&gt; <a class="code" href="class_c___gamepad.html#acb068d21dcd62f52c2ae7fc8daabfe64">stickComponentY_</a>;               </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#ab667a9650433da1ad229616add4e4846">   67</a></span>&#160;    std::array&lt;int, STICK_TOTAL_NUMBER&gt; <a class="code" href="class_c___gamepad.html#ab667a9650433da1ad229616add4e4846">stickPushingCounts_</a>;            </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_c___gamepad.html#af6044448445b189fe152760a56383a02">   68</a></span>&#160;    std::array&lt;int, STICK_TOTAL_NUMBER&gt; <a class="code" href="class_c___gamepad.html#af6044448445b189fe152760a56383a02">stickReleasingCounts_</a>;          </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
+<div class="ttc" id="class_c___gamepad_html_af6044448445b189fe152760a56383a02"><div class="ttname"><a href="class_c___gamepad.html#af6044448445b189fe152760a56383a02">C_Gamepad::stickReleasingCounts_</a></div><div class="ttdeci">std::array&lt; int, STICK_TOTAL_NUMBER &gt; stickReleasingCounts_</div><div class="ttdoc">スティックを倒していないフレーム数のカウンタ </div><div class="ttdef"><b>Definition:</b> Gamepad.h:68</div></div>
+<div class="ttc" id="class_c___gamepad_html_acb068d21dcd62f52c2ae7fc8daabfe64"><div class="ttname"><a href="class_c___gamepad.html#acb068d21dcd62f52c2ae7fc8daabfe64">C_Gamepad::stickComponentY_</a></div><div class="ttdeci">std::array&lt; int, STICK_TOTAL_NUMBER &gt; stickComponentY_</div><div class="ttdoc">スティックのY成分 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:66</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4ad3a7fa8cc36c5c24c0a4d2e0db56cb84"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4ad3a7fa8cc36c5c24c0a4d2e0db56cb84">C_Gamepad::BUTTON_FOUR_UP</a></div><div class="ttdoc">4つボタン・上 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:17</div></div>
+<div class="ttc" id="class_c___gamepad_html_a99de647cc10444d672f317d518e3dbda"><div class="ttname"><a href="class_c___gamepad.html#a99de647cc10444d672f317d518e3dbda">C_Gamepad::s_STICK_DEAD_ZONE</a></div><div class="ttdeci">static const int32_t s_STICK_DEAD_ZONE</div><div class="ttdoc">スティックの遊び値 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:45</div></div>
+<div class="ttc" id="class_c___gamepad_html_ab79c836c1a0d892ffe54947cedb8cd46"><div class="ttname"><a href="class_c___gamepad.html#ab79c836c1a0d892ffe54947cedb8cd46">C_Gamepad::GetStickPushingCount</a></div><div class="ttdeci">int GetStickPushingCount(eStick stick) const </div><div class="ttdoc">スティックを倒しているフレーム数を取得する </div><div class="ttdef"><b>Definition:</b> Gamepad.cpp:134</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4a4640e5ce3b74777133eece14cdeca44f"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a4640e5ce3b74777133eece14cdeca44f">C_Gamepad::BUTTON_SELECT</a></div><div class="ttdoc">セレクトボタン </div><div class="ttdef"><b>Definition:</b> Gamepad.h:26</div></div>
+<div class="ttc" id="class_c___gamepad_html_a722760fd78758f85268e492f4890ce25"><div class="ttname"><a href="class_c___gamepad.html#a722760fd78758f85268e492f4890ce25">C_Gamepad::Finalize</a></div><div class="ttdeci">void Finalize()</div><div class="ttdoc">ゲームパッドの終了処理を行う </div><div class="ttdef"><b>Definition:</b> Gamepad.cpp:65</div></div>
+<div class="ttc" id="class_c___gamepad_html_a63bc3361bd53ba1f47008e2412e9c464"><div class="ttname"><a href="class_c___gamepad.html#a63bc3361bd53ba1f47008e2412e9c464">C_Gamepad::stickComponentX_</a></div><div class="ttdeci">std::array&lt; int, STICK_TOTAL_NUMBER &gt; stickComponentX_</div><div class="ttdoc">スティックのX成分 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:65</div></div>
+<div class="ttc" id="class_c___gamepad_html_a18689643a5c076f5415ee1662b44199e"><div class="ttname"><a href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">C_Gamepad::eStick</a></div><div class="ttdeci">eStick</div><div class="ttdef"><b>Definition:</b> Gamepad.h:36</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4a82e17093cd1724bd3746b2e72a41f1d1"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a82e17093cd1724bd3746b2e72a41f1d1">C_Gamepad::BUTTON_FOUR_RIGHT</a></div><div class="ttdoc">4つボタン・右 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:20</div></div>
+<div class="ttc" id="class_c___gamepad_html_a3cfb3c8ff068be335af954d7c7563381"><div class="ttname"><a href="class_c___gamepad.html#a3cfb3c8ff068be335af954d7c7563381">C_Gamepad::GetStickYComponent</a></div><div class="ttdeci">int GetStickYComponent(eStick stick) const </div><div class="ttdoc">スティックのY成分を取得する </div><div class="ttdef"><b>Definition:</b> Gamepad.cpp:121</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4abf015c96b1663e149755d5b266839d19"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4abf015c96b1663e149755d5b266839d19">C_Gamepad::BUTTON_TOTAL_NUMBER</a></div><div class="ttdoc">ボタンの総数 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:32</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4a69b2bf51eb2ad62ad0c262332fcfbe52"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a69b2bf51eb2ad62ad0c262332fcfbe52">C_Gamepad::BUTTON_SHOULDER_2_LEFT</a></div><div class="ttdoc">L2ボタン </div><div class="ttdef"><b>Definition:</b> Gamepad.h:29</div></div>
+<div class="ttc" id="class_c___gamepad_html_af7507c50932f9dfe36ea57c14ae0e591"><div class="ttname"><a href="class_c___gamepad.html#af7507c50932f9dfe36ea57c14ae0e591">C_Gamepad::buttonPressingCounts_</a></div><div class="ttdeci">std::array&lt; int, BUTTON_TOTAL_NUMBER &gt; buttonPressingCounts_</div><div class="ttdoc">ボタンを押しているフレーム数のカウンタ </div><div class="ttdef"><b>Definition:</b> Gamepad.h:63</div></div>
+<div class="ttc" id="class_c___gamepad_html_a0130b2fdead61655a5e139e4fc4fa9ed"><div class="ttname"><a href="class_c___gamepad.html#a0130b2fdead61655a5e139e4fc4fa9ed">C_Gamepad::GetStickReleasingCount</a></div><div class="ttdeci">int GetStickReleasingCount(eStick stick) const </div><div class="ttdoc">スティックを離しているフレーム数を取得する </div><div class="ttdef"><b>Definition:</b> Gamepad.cpp:147</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4a818d2739a25ed80ddb962e00a36ab9d5"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a818d2739a25ed80ddb962e00a36ab9d5">C_Gamepad::BUTTON_CROSS_LEFT</a></div><div class="ttdoc">十字キー・左 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:23</div></div>
+<div class="ttc" id="class_c___gamepad_html_a8cc0a908d34bd107b5bd974b6e49f449"><div class="ttname"><a href="class_c___gamepad.html#a8cc0a908d34bd107b5bd974b6e49f449">C_Gamepad::GetButtonReleasingCount</a></div><div class="ttdeci">int GetButtonReleasingCount(eButton button) const </div><div class="ttdoc">ボタンを離しているフレーム数を取得する </div><div class="ttdef"><b>Definition:</b> Gamepad.cpp:95</div></div>
+<div class="ttc" id="class_c___gamepad_html_add01f2b55ef273e45227157a3eab8e3f"><div class="ttname"><a href="class_c___gamepad.html#add01f2b55ef273e45227157a3eab8e3f">C_Gamepad::Update</a></div><div class="ttdeci">virtual void Update()=0</div></div>
+<div class="ttc" id="class_c___gamepad_html_a18689643a5c076f5415ee1662b44199ea0dfd44e64301869383ef5ec9c03fa077"><div class="ttname"><a href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199ea0dfd44e64301869383ef5ec9c03fa077">C_Gamepad::STICK_RIGHT</a></div><div class="ttdoc">右スティック </div><div class="ttdef"><b>Definition:</b> Gamepad.h:39</div></div>
+<div class="ttc" id="class_c___gamepad_html_a7fc773c8f537f289fc2a10d74868e919"><div class="ttname"><a href="class_c___gamepad.html#a7fc773c8f537f289fc2a10d74868e919">C_Gamepad::buttonReleasingCounts_</a></div><div class="ttdeci">std::array&lt; int, BUTTON_TOTAL_NUMBER &gt; buttonReleasingCounts_</div><div class="ttdoc">ボタンを離しているフレーム数のカウンタ </div><div class="ttdef"><b>Definition:</b> Gamepad.h:64</div></div>
+<div class="ttc" id="class_c___gamepad_html_a3ee22a908c86d802a9cd4bffe3369b9d"><div class="ttname"><a href="class_c___gamepad.html#a3ee22a908c86d802a9cd4bffe3369b9d">C_Gamepad::s_STICK_PUSH_MINI</a></div><div class="ttdeci">static const int32_t s_STICK_PUSH_MINI</div><div class="ttdoc">スティックの倒し具合の最初値 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:47</div></div>
+<div class="ttc" id="class_c___gamepad_html_a18689643a5c076f5415ee1662b44199ea25ea21670e5f58f91e3245157e5847e6"><div class="ttname"><a href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199ea25ea21670e5f58f91e3245157e5847e6">C_Gamepad::STICK_TOTAL_NUMBER</a></div><div class="ttdoc">スティックの総数 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:41</div></div>
+<div class="ttc" id="class_c___gamepad_html_ab667a9650433da1ad229616add4e4846"><div class="ttname"><a href="class_c___gamepad.html#ab667a9650433da1ad229616add4e4846">C_Gamepad::stickPushingCounts_</a></div><div class="ttdeci">std::array&lt; int, STICK_TOTAL_NUMBER &gt; stickPushingCounts_</div><div class="ttdoc">スティックを倒しているフレーム数のカウンタ </div><div class="ttdef"><b>Definition:</b> Gamepad.h:67</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4ab963f1651d54879b3674b8703dc2fbac"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4ab963f1651d54879b3674b8703dc2fbac">C_Gamepad::BUTTON_CROSS_UP</a></div><div class="ttdoc">十字キー・上 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:21</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4a384f51f0a1967153399430b17de03d3f"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a384f51f0a1967153399430b17de03d3f">C_Gamepad::BUTTON_SHOULDER_1_LEFT</a></div><div class="ttdoc">L1ボタン </div><div class="ttdef"><b>Definition:</b> Gamepad.h:27</div></div>
+<div class="ttc" id="class_c___gamepad_html_a49cd1f43479ae65fee9fc485a60fef7e"><div class="ttname"><a href="class_c___gamepad.html#a49cd1f43479ae65fee9fc485a60fef7e">C_Gamepad::C_Gamepad</a></div><div class="ttdeci">C_Gamepad(SDL_Joystick *pGamepad)</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> Gamepad.cpp:29</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4">C_Gamepad::eButton</a></div><div class="ttdeci">eButton</div><div class="ttdef"><b>Definition:</b> Gamepad.h:15</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4a15fd5e140dcc6d31326416c9608516ba"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a15fd5e140dcc6d31326416c9608516ba">C_Gamepad::BUTTON_SHOULDER_2_RIGHT</a></div><div class="ttdoc">R2ボタン </div><div class="ttdef"><b>Definition:</b> Gamepad.h:30</div></div>
+<div class="ttc" id="class_c___gamepad_html"><div class="ttname"><a href="class_c___gamepad.html">C_Gamepad</a></div><div class="ttdoc">ゲームパッド </div><div class="ttdef"><b>Definition:</b> Gamepad.h:11</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4a33e1aa6a9d4177417c439d12b4c7648a"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a33e1aa6a9d4177417c439d12b4c7648a">C_Gamepad::BUTTON_CROSS_DOWN</a></div><div class="ttdoc">十字キー・下 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:22</div></div>
+<div class="ttc" id="class_c___gamepad_html_ab708ce8bb33d614f969dccb370a02f7b"><div class="ttname"><a href="class_c___gamepad.html#ab708ce8bb33d614f969dccb370a02f7b">C_Gamepad::pGamepad_</a></div><div class="ttdeci">SDL_Joystick * pGamepad_</div><div class="ttdoc">ゲームパッド </div><div class="ttdef"><b>Definition:</b> Gamepad.h:62</div></div>
+<div class="ttc" id="class_c___gamepad_html_a34c0a1ddd76c50022fd8c74dcc478613"><div class="ttname"><a href="class_c___gamepad.html#a34c0a1ddd76c50022fd8c74dcc478613">C_Gamepad::s_STICK_PUSH_MAX</a></div><div class="ttdeci">static const int32_t s_STICK_PUSH_MAX</div><div class="ttdoc">スティックの倒し具合の最大数 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:46</div></div>
+<div class="ttc" id="class_c___gamepad_html_a2263c4e382b0fa118c473b15d7441d17"><div class="ttname"><a href="class_c___gamepad.html#a2263c4e382b0fa118c473b15d7441d17">C_Gamepad::GetButtonPressingCount</a></div><div class="ttdeci">int GetButtonPressingCount(eButton button) const </div><div class="ttdoc">ボタンを押しているフレーム数を取得する </div><div class="ttdef"><b>Definition:</b> Gamepad.cpp:82</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4ab57b67e35a41ab896dea9b87882cb5ec"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4ab57b67e35a41ab896dea9b87882cb5ec">C_Gamepad::BUTTON_SHOULDER_1_RIGHT</a></div><div class="ttdoc">R1ボタン </div><div class="ttdef"><b>Definition:</b> Gamepad.h:28</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4a844ee84625d67a7bcc648754dc603a04"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a844ee84625d67a7bcc648754dc603a04">C_Gamepad::BUTTON_FOUR_LEFT</a></div><div class="ttdoc">4つボタン・左 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:19</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4a26d154de54710ba77ebe470358084c2e"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a26d154de54710ba77ebe470358084c2e">C_Gamepad::BUTTON_START</a></div><div class="ttdoc">スタートボタン </div><div class="ttdef"><b>Definition:</b> Gamepad.h:25</div></div>
+<div class="ttc" id="class_c___gamepad_html_aa4bbf5d33b4cb89e51b490f60154bfaa"><div class="ttname"><a href="class_c___gamepad.html#aa4bbf5d33b4cb89e51b490f60154bfaa">C_Gamepad::GetStickXComponent</a></div><div class="ttdeci">int GetStickXComponent(eStick stick1) const </div><div class="ttdoc">スティックのX成分を取得する </div><div class="ttdef"><b>Definition:</b> Gamepad.cpp:108</div></div>
+<div class="ttc" id="class_c___gamepad_html_a18689643a5c076f5415ee1662b44199ea95d59ab88845f0cab7e5fa44e4bc43f1"><div class="ttname"><a href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199ea95d59ab88845f0cab7e5fa44e4bc43f1">C_Gamepad::STICK_LEFT</a></div><div class="ttdoc">左スティック </div><div class="ttdef"><b>Definition:</b> Gamepad.h:38</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4a4ac2520771ed37574de9dd8c527b8db0"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4a4ac2520771ed37574de9dd8c527b8db0">C_Gamepad::BUTTON_FOUR_DOWN</a></div><div class="ttdoc">4つボタン・下 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:18</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4ab85ff18d8f9fdc627301e45970bc5764"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4ab85ff18d8f9fdc627301e45970bc5764">C_Gamepad::BUTTON_CROSS_RIGHT</a></div><div class="ttdoc">十字キー・右 </div><div class="ttdef"><b>Definition:</b> Gamepad.h:24</div></div>
+<div class="ttc" id="class_c___gamepad_html_af2b50f5356a8ea654b5eb0f926a66934"><div class="ttname"><a href="class_c___gamepad.html#af2b50f5356a8ea654b5eb0f926a66934">C_Gamepad::~C_Gamepad</a></div><div class="ttdeci">virtual ~C_Gamepad()</div><div class="ttdoc">デストラクタ </div><div class="ttdef"><b>Definition:</b> Gamepad.cpp:53</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分49秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

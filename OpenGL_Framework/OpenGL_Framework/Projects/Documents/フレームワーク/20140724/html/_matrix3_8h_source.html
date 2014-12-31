@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: Matrix3.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Matrix3.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_matrix3_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* 二重インクルード防止 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>UtilityMath</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">/* 前方宣言 */</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">struct </span>S_Vector3;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">struct </span>S_Matrix4;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span>    <span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___matrix3.html">   24</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">/* 9個の要素 */</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">union</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___matrix3.html#ad5944d45e23c1cdcf0b1daeb12a3f300">   29</a></span>&#160;            <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#ad5944d45e23c1cdcf0b1daeb12a3f300">a_</a>[9];                                                                </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___matrix3.html#aef285d8c3bd395abe118eaeb00fbd033">   30</a></span>&#160;            <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#aef285d8c3bd395abe118eaeb00fbd033">a3x3_</a>[3][3];                                                          </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">struct</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            {</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___matrix3.html#ac8bc1f5f46fcbaef204b905439936048">   35</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a7f1b5667011b7ee9c35c134ae8f09d0d">a11_</a>, <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a64e2293bdf559ad1fc9caded4976acd2">a12_</a>, <a class="code" href="struct_utility_math_1_1_s___matrix3.html#ac8bc1f5f46fcbaef204b905439936048">a13_</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___matrix3.html#aba9a47a9866fda6d2224f7d2ef636d2a">   36</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a17f332f7150270f26ceed297d727a038">a21_</a>, <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a745797173621dfb6579542ea8fc80251">a22_</a>, <a class="code" href="struct_utility_math_1_1_s___matrix3.html#aba9a47a9866fda6d2224f7d2ef636d2a">a23_</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___matrix3.html#a9fd3ff0d12168b8a23ba5da60b7124ea">   37</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a1aa4e544d90cfa1f6db7604be248f837">a31_</a>, <a class="code" href="struct_utility_math_1_1_s___matrix3.html#aafd10acda57c8fd107eb6f407343c700">a32_</a>, <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9fd3ff0d12168b8a23ba5da60b7124ea">a33_</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            };</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        };</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a>();                                                                    <span class="comment">// コンストラクタ</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a>(<span class="keywordtype">float</span> a11, <span class="keywordtype">float</span> a21, <span class="keywordtype">float</span> a31,                                      <span class="comment">// コンストラクタ( 各要素を指定した値で初期化 )</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                  <span class="keywordtype">float</span> a12, <span class="keywordtype">float</span> a22, <span class="keywordtype">float</span> a32,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                  <span class="keywordtype">float</span> a13, <span class="keywordtype">float</span> a23, <span class="keywordtype">float</span> a33);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> a[9]);                                           <span class="comment">// コンストラクタ( 要素を指定した配列で初期化 )</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a5e8d09164b52b86ec5c0f6e868158884">~S_Matrix3</a>();                                                                   <span class="comment">// デストラクタ</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a6f4d2618c85bd53cb030cee967da7304">Zero</a>();                                                                    <span class="comment">// ゼロ行列化</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a8b76d9d7429742e1c5b55d0d0be013f2">Identity</a>();                                                                <span class="comment">// 単位行列化</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a6f3b14c1684898a565896d1029e6e7e4">Transpose</a>();                                                               <span class="comment">// 転置行列化</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#abc99746e4a5c0813afadf7f29a219c81">Inverse</a>();                                                                 <span class="comment">// 逆行列化</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">/* ゲッター */</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a3d7c58d477f1ad99d6caea262c76194b">GetTranspose</a>() <span class="keyword">const</span>;                                                 <span class="comment">// 転置行列を取得</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a5d14f841f9fe85471cf7071e7061dca1">GetInverse</a>() <span class="keyword">const</span>;                                                   <span class="comment">// 逆行列を取得</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">static</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#ac86ad260fae9ecef732c6ccc5a3e7e62">s_CreateRotation</a>(<span class="keywordtype">float</span> angle);                                 <span class="comment">// 回転行列を作成</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">static</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a6e6454df566089c6b6f73f2b4c16ba49">s_CreateScaling</a>(<span class="keywordtype">float</span> rateX, <span class="keywordtype">float</span> rateY);                     <span class="comment">// 拡縮行列を作成</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">static</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a29387b9b5a63efd0e10b6ad20e77b85f">s_CreateTranslation</a>(<span class="keywordtype">float</span> movementX, <span class="keywordtype">float</span> movementY);         <span class="comment">// 平行移動行列を作成</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">static</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a259dae8e6f0a12a12fff8eefbacad8ba">s_ConvertMatrix4ToMatrix3</a>(<span class="keyword">const</span> S_Matrix4&amp; rMatirx);           <span class="comment">// 4 * 4を行列を3 * 3の行列に変換し、取得</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">static</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#ab167e83950e357ec23a34e4280b02e84">s_CreateNormal</a>(<span class="keyword">const</span> S_Matrix4&amp; rMatrix);                      <span class="comment">// 法線行列を作成</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment">/* S_Matrix3型との演算子のオーバーロード */</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#aad1b4458710bc3a5c44415496c6b8cc4">operator+</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a>&amp; rAnother) <span class="keyword">const</span>;                     <span class="comment">// +演算子のオーバーロード</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a4bad6de9b59e62d28e24611683c82e4b">operator-</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a>&amp; rAnother) <span class="keyword">const</span>;                     <span class="comment">// -演算子のオーバーロード</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a2252def3a280e4a14b611fdfb6d53892">operator*</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a>&amp; rAnother) <span class="keyword">const</span>;                     <span class="comment">// *演算子のオーバーロード</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a>&amp; <a class="code" href="struct_utility_math_1_1_s___matrix3.html#ae57c2b8575bffdedb011f3ddea6eff4f">operator+=</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a>&amp; rAnother);                         <span class="comment">// +=演算子のオーバーロード</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a>&amp; <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a2a6d5577c961099d4f87fad2e54f69e5">operator-=</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a>&amp; rAnother);                         <span class="comment">// -=演算子のオーバーロード</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a>&amp; <a class="code" href="struct_utility_math_1_1_s___matrix3.html#ac9152ac03366ec0fe7c457339f85ca82">operator*=</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a>&amp; rAnother);                         <span class="comment">// *=演算子のオーバーロード</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">/* S_Vector3型との演算子のオーバーロード */</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">const</span> S_Vector3 <a class="code" href="struct_utility_math_1_1_s___matrix3.html#a2252def3a280e4a14b611fdfb6d53892">operator*</a>(<span class="keyword">const</span> S_Vector3&amp; rVector) <span class="keyword">const</span>;                      <span class="comment">// *演算子のオーバーロード</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">/* ゲッター */</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">float</span> GetDeterminant() <span class="keyword">const</span>;                                                   <span class="comment">// 行列式を取得</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    };</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_aad1b4458710bc3a5c44415496c6b8cc4"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#aad1b4458710bc3a5c44415496c6b8cc4">UtilityMath::S_Matrix3::operator+</a></div><div class="ttdeci">const S_Matrix3 operator+(const S_Matrix3 &amp;rAnother) const </div><div class="ttdoc">もう一つの行列を加算した行列を求める </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:344</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_ae57c2b8575bffdedb011f3ddea6eff4f"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#ae57c2b8575bffdedb011f3ddea6eff4f">UtilityMath::S_Matrix3::operator+=</a></div><div class="ttdeci">const S_Matrix3 &amp; operator+=(const S_Matrix3 &amp;rAnother)</div><div class="ttdoc">もう一つの行列を加算する </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:410</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_abc99746e4a5c0813afadf7f29a219c81"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#abc99746e4a5c0813afadf7f29a219c81">UtilityMath::S_Matrix3::Inverse</a></div><div class="ttdeci">void Inverse()</div><div class="ttdoc">逆行列化する </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:149</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a6e6454df566089c6b6f73f2b4c16ba49"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a6e6454df566089c6b6f73f2b4c16ba49">UtilityMath::S_Matrix3::s_CreateScaling</a></div><div class="ttdeci">static S_Matrix3 s_CreateScaling(float rateX, float rateY)</div><div class="ttdoc">拡縮行列を作成する </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:256</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a></div><div class="ttdoc">マトリクス3 </div><div class="ttdef"><b>Definition:</b> Matrix3.h:24</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_ab167e83950e357ec23a34e4280b02e84"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#ab167e83950e357ec23a34e4280b02e84">UtilityMath::S_Matrix3::s_CreateNormal</a></div><div class="ttdeci">static S_Matrix3 s_CreateNormal(const S_Matrix4 &amp;rMatrix)</div><div class="ttdoc">法線行列を作成する </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:321</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_aafd10acda57c8fd107eb6f407343c700"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#aafd10acda57c8fd107eb6f407343c700">UtilityMath::S_Matrix3::a32_</a></div><div class="ttdeci">float a32_</div><div class="ttdef"><b>Definition:</b> Matrix3.h:37</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a6f4d2618c85bd53cb030cee967da7304"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a6f4d2618c85bd53cb030cee967da7304">UtilityMath::S_Matrix3::Zero</a></div><div class="ttdeci">void Zero()</div><div class="ttdoc">ゼロ行列化する </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:97</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a5d14f841f9fe85471cf7071e7061dca1"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a5d14f841f9fe85471cf7071e7061dca1">UtilityMath::S_Matrix3::GetInverse</a></div><div class="ttdeci">S_Matrix3 GetInverse() const </div><div class="ttdoc">逆行列を取得する </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:207</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_ac8bc1f5f46fcbaef204b905439936048"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#ac8bc1f5f46fcbaef204b905439936048">UtilityMath::S_Matrix3::a13_</a></div><div class="ttdeci">float a13_</div><div class="ttdef"><b>Definition:</b> Matrix3.h:35</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_aba9a47a9866fda6d2224f7d2ef636d2a"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#aba9a47a9866fda6d2224f7d2ef636d2a">UtilityMath::S_Matrix3::a23_</a></div><div class="ttdeci">float a23_</div><div class="ttdef"><b>Definition:</b> Matrix3.h:36</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a6f3b14c1684898a565896d1029e6e7e4"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a6f3b14c1684898a565896d1029e6e7e4">UtilityMath::S_Matrix3::Transpose</a></div><div class="ttdeci">void Transpose()</div><div class="ttdoc">転置行列化する </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:133</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a8b76d9d7429742e1c5b55d0d0be013f2"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a8b76d9d7429742e1c5b55d0d0be013f2">UtilityMath::S_Matrix3::Identity</a></div><div class="ttdeci">void Identity()</div><div class="ttdoc">単位行列化する </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:110</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a3d7c58d477f1ad99d6caea262c76194b"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a3d7c58d477f1ad99d6caea262c76194b">UtilityMath::S_Matrix3::GetTranspose</a></div><div class="ttdeci">S_Matrix3 GetTranspose() const </div><div class="ttdoc">転置行列を取得する </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:188</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_ac86ad260fae9ecef732c6ccc5a3e7e62"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#ac86ad260fae9ecef732c6ccc5a3e7e62">UtilityMath::S_Matrix3::s_CreateRotation</a></div><div class="ttdeci">static S_Matrix3 s_CreateRotation(float angle)</div><div class="ttdoc">回転行列を作成する </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:226</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a64e2293bdf559ad1fc9caded4976acd2"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a64e2293bdf559ad1fc9caded4976acd2">UtilityMath::S_Matrix3::a12_</a></div><div class="ttdeci">float a12_</div><div class="ttdef"><b>Definition:</b> Matrix3.h:35</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a2252def3a280e4a14b611fdfb6d53892"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a2252def3a280e4a14b611fdfb6d53892">UtilityMath::S_Matrix3::operator*</a></div><div class="ttdeci">const S_Matrix3 operator*(const S_Matrix3 &amp;rAnother) const </div><div class="ttdoc">もう一つの行列を乗算した行列を求める </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:382</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a9e0b1b27a7807ca518e9fce1828ced53"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">UtilityMath::S_Matrix3::S_Matrix3</a></div><div class="ttdeci">S_Matrix3()</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:13</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_aef285d8c3bd395abe118eaeb00fbd033"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#aef285d8c3bd395abe118eaeb00fbd033">UtilityMath::S_Matrix3::a3x3_</a></div><div class="ttdeci">float a3x3_[3][3]</div><div class="ttdoc">3 * 3の二次元配列 </div><div class="ttdef"><b>Definition:</b> Matrix3.h:30</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a7f1b5667011b7ee9c35c134ae8f09d0d"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a7f1b5667011b7ee9c35c134ae8f09d0d">UtilityMath::S_Matrix3::a11_</a></div><div class="ttdeci">float a11_</div><div class="ttdef"><b>Definition:</b> Matrix3.h:35</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a9fd3ff0d12168b8a23ba5da60b7124ea"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a9fd3ff0d12168b8a23ba5da60b7124ea">UtilityMath::S_Matrix3::a33_</a></div><div class="ttdeci">float a33_</div><div class="ttdef"><b>Definition:</b> Matrix3.h:37</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a2a6d5577c961099d4f87fad2e54f69e5"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a2a6d5577c961099d4f87fad2e54f69e5">UtilityMath::S_Matrix3::operator-=</a></div><div class="ttdeci">const S_Matrix3 &amp; operator-=(const S_Matrix3 &amp;rAnother)</div><div class="ttdoc">もう一つの行列で減算する </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:425</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_ac9152ac03366ec0fe7c457339f85ca82"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#ac9152ac03366ec0fe7c457339f85ca82">UtilityMath::S_Matrix3::operator*=</a></div><div class="ttdeci">const S_Matrix3 &amp; operator*=(const S_Matrix3 &amp;rAnother)</div><div class="ttdoc">もう一つの行列を乗算する </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:440</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a29387b9b5a63efd0e10b6ad20e77b85f"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a29387b9b5a63efd0e10b6ad20e77b85f">UtilityMath::S_Matrix3::s_CreateTranslation</a></div><div class="ttdeci">static S_Matrix3 s_CreateTranslation(float movementX, float movementY)</div><div class="ttdoc">平行移動行列を作成する </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:277</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a745797173621dfb6579542ea8fc80251"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a745797173621dfb6579542ea8fc80251">UtilityMath::S_Matrix3::a22_</a></div><div class="ttdeci">float a22_</div><div class="ttdef"><b>Definition:</b> Matrix3.h:36</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a1aa4e544d90cfa1f6db7604be248f837"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a1aa4e544d90cfa1f6db7604be248f837">UtilityMath::S_Matrix3::a31_</a></div><div class="ttdeci">float a31_</div><div class="ttdef"><b>Definition:</b> Matrix3.h:37</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a259dae8e6f0a12a12fff8eefbacad8ba"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a259dae8e6f0a12a12fff8eefbacad8ba">UtilityMath::S_Matrix3::s_ConvertMatrix4ToMatrix3</a></div><div class="ttdeci">static S_Matrix3 s_ConvertMatrix4ToMatrix3(const S_Matrix4 &amp;rMatirx)</div><div class="ttdoc">4 * 4の行列を3 * 3の行列に変換し、取得する </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:297</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_ad5944d45e23c1cdcf0b1daeb12a3f300"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#ad5944d45e23c1cdcf0b1daeb12a3f300">UtilityMath::S_Matrix3::a_</a></div><div class="ttdeci">float a_[9]</div><div class="ttdoc">9個の要素を持つ配列 </div><div class="ttdef"><b>Definition:</b> Matrix3.h:29</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a5e8d09164b52b86ec5c0f6e868158884"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a5e8d09164b52b86ec5c0f6e868158884">UtilityMath::S_Matrix3::~S_Matrix3</a></div><div class="ttdeci">~S_Matrix3()</div><div class="ttdoc">デストラクタ </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:85</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a4bad6de9b59e62d28e24611683c82e4b"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a4bad6de9b59e62d28e24611683c82e4b">UtilityMath::S_Matrix3::operator-</a></div><div class="ttdeci">const S_Matrix3 operator-(const S_Matrix3 &amp;rAnother) const </div><div class="ttdoc">もう一つの行列で減算した行列を求める </div><div class="ttdef"><b>Definition:</b> Matrix3.cpp:363</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html_a17f332f7150270f26ceed297d727a038"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html#a17f332f7150270f26ceed297d727a038">UtilityMath::S_Matrix3::a21_</a></div><div class="ttdeci">float a21_</div><div class="ttdef"><b>Definition:</b> Matrix3.h:36</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分49秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

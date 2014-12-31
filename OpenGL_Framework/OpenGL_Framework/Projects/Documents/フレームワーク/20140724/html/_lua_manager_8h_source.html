@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: LuaManager.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">LuaManager.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_lua_manager_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* 二重インクルード防止 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* ヘッダファイル */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_automatic_singleton_8h.html">AutomaticSingleton.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_c___lua_manager.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c___lua_manager.html">C_LuaManager</a> : <span class="keyword">public</span> <a class="code" href="class_c___automatic_singleton.html">C_AutomaticSingleton</a>&lt;C_LuaManager&gt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">/* 定数 */</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_c___lua_manager.html#ac28673e2e89ba60780ba3e21a108ba51">   19</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="class_c___lua_manager.html#ac28673e2e89ba60780ba3e21a108ba51">s_GLOBAL_ID</a>;                                   </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_c___lua_manager.html#a1d9fb8e98a2fb6c5df182e0c7f32e97a">C_LuaManager</a>();                                                         <span class="comment">// コンストラクタ</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_c___lua_manager.html#ad3983dd2512395decfa28c3615775a87">~C_LuaManager</a>() <span class="keyword">override</span>;                                               <span class="comment">// デストラクタ</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___lua_manager.html#a7435920660a6ece5d03cc92159cc2014">Create</a>(<span class="keyword">const</span> std::string <span class="keywordtype">id</span>);                                      <span class="comment">// Luaステートを作成</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___lua_manager.html#acb20169f078decb5fd94da69c2db8300">Delete</a>(<span class="keyword">const</span> std::string <span class="keywordtype">id</span>);                                      <span class="comment">// Luaステートを破棄</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___lua_manager.html#a8f4e24b44dcfcc927b76dcd4dfb8a718">PrintStack</a>(<span class="keyword">const</span> std::string <span class="keywordtype">id</span> = <a class="code" href="class_c___lua_manager.html#ac28673e2e89ba60780ba3e21a108ba51">s_GLOBAL_ID</a>);                    <span class="comment">// スタックを出力</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">/* ゲッター */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    lua_State* <a class="code" href="class_c___lua_manager.html#a50be1d95b00e19ad9921b1b274c9c4e9">GetState</a>(<span class="keyword">const</span> std::string <span class="keywordtype">id</span> = <a class="code" href="class_c___lua_manager.html#ac28673e2e89ba60780ba3e21a108ba51">s_GLOBAL_ID</a>) <span class="keyword">const</span>;          <span class="comment">// Luaステートを取得</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::unordered_map&lt;std::string, lua_State*&gt; pStates_;                   </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="ttc" id="class_c___lua_manager_html_a50be1d95b00e19ad9921b1b274c9c4e9"><div class="ttname"><a href="class_c___lua_manager.html#a50be1d95b00e19ad9921b1b274c9c4e9">C_LuaManager::GetState</a></div><div class="ttdeci">lua_State * GetState(const std::string id=s_GLOBAL_ID) const </div><div class="ttdoc">Luaステートを取得する </div><div class="ttdef"><b>Definition:</b> LuaManager.cpp:217</div></div>
+<div class="ttc" id="class_c___lua_manager_html_a7435920660a6ece5d03cc92159cc2014"><div class="ttname"><a href="class_c___lua_manager.html#a7435920660a6ece5d03cc92159cc2014">C_LuaManager::Create</a></div><div class="ttdeci">void Create(const std::string id)</div><div class="ttdoc">Luaステートを作成する </div><div class="ttdef"><b>Definition:</b> LuaManager.cpp:67</div></div>
+<div class="ttc" id="class_c___automatic_singleton_html"><div class="ttname"><a href="class_c___automatic_singleton.html">C_AutomaticSingleton</a></div><div class="ttdoc">オートマティックシングルトン </div><div class="ttdef"><b>Definition:</b> AutomaticSingleton.h:13</div></div>
+<div class="ttc" id="class_c___lua_manager_html_acb20169f078decb5fd94da69c2db8300"><div class="ttname"><a href="class_c___lua_manager.html#acb20169f078decb5fd94da69c2db8300">C_LuaManager::Delete</a></div><div class="ttdeci">void Delete(const std::string id)</div><div class="ttdoc">Luaステートを破棄する </div><div class="ttdef"><b>Definition:</b> LuaManager.cpp:96</div></div>
+<div class="ttc" id="class_c___lua_manager_html_a1d9fb8e98a2fb6c5df182e0c7f32e97a"><div class="ttname"><a href="class_c___lua_manager.html#a1d9fb8e98a2fb6c5df182e0c7f32e97a">C_LuaManager::C_LuaManager</a></div><div class="ttdeci">C_LuaManager()</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> LuaManager.cpp:21</div></div>
+<div class="ttc" id="class_c___lua_manager_html_ad3983dd2512395decfa28c3615775a87"><div class="ttname"><a href="class_c___lua_manager.html#ad3983dd2512395decfa28c3615775a87">C_LuaManager::~C_LuaManager</a></div><div class="ttdeci">~C_LuaManager() override</div><div class="ttdoc">デストラクタ </div><div class="ttdef"><b>Definition:</b> LuaManager.cpp:43</div></div>
+<div class="ttc" id="class_c___lua_manager_html"><div class="ttname"><a href="class_c___lua_manager.html">C_LuaManager</a></div><div class="ttdoc">Luaマネージャー </div><div class="ttdef"><b>Definition:</b> LuaManager.h:15</div></div>
+<div class="ttc" id="_automatic_singleton_8h_html"><div class="ttname"><a href="_automatic_singleton_8h.html">AutomaticSingleton.h</a></div></div>
+<div class="ttc" id="class_c___lua_manager_html_ac28673e2e89ba60780ba3e21a108ba51"><div class="ttname"><a href="class_c___lua_manager.html#ac28673e2e89ba60780ba3e21a108ba51">C_LuaManager::s_GLOBAL_ID</a></div><div class="ttdeci">static const std::string s_GLOBAL_ID</div><div class="ttdoc">全体で使用可能なID </div><div class="ttdef"><b>Definition:</b> LuaManager.h:19</div></div>
+<div class="ttc" id="class_c___lua_manager_html_a8f4e24b44dcfcc927b76dcd4dfb8a718"><div class="ttname"><a href="class_c___lua_manager.html#a8f4e24b44dcfcc927b76dcd4dfb8a718">C_LuaManager::PrintStack</a></div><div class="ttdeci">void PrintStack(const std::string id=s_GLOBAL_ID)</div><div class="ttdoc">スタックを出力する </div><div class="ttdef"><b>Definition:</b> LuaManager.cpp:119</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分49秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

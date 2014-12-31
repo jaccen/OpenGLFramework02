@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: Collision2D.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Collision2D.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_collision2_d_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* 二重インクルード防止 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* 名前空間を設定 */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>UtilityMath</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="comment">/* 前方宣言 */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">struct </span>S_Vector2;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;};</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_c___collision2_d.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c___collision2_d.html">C_Collision2D</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">/* 矩形同士の衝突判定 */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_c___collision2_d.html#a8df33dac31719dfbfeddf6497a1e3e0f">s_CheckRectangleAndRectangle</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rCenterPosition,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                             <span class="keywordtype">float</span> halfWidth,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                             <span class="keywordtype">float</span> halfHeight,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                             <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rAnotherCenterPosition,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                             <span class="keywordtype">float</span> anotherHalfWidth,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                             <span class="keywordtype">float</span> anotherHalfHeihgt);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">/* 円同士の衝突判定 */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_c___collision2_d.html#a7de46993fe667e1e13c8734437c78299">s_CheckCircleAndCircle</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rCenterPosition,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                       <span class="keywordtype">float</span> radius,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                       <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rAnotherCenterPosition,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                       <span class="keywordtype">float</span> anotherRadius);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">/* 矩形と円の衝突判定 */</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_c___collision2_d.html#aeff3f7ed3044092e1dafe3bf11919d12">s_CheckRectangleAndCircle</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rRectangleCenterPosition,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                          <span class="keywordtype">float</span> rectangleHalfWidth,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                          <span class="keywordtype">float</span> rectangleHalfHeight,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                          <span class="keywordtype">float</span> rectangleAngle,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                          <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rCircleCenterPosition,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                          <span class="keywordtype">float</span> circleRadius);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">/* 円と点の衝突判定 */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_c___collision2_d.html#a84c43af737660c6aae1d667159609020">s_CheckCircleAndPoint</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rCircleCenterPosition,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                      <span class="keywordtype">float</span> circleRadius,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                      <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rPoint);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">/* 円と線分の衝突判定 */</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_c___collision2_d.html#a0ab6419da99cff26b680060eae801451">s_CheckCircleAndSegment</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rCircleCenterPosition,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                        <span class="keywordtype">float</span> circleRadius,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rSegmentBeginPoint,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rSegmentEndPoint);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">/* 点と点の衝突判定 */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_c___collision2_d.html#a2fd04bebb38f10788504e95776d07257">s_CheckPointAndPoint</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rPoint,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                     <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rAnotherPoint);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">/* 点と線分の衝突判定 */</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_c___collision2_d.html#a5fbdeae8cca0ec7d9f97c1a3f79cec80">s_CheckPointAndSegment</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rPoint,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                       <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rSegmentBeginPoint,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                       <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rSegmentEndPoint);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">/* 点と楕円の衝突判定 */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_c___collision2_d.html#a30d3eba5634d688810953d97ecb9d186">s_CheckPointAndEllipse</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rPoint,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                       <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rEllipseCenterPosition,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                       <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rEllipseSemidiameter,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                       <span class="keywordtype">float</span> ellipseAngle);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">/* 線分と線分の衝突判定 */</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_c___collision2_d.html#adc5a9d70810f0a4f2ec570221c59e590">s_CheckSegmentAndSegment</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rBeginPoint,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                         <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rEndPoint,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                         <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rAnotherBeginPoint,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                         <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rAnotherEndPoint,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                         <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>* pIntersectionPoint);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
+<div class="ttc" id="class_c___collision2_d_html_a5fbdeae8cca0ec7d9f97c1a3f79cec80"><div class="ttname"><a href="class_c___collision2_d.html#a5fbdeae8cca0ec7d9f97c1a3f79cec80">C_Collision2D::s_CheckPointAndSegment</a></div><div class="ttdeci">static bool s_CheckPointAndSegment(const UtilityMath::S_Vector2 &amp;rPoint, const UtilityMath::S_Vector2 &amp;rSegmentBeginPoint, const UtilityMath::S_Vector2 &amp;rSegmentEndPoint)</div><div class="ttdoc">点と線分の衝突判定を行う </div><div class="ttdef"><b>Definition:</b> Collision2D.cpp:274</div></div>
+<div class="ttc" id="class_c___collision2_d_html_aeff3f7ed3044092e1dafe3bf11919d12"><div class="ttname"><a href="class_c___collision2_d.html#aeff3f7ed3044092e1dafe3bf11919d12">C_Collision2D::s_CheckRectangleAndCircle</a></div><div class="ttdeci">static bool s_CheckRectangleAndCircle(const UtilityMath::S_Vector2 &amp;rRectangleCenterPosition, float rectangleHalfWidth, float rectangleHalfHeight, float rectangleAngle, const UtilityMath::S_Vector2 &amp;rCircleCenterPosition, float circleRadius)</div><div class="ttdoc">矩形と円の衝突判定を行う </div><div class="ttdef"><b>Definition:</b> Collision2D.cpp:81</div></div>
+<div class="ttc" id="class_c___collision2_d_html_a7de46993fe667e1e13c8734437c78299"><div class="ttname"><a href="class_c___collision2_d.html#a7de46993fe667e1e13c8734437c78299">C_Collision2D::s_CheckCircleAndCircle</a></div><div class="ttdeci">static bool s_CheckCircleAndCircle(const UtilityMath::S_Vector2 &amp;rCenterPosition, float radius, const UtilityMath::S_Vector2 &amp;rAnotherCenterPosition, float anotherRadius)</div><div class="ttdoc">円同士の衝突判定を行う </div><div class="ttdef"><b>Definition:</b> Collision2D.cpp:50</div></div>
+<div class="ttc" id="class_c___collision2_d_html_a0ab6419da99cff26b680060eae801451"><div class="ttname"><a href="class_c___collision2_d.html#a0ab6419da99cff26b680060eae801451">C_Collision2D::s_CheckCircleAndSegment</a></div><div class="ttdeci">static bool s_CheckCircleAndSegment(const UtilityMath::S_Vector2 &amp;rCircleCenterPosition, float circleRadius, const UtilityMath::S_Vector2 &amp;rSegmentBeginPoint, const UtilityMath::S_Vector2 &amp;rSegmentEndPoint)</div><div class="ttdoc">円と線分の衝突判定を行う </div><div class="ttdef"><b>Definition:</b> Collision2D.cpp:189</div></div>
+<div class="ttc" id="class_c___collision2_d_html"><div class="ttname"><a href="class_c___collision2_d.html">C_Collision2D</a></div><div class="ttdoc">コリジョン2D </div><div class="ttdef"><b>Definition:</b> Collision2D.h:19</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector2_html"><div class="ttname"><a href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a></div><div class="ttdoc">ベクター2 </div><div class="ttdef"><b>Definition:</b> Vector2.h:19</div></div>
+<div class="ttc" id="class_c___collision2_d_html_a84c43af737660c6aae1d667159609020"><div class="ttname"><a href="class_c___collision2_d.html#a84c43af737660c6aae1d667159609020">C_Collision2D::s_CheckCircleAndPoint</a></div><div class="ttdeci">static bool s_CheckCircleAndPoint(const UtilityMath::S_Vector2 &amp;rCircleCenterPosition, float circleRadius, const UtilityMath::S_Vector2 &amp;rPoint)</div><div class="ttdoc">円と点の衝突判定を行う </div><div class="ttdef"><b>Definition:</b> Collision2D.cpp:164</div></div>
+<div class="ttc" id="class_c___collision2_d_html_a2fd04bebb38f10788504e95776d07257"><div class="ttname"><a href="class_c___collision2_d.html#a2fd04bebb38f10788504e95776d07257">C_Collision2D::s_CheckPointAndPoint</a></div><div class="ttdeci">static bool s_CheckPointAndPoint(const UtilityMath::S_Vector2 &amp;rPoint, const UtilityMath::S_Vector2 &amp;rAnotherPoint)</div><div class="ttdoc">2Dの点と点の衝突判定を行う </div><div class="ttdef"><b>Definition:</b> Collision2D.cpp:247</div></div>
+<div class="ttc" id="class_c___collision2_d_html_a30d3eba5634d688810953d97ecb9d186"><div class="ttname"><a href="class_c___collision2_d.html#a30d3eba5634d688810953d97ecb9d186">C_Collision2D::s_CheckPointAndEllipse</a></div><div class="ttdeci">static bool s_CheckPointAndEllipse(const UtilityMath::S_Vector2 &amp;rPoint, const UtilityMath::S_Vector2 &amp;rEllipseCenterPosition, const UtilityMath::S_Vector2 &amp;rEllipseSemidiameter, float ellipseAngle)</div><div class="ttdoc">点と楕円の衝突判定を行う </div><div class="ttdef"><b>Definition:</b> Collision2D.cpp:314</div></div>
+<div class="ttc" id="class_c___collision2_d_html_adc5a9d70810f0a4f2ec570221c59e590"><div class="ttname"><a href="class_c___collision2_d.html#adc5a9d70810f0a4f2ec570221c59e590">C_Collision2D::s_CheckSegmentAndSegment</a></div><div class="ttdeci">static bool s_CheckSegmentAndSegment(const UtilityMath::S_Vector2 &amp;rBeginPoint, const UtilityMath::S_Vector2 &amp;rEndPoint, const UtilityMath::S_Vector2 &amp;rAnotherBeginPoint, const UtilityMath::S_Vector2 &amp;rAnotherEndPoint, UtilityMath::S_Vector2 *pIntersectionPoint)</div><div class="ttdoc">線分と線分の衝突判定を行う </div><div class="ttdef"><b>Definition:</b> Collision2D.cpp:352</div></div>
+<div class="ttc" id="class_c___collision2_d_html_a8df33dac31719dfbfeddf6497a1e3e0f"><div class="ttname"><a href="class_c___collision2_d.html#a8df33dac31719dfbfeddf6497a1e3e0f">C_Collision2D::s_CheckRectangleAndRectangle</a></div><div class="ttdeci">static bool s_CheckRectangleAndRectangle(const UtilityMath::S_Vector2 &amp;rCenterPosition, float halfWidth, float halfHeight, const UtilityMath::S_Vector2 &amp;rAnotherCenterPosition, float anotherHalfWidth, float anotherHalfHeihgt)</div><div class="ttdoc">矩形同士の衝突判定を行う </div><div class="ttdef"><b>Definition:</b> Collision2D.cpp:19</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分49秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: BaseShader.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">BaseShader.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_base_shader_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* 二重インクルード防止 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* 名前空間を設定 */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>UtilityMath</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="comment">/* 前方宣言 */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">struct </span>S_Vector2;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">struct </span>S_Vector3;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">struct </span>S_Vector4;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">struct </span>S_Matrix3;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">struct </span>S_Matrix4;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252">   18</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252">ecShaderType</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252a0c3e47aef93a7f244f41ab309a33634b">VERTEX</a>,                         </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252a7345a249ed5c2f850d85dc1727c24716">FRAGMENT</a>,                       </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252ab22957ad8078e8d73de61aef53d13a74">GEOMETRY</a>,                       </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252a6d64bf3ebe99e5b073a1b951d9e7ce72">TESSELLATION_CONTROL</a>,           </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252a8c342df328469662555b1e75cf07815b">TESSELLATION_EVALUATION</a>,        </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_c___base_shader.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c___base_shader.html">C_BaseShader</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="class_c___base_shader.html#adf8cb015c3ee95978457e2e559f43011">C_BaseShader</a>();                                                         <span class="comment">// コンストラクタ</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_c___base_shader.html#a48993e09431ecce2513a52d6927d93ed">~C_BaseShader</a>();                                                <span class="comment">// デストラクタ</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#ae859191fec4d1cc35f619c032ee01b3d">CompileFromFile</a>(<span class="keyword">const</span> std::string fileName,                        <span class="comment">// ファイルからコンパイル</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                         <a class="code" href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252">ecShaderType</a> type);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#affb0365709644c3c6c49377d1bf9e67e">CompileFromString</a>(<span class="keyword">const</span> std::string source,                        <span class="comment">// 文字列からコンパイル</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                           <a class="code" href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252">ecShaderType</a> type);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#a7768d31c6e0083855af8acf9de62080a">Link</a>();                                                            <span class="comment">// リンク処理</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___base_shader.html#aec6a92db982486bcd9d8838f1c61cd46">PrintActiveAttributes</a>();                                           <span class="comment">// アクティブな属性を出力</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___base_shader.html#a8aac302757a5228af70591b680f28896">PrintActiveUniforms</a>();                                             <span class="comment">// アクティブなユニフォーム変数を出力</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___base_shader.html#abb86c6c583b14139f4ffed346707011d">AddUniformBlockIndex</a>(<span class="keyword">const</span> std::string uniformBufferName);         <span class="comment">// ユニフォームブロックのインデックスを追加</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___base_shader.html#a186df41d780c22458f2e2e268065b948">Begin</a>();                                                           <span class="comment">// 使用開始</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___base_shader.html#aab9a822f0a766bf0d7625379fcea6020">BeginWithUnifomBlock</a>(GLuint* pUniformBufferObjects);               <span class="comment">// ユニフォームブロックも含めて使用開始</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___base_shader.html#ac17465380d576a0e3d4ef529a29f5174">End</a>();                                                             <span class="comment">// 使用終了</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___base_shader.html#abc31ce291aed55c61426254b56997656">Delete</a>();                                                          <span class="comment">// 削除処理</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">/* ゲッター */</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    GLuint <a class="code" href="class_c___base_shader.html#a35a75fe8b79e6040e5ed685deb4efa05">GetProgramObject</a>() <span class="keyword">const</span>;                                        <span class="comment">// プログラムオブジェクトを取得</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#a934d0aac5cdac4f400c4da5d301125f4">IsLinkFlag</a>() <span class="keyword">const</span>;                                                <span class="comment">// リンク済みフラグを取得</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">/* セッター */</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#a9a6c2f7a80b56637cfa338c70d9ad1f1">SetUniform1i</a>(<span class="keyword">const</span> std::string name, int32_t value);               <span class="comment">// int型の値でユニフォーム変数を設定</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#a639a6cbf993a16fde66134b6507ab6ce">SetUniform1f</a>(<span class="keyword">const</span> std::string name, <span class="keywordtype">float</span> value);                 <span class="comment">// float型の値でユニフォーム変数を設定</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#a0a53667bd29ac0887c430ff37ae58f45">SetUniform1b</a>(<span class="keyword">const</span> std::string name, <span class="keywordtype">bool</span> value);                  <span class="comment">// bool型の値でユニフォーム変数を設定</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#a78096ef789cc782e629c322ab4ceded0">SetUniform2f</a>(<span class="keyword">const</span> std::string name,                               <span class="comment">// float型の2つの値でユニフォーム変数を設定</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                      <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                      <span class="keywordtype">float</span> y);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#af5296908724ee737858c71dac734858f">SetUniform3f</a>(<span class="keyword">const</span> std::string name,                               <span class="comment">// float型の3つの値でユニフォーム変数を設定</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                      <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                      <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                      <span class="keywordtype">float</span> z);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#aa815a802dc26d20bd8883d0c13f69a10">SetUniform4f</a>(<span class="keyword">const</span> std::string name,                               <span class="comment">// float型の4つの値でユニフォーム変数を設定</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                      <span class="keywordtype">float</span> x,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                      <span class="keywordtype">float</span> y,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                      <span class="keywordtype">float</span> z,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                      <span class="keywordtype">float</span> w);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#a872dd93c5eb7c682b7e4f21801f85199">SetUniformVector2</a>(<span class="keyword">const</span> std::string name,                          <span class="comment">// 2Dベクトルでユニフォーム変数を設定</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                           <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a>&amp; rVector);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#a146dbea29230903cd08b3c3bc1e4f097">SetUniformVector3</a>(<span class="keyword">const</span> std::string name,                          <span class="comment">// 3Dベクトルでユニフォーム変数を設定</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                           <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector3.html">UtilityMath::S_Vector3</a>&amp; rVector);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#a71b8486c524401fe16db3eb3c410fa2a">SetUniformVector4</a>(<span class="keyword">const</span> std::string name,                          <span class="comment">// 4Dベクトルでユニフォーム変数を設定</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                           <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html">UtilityMath::S_Vector4</a>&amp; rVector);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#afe580c600e52c8c58d6dbd3e150aa1ab">SetUniformMatrix3</a>(<span class="keyword">const</span> std::string name,                          <span class="comment">// 3 * 3の行列でユニフォーム変数を設定</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                           <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a>&amp; rMatrix,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                           int32_t elementCount = 1);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___base_shader.html#a84d184c67aba0a8ed5e385f63678366f">SetUniformMatrix4</a>(<span class="keyword">const</span> std::string name,                          <span class="comment">// 4 * 4の行列でユニフォーム変数を設定</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                           <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___matrix4.html">UtilityMath::S_Matrix4</a>&amp; rMatrix,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                           int32_t elementCount = 1);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    GLuint programObject_;                                                  </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> linkFlag_;                                                         </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::vector&lt;GLuint&gt; uniformBlockIndices_;                               </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> PrintCompileError(GLint shaderObjectHandle);                       <span class="comment">// コンパイル時のエラーを出力</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> PrintLinkError(GLint programObjectHandle);                         <span class="comment">// リンク時のエラーを出力</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">/* ゲッター */</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">int</span> GetUniformLocation(<span class="keyword">const</span> std::string variableName)  <span class="keyword">const</span>;          <span class="comment">// ユニフォーム変数の場所を取得</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="ttc" id="class_c___base_shader_html_aec6a92db982486bcd9d8838f1c61cd46"><div class="ttname"><a href="class_c___base_shader.html#aec6a92db982486bcd9d8838f1c61cd46">C_BaseShader::PrintActiveAttributes</a></div><div class="ttdeci">void PrintActiveAttributes()</div><div class="ttdoc">アクティブな属性を出力する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:274</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix3_html"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a></div><div class="ttdoc">マトリクス3 </div><div class="ttdef"><b>Definition:</b> Matrix3.h:24</div></div>
+<div class="ttc" id="class_c___base_shader_html_ac17465380d576a0e3d4ef529a29f5174"><div class="ttname"><a href="class_c___base_shader.html#ac17465380d576a0e3d4ef529a29f5174">C_BaseShader::End</a></div><div class="ttdeci">void End()</div><div class="ttdoc">シェーダーの使用を終了する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:416</div></div>
+<div class="ttc" id="_base_shader_8h_html_abf3d9d248df741c183dc3b1ad23ab252"><div class="ttname"><a href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252">ecShaderType</a></div><div class="ttdeci">ecShaderType</div><div class="ttdef"><b>Definition:</b> BaseShader.h:18</div></div>
+<div class="ttc" id="class_c___base_shader_html"><div class="ttname"><a href="class_c___base_shader.html">C_BaseShader</a></div><div class="ttdoc">ベースシェーダー </div><div class="ttdef"><b>Definition:</b> BaseShader.h:34</div></div>
+<div class="ttc" id="_base_shader_8h_html_abf3d9d248df741c183dc3b1ad23ab252a6d64bf3ebe99e5b073a1b951d9e7ce72"><div class="ttname"><a href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252a6d64bf3ebe99e5b073a1b951d9e7ce72">ecShaderType::TESSELLATION_CONTROL</a></div><div class="ttdoc">テッセレーション制御シェーダー </div></div>
+<div class="ttc" id="class_c___base_shader_html_a9a6c2f7a80b56637cfa338c70d9ad1f1"><div class="ttname"><a href="class_c___base_shader.html#a9a6c2f7a80b56637cfa338c70d9ad1f1">C_BaseShader::SetUniform1i</a></div><div class="ttdeci">bool SetUniform1i(const std::string name, int32_t value)</div><div class="ttdoc">int型の値でユニフォーム変数を設定する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:477</div></div>
+<div class="ttc" id="class_c___base_shader_html_a48993e09431ecce2513a52d6927d93ed"><div class="ttname"><a href="class_c___base_shader.html#a48993e09431ecce2513a52d6927d93ed">C_BaseShader::~C_BaseShader</a></div><div class="ttdeci">virtual ~C_BaseShader()</div><div class="ttdoc">デストラクタ </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:36</div></div>
+<div class="ttc" id="class_c___base_shader_html_af5296908724ee737858c71dac734858f"><div class="ttname"><a href="class_c___base_shader.html#af5296908724ee737858c71dac734858f">C_BaseShader::SetUniform3f</a></div><div class="ttdeci">bool SetUniform3f(const std::string name, float x, float y, float z)</div><div class="ttdoc">float型の3つの値でユニフォーム変数を設定する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:590</div></div>
+<div class="ttc" id="class_c___base_shader_html_a78096ef789cc782e629c322ab4ceded0"><div class="ttname"><a href="class_c___base_shader.html#a78096ef789cc782e629c322ab4ceded0">C_BaseShader::SetUniform2f</a></div><div class="ttdeci">bool SetUniform2f(const std::string name, float x, float y)</div><div class="ttdoc">float型の2つの値でユニフォーム変数を設定する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:559</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix4_html"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix4.html">UtilityMath::S_Matrix4</a></div><div class="ttdoc">マトリクス4 </div><div class="ttdef"><b>Definition:</b> Matrix4.h:25</div></div>
+<div class="ttc" id="_base_shader_8h_html_abf3d9d248df741c183dc3b1ad23ab252a0c3e47aef93a7f244f41ab309a33634b"><div class="ttname"><a href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252a0c3e47aef93a7f244f41ab309a33634b">ecShaderType::VERTEX</a></div><div class="ttdoc">頂点シェーダー </div></div>
+<div class="ttc" id="class_c___base_shader_html_aab9a822f0a766bf0d7625379fcea6020"><div class="ttname"><a href="class_c___base_shader.html#aab9a822f0a766bf0d7625379fcea6020">C_BaseShader::BeginWithUnifomBlock</a></div><div class="ttdeci">void BeginWithUnifomBlock(GLuint *pUniformBufferObjects)</div><div class="ttdoc">ユニフォームブロックを含めてシェーダーの使用を開始する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:394</div></div>
+<div class="ttc" id="class_c___base_shader_html_aa815a802dc26d20bd8883d0c13f69a10"><div class="ttname"><a href="class_c___base_shader.html#aa815a802dc26d20bd8883d0c13f69a10">C_BaseShader::SetUniform4f</a></div><div class="ttdeci">bool SetUniform4f(const std::string name, float x, float y, float z, float w)</div><div class="ttdoc">float型の4つの値でユニフォーム変数を設定する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:623</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html">UtilityMath::S_Vector4</a></div><div class="ttdoc">ベクター4 </div><div class="ttdef"><b>Definition:</b> Vector4.h:23</div></div>
+<div class="ttc" id="class_c___base_shader_html_a71b8486c524401fe16db3eb3c410fa2a"><div class="ttname"><a href="class_c___base_shader.html#a71b8486c524401fe16db3eb3c410fa2a">C_BaseShader::SetUniformVector4</a></div><div class="ttdeci">bool SetUniformVector4(const std::string name, const UtilityMath::S_Vector4 &amp;rVector)</div><div class="ttdoc">4Dベクトルでユニフォーム変数を設定する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:710</div></div>
+<div class="ttc" id="_base_shader_8h_html_abf3d9d248df741c183dc3b1ad23ab252a8c342df328469662555b1e75cf07815b"><div class="ttname"><a href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252a8c342df328469662555b1e75cf07815b">ecShaderType::TESSELLATION_EVALUATION</a></div><div class="ttdoc">テッセレーション評価シェーダー </div></div>
+<div class="ttc" id="class_c___base_shader_html_a8aac302757a5228af70591b680f28896"><div class="ttname"><a href="class_c___base_shader.html#a8aac302757a5228af70591b680f28896">C_BaseShader::PrintActiveUniforms</a></div><div class="ttdeci">void PrintActiveUniforms()</div><div class="ttdoc">アクティブなユニフォーム変数を出力する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:320</div></div>
+<div class="ttc" id="class_c___base_shader_html_a186df41d780c22458f2e2e268065b948"><div class="ttname"><a href="class_c___base_shader.html#a186df41d780c22458f2e2e268065b948">C_BaseShader::Begin</a></div><div class="ttdeci">void Begin()</div><div class="ttdoc">シェーダーの使用を開始する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:379</div></div>
+<div class="ttc" id="_base_shader_8h_html_abf3d9d248df741c183dc3b1ad23ab252a7345a249ed5c2f850d85dc1727c24716"><div class="ttname"><a href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252a7345a249ed5c2f850d85dc1727c24716">ecShaderType::FRAGMENT</a></div><div class="ttdoc">フラグメントシェーダー </div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector2_html"><div class="ttname"><a href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a></div><div class="ttdoc">ベクター2 </div><div class="ttdef"><b>Definition:</b> Vector2.h:19</div></div>
+<div class="ttc" id="class_c___base_shader_html_a872dd93c5eb7c682b7e4f21801f85199"><div class="ttname"><a href="class_c___base_shader.html#a872dd93c5eb7c682b7e4f21801f85199">C_BaseShader::SetUniformVector2</a></div><div class="ttdeci">bool SetUniformVector2(const std::string name, const UtilityMath::S_Vector2 &amp;rVector)</div><div class="ttdoc">2Dベクトルでユニフォーム変数を設定する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:654</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector3_html"><div class="ttname"><a href="struct_utility_math_1_1_s___vector3.html">UtilityMath::S_Vector3</a></div><div class="ttdoc">ベクター3 </div><div class="ttdef"><b>Definition:</b> Vector3.h:19</div></div>
+<div class="ttc" id="class_c___base_shader_html_abc31ce291aed55c61426254b56997656"><div class="ttname"><a href="class_c___base_shader.html#abc31ce291aed55c61426254b56997656">C_BaseShader::Delete</a></div><div class="ttdeci">void Delete()</div><div class="ttdoc">プログラムオブジェクトの削除を行う </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:429</div></div>
+<div class="ttc" id="class_c___base_shader_html_a7768d31c6e0083855af8acf9de62080a"><div class="ttname"><a href="class_c___base_shader.html#a7768d31c6e0083855af8acf9de62080a">C_BaseShader::Link</a></div><div class="ttdeci">bool Link()</div><div class="ttdoc">シェーダーのリンクを行う </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:230</div></div>
+<div class="ttc" id="_base_shader_8h_html_abf3d9d248df741c183dc3b1ad23ab252ab22957ad8078e8d73de61aef53d13a74"><div class="ttname"><a href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252ab22957ad8078e8d73de61aef53d13a74">ecShaderType::GEOMETRY</a></div><div class="ttdoc">ジオメトリシェーダー </div></div>
+<div class="ttc" id="class_c___base_shader_html_adf8cb015c3ee95978457e2e559f43011"><div class="ttname"><a href="class_c___base_shader.html#adf8cb015c3ee95978457e2e559f43011">C_BaseShader::C_BaseShader</a></div><div class="ttdeci">C_BaseShader()</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:16</div></div>
+<div class="ttc" id="class_c___base_shader_html_abb86c6c583b14139f4ffed346707011d"><div class="ttname"><a href="class_c___base_shader.html#abb86c6c583b14139f4ffed346707011d">C_BaseShader::AddUniformBlockIndex</a></div><div class="ttdeci">void AddUniformBlockIndex(const std::string uniformBufferName)</div><div class="ttdoc">ユニフォームブロックのインデックスを追加 </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:366</div></div>
+<div class="ttc" id="class_c___base_shader_html_a84d184c67aba0a8ed5e385f63678366f"><div class="ttname"><a href="class_c___base_shader.html#a84d184c67aba0a8ed5e385f63678366f">C_BaseShader::SetUniformMatrix4</a></div><div class="ttdeci">bool SetUniformMatrix4(const std::string name, const UtilityMath::S_Matrix4 &amp;rMatrix, int32_t elementCount=1)</div><div class="ttdoc">4 * 4 の行列でユニフォーム変数を設定する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:769</div></div>
+<div class="ttc" id="class_c___base_shader_html_a146dbea29230903cd08b3c3bc1e4f097"><div class="ttname"><a href="class_c___base_shader.html#a146dbea29230903cd08b3c3bc1e4f097">C_BaseShader::SetUniformVector3</a></div><div class="ttdeci">bool SetUniformVector3(const std::string name, const UtilityMath::S_Vector3 &amp;rVector)</div><div class="ttdoc">3Dベクトルでユニフォーム変数を設定する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:682</div></div>
+<div class="ttc" id="class_c___base_shader_html_a639a6cbf993a16fde66134b6507ab6ce"><div class="ttname"><a href="class_c___base_shader.html#a639a6cbf993a16fde66134b6507ab6ce">C_BaseShader::SetUniform1f</a></div><div class="ttdeci">bool SetUniform1f(const std::string name, float value)</div><div class="ttdoc">float型の値でユニフォーム変数を設定する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:504</div></div>
+<div class="ttc" id="class_c___base_shader_html_a35a75fe8b79e6040e5ed685deb4efa05"><div class="ttname"><a href="class_c___base_shader.html#a35a75fe8b79e6040e5ed685deb4efa05">C_BaseShader::GetProgramObject</a></div><div class="ttdeci">GLuint GetProgramObject() const </div><div class="ttdoc">プログラムオブジェクトを取得する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:447</div></div>
+<div class="ttc" id="class_c___base_shader_html_afe580c600e52c8c58d6dbd3e150aa1ab"><div class="ttname"><a href="class_c___base_shader.html#afe580c600e52c8c58d6dbd3e150aa1ab">C_BaseShader::SetUniformMatrix3</a></div><div class="ttdeci">bool SetUniformMatrix3(const std::string name, const UtilityMath::S_Matrix3 &amp;rMatrix, int32_t elementCount=1)</div><div class="ttdoc">3 * 3 の行列でユニフォーム変数を設定する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:739</div></div>
+<div class="ttc" id="class_c___base_shader_html_a934d0aac5cdac4f400c4da5d301125f4"><div class="ttname"><a href="class_c___base_shader.html#a934d0aac5cdac4f400c4da5d301125f4">C_BaseShader::IsLinkFlag</a></div><div class="ttdeci">bool IsLinkFlag() const </div><div class="ttdoc">リンク済みフラグを取得する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:462</div></div>
+<div class="ttc" id="class_c___base_shader_html_a0a53667bd29ac0887c430ff37ae58f45"><div class="ttname"><a href="class_c___base_shader.html#a0a53667bd29ac0887c430ff37ae58f45">C_BaseShader::SetUniform1b</a></div><div class="ttdeci">bool SetUniform1b(const std::string name, bool value)</div><div class="ttdoc">bool型の値でユニフォーム変数を設定する </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:531</div></div>
+<div class="ttc" id="class_c___base_shader_html_ae859191fec4d1cc35f619c032ee01b3d"><div class="ttname"><a href="class_c___base_shader.html#ae859191fec4d1cc35f619c032ee01b3d">C_BaseShader::CompileFromFile</a></div><div class="ttdeci">bool CompileFromFile(const std::string fileName, ecShaderType type)</div><div class="ttdoc">ファイルからシェーダーをコンパイルする </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:51</div></div>
+<div class="ttc" id="class_c___base_shader_html_affb0365709644c3c6c49377d1bf9e67e"><div class="ttname"><a href="class_c___base_shader.html#affb0365709644c3c6c49377d1bf9e67e">C_BaseShader::CompileFromString</a></div><div class="ttdeci">bool CompileFromString(const std::string source, ecShaderType type)</div><div class="ttdoc">文字列からシェーダーをコンパイルする </div><div class="ttdef"><b>Definition:</b> BaseShader.cpp:125</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分49秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

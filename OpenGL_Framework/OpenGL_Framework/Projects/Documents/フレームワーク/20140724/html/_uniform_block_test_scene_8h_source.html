@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: UniformBlockTestScene.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">UniformBlockTestScene.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_uniform_block_test_scene_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* 二重インクルード防止 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* ヘッダファイル */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_scene_8h.html">BaseScene.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../Library/BaseShader.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;../Library/UtilityMath.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../Library/RandomManager.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;../Library/UniformBlock.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/* 前方宣言 */</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span><a class="code" href="class_i_c___scene_changer.html">IC_SceneChanger</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">enum class</span> <a class="code" href="_scene_define_8h.html#ac02381aa33707fef900dcd45f967bb35">ecSceneReturn</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structuniform_data.html">   24</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structuniform_data.html">uniformData</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structuniform_data.html#a5ae9144117c1541061dcb7238c43cc69">   26</a></span>&#160;    GLfloat <a class="code" href="structuniform_data.html#a5ae9144117c1541061dcb7238c43cc69">innerColor</a>[4];</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structuniform_data.html#ad812d1f4dfd769fb66f19bbed8df07aa">   27</a></span>&#160;    GLfloat <a class="code" href="structuniform_data.html#ad812d1f4dfd769fb66f19bbed8df07aa">outerColor</a>[4];</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structuniform_data.html#a93492e76d1ccefb40b1e97fd3b108a30">   28</a></span>&#160;    GLfloat <a class="code" href="structuniform_data.html#a93492e76d1ccefb40b1e97fd3b108a30">innerRadius</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structuniform_data.html#ae5aa5e189f817bfdd08db7bbd17bb2fe">   29</a></span>&#160;    GLfloat <a class="code" href="structuniform_data.html#ae5aa5e189f817bfdd08db7bbd17bb2fe">outerRadius</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_c___uniform_block_test_scene.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c___uniform_block_test_scene.html">C_UniformBlockTestScene</a> : <span class="keyword">public</span> <a class="code" href="class_c___base_scene.html">C_BaseScene</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="class_c___uniform_block_test_scene.html#a91f025b2ff6daf059fa809073aaa4ad0">C_UniformBlockTestScene</a>();                                          <span class="comment">// コンストラクタ</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="class_c___uniform_block_test_scene.html#a6210c70ef02fe5ce688735c19ceadee3">~C_UniformBlockTestScene</a>() <span class="keyword">override</span>;                                <span class="comment">// デストラクタ</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="_scene_define_8h.html#ac02381aa33707fef900dcd45f967bb35">ecSceneReturn</a> <a class="code" href="class_c___uniform_block_test_scene.html#aece2c0b96157d643e40fa9f8b190a968">Initialize</a>() <span class="keyword">override</span>;                                <span class="comment">// 初期化処理</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="_scene_define_8h.html#ac02381aa33707fef900dcd45f967bb35">ecSceneReturn</a> <a class="code" href="class_c___uniform_block_test_scene.html#a819a514a9e592cd4646cfbc662fd5f23">Update</a>() <span class="keyword">override</span>;                                    <span class="comment">// 更新処理</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___uniform_block_test_scene.html#ac128f4c0ab26e871533f9ac0e2301159">Draw</a>() <span class="keyword">override</span>;                                               <span class="comment">// 描画処理</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___uniform_block_test_scene.html#a1d2019981c25e11b94f0b6f6f367bda4">Finalize</a>() <span class="keyword">override</span>;                                           <span class="comment">// 終了処理</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="class_c___base_shader.html">C_BaseShader</a> shader_;                                               </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    GLuint vertexArrayObject_;                                          </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="structuniform_data.html">uniformData</a> data;                                                   </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::unique_ptr&lt;C_UniformBlock&gt; upUniformBlock_;                    </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> CreateUniformBufferObject();                                   <span class="comment">// ユニフォームバッファオブジェクトを作成</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> CreateVertexArrayObject();                                     <span class="comment">// 頂点配列オブジェクトを作成</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="ttc" id="class_c___base_scene_html"><div class="ttname"><a href="class_c___base_scene.html">C_BaseScene</a></div><div class="ttdoc">ベースシーン </div><div class="ttdef"><b>Definition:</b> BaseScene.h:16</div></div>
+<div class="ttc" id="structuniform_data_html_a5ae9144117c1541061dcb7238c43cc69"><div class="ttname"><a href="structuniform_data.html#a5ae9144117c1541061dcb7238c43cc69">uniformData::innerColor</a></div><div class="ttdeci">GLfloat innerColor[4]</div><div class="ttdef"><b>Definition:</b> UniformBlockTestScene.h:26</div></div>
+<div class="ttc" id="class_c___uniform_block_test_scene_html_ac128f4c0ab26e871533f9ac0e2301159"><div class="ttname"><a href="class_c___uniform_block_test_scene.html#ac128f4c0ab26e871533f9ac0e2301159">C_UniformBlockTestScene::Draw</a></div><div class="ttdeci">void Draw() override</div><div class="ttdoc">描画処理を行う </div><div class="ttdef"><b>Definition:</b> UniformBlockTestScene.cpp:112</div></div>
+<div class="ttc" id="class_c___base_shader_html"><div class="ttname"><a href="class_c___base_shader.html">C_BaseShader</a></div><div class="ttdoc">ベースシェーダー </div><div class="ttdef"><b>Definition:</b> BaseShader.h:34</div></div>
+<div class="ttc" id="structuniform_data_html_ae5aa5e189f817bfdd08db7bbd17bb2fe"><div class="ttname"><a href="structuniform_data.html#ae5aa5e189f817bfdd08db7bbd17bb2fe">uniformData::outerRadius</a></div><div class="ttdeci">GLfloat outerRadius</div><div class="ttdef"><b>Definition:</b> UniformBlockTestScene.h:29</div></div>
+<div class="ttc" id="class_c___uniform_block_test_scene_html_a91f025b2ff6daf059fa809073aaa4ad0"><div class="ttname"><a href="class_c___uniform_block_test_scene.html#a91f025b2ff6daf059fa809073aaa4ad0">C_UniformBlockTestScene::C_UniformBlockTestScene</a></div><div class="ttdeci">C_UniformBlockTestScene()</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> UniformBlockTestScene.cpp:16</div></div>
+<div class="ttc" id="_scene_define_8h_html_ac02381aa33707fef900dcd45f967bb35"><div class="ttname"><a href="_scene_define_8h.html#ac02381aa33707fef900dcd45f967bb35">ecSceneReturn</a></div><div class="ttdeci">ecSceneReturn</div><div class="ttdef"><b>Definition:</b> SceneDefine.h:10</div></div>
+<div class="ttc" id="class_c___uniform_block_test_scene_html_a1d2019981c25e11b94f0b6f6f367bda4"><div class="ttname"><a href="class_c___uniform_block_test_scene.html#a1d2019981c25e11b94f0b6f6f367bda4">C_UniformBlockTestScene::Finalize</a></div><div class="ttdeci">void Finalize() override</div><div class="ttdoc">終了処理を行う </div><div class="ttdef"><b>Definition:</b> UniformBlockTestScene.cpp:145</div></div>
+<div class="ttc" id="class_c___uniform_block_test_scene_html_a6210c70ef02fe5ce688735c19ceadee3"><div class="ttname"><a href="class_c___uniform_block_test_scene.html#a6210c70ef02fe5ce688735c19ceadee3">C_UniformBlockTestScene::~C_UniformBlockTestScene</a></div><div class="ttdeci">~C_UniformBlockTestScene() override</div><div class="ttdoc">デストラクタ </div><div class="ttdef"><b>Definition:</b> UniformBlockTestScene.cpp:31</div></div>
+<div class="ttc" id="class_c___uniform_block_test_scene_html_a819a514a9e592cd4646cfbc662fd5f23"><div class="ttname"><a href="class_c___uniform_block_test_scene.html#a819a514a9e592cd4646cfbc662fd5f23">C_UniformBlockTestScene::Update</a></div><div class="ttdeci">ecSceneReturn Update() override</div><div class="ttdoc">更新処理を行う </div><div class="ttdef"><b>Definition:</b> UniformBlockTestScene.cpp:77</div></div>
+<div class="ttc" id="class_i_c___scene_changer_html"><div class="ttname"><a href="class_i_c___scene_changer.html">IC_SceneChanger</a></div><div class="ttdoc">シーンチェンジャー( インターフェース ) </div><div class="ttdef"><b>Definition:</b> SceneManager.h:15</div></div>
+<div class="ttc" id="class_c___uniform_block_test_scene_html"><div class="ttname"><a href="class_c___uniform_block_test_scene.html">C_UniformBlockTestScene</a></div><div class="ttdoc">ユニフォームブロックテストシーン </div><div class="ttdef"><b>Definition:</b> UniformBlockTestScene.h:39</div></div>
+<div class="ttc" id="structuniform_data_html_ad812d1f4dfd769fb66f19bbed8df07aa"><div class="ttname"><a href="structuniform_data.html#ad812d1f4dfd769fb66f19bbed8df07aa">uniformData::outerColor</a></div><div class="ttdeci">GLfloat outerColor[4]</div><div class="ttdef"><b>Definition:</b> UniformBlockTestScene.h:27</div></div>
+<div class="ttc" id="structuniform_data_html"><div class="ttname"><a href="structuniform_data.html">uniformData</a></div><div class="ttdoc">ユニフォームデータ </div><div class="ttdef"><b>Definition:</b> UniformBlockTestScene.h:24</div></div>
+<div class="ttc" id="_base_scene_8h_html"><div class="ttname"><a href="_base_scene_8h.html">BaseScene.h</a></div></div>
+<div class="ttc" id="structuniform_data_html_a93492e76d1ccefb40b1e97fd3b108a30"><div class="ttname"><a href="structuniform_data.html#a93492e76d1ccefb40b1e97fd3b108a30">uniformData::innerRadius</a></div><div class="ttdeci">GLfloat innerRadius</div><div class="ttdef"><b>Definition:</b> UniformBlockTestScene.h:28</div></div>
+<div class="ttc" id="class_c___uniform_block_test_scene_html_aece2c0b96157d643e40fa9f8b190a968"><div class="ttname"><a href="class_c___uniform_block_test_scene.html#aece2c0b96157d643e40fa9f8b190a968">C_UniformBlockTestScene::Initialize</a></div><div class="ttdeci">ecSceneReturn Initialize() override</div><div class="ttdoc">初期化処理を行う </div><div class="ttdef"><b>Definition:</b> UniformBlockTestScene.cpp:45</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分49秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

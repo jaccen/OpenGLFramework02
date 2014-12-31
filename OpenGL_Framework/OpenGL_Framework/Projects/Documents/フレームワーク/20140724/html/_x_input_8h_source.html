@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: XInput.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">XInput.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_x_input_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* 二重インクルード防止 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* ヘッダファイル */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_gamepad_8h.html">Gamepad.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_c___x_input.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c___x_input.html">C_XInput</a> : <span class="keyword">public</span> <a class="code" href="class_c___gamepad.html">C_Gamepad</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_c___x_input.html#a98527858f8597eb23950034c41f88fb1">   18</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="class_c___x_input.html#a98527858f8597eb23950034c41f88fb1">s_NAME</a>;                                    </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_c___x_input.html#a31e195f6d6afbbb772aa06396d637cb7">C_XInput</a>(SDL_Joystick* pGamepad);                                   <span class="comment">// コンストラクタ</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_c___x_input.html#a3f0fcc2680b523965d8cf36c0be4b758">~C_XInput</a>() <span class="keyword">override</span>;                                               <span class="comment">// デストラクタ</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___x_input.html#a44da7d6f1ab02add29b7c109b4db7f0c">Update</a>() <span class="keyword">override</span>;                                             <span class="comment">// 更新処理</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">enum</span> <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4">eButton</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        BUTTON_CROSS_UP,                                                </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        BUTTON_CROSS_DOWN,                                              </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        BUTTON_CROSS_LEFT,                                              </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        BUTTON_CROSS_RIGHT,                                             </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        BUTTON_START,                                                   </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        BUTTON_BACK,                                                    </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        BUTTON_SHOULDER_LEFT = 8,                                       </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        BUTTON_SHOULDER_RIGHT,                                          </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        BUTTON_B,                                                       </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        BUTTON_A,                                                       </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        BUTTON_X,                                                       </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        BUTTON_Y,                                                       </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        BUTTON_HOME,                                                    </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    };</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">enum</span> eStick</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        STICK_LEFT_X,                                                   </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        STICK_LEFT_Y,                                                   </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        STICK_RIGHT_X,                                                  </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        STICK_RIGHT_Y,                                                  </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        STICK_LEFT_TRIGGER,                                             </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        STICK_RIGHT_TRIGGER,                                            </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    };</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">/* 定数 */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t s_TRIGGER_DETECTION;                           </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t s_AXIS_TOTAL_NUMBER;                           </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> ButtonUpdate();                                                <span class="comment">// ボタンの更新処理</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> TriggerButtonUpdate(eStick trigger,                            <span class="comment">// トリガーボタンの更新処理</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                             <a class="code" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4">C_Gamepad::eButton</a> updateButton);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> StickUpdate();                                                 <span class="comment">// スティックの更新処理</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> RepairStickComponent(<span class="keywordtype">int</span>* pStickComponent);                    <span class="comment">// スティックの成分を適切な値に修正</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="ttc" id="class_c___x_input_html_a3f0fcc2680b523965d8cf36c0be4b758"><div class="ttname"><a href="class_c___x_input.html#a3f0fcc2680b523965d8cf36c0be4b758">C_XInput::~C_XInput</a></div><div class="ttdeci">~C_XInput() override</div><div class="ttdoc">デストラクタ </div><div class="ttdef"><b>Definition:</b> XInput.cpp:40</div></div>
+<div class="ttc" id="class_c___x_input_html_a31e195f6d6afbbb772aa06396d637cb7"><div class="ttname"><a href="class_c___x_input.html#a31e195f6d6afbbb772aa06396d637cb7">C_XInput::C_XInput</a></div><div class="ttdeci">C_XInput(SDL_Joystick *pGamepad)</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> XInput.cpp:29</div></div>
+<div class="ttc" id="_gamepad_8h_html"><div class="ttname"><a href="_gamepad_8h.html">Gamepad.h</a></div></div>
+<div class="ttc" id="class_c___x_input_html_a98527858f8597eb23950034c41f88fb1"><div class="ttname"><a href="class_c___x_input.html#a98527858f8597eb23950034c41f88fb1">C_XInput::s_NAME</a></div><div class="ttdeci">static const std::string s_NAME</div><div class="ttdoc">名前 </div><div class="ttdef"><b>Definition:</b> XInput.h:18</div></div>
+<div class="ttc" id="class_c___gamepad_html_abcc5c5c3f700582afbdebcf76bb055a4"><div class="ttname"><a href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4">C_Gamepad::eButton</a></div><div class="ttdeci">eButton</div><div class="ttdef"><b>Definition:</b> Gamepad.h:15</div></div>
+<div class="ttc" id="class_c___gamepad_html"><div class="ttname"><a href="class_c___gamepad.html">C_Gamepad</a></div><div class="ttdoc">ゲームパッド </div><div class="ttdef"><b>Definition:</b> Gamepad.h:11</div></div>
+<div class="ttc" id="class_c___x_input_html_a44da7d6f1ab02add29b7c109b4db7f0c"><div class="ttname"><a href="class_c___x_input.html#a44da7d6f1ab02add29b7c109b4db7f0c">C_XInput::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdoc">XInputの更新処理を行う </div><div class="ttdef"><b>Definition:</b> XInput.cpp:52</div></div>
+<div class="ttc" id="class_c___x_input_html"><div class="ttname"><a href="class_c___x_input.html">C_XInput</a></div><div class="ttdoc">XInput. </div><div class="ttdef"><b>Definition:</b> XInput.h:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分50秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

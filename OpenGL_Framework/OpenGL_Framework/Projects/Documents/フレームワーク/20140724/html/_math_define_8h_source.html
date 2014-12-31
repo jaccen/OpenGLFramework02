@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: MathDefine.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">MathDefine.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_math_define_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* 二重インクルード防止 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>UtilityMath</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#a896a6cab235c6a1b2954fbf9fa768b80">   13</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="namespace_utility_math.html#a896a6cab235c6a1b2954fbf9fa768b80">PI_DIVISION4</a> = 0.785398f;               </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#a5d08e6573f65efeb2492d535aeebebe5">   14</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="namespace_utility_math.html#a5d08e6573f65efeb2492d535aeebebe5">PI_DIVISION3</a> = 1.047197f;               </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#aea4a871f379b1efc0aa580280e4b2c62">   15</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="namespace_utility_math.html#aea4a871f379b1efc0aa580280e4b2c62">PI_DIVISION2</a> = 1.570796f;               </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#a559c4d230ab06b3f8627cb02d696ae9d">   16</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="namespace_utility_math.html#a559c4d230ab06b3f8627cb02d696ae9d">PI</a> = 3.141592f;                         </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#aabd3a1ccc6704fbafefe1a8fdd15efce">   17</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="namespace_utility_math.html#aabd3a1ccc6704fbafefe1a8fdd15efce">PI2</a> = 6.283185f;                        </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#a07ddf825e2902f585db8570d32bf2c85">   18</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="namespace_utility_math.html#a07ddf825e2902f585db8570d32bf2c85">ONE_DIVISION_PI</a> = 0.318309f;            </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#affd8d0b3b0e25be47a581e6f76beeef3">   19</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="namespace_utility_math.html#affd8d0b3b0e25be47a581e6f76beeef3">STRAIGHT_DIVISION_PI</a> = 57.295779f;      </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#a87f4c2b7762f5d62b43961c9c4590c97">   20</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="namespace_utility_math.html#a87f4c2b7762f5d62b43961c9c4590c97">ONE_RADIAN</a> = 0.017453f;                 </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#a42d27d30e20275fe03b4e2c6a192eafe">   21</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="namespace_utility_math.html#a42d27d30e20275fe03b4e2c6a192eafe">ROOT2</a> = 1.414213f;                      </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#af3ec0cf2af9d37f17a2f6011af3062b9">   22</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="namespace_utility_math.html#af3ec0cf2af9d37f17a2f6011af3062b9">ROOT3</a> = 1.732050f;                      </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/*************************************************************/</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#a1633d630c801668a4a291392d61fe8b3">   32</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="namespace_utility_math.html#a1633d630c801668a4a291392d61fe8b3">ConvertDegreeToRadian</a>(<span class="keywordtype">float</span> degrees)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> degrees * <a class="code" href="namespace_utility_math.html#a87f4c2b7762f5d62b43961c9c4590c97">ONE_RADIAN</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">/*************************************************************/</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#a575ae5483a32d88b6e227e322826b8c5">   45</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="namespace_utility_math.html#a575ae5483a32d88b6e227e322826b8c5">ConvertRadianToDegree</a>(<span class="keywordtype">float</span> radians)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> radians * <a class="code" href="namespace_utility_math.html#affd8d0b3b0e25be47a581e6f76beeef3">STRAIGHT_DIVISION_PI</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">/*************************************************************/</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#ab13aca738fe90a4442944a43d9df9d5a">   60</a></span>&#160;    <span class="keyword">inline</span> T <a class="code" href="namespace_utility_math.html#ab13aca738fe90a4442944a43d9df9d5a">SquareRoot</a>(T value, int32_t precision = 15)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment">// 値が0以下の場合</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> (value &lt;= 0) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        T result = value;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">// 平方根を求める</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; precision; ++i)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            result = (result + value / result) / 2.0f;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">/*************************************************************/</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#a73345188f3fa159d63cce399de659db7">   85</a></span>&#160;    <span class="keyword">inline</span> T <a class="code" href="namespace_utility_math.html#a73345188f3fa159d63cce399de659db7">AbsoluteValue</a>(T value)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> value &gt;= 0 ? value : -value;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">/*************************************************************/</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#aaf31bd745997361d87f826758335ae11">   99</a></span>&#160;    <span class="keyword">inline</span> T <a class="code" href="namespace_utility_math.html#aaf31bd745997361d87f826758335ae11">Cotangent</a>(T radian)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        return ::cosf(radian) / ::sinf(radian);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">/*************************************************************/</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#a98c92ec51bb1b89002297a397ed90ea7">  116</a></span>&#160;    <span class="keyword">inline</span> T <a class="code" href="namespace_utility_math.html#a98c92ec51bb1b89002297a397ed90ea7">DotProduct2D</a>(T x1, T y1, T x2, T y2)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">return</span> (x1 * x2) + (y1 * y2);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">/*************************************************************/</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#a524f286560570c7bdd64889cb99f7e5d">  132</a></span>&#160;    <span class="keyword">inline</span> T <a class="code" href="namespace_utility_math.html#a524f286560570c7bdd64889cb99f7e5d">CrossProduct2D</a>(T x1, T y1, T x2, T y2)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">return</span> (x1 * y2) - (x2 * y1);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">/*************************************************************/</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#a5764227a80d035ae9e2164c2d295e88e">  147</a></span>&#160;    <span class="keyword">inline</span> T <a class="code" href="namespace_utility_math.html#a5764227a80d035ae9e2164c2d295e88e">Min</a>(T lhs, T rhs)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">return</span> (lhs &lt; rhs) ? lhs : rhs;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">/*************************************************************/</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#a89c1ebc8bbc60726a184af80a073b618">  162</a></span>&#160;    <span class="keyword">inline</span> T <a class="code" href="namespace_utility_math.html#a89c1ebc8bbc60726a184af80a073b618">Max</a>(T lhs, T rhs)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">return</span> (lhs &gt; rhs) ? lhs : rhs;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">/*************************************************************/</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="namespace_utility_math.html#ad7b8e18631c91d12beab3bda8211522d">  177</a></span>&#160;    <span class="keyword">inline</span> T <a class="code" href="namespace_utility_math.html#ad7b8e18631c91d12beab3bda8211522d">Clamp</a>(T value, T min, T max)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">return</span> value &lt; min ? min : (value &gt; max ? max : value);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;};</div>
+<div class="ttc" id="namespace_utility_math_html_af3ec0cf2af9d37f17a2f6011af3062b9"><div class="ttname"><a href="namespace_utility_math.html#af3ec0cf2af9d37f17a2f6011af3062b9">UtilityMath::ROOT3</a></div><div class="ttdeci">const float ROOT3</div><div class="ttdoc">√3 </div><div class="ttdef"><b>Definition:</b> MathDefine.h:22</div></div>
+<div class="ttc" id="namespace_utility_math_html_a5d08e6573f65efeb2492d535aeebebe5"><div class="ttname"><a href="namespace_utility_math.html#a5d08e6573f65efeb2492d535aeebebe5">UtilityMath::PI_DIVISION3</a></div><div class="ttdeci">const float PI_DIVISION3</div><div class="ttdoc">π / 3. </div><div class="ttdef"><b>Definition:</b> MathDefine.h:14</div></div>
+<div class="ttc" id="namespace_utility_math_html_a575ae5483a32d88b6e227e322826b8c5"><div class="ttname"><a href="namespace_utility_math.html#a575ae5483a32d88b6e227e322826b8c5">UtilityMath::ConvertRadianToDegree</a></div><div class="ttdeci">float ConvertRadianToDegree(float radians)</div><div class="ttdoc">ラジアン値から度数への変換を行う </div><div class="ttdef"><b>Definition:</b> MathDefine.h:45</div></div>
+<div class="ttc" id="namespace_utility_math_html_a5764227a80d035ae9e2164c2d295e88e"><div class="ttname"><a href="namespace_utility_math.html#a5764227a80d035ae9e2164c2d295e88e">UtilityMath::Min</a></div><div class="ttdeci">T Min(T lhs, T rhs)</div><div class="ttdoc">最小値の判別を行う </div><div class="ttdef"><b>Definition:</b> MathDefine.h:147</div></div>
+<div class="ttc" id="namespace_utility_math_html_a87f4c2b7762f5d62b43961c9c4590c97"><div class="ttname"><a href="namespace_utility_math.html#a87f4c2b7762f5d62b43961c9c4590c97">UtilityMath::ONE_RADIAN</a></div><div class="ttdeci">const float ONE_RADIAN</div><div class="ttdoc">1ラジアン( π / 180 ) </div><div class="ttdef"><b>Definition:</b> MathDefine.h:20</div></div>
+<div class="ttc" id="namespace_utility_math_html_aaf31bd745997361d87f826758335ae11"><div class="ttname"><a href="namespace_utility_math.html#aaf31bd745997361d87f826758335ae11">UtilityMath::Cotangent</a></div><div class="ttdeci">T Cotangent(T radian)</div><div class="ttdoc">余接を求める </div><div class="ttdef"><b>Definition:</b> MathDefine.h:99</div></div>
+<div class="ttc" id="namespace_utility_math_html_a896a6cab235c6a1b2954fbf9fa768b80"><div class="ttname"><a href="namespace_utility_math.html#a896a6cab235c6a1b2954fbf9fa768b80">UtilityMath::PI_DIVISION4</a></div><div class="ttdeci">const float PI_DIVISION4</div><div class="ttdoc">π / 4. </div><div class="ttdef"><b>Definition:</b> MathDefine.h:13</div></div>
+<div class="ttc" id="namespace_utility_math_html_a42d27d30e20275fe03b4e2c6a192eafe"><div class="ttname"><a href="namespace_utility_math.html#a42d27d30e20275fe03b4e2c6a192eafe">UtilityMath::ROOT2</a></div><div class="ttdeci">const float ROOT2</div><div class="ttdoc">√2 </div><div class="ttdef"><b>Definition:</b> MathDefine.h:21</div></div>
+<div class="ttc" id="namespace_utility_math_html_aea4a871f379b1efc0aa580280e4b2c62"><div class="ttname"><a href="namespace_utility_math.html#aea4a871f379b1efc0aa580280e4b2c62">UtilityMath::PI_DIVISION2</a></div><div class="ttdeci">const float PI_DIVISION2</div><div class="ttdoc">π / 2. </div><div class="ttdef"><b>Definition:</b> MathDefine.h:15</div></div>
+<div class="ttc" id="namespace_utility_math_html_a07ddf825e2902f585db8570d32bf2c85"><div class="ttname"><a href="namespace_utility_math.html#a07ddf825e2902f585db8570d32bf2c85">UtilityMath::ONE_DIVISION_PI</a></div><div class="ttdeci">const float ONE_DIVISION_PI</div><div class="ttdoc">1 / π </div><div class="ttdef"><b>Definition:</b> MathDefine.h:18</div></div>
+<div class="ttc" id="namespace_utility_math_html_a1633d630c801668a4a291392d61fe8b3"><div class="ttname"><a href="namespace_utility_math.html#a1633d630c801668a4a291392d61fe8b3">UtilityMath::ConvertDegreeToRadian</a></div><div class="ttdeci">float ConvertDegreeToRadian(float degrees)</div><div class="ttdoc">度数からラジアン値への変換を行う </div><div class="ttdef"><b>Definition:</b> MathDefine.h:32</div></div>
+<div class="ttc" id="namespace_utility_math_html_a89c1ebc8bbc60726a184af80a073b618"><div class="ttname"><a href="namespace_utility_math.html#a89c1ebc8bbc60726a184af80a073b618">UtilityMath::Max</a></div><div class="ttdeci">T Max(T lhs, T rhs)</div><div class="ttdoc">最大値の判別を行う </div><div class="ttdef"><b>Definition:</b> MathDefine.h:162</div></div>
+<div class="ttc" id="namespace_utility_math_html_ab13aca738fe90a4442944a43d9df9d5a"><div class="ttname"><a href="namespace_utility_math.html#ab13aca738fe90a4442944a43d9df9d5a">UtilityMath::SquareRoot</a></div><div class="ttdeci">T SquareRoot(T value, int32_t precision=15)</div><div class="ttdoc">平方根を求める </div><div class="ttdef"><b>Definition:</b> MathDefine.h:60</div></div>
+<div class="ttc" id="namespace_utility_math_html_aabd3a1ccc6704fbafefe1a8fdd15efce"><div class="ttname"><a href="namespace_utility_math.html#aabd3a1ccc6704fbafefe1a8fdd15efce">UtilityMath::PI2</a></div><div class="ttdeci">const float PI2</div><div class="ttdoc">2π </div><div class="ttdef"><b>Definition:</b> MathDefine.h:17</div></div>
+<div class="ttc" id="namespace_utility_math_html_a98c92ec51bb1b89002297a397ed90ea7"><div class="ttname"><a href="namespace_utility_math.html#a98c92ec51bb1b89002297a397ed90ea7">UtilityMath::DotProduct2D</a></div><div class="ttdeci">T DotProduct2D(T x1, T y1, T x2, T y2)</div><div class="ttdoc">2次元での内積を求める </div><div class="ttdef"><b>Definition:</b> MathDefine.h:116</div></div>
+<div class="ttc" id="namespace_utility_math_html_affd8d0b3b0e25be47a581e6f76beeef3"><div class="ttname"><a href="namespace_utility_math.html#affd8d0b3b0e25be47a581e6f76beeef3">UtilityMath::STRAIGHT_DIVISION_PI</a></div><div class="ttdeci">const float STRAIGHT_DIVISION_PI</div><div class="ttdoc">180 / π </div><div class="ttdef"><b>Definition:</b> MathDefine.h:19</div></div>
+<div class="ttc" id="namespace_utility_math_html_a559c4d230ab06b3f8627cb02d696ae9d"><div class="ttname"><a href="namespace_utility_math.html#a559c4d230ab06b3f8627cb02d696ae9d">UtilityMath::PI</a></div><div class="ttdeci">const float PI</div><div class="ttdoc">π. </div><div class="ttdef"><b>Definition:</b> MathDefine.h:16</div></div>
+<div class="ttc" id="namespace_utility_math_html_a73345188f3fa159d63cce399de659db7"><div class="ttname"><a href="namespace_utility_math.html#a73345188f3fa159d63cce399de659db7">UtilityMath::AbsoluteValue</a></div><div class="ttdeci">T AbsoluteValue(T value)</div><div class="ttdoc">絶対値を求める </div><div class="ttdef"><b>Definition:</b> MathDefine.h:85</div></div>
+<div class="ttc" id="namespace_utility_math_html_a524f286560570c7bdd64889cb99f7e5d"><div class="ttname"><a href="namespace_utility_math.html#a524f286560570c7bdd64889cb99f7e5d">UtilityMath::CrossProduct2D</a></div><div class="ttdeci">T CrossProduct2D(T x1, T y1, T x2, T y2)</div><div class="ttdoc">2次元での外積を求める </div><div class="ttdef"><b>Definition:</b> MathDefine.h:132</div></div>
+<div class="ttc" id="namespace_utility_math_html_ad7b8e18631c91d12beab3bda8211522d"><div class="ttname"><a href="namespace_utility_math.html#ad7b8e18631c91d12beab3bda8211522d">UtilityMath::Clamp</a></div><div class="ttdeci">T Clamp(T value, T min, T max)</div><div class="ttdoc">値のクランプを行う </div><div class="ttdef"><b>Definition:</b> MathDefine.h:177</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分49秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

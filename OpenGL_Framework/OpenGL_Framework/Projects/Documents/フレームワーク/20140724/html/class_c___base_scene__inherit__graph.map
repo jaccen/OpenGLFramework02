@@ -1,0 +1,12 @@
+<map id="C_BaseScene" name="C_BaseScene">
+<area shape="rect" id="node2" href="$class_c___animation_test_scene.html" title="アニメーションテストシーン " alt="" coords="5,299,192,450"/>
+<area shape="rect" id="node3" href="$class_c___bloom_test_scene.html" title="ブルームテストシーン " alt="" coords="216,299,381,450"/>
+<area shape="rect" id="node4" href="$class_c___cube_map_test_scene.html" title="キューブマップテストシーン " alt="" coords="406,299,589,450"/>
+<area shape="rect" id="node5" href="$class_c___deferred_test_scene.html" title="ディファードテストシーン " alt="" coords="613,299,789,450"/>
+<area shape="rect" id="node6" href="$class_c___frame_buffer_object_test_scene.html" title="フレームバッファオブジェクトテストシーン " alt="" coords="814,292,1042,457"/>
+<area shape="rect" id="node7" href="$class_c___normal_map_test_scene.html" title="ノーマルマップテストシーン " alt="" coords="1067,299,1261,450"/>
+<area shape="rect" id="node8" href="$class_c___projector_texture_test_scene.html" title="プロジェクターテクスチャテストシーン " alt="" coords="1286,299,1509,450"/>
+<area shape="rect" id="node9" href="$class_c___tessellation_test_scene.html" title="テッセレーションテストシーン " alt="" coords="1533,299,1731,450"/>
+<area shape="rect" id="node10" href="$class_c___uniform_block_test_scene.html" title="ユニフォームブロックテストシーン " alt="" coords="1755,299,1960,450"/>
+<area shape="rect" id="node11" href="$class_c___wireframe_test_scene.html" title="ワイヤーフレームテストシーン " alt="" coords="1984,299,2171,450"/>
+</map>

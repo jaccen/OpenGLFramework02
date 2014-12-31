@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: ProjectorTextureTestScene.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ProjectorTextureTestScene.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_projector_texture_test_scene_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* 二重インクルード防止 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* ヘッダファイル */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_scene_8h.html">BaseScene.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../Library/BaseShader.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;../Library/UtilityMath.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../Library/RandomManager.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;../Library/ObjModel.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../Library/LuaManager.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_test_camera_8h.html">TestCamera.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../Library/PrimitiveManager.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_grid_8h.html">BaseGrid.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/* 前方宣言 */</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span><a class="code" href="class_i_c___scene_changer.html">IC_SceneChanger</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">enum class</span> <a class="code" href="_scene_define_8h.html#ac02381aa33707fef900dcd45f967bb35">ecSceneReturn</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_c___projector_texture_test_scene.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c___projector_texture_test_scene.html">C_ProjectorTextureTestScene</a> : <span class="keyword">public</span> <a class="code" href="class_c___base_scene.html">C_BaseScene</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_c___projector_texture_test_scene.html#afaf11509f014ad9d4184aa36bf761e77">C_ProjectorTextureTestScene</a>();                                      <span class="comment">// コンストラクタ</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_c___projector_texture_test_scene.html#add027f7783836ed4d85c98d644f3245b">~C_ProjectorTextureTestScene</a>() <span class="keyword">override</span>;                            <span class="comment">// デストラクタ</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="_scene_define_8h.html#ac02381aa33707fef900dcd45f967bb35">ecSceneReturn</a> <a class="code" href="class_c___projector_texture_test_scene.html#abf6a9f717c842a0bf8fe77059a49cf56">Initialize</a>() <span class="keyword">override</span>;                                <span class="comment">// 初期化処理</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="_scene_define_8h.html#ac02381aa33707fef900dcd45f967bb35">ecSceneReturn</a> <a class="code" href="class_c___projector_texture_test_scene.html#ad791e36eeb1f905f02e638bc04792231">Update</a>() <span class="keyword">override</span>;                                    <span class="comment">// 更新処理</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___projector_texture_test_scene.html#a7fe56a3473cfbe071af9900d1dd8c893">Draw</a>() <span class="keyword">override</span>;                                               <span class="comment">// 描画処理</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___projector_texture_test_scene.html#a838d2cc55848f974380f47ee4b4eb5b8">Finalize</a>() <span class="keyword">override</span>;                                           <span class="comment">// 終了処理</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_c___base_shader.html">C_BaseShader</a> shader_;                                               </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_c___obj_model.html">C_ObjModel</a> objModel1_;                                              </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_c___obj_model.html">C_ObjModel</a> objModel2_;                                              </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::unique_ptr&lt;C_BaseGrid&gt; upGrid_;                                </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="class_c___test_camera.html">C_TestCamera</a> camera_;                                               </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="struct_utility_math_1_1_s___matrix4.html">UtilityMath::S_Matrix4</a> viewMatrix_;                                 </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="struct_utility_math_1_1_s___matrix4.html">UtilityMath::S_Matrix4</a> projectionMatrix_;                           </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="struct_utility_math_1_1_s___vector3.html">UtilityMath::S_Vector3</a> projecterEyePosition_;                       </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="ttc" id="class_c___base_scene_html"><div class="ttname"><a href="class_c___base_scene.html">C_BaseScene</a></div><div class="ttdoc">ベースシーン </div><div class="ttdef"><b>Definition:</b> BaseScene.h:16</div></div>
+<div class="ttc" id="class_c___base_shader_html"><div class="ttname"><a href="class_c___base_shader.html">C_BaseShader</a></div><div class="ttdoc">ベースシェーダー </div><div class="ttdef"><b>Definition:</b> BaseShader.h:34</div></div>
+<div class="ttc" id="_scene_define_8h_html_ac02381aa33707fef900dcd45f967bb35"><div class="ttname"><a href="_scene_define_8h.html#ac02381aa33707fef900dcd45f967bb35">ecSceneReturn</a></div><div class="ttdeci">ecSceneReturn</div><div class="ttdef"><b>Definition:</b> SceneDefine.h:10</div></div>
+<div class="ttc" id="class_c___projector_texture_test_scene_html_ad791e36eeb1f905f02e638bc04792231"><div class="ttname"><a href="class_c___projector_texture_test_scene.html#ad791e36eeb1f905f02e638bc04792231">C_ProjectorTextureTestScene::Update</a></div><div class="ttdeci">ecSceneReturn Update() override</div><div class="ttdoc">更新処理を行う </div><div class="ttdef"><b>Definition:</b> ProjectorTextureTestScene.cpp:142</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix4_html"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix4.html">UtilityMath::S_Matrix4</a></div><div class="ttdoc">マトリクス4 </div><div class="ttdef"><b>Definition:</b> Matrix4.h:25</div></div>
+<div class="ttc" id="class_c___projector_texture_test_scene_html_a838d2cc55848f974380f47ee4b4eb5b8"><div class="ttname"><a href="class_c___projector_texture_test_scene.html#a838d2cc55848f974380f47ee4b4eb5b8">C_ProjectorTextureTestScene::Finalize</a></div><div class="ttdeci">void Finalize() override</div><div class="ttdoc">終了処理を行う </div><div class="ttdef"><b>Definition:</b> ProjectorTextureTestScene.cpp:248</div></div>
+<div class="ttc" id="class_c___projector_texture_test_scene_html"><div class="ttname"><a href="class_c___projector_texture_test_scene.html">C_ProjectorTextureTestScene</a></div><div class="ttdoc">プロジェクターテクスチャテストシーン </div><div class="ttdef"><b>Definition:</b> ProjectorTextureTestScene.h:28</div></div>
+<div class="ttc" id="class_c___projector_texture_test_scene_html_a7fe56a3473cfbe071af9900d1dd8c893"><div class="ttname"><a href="class_c___projector_texture_test_scene.html#a7fe56a3473cfbe071af9900d1dd8c893">C_ProjectorTextureTestScene::Draw</a></div><div class="ttdeci">void Draw() override</div><div class="ttdoc">描画処理を行う </div><div class="ttdef"><b>Definition:</b> ProjectorTextureTestScene.cpp:184</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector3_html"><div class="ttname"><a href="struct_utility_math_1_1_s___vector3.html">UtilityMath::S_Vector3</a></div><div class="ttdoc">ベクター3 </div><div class="ttdef"><b>Definition:</b> Vector3.h:19</div></div>
+<div class="ttc" id="class_i_c___scene_changer_html"><div class="ttname"><a href="class_i_c___scene_changer.html">IC_SceneChanger</a></div><div class="ttdoc">シーンチェンジャー( インターフェース ) </div><div class="ttdef"><b>Definition:</b> SceneManager.h:15</div></div>
+<div class="ttc" id="_test_camera_8h_html"><div class="ttname"><a href="_test_camera_8h.html">TestCamera.h</a></div></div>
+<div class="ttc" id="class_c___projector_texture_test_scene_html_abf6a9f717c842a0bf8fe77059a49cf56"><div class="ttname"><a href="class_c___projector_texture_test_scene.html#abf6a9f717c842a0bf8fe77059a49cf56">C_ProjectorTextureTestScene::Initialize</a></div><div class="ttdeci">ecSceneReturn Initialize() override</div><div class="ttdoc">初期化処理を行う </div><div class="ttdef"><b>Definition:</b> ProjectorTextureTestScene.cpp:52</div></div>
+<div class="ttc" id="class_c___projector_texture_test_scene_html_afaf11509f014ad9d4184aa36bf761e77"><div class="ttname"><a href="class_c___projector_texture_test_scene.html#afaf11509f014ad9d4184aa36bf761e77">C_ProjectorTextureTestScene::C_ProjectorTextureTestScene</a></div><div class="ttdeci">C_ProjectorTextureTestScene()</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> ProjectorTextureTestScene.cpp:18</div></div>
+<div class="ttc" id="class_c___projector_texture_test_scene_html_add027f7783836ed4d85c98d644f3245b"><div class="ttname"><a href="class_c___projector_texture_test_scene.html#add027f7783836ed4d85c98d644f3245b">C_ProjectorTextureTestScene::~C_ProjectorTextureTestScene</a></div><div class="ttdeci">~C_ProjectorTextureTestScene() override</div><div class="ttdoc">デストラクタ </div><div class="ttdef"><b>Definition:</b> ProjectorTextureTestScene.cpp:39</div></div>
+<div class="ttc" id="class_c___obj_model_html"><div class="ttname"><a href="class_c___obj_model.html">C_ObjModel</a></div><div class="ttdoc">Objモデル </div><div class="ttdef"><b>Definition:</b> ObjModel.h:16</div></div>
+<div class="ttc" id="class_c___test_camera_html"><div class="ttname"><a href="class_c___test_camera.html">C_TestCamera</a></div><div class="ttdoc">テストカメラ </div><div class="ttdef"><b>Definition:</b> TestCamera.h:21</div></div>
+<div class="ttc" id="_base_scene_8h_html"><div class="ttname"><a href="_base_scene_8h.html">BaseScene.h</a></div></div>
+<div class="ttc" id="_base_grid_8h_html"><div class="ttname"><a href="_base_grid_8h.html">BaseGrid.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分49秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

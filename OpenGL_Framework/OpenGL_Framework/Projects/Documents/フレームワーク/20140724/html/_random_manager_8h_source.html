@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: RandomManager.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">RandomManager.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_random_manager_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* 二重インクルード防止 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* ヘッダファイル */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_automatic_singleton_8h.html">AutomaticSingleton.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_c___random_manager.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c___random_manager.html">C_RandomManager</a> : <span class="keyword">public</span> <a class="code" href="class_c___automatic_singleton.html">C_AutomaticSingleton</a>&lt;C_RandomManager&gt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_c___random_manager.html#aa50bacc009b0263897fc89d8e15c1be5">C_RandomManager</a>();                                                  <span class="comment">// コンストラクタ</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_c___random_manager.html#a241b6dcccf0a7b63a8f537540b472ebe">~C_RandomManager</a>() <span class="keyword">override</span>;                                        <span class="comment">// デストラクタ</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_c___random_manager.html#a8c94e000f95f84f103c233625dcc70f7">Random</a>(int32_t min, int32_t max);                               <span class="comment">// 整数の乱数を取得</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_c___random_manager.html#a8c94e000f95f84f103c233625dcc70f7">Random</a>(<span class="keywordtype">float</span> min = 0.0f, <span class="keywordtype">float</span> max = 1.0f);                   <span class="comment">// 実数の乱数を取得</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_c___random_manager.html#a24e1a8eb088508c8298ea4db22ab9e98">PerfectRandom</a>();                                       <span class="comment">// 完璧な乱数を取得</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___random_manager.html#af8a7b90d4359d702b51b63707d2f4b7f">CircleRandom</a>(<span class="keywordtype">float</span> maxRadius, <span class="keywordtype">float</span>* pX, <span class="keywordtype">float</span>* pY);           <span class="comment">// 円内乱数を取得</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___random_manager.html#a2e98d98243e288923eef8b95c395b443">SphericalSurfaceRandom</a>(<span class="keywordtype">float</span> radius,                           <span class="comment">// 球面乱数を取得</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                <span class="keywordtype">float</span>* pX,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                <span class="keywordtype">float</span>* pY,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                <span class="keywordtype">float</span>* pZ);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___random_manager.html#ac63260b6c09a0a72f678b1234502a37e">SphereRandom</a>(<span class="keywordtype">float</span> maxRadius,                                  <span class="comment">// 球内乱数を取得</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                      <span class="keywordtype">float</span>* pX,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                      <span class="keywordtype">float</span>* pY,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                      <span class="keywordtype">float</span>* pZ);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_c___random_manager.html#aa4131eddf75f9c95f11d2cf431b8dfd7">TriangleRandom</a>(<span class="keywordtype">float</span> min, <span class="keywordtype">float</span> max);                         <span class="comment">// 三角乱数を取得</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___random_manager.html#a34dcba536488b0a5236698534731615c">CircleContagiousDistribution</a>(<span class="keywordtype">float</span> maxRadius,                  <span class="comment">// 円形集中分布で乱数を取得</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                      <span class="keywordtype">float</span> exponent,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                      <span class="keywordtype">float</span>* pX,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                      <span class="keywordtype">float</span>* pY);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_c___random_manager.html#a3c08577951bf9e4935f2fcffd37e8040">NormalDistributionRandom</a>(<span class="keywordtype">float</span> average,                       <span class="comment">// 正規分布で乱数を取得</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                   <span class="keywordtype">float</span> standardDeviation);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___random_manager.html#a3e421ffa1403850d642996052c23e9a3">RandomTrue</a>(<span class="keywordtype">float</span> probability);                                 <span class="comment">// 特定の確率でtrueを取得</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::random_device device_;                                         </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::mt19937 engine_;                                               </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="ttc" id="class_c___random_manager_html_ac63260b6c09a0a72f678b1234502a37e"><div class="ttname"><a href="class_c___random_manager.html#ac63260b6c09a0a72f678b1234502a37e">C_RandomManager::SphereRandom</a></div><div class="ttdeci">void SphereRandom(float maxRadius, float *pX, float *pY, float *pZ)</div><div class="ttdoc">球内乱数を取得する </div><div class="ttdef"><b>Definition:</b> RandomManager.cpp:144</div></div>
+<div class="ttc" id="class_c___automatic_singleton_html"><div class="ttname"><a href="class_c___automatic_singleton.html">C_AutomaticSingleton</a></div><div class="ttdoc">オートマティックシングルトン </div><div class="ttdef"><b>Definition:</b> AutomaticSingleton.h:13</div></div>
+<div class="ttc" id="class_c___random_manager_html_a3e421ffa1403850d642996052c23e9a3"><div class="ttname"><a href="class_c___random_manager.html#a3e421ffa1403850d642996052c23e9a3">C_RandomManager::RandomTrue</a></div><div class="ttdeci">bool RandomTrue(float probability)</div><div class="ttdoc">特定の確率でtrueを取得する </div><div class="ttdef"><b>Definition:</b> RandomManager.cpp:241</div></div>
+<div class="ttc" id="class_c___random_manager_html_a24e1a8eb088508c8298ea4db22ab9e98"><div class="ttname"><a href="class_c___random_manager.html#a24e1a8eb088508c8298ea4db22ab9e98">C_RandomManager::PerfectRandom</a></div><div class="ttdeci">unsigned int PerfectRandom()</div><div class="ttdoc">完璧な乱数を取得する </div><div class="ttdef"><b>Definition:</b> RandomManager.cpp:67</div></div>
+<div class="ttc" id="class_c___random_manager_html_aa4131eddf75f9c95f11d2cf431b8dfd7"><div class="ttname"><a href="class_c___random_manager.html#aa4131eddf75f9c95f11d2cf431b8dfd7">C_RandomManager::TriangleRandom</a></div><div class="ttdeci">float TriangleRandom(float min, float max)</div><div class="ttdoc">三角乱数を取得する </div><div class="ttdef"><b>Definition:</b> RandomManager.cpp:180</div></div>
+<div class="ttc" id="class_c___random_manager_html_a241b6dcccf0a7b63a8f537540b472ebe"><div class="ttname"><a href="class_c___random_manager.html#a241b6dcccf0a7b63a8f537540b472ebe">C_RandomManager::~C_RandomManager</a></div><div class="ttdeci">~C_RandomManager() override</div><div class="ttdoc">デストラクタ </div><div class="ttdef"><b>Definition:</b> RandomManager.cpp:23</div></div>
+<div class="ttc" id="class_c___random_manager_html_a2e98d98243e288923eef8b95c395b443"><div class="ttname"><a href="class_c___random_manager.html#a2e98d98243e288923eef8b95c395b443">C_RandomManager::SphericalSurfaceRandom</a></div><div class="ttdeci">void SphericalSurfaceRandom(float radius, float *pX, float *pY, float *pZ)</div><div class="ttdoc">球面乱数を取得する </div><div class="ttdef"><b>Definition:</b> RandomManager.cpp:109</div></div>
+<div class="ttc" id="class_c___random_manager_html_a8c94e000f95f84f103c233625dcc70f7"><div class="ttname"><a href="class_c___random_manager.html#a8c94e000f95f84f103c233625dcc70f7">C_RandomManager::Random</a></div><div class="ttdeci">int Random(int32_t min, int32_t max)</div><div class="ttdoc">整数の乱数を取得する </div><div class="ttdef"><b>Definition:</b> RandomManager.cpp:36</div></div>
+<div class="ttc" id="_automatic_singleton_8h_html"><div class="ttname"><a href="_automatic_singleton_8h.html">AutomaticSingleton.h</a></div></div>
+<div class="ttc" id="class_c___random_manager_html_a34dcba536488b0a5236698534731615c"><div class="ttname"><a href="class_c___random_manager.html#a34dcba536488b0a5236698534731615c">C_RandomManager::CircleContagiousDistribution</a></div><div class="ttdeci">void CircleContagiousDistribution(float maxRadius, float exponent, float *pX, float *pY)</div><div class="ttdoc">円形集中分布で乱数を取得する </div><div class="ttdef"><b>Definition:</b> RandomManager.cpp:196</div></div>
+<div class="ttc" id="class_c___random_manager_html_a3c08577951bf9e4935f2fcffd37e8040"><div class="ttname"><a href="class_c___random_manager.html#a3c08577951bf9e4935f2fcffd37e8040">C_RandomManager::NormalDistributionRandom</a></div><div class="ttdeci">float NormalDistributionRandom(float average, float standardDeviation)</div><div class="ttdoc">正規分布で乱数を取得する </div><div class="ttdef"><b>Definition:</b> RandomManager.cpp:224</div></div>
+<div class="ttc" id="class_c___random_manager_html_af8a7b90d4359d702b51b63707d2f4b7f"><div class="ttname"><a href="class_c___random_manager.html#af8a7b90d4359d702b51b63707d2f4b7f">C_RandomManager::CircleRandom</a></div><div class="ttdeci">void CircleRandom(float maxRadius, float *pX, float *pY)</div><div class="ttdoc">円内乱数を取得する </div><div class="ttdef"><b>Definition:</b> RandomManager.cpp:82</div></div>
+<div class="ttc" id="class_c___random_manager_html_aa50bacc009b0263897fc89d8e15c1be5"><div class="ttname"><a href="class_c___random_manager.html#aa50bacc009b0263897fc89d8e15c1be5">C_RandomManager::C_RandomManager</a></div><div class="ttdeci">C_RandomManager()</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> RandomManager.cpp:11</div></div>
+<div class="ttc" id="class_c___random_manager_html"><div class="ttname"><a href="class_c___random_manager.html">C_RandomManager</a></div><div class="ttdoc">ランダムマネージャー </div><div class="ttdef"><b>Definition:</b> RandomManager.h:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分49秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

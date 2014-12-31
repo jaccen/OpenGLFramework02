@@ -1,0 +1,5 @@
+<map id="C_TextInputManager::AddWord" name="C_TextInputManager::AddWord">
+<area shape="rect" id="node2" href="$class_c___event_manager.html#ad1eb3cc25c3608ca73415531cfec10ef" title="イベントの更新処理を行う " alt="" coords="195,13,364,39"/>
+<area shape="rect" id="node3" href="$class_c___framework.html#a0d68de266751555a74db197ea90df219" title="ライブラリの更新処理を行う " alt="" coords="412,13,563,39"/>
+<area shape="rect" id="node4" href="$class_c___framework.html#a3cf73a67b3bdacf785b58b0a3573a60c" title="ゲームの実行処理を行う " alt="" coords="611,13,744,39"/>
+</map>

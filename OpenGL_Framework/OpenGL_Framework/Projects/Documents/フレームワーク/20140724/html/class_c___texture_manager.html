@@ -1,0 +1,488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: C_TextureManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-attribs">静的公開変数類</a> &#124;
+<a href="class_c___texture_manager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">C_TextureManager クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>テクスチャマネージャー  
+ <a href="class_c___texture_manager.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_texture_manager_8h_source.html">TextureManager.h</a>&gt;</code></p>
+<div class="dynheader">
+C_TextureManager の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___texture_manager__inherit__graph.png" border="0" usemap="#_c___texture_manager_inherit__map" alt="Inheritance graph"/></div>
+<map name="_c___texture_manager_inherit__map" id="_c___texture_manager_inherit__map">
+<area shape="rect" id="node2" href="class_c___singleton.html" title="{C_Singleton\&lt; C_TextureManager \&gt;\n||+ s_GetInstance()\l# C_Singleton()\l# ~C_Singleton()\l}" alt="" coords="13,5,238,112"/></map>
+</div>
+<div class="dynheader">
+C_TextureManager 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___texture_manager__coll__graph.png" border="0" usemap="#_c___texture_manager_coll__map" alt="Collaboration graph"/></div>
+<map name="_c___texture_manager_coll__map" id="_c___texture_manager_coll__map">
+<area shape="rect" id="node2" href="class_c___singleton.html" title="{C_Singleton\&lt; C_TextureManager \&gt;\n||+ s_GetInstance()\l# C_Singleton()\l# ~C_Singleton()\l}" alt="" coords="13,5,238,112"/></map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a3526fd41420d950625d5e52f9dc29809"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___texture_manager.html#a3526fd41420d950625d5e52f9dc29809">Create</a> (const std::string fileName, const std::string id)</td></tr>
+<tr class="memdesc:a3526fd41420d950625d5e52f9dc29809"><td class="mdescLeft">&#160;</td><td class="mdescRight">テクスチャの作成を行う  <a href="#a3526fd41420d950625d5e52f9dc29809">[詳解]</a><br /></td></tr>
+<tr class="separator:a3526fd41420d950625d5e52f9dc29809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcfa353dff7b1b56ee242610d2137ed9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___texture_manager.html#abcfa353dff7b1b56ee242610d2137ed9">CreateCubeMap</a> (const std::string directoryName, const std::array&lt; std::string, <a class="el" href="class_c___texture_manager.html#aaa6150d2e92a98785c6713250aa0187f">s_CUBEMAP_TEXTURE_NUMBER</a> &gt; &amp;rFileNames, const std::array&lt; GLuint, <a class="el" href="class_c___texture_manager.html#aaa6150d2e92a98785c6713250aa0187f">s_CUBEMAP_TEXTURE_NUMBER</a> &gt; &amp;rTargets, const std::string id)</td></tr>
+<tr class="memdesc:abcfa353dff7b1b56ee242610d2137ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">キューブマップテクスチャの作成を行う  <a href="#abcfa353dff7b1b56ee242610d2137ed9">[詳解]</a><br /></td></tr>
+<tr class="separator:abcfa353dff7b1b56ee242610d2137ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84f97fd8dd7e48aeca803223d2fde920"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___texture_manager.html#a84f97fd8dd7e48aeca803223d2fde920">CreateFromFont</a> (TTF_Font *pFont, const std::string id, const std::string words, uint8_t red=0, uint8_t green=0, uint8_t blue=0)</td></tr>
+<tr class="memdesc:a84f97fd8dd7e48aeca803223d2fde920"><td class="mdescLeft">&#160;</td><td class="mdescRight">フォントからテクスチャの作成を行う  <a href="#a84f97fd8dd7e48aeca803223d2fde920">[詳解]</a><br /></td></tr>
+<tr class="separator:a84f97fd8dd7e48aeca803223d2fde920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6125cd5ba8b75e003cd115a75cc243be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___texture_manager.html#a6125cd5ba8b75e003cd115a75cc243be">Destroy</a> (std::string id)</td></tr>
+<tr class="memdesc:a6125cd5ba8b75e003cd115a75cc243be"><td class="mdescLeft">&#160;</td><td class="mdescRight">テクスチャの破棄を行う  <a href="#a6125cd5ba8b75e003cd115a75cc243be">[詳解]</a><br /></td></tr>
+<tr class="separator:a6125cd5ba8b75e003cd115a75cc243be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa1c197ac7d503e896dabd127c98c14e"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___texture_manager.html#afa1c197ac7d503e896dabd127c98c14e">GetTexture</a> (std::string id) const </td></tr>
+<tr class="memdesc:afa1c197ac7d503e896dabd127c98c14e"><td class="mdescLeft">&#160;</td><td class="mdescRight">テクスチャの取得する  <a href="#afa1c197ac7d503e896dabd127c98c14e">[詳解]</a><br /></td></tr>
+<tr class="separator:afa1c197ac7d503e896dabd127c98c14e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae5d6b905ac09202072bc07d39d080e"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___texture_manager.html#a2ae5d6b905ac09202072bc07d39d080e">GetTextureWidth</a> (std::string id) const </td></tr>
+<tr class="memdesc:a2ae5d6b905ac09202072bc07d39d080e"><td class="mdescLeft">&#160;</td><td class="mdescRight">テクスチャの幅を取得する  <a href="#a2ae5d6b905ac09202072bc07d39d080e">[詳解]</a><br /></td></tr>
+<tr class="separator:a2ae5d6b905ac09202072bc07d39d080e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64d95ee3e713f2da45519a7df5048799"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___texture_manager.html#a64d95ee3e713f2da45519a7df5048799">GetTextureHeight</a> (std::string id) const </td></tr>
+<tr class="memdesc:a64d95ee3e713f2da45519a7df5048799"><td class="mdescLeft">&#160;</td><td class="mdescRight">テクスチャの高さを取得する  <a href="#a64d95ee3e713f2da45519a7df5048799">[詳解]</a><br /></td></tr>
+<tr class="separator:a64d95ee3e713f2da45519a7df5048799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+静的公開変数類</h2></td></tr>
+<tr class="memitem:aaa6150d2e92a98785c6713250aa0187f"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___texture_manager.html#aaa6150d2e92a98785c6713250aa0187f">s_CUBEMAP_TEXTURE_NUMBER</a> = 6</td></tr>
+<tr class="memdesc:aaa6150d2e92a98785c6713250aa0187f"><td class="mdescLeft">&#160;</td><td class="mdescRight">キューブマップのテクスチャ数  <a href="#aaa6150d2e92a98785c6713250aa0187f">[詳解]</a><br /></td></tr>
+<tr class="separator:aaa6150d2e92a98785c6713250aa0187f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+その他の継承メンバ</h2></td></tr>
+<tr class="inherit_header pub_static_methods_class_c___singleton"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_c___singleton')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_c___singleton.html">C_Singleton&lt; C_TextureManager &gt;</a> に属する継承静的公開メンバ関数</td></tr>
+<tr class="memitem:a839cb532a0dce8ee900c125f0d05ce23 inherit pub_static_methods_class_c___singleton"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_c___texture_manager.html">C_TextureManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___singleton.html#a839cb532a0dce8ee900c125f0d05ce23">s_GetInstance</a> ()</td></tr>
+<tr class="memdesc:a839cb532a0dce8ee900c125f0d05ce23 inherit pub_static_methods_class_c___singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">唯一のインスタンスを取得する  <a href="#a839cb532a0dce8ee900c125f0d05ce23">[詳解]</a><br /></td></tr>
+<tr class="separator:a839cb532a0dce8ee900c125f0d05ce23 inherit pub_static_methods_class_c___singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_c___singleton"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_c___singleton')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_c___singleton.html">C_Singleton&lt; C_TextureManager &gt;</a> に属する継承限定公開メンバ関数</td></tr>
+<tr class="memitem:a8eb414172fc36ea29952f511a88221bf inherit pro_methods_class_c___singleton"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___singleton.html#a8eb414172fc36ea29952f511a88221bf">C_Singleton</a> ()</td></tr>
+<tr class="memdesc:a8eb414172fc36ea29952f511a88221bf inherit pro_methods_class_c___singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a8eb414172fc36ea29952f511a88221bf">[詳解]</a><br /></td></tr>
+<tr class="separator:a8eb414172fc36ea29952f511a88221bf inherit pro_methods_class_c___singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a1b497c7009b0c1c96026d4674a04e inherit pro_methods_class_c___singleton"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___singleton.html#ad6a1b497c7009b0c1c96026d4674a04e">~C_Singleton</a> ()</td></tr>
+<tr class="memdesc:ad6a1b497c7009b0c1c96026d4674a04e inherit pro_methods_class_c___singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#ad6a1b497c7009b0c1c96026d4674a04e">[詳解]</a><br /></td></tr>
+<tr class="separator:ad6a1b497c7009b0c1c96026d4674a04e inherit pro_methods_class_c___singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>テクスチャマネージャー </p>
+<p>テクスチャを管理するクラス </p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a3526fd41420d950625d5e52f9dc29809"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_TextureManager::Create </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>テクスチャの作成を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ファイル名</td><td></td></tr>
+    <tr><td class="paramname">ID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abcfa353dff7b1b56ee242610d2137ed9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_TextureManager::CreateCubeMap </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>directoryName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; std::string, <a class="el" href="class_c___texture_manager.html#aaa6150d2e92a98785c6713250aa0187f">s_CUBEMAP_TEXTURE_NUMBER</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rFileNames</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; GLuint, <a class="el" href="class_c___texture_manager.html#aaa6150d2e92a98785c6713250aa0187f">s_CUBEMAP_TEXTURE_NUMBER</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rTargets</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>キューブマップテクスチャの作成を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ディレクトリ名</td><td></td></tr>
+    <tr><td class="paramname">ファイル名</td><td></td></tr>
+    <tr><td class="paramname">ターゲット</td><td></td></tr>
+    <tr><td class="paramname">ID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___texture_manager_abcfa353dff7b1b56ee242610d2137ed9_icgraph.png" border="0" usemap="#class_c___texture_manager_abcfa353dff7b1b56ee242610d2137ed9_icgraph" alt=""/></div>
+<map name="class_c___texture_manager_abcfa353dff7b1b56ee242610d2137ed9_icgraph" id="class_c___texture_manager_abcfa353dff7b1b56ee242610d2137ed9_icgraph">
+<area shape="rect" id="node2" href="class_c___cube_map_test_scene.html#a080583d4981d77915aee65763fbde26a" title="初期化処理を行う " alt="" coords="231,5,385,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a84f97fd8dd7e48aeca803223d2fde920"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_TextureManager::CreateFromFont </td>
+          <td>(</td>
+          <td class="paramtype">TTF_Font *&#160;</td>
+          <td class="paramname"><em>pFont</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>words</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>red</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>green</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>blue</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>フォントからテクスチャの作成を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">フォント</td><td></td></tr>
+    <tr><td class="paramname">ID</td><td></td></tr>
+    <tr><td class="paramname">文字</td><td></td></tr>
+    <tr><td class="paramname">赤</td><td></td></tr>
+    <tr><td class="paramname">緑</td><td></td></tr>
+    <tr><td class="paramname">青</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___texture_manager_a84f97fd8dd7e48aeca803223d2fde920_cgraph.png" border="0" usemap="#class_c___texture_manager_a84f97fd8dd7e48aeca803223d2fde920_cgraph" alt=""/></div>
+<map name="class_c___texture_manager_a84f97fd8dd7e48aeca803223d2fde920_cgraph" id="class_c___texture_manager_a84f97fd8dd7e48aeca803223d2fde920_cgraph">
+<area shape="rect" id="node2" href="class_c___common.html#a2789c51d40fd48f3149e584d62390b35" title="Shift&#45;JISの文字列からUTF&#45;8文字列への変換を行う " alt="" coords="231,5,412,47"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___texture_manager_a84f97fd8dd7e48aeca803223d2fde920_icgraph.png" border="0" usemap="#class_c___texture_manager_a84f97fd8dd7e48aeca803223d2fde920_icgraph" alt=""/></div>
+<map name="class_c___texture_manager_a84f97fd8dd7e48aeca803223d2fde920_icgraph" id="class_c___texture_manager_a84f97fd8dd7e48aeca803223d2fde920_icgraph">
+<area shape="rect" id="node2" href="class_c___debug_string.html#a44cf2ce331580ba32a0b62334c80bbd2" title="デバックフォントの描画処理を行う " alt="" coords="231,294,377,321"/><area shape="rect" id="node3" href="class_c___animation_test_scene.html#a64ae226c8d9cf129af92b78e53e3b7df" title="更新処理を行う " alt="" coords="450,5,609,47"/><area shape="rect" id="node4" href="class_c___bloom_test_scene.html#adc16411ba0f989a5dd711cfbdd1038cc" title="更新処理を行う " alt="" coords="442,71,617,98"/><area shape="rect" id="node5" href="class_c___cube_map_test_scene.html#a2f9c9ede43fa0cc4622144242fccb2eb" title="更新処理を行う " alt="" coords="452,123,607,164"/><area shape="rect" id="node6" href="class_c___deferred_test_scene.html#a597cde51996d196ce2f9d42381142987" title="描画処理を行う " alt="" coords="455,188,603,229"/><area shape="rect" id="node7" href="class_c___frame_buffer_object_test_scene.html#a5d92d1bbd06d194ba4a19721dbe841ee" title="描画処理を行う " alt="" coords="425,253,633,295"/><area shape="rect" id="node8" href="class_c___normal_map_test_scene.html#abdf005b3ad4811b9a8835ef58795bd29" title="描画処理を行う " alt="" coords="446,319,613,360"/><area shape="rect" id="node9" href="class_c___projector_texture_test_scene.html#a7fe56a3473cfbe071af9900d1dd8c893" title="描画処理を行う " alt="" coords="432,384,627,425"/><area shape="rect" id="node10" href="class_c___tessellation_test_scene.html#a1394926382a33331a7d2e91d30c18bc6" title="描画処理を行う " alt="" coords="445,449,614,491"/><area shape="rect" id="node11" href="class_c___uniform_block_test_scene.html#ac128f4c0ab26e871533f9ac0e2301159" title="描画処理を行う " alt="" coords="441,515,618,556"/><area shape="rect" id="node12" href="class_c___wireframe_test_scene.html#a05bed9cf5ee472f6f08535627a678a88" title="描画処理を行う " alt="" coords="450,580,609,621"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6125cd5ba8b75e003cd115a75cc243be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_TextureManager::Destroy </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>テクスチャの破棄を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___texture_manager_a6125cd5ba8b75e003cd115a75cc243be_icgraph.png" border="0" usemap="#class_c___texture_manager_a6125cd5ba8b75e003cd115a75cc243be_icgraph" alt=""/></div>
+<map name="class_c___texture_manager_a6125cd5ba8b75e003cd115a75cc243be_icgraph" id="class_c___texture_manager_a6125cd5ba8b75e003cd115a75cc243be_icgraph">
+<area shape="rect" id="node2" href="class_c___debug_string.html#a44cf2ce331580ba32a0b62334c80bbd2" title="デバックフォントの描画処理を行う " alt="" coords="237,294,384,321"/><area shape="rect" id="node3" href="class_c___animation_test_scene.html#a64ae226c8d9cf129af92b78e53e3b7df" title="更新処理を行う " alt="" coords="457,5,615,47"/><area shape="rect" id="node4" href="class_c___bloom_test_scene.html#adc16411ba0f989a5dd711cfbdd1038cc" title="更新処理を行う " alt="" coords="449,71,623,98"/><area shape="rect" id="node5" href="class_c___cube_map_test_scene.html#a2f9c9ede43fa0cc4622144242fccb2eb" title="更新処理を行う " alt="" coords="459,123,613,164"/><area shape="rect" id="node6" href="class_c___deferred_test_scene.html#a597cde51996d196ce2f9d42381142987" title="描画処理を行う " alt="" coords="462,188,610,229"/><area shape="rect" id="node7" href="class_c___frame_buffer_object_test_scene.html#a5d92d1bbd06d194ba4a19721dbe841ee" title="描画処理を行う " alt="" coords="432,253,640,295"/><area shape="rect" id="node8" href="class_c___normal_map_test_scene.html#abdf005b3ad4811b9a8835ef58795bd29" title="描画処理を行う " alt="" coords="453,319,619,360"/><area shape="rect" id="node9" href="class_c___projector_texture_test_scene.html#a7fe56a3473cfbe071af9900d1dd8c893" title="描画処理を行う " alt="" coords="439,384,633,425"/><area shape="rect" id="node10" href="class_c___tessellation_test_scene.html#a1394926382a33331a7d2e91d30c18bc6" title="描画処理を行う " alt="" coords="451,449,621,491"/><area shape="rect" id="node11" href="class_c___uniform_block_test_scene.html#ac128f4c0ab26e871533f9ac0e2301159" title="描画処理を行う " alt="" coords="447,515,625,556"/><area shape="rect" id="node12" href="class_c___wireframe_test_scene.html#a05bed9cf5ee472f6f08535627a678a88" title="描画処理を行う " alt="" coords="457,580,615,621"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afa1c197ac7d503e896dabd127c98c14e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint C_TextureManager::GetTexture </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>テクスチャの取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>テクスチャ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a64d95ee3e713f2da45519a7df5048799"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t C_TextureManager::GetTextureHeight </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>テクスチャの高さを取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>テクスチャの高さ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2ae5d6b905ac09202072bc07d39d080e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t C_TextureManager::GetTextureWidth </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>テクスチャの幅を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>テクスチャの幅 </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a class="anchor" id="aaa6150d2e92a98785c6713250aa0187f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int C_TextureManager::s_CUBEMAP_TEXTURE_NUMBER = 6</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>キューブマップのテクスチャ数 </p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="_texture_manager_8h_source.html">TextureManager.h</a></li>
+<li><a class="el" href="_texture_manager_8cpp.html">TextureManager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分53秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

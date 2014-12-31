@@ -1,0 +1,4 @@
+<map id="C_GamepadManager::Finalize" name="C_GamepadManager::Finalize">
+<area shape="rect" id="node2" href="$class_c___framework.html#ab59f29a9584a39b609676a7e069c6a7e" title="ライブラリの終了処理を行う " alt="" coords="251,5,405,32"/>
+<area shape="rect" id="node3" href="$class_c___framework.html#a3cf73a67b3bdacf785b58b0a3573a60c" title="ゲームの実行処理を行う " alt="" coords="453,5,587,32"/>
+</map>

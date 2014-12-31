@@ -1,0 +1,1478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: C_SoundManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-attribs">静的公開変数類</a> &#124;
+<a href="class_c___sound_manager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">C_SoundManager クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>サウンドマネージャー  
+ <a href="class_c___sound_manager.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_sound_manager_8h_source.html">SoundManager.h</a>&gt;</code></p>
+<div class="dynheader">
+C_SoundManager の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___sound_manager__inherit__graph.png" border="0" usemap="#_c___sound_manager_inherit__map" alt="Inheritance graph"/></div>
+<map name="_c___sound_manager_inherit__map" id="_c___sound_manager_inherit__map">
+<area shape="rect" id="node2" href="class_c___singleton.html" title="{C_Singleton\&lt; C_SoundManager \&gt;\n||+ s_GetInstance()\l# C_Singleton()\l# ~C_Singleton()\l}" alt="" coords="9,5,227,112"/></map>
+</div>
+<div class="dynheader">
+C_SoundManager 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___sound_manager__coll__graph.png" border="0" usemap="#_c___sound_manager_coll__map" alt="Collaboration graph"/></div>
+<map name="_c___sound_manager_coll__map" id="_c___sound_manager_coll__map">
+<area shape="rect" id="node2" href="class_c___singleton.html" title="{C_Singleton\&lt; C_SoundManager \&gt;\n||+ s_GetInstance()\l# C_Singleton()\l# ~C_Singleton()\l}" alt="" coords="9,5,227,112"/></map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a539737f0b52fc7edafbcbd2c7cd7e112"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a539737f0b52fc7edafbcbd2c7cd7e112">Initialize</a> ()</td></tr>
+<tr class="memdesc:a539737f0b52fc7edafbcbd2c7cd7e112"><td class="mdescLeft">&#160;</td><td class="mdescRight">ミキサーAPIを開く処理を行う  <a href="#a539737f0b52fc7edafbcbd2c7cd7e112">[詳解]</a><br /></td></tr>
+<tr class="separator:a539737f0b52fc7edafbcbd2c7cd7e112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad83a88eb944238405176a9a45d04fac1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#ad83a88eb944238405176a9a45d04fac1">Finalize</a> ()</td></tr>
+<tr class="memdesc:ad83a88eb944238405176a9a45d04fac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドエフェクトとBGMの終了処理を行う  <a href="#ad83a88eb944238405176a9a45d04fac1">[詳解]</a><br /></td></tr>
+<tr class="separator:ad83a88eb944238405176a9a45d04fac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e7393194377d95f641d8f808a4f5660"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a2e7393194377d95f641d8f808a4f5660">LoadSoundEffect</a> (const std::string fileName, const std::string id)</td></tr>
+<tr class="memdesc:a2e7393194377d95f641d8f808a4f5660"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドエフェクトのロードを行う  <a href="#a2e7393194377d95f641d8f808a4f5660">[詳解]</a><br /></td></tr>
+<tr class="separator:a2e7393194377d95f641d8f808a4f5660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a977faa86a90f5aa05eb93e8f9dd990fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a977faa86a90f5aa05eb93e8f9dd990fc">ReleaseSoundEffect</a> (const std::string id)</td></tr>
+<tr class="memdesc:a977faa86a90f5aa05eb93e8f9dd990fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドエフェクトの解放を行う  <a href="#a977faa86a90f5aa05eb93e8f9dd990fc">[詳解]</a><br /></td></tr>
+<tr class="separator:a977faa86a90f5aa05eb93e8f9dd990fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04c67cb1b42d20533e8b0edba11c4f3b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a04c67cb1b42d20533e8b0edba11c4f3b">PlaySoundEffect</a> (Mix_Chunk *pSoundEffect, int allocateChannel=<a class="el" href="class_c___sound_manager.html#ab7e130c893ba2ade96901e5b70f546c2">s_CHANNEL_AUTO_ALLOCATE</a>, int playNumber=<a class="el" href="class_c___sound_manager.html#ade47ff292657386953ec9f4a86f71e5f">s_PLAY_ONCE</a>, int *pGetAllocateChannel=nullptr)</td></tr>
+<tr class="memdesc:a04c67cb1b42d20533e8b0edba11c4f3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドエフェクトの再生を行う  <a href="#a04c67cb1b42d20533e8b0edba11c4f3b">[詳解]</a><br /></td></tr>
+<tr class="separator:a04c67cb1b42d20533e8b0edba11c4f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b701d49256445ba8d32509b14efa89"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a00b701d49256445ba8d32509b14efa89">FadeInPlaySoundEffect</a> (Mix_Chunk *pSoundEffect, int allocateChannel=<a class="el" href="class_c___sound_manager.html#ab7e130c893ba2ade96901e5b70f546c2">s_CHANNEL_AUTO_ALLOCATE</a>, int playNumber=<a class="el" href="class_c___sound_manager.html#ade47ff292657386953ec9f4a86f71e5f">s_PLAY_ONCE</a>, int fadeInTime=<a class="el" href="class_c___sound_manager.html#a9bbaf2f203858e31a167f7654a5fa910">s_ONE_SECOND</a>, int *pGetAllocateChannel=nullptr)</td></tr>
+<tr class="memdesc:a00b701d49256445ba8d32509b14efa89"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドエフェクトのフェードインでの再生を行う  <a href="#a00b701d49256445ba8d32509b14efa89">[詳解]</a><br /></td></tr>
+<tr class="separator:a00b701d49256445ba8d32509b14efa89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3834d17dcd46bf4c573b04b0ddfae41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#ac3834d17dcd46bf4c573b04b0ddfae41">PauseSoundEffect</a> (int channel=<a class="el" href="class_c___sound_manager.html#a4062e01cf3944c8c366843f41cc2135b">s_ALL_CHANNELS</a>)</td></tr>
+<tr class="memdesc:ac3834d17dcd46bf4c573b04b0ddfae41"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドエフェクトの一時停止を行う  <a href="#ac3834d17dcd46bf4c573b04b0ddfae41">[詳解]</a><br /></td></tr>
+<tr class="separator:ac3834d17dcd46bf4c573b04b0ddfae41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1622db6025f1903a41a82840e1eea037"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a1622db6025f1903a41a82840e1eea037">ResumeSoundEffect</a> (int channel=<a class="el" href="class_c___sound_manager.html#a4062e01cf3944c8c366843f41cc2135b">s_ALL_CHANNELS</a>)</td></tr>
+<tr class="memdesc:a1622db6025f1903a41a82840e1eea037"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドエフェクトの再び再生を行う  <a href="#a1622db6025f1903a41a82840e1eea037">[詳解]</a><br /></td></tr>
+<tr class="separator:a1622db6025f1903a41a82840e1eea037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ffa5917e2eb3bf34a46c59d1ca2a160"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a4ffa5917e2eb3bf34a46c59d1ca2a160">StopSoundEffect</a> (int channel=<a class="el" href="class_c___sound_manager.html#a4062e01cf3944c8c366843f41cc2135b">s_ALL_CHANNELS</a>)</td></tr>
+<tr class="memdesc:a4ffa5917e2eb3bf34a46c59d1ca2a160"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドエフェクトの停止を行う  <a href="#a4ffa5917e2eb3bf34a46c59d1ca2a160">[詳解]</a><br /></td></tr>
+<tr class="separator:a4ffa5917e2eb3bf34a46c59d1ca2a160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa31e5e0c7360a4afc79f064bbd7bb3ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#aa31e5e0c7360a4afc79f064bbd7bb3ca">FadeOutStopSoundEffect</a> (int channel=<a class="el" href="class_c___sound_manager.html#a4062e01cf3944c8c366843f41cc2135b">s_ALL_CHANNELS</a>, int fadeOutTime=<a class="el" href="class_c___sound_manager.html#a9bbaf2f203858e31a167f7654a5fa910">s_ONE_SECOND</a>)</td></tr>
+<tr class="memdesc:aa31e5e0c7360a4afc79f064bbd7bb3ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドエフェクトのフェードアウトでの停止を行う  <a href="#aa31e5e0c7360a4afc79f064bbd7bb3ca">[詳解]</a><br /></td></tr>
+<tr class="separator:aa31e5e0c7360a4afc79f064bbd7bb3ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41e8c28e3277ccd77eba1fa1e1701b04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a41e8c28e3277ccd77eba1fa1e1701b04">CheckPlayingSoundEffect</a> (int channel=<a class="el" href="class_c___sound_manager.html#a4062e01cf3944c8c366843f41cc2135b">s_ALL_CHANNELS</a>)</td></tr>
+<tr class="memdesc:a41e8c28e3277ccd77eba1fa1e1701b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドエフェクトが再生中か確認を行う  <a href="#a41e8c28e3277ccd77eba1fa1e1701b04">[詳解]</a><br /></td></tr>
+<tr class="separator:a41e8c28e3277ccd77eba1fa1e1701b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02b37fbd8bed589b2f9b92fc64c1f4c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a02b37fbd8bed589b2f9b92fc64c1f4c2">LoadBgm</a> (std::string fileName, std::string id)</td></tr>
+<tr class="memdesc:a02b37fbd8bed589b2f9b92fc64c1f4c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">BGMのロードを行う  <a href="#a02b37fbd8bed589b2f9b92fc64c1f4c2">[詳解]</a><br /></td></tr>
+<tr class="separator:a02b37fbd8bed589b2f9b92fc64c1f4c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e16f1c2ccc37b2d4fad5aacd3797850"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a1e16f1c2ccc37b2d4fad5aacd3797850">ReleaseBgm</a> (std::string id)</td></tr>
+<tr class="memdesc:a1e16f1c2ccc37b2d4fad5aacd3797850"><td class="mdescLeft">&#160;</td><td class="mdescRight">BGMの解放を行う  <a href="#a1e16f1c2ccc37b2d4fad5aacd3797850">[詳解]</a><br /></td></tr>
+<tr class="separator:a1e16f1c2ccc37b2d4fad5aacd3797850"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87da6c1a1cbfa0fd26d9e7935685d57c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a87da6c1a1cbfa0fd26d9e7935685d57c">PlayBgm</a> (Mix_Music *pBgm, int playNumber=<a class="el" href="class_c___sound_manager.html#a559accc478809abf75f70a2a4af20a4d">s_PLAY_LOOP</a>)</td></tr>
+<tr class="memdesc:a87da6c1a1cbfa0fd26d9e7935685d57c"><td class="mdescLeft">&#160;</td><td class="mdescRight">BGMの再生を行う  <a href="#a87da6c1a1cbfa0fd26d9e7935685d57c">[詳解]</a><br /></td></tr>
+<tr class="separator:a87da6c1a1cbfa0fd26d9e7935685d57c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49bef0ec9a15a0336fddc123e152191e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a49bef0ec9a15a0336fddc123e152191e">FadeInPlayBgm</a> (Mix_Music *pBgm, int playNumber=<a class="el" href="class_c___sound_manager.html#a559accc478809abf75f70a2a4af20a4d">s_PLAY_LOOP</a>, int fadeInTime=<a class="el" href="class_c___sound_manager.html#a9bbaf2f203858e31a167f7654a5fa910">s_ONE_SECOND</a>)</td></tr>
+<tr class="memdesc:a49bef0ec9a15a0336fddc123e152191e"><td class="mdescLeft">&#160;</td><td class="mdescRight">BGMのフェードインでの再生を行う  <a href="#a49bef0ec9a15a0336fddc123e152191e">[詳解]</a><br /></td></tr>
+<tr class="separator:a49bef0ec9a15a0336fddc123e152191e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bfe9aefc58ecb1b67de11508892fb8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a6bfe9aefc58ecb1b67de11508892fb8d">PauseBgm</a> ()</td></tr>
+<tr class="memdesc:a6bfe9aefc58ecb1b67de11508892fb8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">BGMの一時停止を行う  <a href="#a6bfe9aefc58ecb1b67de11508892fb8d">[詳解]</a><br /></td></tr>
+<tr class="separator:a6bfe9aefc58ecb1b67de11508892fb8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a092653ab5fddc36fb1a53304591d04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a2a092653ab5fddc36fb1a53304591d04">ResumeBgm</a> ()</td></tr>
+<tr class="memdesc:a2a092653ab5fddc36fb1a53304591d04"><td class="mdescLeft">&#160;</td><td class="mdescRight">BGMの再び再生を行う  <a href="#a2a092653ab5fddc36fb1a53304591d04">[詳解]</a><br /></td></tr>
+<tr class="separator:a2a092653ab5fddc36fb1a53304591d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bc817a4abdd079cc809a269ca4007b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a4bc817a4abdd079cc809a269ca4007b6">StopBgm</a> ()</td></tr>
+<tr class="memdesc:a4bc817a4abdd079cc809a269ca4007b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">BGMの停止を行う  <a href="#a4bc817a4abdd079cc809a269ca4007b6">[詳解]</a><br /></td></tr>
+<tr class="separator:a4bc817a4abdd079cc809a269ca4007b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62cafa8fcef928b3f017d41645c84b62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a62cafa8fcef928b3f017d41645c84b62">FadeOutStopBgm</a> (int fadeOutTime=<a class="el" href="class_c___sound_manager.html#a9bbaf2f203858e31a167f7654a5fa910">s_ONE_SECOND</a>)</td></tr>
+<tr class="memdesc:a62cafa8fcef928b3f017d41645c84b62"><td class="mdescLeft">&#160;</td><td class="mdescRight">BGMのフェードアウトでの停止を行う  <a href="#a62cafa8fcef928b3f017d41645c84b62">[詳解]</a><br /></td></tr>
+<tr class="separator:a62cafa8fcef928b3f017d41645c84b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abab5d33045df194e97ff85636d6d968b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#abab5d33045df194e97ff85636d6d968b">RewindBgm</a> ()</td></tr>
+<tr class="memdesc:abab5d33045df194e97ff85636d6d968b"><td class="mdescLeft">&#160;</td><td class="mdescRight">BGMの巻き戻し再生を行う  <a href="#abab5d33045df194e97ff85636d6d968b">[詳解]</a><br /></td></tr>
+<tr class="separator:abab5d33045df194e97ff85636d6d968b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dc85169d4c143f136cf3c03a1ad8578"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a8dc85169d4c143f136cf3c03a1ad8578">CheckPlayingBgm</a> ()</td></tr>
+<tr class="memdesc:a8dc85169d4c143f136cf3c03a1ad8578"><td class="mdescLeft">&#160;</td><td class="mdescRight">BGMが再生中か確認を行う  <a href="#a8dc85169d4c143f136cf3c03a1ad8578">[詳解]</a><br /></td></tr>
+<tr class="separator:a8dc85169d4c143f136cf3c03a1ad8578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d828adf31a2c05ebe67776d52add864"><td class="memItemLeft" align="right" valign="top">Mix_Chunk *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a9d828adf31a2c05ebe67776d52add864">GetSoundEffect</a> (const std::string id) const </td></tr>
+<tr class="memdesc:a9d828adf31a2c05ebe67776d52add864"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドエフェクトの取得を行う  <a href="#a9d828adf31a2c05ebe67776d52add864">[詳解]</a><br /></td></tr>
+<tr class="separator:a9d828adf31a2c05ebe67776d52add864"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b57ee33b9d6b06a554b11511050ae27"><td class="memItemLeft" align="right" valign="top">Mix_Music *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a0b57ee33b9d6b06a554b11511050ae27">GetBgm</a> (const std::string id) const </td></tr>
+<tr class="memdesc:a0b57ee33b9d6b06a554b11511050ae27"><td class="mdescLeft">&#160;</td><td class="mdescRight">BGMの取得を行う  <a href="#a0b57ee33b9d6b06a554b11511050ae27">[詳解]</a><br /></td></tr>
+<tr class="separator:a0b57ee33b9d6b06a554b11511050ae27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41aaca112a4e5c93172c9a3ffc37c036"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a41aaca112a4e5c93172c9a3ffc37c036">SetChannelVolume</a> (int channel=<a class="el" href="class_c___sound_manager.html#a4062e01cf3944c8c366843f41cc2135b">s_ALL_CHANNELS</a>, int volume=MIX_MAX_VOLUME)</td></tr>
+<tr class="memdesc:a41aaca112a4e5c93172c9a3ffc37c036"><td class="mdescLeft">&#160;</td><td class="mdescRight">チャネルのボリューム設定を行う  <a href="#a41aaca112a4e5c93172c9a3ffc37c036">[詳解]</a><br /></td></tr>
+<tr class="separator:a41aaca112a4e5c93172c9a3ffc37c036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7da67b72a87c9a18445ce55fb9adc0cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a7da67b72a87c9a18445ce55fb9adc0cf">SetSoundEffectVolume</a> (Mix_Chunk *pSoundEffect, int volume=MIX_MAX_VOLUME)</td></tr>
+<tr class="memdesc:a7da67b72a87c9a18445ce55fb9adc0cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドエフェクトのボリューム設定を行う  <a href="#a7da67b72a87c9a18445ce55fb9adc0cf">[詳解]</a><br /></td></tr>
+<tr class="separator:a7da67b72a87c9a18445ce55fb9adc0cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f1b22aaf0c60c5e192b24ddfcc923c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a6f1b22aaf0c60c5e192b24ddfcc923c5">SetSoundEffectDistance</a> (int channel, Uint8 distance=<a class="el" href="class_c___sound_manager.html#a38e3d36681b5d07d966ac7423d9a2616">s_NEAREST_DISTANCE</a>)</td></tr>
+<tr class="memdesc:a6f1b22aaf0c60c5e192b24ddfcc923c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドエフェクトの距離の設定を行う  <a href="#a6f1b22aaf0c60c5e192b24ddfcc923c5">[詳解]</a><br /></td></tr>
+<tr class="separator:a6f1b22aaf0c60c5e192b24ddfcc923c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32f23a16e0bb15ee73d0604fe9cc6919"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a32f23a16e0bb15ee73d0604fe9cc6919">SetSoundEffectPosition</a> (int channel, Sint16 direction=<a class="el" href="class_c___sound_manager.html#a53ed6d90f61aeb14a302fe7f79e2a75a">s_DIRECTION_FRONT</a>, Uint8 distance=<a class="el" href="class_c___sound_manager.html#a38e3d36681b5d07d966ac7423d9a2616">s_NEAREST_DISTANCE</a>)</td></tr>
+<tr class="memdesc:a32f23a16e0bb15ee73d0604fe9cc6919"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドエフェクトの方向と距離の設定を行う  <a href="#a32f23a16e0bb15ee73d0604fe9cc6919">[詳解]</a><br /></td></tr>
+<tr class="separator:a32f23a16e0bb15ee73d0604fe9cc6919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06263bad0371c96fdf3ec8e364166f20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a06263bad0371c96fdf3ec8e364166f20">SetBgmVolume</a> (int volume=MIX_MAX_VOLUME)</td></tr>
+<tr class="memdesc:a06263bad0371c96fdf3ec8e364166f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">BGMのボリューム設定を行う  <a href="#a06263bad0371c96fdf3ec8e364166f20">[詳解]</a><br /></td></tr>
+<tr class="separator:a06263bad0371c96fdf3ec8e364166f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeeb01d1cd152404ac24fbaafa40f481"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#aeeeb01d1cd152404ac24fbaafa40f481">SetBgmStartTime</a> (double startTime)</td></tr>
+<tr class="memdesc:aeeeb01d1cd152404ac24fbaafa40f481"><td class="mdescLeft">&#160;</td><td class="mdescRight">BGMの開始時間の設定を行う  <a href="#aeeeb01d1cd152404ac24fbaafa40f481">[詳解]</a><br /></td></tr>
+<tr class="separator:aeeeb01d1cd152404ac24fbaafa40f481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+静的公開変数類</h2></td></tr>
+<tr class="memitem:afcd2b3af44cf8bd29ec8166b2d45311b"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#afcd2b3af44cf8bd29ec8166b2d45311b">s_MAX_CHANNELS</a> = 16</td></tr>
+<tr class="memdesc:afcd2b3af44cf8bd29ec8166b2d45311b"><td class="mdescLeft">&#160;</td><td class="mdescRight">チャネルの最大数  <a href="#afcd2b3af44cf8bd29ec8166b2d45311b">[詳解]</a><br /></td></tr>
+<tr class="separator:afcd2b3af44cf8bd29ec8166b2d45311b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a559accc478809abf75f70a2a4af20a4d"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a559accc478809abf75f70a2a4af20a4d">s_PLAY_LOOP</a> = -1</td></tr>
+<tr class="memdesc:a559accc478809abf75f70a2a4af20a4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ループ再生  <a href="#a559accc478809abf75f70a2a4af20a4d">[詳解]</a><br /></td></tr>
+<tr class="separator:a559accc478809abf75f70a2a4af20a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade47ff292657386953ec9f4a86f71e5f"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#ade47ff292657386953ec9f4a86f71e5f">s_PLAY_ONCE</a> = 0</td></tr>
+<tr class="memdesc:ade47ff292657386953ec9f4a86f71e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">1回再生  <a href="#ade47ff292657386953ec9f4a86f71e5f">[詳解]</a><br /></td></tr>
+<tr class="separator:ade47ff292657386953ec9f4a86f71e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7e130c893ba2ade96901e5b70f546c2"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#ab7e130c893ba2ade96901e5b70f546c2">s_CHANNEL_AUTO_ALLOCATE</a> = -1</td></tr>
+<tr class="memdesc:ab7e130c893ba2ade96901e5b70f546c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">チャネルを自動で割り当て  <a href="#ab7e130c893ba2ade96901e5b70f546c2">[詳解]</a><br /></td></tr>
+<tr class="separator:ab7e130c893ba2ade96901e5b70f546c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4062e01cf3944c8c366843f41cc2135b"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a4062e01cf3944c8c366843f41cc2135b">s_ALL_CHANNELS</a> = -1</td></tr>
+<tr class="memdesc:a4062e01cf3944c8c366843f41cc2135b"><td class="mdescLeft">&#160;</td><td class="mdescRight">すべてのチャネル  <a href="#a4062e01cf3944c8c366843f41cc2135b">[詳解]</a><br /></td></tr>
+<tr class="separator:a4062e01cf3944c8c366843f41cc2135b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bbaf2f203858e31a167f7654a5fa910"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a9bbaf2f203858e31a167f7654a5fa910">s_ONE_SECOND</a> = 1000</td></tr>
+<tr class="memdesc:a9bbaf2f203858e31a167f7654a5fa910"><td class="mdescLeft">&#160;</td><td class="mdescRight">1秒( ミリ秒単位 )  <a href="#a9bbaf2f203858e31a167f7654a5fa910">[詳解]</a><br /></td></tr>
+<tr class="separator:a9bbaf2f203858e31a167f7654a5fa910"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38e3d36681b5d07d966ac7423d9a2616"><td class="memItemLeft" align="right" valign="top">static const Uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a38e3d36681b5d07d966ac7423d9a2616">s_NEAREST_DISTANCE</a> = 0</td></tr>
+<tr class="memdesc:a38e3d36681b5d07d966ac7423d9a2616"><td class="mdescLeft">&#160;</td><td class="mdescRight">最も近い距離  <a href="#a38e3d36681b5d07d966ac7423d9a2616">[詳解]</a><br /></td></tr>
+<tr class="separator:a38e3d36681b5d07d966ac7423d9a2616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3833f3b2bac94bc910b1fe58cdb31ea0"><td class="memItemLeft" align="right" valign="top">static const Uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a3833f3b2bac94bc910b1fe58cdb31ea0">s_FARTHEST_DISTANCE</a> = 255</td></tr>
+<tr class="memdesc:a3833f3b2bac94bc910b1fe58cdb31ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">最も遠い距離  <a href="#a3833f3b2bac94bc910b1fe58cdb31ea0">[詳解]</a><br /></td></tr>
+<tr class="separator:a3833f3b2bac94bc910b1fe58cdb31ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53ed6d90f61aeb14a302fe7f79e2a75a"><td class="memItemLeft" align="right" valign="top">static const Sint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a53ed6d90f61aeb14a302fe7f79e2a75a">s_DIRECTION_FRONT</a> = 0</td></tr>
+<tr class="memdesc:a53ed6d90f61aeb14a302fe7f79e2a75a"><td class="mdescLeft">&#160;</td><td class="mdescRight">前方向  <a href="#a53ed6d90f61aeb14a302fe7f79e2a75a">[詳解]</a><br /></td></tr>
+<tr class="separator:a53ed6d90f61aeb14a302fe7f79e2a75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9789061ee5b72a18837d9926af08006f"><td class="memItemLeft" align="right" valign="top">static const Sint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a9789061ee5b72a18837d9926af08006f">s_DIRECTION_RIGHT</a> = 90</td></tr>
+<tr class="memdesc:a9789061ee5b72a18837d9926af08006f"><td class="mdescLeft">&#160;</td><td class="mdescRight">右方向  <a href="#a9789061ee5b72a18837d9926af08006f">[詳解]</a><br /></td></tr>
+<tr class="separator:a9789061ee5b72a18837d9926af08006f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6cd33928bf2aae8bdb9049164e902d5"><td class="memItemLeft" align="right" valign="top">static const Sint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#ad6cd33928bf2aae8bdb9049164e902d5">s_DIRECTION_BACK</a> = 180</td></tr>
+<tr class="memdesc:ad6cd33928bf2aae8bdb9049164e902d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">後ろ方向  <a href="#ad6cd33928bf2aae8bdb9049164e902d5">[詳解]</a><br /></td></tr>
+<tr class="separator:ad6cd33928bf2aae8bdb9049164e902d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a877cf3e622ae5db33a978477c3053da2"><td class="memItemLeft" align="right" valign="top">static const Sint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___sound_manager.html#a877cf3e622ae5db33a978477c3053da2">s_DIRECTION_LEFT</a> = 270</td></tr>
+<tr class="memdesc:a877cf3e622ae5db33a978477c3053da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">左方向  <a href="#a877cf3e622ae5db33a978477c3053da2">[詳解]</a><br /></td></tr>
+<tr class="separator:a877cf3e622ae5db33a978477c3053da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+その他の継承メンバ</h2></td></tr>
+<tr class="inherit_header pub_static_methods_class_c___singleton"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_c___singleton')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_c___singleton.html">C_Singleton&lt; C_SoundManager &gt;</a> に属する継承静的公開メンバ関数</td></tr>
+<tr class="memitem:a839cb532a0dce8ee900c125f0d05ce23 inherit pub_static_methods_class_c___singleton"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_c___sound_manager.html">C_SoundManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___singleton.html#a839cb532a0dce8ee900c125f0d05ce23">s_GetInstance</a> ()</td></tr>
+<tr class="memdesc:a839cb532a0dce8ee900c125f0d05ce23 inherit pub_static_methods_class_c___singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">唯一のインスタンスを取得する  <a href="#a839cb532a0dce8ee900c125f0d05ce23">[詳解]</a><br /></td></tr>
+<tr class="separator:a839cb532a0dce8ee900c125f0d05ce23 inherit pub_static_methods_class_c___singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_c___singleton"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_c___singleton')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_c___singleton.html">C_Singleton&lt; C_SoundManager &gt;</a> に属する継承限定公開メンバ関数</td></tr>
+<tr class="memitem:a8eb414172fc36ea29952f511a88221bf inherit pro_methods_class_c___singleton"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___singleton.html#a8eb414172fc36ea29952f511a88221bf">C_Singleton</a> ()</td></tr>
+<tr class="memdesc:a8eb414172fc36ea29952f511a88221bf inherit pro_methods_class_c___singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a8eb414172fc36ea29952f511a88221bf">[詳解]</a><br /></td></tr>
+<tr class="separator:a8eb414172fc36ea29952f511a88221bf inherit pro_methods_class_c___singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a1b497c7009b0c1c96026d4674a04e inherit pro_methods_class_c___singleton"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___singleton.html#ad6a1b497c7009b0c1c96026d4674a04e">~C_Singleton</a> ()</td></tr>
+<tr class="memdesc:ad6a1b497c7009b0c1c96026d4674a04e inherit pro_methods_class_c___singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#ad6a1b497c7009b0c1c96026d4674a04e">[詳解]</a><br /></td></tr>
+<tr class="separator:ad6a1b497c7009b0c1c96026d4674a04e inherit pro_methods_class_c___singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>サウンドマネージャー </p>
+<p>サウンドを管理するクラス </p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a8dc85169d4c143f136cf3c03a1ad8578"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_SoundManager::CheckPlayingBgm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BGMが再生中か確認を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>再生中：true </dd>
+<dd>
+停止中：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a41e8c28e3277ccd77eba1fa1e1701b04"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_SoundManager::CheckPlayingSoundEffect </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>channel</em> = <code><a class="el" href="class_c___sound_manager.html#a4062e01cf3944c8c366843f41cc2135b">s_ALL_CHANNELS</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サウンドエフェクトが再生中か確認を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">チャネル(</td><td>-1の場合はすべて一時停止 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>再生中：true </dd>
+<dd>
+停止中：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a49bef0ec9a15a0336fddc123e152191e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_SoundManager::FadeInPlayBgm </td>
+          <td>(</td>
+          <td class="paramtype">Mix_Music *&#160;</td>
+          <td class="paramname"><em>pBgm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>playNumber</em> = <code><a class="el" href="class_c___sound_manager.html#a559accc478809abf75f70a2a4af20a4d">s_PLAY_LOOP</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fadeInTime</em> = <code><a class="el" href="class_c___sound_manager.html#a9bbaf2f203858e31a167f7654a5fa910">s_ONE_SECOND</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BGMのフェードインでの再生を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">BGM</td><td></td></tr>
+    <tr><td class="paramname">再生回数(</td><td>-1の場合はループ再生 ) </td></tr>
+    <tr><td class="paramname">フェードインの時間</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a00b701d49256445ba8d32509b14efa89"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_SoundManager::FadeInPlaySoundEffect </td>
+          <td>(</td>
+          <td class="paramtype">Mix_Chunk *&#160;</td>
+          <td class="paramname"><em>pSoundEffect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>allocateChannel</em> = <code><a class="el" href="class_c___sound_manager.html#ab7e130c893ba2ade96901e5b70f546c2">s_CHANNEL_AUTO_ALLOCATE</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>playNumber</em> = <code><a class="el" href="class_c___sound_manager.html#ade47ff292657386953ec9f4a86f71e5f">s_PLAY_ONCE</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fadeInTime</em> = <code><a class="el" href="class_c___sound_manager.html#a9bbaf2f203858e31a167f7654a5fa910">s_ONE_SECOND</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>pGetAllocateChannel</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サウンドエフェクトのフェードインでの再生を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">サウンドエフェクト</td><td></td></tr>
+    <tr><td class="paramname">割り当てるチャネル(</td><td>-1の場合は自動割り当て ) </td></tr>
+    <tr><td class="paramname">再生回数(</td><td>-1の場合はループ再生 ) </td></tr>
+    <tr><td class="paramname">フェードインの時間</td><td></td></tr>
+    <tr><td class="paramname">割り当てられたチャネルを取得するポインタ</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a62cafa8fcef928b3f017d41645c84b62"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::FadeOutStopBgm </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fadeOutTime</em> = <code><a class="el" href="class_c___sound_manager.html#a9bbaf2f203858e31a167f7654a5fa910">s_ONE_SECOND</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BGMのフェードアウトでの停止を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa31e5e0c7360a4afc79f064bbd7bb3ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::FadeOutStopSoundEffect </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>channel</em> = <code><a class="el" href="class_c___sound_manager.html#a4062e01cf3944c8c366843f41cc2135b">s_ALL_CHANNELS</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fadeOutTime</em> = <code><a class="el" href="class_c___sound_manager.html#a9bbaf2f203858e31a167f7654a5fa910">s_ONE_SECOND</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サウンドエフェクトのフェードアウトでの停止を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">チャネル(</td><td>-1の場合はすべて一時停止 ) </td></tr>
+    <tr><td class="paramname">フェードアウトの時間</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad83a88eb944238405176a9a45d04fac1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::Finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サウンドエフェクトとBGMの終了処理を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___sound_manager_ad83a88eb944238405176a9a45d04fac1_icgraph.png" border="0" usemap="#class_c___sound_manager_ad83a88eb944238405176a9a45d04fac1_icgraph" alt=""/></div>
+<map name="class_c___sound_manager_ad83a88eb944238405176a9a45d04fac1_icgraph" id="class_c___sound_manager_ad83a88eb944238405176a9a45d04fac1_icgraph">
+<area shape="rect" id="node2" href="class_c___framework.html#ab59f29a9584a39b609676a7e069c6a7e" title="ライブラリの終了処理を行う " alt="" coords="232,5,387,32"/><area shape="rect" id="node3" href="class_c___framework.html#a3cf73a67b3bdacf785b58b0a3573a60c" title="ゲームの実行処理を行う " alt="" coords="435,5,568,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0b57ee33b9d6b06a554b11511050ae27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mix_Music * C_SoundManager::GetBgm </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BGMの取得を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>BGM </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9d828adf31a2c05ebe67776d52add864"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mix_Chunk * C_SoundManager::GetSoundEffect </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サウンドエフェクトの取得を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>サウンドエフェクト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a539737f0b52fc7edafbcbd2c7cd7e112"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_SoundManager::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ミキサーAPIを開く処理を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___sound_manager_a539737f0b52fc7edafbcbd2c7cd7e112_icgraph.png" border="0" usemap="#class_c___sound_manager_a539737f0b52fc7edafbcbd2c7cd7e112_icgraph" alt=""/></div>
+<map name="class_c___sound_manager_a539737f0b52fc7edafbcbd2c7cd7e112_icgraph" id="class_c___sound_manager_a539737f0b52fc7edafbcbd2c7cd7e112_icgraph">
+<area shape="rect" id="node2" href="class_c___framework.html#a84f8c1e88b638ef676a1d444d37b0f49" title="ライブラリの初期化処理を行う " alt="" coords="233,5,391,32"/><area shape="rect" id="node3" href="class_c___framework.html#a3cf73a67b3bdacf785b58b0a3573a60c" title="ゲームの実行処理を行う " alt="" coords="439,5,572,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a02b37fbd8bed589b2f9b92fc64c1f4c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_SoundManager::LoadBgm </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BGMのロードを行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ファイルの名前</td><td></td></tr>
+    <tr><td class="paramname">ID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>再生中：true </dd>
+<dd>
+停止中：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2e7393194377d95f641d8f808a4f5660"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_SoundManager::LoadSoundEffect </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サウンドエフェクトのロードを行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ファイル名</td><td></td></tr>
+    <tr><td class="paramname">ID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___sound_manager_a2e7393194377d95f641d8f808a4f5660_cgraph.png" border="0" usemap="#class_c___sound_manager_a2e7393194377d95f641d8f808a4f5660_cgraph" alt=""/></div>
+<map name="class_c___sound_manager_a2e7393194377d95f641d8f808a4f5660_cgraph" id="class_c___sound_manager_a2e7393194377d95f641d8f808a4f5660_cgraph">
+<area shape="rect" id="node2" href="class_c___common.html#a2789c51d40fd48f3149e584d62390b35" title="Shift&#45;JISの文字列からUTF&#45;8文字列への変換を行う " alt="" coords="252,5,433,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6bfe9aefc58ecb1b67de11508892fb8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::PauseBgm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BGMの一時停止を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac3834d17dcd46bf4c573b04b0ddfae41"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::PauseSoundEffect </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>channel</em> = <code><a class="el" href="class_c___sound_manager.html#a4062e01cf3944c8c366843f41cc2135b">s_ALL_CHANNELS</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サウンドエフェクトの一時停止を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">チャネル(</td><td>-1の場合はすべて一時停止 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a87da6c1a1cbfa0fd26d9e7935685d57c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_SoundManager::PlayBgm </td>
+          <td>(</td>
+          <td class="paramtype">Mix_Music *&#160;</td>
+          <td class="paramname"><em>pBgm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>playNumber</em> = <code><a class="el" href="class_c___sound_manager.html#a559accc478809abf75f70a2a4af20a4d">s_PLAY_LOOP</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BGMの再生を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ID</td><td></td></tr>
+    <tr><td class="paramname">再生回数(</td><td>-1の場合はループ再生 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a04c67cb1b42d20533e8b0edba11c4f3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_SoundManager::PlaySoundEffect </td>
+          <td>(</td>
+          <td class="paramtype">Mix_Chunk *&#160;</td>
+          <td class="paramname"><em>pSoundEffect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>allocateChannel</em> = <code><a class="el" href="class_c___sound_manager.html#ab7e130c893ba2ade96901e5b70f546c2">s_CHANNEL_AUTO_ALLOCATE</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>playNumber</em> = <code><a class="el" href="class_c___sound_manager.html#ade47ff292657386953ec9f4a86f71e5f">s_PLAY_ONCE</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>pGetAllocateChannel</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サウンドエフェクトの再生を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">サウンドエフェクト</td><td></td></tr>
+    <tr><td class="paramname">割り当てるチャネル(</td><td>-1の場合は自動割り当て ) </td></tr>
+    <tr><td class="paramname">再生回数(</td><td>-1の場合はループ再生 ) </td></tr>
+    <tr><td class="paramname">割り当てられたチャネルを取得するポインタ</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1e16f1c2ccc37b2d4fad5aacd3797850"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::ReleaseBgm </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BGMの解放を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a977faa86a90f5aa05eb93e8f9dd990fc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::ReleaseSoundEffect </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サウンドエフェクトの解放を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2a092653ab5fddc36fb1a53304591d04"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::ResumeBgm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BGMの再び再生を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1622db6025f1903a41a82840e1eea037"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::ResumeSoundEffect </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>channel</em> = <code><a class="el" href="class_c___sound_manager.html#a4062e01cf3944c8c366843f41cc2135b">s_ALL_CHANNELS</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サウンドエフェクトの再び再生を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">チャネル(</td><td>-1の場合はすべて一時停止 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abab5d33045df194e97ff85636d6d968b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::RewindBgm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BGMの巻き戻し再生を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aeeeb01d1cd152404ac24fbaafa40f481"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_SoundManager::SetBgmStartTime </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>startTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BGMの開始時間の設定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">開始時間(</td><td>秒単位 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a06263bad0371c96fdf3ec8e364166f20"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::SetBgmVolume </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>volume</em> = <code>MIX_MAX_VOLUME</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BGMのボリューム設定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ボリューム</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a41aaca112a4e5c93172c9a3ffc37c036"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::SetChannelVolume </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>channel</em> = <code><a class="el" href="class_c___sound_manager.html#a4062e01cf3944c8c366843f41cc2135b">s_ALL_CHANNELS</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>volume</em> = <code>MIX_MAX_VOLUME</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>チャネルのボリューム設定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">チャネル</td><td></td></tr>
+    <tr><td class="paramname">ボリューム</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6f1b22aaf0c60c5e192b24ddfcc923c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_SoundManager::SetSoundEffectDistance </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Uint8&#160;</td>
+          <td class="paramname"><em>distance</em> = <code><a class="el" href="class_c___sound_manager.html#a38e3d36681b5d07d966ac7423d9a2616">s_NEAREST_DISTANCE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サウンドエフェクトの距離の設定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">チャネル</td><td></td></tr>
+    <tr><td class="paramname">距離(</td><td>0が最も近く、255が最も遠い ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a32f23a16e0bb15ee73d0604fe9cc6919"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_SoundManager::SetSoundEffectPosition </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sint16&#160;</td>
+          <td class="paramname"><em>direction</em> = <code><a class="el" href="class_c___sound_manager.html#a53ed6d90f61aeb14a302fe7f79e2a75a">s_DIRECTION_FRONT</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Uint8&#160;</td>
+          <td class="paramname"><em>distance</em> = <code><a class="el" href="class_c___sound_manager.html#a38e3d36681b5d07d966ac7423d9a2616">s_NEAREST_DISTANCE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サウンドエフェクトの方向と距離の設定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">チャネル</td><td></td></tr>
+    <tr><td class="paramname">方向(</td><td>0が前、90が右、180が後ろ、270が左 ) </td></tr>
+    <tr><td class="paramname">距離(</td><td>0が最も近く、255が最も遠い ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7da67b72a87c9a18445ce55fb9adc0cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::SetSoundEffectVolume </td>
+          <td>(</td>
+          <td class="paramtype">Mix_Chunk *&#160;</td>
+          <td class="paramname"><em>pSoundEffect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>volume</em> = <code>MIX_MAX_VOLUME</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サウンドエフェクトのボリューム設定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">サウンドエフェクト</td><td></td></tr>
+    <tr><td class="paramname">ボリューム</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4bc817a4abdd079cc809a269ca4007b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::StopBgm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BGMの停止を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4ffa5917e2eb3bf34a46c59d1ca2a160"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_SoundManager::StopSoundEffect </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>channel</em> = <code><a class="el" href="class_c___sound_manager.html#a4062e01cf3944c8c366843f41cc2135b">s_ALL_CHANNELS</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サウンドエフェクトの停止を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">チャネル(</td><td>-1の場合はすべて一時停止 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a class="anchor" id="a4062e01cf3944c8c366843f41cc2135b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int C_SoundManager::s_ALL_CHANNELS = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>すべてのチャネル </p>
+
+</div>
+</div>
+<a class="anchor" id="ab7e130c893ba2ade96901e5b70f546c2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int C_SoundManager::s_CHANNEL_AUTO_ALLOCATE = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>チャネルを自動で割り当て </p>
+
+</div>
+</div>
+<a class="anchor" id="ad6cd33928bf2aae8bdb9049164e902d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Sint16 C_SoundManager::s_DIRECTION_BACK = 180</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>後ろ方向 </p>
+
+</div>
+</div>
+<a class="anchor" id="a53ed6d90f61aeb14a302fe7f79e2a75a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Sint16 C_SoundManager::s_DIRECTION_FRONT = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>前方向 </p>
+
+</div>
+</div>
+<a class="anchor" id="a877cf3e622ae5db33a978477c3053da2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Sint16 C_SoundManager::s_DIRECTION_LEFT = 270</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左方向 </p>
+
+</div>
+</div>
+<a class="anchor" id="a9789061ee5b72a18837d9926af08006f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Sint16 C_SoundManager::s_DIRECTION_RIGHT = 90</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>右方向 </p>
+
+</div>
+</div>
+<a class="anchor" id="a3833f3b2bac94bc910b1fe58cdb31ea0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Uint8 C_SoundManager::s_FARTHEST_DISTANCE = 255</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最も遠い距離 </p>
+
+</div>
+</div>
+<a class="anchor" id="afcd2b3af44cf8bd29ec8166b2d45311b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int C_SoundManager::s_MAX_CHANNELS = 16</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>チャネルの最大数 </p>
+
+</div>
+</div>
+<a class="anchor" id="a38e3d36681b5d07d966ac7423d9a2616"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Uint8 C_SoundManager::s_NEAREST_DISTANCE = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最も近い距離 </p>
+
+</div>
+</div>
+<a class="anchor" id="a9bbaf2f203858e31a167f7654a5fa910"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int C_SoundManager::s_ONE_SECOND = 1000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>1秒( ミリ秒単位 ) </p>
+
+</div>
+</div>
+<a class="anchor" id="a559accc478809abf75f70a2a4af20a4d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int C_SoundManager::s_PLAY_LOOP = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ループ再生 </p>
+
+</div>
+</div>
+<a class="anchor" id="ade47ff292657386953ec9f4a86f71e5f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int C_SoundManager::s_PLAY_ONCE = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>1回再生 </p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="_sound_manager_8h_source.html">SoundManager.h</a></li>
+<li><a class="el" href="_sound_manager_8cpp.html">SoundManager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分53秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

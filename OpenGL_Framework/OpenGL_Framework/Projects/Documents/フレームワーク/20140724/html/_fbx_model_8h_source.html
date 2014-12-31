@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: FbxModel.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">FbxModel.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_fbx_model_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* 二重インクルード防止 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* ヘッダファイル */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_model_8h.html">BaseModel.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_fbx_define_8h.html">FbxDefine.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_c___fbx_model.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c___fbx_model.html">C_FbxModel</a> : <span class="keyword">public</span> <a class="code" href="class_c___base_model.html">C_BaseModel</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_c___fbx_model.html#aa0bf22bcdfcc4fa8d08a1a8fdaba7dfb">C_FbxModel</a>();                                                                               <span class="comment">// コンストラクタ</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_c___fbx_model.html#ab1742a943b8fd6f84b946a30aaebc505">~C_FbxModel</a>() <span class="keyword">override</span>;                                                                     <span class="comment">// デストラクタ</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___fbx_model.html#aa804a6640d0c65b9f2f98dade0ced29a">Load</a>(<span class="keyword">const</span> std::string fileName) <span class="keyword">override</span>;                                             <span class="comment">// ロード処理</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___fbx_model.html#aa6ad499368e586f5039643038aa936e8">Release</a>() <span class="keyword">override</span>;                                                                    <span class="comment">// 解放処理</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___fbx_model.html#a72f6a78c208bd2352a885e12ddbb39af">Draw</a>() <span class="keyword">override</span>;                                                                       <span class="comment">// 描画処理</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/* ゲッター */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::string <a class="code" href="class_c___fbx_model.html#a34b8e338478c0bc9eead6ccff89b3830">GetTextureFileName</a>(uint32_t index) <span class="keyword">const</span>;                                       <span class="comment">// テクスチャファイル名を取得</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::vector&lt;S_FbxBone&gt;* <a class="code" href="class_c___fbx_model.html#a187767f18a7f3deba64a6a09cc52a2aa">GetBone</a>();                                                          <span class="comment">// ボーンを取得</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_c___fbx_model.html#a78476bb4291f872f0e36e7e436c747cb">s_Initialize</a>();                                                                 <span class="comment">// 初期化処理</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_c___fbx_model.html#a9975aaf331481928876d172a6b55e778">s_Finalize</a>();                                                                   <span class="comment">// 終了処理</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    fbxsdk_2014_2_1::FbxScene* pScene_;                                                         </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="struct_s___fbx_time_line_data.html">S_FbxTimeLineData</a> timeLineData_;                                                            </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::vector&lt;uint32_t&gt; polygonSizes_;                                                        </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::vector&lt;S_FbxVertex&gt; vertices_;                                                         </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::vector&lt;uint32_t&gt; indices_;                                                             </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::vector&lt;S_FbxMaterial&gt; materials_;                                                      </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::vector&lt;S_FbxBone&gt; bones_;                                                              </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="struct_utility_math_1_1_s___matrix4.html">UtilityMath::S_Matrix4</a> initializeMatrix_;                                                   </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">static</span> fbxsdk_2014_2_1::FbxManager* s_pManager;                                             </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> LoadScene(<span class="keyword">const</span> std::string fileName);                                                 <span class="comment">// シーンのロード処理</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> LoadTimeLineData();                                                                    <span class="comment">// タイムラインデータのロード処理</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> LoadModel();                                                                           <span class="comment">// モデルのロード処理</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">bool</span> LoadModelFromChildNode(fbxsdk_2014_2_1::FbxNode* pChildNode);                          <span class="comment">// 子ノードからのモデルのロード処理</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> LoadMesh(fbxsdk_2014_2_1::FbxNode* pNode);                                             <span class="comment">// メッシュのロード処理</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">bool</span> LoadVertex(fbxsdk_2014_2_1::FbxMesh* pMesh);                                           <span class="comment">// 頂点のロード処理</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> LoadPosition(fbxsdk_2014_2_1::FbxMesh* pMesh,                                          <span class="comment">// 座標のロード処理</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                      uint32_t polygonNumberIndex,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                      uint32_t polygonSizeIndex,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                      uint32_t vertexIndex);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">bool</span> LoadNormal(fbxsdk_2014_2_1::FbxMesh* pMesh, uint32_t vertexIndex);                     <span class="comment">// 法線ベクトルのロード処理</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">bool</span> LoadTextureCoord(fbxsdk_2014_2_1::FbxMesh* pMesh,                                      <span class="comment">// テクスチャ座標のロード処理</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                          uint32_t polygonNumberIndex,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                          uint32_t polygonSizeIndex,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                          uint32_t vertexIndex);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> LoadMaterial(fbxsdk_2014_2_1::FbxGeometry* pGeometry);                                 <span class="comment">// マテリアルのロード処理</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> LoadTextureName(fbxsdk_2014_2_1::FbxGeometry* pGeometry);                              <span class="comment">// テクスチャ名のロード処理</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> LoadBone(fbxsdk_2014_2_1::FbxMesh* pMesh);                                             <span class="comment">// ボーンのロード処理</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> CreateVertexArrayObject();                                                             <span class="comment">// 頂点配列オブジェクトを作成</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">/* セッター */</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> SetVector3(fbxsdk_2014_2_1::FbxDouble3&amp; rFbxDouble,                                    <span class="comment">// FbxのDouble3から3Dベクトルに値を設定</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <a class="code" href="struct_utility_math_1_1_s___vector3.html">UtilityMath::S_Vector3</a>* pVector);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> SetVector3(fbxsdk_2014_2_1::FbxVector4&amp; rFbxVector,                                    <span class="comment">// Fbx4Dベクトルから3Dベクトルに値を設定</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    <a class="code" href="struct_utility_math_1_1_s___vector3.html">UtilityMath::S_Vector3</a>* pVector);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> SetMatrix4(fbxsdk_2014_2_1::FbxMatrix&amp; FbxMatrix,                                      <span class="comment">// fBX行列から4 * 4行列に設定</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    <a class="code" href="struct_utility_math_1_1_s___matrix4.html">UtilityMath::S_Matrix4</a>* pMatrix);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> SetTextureName(fbxsdk_2014_2_1::FbxProperty&amp; rProperty,                                <span class="comment">// テクスチャのファイル名を設定</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        uint32_t materialIndex,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        std::string* pSetTextureName);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="ttc" id="class_c___fbx_model_html_aa0bf22bcdfcc4fa8d08a1a8fdaba7dfb"><div class="ttname"><a href="class_c___fbx_model.html#aa0bf22bcdfcc4fa8d08a1a8fdaba7dfb">C_FbxModel::C_FbxModel</a></div><div class="ttdeci">C_FbxModel()</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> FbxModel.cpp:26</div></div>
+<div class="ttc" id="_fbx_define_8h_html"><div class="ttname"><a href="_fbx_define_8h.html">FbxDefine.h</a></div></div>
+<div class="ttc" id="class_c___fbx_model_html_a72f6a78c208bd2352a885e12ddbb39af"><div class="ttname"><a href="class_c___fbx_model.html#a72f6a78c208bd2352a885e12ddbb39af">C_FbxModel::Draw</a></div><div class="ttdeci">void Draw() override</div><div class="ttdoc">モデルの描画を行う </div><div class="ttdef"><b>Definition:</b> FbxModel.cpp:119</div></div>
+<div class="ttc" id="struct_s___fbx_time_line_data_html"><div class="ttname"><a href="struct_s___fbx_time_line_data.html">S_FbxTimeLineData</a></div><div class="ttdoc">Fbxタイムラインデータ </div><div class="ttdef"><b>Definition:</b> FbxDefine.h:17</div></div>
+<div class="ttc" id="class_c___fbx_model_html"><div class="ttname"><a href="class_c___fbx_model.html">C_FbxModel</a></div><div class="ttdoc">Fbxモデル </div><div class="ttdef"><b>Definition:</b> FbxModel.h:16</div></div>
+<div class="ttc" id="class_c___fbx_model_html_a187767f18a7f3deba64a6a09cc52a2aa"><div class="ttname"><a href="class_c___fbx_model.html#a187767f18a7f3deba64a6a09cc52a2aa">C_FbxModel::GetBone</a></div><div class="ttdeci">std::vector&lt; S_FbxBone &gt; * GetBone()</div><div class="ttdoc">ボーンを取得する </div><div class="ttdef"><b>Definition:</b> FbxModel.cpp:156</div></div>
+<div class="ttc" id="class_c___fbx_model_html_a9975aaf331481928876d172a6b55e778"><div class="ttname"><a href="class_c___fbx_model.html#a9975aaf331481928876d172a6b55e778">C_FbxModel::s_Finalize</a></div><div class="ttdeci">static void s_Finalize()</div><div class="ttdoc">FBX SDKの終了処理を行う </div><div class="ttdef"><b>Definition:</b> FbxModel.cpp:197</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___matrix4_html"><div class="ttname"><a href="struct_utility_math_1_1_s___matrix4.html">UtilityMath::S_Matrix4</a></div><div class="ttdoc">マトリクス4 </div><div class="ttdef"><b>Definition:</b> Matrix4.h:25</div></div>
+<div class="ttc" id="class_c___fbx_model_html_a34b8e338478c0bc9eead6ccff89b3830"><div class="ttname"><a href="class_c___fbx_model.html#a34b8e338478c0bc9eead6ccff89b3830">C_FbxModel::GetTextureFileName</a></div><div class="ttdeci">std::string GetTextureFileName(uint32_t index) const </div><div class="ttdoc">テクスチャのファイル名を取得する </div><div class="ttdef"><b>Definition:</b> FbxModel.cpp:143</div></div>
+<div class="ttc" id="class_c___base_model_html"><div class="ttname"><a href="class_c___base_model.html">C_BaseModel</a></div><div class="ttdoc">ベースモデル </div><div class="ttdef"><b>Definition:</b> BaseModel.h:11</div></div>
+<div class="ttc" id="_base_model_8h_html"><div class="ttname"><a href="_base_model_8h.html">BaseModel.h</a></div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector3_html"><div class="ttname"><a href="struct_utility_math_1_1_s___vector3.html">UtilityMath::S_Vector3</a></div><div class="ttdoc">ベクター3 </div><div class="ttdef"><b>Definition:</b> Vector3.h:19</div></div>
+<div class="ttc" id="class_c___fbx_model_html_aa6ad499368e586f5039643038aa936e8"><div class="ttname"><a href="class_c___fbx_model.html#aa6ad499368e586f5039643038aa936e8">C_FbxModel::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdoc">モデルの解放を行う </div><div class="ttdef"><b>Definition:</b> FbxModel.cpp:95</div></div>
+<div class="ttc" id="class_c___fbx_model_html_ab1742a943b8fd6f84b946a30aaebc505"><div class="ttname"><a href="class_c___fbx_model.html#ab1742a943b8fd6f84b946a30aaebc505">C_FbxModel::~C_FbxModel</a></div><div class="ttdeci">~C_FbxModel() override</div><div class="ttdoc">デストラクタ </div><div class="ttdef"><b>Definition:</b> FbxModel.cpp:41</div></div>
+<div class="ttc" id="class_c___fbx_model_html_a78476bb4291f872f0e36e7e436c747cb"><div class="ttname"><a href="class_c___fbx_model.html#a78476bb4291f872f0e36e7e436c747cb">C_FbxModel::s_Initialize</a></div><div class="ttdeci">static bool s_Initialize()</div><div class="ttdoc">FBX SDKの初期化処理を行う </div><div class="ttdef"><b>Definition:</b> FbxModel.cpp:170</div></div>
+<div class="ttc" id="class_c___fbx_model_html_aa804a6640d0c65b9f2f98dade0ced29a"><div class="ttname"><a href="class_c___fbx_model.html#aa804a6640d0c65b9f2f98dade0ced29a">C_FbxModel::Load</a></div><div class="ttdeci">bool Load(const std::string fileName) override</div><div class="ttdoc">モデルのロードを行う </div><div class="ttdef"><b>Definition:</b> FbxModel.cpp:55</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分49秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

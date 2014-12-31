@@ -1,0 +1,521 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: C_GamepadManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="class_c___gamepad_manager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">C_GamepadManager クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ゲームパッドマネージャー  
+ <a href="class_c___gamepad_manager.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_gamepad_manager_8h_source.html">GamepadManager.h</a>&gt;</code></p>
+<div class="dynheader">
+C_GamepadManager の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___gamepad_manager__inherit__graph.png" border="0" usemap="#_c___gamepad_manager_inherit__map" alt="Inheritance graph"/></div>
+<map name="_c___gamepad_manager_inherit__map" id="_c___gamepad_manager_inherit__map">
+<area shape="rect" id="node2" href="class_c___singleton.html" title="{C_Singleton\&lt; C_GamepadManager \&gt;\n||+ s_GetInstance()\l# C_Singleton()\l# ~C_Singleton()\l}" alt="" coords="5,5,244,112"/></map>
+</div>
+<div class="dynheader">
+C_GamepadManager 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___gamepad_manager__coll__graph.png" border="0" usemap="#_c___gamepad_manager_coll__map" alt="Collaboration graph"/></div>
+<map name="_c___gamepad_manager_coll__map" id="_c___gamepad_manager_coll__map">
+<area shape="rect" id="node2" href="class_c___singleton.html" title="{C_Singleton\&lt; C_GamepadManager \&gt;\n||+ s_GetInstance()\l# C_Singleton()\l# ~C_Singleton()\l}" alt="" coords="5,5,244,112"/></map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a486a7aeeb1a833797eed5944688d3cbf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbf">eGamepadNumber</a> { <a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa8f8a370ee2cbc0a9e7e37078c9627ff0">GAMEPAD_01</a>, 
+<a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa306337ebebd765cf966a19d71633ed03">GAMEPAD_02</a>, 
+<a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfac34d71f718763a67726ce36fbe1313ab">GAMEPAD_03</a>, 
+<a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa74e5de987349f65c5627d4032d4b6abf">GAMEPAD_04</a>
+ }</td></tr>
+<tr class="separator:a486a7aeeb1a833797eed5944688d3cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ab0ebe0640fa84317484844f628690726"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___gamepad_manager.html#ab0ebe0640fa84317484844f628690726">Initialize</a> ()</td></tr>
+<tr class="memdesc:ab0ebe0640fa84317484844f628690726"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームパッドの初期化処理を行う  <a href="#ab0ebe0640fa84317484844f628690726">[詳解]</a><br /></td></tr>
+<tr class="separator:ab0ebe0640fa84317484844f628690726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d55ceae91aafb47cd67ab768cd80327"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___gamepad_manager.html#a9d55ceae91aafb47cd67ab768cd80327">Update</a> ()</td></tr>
+<tr class="memdesc:a9d55ceae91aafb47cd67ab768cd80327"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームパッドの更新処理を行う  <a href="#a9d55ceae91aafb47cd67ab768cd80327">[詳解]</a><br /></td></tr>
+<tr class="separator:a9d55ceae91aafb47cd67ab768cd80327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8141c1f5d5bf1a658eedbe26f284d86c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___gamepad_manager.html#a8141c1f5d5bf1a658eedbe26f284d86c">Finalize</a> ()</td></tr>
+<tr class="memdesc:a8141c1f5d5bf1a658eedbe26f284d86c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームパッドの終了処理を行う  <a href="#a8141c1f5d5bf1a658eedbe26f284d86c">[詳解]</a><br /></td></tr>
+<tr class="separator:a8141c1f5d5bf1a658eedbe26f284d86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29a2bf7f2a7220d89fcae5bebd1aae92"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___gamepad_manager.html#a29a2bf7f2a7220d89fcae5bebd1aae92">GetButtonPressingCount</a> (<a class="el" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4">C_Gamepad::eButton</a> button, <a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbf">eGamepadNumber</a> number=<a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa8f8a370ee2cbc0a9e7e37078c9627ff0">GAMEPAD_01</a>) const </td></tr>
+<tr class="memdesc:a29a2bf7f2a7220d89fcae5bebd1aae92"><td class="mdescLeft">&#160;</td><td class="mdescRight">ボタンを押しているフレーム数を取得する  <a href="#a29a2bf7f2a7220d89fcae5bebd1aae92">[詳解]</a><br /></td></tr>
+<tr class="separator:a29a2bf7f2a7220d89fcae5bebd1aae92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a732e28e333e72a918d6a4f9041a5e41d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___gamepad_manager.html#a732e28e333e72a918d6a4f9041a5e41d">GetButtonReleasingCount</a> (<a class="el" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4">C_Gamepad::eButton</a> button, <a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbf">eGamepadNumber</a> number=<a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa8f8a370ee2cbc0a9e7e37078c9627ff0">GAMEPAD_01</a>) const </td></tr>
+<tr class="memdesc:a732e28e333e72a918d6a4f9041a5e41d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ボタンを離しているフレーム数を取得する  <a href="#a732e28e333e72a918d6a4f9041a5e41d">[詳解]</a><br /></td></tr>
+<tr class="separator:a732e28e333e72a918d6a4f9041a5e41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9456848027c1b9d545b64d6710979377"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___gamepad_manager.html#a9456848027c1b9d545b64d6710979377">GetStickXComponent</a> (<a class="el" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">C_Gamepad::eStick</a> stick, <a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbf">eGamepadNumber</a> number=<a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa8f8a370ee2cbc0a9e7e37078c9627ff0">GAMEPAD_01</a>) const </td></tr>
+<tr class="memdesc:a9456848027c1b9d545b64d6710979377"><td class="mdescLeft">&#160;</td><td class="mdescRight">スティックのX成分を取得する  <a href="#a9456848027c1b9d545b64d6710979377">[詳解]</a><br /></td></tr>
+<tr class="separator:a9456848027c1b9d545b64d6710979377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1da9fcb3a79d5d4082fda6d438eb27c1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___gamepad_manager.html#a1da9fcb3a79d5d4082fda6d438eb27c1">GetStickYComponent</a> (<a class="el" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">C_Gamepad::eStick</a> stick, <a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbf">eGamepadNumber</a> number=<a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa8f8a370ee2cbc0a9e7e37078c9627ff0">GAMEPAD_01</a>) const </td></tr>
+<tr class="memdesc:a1da9fcb3a79d5d4082fda6d438eb27c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">スティックのY成分を取得する  <a href="#a1da9fcb3a79d5d4082fda6d438eb27c1">[詳解]</a><br /></td></tr>
+<tr class="separator:a1da9fcb3a79d5d4082fda6d438eb27c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2d70190479f1bf6082078cf01d2709b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___gamepad_manager.html#ad2d70190479f1bf6082078cf01d2709b">GetStickPushingCount</a> (<a class="el" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">C_Gamepad::eStick</a> stick, <a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbf">eGamepadNumber</a> number=<a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa8f8a370ee2cbc0a9e7e37078c9627ff0">GAMEPAD_01</a>) const </td></tr>
+<tr class="memdesc:ad2d70190479f1bf6082078cf01d2709b"><td class="mdescLeft">&#160;</td><td class="mdescRight">スティックを倒しているフレーム数を取得する  <a href="#ad2d70190479f1bf6082078cf01d2709b">[詳解]</a><br /></td></tr>
+<tr class="separator:ad2d70190479f1bf6082078cf01d2709b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b09b48e62e2be63b2a5c0a54dec2d00"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___gamepad_manager.html#a0b09b48e62e2be63b2a5c0a54dec2d00">GetStickReleasingCount</a> (<a class="el" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">C_Gamepad::eStick</a> stick, <a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbf">eGamepadNumber</a> number=<a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa8f8a370ee2cbc0a9e7e37078c9627ff0">GAMEPAD_01</a>) const </td></tr>
+<tr class="memdesc:a0b09b48e62e2be63b2a5c0a54dec2d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">スティックを倒していないフレーム数を取得する  <a href="#a0b09b48e62e2be63b2a5c0a54dec2d00">[詳解]</a><br /></td></tr>
+<tr class="separator:a0b09b48e62e2be63b2a5c0a54dec2d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+その他の継承メンバ</h2></td></tr>
+<tr class="inherit_header pub_static_methods_class_c___singleton"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_c___singleton')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_c___singleton.html">C_Singleton&lt; C_GamepadManager &gt;</a> に属する継承静的公開メンバ関数</td></tr>
+<tr class="memitem:a839cb532a0dce8ee900c125f0d05ce23 inherit pub_static_methods_class_c___singleton"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_c___gamepad_manager.html">C_GamepadManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___singleton.html#a839cb532a0dce8ee900c125f0d05ce23">s_GetInstance</a> ()</td></tr>
+<tr class="memdesc:a839cb532a0dce8ee900c125f0d05ce23 inherit pub_static_methods_class_c___singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">唯一のインスタンスを取得する  <a href="#a839cb532a0dce8ee900c125f0d05ce23">[詳解]</a><br /></td></tr>
+<tr class="separator:a839cb532a0dce8ee900c125f0d05ce23 inherit pub_static_methods_class_c___singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_c___singleton"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_c___singleton')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_c___singleton.html">C_Singleton&lt; C_GamepadManager &gt;</a> に属する継承限定公開メンバ関数</td></tr>
+<tr class="memitem:a8eb414172fc36ea29952f511a88221bf inherit pro_methods_class_c___singleton"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___singleton.html#a8eb414172fc36ea29952f511a88221bf">C_Singleton</a> ()</td></tr>
+<tr class="memdesc:a8eb414172fc36ea29952f511a88221bf inherit pro_methods_class_c___singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a8eb414172fc36ea29952f511a88221bf">[詳解]</a><br /></td></tr>
+<tr class="separator:a8eb414172fc36ea29952f511a88221bf inherit pro_methods_class_c___singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a1b497c7009b0c1c96026d4674a04e inherit pro_methods_class_c___singleton"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___singleton.html#ad6a1b497c7009b0c1c96026d4674a04e">~C_Singleton</a> ()</td></tr>
+<tr class="memdesc:ad6a1b497c7009b0c1c96026d4674a04e inherit pro_methods_class_c___singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#ad6a1b497c7009b0c1c96026d4674a04e">[詳解]</a><br /></td></tr>
+<tr class="separator:ad6a1b497c7009b0c1c96026d4674a04e inherit pro_methods_class_c___singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>ゲームパッドマネージャー </p>
+<p>ゲームパッドを管理するクラス </p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a class="anchor" id="a486a7aeeb1a833797eed5944688d3cbf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbf">C_GamepadManager::eGamepadNumber</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>ゲームパッドの番号 </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a class="anchor" id="a486a7aeeb1a833797eed5944688d3cbfa8f8a370ee2cbc0a9e7e37078c9627ff0"></a>GAMEPAD_01&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a486a7aeeb1a833797eed5944688d3cbfa306337ebebd765cf966a19d71633ed03"></a>GAMEPAD_02&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a486a7aeeb1a833797eed5944688d3cbfac34d71f718763a67726ce36fbe1313ab"></a>GAMEPAD_03&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a486a7aeeb1a833797eed5944688d3cbfa74e5de987349f65c5627d4032d4b6abf"></a>GAMEPAD_04&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a8141c1f5d5bf1a658eedbe26f284d86c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_GamepadManager::Finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ゲームパッドの終了処理を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___gamepad_manager_a8141c1f5d5bf1a658eedbe26f284d86c_icgraph.png" border="0" usemap="#class_c___gamepad_manager_a8141c1f5d5bf1a658eedbe26f284d86c_icgraph" alt=""/></div>
+<map name="class_c___gamepad_manager_a8141c1f5d5bf1a658eedbe26f284d86c_icgraph" id="class_c___gamepad_manager_a8141c1f5d5bf1a658eedbe26f284d86c_icgraph">
+<area shape="rect" id="node2" href="class_c___framework.html#ab59f29a9584a39b609676a7e069c6a7e" title="ライブラリの終了処理を行う " alt="" coords="251,5,405,32"/><area shape="rect" id="node3" href="class_c___framework.html#a3cf73a67b3bdacf785b58b0a3573a60c" title="ゲームの実行処理を行う " alt="" coords="453,5,587,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a29a2bf7f2a7220d89fcae5bebd1aae92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int C_GamepadManager::GetButtonPressingCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4">C_Gamepad::eButton</a>&#160;</td>
+          <td class="paramname"><em>button</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbf">C_GamepadManager::eGamepadNumber</a>&#160;</td>
+          <td class="paramname"><em>number</em> = <code><a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa8f8a370ee2cbc0a9e7e37078c9627ff0">GAMEPAD_01</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ボタンを押しているフレーム数を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ボタン</td><td></td></tr>
+    <tr><td class="paramname">ゲームパッドの番号</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>ボタンを押しているフレーム数 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a732e28e333e72a918d6a4f9041a5e41d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int C_GamepadManager::GetButtonReleasingCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c___gamepad.html#abcc5c5c3f700582afbdebcf76bb055a4">C_Gamepad::eButton</a>&#160;</td>
+          <td class="paramname"><em>button</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbf">C_GamepadManager::eGamepadNumber</a>&#160;</td>
+          <td class="paramname"><em>number</em> = <code><a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa8f8a370ee2cbc0a9e7e37078c9627ff0">GAMEPAD_01</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ボタンを離しているフレーム数を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ボタン</td><td></td></tr>
+    <tr><td class="paramname">ゲームパッドの番号</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>ボタンを離しているフレーム数 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad2d70190479f1bf6082078cf01d2709b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int C_GamepadManager::GetStickPushingCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">C_Gamepad::eStick</a>&#160;</td>
+          <td class="paramname"><em>stick</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbf">C_GamepadManager::eGamepadNumber</a>&#160;</td>
+          <td class="paramname"><em>number</em> = <code><a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa8f8a370ee2cbc0a9e7e37078c9627ff0">GAMEPAD_01</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>スティックを倒しているフレーム数を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">スティック</td><td></td></tr>
+    <tr><td class="paramname">ゲームパッドの番号</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>スティックを倒しているフレーム数 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0b09b48e62e2be63b2a5c0a54dec2d00"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int C_GamepadManager::GetStickReleasingCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">C_Gamepad::eStick</a>&#160;</td>
+          <td class="paramname"><em>stick</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbf">C_GamepadManager::eGamepadNumber</a>&#160;</td>
+          <td class="paramname"><em>number</em> = <code><a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa8f8a370ee2cbc0a9e7e37078c9627ff0">GAMEPAD_01</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>スティックを倒していないフレーム数を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">スティック</td><td></td></tr>
+    <tr><td class="paramname">ゲームパッドの番号</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>スティックを倒していないフレーム数 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9456848027c1b9d545b64d6710979377"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int C_GamepadManager::GetStickXComponent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">C_Gamepad::eStick</a>&#160;</td>
+          <td class="paramname"><em>stick</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbf">C_GamepadManager::eGamepadNumber</a>&#160;</td>
+          <td class="paramname"><em>number</em> = <code><a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa8f8a370ee2cbc0a9e7e37078c9627ff0">GAMEPAD_01</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>スティックのX成分を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">スティック</td><td></td></tr>
+    <tr><td class="paramname">ゲームパッドの番号</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>スティックのX成分 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1da9fcb3a79d5d4082fda6d438eb27c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int C_GamepadManager::GetStickYComponent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c___gamepad.html#a18689643a5c076f5415ee1662b44199e">C_Gamepad::eStick</a>&#160;</td>
+          <td class="paramname"><em>stick</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbf">C_GamepadManager::eGamepadNumber</a>&#160;</td>
+          <td class="paramname"><em>number</em> = <code><a class="el" href="class_c___gamepad_manager.html#a486a7aeeb1a833797eed5944688d3cbfa8f8a370ee2cbc0a9e7e37078c9627ff0">GAMEPAD_01</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>スティックのY成分を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">スティック</td><td></td></tr>
+    <tr><td class="paramname">ゲームパッドの番号</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>スティックのY成分 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab0ebe0640fa84317484844f628690726"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_GamepadManager::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ゲームパッドの初期化処理を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___gamepad_manager_ab0ebe0640fa84317484844f628690726_icgraph.png" border="0" usemap="#class_c___gamepad_manager_ab0ebe0640fa84317484844f628690726_icgraph" alt=""/></div>
+<map name="class_c___gamepad_manager_ab0ebe0640fa84317484844f628690726_icgraph" id="class_c___gamepad_manager_ab0ebe0640fa84317484844f628690726_icgraph">
+<area shape="rect" id="node2" href="class_c___framework.html#a84f8c1e88b638ef676a1d444d37b0f49" title="ライブラリの初期化処理を行う " alt="" coords="252,5,409,32"/><area shape="rect" id="node3" href="class_c___framework.html#a3cf73a67b3bdacf785b58b0a3573a60c" title="ゲームの実行処理を行う " alt="" coords="457,5,591,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9d55ceae91aafb47cd67ab768cd80327"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_GamepadManager::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ゲームパッドの更新処理を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___gamepad_manager_a9d55ceae91aafb47cd67ab768cd80327_icgraph.png" border="0" usemap="#class_c___gamepad_manager_a9d55ceae91aafb47cd67ab768cd80327_icgraph" alt=""/></div>
+<map name="class_c___gamepad_manager_a9d55ceae91aafb47cd67ab768cd80327_icgraph" id="class_c___gamepad_manager_a9d55ceae91aafb47cd67ab768cd80327_icgraph">
+<area shape="rect" id="node2" href="class_c___framework.html#a0d68de266751555a74db197ea90df219" title="ライブラリの更新処理を行う " alt="" coords="247,5,397,32"/><area shape="rect" id="node3" href="class_c___framework.html#a3cf73a67b3bdacf785b58b0a3573a60c" title="ゲームの実行処理を行う " alt="" coords="445,5,579,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="_gamepad_manager_8h_source.html">GamepadManager.h</a></li>
+<li><a class="el" href="_gamepad_manager_8cpp.html">GamepadManager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分52秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

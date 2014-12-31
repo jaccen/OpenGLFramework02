@@ -1,0 +1,503 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: C_BaseWindow クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-attribs">静的公開変数類</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="class_c___base_window-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">C_BaseWindow クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ベースウィンドウ  
+ <a href="class_c___base_window.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_base_window_8h_source.html">BaseWindow.h</a>&gt;</code></p>
+<div class="dynheader">
+C_BaseWindow 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_window__coll__graph.png" border="0" usemap="#_c___base_window_coll__map" alt="Collaboration graph"/></div>
+<map name="_c___base_window_coll__map" id="_c___base_window_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:aa6795392c5b469c29513735c2c4db7e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_window.html#aa6795392c5b469c29513735c2c4db7e7">C_BaseWindow</a> ()</td></tr>
+<tr class="memdesc:aa6795392c5b469c29513735c2c4db7e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#aa6795392c5b469c29513735c2c4db7e7">[詳解]</a><br /></td></tr>
+<tr class="separator:aa6795392c5b469c29513735c2c4db7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c949240053cc084035bb62262233d7c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_window.html#a6c949240053cc084035bb62262233d7c">~C_BaseWindow</a> ()</td></tr>
+<tr class="memdesc:a6c949240053cc084035bb62262233d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a6c949240053cc084035bb62262233d7c">[詳解]</a><br /></td></tr>
+<tr class="separator:a6c949240053cc084035bb62262233d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af97c1689f5b12273cd399a8037499e8c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_window.html#af97c1689f5b12273cd399a8037499e8c">Initialize</a> (const ::std::string title=&quot;OpenGL_Framework&quot;, int width=<a class="el" href="class_c___base_window.html#ae75c23e6146714f93a4db770c18572fa">s_WINDOW_WIDTH</a>, int height=<a class="el" href="class_c___base_window.html#a339b093eae5176e1260aeb10ffc2edf2">s_WINDOW_HEIGHT</a>, Uint32 createFlags=SDL_WINDOW_OPENGL, int createPositionX=SDL_WINDOWPOS_CENTERED, int createPositionY=SDL_WINDOWPOS_CENTERED)</td></tr>
+<tr class="memdesc:af97c1689f5b12273cd399a8037499e8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウの初期化処理を行う  <a href="#af97c1689f5b12273cd399a8037499e8c">[詳解]</a><br /></td></tr>
+<tr class="separator:af97c1689f5b12273cd399a8037499e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b2fab5b2f28110ac7e817b51549e3e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_window.html#a29b2fab5b2f28110ac7e817b51549e3e">Finalize</a> ()</td></tr>
+<tr class="memdesc:a29b2fab5b2f28110ac7e817b51549e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウの終了処理を行う  <a href="#a29b2fab5b2f28110ac7e817b51549e3e">[詳解]</a><br /></td></tr>
+<tr class="separator:a29b2fab5b2f28110ac7e817b51549e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05d9554f68a799d620594398aa7b1a0d"><td class="memItemLeft" align="right" valign="top">SDL_Window *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_window.html#a05d9554f68a799d620594398aa7b1a0d">GetWindow</a> () const </td></tr>
+<tr class="memdesc:a05d9554f68a799d620594398aa7b1a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウを取得する  <a href="#a05d9554f68a799d620594398aa7b1a0d">[詳解]</a><br /></td></tr>
+<tr class="separator:a05d9554f68a799d620594398aa7b1a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4736ea3276452f1eb130166d959d6930"><td class="memItemLeft" align="right" valign="top">Uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_window.html#a4736ea3276452f1eb130166d959d6930">GetID</a> () const </td></tr>
+<tr class="memdesc:a4736ea3276452f1eb130166d959d6930"><td class="mdescLeft">&#160;</td><td class="mdescRight">IDを取得する  <a href="#a4736ea3276452f1eb130166d959d6930">[詳解]</a><br /></td></tr>
+<tr class="separator:a4736ea3276452f1eb130166d959d6930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+静的公開変数類</h2></td></tr>
+<tr class="memitem:ae75c23e6146714f93a4db770c18572fa"><td class="memItemLeft" align="right" valign="top">static const int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_window.html#ae75c23e6146714f93a4db770c18572fa">s_WINDOW_WIDTH</a> = 640</td></tr>
+<tr class="memdesc:ae75c23e6146714f93a4db770c18572fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウの幅  <a href="#ae75c23e6146714f93a4db770c18572fa">[詳解]</a><br /></td></tr>
+<tr class="separator:ae75c23e6146714f93a4db770c18572fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339b093eae5176e1260aeb10ffc2edf2"><td class="memItemLeft" align="right" valign="top">static const int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_window.html#a339b093eae5176e1260aeb10ffc2edf2">s_WINDOW_HEIGHT</a> = 480</td></tr>
+<tr class="memdesc:a339b093eae5176e1260aeb10ffc2edf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウの高さ  <a href="#a339b093eae5176e1260aeb10ffc2edf2">[詳解]</a><br /></td></tr>
+<tr class="separator:a339b093eae5176e1260aeb10ffc2edf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ca617902d870d49f15d96ca01d81c68"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_window.html#a3ca617902d870d49f15d96ca01d81c68">s_ASPECT_RATIO</a> = 1.333333f</td></tr>
+<tr class="memdesc:a3ca617902d870d49f15d96ca01d81c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">アスペクト比  <a href="#a3ca617902d870d49f15d96ca01d81c68">[詳解]</a><br /></td></tr>
+<tr class="separator:a3ca617902d870d49f15d96ca01d81c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:ad2e10e5ae25ecff4bfd13ee6919fa06f"><td class="memItemLeft" align="right" valign="top">SDL_Window *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_window.html#ad2e10e5ae25ecff4bfd13ee6919fa06f">pWindow_</a></td></tr>
+<tr class="memdesc:ad2e10e5ae25ecff4bfd13ee6919fa06f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウ  <a href="#ad2e10e5ae25ecff4bfd13ee6919fa06f">[詳解]</a><br /></td></tr>
+<tr class="separator:ad2e10e5ae25ecff4bfd13ee6919fa06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a059815048d1b843da0d60869f79be710"><td class="memItemLeft" align="right" valign="top">Uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_window.html#a059815048d1b843da0d60869f79be710">id_</a></td></tr>
+<tr class="memdesc:a059815048d1b843da0d60869f79be710"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID.  <a href="#a059815048d1b843da0d60869f79be710">[詳解]</a><br /></td></tr>
+<tr class="separator:a059815048d1b843da0d60869f79be710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>ベースウィンドウ </p>
+<p>ウィンドウの基底クラス </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a class="anchor" id="aa6795392c5b469c29513735c2c4db7e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">C_BaseWindow::C_BaseWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6c949240053cc084035bb62262233d7c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">C_BaseWindow::~C_BaseWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>デストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_window_a6c949240053cc084035bb62262233d7c_cgraph.png" border="0" usemap="#class_c___base_window_a6c949240053cc084035bb62262233d7c_cgraph" alt=""/></div>
+<map name="class_c___base_window_a6c949240053cc084035bb62262233d7c_cgraph" id="class_c___base_window_a6c949240053cc084035bb62262233d7c_cgraph">
+<area shape="rect" id="node2" href="class_c___base_window.html#a29b2fab5b2f28110ac7e817b51549e3e" title="ウィンドウの終了処理を行う " alt="" coords="276,5,443,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a29b2fab5b2f28110ac7e817b51549e3e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_BaseWindow::Finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウの終了処理を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_window_a29b2fab5b2f28110ac7e817b51549e3e_icgraph.png" border="0" usemap="#class_c___base_window_a29b2fab5b2f28110ac7e817b51549e3e_icgraph" alt=""/></div>
+<map name="class_c___base_window_a29b2fab5b2f28110ac7e817b51549e3e_icgraph" id="class_c___base_window_a29b2fab5b2f28110ac7e817b51549e3e_icgraph">
+<area shape="rect" id="node2" href="class_c___base_window.html#a6c949240053cc084035bb62262233d7c" title="デストラクタ " alt="" coords="220,5,443,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4736ea3276452f1eb130166d959d6930"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Uint32 C_BaseWindow::GetID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IDを取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>ID </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a05d9554f68a799d620594398aa7b1a0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Window * C_BaseWindow::GetWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ウィンドウを取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>ウィンドウ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af97c1689f5b12273cd399a8037499e8c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseWindow::Initialize </td>
+          <td>(</td>
+          <td class="paramtype">const ::std::string&#160;</td>
+          <td class="paramname"><em>title</em> = <code>&quot;OpenGL_Framework&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em> = <code><a class="el" href="class_c___base_window.html#ae75c23e6146714f93a4db770c18572fa">s_WINDOW_WIDTH</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em> = <code><a class="el" href="class_c___base_window.html#a339b093eae5176e1260aeb10ffc2edf2">s_WINDOW_HEIGHT</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Uint32&#160;</td>
+          <td class="paramname"><em>createFlags</em> = <code>SDL_WINDOW_OPENGL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>createPositionX</em> = <code>SDL_WINDOWPOS_CENTERED</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>createPositionY</em> = <code>SDL_WINDOWPOS_CENTERED</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウの初期化処理を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">タイトル</td><td></td></tr>
+    <tr><td class="paramname">幅</td><td></td></tr>
+    <tr><td class="paramname">高さ</td><td></td></tr>
+    <tr><td class="paramname">生成時に利用するフラグ</td><td></td></tr>
+    <tr><td class="paramname">生成するときのX座標</td><td></td></tr>
+    <tr><td class="paramname">生成するときのY座標</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a class="anchor" id="a059815048d1b843da0d60869f79be710"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Uint32 C_BaseWindow::id_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ID. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad2e10e5ae25ecff4bfd13ee6919fa06f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Window* C_BaseWindow::pWindow_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウ </p>
+
+</div>
+</div>
+<a class="anchor" id="a3ca617902d870d49f15d96ca01d81c68"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float C_BaseWindow::s_ASPECT_RATIO = 1.333333f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>アスペクト比 </p>
+
+</div>
+</div>
+<a class="anchor" id="a339b093eae5176e1260aeb10ffc2edf2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int32_t C_BaseWindow::s_WINDOW_HEIGHT = 480</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウの高さ </p>
+
+</div>
+</div>
+<a class="anchor" id="ae75c23e6146714f93a4db770c18572fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int32_t C_BaseWindow::s_WINDOW_WIDTH = 640</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウの幅 </p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="_base_window_8h_source.html">BaseWindow.h</a></li>
+<li><a class="el" href="_base_window_8cpp.html">BaseWindow.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分51秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<map id="C_Framework::Run" name="C_Framework::Run">
+<area shape="rect" id="node2" href="$class_c___framework.html#a84f8c1e88b638ef676a1d444d37b0f49" title="ライブラリの初期化処理を行う " alt="" coords="447,505,605,532"/>
+<area shape="rect" id="node15" href="$class_c___framework.html#a0d68de266751555a74db197ea90df219" title="ライブラリの更新処理を行う " alt="" coords="207,724,358,751"/>
+<area shape="rect" id="node24" href="$class_c___time_manager.html#aa21888a1b869e3dcd89ab9721d6544a6" title="描画フラグを取得する " alt="" coords="189,775,377,801"/>
+<area shape="rect" id="node25" href="$class_c___framework.html#a76fceb2a3c91c3e4f90c28ee2e6f7c56" title="ライブラリの描画処理を行う " alt="" coords="213,825,352,852"/>
+<area shape="rect" id="node26" href="$class_c___framework.html#a79e669d4ac0fca755fe7164f8ebbf92b" title="画面の更新処理を行う " alt="" coords="187,876,379,903"/>
+<area shape="rect" id="node28" href="$class_c___framework.html#ab59f29a9584a39b609676a7e069c6a7e" title="ライブラリの終了処理を行う " alt="" coords="205,1028,360,1055"/>
+<area shape="rect" id="node3" href="$class_c___singleton.html#a839cb532a0dce8ee900c125f0d05ce23" title="C_Singleton\&lt; C_SdlManager\l \&gt;::s_GetInstance" alt="" coords="678,545,867,586"/>
+<area shape="rect" id="node4" href="$class_c___sdl_manager.html#a3c621bb9860d213ecd04dd3a8cc4773e" title="SDLの初期化処理を行う " alt="" coords="691,5,854,32"/>
+<area shape="rect" id="node5" href="$class_c___open_gl_manager.html#aa05835cd705b0c83f5ab9c3d5914a83a" title="OpenGLの初期化処理を行う " alt="" coords="679,56,866,83"/>
+<area shape="rect" id="node6" href="$class_c___event_manager.html#a9ff33f49ea477c12c9b27ca341fc742a" title="イベントの初期化処理を行う " alt="" coords="685,107,860,133"/>
+<area shape="rect" id="node7" href="$class_c___time_manager.html#a3d63925a0f7215422e6944b5a74c0592" title="タイマーの初期化処理を行う " alt="" coords="687,157,858,184"/>
+<area shape="rect" id="node8" href="$class_c___keyboard_manager.html#a927a688d44d8e0303edb69acf0ac677a" title="キー入力の初期化処理を行う " alt="" coords="697,209,848,250"/>
+<area shape="rect" id="node9" href="$class_c___gamepad_manager.html#ab0ebe0640fa84317484844f628690726" title="ゲームパッドの初期化処理を行う " alt="" coords="673,275,872,301"/>
+<area shape="rect" id="node10" href="$class_c___sound_manager.html#a539737f0b52fc7edafbcbd2c7cd7e112" title="ミキサーAPIを開く処理を行う " alt="" coords="683,325,863,352"/>
+<area shape="rect" id="node11" href="$class_c___font_manager.html#ab1553ceb5957336212d5ee6e4f11ebb4" title="フォントの初期化処理を行う " alt="" coords="688,376,857,403"/>
+<area shape="rect" id="node12" href="$class_c___text_input_manager.html#a5b669e3ea9a9a97496523ba610b76d1d" title="テキストの初期化処理を行う " alt="" coords="702,427,843,469"/>
+<area shape="rect" id="node14" href="$class_c___fbx_model.html#a78476bb4291f872f0e36e7e436c747cb" title="FBX SDKの初期化処理を行う " alt="" coords="691,493,855,520"/>
+<area shape="rect" id="node13" href="$class_c___text_input_manager.html#ae97ecbe2779579be4535d5726e76b35a" title="テキストの入力の受付を終了する " alt="" coords="920,435,1092,461"/>
+<area shape="rect" id="node16" href="$class_c___time_manager.html#ac51ec31083f2f4f31559e4bb6fc2d2fa" title="タイマーの更新処理を行う " alt="" coords="443,556,609,583"/>
+<area shape="rect" id="node17" href="$class_c___event_manager.html#ad1eb3cc25c3608ca73415531cfec10ef" title="イベントの更新処理を行う " alt="" coords="441,607,611,633"/>
+<area shape="rect" id="node20" href="$class_c___keyboard_manager.html#a80530a664966b129bd6314b24c18d27e" title="キー入力の更新処理を行う " alt="" coords="451,658,601,699"/>
+<area shape="rect" id="node21" href="$class_c___mouse_manager.html#a48c76ce59f4329e1616da43a9a7e852a" title="マウスの更新処理を行う " alt="" coords="438,724,614,751"/>
+<area shape="rect" id="node22" href="$class_c___gamepad_manager.html#a9d55ceae91aafb47cd67ab768cd80327" title="ゲームパッドの更新処理を行う " alt="" coords="429,775,623,801"/>
+<area shape="rect" id="node23" href="$class_c___event_manager.html#a6a08001ba9dbb2ada8ee9d89a99414a0" title="終了フラグを取得 " alt="" coords="427,825,625,852"/>
+<area shape="rect" id="node18" href="$class_c___mouse_manager.html#a99dcbe264ca67b2a6e9ddbabccc52352" title="ホイールを垂直方向の回転を設定する " alt="" coords="677,610,869,651"/>
+<area shape="rect" id="node19" href="$class_c___text_input_manager.html#a136e8e6f0aa67d82a13d495d0e0305a3" title="テキストに新たな文字を加える " alt="" coords="702,675,843,717"/>
+<area shape="rect" id="node27" href="$class_c___open_gl_manager.html#a57181d4f9da39bba1ace3e3dd63eaccf" title="OpenGLの更新処理を行う " alt="" coords="435,876,617,903"/>
+<area shape="rect" id="node29" href="$class_c___fbx_model.html#a9975aaf331481928876d172a6b55e778" title="FBX SDKの終了処理を行う " alt="" coords="445,927,607,953"/>
+<area shape="rect" id="node30" href="$class_c___font_manager.html#a0c5ff4261bd94ba9e9ac5bc1d87037ec" title="フォントの終了処理を行う " alt="" coords="443,977,609,1004"/>
+<area shape="rect" id="node31" href="$class_c___sound_manager.html#ad83a88eb944238405176a9a45d04fac1" title="サウンドエフェクトとBGMの終了処理を行う " alt="" coords="437,1028,615,1055"/>
+<area shape="rect" id="node32" href="$class_c___gamepad_manager.html#a8141c1f5d5bf1a658eedbe26f284d86c" title="ゲームパッドの終了処理を行う " alt="" coords="427,1079,625,1105"/>
+<area shape="rect" id="node33" href="$class_c___open_gl_manager.html#aa747a4c29bdcfbe3aca7f9ed77ee766f" title="OpenGLの終了処理を行う " alt="" coords="433,1129,619,1156"/>
+<area shape="rect" id="node34" href="$class_c___sdl_manager.html#a9ce1d44857368823c4f67aa45b77105e" title="SDLの終了処理を行う " alt="" coords="446,1180,606,1207"/>
+</map>

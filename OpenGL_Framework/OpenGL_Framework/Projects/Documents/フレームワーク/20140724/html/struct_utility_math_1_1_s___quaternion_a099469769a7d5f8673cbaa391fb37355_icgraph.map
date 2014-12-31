@@ -1,0 +1,4 @@
+<map id="UtilityMath::S_Quaternion::Normalize" name="UtilityMath::S_Quaternion::Normalize">
+<area shape="rect" id="node2" href="$struct_utility_math_1_1_s___quaternion.html#a668309d761548b10e42e1462682f5e75" title="正規化したクォータニオンを取得する " alt="" coords="224,5,395,47"/>
+<area shape="rect" id="node3" href="$struct_utility_math_1_1_s___quaternion.html#a13fa824d2acdb566ecc1537e11cc69f5" title="もう一つのクォータニオンと球面線形補間した値を取得する " alt="" coords="224,71,395,112"/>
+</map>

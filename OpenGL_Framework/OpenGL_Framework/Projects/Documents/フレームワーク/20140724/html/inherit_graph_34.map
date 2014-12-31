@@ -1,0 +1,4 @@
+<map id="クラス階層図" name="クラス階層図">
+<area shape="rect" id="node1" href="$class_i_c___scene_changer.html" title="シーンチェンジャー( インターフェース ) " alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node2" href="$class_c___scene_manager.html" title="シーンマネージャー " alt="" coords="180,5,305,32"/>
+</map>

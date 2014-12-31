@@ -1,0 +1,5 @@
+<map id="C_TextInputManager::End" name="C_TextInputManager::End">
+<area shape="rect" id="node2" href="$class_c___text_input_manager.html#a5b669e3ea9a9a97496523ba610b76d1d" title="テキストの初期化処理を行う " alt="" coords="225,5,367,47"/>
+<area shape="rect" id="node3" href="$class_c___framework.html#a84f8c1e88b638ef676a1d444d37b0f49" title="ライブラリの初期化処理を行う " alt="" coords="415,13,572,39"/>
+<area shape="rect" id="node4" href="$class_c___framework.html#a3cf73a67b3bdacf785b58b0a3573a60c" title="ゲームの実行処理を行う " alt="" coords="620,13,753,39"/>
+</map>

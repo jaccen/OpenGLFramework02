@@ -1,0 +1,769 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: C_Collision2D クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="class_c___collision2_d-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">C_Collision2D クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>コリジョン2D  
+ <a href="class_c___collision2_d.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_collision2_d_8h_source.html">Collision2D.h</a>&gt;</code></p>
+<div class="dynheader">
+C_Collision2D 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___collision2_d__coll__graph.png" border="0" usemap="#_c___collision2_d_coll__map" alt="Collaboration graph"/></div>
+<map name="_c___collision2_d_coll__map" id="_c___collision2_d_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a8df33dac31719dfbfeddf6497a1e3e0f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___collision2_d.html#a8df33dac31719dfbfeddf6497a1e3e0f">s_CheckRectangleAndRectangle</a> (const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rCenterPosition, float halfWidth, float halfHeight, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rAnotherCenterPosition, float anotherHalfWidth, float anotherHalfHeihgt)</td></tr>
+<tr class="memdesc:a8df33dac31719dfbfeddf6497a1e3e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩形同士の衝突判定を行う  <a href="#a8df33dac31719dfbfeddf6497a1e3e0f">[詳解]</a><br /></td></tr>
+<tr class="separator:a8df33dac31719dfbfeddf6497a1e3e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7de46993fe667e1e13c8734437c78299"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___collision2_d.html#a7de46993fe667e1e13c8734437c78299">s_CheckCircleAndCircle</a> (const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rCenterPosition, float radius, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rAnotherCenterPosition, float anotherRadius)</td></tr>
+<tr class="memdesc:a7de46993fe667e1e13c8734437c78299"><td class="mdescLeft">&#160;</td><td class="mdescRight">円同士の衝突判定を行う  <a href="#a7de46993fe667e1e13c8734437c78299">[詳解]</a><br /></td></tr>
+<tr class="separator:a7de46993fe667e1e13c8734437c78299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeff3f7ed3044092e1dafe3bf11919d12"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___collision2_d.html#aeff3f7ed3044092e1dafe3bf11919d12">s_CheckRectangleAndCircle</a> (const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rRectangleCenterPosition, float rectangleHalfWidth, float rectangleHalfHeight, float rectangleAngle, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rCircleCenterPosition, float circleRadius)</td></tr>
+<tr class="memdesc:aeff3f7ed3044092e1dafe3bf11919d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩形と円の衝突判定を行う  <a href="#aeff3f7ed3044092e1dafe3bf11919d12">[詳解]</a><br /></td></tr>
+<tr class="separator:aeff3f7ed3044092e1dafe3bf11919d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c43af737660c6aae1d667159609020"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___collision2_d.html#a84c43af737660c6aae1d667159609020">s_CheckCircleAndPoint</a> (const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rCircleCenterPosition, float circleRadius, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rPoint)</td></tr>
+<tr class="memdesc:a84c43af737660c6aae1d667159609020"><td class="mdescLeft">&#160;</td><td class="mdescRight">円と点の衝突判定を行う  <a href="#a84c43af737660c6aae1d667159609020">[詳解]</a><br /></td></tr>
+<tr class="separator:a84c43af737660c6aae1d667159609020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ab6419da99cff26b680060eae801451"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___collision2_d.html#a0ab6419da99cff26b680060eae801451">s_CheckCircleAndSegment</a> (const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rCircleCenterPosition, float circleRadius, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rSegmentBeginPoint, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rSegmentEndPoint)</td></tr>
+<tr class="memdesc:a0ab6419da99cff26b680060eae801451"><td class="mdescLeft">&#160;</td><td class="mdescRight">円と線分の衝突判定を行う  <a href="#a0ab6419da99cff26b680060eae801451">[詳解]</a><br /></td></tr>
+<tr class="separator:a0ab6419da99cff26b680060eae801451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fd04bebb38f10788504e95776d07257"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___collision2_d.html#a2fd04bebb38f10788504e95776d07257">s_CheckPointAndPoint</a> (const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rPoint, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rAnotherPoint)</td></tr>
+<tr class="memdesc:a2fd04bebb38f10788504e95776d07257"><td class="mdescLeft">&#160;</td><td class="mdescRight">2Dの点と点の衝突判定を行う  <a href="#a2fd04bebb38f10788504e95776d07257">[詳解]</a><br /></td></tr>
+<tr class="separator:a2fd04bebb38f10788504e95776d07257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fbdeae8cca0ec7d9f97c1a3f79cec80"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___collision2_d.html#a5fbdeae8cca0ec7d9f97c1a3f79cec80">s_CheckPointAndSegment</a> (const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rPoint, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rSegmentBeginPoint, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rSegmentEndPoint)</td></tr>
+<tr class="memdesc:a5fbdeae8cca0ec7d9f97c1a3f79cec80"><td class="mdescLeft">&#160;</td><td class="mdescRight">点と線分の衝突判定を行う  <a href="#a5fbdeae8cca0ec7d9f97c1a3f79cec80">[詳解]</a><br /></td></tr>
+<tr class="separator:a5fbdeae8cca0ec7d9f97c1a3f79cec80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30d3eba5634d688810953d97ecb9d186"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___collision2_d.html#a30d3eba5634d688810953d97ecb9d186">s_CheckPointAndEllipse</a> (const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rPoint, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rEllipseCenterPosition, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rEllipseSemidiameter, float ellipseAngle)</td></tr>
+<tr class="memdesc:a30d3eba5634d688810953d97ecb9d186"><td class="mdescLeft">&#160;</td><td class="mdescRight">点と楕円の衝突判定を行う  <a href="#a30d3eba5634d688810953d97ecb9d186">[詳解]</a><br /></td></tr>
+<tr class="separator:a30d3eba5634d688810953d97ecb9d186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc5a9d70810f0a4f2ec570221c59e590"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___collision2_d.html#adc5a9d70810f0a4f2ec570221c59e590">s_CheckSegmentAndSegment</a> (const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rBeginPoint, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rEndPoint, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rAnotherBeginPoint, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rAnotherEndPoint, <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> *pIntersectionPoint)</td></tr>
+<tr class="memdesc:adc5a9d70810f0a4f2ec570221c59e590"><td class="mdescLeft">&#160;</td><td class="mdescRight">線分と線分の衝突判定を行う  <a href="#adc5a9d70810f0a4f2ec570221c59e590">[詳解]</a><br /></td></tr>
+<tr class="separator:adc5a9d70810f0a4f2ec570221c59e590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>コリジョン2D </p>
+<p>2Dの衝突判定の関数をまとめたユーティリティクラス </p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a7de46993fe667e1e13c8734437c78299"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_Collision2D::s_CheckCircleAndCircle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rCenterPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnotherCenterPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>anotherRadius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>円同士の衝突判定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">中心座標</td><td></td></tr>
+    <tr><td class="paramname">半径</td><td></td></tr>
+    <tr><td class="paramname">もう一つの中心座標</td><td></td></tr>
+    <tr><td class="paramname">もう一つの半径</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>衝突した場合：true </dd>
+<dd>
+衝突しなかった場合：false </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___collision2_d_a7de46993fe667e1e13c8734437c78299_cgraph.png" border="0" usemap="#class_c___collision2_d_a7de46993fe667e1e13c8734437c78299_cgraph" alt=""/></div>
+<map name="class_c___collision2_d_a7de46993fe667e1e13c8734437c78299_cgraph" id="class_c___collision2_d_a7de46993fe667e1e13c8734437c78299_cgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___vector2.html#aebc6d2205d34bddab35f3504901176ad" title="長さの2乗を取得する " alt="" coords="248,5,401,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a84c43af737660c6aae1d667159609020"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_Collision2D::s_CheckCircleAndPoint </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rCircleCenterPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>circleRadius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rPoint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>円と点の衝突判定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">矩形の中心座標</td><td></td></tr>
+    <tr><td class="paramname">円の半径</td><td></td></tr>
+    <tr><td class="paramname">点</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>衝突した場合：true </dd>
+<dd>
+衝突しなかった場合：false </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___collision2_d_a84c43af737660c6aae1d667159609020_cgraph.png" border="0" usemap="#class_c___collision2_d_a84c43af737660c6aae1d667159609020_cgraph" alt=""/></div>
+<map name="class_c___collision2_d_a84c43af737660c6aae1d667159609020_cgraph" id="class_c___collision2_d_a84c43af737660c6aae1d667159609020_cgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___vector2.html#aebc6d2205d34bddab35f3504901176ad" title="長さの2乗を取得する " alt="" coords="248,5,401,47"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___collision2_d_a84c43af737660c6aae1d667159609020_icgraph.png" border="0" usemap="#class_c___collision2_d_a84c43af737660c6aae1d667159609020_icgraph" alt=""/></div>
+<map name="class_c___collision2_d_a84c43af737660c6aae1d667159609020_icgraph" id="class_c___collision2_d_a84c43af737660c6aae1d667159609020_icgraph">
+<area shape="rect" id="node2" href="class_c___collision2_d.html#aeff3f7ed3044092e1dafe3bf11919d12" title="矩形と円の衝突判定を行う " alt="" coords="248,5,468,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ab6419da99cff26b680060eae801451"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_Collision2D::s_CheckCircleAndSegment </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rCircleCenterPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>circleRadius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rSegmentBeginPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rSegmentEndPoint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>円と線分の衝突判定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">円の中心座標</td><td></td></tr>
+    <tr><td class="paramname">円の半径</td><td></td></tr>
+    <tr><td class="paramname">線分の始点</td><td></td></tr>
+    <tr><td class="paramname">線分の終点</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>衝突した場合：true </dd>
+<dd>
+衝突しなかった場合：false </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___collision2_d_a0ab6419da99cff26b680060eae801451_cgraph.png" border="0" usemap="#class_c___collision2_d_a0ab6419da99cff26b680060eae801451_cgraph" alt=""/></div>
+<map name="class_c___collision2_d_a0ab6419da99cff26b680060eae801451_cgraph" id="class_c___collision2_d_a0ab6419da99cff26b680060eae801451_cgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___vector2.html#ab2c92770295529dc47c22b8e9bca944b" title="もう一つのベクトルとの外積を取得する " alt="" coords="248,5,401,47"/><area shape="rect" id="node3" href="struct_utility_math_1_1_s___vector2.html#a764dedcb880aa8d5bf2a6e797b94fcc4" title="長さを取得する " alt="" coords="248,71,401,112"/><area shape="rect" id="node5" href="struct_utility_math_1_1_s___vector2.html#a25934ba7f9154076cf6c975f25f1e58c" title="もう一つのベクトルとの内積を取得する " alt="" coords="248,136,401,177"/><area shape="rect" id="node6" href="struct_utility_math_1_1_s___vector2.html#aebc6d2205d34bddab35f3504901176ad" title="長さの2乗を取得する " alt="" coords="248,201,401,243"/><area shape="rect" id="node4" href="namespace_utility_math.html#ab13aca738fe90a4442944a43d9df9d5a" title="平方根を求める " alt="" coords="449,78,609,105"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a30d3eba5634d688810953d97ecb9d186"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_Collision2D::s_CheckPointAndEllipse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rEllipseCenterPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rEllipseSemidiameter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ellipseAngle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>点と楕円の衝突判定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">点</td><td></td></tr>
+    <tr><td class="paramname">楕円の中心座標</td><td></td></tr>
+    <tr><td class="paramname">楕円の軸長</td><td></td></tr>
+    <tr><td class="paramname">楕円の角度(</td><td>ラジアン値 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>衝突した場合：true </dd>
+<dd>
+衝突しなかった場合：false </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___collision2_d_a30d3eba5634d688810953d97ecb9d186_cgraph.png" border="0" usemap="#class_c___collision2_d_a30d3eba5634d688810953d97ecb9d186_cgraph" alt=""/></div>
+<map name="class_c___collision2_d_a30d3eba5634d688810953d97ecb9d186_cgraph" id="class_c___collision2_d_a30d3eba5634d688810953d97ecb9d186_cgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___vector2.html#aebc6d2205d34bddab35f3504901176ad" title="長さの2乗を取得する " alt="" coords="245,5,399,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2fd04bebb38f10788504e95776d07257"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_Collision2D::s_CheckPointAndPoint </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnotherPoint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>2Dの点と点の衝突判定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">点</td><td></td></tr>
+    <tr><td class="paramname">もう一つの点</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>衝突した場合：true </dd>
+<dd>
+衝突しなかった場合：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5fbdeae8cca0ec7d9f97c1a3f79cec80"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_Collision2D::s_CheckPointAndSegment </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rSegmentBeginPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rSegmentEndPoint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>点と線分の衝突判定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">点</td><td></td></tr>
+    <tr><td class="paramname">線分の始点</td><td></td></tr>
+    <tr><td class="paramname">線分の終点</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>衝突した場合：true </dd>
+<dd>
+衝突しなかった場合：false </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___collision2_d_a5fbdeae8cca0ec7d9f97c1a3f79cec80_cgraph.png" border="0" usemap="#class_c___collision2_d_a5fbdeae8cca0ec7d9f97c1a3f79cec80_cgraph" alt=""/></div>
+<map name="class_c___collision2_d_a5fbdeae8cca0ec7d9f97c1a3f79cec80_cgraph" id="class_c___collision2_d_a5fbdeae8cca0ec7d9f97c1a3f79cec80_cgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___vector2.html#a764dedcb880aa8d5bf2a6e797b94fcc4" title="長さを取得する " alt="" coords="245,5,399,47"/><area shape="rect" id="node4" href="struct_utility_math_1_1_s___vector2.html#ab2c92770295529dc47c22b8e9bca944b" title="もう一つのベクトルとの外積を取得する " alt="" coords="245,71,399,112"/><area shape="rect" id="node3" href="namespace_utility_math.html#ab13aca738fe90a4442944a43d9df9d5a" title="平方根を求める " alt="" coords="447,13,607,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aeff3f7ed3044092e1dafe3bf11919d12"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_Collision2D::s_CheckRectangleAndCircle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rRectangleCenterPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rectangleHalfWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rectangleHalfHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rectangleAngle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rCircleCenterPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>circleRadius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>矩形と円の衝突判定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">矩形の中心座標</td><td></td></tr>
+    <tr><td class="paramname">矩形の幅の半分</td><td></td></tr>
+    <tr><td class="paramname">矩形の高さの半分</td><td></td></tr>
+    <tr><td class="paramname">矩形の角度(</td><td>ラジアン値 ) </td></tr>
+    <tr><td class="paramname">円の中心座標</td><td></td></tr>
+    <tr><td class="paramname">円の半径</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>衝突した場合：true </dd>
+<dd>
+衝突しなかった場合：false </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___collision2_d_aeff3f7ed3044092e1dafe3bf11919d12_cgraph.png" border="0" usemap="#class_c___collision2_d_aeff3f7ed3044092e1dafe3bf11919d12_cgraph" alt=""/></div>
+<map name="class_c___collision2_d_aeff3f7ed3044092e1dafe3bf11919d12_cgraph" id="class_c___collision2_d_aeff3f7ed3044092e1dafe3bf11919d12_cgraph">
+<area shape="rect" id="node2" href="class_c___collision2_d.html#a84c43af737660c6aae1d667159609020" title="円と点の衝突判定を行う " alt="" coords="273,5,468,47"/><area shape="rect" id="node3" href="struct_utility_math_1_1_s___vector2.html#aebc6d2205d34bddab35f3504901176ad" title="長さの2乗を取得する " alt="" coords="516,5,669,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8df33dac31719dfbfeddf6497a1e3e0f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_Collision2D::s_CheckRectangleAndRectangle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rCenterPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>halfWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>halfHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnotherCenterPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>anotherHalfWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>anotherHalfHeihgt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>矩形同士の衝突判定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">中心座標</td><td></td></tr>
+    <tr><td class="paramname">幅の半分</td><td></td></tr>
+    <tr><td class="paramname">高さの半分</td><td></td></tr>
+    <tr><td class="paramname">もう一つの中心座標</td><td></td></tr>
+    <tr><td class="paramname">もう一つの幅の半分</td><td></td></tr>
+    <tr><td class="paramname">もう一つの高さの半分</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>衝突した場合：true </dd>
+<dd>
+衝突しなかった場合：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adc5a9d70810f0a4f2ec570221c59e590"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_Collision2D::s_CheckSegmentAndSegment </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rBeginPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rEndPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnotherBeginPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnotherEndPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> *&#160;</td>
+          <td class="paramname"><em>pIntersectionPoint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>線分と線分の衝突判定を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">始点</td><td></td></tr>
+    <tr><td class="paramname">終点</td><td></td></tr>
+    <tr><td class="paramname">もう一つの始点</td><td></td></tr>
+    <tr><td class="paramname">もう一つの終点</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>衝突した場合：true </dd>
+<dd>
+衝突しなかった場合：false </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___collision2_d_adc5a9d70810f0a4f2ec570221c59e590_cgraph.png" border="0" usemap="#class_c___collision2_d_adc5a9d70810f0a4f2ec570221c59e590_cgraph" alt=""/></div>
+<map name="class_c___collision2_d_adc5a9d70810f0a4f2ec570221c59e590_cgraph" id="class_c___collision2_d_adc5a9d70810f0a4f2ec570221c59e590_cgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___vector2.html#ab1d8e8faa1dc38147d97c2a95b60ce76" title="反転したベクトルを取得する " alt="" coords="268,5,421,47"/><area shape="rect" id="node3" href="struct_utility_math_1_1_s___vector2.html#ab2c92770295529dc47c22b8e9bca944b" title="もう一つのベクトルとの外積を取得する " alt="" coords="268,71,421,112"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="_collision2_d_8h_source.html">Collision2D.h</a></li>
+<li><a class="el" href="_collision2_d_8cpp.html">Collision2D.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分52秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

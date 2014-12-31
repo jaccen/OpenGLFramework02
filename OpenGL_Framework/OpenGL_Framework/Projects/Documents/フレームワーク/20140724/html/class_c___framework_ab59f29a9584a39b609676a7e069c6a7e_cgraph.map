@@ -1,0 +1,8 @@
+<map id="C_Framework::Finalize" name="C_Framework::Finalize">
+<area shape="rect" id="node2" href="$class_c___fbx_model.html#a9975aaf331481928876d172a6b55e778" title="FBX SDKの終了処理を行う " alt="" coords="225,5,388,32"/>
+<area shape="rect" id="node3" href="$class_c___font_manager.html#a0c5ff4261bd94ba9e9ac5bc1d87037ec" title="フォントの終了処理を行う " alt="" coords="223,56,390,83"/>
+<area shape="rect" id="node4" href="$class_c___sound_manager.html#ad83a88eb944238405176a9a45d04fac1" title="サウンドエフェクトとBGMの終了処理を行う " alt="" coords="217,107,396,133"/>
+<area shape="rect" id="node5" href="$class_c___gamepad_manager.html#a8141c1f5d5bf1a658eedbe26f284d86c" title="ゲームパッドの終了処理を行う " alt="" coords="208,157,405,184"/>
+<area shape="rect" id="node6" href="$class_c___open_gl_manager.html#aa747a4c29bdcfbe3aca7f9ed77ee766f" title="OpenGLの終了処理を行う " alt="" coords="214,208,399,235"/>
+<area shape="rect" id="node7" href="$class_c___sdl_manager.html#a9ce1d44857368823c4f67aa45b77105e" title="SDLの終了処理を行う " alt="" coords="227,259,387,285"/>
+</map>

@@ -1,0 +1,1105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: UtilityMath::S_Matrix3 構造体</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_utility_math.html">UtilityMath</a></li><li class="navelem"><a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="struct_utility_math_1_1_s___matrix3-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">UtilityMath::S_Matrix3 構造体</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>マトリクス3  
+ <a href="struct_utility_math_1_1_s___matrix3.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_matrix3_8h_source.html">Matrix3.h</a>&gt;</code></p>
+<div class="dynheader">
+UtilityMath::S_Matrix3 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___matrix3__coll__graph.png" border="0" usemap="#_utility_math_1_1_s___matrix3_coll__map" alt="Collaboration graph"/></div>
+<map name="_utility_math_1_1_s___matrix3_coll__map" id="_utility_math_1_1_s___matrix3_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a9e0b1b27a7807ca518e9fce1828ced53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a9e0b1b27a7807ca518e9fce1828ced53">S_Matrix3</a> ()</td></tr>
+<tr class="memdesc:a9e0b1b27a7807ca518e9fce1828ced53"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a9e0b1b27a7807ca518e9fce1828ced53">[詳解]</a><br /></td></tr>
+<tr class="separator:a9e0b1b27a7807ca518e9fce1828ced53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a712e8eec8d228aa762026f350df0ac55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a712e8eec8d228aa762026f350df0ac55">S_Matrix3</a> (float a11, float a21, float a31, float a12, float a22, float a32, float a13, float a23, float a33)</td></tr>
+<tr class="memdesc:a712e8eec8d228aa762026f350df0ac55"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ( 指定した値で各要素の初期化 )  <a href="#a712e8eec8d228aa762026f350df0ac55">[詳解]</a><br /></td></tr>
+<tr class="separator:a712e8eec8d228aa762026f350df0ac55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65c687a962f93f11f5470302c1722d86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a65c687a962f93f11f5470302c1722d86">S_Matrix3</a> (const float a[9])</td></tr>
+<tr class="memdesc:a65c687a962f93f11f5470302c1722d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ( 指定した配列で要素の初期化 )  <a href="#a65c687a962f93f11f5470302c1722d86">[詳解]</a><br /></td></tr>
+<tr class="separator:a65c687a962f93f11f5470302c1722d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e8d09164b52b86ec5c0f6e868158884"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a5e8d09164b52b86ec5c0f6e868158884">~S_Matrix3</a> ()</td></tr>
+<tr class="memdesc:a5e8d09164b52b86ec5c0f6e868158884"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a5e8d09164b52b86ec5c0f6e868158884">[詳解]</a><br /></td></tr>
+<tr class="separator:a5e8d09164b52b86ec5c0f6e868158884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f4d2618c85bd53cb030cee967da7304"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a6f4d2618c85bd53cb030cee967da7304">Zero</a> ()</td></tr>
+<tr class="memdesc:a6f4d2618c85bd53cb030cee967da7304"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゼロ行列化する  <a href="#a6f4d2618c85bd53cb030cee967da7304">[詳解]</a><br /></td></tr>
+<tr class="separator:a6f4d2618c85bd53cb030cee967da7304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b76d9d7429742e1c5b55d0d0be013f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a8b76d9d7429742e1c5b55d0d0be013f2">Identity</a> ()</td></tr>
+<tr class="memdesc:a8b76d9d7429742e1c5b55d0d0be013f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">単位行列化する  <a href="#a8b76d9d7429742e1c5b55d0d0be013f2">[詳解]</a><br /></td></tr>
+<tr class="separator:a8b76d9d7429742e1c5b55d0d0be013f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f3b14c1684898a565896d1029e6e7e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a6f3b14c1684898a565896d1029e6e7e4">Transpose</a> ()</td></tr>
+<tr class="memdesc:a6f3b14c1684898a565896d1029e6e7e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">転置行列化する  <a href="#a6f3b14c1684898a565896d1029e6e7e4">[詳解]</a><br /></td></tr>
+<tr class="separator:a6f3b14c1684898a565896d1029e6e7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc99746e4a5c0813afadf7f29a219c81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#abc99746e4a5c0813afadf7f29a219c81">Inverse</a> ()</td></tr>
+<tr class="memdesc:abc99746e4a5c0813afadf7f29a219c81"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆行列化する  <a href="#abc99746e4a5c0813afadf7f29a219c81">[詳解]</a><br /></td></tr>
+<tr class="separator:abc99746e4a5c0813afadf7f29a219c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d7c58d477f1ad99d6caea262c76194b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a3d7c58d477f1ad99d6caea262c76194b">GetTranspose</a> () const </td></tr>
+<tr class="memdesc:a3d7c58d477f1ad99d6caea262c76194b"><td class="mdescLeft">&#160;</td><td class="mdescRight">転置行列を取得する  <a href="#a3d7c58d477f1ad99d6caea262c76194b">[詳解]</a><br /></td></tr>
+<tr class="separator:a3d7c58d477f1ad99d6caea262c76194b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d14f841f9fe85471cf7071e7061dca1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a5d14f841f9fe85471cf7071e7061dca1">GetInverse</a> () const </td></tr>
+<tr class="memdesc:a5d14f841f9fe85471cf7071e7061dca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆行列を取得する  <a href="#a5d14f841f9fe85471cf7071e7061dca1">[詳解]</a><br /></td></tr>
+<tr class="separator:a5d14f841f9fe85471cf7071e7061dca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad1b4458710bc3a5c44415496c6b8cc4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#aad1b4458710bc3a5c44415496c6b8cc4">operator+</a> (const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;rAnother) const </td></tr>
+<tr class="memdesc:aad1b4458710bc3a5c44415496c6b8cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">もう一つの行列を加算した行列を求める  <a href="#aad1b4458710bc3a5c44415496c6b8cc4">[詳解]</a><br /></td></tr>
+<tr class="separator:aad1b4458710bc3a5c44415496c6b8cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bad6de9b59e62d28e24611683c82e4b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a4bad6de9b59e62d28e24611683c82e4b">operator-</a> (const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;rAnother) const </td></tr>
+<tr class="memdesc:a4bad6de9b59e62d28e24611683c82e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">もう一つの行列で減算した行列を求める  <a href="#a4bad6de9b59e62d28e24611683c82e4b">[詳解]</a><br /></td></tr>
+<tr class="separator:a4bad6de9b59e62d28e24611683c82e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2252def3a280e4a14b611fdfb6d53892"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a2252def3a280e4a14b611fdfb6d53892">operator*</a> (const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;rAnother) const </td></tr>
+<tr class="memdesc:a2252def3a280e4a14b611fdfb6d53892"><td class="mdescLeft">&#160;</td><td class="mdescRight">もう一つの行列を乗算した行列を求める  <a href="#a2252def3a280e4a14b611fdfb6d53892">[詳解]</a><br /></td></tr>
+<tr class="separator:a2252def3a280e4a14b611fdfb6d53892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae57c2b8575bffdedb011f3ddea6eff4f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#ae57c2b8575bffdedb011f3ddea6eff4f">operator+=</a> (const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;rAnother)</td></tr>
+<tr class="memdesc:ae57c2b8575bffdedb011f3ddea6eff4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">もう一つの行列を加算する  <a href="#ae57c2b8575bffdedb011f3ddea6eff4f">[詳解]</a><br /></td></tr>
+<tr class="separator:ae57c2b8575bffdedb011f3ddea6eff4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a6d5577c961099d4f87fad2e54f69e5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a2a6d5577c961099d4f87fad2e54f69e5">operator-=</a> (const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;rAnother)</td></tr>
+<tr class="memdesc:a2a6d5577c961099d4f87fad2e54f69e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">もう一つの行列で減算する  <a href="#a2a6d5577c961099d4f87fad2e54f69e5">[詳解]</a><br /></td></tr>
+<tr class="separator:a2a6d5577c961099d4f87fad2e54f69e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9152ac03366ec0fe7c457339f85ca82"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#ac9152ac03366ec0fe7c457339f85ca82">operator*=</a> (const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;rAnother)</td></tr>
+<tr class="memdesc:ac9152ac03366ec0fe7c457339f85ca82"><td class="mdescLeft">&#160;</td><td class="mdescRight">もう一つの行列を乗算する  <a href="#ac9152ac03366ec0fe7c457339f85ca82">[詳解]</a><br /></td></tr>
+<tr class="separator:ac9152ac03366ec0fe7c457339f85ca82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f3091a113a4d8db9f5b488708044b69"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___vector3.html">S_Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a3f3091a113a4d8db9f5b488708044b69">operator*</a> (const <a class="el" href="struct_utility_math_1_1_s___vector3.html">S_Vector3</a> &amp;rVector) const </td></tr>
+<tr class="memdesc:a3f3091a113a4d8db9f5b488708044b69"><td class="mdescLeft">&#160;</td><td class="mdescRight">ベクトルと乗算した値を求める  <a href="#a3f3091a113a4d8db9f5b488708044b69">[詳解]</a><br /></td></tr>
+<tr class="separator:a3f3091a113a4d8db9f5b488708044b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:ac86ad260fae9ecef732c6ccc5a3e7e62"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#ac86ad260fae9ecef732c6ccc5a3e7e62">s_CreateRotation</a> (float angle)</td></tr>
+<tr class="memdesc:ac86ad260fae9ecef732c6ccc5a3e7e62"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転行列を作成する  <a href="#ac86ad260fae9ecef732c6ccc5a3e7e62">[詳解]</a><br /></td></tr>
+<tr class="separator:ac86ad260fae9ecef732c6ccc5a3e7e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e6454df566089c6b6f73f2b4c16ba49"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a6e6454df566089c6b6f73f2b4c16ba49">s_CreateScaling</a> (float rateX, float rateY)</td></tr>
+<tr class="memdesc:a6e6454df566089c6b6f73f2b4c16ba49"><td class="mdescLeft">&#160;</td><td class="mdescRight">拡縮行列を作成する  <a href="#a6e6454df566089c6b6f73f2b4c16ba49">[詳解]</a><br /></td></tr>
+<tr class="separator:a6e6454df566089c6b6f73f2b4c16ba49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29387b9b5a63efd0e10b6ad20e77b85f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a29387b9b5a63efd0e10b6ad20e77b85f">s_CreateTranslation</a> (float movementX, float movementY)</td></tr>
+<tr class="memdesc:a29387b9b5a63efd0e10b6ad20e77b85f"><td class="mdescLeft">&#160;</td><td class="mdescRight">平行移動行列を作成する  <a href="#a29387b9b5a63efd0e10b6ad20e77b85f">[詳解]</a><br /></td></tr>
+<tr class="separator:a29387b9b5a63efd0e10b6ad20e77b85f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a259dae8e6f0a12a12fff8eefbacad8ba"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#a259dae8e6f0a12a12fff8eefbacad8ba">s_ConvertMatrix4ToMatrix3</a> (const <a class="el" href="struct_utility_math_1_1_s___matrix4.html">S_Matrix4</a> &amp;rMatirx)</td></tr>
+<tr class="memdesc:a259dae8e6f0a12a12fff8eefbacad8ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">4 * 4の行列を3 * 3の行列に変換し、取得する  <a href="#a259dae8e6f0a12a12fff8eefbacad8ba">[詳解]</a><br /></td></tr>
+<tr class="separator:a259dae8e6f0a12a12fff8eefbacad8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab167e83950e357ec23a34e4280b02e84"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___matrix3.html#ab167e83950e357ec23a34e4280b02e84">s_CreateNormal</a> (const <a class="el" href="struct_utility_math_1_1_s___matrix4.html">S_Matrix4</a> &amp;rMatrix)</td></tr>
+<tr class="memdesc:ab167e83950e357ec23a34e4280b02e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">法線行列を作成する  <a href="#ab167e83950e357ec23a34e4280b02e84">[詳解]</a><br /></td></tr>
+<tr class="separator:ab167e83950e357ec23a34e4280b02e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a9245fdb72d8b65b01d4f2f1858e14771"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:abab85ec8cfa89c51a517a2913e8fae16"><td class="memItemLeft" >&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___matrix3.html#ad5944d45e23c1cdcf0b1daeb12a3f300">a_</a> [9]</td></tr>
+<tr class="memdesc:abab85ec8cfa89c51a517a2913e8fae16"><td class="mdescLeft">&#160;</td><td class="mdescRight">9個の要素を持つ配列  <a href="#abab85ec8cfa89c51a517a2913e8fae16">[詳解]</a><br /></td></tr>
+<tr class="separator:abab85ec8cfa89c51a517a2913e8fae16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8425ff0caafed2a0a4e76caededffeb7"><td class="memItemLeft" >&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___matrix3.html#aef285d8c3bd395abe118eaeb00fbd033">a3x3_</a> [3][3]</td></tr>
+<tr class="memdesc:a8425ff0caafed2a0a4e76caededffeb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">3 * 3の二次元配列  <a href="#a8425ff0caafed2a0a4e76caededffeb7">[詳解]</a><br /></td></tr>
+<tr class="separator:a8425ff0caafed2a0a4e76caededffeb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf66c1877fc46c473c9fe463c086319a"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a9938bd2650c6a54ddf127bb2c81bb7aa"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___matrix3.html#a7f1b5667011b7ee9c35c134ae8f09d0d">a11_</a></td></tr>
+<tr class="separator:a9938bd2650c6a54ddf127bb2c81bb7aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b660cd583c3f6f7f3591272fe5d8468"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___matrix3.html#a64e2293bdf559ad1fc9caded4976acd2">a12_</a></td></tr>
+<tr class="separator:a0b660cd583c3f6f7f3591272fe5d8468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5d37baf1a15e39e6888f6ac3219ce13"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___matrix3.html#ac8bc1f5f46fcbaef204b905439936048">a13_</a></td></tr>
+<tr class="separator:af5d37baf1a15e39e6888f6ac3219ce13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3c628bd4b92d6553be84c01eff47d45"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___matrix3.html#a17f332f7150270f26ceed297d727a038">a21_</a></td></tr>
+<tr class="separator:ae3c628bd4b92d6553be84c01eff47d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4003534563f8634e3bacaa60b3e92904"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___matrix3.html#a745797173621dfb6579542ea8fc80251">a22_</a></td></tr>
+<tr class="separator:a4003534563f8634e3bacaa60b3e92904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedd32312350def1fff465f1d842f7c09"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___matrix3.html#aba9a47a9866fda6d2224f7d2ef636d2a">a23_</a></td></tr>
+<tr class="separator:aedd32312350def1fff465f1d842f7c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dad229613c256fa0f2164fee87fc7b5"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___matrix3.html#a1aa4e544d90cfa1f6db7604be248f837">a31_</a></td></tr>
+<tr class="separator:a6dad229613c256fa0f2164fee87fc7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b03c50eb50fc391c7a5dd93ee8fd54c"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___matrix3.html#aafd10acda57c8fd107eb6f407343c700">a32_</a></td></tr>
+<tr class="separator:a2b03c50eb50fc391c7a5dd93ee8fd54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab005624b436505ad300469ced07c087d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___matrix3.html#a9fd3ff0d12168b8a23ba5da60b7124ea">a33_</a></td></tr>
+<tr class="separator:ab005624b436505ad300469ced07c087d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf66c1877fc46c473c9fe463c086319a"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:acf66c1877fc46c473c9fe463c086319a"><td class="mdescLeft">&#160;</td><td class="mdescRight">行列の各要素  <a href="#acf66c1877fc46c473c9fe463c086319a">[詳解]</a><br /></td></tr>
+<tr class="separator:acf66c1877fc46c473c9fe463c086319a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9245fdb72d8b65b01d4f2f1858e14771"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a9245fdb72d8b65b01d4f2f1858e14771"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>マトリクス3 </p>
+<p>3 * 3の行列を表す構造体 </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a class="anchor" id="a9e0b1b27a7807ca518e9fce1828ced53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UtilityMath::S_Matrix3::S_Matrix3 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a712e8eec8d228aa762026f350df0ac55"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UtilityMath::S_Matrix3::S_Matrix3 </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a11</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a21</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a31</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a22</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a32</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a13</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a23</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a33</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コンストラクタ( 指定した値で各要素の初期化 ) </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">要素1</td><td></td></tr>
+    <tr><td class="paramname">要素2</td><td></td></tr>
+    <tr><td class="paramname">要素3</td><td></td></tr>
+    <tr><td class="paramname">要素4</td><td></td></tr>
+    <tr><td class="paramname">要素5</td><td></td></tr>
+    <tr><td class="paramname">要素6</td><td></td></tr>
+    <tr><td class="paramname">要素7</td><td></td></tr>
+    <tr><td class="paramname">要素8</td><td></td></tr>
+    <tr><td class="paramname">要素9</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a65c687a962f93f11f5470302c1722d86"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UtilityMath::S_Matrix3::S_Matrix3 </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>a</em>[9]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ( 指定した配列で要素の初期化 ) </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">要素が9個の配列</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5e8d09164b52b86ec5c0f6e868158884"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UtilityMath::S_Matrix3::~S_Matrix3 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>デストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a5d14f841f9fe85471cf7071e7061dca1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> UtilityMath::S_Matrix3::GetInverse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆行列を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>逆行列 </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___matrix3_a5d14f841f9fe85471cf7071e7061dca1_cgraph.png" border="0" usemap="#struct_utility_math_1_1_s___matrix3_a5d14f841f9fe85471cf7071e7061dca1_cgraph" alt=""/></div>
+<map name="struct_utility_math_1_1_s___matrix3_a5d14f841f9fe85471cf7071e7061dca1_cgraph" id="struct_utility_math_1_1_s___matrix3_a5d14f841f9fe85471cf7071e7061dca1_cgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___matrix3.html#abc99746e4a5c0813afadf7f29a219c81" title="逆行列化する " alt="" coords="204,5,355,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d7c58d477f1ad99d6caea262c76194b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> UtilityMath::S_Matrix3::GetTranspose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>転置行列を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>転置行列 </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___matrix3_a3d7c58d477f1ad99d6caea262c76194b_cgraph.png" border="0" usemap="#struct_utility_math_1_1_s___matrix3_a3d7c58d477f1ad99d6caea262c76194b_cgraph" alt=""/></div>
+<map name="struct_utility_math_1_1_s___matrix3_a3d7c58d477f1ad99d6caea262c76194b_cgraph" id="struct_utility_math_1_1_s___matrix3_a3d7c58d477f1ad99d6caea262c76194b_cgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___matrix3.html#a6f3b14c1684898a565896d1029e6e7e4" title="転置行列化する " alt="" coords="204,5,355,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b76d9d7429742e1c5b55d0d0be013f2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UtilityMath::S_Matrix3::Identity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>単位行列化する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abc99746e4a5c0813afadf7f29a219c81"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UtilityMath::S_Matrix3::Inverse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆行列化する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___matrix3_abc99746e4a5c0813afadf7f29a219c81_icgraph.png" border="0" usemap="#struct_utility_math_1_1_s___matrix3_abc99746e4a5c0813afadf7f29a219c81_icgraph" alt=""/></div>
+<map name="struct_utility_math_1_1_s___matrix3_abc99746e4a5c0813afadf7f29a219c81_icgraph" id="struct_utility_math_1_1_s___matrix3_abc99746e4a5c0813afadf7f29a219c81_icgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___matrix3.html#a5d14f841f9fe85471cf7071e7061dca1" title="逆行列を取得する " alt="" coords="204,5,355,47"/><area shape="rect" id="node3" href="struct_utility_math_1_1_s___matrix3.html#ab167e83950e357ec23a34e4280b02e84" title="法線行列を作成する " alt="" coords="204,71,355,112"/><area shape="rect" id="node4" href="class_c___animation_test_scene.html#a64ae226c8d9cf129af92b78e53e3b7df" title="更新処理を行う " alt="" coords="427,5,586,47"/><area shape="rect" id="node5" href="class_c___frame_buffer_object_test_scene.html#a5d92d1bbd06d194ba4a19721dbe841ee" title="描画処理を行う " alt="" coords="403,71,611,112"/><area shape="rect" id="node6" href="class_c___normal_map_test_scene.html#abdf005b3ad4811b9a8835ef58795bd29" title="描画処理を行う " alt="" coords="423,136,590,177"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2252def3a280e4a14b611fdfb6d53892"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> UtilityMath::S_Matrix3::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnother</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>もう一つの行列を乗算した行列を求める </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">もう一つの行列</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>乗算した行列 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3f3091a113a4d8db9f5b488708044b69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___vector3.html">UtilityMath::S_Vector3</a> UtilityMath::S_Matrix3::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector3.html">S_Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>rVector</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ベクトルと乗算した値を求める </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">3Dベクトル</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>乗算したベクトル </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac9152ac03366ec0fe7c457339f85ca82"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> &amp; UtilityMath::S_Matrix3::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnother</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>もう一つの行列を乗算する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">もう一つの行列</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>乗算後の行列( 自分自身 ) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aad1b4458710bc3a5c44415496c6b8cc4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> UtilityMath::S_Matrix3::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnother</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>もう一つの行列を加算した行列を求める </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">もう一つの行列</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>加算した行列 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae57c2b8575bffdedb011f3ddea6eff4f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> &amp; UtilityMath::S_Matrix3::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnother</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>もう一つの行列を加算する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">もう一つの行列</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>加算後の行列( 自分自身 ) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4bad6de9b59e62d28e24611683c82e4b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> UtilityMath::S_Matrix3::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnother</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>もう一つの行列で減算した行列を求める </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">もう一つの行列</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>減算した行列 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2a6d5577c961099d4f87fad2e54f69e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> &amp; UtilityMath::S_Matrix3::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">S_Matrix3</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnother</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>もう一つの行列で減算する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">もう一つの行列</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>減算後の行列( 自分自身 ) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a259dae8e6f0a12a12fff8eefbacad8ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> UtilityMath::S_Matrix3::s_ConvertMatrix4ToMatrix3 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___matrix4.html">S_Matrix4</a> &amp;&#160;</td>
+          <td class="paramname"><em>rMatirx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>4 * 4の行列を3 * 3の行列に変換し、取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">4</td><td>* 4の行列 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>3 * 3の行列 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab167e83950e357ec23a34e4280b02e84"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> UtilityMath::S_Matrix3::s_CreateNormal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___matrix4.html">S_Matrix4</a> &amp;&#160;</td>
+          <td class="paramname"><em>rMatrix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>法線行列を作成する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">4</td><td>* 4の行列 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>法線行列 </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___matrix3_ab167e83950e357ec23a34e4280b02e84_cgraph.png" border="0" usemap="#struct_utility_math_1_1_s___matrix3_ab167e83950e357ec23a34e4280b02e84_cgraph" alt=""/></div>
+<map name="struct_utility_math_1_1_s___matrix3_ab167e83950e357ec23a34e4280b02e84_cgraph" id="struct_utility_math_1_1_s___matrix3_ab167e83950e357ec23a34e4280b02e84_cgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___matrix3.html#abc99746e4a5c0813afadf7f29a219c81" title="逆行列化する " alt="" coords="204,5,355,47"/><area shape="rect" id="node3" href="struct_utility_math_1_1_s___matrix3.html#a6f3b14c1684898a565896d1029e6e7e4" title="転置行列化する " alt="" coords="204,71,355,112"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___matrix3_ab167e83950e357ec23a34e4280b02e84_icgraph.png" border="0" usemap="#struct_utility_math_1_1_s___matrix3_ab167e83950e357ec23a34e4280b02e84_icgraph" alt=""/></div>
+<map name="struct_utility_math_1_1_s___matrix3_ab167e83950e357ec23a34e4280b02e84_icgraph" id="struct_utility_math_1_1_s___matrix3_ab167e83950e357ec23a34e4280b02e84_icgraph">
+<area shape="rect" id="node2" href="class_c___animation_test_scene.html#a64ae226c8d9cf129af92b78e53e3b7df" title="更新処理を行う " alt="" coords="229,5,387,47"/><area shape="rect" id="node3" href="class_c___frame_buffer_object_test_scene.html#a5d92d1bbd06d194ba4a19721dbe841ee" title="描画処理を行う " alt="" coords="204,71,412,112"/><area shape="rect" id="node4" href="class_c___normal_map_test_scene.html#abdf005b3ad4811b9a8835ef58795bd29" title="描画処理を行う " alt="" coords="225,136,391,177"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac86ad260fae9ecef732c6ccc5a3e7e62"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> UtilityMath::S_Matrix3::s_CreateRotation </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>回転行列を作成する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">角度(</td><td>ラジアン値 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>回転行列 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6e6454df566089c6b6f73f2b4c16ba49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> UtilityMath::S_Matrix3::s_CreateScaling </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rateX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rateY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>拡縮行列を作成する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">X方向の拡大率</td><td></td></tr>
+    <tr><td class="paramname">Y方向の拡大率</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>拡縮行列 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a29387b9b5a63efd0e10b6ad20e77b85f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> UtilityMath::S_Matrix3::s_CreateTranslation </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>movementX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>movementY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>平行移動行列を作成する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">X方向の移動量</td><td></td></tr>
+    <tr><td class="paramname">Y方向の移動量</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>平行移動行列 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6f3b14c1684898a565896d1029e6e7e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UtilityMath::S_Matrix3::Transpose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>転置行列化する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___matrix3_a6f3b14c1684898a565896d1029e6e7e4_icgraph.png" border="0" usemap="#struct_utility_math_1_1_s___matrix3_a6f3b14c1684898a565896d1029e6e7e4_icgraph" alt=""/></div>
+<map name="struct_utility_math_1_1_s___matrix3_a6f3b14c1684898a565896d1029e6e7e4_icgraph" id="struct_utility_math_1_1_s___matrix3_a6f3b14c1684898a565896d1029e6e7e4_icgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___matrix3.html#a3d7c58d477f1ad99d6caea262c76194b" title="転置行列を取得する " alt="" coords="204,5,355,47"/><area shape="rect" id="node3" href="struct_utility_math_1_1_s___matrix3.html#ab167e83950e357ec23a34e4280b02e84" title="法線行列を作成する " alt="" coords="204,71,355,112"/><area shape="rect" id="node4" href="class_c___animation_test_scene.html#a64ae226c8d9cf129af92b78e53e3b7df" title="更新処理を行う " alt="" coords="427,5,586,47"/><area shape="rect" id="node5" href="class_c___frame_buffer_object_test_scene.html#a5d92d1bbd06d194ba4a19721dbe841ee" title="描画処理を行う " alt="" coords="403,71,611,112"/><area shape="rect" id="node6" href="class_c___normal_map_test_scene.html#abdf005b3ad4811b9a8835ef58795bd29" title="描画処理を行う " alt="" coords="423,136,590,177"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6f4d2618c85bd53cb030cee967da7304"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UtilityMath::S_Matrix3::Zero </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ゼロ行列化する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a class="anchor" id="a9245fdb72d8b65b01d4f2f1858e14771"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union { ... } </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7f1b5667011b7ee9c35c134ae8f09d0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Matrix3::a11_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a64e2293bdf559ad1fc9caded4976acd2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Matrix3::a12_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac8bc1f5f46fcbaef204b905439936048"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Matrix3::a13_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a17f332f7150270f26ceed297d727a038"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Matrix3::a21_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a745797173621dfb6579542ea8fc80251"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Matrix3::a22_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aba9a47a9866fda6d2224f7d2ef636d2a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Matrix3::a23_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1aa4e544d90cfa1f6db7604be248f837"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Matrix3::a31_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aafd10acda57c8fd107eb6f407343c700"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Matrix3::a32_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9fd3ff0d12168b8a23ba5da60b7124ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Matrix3::a33_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aef285d8c3bd395abe118eaeb00fbd033"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Matrix3::a3x3_[3][3]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>3 * 3の二次元配列 </p>
+
+</div>
+</div>
+<a class="anchor" id="ad5944d45e23c1cdcf0b1daeb12a3f300"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Matrix3::a_[9]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>9個の要素を持つ配列 </p>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="_matrix3_8h_source.html">Matrix3.h</a></li>
+<li><a class="el" href="_matrix3_8cpp.html">Matrix3.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分53秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: TextureManager.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">TextureManager.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_texture_manager_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* 二重インクルード防止 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* ヘッダファイル */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_singleton_8h.html">Singleton.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_s___texture_data.html">   15</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_s___texture_data.html">S_TextureData</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_s___texture_data.html#ad21e2dcce28e784527279c943b26a76e">   17</a></span>&#160;    GLuint <a class="code" href="struct_s___texture_data.html#ad21e2dcce28e784527279c943b26a76e">texture_</a>;            </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="struct_s___texture_data.html#a4649b97fda5b28353366e3ead64ebc46">   18</a></span>&#160;    int32_t <a class="code" href="struct_s___texture_data.html#a4649b97fda5b28353366e3ead64ebc46">width_</a>;             </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_s___texture_data.html#ad760c54a2f63c7ac332d313cfab27f8b">   19</a></span>&#160;    int32_t <a class="code" href="struct_s___texture_data.html#ad760c54a2f63c7ac332d313cfab27f8b">height_</a>;            </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">/*************************************************************/</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="struct_s___texture_data.html#ab1f29b0de57ad53ae9942b19aa7d9dce">   28</a></span>&#160;    <a class="code" href="struct_s___texture_data.html#ab1f29b0de57ad53ae9942b19aa7d9dce">S_TextureData</a>() :</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">// テクスチャ</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="struct_s___texture_data.html#ad21e2dcce28e784527279c943b26a76e">texture_</a>(0),</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// 幅と高さ</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="struct_s___texture_data.html#a4649b97fda5b28353366e3ead64ebc46">width_</a>(0),</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="struct_s___texture_data.html#ad760c54a2f63c7ac332d313cfab27f8b">height_</a>(0)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_c___texture_manager.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c___texture_manager.html">C_TextureManager</a> : <span class="keyword">public</span> <a class="code" href="class_c___singleton.html">C_Singleton</a>&lt;C_TextureManager&gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">friend</span> <a class="code" href="class_c___singleton.html">C_Singleton&lt;C_TextureManager&gt;</a>;                                           <span class="comment">// シングルトンクラスをフレンド化</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">/* 定数 */</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_c___texture_manager.html#aaa6150d2e92a98785c6713250aa0187f">   53</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_c___texture_manager.html#aaa6150d2e92a98785c6713250aa0187f">s_CUBEMAP_TEXTURE_NUMBER</a> = 6;                                  </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___texture_manager.html#a3526fd41420d950625d5e52f9dc29809">Create</a>(<span class="keyword">const</span> std::string fileName, <span class="keyword">const</span> std::string <span class="keywordtype">id</span>);                  <span class="comment">// テクスチャの作成</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___texture_manager.html#abcfa353dff7b1b56ee242610d2137ed9">CreateCubeMap</a>(<span class="keyword">const</span> std::string directoryName,                             <span class="comment">// キューブマップテクスチャの作成</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                       <span class="keyword">const</span> std::array&lt;std::string,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                             <a class="code" href="class_c___texture_manager.html#aaa6150d2e92a98785c6713250aa0187f">s_CUBEMAP_TEXTURE_NUMBER</a>&gt;&amp; rFileNames,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                       <span class="keyword">const</span> std::array&lt;GLuint,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                             <a class="code" href="class_c___texture_manager.html#aaa6150d2e92a98785c6713250aa0187f">s_CUBEMAP_TEXTURE_NUMBER</a>&gt;&amp; rTargets,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                       <span class="keyword">const</span> std::string <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c___texture_manager.html#a84f97fd8dd7e48aeca803223d2fde920">CreateFromFont</a>(TTF_Font* pFont,                                            <span class="comment">// フォントからテクスチャを作成</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                        <span class="keyword">const</span> std::string <span class="keywordtype">id</span>,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                        <span class="keyword">const</span> std::string words,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        uint8_t red = 0,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        uint8_t green = 0,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        uint8_t blue = 0);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c___texture_manager.html#a6125cd5ba8b75e003cd115a75cc243be">Destroy</a>(std::string <span class="keywordtype">id</span>);                                                   <span class="comment">// テクスチャの破棄</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">/* ゲッター */</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    GLuint <a class="code" href="class_c___texture_manager.html#afa1c197ac7d503e896dabd127c98c14e">GetTexture</a>(std::string <span class="keywordtype">id</span>) <span class="keyword">const</span>;                                        <span class="comment">// テクスチャを取得</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    int32_t <a class="code" href="class_c___texture_manager.html#a2ae5d6b905ac09202072bc07d39d080e">GetTextureWidth</a>(std::string <span class="keywordtype">id</span>) <span class="keyword">const</span>;                                  <span class="comment">// テクスチャの幅を取得</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    int32_t <a class="code" href="class_c___texture_manager.html#a64d95ee3e713f2da45519a7df5048799">GetTextureHeight</a>(std::string <span class="keywordtype">id</span>) <span class="keyword">const</span>;                                 <span class="comment">// テクスチャの高さを取得</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::unordered_map&lt;std::string, S_TextureData&gt; textureDatas_;                   </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="class_c___texture_manager.html">C_TextureManager</a>();                                                             <span class="comment">// コンストラクタ</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    ~<a class="code" href="class_c___texture_manager.html">C_TextureManager</a>() <span class="keyword">override</span>;                                                   <span class="comment">// デストラクタ</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">bool</span> CreateFromSurface(SDL_Surface* pSurface,                                   <span class="comment">// サーフェスからテクスチャを作成</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                           <span class="keyword">const</span> std::string <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">bool</span> CreateCubeMapFromSurface(<span class="keyword">const</span> std::array&lt;SDL_Surface*,                    <span class="comment">// サーフェスからキューブマップテクスチャを作成</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                        <a class="code" href="class_c___texture_manager.html#aaa6150d2e92a98785c6713250aa0187f">s_CUBEMAP_TEXTURE_NUMBER</a>&gt;&amp; prSurfaces,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                  <span class="keyword">const</span> std::array&lt;GLuint,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                        <a class="code" href="class_c___texture_manager.html#aaa6150d2e92a98785c6713250aa0187f">s_CUBEMAP_TEXTURE_NUMBER</a>&gt;&amp; rTargets,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                  <span class="keyword">const</span> std::string <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">/* セッター */</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">bool</span> SetFormatFromSurface(SDL_Surface* pSurface,                                <span class="comment">// サーフェスからフォーマットを設定</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                              GLint* pInternalFormat,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                              GLint* pPixelFormat,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                              <span class="keywordtype">int</span>* pByteBoundary);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
+<div class="ttc" id="class_c___texture_manager_html_afa1c197ac7d503e896dabd127c98c14e"><div class="ttname"><a href="class_c___texture_manager.html#afa1c197ac7d503e896dabd127c98c14e">C_TextureManager::GetTexture</a></div><div class="ttdeci">GLuint GetTexture(std::string id) const </div><div class="ttdoc">テクスチャの取得する </div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:218</div></div>
+<div class="ttc" id="class_c___texture_manager_html_a6125cd5ba8b75e003cd115a75cc243be"><div class="ttname"><a href="class_c___texture_manager.html#a6125cd5ba8b75e003cd115a75cc243be">C_TextureManager::Destroy</a></div><div class="ttdeci">void Destroy(std::string id)</div><div class="ttdoc">テクスチャの破棄を行う </div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:192</div></div>
+<div class="ttc" id="class_c___texture_manager_html"><div class="ttname"><a href="class_c___texture_manager.html">C_TextureManager</a></div><div class="ttdoc">テクスチャマネージャー </div><div class="ttdef"><b>Definition:</b> TextureManager.h:48</div></div>
+<div class="ttc" id="class_c___texture_manager_html_aaa6150d2e92a98785c6713250aa0187f"><div class="ttname"><a href="class_c___texture_manager.html#aaa6150d2e92a98785c6713250aa0187f">C_TextureManager::s_CUBEMAP_TEXTURE_NUMBER</a></div><div class="ttdeci">static const int s_CUBEMAP_TEXTURE_NUMBER</div><div class="ttdoc">キューブマップのテクスチャ数 </div><div class="ttdef"><b>Definition:</b> TextureManager.h:53</div></div>
+<div class="ttc" id="class_c___texture_manager_html_abcfa353dff7b1b56ee242610d2137ed9"><div class="ttname"><a href="class_c___texture_manager.html#abcfa353dff7b1b56ee242610d2137ed9">C_TextureManager::CreateCubeMap</a></div><div class="ttdeci">bool CreateCubeMap(const std::string directoryName, const std::array&lt; std::string, s_CUBEMAP_TEXTURE_NUMBER &gt; &amp;rFileNames, const std::array&lt; GLuint, s_CUBEMAP_TEXTURE_NUMBER &gt; &amp;rTargets, const std::string id)</div><div class="ttdoc">キューブマップテクスチャの作成を行う </div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:95</div></div>
+<div class="ttc" id="struct_s___texture_data_html_ad21e2dcce28e784527279c943b26a76e"><div class="ttname"><a href="struct_s___texture_data.html#ad21e2dcce28e784527279c943b26a76e">S_TextureData::texture_</a></div><div class="ttdeci">GLuint texture_</div><div class="ttdoc">テクスチャ </div><div class="ttdef"><b>Definition:</b> TextureManager.h:17</div></div>
+<div class="ttc" id="struct_s___texture_data_html_ab1f29b0de57ad53ae9942b19aa7d9dce"><div class="ttname"><a href="struct_s___texture_data.html#ab1f29b0de57ad53ae9942b19aa7d9dce">S_TextureData::S_TextureData</a></div><div class="ttdeci">S_TextureData()</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> TextureManager.h:28</div></div>
+<div class="ttc" id="class_c___texture_manager_html_a84f97fd8dd7e48aeca803223d2fde920"><div class="ttname"><a href="class_c___texture_manager.html#a84f97fd8dd7e48aeca803223d2fde920">C_TextureManager::CreateFromFont</a></div><div class="ttdeci">bool CreateFromFont(TTF_Font *pFont, const std::string id, const std::string words, uint8_t red=0, uint8_t green=0, uint8_t blue=0)</div><div class="ttdoc">フォントからテクスチャの作成を行う </div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:156</div></div>
+<div class="ttc" id="class_c___texture_manager_html_a3526fd41420d950625d5e52f9dc29809"><div class="ttname"><a href="class_c___texture_manager.html#a3526fd41420d950625d5e52f9dc29809">C_TextureManager::Create</a></div><div class="ttdeci">bool Create(const std::string fileName, const std::string id)</div><div class="ttdoc">テクスチャの作成を行う </div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:49</div></div>
+<div class="ttc" id="class_c___texture_manager_html_a2ae5d6b905ac09202072bc07d39d080e"><div class="ttname"><a href="class_c___texture_manager.html#a2ae5d6b905ac09202072bc07d39d080e">C_TextureManager::GetTextureWidth</a></div><div class="ttdeci">int32_t GetTextureWidth(std::string id) const </div><div class="ttdoc">テクスチャの幅を取得する </div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:231</div></div>
+<div class="ttc" id="struct_s___texture_data_html"><div class="ttname"><a href="struct_s___texture_data.html">S_TextureData</a></div><div class="ttdoc">テクスチャデータ </div><div class="ttdef"><b>Definition:</b> TextureManager.h:15</div></div>
+<div class="ttc" id="struct_s___texture_data_html_ad760c54a2f63c7ac332d313cfab27f8b"><div class="ttname"><a href="struct_s___texture_data.html#ad760c54a2f63c7ac332d313cfab27f8b">S_TextureData::height_</a></div><div class="ttdeci">int32_t height_</div><div class="ttdoc">高さ </div><div class="ttdef"><b>Definition:</b> TextureManager.h:19</div></div>
+<div class="ttc" id="_singleton_8h_html"><div class="ttname"><a href="_singleton_8h.html">Singleton.h</a></div></div>
+<div class="ttc" id="struct_s___texture_data_html_a4649b97fda5b28353366e3ead64ebc46"><div class="ttname"><a href="struct_s___texture_data.html#a4649b97fda5b28353366e3ead64ebc46">S_TextureData::width_</a></div><div class="ttdeci">int32_t width_</div><div class="ttdoc">幅 </div><div class="ttdef"><b>Definition:</b> TextureManager.h:18</div></div>
+<div class="ttc" id="class_c___singleton_html"><div class="ttname"><a href="class_c___singleton.html">C_Singleton</a></div><div class="ttdoc">シングルトン </div><div class="ttdef"><b>Definition:</b> Singleton.h:12</div></div>
+<div class="ttc" id="class_c___texture_manager_html_a64d95ee3e713f2da45519a7df5048799"><div class="ttname"><a href="class_c___texture_manager.html#a64d95ee3e713f2da45519a7df5048799">C_TextureManager::GetTextureHeight</a></div><div class="ttdeci">int32_t GetTextureHeight(std::string id) const </div><div class="ttdoc">テクスチャの高さを取得する </div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:244</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分49秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<map id="C_BaseCamera::SetAspectRatio" name="C_BaseCamera::SetAspectRatio">
+<area shape="rect" id="node2" href="$class_c___animation_test_scene.html#a15250c6b0a5a749b98929940848c944c" title="初期化処理を行う " alt="" coords="290,5,449,47"/>
+<area shape="rect" id="node3" href="$class_c___bloom_test_scene.html#ad3052e5ab82b738ba7c333beb9e0c847" title="初期化処理を行う " alt="" coords="273,71,465,98"/>
+<area shape="rect" id="node4" href="$class_c___cube_map_test_scene.html#a080583d4981d77915aee65763fbde26a" title="初期化処理を行う " alt="" coords="292,123,447,164"/>
+<area shape="rect" id="node5" href="$class_c___deferred_test_scene.html#a2f347ee81158a9faa295015bafc93006" title="初期化処理を行う " alt="" coords="295,188,443,229"/>
+<area shape="rect" id="node6" href="$class_c___frame_buffer_object_test_scene.html#a787e9522f4729e84313eea24096121f7" title="初期化処理を行う " alt="" coords="265,253,473,295"/>
+<area shape="rect" id="node7" href="$class_c___normal_map_test_scene.html#a53bf4a1eb6877f53a22a8b159c6909d6" title="初期化処理を行う " alt="" coords="286,319,453,360"/>
+<area shape="rect" id="node8" href="$class_c___projector_texture_test_scene.html#abf6a9f717c842a0bf8fe77059a49cf56" title="初期化処理を行う " alt="" coords="272,384,467,425"/>
+<area shape="rect" id="node9" href="$class_c___tessellation_test_scene.html#a806f9af78e80f891bd183b7fbeca5893" title="初期化処理を行う " alt="" coords="285,449,454,491"/>
+<area shape="rect" id="node10" href="$class_c___wireframe_test_scene.html#a01fb6e5a08aadd639a66472c130541ae" title="初期化処理を行う " alt="" coords="290,515,449,556"/>
+</map>

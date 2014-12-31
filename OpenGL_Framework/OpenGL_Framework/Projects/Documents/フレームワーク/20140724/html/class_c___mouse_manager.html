@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: C_MouseManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="class_c___mouse_manager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">C_MouseManager クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>マウスマネージャー  
+ <a href="class_c___mouse_manager.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_mouse_manager_8h_source.html">MouseManager.h</a>&gt;</code></p>
+<div class="dynheader">
+C_MouseManager の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___mouse_manager__inherit__graph.png" border="0" usemap="#_c___mouse_manager_inherit__map" alt="Inheritance graph"/></div>
+<map name="_c___mouse_manager_inherit__map" id="_c___mouse_manager_inherit__map">
+<area shape="rect" id="node2" href="class_c___singleton.html" title="{C_Singleton\&lt; C_MouseManager \&gt;\n||+ s_GetInstance()\l# C_Singleton()\l# ~C_Singleton()\l}" alt="" coords="5,5,227,112"/></map>
+</div>
+<div class="dynheader">
+C_MouseManager 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___mouse_manager__coll__graph.png" border="0" usemap="#_c___mouse_manager_coll__map" alt="Collaboration graph"/></div>
+<map name="_c___mouse_manager_coll__map" id="_c___mouse_manager_coll__map">
+<area shape="rect" id="node2" href="class_c___singleton.html" title="{C_Singleton\&lt; C_MouseManager \&gt;\n||+ s_GetInstance()\l# C_Singleton()\l# ~C_Singleton()\l}" alt="" coords="5,5,227,112"/></map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a552dc9a3f4cc31b6f81034924018004f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___mouse_manager.html#a552dc9a3f4cc31b6f81034924018004f">eButton</a> { <br />
+&#160;&#160;<a class="el" href="class_c___mouse_manager.html#a552dc9a3f4cc31b6f81034924018004faa2c8b42b807598f242d657c0f0dc7f52">BUTTON_LEFT</a>, 
+<a class="el" href="class_c___mouse_manager.html#a552dc9a3f4cc31b6f81034924018004fae1f08f0923ce47c7cae84b3d71e3b7a2">BUTTON_MIDDLE</a>, 
+<a class="el" href="class_c___mouse_manager.html#a552dc9a3f4cc31b6f81034924018004fa5a94c5afb9edbd5038f9958d4a2dac0d">BUTTON_RIGHT</a>, 
+<a class="el" href="class_c___mouse_manager.html#a552dc9a3f4cc31b6f81034924018004fa362990db47fb7f95029330bfc7418969">BUTTON_EXTRA1</a>, 
+<br />
+&#160;&#160;<a class="el" href="class_c___mouse_manager.html#a552dc9a3f4cc31b6f81034924018004fa505ae11b9ac62cf754bd633bb7c6e0b7">BUTTON_EXTRA2</a>, 
+<a class="el" href="class_c___mouse_manager.html#a552dc9a3f4cc31b6f81034924018004fa09087d803d86ea75b3fdeb5777779ff7">BUTTON_TOTAL_NUMBER</a>
+<br />
+ }</td></tr>
+<tr class="separator:a552dc9a3f4cc31b6f81034924018004f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a318ef57fb49dc86a493b2d6cfe9dce11"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___mouse_manager.html#a318ef57fb49dc86a493b2d6cfe9dce11">eWheelScroll</a> { <a class="el" href="class_c___mouse_manager.html#a318ef57fb49dc86a493b2d6cfe9dce11ad0f0ca2fc35b712186ccf726792b6052">WHEEL_SCROLL_UP</a>, 
+<a class="el" href="class_c___mouse_manager.html#a318ef57fb49dc86a493b2d6cfe9dce11aaeefcb3957ce1b27f87710312b181927">WHEEL_SCROLL_DOWN</a>, 
+<a class="el" href="class_c___mouse_manager.html#a318ef57fb49dc86a493b2d6cfe9dce11aa88d32b584d34ec4f56b10380aa5c322">WHEEL_SCROLL_TOTAL_NUMBER</a>
+ }</td></tr>
+<tr class="separator:a318ef57fb49dc86a493b2d6cfe9dce11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a48c76ce59f4329e1616da43a9a7e852a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___mouse_manager.html#a48c76ce59f4329e1616da43a9a7e852a">Update</a> ()</td></tr>
+<tr class="memdesc:a48c76ce59f4329e1616da43a9a7e852a"><td class="mdescLeft">&#160;</td><td class="mdescRight">マウスの更新処理を行う  <a href="#a48c76ce59f4329e1616da43a9a7e852a">[詳解]</a><br /></td></tr>
+<tr class="separator:a48c76ce59f4329e1616da43a9a7e852a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f80c894f9fde1489cb882c5ddb617b0"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___mouse_manager.html#a2f80c894f9fde1489cb882c5ddb617b0">GetCursorPositionX</a> () const </td></tr>
+<tr class="memdesc:a2f80c894f9fde1489cb882c5ddb617b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">カーソルのX座標を取得する  <a href="#a2f80c894f9fde1489cb882c5ddb617b0">[詳解]</a><br /></td></tr>
+<tr class="separator:a2f80c894f9fde1489cb882c5ddb617b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a7bb4bd0d41840ab11d5e4f493f4982"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___mouse_manager.html#a6a7bb4bd0d41840ab11d5e4f493f4982">GetCursorPositionY</a> () const </td></tr>
+<tr class="memdesc:a6a7bb4bd0d41840ab11d5e4f493f4982"><td class="mdescLeft">&#160;</td><td class="mdescRight">カーソルのY座標を取得する  <a href="#a6a7bb4bd0d41840ab11d5e4f493f4982">[詳解]</a><br /></td></tr>
+<tr class="separator:a6a7bb4bd0d41840ab11d5e4f493f4982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6848da022ff090b9e93f0d8aa358d27b"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___mouse_manager.html#a6848da022ff090b9e93f0d8aa358d27b">GetButtonPressingCount</a> (<a class="el" href="class_c___mouse_manager.html#a552dc9a3f4cc31b6f81034924018004f">eButton</a> button) const </td></tr>
+<tr class="memdesc:a6848da022ff090b9e93f0d8aa358d27b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ボタンを押しているフレーム数を取得する  <a href="#a6848da022ff090b9e93f0d8aa358d27b">[詳解]</a><br /></td></tr>
+<tr class="separator:a6848da022ff090b9e93f0d8aa358d27b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40bfe3b6845a4bfaff1bbc2547948324"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___mouse_manager.html#a40bfe3b6845a4bfaff1bbc2547948324">GetButtonReleasingCount</a> (<a class="el" href="class_c___mouse_manager.html#a552dc9a3f4cc31b6f81034924018004f">eButton</a> button) const </td></tr>
+<tr class="memdesc:a40bfe3b6845a4bfaff1bbc2547948324"><td class="mdescLeft">&#160;</td><td class="mdescRight">ボタンを離しているフレーム数を取得する  <a href="#a40bfe3b6845a4bfaff1bbc2547948324">[詳解]</a><br /></td></tr>
+<tr class="separator:a40bfe3b6845a4bfaff1bbc2547948324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1424a91c7a353ab933aa42312aaa3609"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___mouse_manager.html#a1424a91c7a353ab933aa42312aaa3609">GetWheelScrollingCount</a> (<a class="el" href="class_c___mouse_manager.html#a318ef57fb49dc86a493b2d6cfe9dce11">eWheelScroll</a> wheelScroll) const </td></tr>
+<tr class="memdesc:a1424a91c7a353ab933aa42312aaa3609"><td class="mdescLeft">&#160;</td><td class="mdescRight">ホイールを回転しているフレーム数を取得する  <a href="#a1424a91c7a353ab933aa42312aaa3609">[詳解]</a><br /></td></tr>
+<tr class="separator:a1424a91c7a353ab933aa42312aaa3609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af05b02d36deaefe1a4ec6422ed3d3071"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___mouse_manager.html#af05b02d36deaefe1a4ec6422ed3d3071">GetWheelReleasingCount</a> (<a class="el" href="class_c___mouse_manager.html#a318ef57fb49dc86a493b2d6cfe9dce11">eWheelScroll</a> wheelScroll) const </td></tr>
+<tr class="memdesc:af05b02d36deaefe1a4ec6422ed3d3071"><td class="mdescLeft">&#160;</td><td class="mdescRight">ホイールを回転していないフレーム数を取得する  <a href="#af05b02d36deaefe1a4ec6422ed3d3071">[詳解]</a><br /></td></tr>
+<tr class="separator:af05b02d36deaefe1a4ec6422ed3d3071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99dcbe264ca67b2a6e9ddbabccc52352"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___mouse_manager.html#a99dcbe264ca67b2a6e9ddbabccc52352">SetWheelScrollVertical</a> (Sint32 wheelScrollVertical)</td></tr>
+<tr class="memdesc:a99dcbe264ca67b2a6e9ddbabccc52352"><td class="mdescLeft">&#160;</td><td class="mdescRight">ホイールを垂直方向の回転を設定する  <a href="#a99dcbe264ca67b2a6e9ddbabccc52352">[詳解]</a><br /></td></tr>
+<tr class="separator:a99dcbe264ca67b2a6e9ddbabccc52352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+その他の継承メンバ</h2></td></tr>
+<tr class="inherit_header pub_static_methods_class_c___singleton"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_c___singleton')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_c___singleton.html">C_Singleton&lt; C_MouseManager &gt;</a> に属する継承静的公開メンバ関数</td></tr>
+<tr class="memitem:a839cb532a0dce8ee900c125f0d05ce23 inherit pub_static_methods_class_c___singleton"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_c___mouse_manager.html">C_MouseManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___singleton.html#a839cb532a0dce8ee900c125f0d05ce23">s_GetInstance</a> ()</td></tr>
+<tr class="memdesc:a839cb532a0dce8ee900c125f0d05ce23 inherit pub_static_methods_class_c___singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">唯一のインスタンスを取得する  <a href="#a839cb532a0dce8ee900c125f0d05ce23">[詳解]</a><br /></td></tr>
+<tr class="separator:a839cb532a0dce8ee900c125f0d05ce23 inherit pub_static_methods_class_c___singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_c___singleton"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_c___singleton')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_c___singleton.html">C_Singleton&lt; C_MouseManager &gt;</a> に属する継承限定公開メンバ関数</td></tr>
+<tr class="memitem:a8eb414172fc36ea29952f511a88221bf inherit pro_methods_class_c___singleton"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___singleton.html#a8eb414172fc36ea29952f511a88221bf">C_Singleton</a> ()</td></tr>
+<tr class="memdesc:a8eb414172fc36ea29952f511a88221bf inherit pro_methods_class_c___singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a8eb414172fc36ea29952f511a88221bf">[詳解]</a><br /></td></tr>
+<tr class="separator:a8eb414172fc36ea29952f511a88221bf inherit pro_methods_class_c___singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a1b497c7009b0c1c96026d4674a04e inherit pro_methods_class_c___singleton"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___singleton.html#ad6a1b497c7009b0c1c96026d4674a04e">~C_Singleton</a> ()</td></tr>
+<tr class="memdesc:ad6a1b497c7009b0c1c96026d4674a04e inherit pro_methods_class_c___singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#ad6a1b497c7009b0c1c96026d4674a04e">[詳解]</a><br /></td></tr>
+<tr class="separator:ad6a1b497c7009b0c1c96026d4674a04e inherit pro_methods_class_c___singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>マウスマネージャー </p>
+<p>マウス入力を管理するクラス </p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a class="anchor" id="a552dc9a3f4cc31b6f81034924018004f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_c___mouse_manager.html#a552dc9a3f4cc31b6f81034924018004f">C_MouseManager::eButton</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>マウスボタン </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a class="anchor" id="a552dc9a3f4cc31b6f81034924018004faa2c8b42b807598f242d657c0f0dc7f52"></a>BUTTON_LEFT&#160;</td><td class="fielddoc">
+<p>マウスの左ボタン </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a552dc9a3f4cc31b6f81034924018004fae1f08f0923ce47c7cae84b3d71e3b7a2"></a>BUTTON_MIDDLE&#160;</td><td class="fielddoc">
+<p>マウスのホイールボタン </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a552dc9a3f4cc31b6f81034924018004fa5a94c5afb9edbd5038f9958d4a2dac0d"></a>BUTTON_RIGHT&#160;</td><td class="fielddoc">
+<p>マウスの右ボタン </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a552dc9a3f4cc31b6f81034924018004fa362990db47fb7f95029330bfc7418969"></a>BUTTON_EXTRA1&#160;</td><td class="fielddoc">
+<p>マウスの余分なボタン1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a552dc9a3f4cc31b6f81034924018004fa505ae11b9ac62cf754bd633bb7c6e0b7"></a>BUTTON_EXTRA2&#160;</td><td class="fielddoc">
+<p>マウスの余分なボタン2 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a552dc9a3f4cc31b6f81034924018004fa09087d803d86ea75b3fdeb5777779ff7"></a>BUTTON_TOTAL_NUMBER&#160;</td><td class="fielddoc">
+<p>マウスボタンの総数 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="a318ef57fb49dc86a493b2d6cfe9dce11"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_c___mouse_manager.html#a318ef57fb49dc86a493b2d6cfe9dce11">C_MouseManager::eWheelScroll</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>マウスホイールの回転方向 </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a class="anchor" id="a318ef57fb49dc86a493b2d6cfe9dce11ad0f0ca2fc35b712186ccf726792b6052"></a>WHEEL_SCROLL_UP&#160;</td><td class="fielddoc">
+<p>マウスホイールの上回転 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a318ef57fb49dc86a493b2d6cfe9dce11aaeefcb3957ce1b27f87710312b181927"></a>WHEEL_SCROLL_DOWN&#160;</td><td class="fielddoc">
+<p>マウスホイールの下回転 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a318ef57fb49dc86a493b2d6cfe9dce11aa88d32b584d34ec4f56b10380aa5c322"></a>WHEEL_SCROLL_TOTAL_NUMBER&#160;</td><td class="fielddoc">
+<p>マウスホイールの回転方向の総数 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a6848da022ff090b9e93f0d8aa358d27b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t C_MouseManager::GetButtonPressingCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c___mouse_manager.html#a552dc9a3f4cc31b6f81034924018004f">C_MouseManager::eButton</a>&#160;</td>
+          <td class="paramname"><em>button</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ボタンを押しているフレーム数を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ボタン</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>ボタンを押しているフレーム数 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a40bfe3b6845a4bfaff1bbc2547948324"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t C_MouseManager::GetButtonReleasingCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c___mouse_manager.html#a552dc9a3f4cc31b6f81034924018004f">C_MouseManager::eButton</a>&#160;</td>
+          <td class="paramname"><em>button</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ボタンを離しているフレーム数を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ボタン</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>ボタンを離しているフレーム数 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2f80c894f9fde1489cb882c5ddb617b0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t C_MouseManager::GetCursorPositionX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>カーソルのX座標を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>カーソルのX座標 </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___mouse_manager_a2f80c894f9fde1489cb882c5ddb617b0_icgraph.png" border="0" usemap="#class_c___mouse_manager_a2f80c894f9fde1489cb882c5ddb617b0_icgraph" alt=""/></div>
+<map name="class_c___mouse_manager_a2f80c894f9fde1489cb882c5ddb617b0_icgraph" id="class_c___mouse_manager_a2f80c894f9fde1489cb882c5ddb617b0_icgraph">
+<area shape="rect" id="node2" href="class_c___test_camera.html#a546ff70a4546e5eed670f7323b529d24" title="コンストラクタ " alt="" coords="248,13,451,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a7bb4bd0d41840ab11d5e4f493f4982"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t C_MouseManager::GetCursorPositionY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>カーソルのY座標を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>カーソルのY座標 </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___mouse_manager_a6a7bb4bd0d41840ab11d5e4f493f4982_icgraph.png" border="0" usemap="#class_c___mouse_manager_a6a7bb4bd0d41840ab11d5e4f493f4982_icgraph" alt=""/></div>
+<map name="class_c___mouse_manager_a6a7bb4bd0d41840ab11d5e4f493f4982_icgraph" id="class_c___mouse_manager_a6a7bb4bd0d41840ab11d5e4f493f4982_icgraph">
+<area shape="rect" id="node2" href="class_c___test_camera.html#a546ff70a4546e5eed670f7323b529d24" title="コンストラクタ " alt="" coords="248,13,451,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af05b02d36deaefe1a4ec6422ed3d3071"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int C_MouseManager::GetWheelReleasingCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c___mouse_manager.html#a318ef57fb49dc86a493b2d6cfe9dce11">C_MouseManager::eWheelScroll</a>&#160;</td>
+          <td class="paramname"><em>wheelScroll</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ホイールを回転していないフレーム数を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ホイールの回転方向</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>ホイールを回転していないフレーム数 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1424a91c7a353ab933aa42312aaa3609"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t C_MouseManager::GetWheelScrollingCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c___mouse_manager.html#a318ef57fb49dc86a493b2d6cfe9dce11">C_MouseManager::eWheelScroll</a>&#160;</td>
+          <td class="paramname"><em>wheelScroll</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ホイールを回転しているフレーム数を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ホイールの回転方向</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>ホイールを回転しているフレーム数 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a99dcbe264ca67b2a6e9ddbabccc52352"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_MouseManager::SetWheelScrollVertical </td>
+          <td>(</td>
+          <td class="paramtype">Sint32&#160;</td>
+          <td class="paramname"><em>wheelScrollVertical</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ホイールを垂直方向の回転を設定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ホイールの垂直方向の回転</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___mouse_manager_a99dcbe264ca67b2a6e9ddbabccc52352_icgraph.png" border="0" usemap="#class_c___mouse_manager_a99dcbe264ca67b2a6e9ddbabccc52352_icgraph" alt=""/></div>
+<map name="class_c___mouse_manager_a99dcbe264ca67b2a6e9ddbabccc52352_icgraph" id="class_c___mouse_manager_a99dcbe264ca67b2a6e9ddbabccc52352_icgraph">
+<area shape="rect" id="node2" href="class_c___event_manager.html#ad1eb3cc25c3608ca73415531cfec10ef" title="イベントの更新処理を行う " alt="" coords="245,13,415,39"/><area shape="rect" id="node3" href="class_c___framework.html#a0d68de266751555a74db197ea90df219" title="ライブラリの更新処理を行う " alt="" coords="463,13,613,39"/><area shape="rect" id="node4" href="class_c___framework.html#a3cf73a67b3bdacf785b58b0a3573a60c" title="ゲームの実行処理を行う " alt="" coords="661,13,795,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a48c76ce59f4329e1616da43a9a7e852a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_MouseManager::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>マウスの更新処理を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___mouse_manager_a48c76ce59f4329e1616da43a9a7e852a_icgraph.png" border="0" usemap="#class_c___mouse_manager_a48c76ce59f4329e1616da43a9a7e852a_icgraph" alt=""/></div>
+<map name="class_c___mouse_manager_a48c76ce59f4329e1616da43a9a7e852a_icgraph" id="class_c___mouse_manager_a48c76ce59f4329e1616da43a9a7e852a_icgraph">
+<area shape="rect" id="node2" href="class_c___framework.html#a0d68de266751555a74db197ea90df219" title="ライブラリの更新処理を行う " alt="" coords="229,5,380,32"/><area shape="rect" id="node3" href="class_c___framework.html#a3cf73a67b3bdacf785b58b0a3573a60c" title="ゲームの実行処理を行う " alt="" coords="428,5,561,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="_mouse_manager_8h_source.html">MouseManager.h</a></li>
+<li><a class="el" href="_mouse_manager_8cpp.html">MouseManager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分52秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

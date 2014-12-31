@@ -1,0 +1,1237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: C_BaseShader クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="class_c___base_shader-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">C_BaseShader クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ベースシェーダー  
+ <a href="class_c___base_shader.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_base_shader_8h_source.html">BaseShader.h</a>&gt;</code></p>
+<div class="dynheader">
+C_BaseShader 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader__coll__graph.png" border="0" usemap="#_c___base_shader_coll__map" alt="Collaboration graph"/></div>
+<map name="_c___base_shader_coll__map" id="_c___base_shader_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:adf8cb015c3ee95978457e2e559f43011"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#adf8cb015c3ee95978457e2e559f43011">C_BaseShader</a> ()</td></tr>
+<tr class="memdesc:adf8cb015c3ee95978457e2e559f43011"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#adf8cb015c3ee95978457e2e559f43011">[詳解]</a><br /></td></tr>
+<tr class="separator:adf8cb015c3ee95978457e2e559f43011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48993e09431ecce2513a52d6927d93ed"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#a48993e09431ecce2513a52d6927d93ed">~C_BaseShader</a> ()</td></tr>
+<tr class="memdesc:a48993e09431ecce2513a52d6927d93ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a48993e09431ecce2513a52d6927d93ed">[詳解]</a><br /></td></tr>
+<tr class="separator:a48993e09431ecce2513a52d6927d93ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae859191fec4d1cc35f619c032ee01b3d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#ae859191fec4d1cc35f619c032ee01b3d">CompileFromFile</a> (const std::string fileName, <a class="el" href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252">ecShaderType</a> type)</td></tr>
+<tr class="memdesc:ae859191fec4d1cc35f619c032ee01b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ファイルからシェーダーをコンパイルする  <a href="#ae859191fec4d1cc35f619c032ee01b3d">[詳解]</a><br /></td></tr>
+<tr class="separator:ae859191fec4d1cc35f619c032ee01b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affb0365709644c3c6c49377d1bf9e67e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#affb0365709644c3c6c49377d1bf9e67e">CompileFromString</a> (const std::string source, <a class="el" href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252">ecShaderType</a> type)</td></tr>
+<tr class="memdesc:affb0365709644c3c6c49377d1bf9e67e"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列からシェーダーをコンパイルする  <a href="#affb0365709644c3c6c49377d1bf9e67e">[詳解]</a><br /></td></tr>
+<tr class="separator:affb0365709644c3c6c49377d1bf9e67e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7768d31c6e0083855af8acf9de62080a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#a7768d31c6e0083855af8acf9de62080a">Link</a> ()</td></tr>
+<tr class="memdesc:a7768d31c6e0083855af8acf9de62080a"><td class="mdescLeft">&#160;</td><td class="mdescRight">シェーダーのリンクを行う  <a href="#a7768d31c6e0083855af8acf9de62080a">[詳解]</a><br /></td></tr>
+<tr class="separator:a7768d31c6e0083855af8acf9de62080a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6a92db982486bcd9d8838f1c61cd46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#aec6a92db982486bcd9d8838f1c61cd46">PrintActiveAttributes</a> ()</td></tr>
+<tr class="memdesc:aec6a92db982486bcd9d8838f1c61cd46"><td class="mdescLeft">&#160;</td><td class="mdescRight">アクティブな属性を出力する  <a href="#aec6a92db982486bcd9d8838f1c61cd46">[詳解]</a><br /></td></tr>
+<tr class="separator:aec6a92db982486bcd9d8838f1c61cd46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aac302757a5228af70591b680f28896"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#a8aac302757a5228af70591b680f28896">PrintActiveUniforms</a> ()</td></tr>
+<tr class="memdesc:a8aac302757a5228af70591b680f28896"><td class="mdescLeft">&#160;</td><td class="mdescRight">アクティブなユニフォーム変数を出力する  <a href="#a8aac302757a5228af70591b680f28896">[詳解]</a><br /></td></tr>
+<tr class="separator:a8aac302757a5228af70591b680f28896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb86c6c583b14139f4ffed346707011d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#abb86c6c583b14139f4ffed346707011d">AddUniformBlockIndex</a> (const std::string uniformBufferName)</td></tr>
+<tr class="memdesc:abb86c6c583b14139f4ffed346707011d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ユニフォームブロックのインデックスを追加  <a href="#abb86c6c583b14139f4ffed346707011d">[詳解]</a><br /></td></tr>
+<tr class="separator:abb86c6c583b14139f4ffed346707011d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a186df41d780c22458f2e2e268065b948"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#a186df41d780c22458f2e2e268065b948">Begin</a> ()</td></tr>
+<tr class="memdesc:a186df41d780c22458f2e2e268065b948"><td class="mdescLeft">&#160;</td><td class="mdescRight">シェーダーの使用を開始する  <a href="#a186df41d780c22458f2e2e268065b948">[詳解]</a><br /></td></tr>
+<tr class="separator:a186df41d780c22458f2e2e268065b948"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab9a822f0a766bf0d7625379fcea6020"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#aab9a822f0a766bf0d7625379fcea6020">BeginWithUnifomBlock</a> (GLuint *pUniformBufferObjects)</td></tr>
+<tr class="memdesc:aab9a822f0a766bf0d7625379fcea6020"><td class="mdescLeft">&#160;</td><td class="mdescRight">ユニフォームブロックを含めてシェーダーの使用を開始する  <a href="#aab9a822f0a766bf0d7625379fcea6020">[詳解]</a><br /></td></tr>
+<tr class="separator:aab9a822f0a766bf0d7625379fcea6020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac17465380d576a0e3d4ef529a29f5174"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#ac17465380d576a0e3d4ef529a29f5174">End</a> ()</td></tr>
+<tr class="memdesc:ac17465380d576a0e3d4ef529a29f5174"><td class="mdescLeft">&#160;</td><td class="mdescRight">シェーダーの使用を終了する  <a href="#ac17465380d576a0e3d4ef529a29f5174">[詳解]</a><br /></td></tr>
+<tr class="separator:ac17465380d576a0e3d4ef529a29f5174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc31ce291aed55c61426254b56997656"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#abc31ce291aed55c61426254b56997656">Delete</a> ()</td></tr>
+<tr class="memdesc:abc31ce291aed55c61426254b56997656"><td class="mdescLeft">&#160;</td><td class="mdescRight">プログラムオブジェクトの削除を行う  <a href="#abc31ce291aed55c61426254b56997656">[詳解]</a><br /></td></tr>
+<tr class="separator:abc31ce291aed55c61426254b56997656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35a75fe8b79e6040e5ed685deb4efa05"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#a35a75fe8b79e6040e5ed685deb4efa05">GetProgramObject</a> () const </td></tr>
+<tr class="memdesc:a35a75fe8b79e6040e5ed685deb4efa05"><td class="mdescLeft">&#160;</td><td class="mdescRight">プログラムオブジェクトを取得する  <a href="#a35a75fe8b79e6040e5ed685deb4efa05">[詳解]</a><br /></td></tr>
+<tr class="separator:a35a75fe8b79e6040e5ed685deb4efa05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a934d0aac5cdac4f400c4da5d301125f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#a934d0aac5cdac4f400c4da5d301125f4">IsLinkFlag</a> () const </td></tr>
+<tr class="memdesc:a934d0aac5cdac4f400c4da5d301125f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">リンク済みフラグを取得する  <a href="#a934d0aac5cdac4f400c4da5d301125f4">[詳解]</a><br /></td></tr>
+<tr class="separator:a934d0aac5cdac4f400c4da5d301125f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a6c2f7a80b56637cfa338c70d9ad1f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#a9a6c2f7a80b56637cfa338c70d9ad1f1">SetUniform1i</a> (const std::string name, int32_t value)</td></tr>
+<tr class="memdesc:a9a6c2f7a80b56637cfa338c70d9ad1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">int型の値でユニフォーム変数を設定する  <a href="#a9a6c2f7a80b56637cfa338c70d9ad1f1">[詳解]</a><br /></td></tr>
+<tr class="separator:a9a6c2f7a80b56637cfa338c70d9ad1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a639a6cbf993a16fde66134b6507ab6ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#a639a6cbf993a16fde66134b6507ab6ce">SetUniform1f</a> (const std::string name, float value)</td></tr>
+<tr class="memdesc:a639a6cbf993a16fde66134b6507ab6ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">float型の値でユニフォーム変数を設定する  <a href="#a639a6cbf993a16fde66134b6507ab6ce">[詳解]</a><br /></td></tr>
+<tr class="separator:a639a6cbf993a16fde66134b6507ab6ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a53667bd29ac0887c430ff37ae58f45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#a0a53667bd29ac0887c430ff37ae58f45">SetUniform1b</a> (const std::string name, bool value)</td></tr>
+<tr class="memdesc:a0a53667bd29ac0887c430ff37ae58f45"><td class="mdescLeft">&#160;</td><td class="mdescRight">bool型の値でユニフォーム変数を設定する  <a href="#a0a53667bd29ac0887c430ff37ae58f45">[詳解]</a><br /></td></tr>
+<tr class="separator:a0a53667bd29ac0887c430ff37ae58f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78096ef789cc782e629c322ab4ceded0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#a78096ef789cc782e629c322ab4ceded0">SetUniform2f</a> (const std::string name, float x, float y)</td></tr>
+<tr class="memdesc:a78096ef789cc782e629c322ab4ceded0"><td class="mdescLeft">&#160;</td><td class="mdescRight">float型の2つの値でユニフォーム変数を設定する  <a href="#a78096ef789cc782e629c322ab4ceded0">[詳解]</a><br /></td></tr>
+<tr class="separator:a78096ef789cc782e629c322ab4ceded0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5296908724ee737858c71dac734858f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#af5296908724ee737858c71dac734858f">SetUniform3f</a> (const std::string name, float x, float y, float z)</td></tr>
+<tr class="memdesc:af5296908724ee737858c71dac734858f"><td class="mdescLeft">&#160;</td><td class="mdescRight">float型の3つの値でユニフォーム変数を設定する  <a href="#af5296908724ee737858c71dac734858f">[詳解]</a><br /></td></tr>
+<tr class="separator:af5296908724ee737858c71dac734858f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa815a802dc26d20bd8883d0c13f69a10"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#aa815a802dc26d20bd8883d0c13f69a10">SetUniform4f</a> (const std::string name, float x, float y, float z, float w)</td></tr>
+<tr class="memdesc:aa815a802dc26d20bd8883d0c13f69a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">float型の4つの値でユニフォーム変数を設定する  <a href="#aa815a802dc26d20bd8883d0c13f69a10">[詳解]</a><br /></td></tr>
+<tr class="separator:aa815a802dc26d20bd8883d0c13f69a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a872dd93c5eb7c682b7e4f21801f85199"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#a872dd93c5eb7c682b7e4f21801f85199">SetUniformVector2</a> (const std::string name, const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;rVector)</td></tr>
+<tr class="memdesc:a872dd93c5eb7c682b7e4f21801f85199"><td class="mdescLeft">&#160;</td><td class="mdescRight">2Dベクトルでユニフォーム変数を設定する  <a href="#a872dd93c5eb7c682b7e4f21801f85199">[詳解]</a><br /></td></tr>
+<tr class="separator:a872dd93c5eb7c682b7e4f21801f85199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a146dbea29230903cd08b3c3bc1e4f097"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#a146dbea29230903cd08b3c3bc1e4f097">SetUniformVector3</a> (const std::string name, const <a class="el" href="struct_utility_math_1_1_s___vector3.html">UtilityMath::S_Vector3</a> &amp;rVector)</td></tr>
+<tr class="memdesc:a146dbea29230903cd08b3c3bc1e4f097"><td class="mdescLeft">&#160;</td><td class="mdescRight">3Dベクトルでユニフォーム変数を設定する  <a href="#a146dbea29230903cd08b3c3bc1e4f097">[詳解]</a><br /></td></tr>
+<tr class="separator:a146dbea29230903cd08b3c3bc1e4f097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71b8486c524401fe16db3eb3c410fa2a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#a71b8486c524401fe16db3eb3c410fa2a">SetUniformVector4</a> (const std::string name, const <a class="el" href="struct_utility_math_1_1_s___vector4.html">UtilityMath::S_Vector4</a> &amp;rVector)</td></tr>
+<tr class="memdesc:a71b8486c524401fe16db3eb3c410fa2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">4Dベクトルでユニフォーム変数を設定する  <a href="#a71b8486c524401fe16db3eb3c410fa2a">[詳解]</a><br /></td></tr>
+<tr class="separator:a71b8486c524401fe16db3eb3c410fa2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe580c600e52c8c58d6dbd3e150aa1ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#afe580c600e52c8c58d6dbd3e150aa1ab">SetUniformMatrix3</a> (const std::string name, const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> &amp;rMatrix, int32_t elementCount=1)</td></tr>
+<tr class="memdesc:afe580c600e52c8c58d6dbd3e150aa1ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">3 * 3 の行列でユニフォーム変数を設定する  <a href="#afe580c600e52c8c58d6dbd3e150aa1ab">[詳解]</a><br /></td></tr>
+<tr class="separator:afe580c600e52c8c58d6dbd3e150aa1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84d184c67aba0a8ed5e385f63678366f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c___base_shader.html#a84d184c67aba0a8ed5e385f63678366f">SetUniformMatrix4</a> (const std::string name, const <a class="el" href="struct_utility_math_1_1_s___matrix4.html">UtilityMath::S_Matrix4</a> &amp;rMatrix, int32_t elementCount=1)</td></tr>
+<tr class="memdesc:a84d184c67aba0a8ed5e385f63678366f"><td class="mdescLeft">&#160;</td><td class="mdescRight">4 * 4 の行列でユニフォーム変数を設定する  <a href="#a84d184c67aba0a8ed5e385f63678366f">[詳解]</a><br /></td></tr>
+<tr class="separator:a84d184c67aba0a8ed5e385f63678366f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>ベースシェーダー </p>
+<p>シェーダの基底クラス </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a class="anchor" id="adf8cb015c3ee95978457e2e559f43011"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">C_BaseShader::C_BaseShader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a48993e09431ecce2513a52d6927d93ed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">C_BaseShader::~C_BaseShader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>デストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_a48993e09431ecce2513a52d6927d93ed_cgraph.png" border="0" usemap="#class_c___base_shader_a48993e09431ecce2513a52d6927d93ed_cgraph" alt=""/></div>
+<map name="class_c___base_shader_a48993e09431ecce2513a52d6927d93ed_cgraph" id="class_c___base_shader_a48993e09431ecce2513a52d6927d93ed_cgraph">
+<area shape="rect" id="node2" href="class_c___base_shader.html#abc31ce291aed55c61426254b56997656" title="プログラムオブジェクトの削除を行う " alt="" coords="265,5,420,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="abb86c6c583b14139f4ffed346707011d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_BaseShader::AddUniformBlockIndex </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>uniformBufferName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ユニフォームブロックのインデックスを追加 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ユニフォームバッファの名前</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a186df41d780c22458f2e2e268065b948"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_BaseShader::Begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>シェーダーの使用を開始する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_a186df41d780c22458f2e2e268065b948_icgraph.png" border="0" usemap="#class_c___base_shader_a186df41d780c22458f2e2e268065b948_icgraph" alt=""/></div>
+<map name="class_c___base_shader_a186df41d780c22458f2e2e268065b948_icgraph" id="class_c___base_shader_a186df41d780c22458f2e2e268065b948_icgraph">
+<area shape="rect" id="node2" href="class_c___animation_test_scene.html#a15250c6b0a5a749b98929940848c944c" title="初期化処理を行う " alt="" coords="222,9,381,51"/><area shape="rect" id="node3" href="class_c___animation_test_scene.html#ae31fdb5d081c1e3cc8d5e4ca346bba50" title="更新処理を行う " alt="" coords="222,75,381,116"/><area shape="rect" id="node4" href="class_c___animation_test_scene.html#a64ae226c8d9cf129af92b78e53e3b7df" title="更新処理を行う " alt="" coords="471,5,630,47"/><area shape="rect" id="node5" href="class_c___bloom_test_scene.html#ad3052e5ab82b738ba7c333beb9e0c847" title="初期化処理を行う " alt="" coords="205,495,397,522"/><area shape="rect" id="node6" href="class_c___bloom_test_scene.html#afd7a5693e6811e6fc069d5fdcbfad31b" title="更新処理を行う " alt="" coords="208,546,395,573"/><area shape="rect" id="node7" href="class_c___bloom_test_scene.html#adc16411ba0f989a5dd711cfbdd1038cc" title="更新処理を行う " alt="" coords="463,71,638,98"/><area shape="rect" id="node8" href="class_c___cube_map_test_scene.html#a080583d4981d77915aee65763fbde26a" title="初期化処理を行う " alt="" coords="224,597,379,639"/><area shape="rect" id="node9" href="class_c___debug_string.html#a78bb1ab8055be37726c37da23a9b0d25" title="デバックフォントの初期化処理を行う " alt="" coords="219,663,383,690"/><area shape="rect" id="node10" href="class_c___debug_string.html#a44cf2ce331580ba32a0b62334c80bbd2" title="デバックフォントの描画処理を行う " alt="" coords="228,293,375,319"/><area shape="rect" id="node12" href="class_c___deferred_test_scene.html#a597cde51996d196ce2f9d42381142987" title="描画処理を行う " alt="" coords="477,123,625,164"/><area shape="rect" id="node13" href="class_c___frame_buffer_object_test_scene.html#a5d92d1bbd06d194ba4a19721dbe841ee" title="描画処理を行う " alt="" coords="447,449,655,491"/><area shape="rect" id="node14" href="class_c___normal_map_test_scene.html#abdf005b3ad4811b9a8835ef58795bd29" title="描画処理を行う " alt="" coords="467,515,634,556"/><area shape="rect" id="node16" href="class_c___tessellation_test_scene.html#a1394926382a33331a7d2e91d30c18bc6" title="描画処理を行う " alt="" coords="466,580,635,621"/><area shape="rect" id="node19" href="class_c___deferred_test_scene.html#a2f347ee81158a9faa295015bafc93006" title="初期化処理を行う " alt="" coords="227,715,375,756"/><area shape="rect" id="node20" href="class_c___normal_map_test_scene.html#a53bf4a1eb6877f53a22a8b159c6909d6" title="初期化処理を行う " alt="" coords="218,780,385,821"/><area shape="rect" id="node21" href="class_c___projector_texture_test_scene.html#abf6a9f717c842a0bf8fe77059a49cf56" title="初期化処理を行う " alt="" coords="204,845,399,887"/><area shape="rect" id="node22" href="class_c___projector_texture_test_scene.html#ad791e36eeb1f905f02e638bc04792231" title="更新処理を行う " alt="" coords="204,911,399,952"/><area shape="rect" id="node23" href="class_c___tessellation_test_scene.html#a806f9af78e80f891bd183b7fbeca5893" title="初期化処理を行う " alt="" coords="217,976,386,1017"/><area shape="rect" id="node24" href="class_c___tessellation_test_scene.html#ab5fae3cb795b6060aff1652e62de49fe" title="更新処理を行う " alt="" coords="217,1041,386,1083"/><area shape="rect" id="node25" href="class_c___wireframe_test_scene.html#a01fb6e5a08aadd639a66472c130541ae" title="初期化処理を行う " alt="" coords="222,1107,381,1148"/><area shape="rect" id="node11" href="class_c___cube_map_test_scene.html#a2f9c9ede43fa0cc4622144242fccb2eb" title="更新処理を行う " alt="" coords="473,319,628,360"/><area shape="rect" id="node15" href="class_c___projector_texture_test_scene.html#a7fe56a3473cfbe071af9900d1dd8c893" title="描画処理を行う " alt="" coords="453,384,648,425"/><area shape="rect" id="node17" href="class_c___uniform_block_test_scene.html#ac128f4c0ab26e871533f9ac0e2301159" title="描画処理を行う " alt="" coords="462,188,639,229"/><area shape="rect" id="node18" href="class_c___wireframe_test_scene.html#a05bed9cf5ee472f6f08535627a678a88" title="描画処理を行う " alt="" coords="471,253,630,295"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aab9a822f0a766bf0d7625379fcea6020"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_BaseShader::BeginWithUnifomBlock </td>
+          <td>(</td>
+          <td class="paramtype">GLuint *&#160;</td>
+          <td class="paramname"><em>pUniformBufferObjects</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ユニフォームブロックを含めてシェーダーの使用を開始する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ユニフォームバッファオブジェクト</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_aab9a822f0a766bf0d7625379fcea6020_icgraph.png" border="0" usemap="#class_c___base_shader_aab9a822f0a766bf0d7625379fcea6020_icgraph" alt=""/></div>
+<map name="class_c___base_shader_aab9a822f0a766bf0d7625379fcea6020_icgraph" id="class_c___base_shader_aab9a822f0a766bf0d7625379fcea6020_icgraph">
+<area shape="rect" id="node2" href="class_c___uniform_block_test_scene.html#ac128f4c0ab26e871533f9ac0e2301159" title="描画処理を行う " alt="" coords="271,5,448,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae859191fec4d1cc35f619c032ee01b3d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::CompileFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252">ecShaderType</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ファイルからシェーダーをコンパイルする </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ファイル名</td><td></td></tr>
+    <tr><td class="paramname">シェーダーの種類</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_ae859191fec4d1cc35f619c032ee01b3d_cgraph.png" border="0" usemap="#class_c___base_shader_ae859191fec4d1cc35f619c032ee01b3d_cgraph" alt=""/></div>
+<map name="class_c___base_shader_ae859191fec4d1cc35f619c032ee01b3d_cgraph" id="class_c___base_shader_ae859191fec4d1cc35f619c032ee01b3d_cgraph">
+<area shape="rect" id="node2" href="class_c___base_shader.html#affb0365709644c3c6c49377d1bf9e67e" title="文字列からシェーダーをコンパイルする " alt="" coords="268,5,463,47"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_ae859191fec4d1cc35f619c032ee01b3d_icgraph.png" border="0" usemap="#class_c___base_shader_ae859191fec4d1cc35f619c032ee01b3d_icgraph" alt=""/></div>
+<map name="class_c___base_shader_ae859191fec4d1cc35f619c032ee01b3d_icgraph" id="class_c___base_shader_ae859191fec4d1cc35f619c032ee01b3d_icgraph">
+<area shape="rect" id="node2" href="class_c___animation_test_scene.html#a15250c6b0a5a749b98929940848c944c" title="初期化処理を行う " alt="" coords="286,5,445,47"/><area shape="rect" id="node3" href="class_c___bloom_test_scene.html#ad3052e5ab82b738ba7c333beb9e0c847" title="初期化処理を行う " alt="" coords="269,71,461,98"/><area shape="rect" id="node4" href="class_c___deferred_test_scene.html#a2f347ee81158a9faa295015bafc93006" title="初期化処理を行う " alt="" coords="291,123,439,164"/><area shape="rect" id="node5" href="class_c___normal_map_test_scene.html#a53bf4a1eb6877f53a22a8b159c6909d6" title="初期化処理を行う " alt="" coords="282,188,449,229"/><area shape="rect" id="node6" href="class_c___projector_texture_test_scene.html#abf6a9f717c842a0bf8fe77059a49cf56" title="初期化処理を行う " alt="" coords="268,253,463,295"/><area shape="rect" id="node7" href="class_c___tessellation_test_scene.html#a806f9af78e80f891bd183b7fbeca5893" title="初期化処理を行う " alt="" coords="281,319,450,360"/><area shape="rect" id="node8" href="class_c___uniform_block_test_scene.html#aece2c0b96157d643e40fa9f8b190a968" title="初期化処理を行う " alt="" coords="277,384,454,425"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="affb0365709644c3c6c49377d1bf9e67e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::CompileFromString </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_base_shader_8h.html#abf3d9d248df741c183dc3b1ad23ab252">ecShaderType</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>文字列からシェーダーをコンパイルする </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">文字列(</td><td>ソース ) </td></tr>
+    <tr><td class="paramname">シェーダーの種類</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_affb0365709644c3c6c49377d1bf9e67e_icgraph.png" border="0" usemap="#class_c___base_shader_affb0365709644c3c6c49377d1bf9e67e_icgraph" alt=""/></div>
+<map name="class_c___base_shader_affb0365709644c3c6c49377d1bf9e67e_icgraph" id="class_c___base_shader_affb0365709644c3c6c49377d1bf9e67e_icgraph">
+<area shape="rect" id="node2" href="class_c___base_shader.html#ae859191fec4d1cc35f619c032ee01b3d" title="ファイルからシェーダーをコンパイルする " alt="" coords="248,195,463,222"/><area shape="rect" id="node3" href="class_c___animation_test_scene.html#a15250c6b0a5a749b98929940848c944c" title="初期化処理を行う " alt="" coords="529,5,687,47"/><area shape="rect" id="node4" href="class_c___bloom_test_scene.html#ad3052e5ab82b738ba7c333beb9e0c847" title="初期化処理を行う " alt="" coords="512,71,704,98"/><area shape="rect" id="node5" href="class_c___deferred_test_scene.html#a2f347ee81158a9faa295015bafc93006" title="初期化処理を行う " alt="" coords="534,123,682,164"/><area shape="rect" id="node6" href="class_c___normal_map_test_scene.html#a53bf4a1eb6877f53a22a8b159c6909d6" title="初期化処理を行う " alt="" coords="525,188,691,229"/><area shape="rect" id="node7" href="class_c___projector_texture_test_scene.html#abf6a9f717c842a0bf8fe77059a49cf56" title="初期化処理を行う " alt="" coords="511,253,705,295"/><area shape="rect" id="node8" href="class_c___tessellation_test_scene.html#a806f9af78e80f891bd183b7fbeca5893" title="初期化処理を行う " alt="" coords="523,319,693,360"/><area shape="rect" id="node9" href="class_c___uniform_block_test_scene.html#aece2c0b96157d643e40fa9f8b190a968" title="初期化処理を行う " alt="" coords="519,384,697,425"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abc31ce291aed55c61426254b56997656"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_BaseShader::Delete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>プログラムオブジェクトの削除を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_abc31ce291aed55c61426254b56997656_icgraph.png" border="0" usemap="#class_c___base_shader_abc31ce291aed55c61426254b56997656_icgraph" alt=""/></div>
+<map name="class_c___base_shader_abc31ce291aed55c61426254b56997656_icgraph" id="class_c___base_shader_abc31ce291aed55c61426254b56997656_icgraph">
+<area shape="rect" id="node2" href="class_c___animation_test_scene.html#a5ad84f2e72223579e1aee3370f059eab" title="終了処理を行う " alt="" coords="235,5,393,47"/><area shape="rect" id="node3" href="class_c___base_shader.html#a48993e09431ecce2513a52d6927d93ed" title="デストラクタ " alt="" coords="208,71,420,98"/><area shape="rect" id="node4" href="class_c___bloom_test_scene.html#a09118c126dda1803294d594791225dff" title="終了処理を行う " alt="" coords="219,122,409,149"/><area shape="rect" id="node5" href="class_c___cube_map_test_scene.html#ac1852e0e2129a98b29c2840964a87ea1" title="終了処理を行う " alt="" coords="237,173,391,215"/><area shape="rect" id="node6" href="class_c___debug_string.html#aa31de2854f024bd33bab1d9818c8eec2" title="デバックフォントの終了処理を行う " alt="" coords="233,239,395,266"/><area shape="rect" id="node8" href="class_c___deferred_test_scene.html#abcf222153c1f69970a80a92d854b773e" title="終了処理を行う " alt="" coords="240,291,388,332"/><area shape="rect" id="node9" href="class_c___frame_buffer_object_test_scene.html#aa109aac8e2ad6e479b0c98590342b4d6" title="終了処理を行う " alt="" coords="210,356,418,397"/><area shape="rect" id="node10" href="class_c___normal_map_test_scene.html#a8f19f8dd6a0c36951fced91b5aed6bf9" title="終了処理を行う " alt="" coords="231,421,397,463"/><area shape="rect" id="node11" href="class_c___projector_texture_test_scene.html#a838d2cc55848f974380f47ee4b4eb5b8" title="終了処理を行う " alt="" coords="217,487,411,528"/><area shape="rect" id="node12" href="class_c___tessellation_test_scene.html#a3ff84646ea6b99b65aea29b52d98398b" title="終了処理を行う " alt="" coords="229,552,399,593"/><area shape="rect" id="node13" href="class_c___uniform_block_test_scene.html#a1d2019981c25e11b94f0b6f6f367bda4" title="終了処理を行う " alt="" coords="225,617,403,659"/><area shape="rect" id="node14" href="class_c___wireframe_test_scene.html#a71ffb704d5a954f30e39928f4d7a84f3" title="終了処理を行う " alt="" coords="235,683,393,724"/><area shape="rect" id="node7" href="class_c___debug_string.html#ac9c105350e1f2fcf06570bbb3cbb3e3a" title="デストラクタ " alt="" coords="468,239,680,266"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac17465380d576a0e3d4ef529a29f5174"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_BaseShader::End </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>シェーダーの使用を終了する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_ac17465380d576a0e3d4ef529a29f5174_icgraph.png" border="0" usemap="#class_c___base_shader_ac17465380d576a0e3d4ef529a29f5174_icgraph" alt=""/></div>
+<map name="class_c___base_shader_ac17465380d576a0e3d4ef529a29f5174_icgraph" id="class_c___base_shader_ac17465380d576a0e3d4ef529a29f5174_icgraph">
+<area shape="rect" id="node2" href="class_c___animation_test_scene.html#a15250c6b0a5a749b98929940848c944c" title="初期化処理を行う " alt="" coords="211,43,370,84"/><area shape="rect" id="node3" href="class_c___animation_test_scene.html#ae31fdb5d081c1e3cc8d5e4ca346bba50" title="更新処理を行う " alt="" coords="211,108,370,149"/><area shape="rect" id="node4" href="class_c___animation_test_scene.html#a64ae226c8d9cf129af92b78e53e3b7df" title="更新処理を行う " alt="" coords="461,5,619,47"/><area shape="rect" id="node5" href="class_c___bloom_test_scene.html#ad3052e5ab82b738ba7c333beb9e0c847" title="初期化処理を行う " alt="" coords="195,579,387,606"/><area shape="rect" id="node6" href="class_c___bloom_test_scene.html#afd7a5693e6811e6fc069d5fdcbfad31b" title="更新処理を行う " alt="" coords="197,630,384,657"/><area shape="rect" id="node7" href="class_c___bloom_test_scene.html#adc16411ba0f989a5dd711cfbdd1038cc" title="更新処理を行う " alt="" coords="453,71,627,98"/><area shape="rect" id="node8" href="class_c___cube_map_test_scene.html#a080583d4981d77915aee65763fbde26a" title="初期化処理を行う " alt="" coords="213,681,368,723"/><area shape="rect" id="node9" href="class_c___debug_string.html#a78bb1ab8055be37726c37da23a9b0d25" title="デバックフォントの初期化処理を行う " alt="" coords="209,747,373,774"/><area shape="rect" id="node10" href="class_c___debug_string.html#a44cf2ce331580ba32a0b62334c80bbd2" title="デバックフォントの描画処理を行う " alt="" coords="217,326,364,353"/><area shape="rect" id="node12" href="class_c___deferred_test_scene.html#a597cde51996d196ce2f9d42381142987" title="描画処理を行う " alt="" coords="466,123,614,164"/><area shape="rect" id="node13" href="class_c___frame_buffer_object_test_scene.html#a5d92d1bbd06d194ba4a19721dbe841ee" title="描画処理を行う " alt="" coords="436,384,644,425"/><area shape="rect" id="node14" href="class_c___normal_map_test_scene.html#abdf005b3ad4811b9a8835ef58795bd29" title="描画処理を行う " alt="" coords="457,449,623,491"/><area shape="rect" id="node16" href="class_c___tessellation_test_scene.html#a1394926382a33331a7d2e91d30c18bc6" title="描画処理を行う " alt="" coords="455,515,625,556"/><area shape="rect" id="node17" href="class_c___uniform_block_test_scene.html#ac128f4c0ab26e871533f9ac0e2301159" title="描画処理を行う " alt="" coords="451,580,629,621"/><area shape="rect" id="node19" href="class_c___deferred_test_scene.html#a2f347ee81158a9faa295015bafc93006" title="初期化処理を行う " alt="" coords="217,799,365,840"/><area shape="rect" id="node20" href="class_c___normal_map_test_scene.html#a53bf4a1eb6877f53a22a8b159c6909d6" title="初期化処理を行う " alt="" coords="207,864,374,905"/><area shape="rect" id="node21" href="class_c___projector_texture_test_scene.html#abf6a9f717c842a0bf8fe77059a49cf56" title="初期化処理を行う " alt="" coords="193,929,388,971"/><area shape="rect" id="node22" href="class_c___projector_texture_test_scene.html#ad791e36eeb1f905f02e638bc04792231" title="更新処理を行う " alt="" coords="193,995,388,1036"/><area shape="rect" id="node23" href="class_c___tessellation_test_scene.html#a806f9af78e80f891bd183b7fbeca5893" title="初期化処理を行う " alt="" coords="206,1060,375,1101"/><area shape="rect" id="node24" href="class_c___tessellation_test_scene.html#ab5fae3cb795b6060aff1652e62de49fe" title="更新処理を行う " alt="" coords="206,1125,375,1167"/><area shape="rect" id="node25" href="class_c___wireframe_test_scene.html#a01fb6e5a08aadd639a66472c130541ae" title="初期化処理を行う " alt="" coords="211,1191,370,1232"/><area shape="rect" id="node11" href="class_c___cube_map_test_scene.html#a2f9c9ede43fa0cc4622144242fccb2eb" title="更新処理を行う " alt="" coords="463,188,617,229"/><area shape="rect" id="node15" href="class_c___projector_texture_test_scene.html#a7fe56a3473cfbe071af9900d1dd8c893" title="描画処理を行う " alt="" coords="443,253,637,295"/><area shape="rect" id="node18" href="class_c___wireframe_test_scene.html#a05bed9cf5ee472f6f08535627a678a88" title="描画処理を行う " alt="" coords="461,319,619,360"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a35a75fe8b79e6040e5ed685deb4efa05"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint C_BaseShader::GetProgramObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>プログラムオブジェクトを取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>プログラムオブジェクト </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_a35a75fe8b79e6040e5ed685deb4efa05_icgraph.png" border="0" usemap="#class_c___base_shader_a35a75fe8b79e6040e5ed685deb4efa05_icgraph" alt=""/></div>
+<map name="class_c___base_shader_a35a75fe8b79e6040e5ed685deb4efa05_icgraph" id="class_c___base_shader_a35a75fe8b79e6040e5ed685deb4efa05_icgraph">
+<area shape="rect" id="node2" href="class_c___bloom_test_scene.html#ad3052e5ab82b738ba7c333beb9e0c847" title="初期化処理を行う " alt="" coords="240,5,432,32"/><area shape="rect" id="node3" href="class_c___deferred_test_scene.html#a2f347ee81158a9faa295015bafc93006" title="初期化処理を行う " alt="" coords="262,57,410,98"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a934d0aac5cdac4f400c4da5d301125f4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::IsLinkFlag </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>リンク済みフラグを取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>リンク済みフラグ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7768d31c6e0083855af8acf9de62080a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::Link </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>シェーダーのリンクを行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_a7768d31c6e0083855af8acf9de62080a_cgraph.png" border="0" usemap="#class_c___base_shader_a7768d31c6e0083855af8acf9de62080a_cgraph" alt=""/></div>
+<map name="class_c___base_shader_a7768d31c6e0083855af8acf9de62080a_cgraph" id="class_c___base_shader_a7768d31c6e0083855af8acf9de62080a_cgraph">
+<area shape="rect" id="node2" href="class_c___base_shader.html#aec6a92db982486bcd9d8838f1c61cd46" title="アクティブな属性を出力する " alt="" coords="195,5,373,47"/><area shape="rect" id="node3" href="class_c___base_shader.html#a8aac302757a5228af70591b680f28896" title="アクティブなユニフォーム変数を出力する " alt="" coords="195,71,373,112"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_a7768d31c6e0083855af8acf9de62080a_icgraph.png" border="0" usemap="#class_c___base_shader_a7768d31c6e0083855af8acf9de62080a_icgraph" alt=""/></div>
+<map name="class_c___base_shader_a7768d31c6e0083855af8acf9de62080a_icgraph" id="class_c___base_shader_a7768d31c6e0083855af8acf9de62080a_icgraph">
+<area shape="rect" id="node2" href="class_c___animation_test_scene.html#a15250c6b0a5a749b98929940848c944c" title="初期化処理を行う " alt="" coords="213,5,371,47"/><area shape="rect" id="node3" href="class_c___bloom_test_scene.html#ad3052e5ab82b738ba7c333beb9e0c847" title="初期化処理を行う " alt="" coords="196,71,388,98"/><area shape="rect" id="node4" href="class_c___deferred_test_scene.html#a2f347ee81158a9faa295015bafc93006" title="初期化処理を行う " alt="" coords="218,123,366,164"/><area shape="rect" id="node5" href="class_c___normal_map_test_scene.html#a53bf4a1eb6877f53a22a8b159c6909d6" title="初期化処理を行う " alt="" coords="209,188,375,229"/><area shape="rect" id="node6" href="class_c___projector_texture_test_scene.html#abf6a9f717c842a0bf8fe77059a49cf56" title="初期化処理を行う " alt="" coords="195,253,389,295"/><area shape="rect" id="node7" href="class_c___tessellation_test_scene.html#a806f9af78e80f891bd183b7fbeca5893" title="初期化処理を行う " alt="" coords="207,319,377,360"/><area shape="rect" id="node8" href="class_c___uniform_block_test_scene.html#aece2c0b96157d643e40fa9f8b190a968" title="初期化処理を行う " alt="" coords="203,384,381,425"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aec6a92db982486bcd9d8838f1c61cd46"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_BaseShader::PrintActiveAttributes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>アクティブな属性を出力する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_aec6a92db982486bcd9d8838f1c61cd46_icgraph.png" border="0" usemap="#class_c___base_shader_aec6a92db982486bcd9d8838f1c61cd46_icgraph" alt=""/></div>
+<map name="class_c___base_shader_aec6a92db982486bcd9d8838f1c61cd46_icgraph" id="class_c___base_shader_aec6a92db982486bcd9d8838f1c61cd46_icgraph">
+<area shape="rect" id="node2" href="class_c___base_shader.html#a7768d31c6e0083855af8acf9de62080a" title="シェーダーのリンクを行う " alt="" coords="232,195,373,222"/><area shape="rect" id="node3" href="class_c___animation_test_scene.html#a15250c6b0a5a749b98929940848c944c" title="初期化処理を行う " alt="" coords="439,5,598,47"/><area shape="rect" id="node4" href="class_c___bloom_test_scene.html#ad3052e5ab82b738ba7c333beb9e0c847" title="初期化処理を行う " alt="" coords="423,71,615,98"/><area shape="rect" id="node5" href="class_c___deferred_test_scene.html#a2f347ee81158a9faa295015bafc93006" title="初期化処理を行う " alt="" coords="445,123,593,164"/><area shape="rect" id="node6" href="class_c___normal_map_test_scene.html#a53bf4a1eb6877f53a22a8b159c6909d6" title="初期化処理を行う " alt="" coords="435,188,602,229"/><area shape="rect" id="node7" href="class_c___projector_texture_test_scene.html#abf6a9f717c842a0bf8fe77059a49cf56" title="初期化処理を行う " alt="" coords="421,253,616,295"/><area shape="rect" id="node8" href="class_c___tessellation_test_scene.html#a806f9af78e80f891bd183b7fbeca5893" title="初期化処理を行う " alt="" coords="434,319,603,360"/><area shape="rect" id="node9" href="class_c___uniform_block_test_scene.html#aece2c0b96157d643e40fa9f8b190a968" title="初期化処理を行う " alt="" coords="430,384,607,425"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8aac302757a5228af70591b680f28896"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void C_BaseShader::PrintActiveUniforms </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>アクティブなユニフォーム変数を出力する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_a8aac302757a5228af70591b680f28896_icgraph.png" border="0" usemap="#class_c___base_shader_a8aac302757a5228af70591b680f28896_icgraph" alt=""/></div>
+<map name="class_c___base_shader_a8aac302757a5228af70591b680f28896_icgraph" id="class_c___base_shader_a8aac302757a5228af70591b680f28896_icgraph">
+<area shape="rect" id="node2" href="class_c___base_shader.html#a7768d31c6e0083855af8acf9de62080a" title="シェーダーのリンクを行う " alt="" coords="232,195,373,222"/><area shape="rect" id="node3" href="class_c___animation_test_scene.html#a15250c6b0a5a749b98929940848c944c" title="初期化処理を行う " alt="" coords="439,5,598,47"/><area shape="rect" id="node4" href="class_c___bloom_test_scene.html#ad3052e5ab82b738ba7c333beb9e0c847" title="初期化処理を行う " alt="" coords="423,71,615,98"/><area shape="rect" id="node5" href="class_c___deferred_test_scene.html#a2f347ee81158a9faa295015bafc93006" title="初期化処理を行う " alt="" coords="445,123,593,164"/><area shape="rect" id="node6" href="class_c___normal_map_test_scene.html#a53bf4a1eb6877f53a22a8b159c6909d6" title="初期化処理を行う " alt="" coords="435,188,602,229"/><area shape="rect" id="node7" href="class_c___projector_texture_test_scene.html#abf6a9f717c842a0bf8fe77059a49cf56" title="初期化処理を行う " alt="" coords="421,253,616,295"/><area shape="rect" id="node8" href="class_c___tessellation_test_scene.html#a806f9af78e80f891bd183b7fbeca5893" title="初期化処理を行う " alt="" coords="434,319,603,360"/><area shape="rect" id="node9" href="class_c___uniform_block_test_scene.html#aece2c0b96157d643e40fa9f8b190a968" title="初期化処理を行う " alt="" coords="430,384,607,425"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0a53667bd29ac0887c430ff37ae58f45"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::SetUniform1b </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bool型の値でユニフォーム変数を設定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ユニフォーム変数の名前</td><td></td></tr>
+    <tr><td class="paramname">値</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a639a6cbf993a16fde66134b6507ab6ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::SetUniform1f </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>float型の値でユニフォーム変数を設定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ユニフォーム変数の名前</td><td></td></tr>
+    <tr><td class="paramname">値</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_a639a6cbf993a16fde66134b6507ab6ce_icgraph.png" border="0" usemap="#class_c___base_shader_a639a6cbf993a16fde66134b6507ab6ce_icgraph" alt=""/></div>
+<map name="class_c___base_shader_a639a6cbf993a16fde66134b6507ab6ce_icgraph" id="class_c___base_shader_a639a6cbf993a16fde66134b6507ab6ce_icgraph">
+<area shape="rect" id="node2" href="class_c___animation_test_scene.html#a15250c6b0a5a749b98929940848c944c" title="初期化処理を行う " alt="" coords="262,125,421,167"/><area shape="rect" id="node3" href="class_c___bloom_test_scene.html#ad3052e5ab82b738ba7c333beb9e0c847" title="初期化処理を行う " alt="" coords="245,191,437,218"/><area shape="rect" id="node4" href="class_c___bloom_test_scene.html#afd7a5693e6811e6fc069d5fdcbfad31b" title="更新処理を行う " alt="" coords="248,242,435,269"/><area shape="rect" id="node5" href="class_c___debug_string.html#a44cf2ce331580ba32a0b62334c80bbd2" title="デバックフォントの描画処理を行う " alt="" coords="268,293,415,319"/><area shape="rect" id="node16" href="class_c___projector_texture_test_scene.html#abf6a9f717c842a0bf8fe77059a49cf56" title="初期化処理を行う " alt="" coords="244,344,439,385"/><area shape="rect" id="node17" href="class_c___tessellation_test_scene.html#a806f9af78e80f891bd183b7fbeca5893" title="初期化処理を行う " alt="" coords="257,409,426,451"/><area shape="rect" id="node6" href="class_c___animation_test_scene.html#a64ae226c8d9cf129af92b78e53e3b7df" title="更新処理を行う " alt="" coords="511,5,670,47"/><area shape="rect" id="node7" href="class_c___bloom_test_scene.html#adc16411ba0f989a5dd711cfbdd1038cc" title="更新処理を行う " alt="" coords="503,71,678,98"/><area shape="rect" id="node8" href="class_c___cube_map_test_scene.html#a2f9c9ede43fa0cc4622144242fccb2eb" title="更新処理を行う " alt="" coords="513,123,668,164"/><area shape="rect" id="node9" href="class_c___deferred_test_scene.html#a597cde51996d196ce2f9d42381142987" title="描画処理を行う " alt="" coords="517,188,665,229"/><area shape="rect" id="node10" href="class_c___frame_buffer_object_test_scene.html#a5d92d1bbd06d194ba4a19721dbe841ee" title="描画処理を行う " alt="" coords="487,253,695,295"/><area shape="rect" id="node11" href="class_c___normal_map_test_scene.html#abdf005b3ad4811b9a8835ef58795bd29" title="描画処理を行う " alt="" coords="507,319,674,360"/><area shape="rect" id="node12" href="class_c___projector_texture_test_scene.html#a7fe56a3473cfbe071af9900d1dd8c893" title="描画処理を行う " alt="" coords="493,384,688,425"/><area shape="rect" id="node13" href="class_c___tessellation_test_scene.html#a1394926382a33331a7d2e91d30c18bc6" title="描画処理を行う " alt="" coords="506,449,675,491"/><area shape="rect" id="node14" href="class_c___uniform_block_test_scene.html#ac128f4c0ab26e871533f9ac0e2301159" title="描画処理を行う " alt="" coords="502,515,679,556"/><area shape="rect" id="node15" href="class_c___wireframe_test_scene.html#a05bed9cf5ee472f6f08535627a678a88" title="描画処理を行う " alt="" coords="511,580,670,621"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a6c2f7a80b56637cfa338c70d9ad1f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::SetUniform1i </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>int型の値でユニフォーム変数を設定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ユニフォーム変数の名前</td><td></td></tr>
+    <tr><td class="paramname">値</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_a9a6c2f7a80b56637cfa338c70d9ad1f1_icgraph.png" border="0" usemap="#class_c___base_shader_a9a6c2f7a80b56637cfa338c70d9ad1f1_icgraph" alt=""/></div>
+<map name="class_c___base_shader_a9a6c2f7a80b56637cfa338c70d9ad1f1_icgraph" id="class_c___base_shader_a9a6c2f7a80b56637cfa338c70d9ad1f1_icgraph">
+<area shape="rect" id="node2" href="class_c___bloom_test_scene.html#ad3052e5ab82b738ba7c333beb9e0c847" title="初期化処理を行う " alt="" coords="245,42,437,69"/><area shape="rect" id="node3" href="class_c___cube_map_test_scene.html#a080583d4981d77915aee65763fbde26a" title="初期化処理を行う " alt="" coords="264,93,419,135"/><area shape="rect" id="node4" href="class_c___debug_string.html#a78bb1ab8055be37726c37da23a9b0d25" title="デバックフォントの初期化処理を行う " alt="" coords="259,159,423,186"/><area shape="rect" id="node5" href="class_c___debug_string.html#a44cf2ce331580ba32a0b62334c80bbd2" title="デバックフォントの描画処理を行う " alt="" coords="268,261,415,287"/><area shape="rect" id="node10" href="class_c___frame_buffer_object_test_scene.html#a5d92d1bbd06d194ba4a19721dbe841ee" title="描画処理を行う " alt="" coords="487,5,695,47"/><area shape="rect" id="node16" href="class_c___deferred_test_scene.html#a2f347ee81158a9faa295015bafc93006" title="初期化処理を行う " alt="" coords="267,312,415,353"/><area shape="rect" id="node17" href="class_c___normal_map_test_scene.html#a53bf4a1eb6877f53a22a8b159c6909d6" title="初期化処理を行う " alt="" coords="258,377,425,419"/><area shape="rect" id="node18" href="class_c___projector_texture_test_scene.html#abf6a9f717c842a0bf8fe77059a49cf56" title="初期化処理を行う " alt="" coords="244,443,439,484"/><area shape="rect" id="node19" href="class_c___tessellation_test_scene.html#a806f9af78e80f891bd183b7fbeca5893" title="初期化処理を行う " alt="" coords="257,508,426,549"/><area shape="rect" id="node20" href="class_c___tessellation_test_scene.html#ab5fae3cb795b6060aff1652e62de49fe" title="更新処理を行う " alt="" coords="257,573,426,615"/><area shape="rect" id="node6" href="class_c___animation_test_scene.html#a64ae226c8d9cf129af92b78e53e3b7df" title="更新処理を行う " alt="" coords="511,71,670,112"/><area shape="rect" id="node7" href="class_c___bloom_test_scene.html#adc16411ba0f989a5dd711cfbdd1038cc" title="更新処理を行う " alt="" coords="503,137,678,163"/><area shape="rect" id="node8" href="class_c___cube_map_test_scene.html#a2f9c9ede43fa0cc4622144242fccb2eb" title="更新処理を行う " alt="" coords="513,188,668,229"/><area shape="rect" id="node9" href="class_c___deferred_test_scene.html#a597cde51996d196ce2f9d42381142987" title="描画処理を行う " alt="" coords="517,253,665,295"/><area shape="rect" id="node11" href="class_c___normal_map_test_scene.html#abdf005b3ad4811b9a8835ef58795bd29" title="描画処理を行う " alt="" coords="507,319,674,360"/><area shape="rect" id="node12" href="class_c___projector_texture_test_scene.html#a7fe56a3473cfbe071af9900d1dd8c893" title="描画処理を行う " alt="" coords="493,384,688,425"/><area shape="rect" id="node13" href="class_c___tessellation_test_scene.html#a1394926382a33331a7d2e91d30c18bc6" title="描画処理を行う " alt="" coords="506,449,675,491"/><area shape="rect" id="node14" href="class_c___uniform_block_test_scene.html#ac128f4c0ab26e871533f9ac0e2301159" title="描画処理を行う " alt="" coords="502,515,679,556"/><area shape="rect" id="node15" href="class_c___wireframe_test_scene.html#a05bed9cf5ee472f6f08535627a678a88" title="描画処理を行う " alt="" coords="511,580,670,621"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a78096ef789cc782e629c322ab4ceded0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::SetUniform2f </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>float型の2つの値でユニフォーム変数を設定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ユニフォーム変数の名前</td><td></td></tr>
+    <tr><td class="paramname">値1</td><td></td></tr>
+    <tr><td class="paramname">値2</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af5296908724ee737858c71dac734858f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::SetUniform3f </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>float型の3つの値でユニフォーム変数を設定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ユニフォーム変数の名前</td><td></td></tr>
+    <tr><td class="paramname">値1</td><td></td></tr>
+    <tr><td class="paramname">値2</td><td></td></tr>
+    <tr><td class="paramname">値3</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_af5296908724ee737858c71dac734858f_icgraph.png" border="0" usemap="#class_c___base_shader_af5296908724ee737858c71dac734858f_icgraph" alt=""/></div>
+<map name="class_c___base_shader_af5296908724ee737858c71dac734858f_icgraph" id="class_c___base_shader_af5296908724ee737858c71dac734858f_icgraph">
+<area shape="rect" id="node2" href="class_c___animation_test_scene.html#a15250c6b0a5a749b98929940848c944c" title="初期化処理を行う " alt="" coords="262,5,421,47"/><area shape="rect" id="node3" href="class_c___bloom_test_scene.html#ad3052e5ab82b738ba7c333beb9e0c847" title="初期化処理を行う " alt="" coords="245,71,437,98"/><area shape="rect" id="node4" href="class_c___deferred_test_scene.html#a2f347ee81158a9faa295015bafc93006" title="初期化処理を行う " alt="" coords="267,123,415,164"/><area shape="rect" id="node5" href="class_c___normal_map_test_scene.html#a53bf4a1eb6877f53a22a8b159c6909d6" title="初期化処理を行う " alt="" coords="258,188,425,229"/><area shape="rect" id="node6" href="class_c___projector_texture_test_scene.html#abf6a9f717c842a0bf8fe77059a49cf56" title="初期化処理を行う " alt="" coords="244,253,439,295"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa815a802dc26d20bd8883d0c13f69a10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::SetUniform4f </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>w</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>float型の4つの値でユニフォーム変数を設定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ユニフォーム変数の名前</td><td></td></tr>
+    <tr><td class="paramname">値1</td><td></td></tr>
+    <tr><td class="paramname">値2</td><td></td></tr>
+    <tr><td class="paramname">値3</td><td></td></tr>
+    <tr><td class="paramname">値4</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_aa815a802dc26d20bd8883d0c13f69a10_icgraph.png" border="0" usemap="#class_c___base_shader_aa815a802dc26d20bd8883d0c13f69a10_icgraph" alt=""/></div>
+<map name="class_c___base_shader_aa815a802dc26d20bd8883d0c13f69a10_icgraph" id="class_c___base_shader_aa815a802dc26d20bd8883d0c13f69a10_icgraph">
+<area shape="rect" id="node2" href="class_c___bloom_test_scene.html#ad3052e5ab82b738ba7c333beb9e0c847" title="初期化処理を行う " alt="" coords="245,5,437,32"/><area shape="rect" id="node3" href="class_c___projector_texture_test_scene.html#abf6a9f717c842a0bf8fe77059a49cf56" title="初期化処理を行う " alt="" coords="244,57,439,98"/><area shape="rect" id="node4" href="class_c___tessellation_test_scene.html#a806f9af78e80f891bd183b7fbeca5893" title="初期化処理を行う " alt="" coords="257,122,426,163"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afe580c600e52c8c58d6dbd3e150aa1ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::SetUniformMatrix3 </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___matrix3.html">UtilityMath::S_Matrix3</a> &amp;&#160;</td>
+          <td class="paramname"><em>rMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>elementCount</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>3 * 3 の行列でユニフォーム変数を設定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ユニフォーム変数の名前</td><td></td></tr>
+    <tr><td class="paramname">3</td><td>* 3 の行列 </td></tr>
+    <tr><td class="paramname">要素数</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_afe580c600e52c8c58d6dbd3e150aa1ab_icgraph.png" border="0" usemap="#class_c___base_shader_afe580c600e52c8c58d6dbd3e150aa1ab_icgraph" alt=""/></div>
+<map name="class_c___base_shader_afe580c600e52c8c58d6dbd3e150aa1ab_icgraph" id="class_c___base_shader_afe580c600e52c8c58d6dbd3e150aa1ab_icgraph">
+<area shape="rect" id="node2" href="class_c___animation_test_scene.html#a64ae226c8d9cf129af92b78e53e3b7df" title="更新処理を行う " alt="" coords="259,5,418,47"/><area shape="rect" id="node3" href="class_c___frame_buffer_object_test_scene.html#a5d92d1bbd06d194ba4a19721dbe841ee" title="描画処理を行う " alt="" coords="235,71,443,112"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a84d184c67aba0a8ed5e385f63678366f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::SetUniformMatrix4 </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___matrix4.html">UtilityMath::S_Matrix4</a> &amp;&#160;</td>
+          <td class="paramname"><em>rMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>elementCount</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>4 * 4 の行列でユニフォーム変数を設定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ユニフォーム変数の名前</td><td></td></tr>
+    <tr><td class="paramname">4</td><td>* 4 の行列 </td></tr>
+    <tr><td class="paramname">要素数</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_a84d184c67aba0a8ed5e385f63678366f_icgraph.png" border="0" usemap="#class_c___base_shader_a84d184c67aba0a8ed5e385f63678366f_icgraph" alt=""/></div>
+<map name="class_c___base_shader_a84d184c67aba0a8ed5e385f63678366f_icgraph" id="class_c___base_shader_a84d184c67aba0a8ed5e385f63678366f_icgraph">
+<area shape="rect" id="node2" href="class_c___animation_test_scene.html#ae31fdb5d081c1e3cc8d5e4ca346bba50" title="更新処理を行う " alt="" coords="253,125,411,167"/><area shape="rect" id="node3" href="class_c___animation_test_scene.html#a64ae226c8d9cf129af92b78e53e3b7df" title="更新処理を行う " alt="" coords="502,5,661,47"/><area shape="rect" id="node4" href="class_c___debug_string.html#a44cf2ce331580ba32a0b62334c80bbd2" title="デバックフォントの描画処理を行う " alt="" coords="259,293,405,319"/><area shape="rect" id="node8" href="class_c___frame_buffer_object_test_scene.html#a5d92d1bbd06d194ba4a19721dbe841ee" title="描画処理を行う " alt="" coords="477,71,685,112"/><area shape="rect" id="node9" href="class_c___normal_map_test_scene.html#abdf005b3ad4811b9a8835ef58795bd29" title="描画処理を行う " alt="" coords="498,515,665,556"/><area shape="rect" id="node11" href="class_c___tessellation_test_scene.html#a1394926382a33331a7d2e91d30c18bc6" title="描画処理を行う " alt="" coords="497,580,666,621"/><area shape="rect" id="node14" href="class_c___projector_texture_test_scene.html#ad791e36eeb1f905f02e638bc04792231" title="更新処理を行う " alt="" coords="235,445,429,487"/><area shape="rect" id="node15" href="class_c___tessellation_test_scene.html#a806f9af78e80f891bd183b7fbeca5893" title="初期化処理を行う " alt="" coords="247,511,417,552"/><area shape="rect" id="node16" href="class_c___wireframe_test_scene.html#a01fb6e5a08aadd639a66472c130541ae" title="初期化処理を行う " alt="" coords="253,576,411,617"/><area shape="rect" id="node5" href="class_c___bloom_test_scene.html#adc16411ba0f989a5dd711cfbdd1038cc" title="更新処理を行う " alt="" coords="494,137,669,163"/><area shape="rect" id="node6" href="class_c___cube_map_test_scene.html#a2f9c9ede43fa0cc4622144242fccb2eb" title="更新処理を行う " alt="" coords="504,188,659,229"/><area shape="rect" id="node7" href="class_c___deferred_test_scene.html#a597cde51996d196ce2f9d42381142987" title="描画処理を行う " alt="" coords="507,253,655,295"/><area shape="rect" id="node10" href="class_c___projector_texture_test_scene.html#a7fe56a3473cfbe071af9900d1dd8c893" title="描画処理を行う " alt="" coords="484,319,679,360"/><area shape="rect" id="node12" href="class_c___uniform_block_test_scene.html#ac128f4c0ab26e871533f9ac0e2301159" title="描画処理を行う " alt="" coords="493,384,670,425"/><area shape="rect" id="node13" href="class_c___wireframe_test_scene.html#a05bed9cf5ee472f6f08535627a678a88" title="描画処理を行う " alt="" coords="502,449,661,491"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a872dd93c5eb7c682b7e4f21801f85199"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::SetUniformVector2 </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector2.html">UtilityMath::S_Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>rVector</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>2Dベクトルでユニフォーム変数を設定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ユニフォーム変数の名前</td><td></td></tr>
+    <tr><td class="paramname">2Dベクトル</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a146dbea29230903cd08b3c3bc1e4f097"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::SetUniformVector3 </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector3.html">UtilityMath::S_Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>rVector</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>3Dベクトルでユニフォーム変数を設定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ユニフォーム変数の名前</td><td></td></tr>
+    <tr><td class="paramname">3Dベクトル</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_a146dbea29230903cd08b3c3bc1e4f097_icgraph.png" border="0" usemap="#class_c___base_shader_a146dbea29230903cd08b3c3bc1e4f097_icgraph" alt=""/></div>
+<map name="class_c___base_shader_a146dbea29230903cd08b3c3bc1e4f097_icgraph" id="class_c___base_shader_a146dbea29230903cd08b3c3bc1e4f097_icgraph">
+<area shape="rect" id="node2" href="class_c___debug_string.html#a44cf2ce331580ba32a0b62334c80bbd2" title="デバックフォントの描画処理を行う " alt="" coords="235,326,381,353"/><area shape="rect" id="node8" href="class_c___normal_map_test_scene.html#abdf005b3ad4811b9a8835ef58795bd29" title="描画処理を行う " alt="" coords="450,580,617,621"/><area shape="rect" id="node3" href="class_c___animation_test_scene.html#a64ae226c8d9cf129af92b78e53e3b7df" title="更新処理を行う " alt="" coords="454,5,613,47"/><area shape="rect" id="node4" href="class_c___bloom_test_scene.html#adc16411ba0f989a5dd711cfbdd1038cc" title="更新処理を行う " alt="" coords="446,71,621,98"/><area shape="rect" id="node5" href="class_c___cube_map_test_scene.html#a2f9c9ede43fa0cc4622144242fccb2eb" title="更新処理を行う " alt="" coords="456,123,611,164"/><area shape="rect" id="node6" href="class_c___deferred_test_scene.html#a597cde51996d196ce2f9d42381142987" title="描画処理を行う " alt="" coords="459,188,607,229"/><area shape="rect" id="node7" href="class_c___frame_buffer_object_test_scene.html#a5d92d1bbd06d194ba4a19721dbe841ee" title="描画処理を行う " alt="" coords="429,253,637,295"/><area shape="rect" id="node9" href="class_c___projector_texture_test_scene.html#a7fe56a3473cfbe071af9900d1dd8c893" title="描画処理を行う " alt="" coords="436,319,631,360"/><area shape="rect" id="node10" href="class_c___tessellation_test_scene.html#a1394926382a33331a7d2e91d30c18bc6" title="描画処理を行う " alt="" coords="449,384,618,425"/><area shape="rect" id="node11" href="class_c___uniform_block_test_scene.html#ac128f4c0ab26e871533f9ac0e2301159" title="描画処理を行う " alt="" coords="445,449,622,491"/><area shape="rect" id="node12" href="class_c___wireframe_test_scene.html#a05bed9cf5ee472f6f08535627a678a88" title="描画処理を行う " alt="" coords="454,515,613,556"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a71b8486c524401fe16db3eb3c410fa2a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool C_BaseShader::SetUniformVector4 </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector4.html">UtilityMath::S_Vector4</a> &amp;&#160;</td>
+          <td class="paramname"><em>rVector</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>4Dベクトルでユニフォーム変数を設定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ユニフォーム変数の名前</td><td></td></tr>
+    <tr><td class="paramname">4Dベクトル</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正常終了：true </dd>
+<dd>
+異常終了：false </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c___base_shader_a71b8486c524401fe16db3eb3c410fa2a_icgraph.png" border="0" usemap="#class_c___base_shader_a71b8486c524401fe16db3eb3c410fa2a_icgraph" alt=""/></div>
+<map name="class_c___base_shader_a71b8486c524401fe16db3eb3c410fa2a_icgraph" id="class_c___base_shader_a71b8486c524401fe16db3eb3c410fa2a_icgraph">
+<area shape="rect" id="node2" href="class_c___animation_test_scene.html#a15250c6b0a5a749b98929940848c944c" title="初期化処理を行う " alt="" coords="235,5,393,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="_base_shader_8h_source.html">BaseShader.h</a></li>
+<li><a class="el" href="_base_shader_8cpp.html">BaseShader.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分51秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

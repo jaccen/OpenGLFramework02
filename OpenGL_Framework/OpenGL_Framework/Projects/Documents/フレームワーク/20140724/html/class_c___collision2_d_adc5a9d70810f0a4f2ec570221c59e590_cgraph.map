@@ -1,0 +1,4 @@
+<map id="C_Collision2D::s_CheckSegmentAndSegment" name="C_Collision2D::s_CheckSegmentAndSegment">
+<area shape="rect" id="node2" href="$struct_utility_math_1_1_s___vector2.html#ab1d8e8faa1dc38147d97c2a95b60ce76" title="反転したベクトルを取得する " alt="" coords="268,5,421,47"/>
+<area shape="rect" id="node3" href="$struct_utility_math_1_1_s___vector2.html#ab2c92770295529dc47c22b8e9bca944b" title="もう一つのベクトルとの外積を取得する " alt="" coords="268,71,421,112"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="AutomaticSingleton.h" name="AutomaticSingleton.h">
+<area shape="rect" id="node2" href="$_debug_string_8h.html" title="DebugString.h" alt="" coords="19,80,123,107"/>
+<area shape="rect" id="node4" href="$_lua_manager_8h.html" title="LuaManager.h" alt="" coords="162,80,266,107"/>
+<area shape="rect" id="node6" href="$_network_manager_8h.html" title="NetworkManager.h" alt="" coords="298,80,429,107"/>
+<area shape="rect" id="node8" href="$_primitive_manager_8h.html" title="PrimitiveManager.h" alt="" coords="460,80,592,107"/>
+<area shape="rect" id="node10" href="$_random_manager_8h.html" title="RandomManager.h" alt="" coords="630,80,761,107"/>
+<area shape="rect" id="node3" href="$_debug_string_8cpp.html" title="DebugString.cpp" alt="" coords="5,155,124,181"/>
+<area shape="rect" id="node5" href="$_lua_manager_8cpp.html" title="LuaManager.cpp" alt="" coords="148,155,267,181"/>
+<area shape="rect" id="node7" href="$_network_manager_8cpp.html" title="NetworkManager.cpp" alt="" coords="291,155,435,181"/>
+<area shape="rect" id="node9" href="$_primitive_manager_8cpp.html" title="PrimitiveManager.cpp" alt="" coords="459,155,606,181"/>
+<area shape="rect" id="node11" href="$_random_manager_8cpp.html" title="RandomManager.cpp" alt="" coords="631,155,776,181"/>
+</map>

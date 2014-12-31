@@ -1,0 +1,1156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: UtilityMath::S_Quaternion 構造体</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_utility_math.html">UtilityMath</a></li><li class="navelem"><a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="#friends">フレンド</a> &#124;
+<a href="struct_utility_math_1_1_s___quaternion-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">UtilityMath::S_Quaternion 構造体</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>クォータニオン  
+ <a href="struct_utility_math_1_1_s___quaternion.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_quaternion_8h_source.html">Quaternion.h</a>&gt;</code></p>
+<div class="dynheader">
+UtilityMath::S_Quaternion 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___quaternion__coll__graph.png" border="0" usemap="#_utility_math_1_1_s___quaternion_coll__map" alt="Collaboration graph"/></div>
+<map name="_utility_math_1_1_s___quaternion_coll__map" id="_utility_math_1_1_s___quaternion_coll__map">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___vector3.html" title="ベクター3 " alt="" coords="38,5,191,332"/></map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:aae5fbc65802eec22b0307aefd4e57fbb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#aae5fbc65802eec22b0307aefd4e57fbb">S_Quaternion</a> ()</td></tr>
+<tr class="memdesc:aae5fbc65802eec22b0307aefd4e57fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#aae5fbc65802eec22b0307aefd4e57fbb">[詳解]</a><br /></td></tr>
+<tr class="separator:aae5fbc65802eec22b0307aefd4e57fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52abe4fc5ba69fe20544e8aa05a147ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a52abe4fc5ba69fe20544e8aa05a147ee">S_Quaternion</a> (float value)</td></tr>
+<tr class="memdesc:a52abe4fc5ba69fe20544e8aa05a147ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ( 指定した1つの値で各成分の初期化 )  <a href="#a52abe4fc5ba69fe20544e8aa05a147ee">[詳解]</a><br /></td></tr>
+<tr class="separator:a52abe4fc5ba69fe20544e8aa05a147ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aace1b1209964b39ca4daf6e6bee5e4d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#aace1b1209964b39ca4daf6e6bee5e4d9">S_Quaternion</a> (float t, float x, float y, float z)</td></tr>
+<tr class="memdesc:aace1b1209964b39ca4daf6e6bee5e4d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ( 指定した値で各成分の初期化 )  <a href="#aace1b1209964b39ca4daf6e6bee5e4d9">[詳解]</a><br /></td></tr>
+<tr class="separator:aace1b1209964b39ca4daf6e6bee5e4d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d9c988a041ba87eea59a1b676a7698d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a4d9c988a041ba87eea59a1b676a7698d">S_Quaternion</a> (float t, const <a class="el" href="struct_utility_math_1_1_s___vector3.html">S_Vector3</a> &amp;rV)</td></tr>
+<tr class="memdesc:a4d9c988a041ba87eea59a1b676a7698d"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ( 指定した値と3Dベクトルで各成分の初期化 )  <a href="#a4d9c988a041ba87eea59a1b676a7698d">[詳解]</a><br /></td></tr>
+<tr class="separator:a4d9c988a041ba87eea59a1b676a7698d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4be363dad2ef0ce0d340b0818562763e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a4be363dad2ef0ce0d340b0818562763e">~S_Quaternion</a> ()</td></tr>
+<tr class="memdesc:a4be363dad2ef0ce0d340b0818562763e"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a4be363dad2ef0ce0d340b0818562763e">[詳解]</a><br /></td></tr>
+<tr class="separator:a4be363dad2ef0ce0d340b0818562763e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b9a6894865f7496d2d7cefd6373466a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a9b9a6894865f7496d2d7cefd6373466a">Identity</a> ()</td></tr>
+<tr class="memdesc:a9b9a6894865f7496d2d7cefd6373466a"><td class="mdescLeft">&#160;</td><td class="mdescRight">単位クォータニオン化する  <a href="#a9b9a6894865f7496d2d7cefd6373466a">[詳解]</a><br /></td></tr>
+<tr class="separator:a9b9a6894865f7496d2d7cefd6373466a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a099469769a7d5f8673cbaa391fb37355"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a099469769a7d5f8673cbaa391fb37355">Normalize</a> ()</td></tr>
+<tr class="memdesc:a099469769a7d5f8673cbaa391fb37355"><td class="mdescLeft">&#160;</td><td class="mdescRight">正規化を行う  <a href="#a099469769a7d5f8673cbaa391fb37355">[詳解]</a><br /></td></tr>
+<tr class="separator:a099469769a7d5f8673cbaa391fb37355"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd0678375dae889faf336f75b1a5840b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#acd0678375dae889faf336f75b1a5840b">Inverse</a> ()</td></tr>
+<tr class="memdesc:acd0678375dae889faf336f75b1a5840b"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆クォータニオン化を行う  <a href="#acd0678375dae889faf336f75b1a5840b">[詳解]</a><br /></td></tr>
+<tr class="separator:acd0678375dae889faf336f75b1a5840b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f1939c125a23ad9019e5f1febe9eb5f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a4f1939c125a23ad9019e5f1febe9eb5f">GetLength</a> () const </td></tr>
+<tr class="memdesc:a4f1939c125a23ad9019e5f1febe9eb5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">長さを取得する  <a href="#a4f1939c125a23ad9019e5f1febe9eb5f">[詳解]</a><br /></td></tr>
+<tr class="separator:a4f1939c125a23ad9019e5f1febe9eb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaba69c291a7b439d890a0722f860f02f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#aaba69c291a7b439d890a0722f860f02f">GetLengthSquare</a> () const </td></tr>
+<tr class="memdesc:aaba69c291a7b439d890a0722f860f02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">長さの2乗を取得する  <a href="#aaba69c291a7b439d890a0722f860f02f">[詳解]</a><br /></td></tr>
+<tr class="separator:aaba69c291a7b439d890a0722f860f02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bfb79f396cfb91eb58fc80c052594de"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a1bfb79f396cfb91eb58fc80c052594de">GetDotProduct</a> (const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;rAnother) const </td></tr>
+<tr class="memdesc:a1bfb79f396cfb91eb58fc80c052594de"><td class="mdescLeft">&#160;</td><td class="mdescRight">内積を取得する  <a href="#a1bfb79f396cfb91eb58fc80c052594de">[詳解]</a><br /></td></tr>
+<tr class="separator:a1bfb79f396cfb91eb58fc80c052594de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a668309d761548b10e42e1462682f5e75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a668309d761548b10e42e1462682f5e75">GetNormalize</a> () const </td></tr>
+<tr class="memdesc:a668309d761548b10e42e1462682f5e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">正規化したクォータニオンを取得する  <a href="#a668309d761548b10e42e1462682f5e75">[詳解]</a><br /></td></tr>
+<tr class="separator:a668309d761548b10e42e1462682f5e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0441fddcdc8fc8e21dd65f1aee2f4f4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a0441fddcdc8fc8e21dd65f1aee2f4f4d">GetInverse</a> () const </td></tr>
+<tr class="memdesc:a0441fddcdc8fc8e21dd65f1aee2f4f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆クォータニオンを取得する  <a href="#a0441fddcdc8fc8e21dd65f1aee2f4f4d">[詳解]</a><br /></td></tr>
+<tr class="separator:a0441fddcdc8fc8e21dd65f1aee2f4f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13fa824d2acdb566ecc1537e11cc69f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a13fa824d2acdb566ecc1537e11cc69f5">GetSlerp</a> (const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;rAnother, float coefficient) const </td></tr>
+<tr class="memdesc:a13fa824d2acdb566ecc1537e11cc69f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">もう一つのクォータニオンと球面線形補間した値を取得する  <a href="#a13fa824d2acdb566ecc1537e11cc69f5">[詳解]</a><br /></td></tr>
+<tr class="separator:a13fa824d2acdb566ecc1537e11cc69f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66cbf34e7daf9e60bb3bbcc81538bae5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a66cbf34e7daf9e60bb3bbcc81538bae5">operator+</a> (const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;rAnother) const </td></tr>
+<tr class="memdesc:a66cbf34e7daf9e60bb3bbcc81538bae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">もう一つのクォータニオンを加算したクォータニオンを求める  <a href="#a66cbf34e7daf9e60bb3bbcc81538bae5">[詳解]</a><br /></td></tr>
+<tr class="separator:a66cbf34e7daf9e60bb3bbcc81538bae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a50884cd45c2c100c64109b03df8327"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a3a50884cd45c2c100c64109b03df8327">operator+=</a> (const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;rAnother)</td></tr>
+<tr class="memdesc:a3a50884cd45c2c100c64109b03df8327"><td class="mdescLeft">&#160;</td><td class="mdescRight">もう一つのクォータニオンを加算する  <a href="#a3a50884cd45c2c100c64109b03df8327">[詳解]</a><br /></td></tr>
+<tr class="separator:a3a50884cd45c2c100c64109b03df8327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64ff24506e90c5cd0ada80f4e97e2e20"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a64ff24506e90c5cd0ada80f4e97e2e20">operator-</a> (const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;rAnother) const </td></tr>
+<tr class="memdesc:a64ff24506e90c5cd0ada80f4e97e2e20"><td class="mdescLeft">&#160;</td><td class="mdescRight">もう一つのクォータニオンを減算したクォータニオンを求める  <a href="#a64ff24506e90c5cd0ada80f4e97e2e20">[詳解]</a><br /></td></tr>
+<tr class="separator:a64ff24506e90c5cd0ada80f4e97e2e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9bcd6c26c28a1d0cc609b383c708b69"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#af9bcd6c26c28a1d0cc609b383c708b69">operator-=</a> (const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;rAnother)</td></tr>
+<tr class="memdesc:af9bcd6c26c28a1d0cc609b383c708b69"><td class="mdescLeft">&#160;</td><td class="mdescRight">もう一つのクォータニオンを減算する  <a href="#af9bcd6c26c28a1d0cc609b383c708b69">[詳解]</a><br /></td></tr>
+<tr class="separator:af9bcd6c26c28a1d0cc609b383c708b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01855a3339cb9854e60210cad6e6434f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a01855a3339cb9854e60210cad6e6434f">operator*</a> (const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;rAnother) const </td></tr>
+<tr class="memdesc:a01855a3339cb9854e60210cad6e6434f"><td class="mdescLeft">&#160;</td><td class="mdescRight">もう一つのクォータニオンを乗算したクォータニオンを求める  <a href="#a01855a3339cb9854e60210cad6e6434f">[詳解]</a><br /></td></tr>
+<tr class="separator:a01855a3339cb9854e60210cad6e6434f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cb2519584b5d30e37b477008eb0693d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a5cb2519584b5d30e37b477008eb0693d">operator*=</a> (const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;rAnother)</td></tr>
+<tr class="memdesc:a5cb2519584b5d30e37b477008eb0693d"><td class="mdescLeft">&#160;</td><td class="mdescRight">もう一つのクォータニオンを乗算する  <a href="#a5cb2519584b5d30e37b477008eb0693d">[詳解]</a><br /></td></tr>
+<tr class="separator:a5cb2519584b5d30e37b477008eb0693d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe202b79178689435663abb2d34a176d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#afe202b79178689435663abb2d34a176d">operator*</a> (float value) const </td></tr>
+<tr class="memdesc:afe202b79178689435663abb2d34a176d"><td class="mdescLeft">&#160;</td><td class="mdescRight">float型の値を乗算したクォータニオンを求める  <a href="#afe202b79178689435663abb2d34a176d">[詳解]</a><br /></td></tr>
+<tr class="separator:afe202b79178689435663abb2d34a176d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d54c237dcb976bb2c50d5112ceb3638"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a9d54c237dcb976bb2c50d5112ceb3638">operator*=</a> (float value)</td></tr>
+<tr class="memdesc:a9d54c237dcb976bb2c50d5112ceb3638"><td class="mdescLeft">&#160;</td><td class="mdescRight">float型の値を各成分に乗算する  <a href="#a9d54c237dcb976bb2c50d5112ceb3638">[詳解]</a><br /></td></tr>
+<tr class="separator:a9d54c237dcb976bb2c50d5112ceb3638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:ade34ef778a3640a6f0bd431437f4540b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#ade34ef778a3640a6f0bd431437f4540b">s_CreateRotationAxis</a> (const <a class="el" href="struct_utility_math_1_1_s___vector3.html">S_Vector3</a> &amp;rAxis, float angle)</td></tr>
+<tr class="memdesc:ade34ef778a3640a6f0bd431437f4540b"><td class="mdescLeft">&#160;</td><td class="mdescRight">任意軸から回転クォータニオンを作成する  <a href="#ade34ef778a3640a6f0bd431437f4540b">[詳解]</a><br /></td></tr>
+<tr class="separator:ade34ef778a3640a6f0bd431437f4540b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabcc12fc575e7e89135d23562166e69c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#aabcc12fc575e7e89135d23562166e69c">s_CreateRotationPitchYawRoll</a> (float pitch, float yaw, float roll)</td></tr>
+<tr class="memdesc:aabcc12fc575e7e89135d23562166e69c"><td class="mdescLeft">&#160;</td><td class="mdescRight">3軸の回転クォータニオンを掛け合わせた回転クォータニオンを作成する  <a href="#aabcc12fc575e7e89135d23562166e69c">[詳解]</a><br /></td></tr>
+<tr class="separator:aabcc12fc575e7e89135d23562166e69c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8322aa9b3e3b3fc67eed21b03f9a7d63"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a8322aa9b3e3b3fc67eed21b03f9a7d63">s_ConverMatrix4ToQuaternion</a> (const <a class="el" href="struct_utility_math_1_1_s___matrix4.html">S_Matrix4</a> &amp;rMatrix)</td></tr>
+<tr class="memdesc:a8322aa9b3e3b3fc67eed21b03f9a7d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">4 * 4の行列からクォータニオンへ変換し、取得する  <a href="#a8322aa9b3e3b3fc67eed21b03f9a7d63">[詳解]</a><br /></td></tr>
+<tr class="separator:a8322aa9b3e3b3fc67eed21b03f9a7d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a223f13543ea480bd7b7a2873b868d981"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:a1d6fb54012910a0f9595b9be056f6d0b"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a402d3880c91f44f55b17978a828f9076"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___quaternion.html#a22c993bf69a3fe076b630d0f5984db15">t_</a></td></tr>
+<tr class="memdesc:a402d3880c91f44f55b17978a828f9076"><td class="mdescLeft">&#160;</td><td class="mdescRight">T成分  <a href="#a402d3880c91f44f55b17978a828f9076">[詳解]</a><br /></td></tr>
+<tr class="separator:a402d3880c91f44f55b17978a828f9076"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00d4058c499dfb286d5b2c7ff41ab683"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___quaternion.html#a3e58813576066f7b8aa1ada266978b0a">x_</a></td></tr>
+<tr class="memdesc:a00d4058c499dfb286d5b2c7ff41ab683"><td class="mdescLeft">&#160;</td><td class="mdescRight">X成分  <a href="#a00d4058c499dfb286d5b2c7ff41ab683">[詳解]</a><br /></td></tr>
+<tr class="separator:a00d4058c499dfb286d5b2c7ff41ab683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a987d3c823c8349e7880addaedc322ab0"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___quaternion.html#acb367b99f6cf9f188c3987c03d328d64">y_</a></td></tr>
+<tr class="memdesc:a987d3c823c8349e7880addaedc322ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Y成分  <a href="#a987d3c823c8349e7880addaedc322ab0">[詳解]</a><br /></td></tr>
+<tr class="separator:a987d3c823c8349e7880addaedc322ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a75c56495b5aeb47c064695f36fad74"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___quaternion.html#a58c4f6376f09760534a8612c756eb8ac">z_</a></td></tr>
+<tr class="memdesc:a4a75c56495b5aeb47c064695f36fad74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Z成分  <a href="#a4a75c56495b5aeb47c064695f36fad74">[詳解]</a><br /></td></tr>
+<tr class="separator:a4a75c56495b5aeb47c064695f36fad74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d6fb54012910a0f9595b9be056f6d0b"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a1d6fb54012910a0f9595b9be056f6d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0701963d727b40b5e5872f5ffc672a42"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a17bb3b30457e45f4ba31fec4d8388224"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___quaternion.html#a22c993bf69a3fe076b630d0f5984db15">t_</a></td></tr>
+<tr class="memdesc:a17bb3b30457e45f4ba31fec4d8388224"><td class="mdescLeft">&#160;</td><td class="mdescRight">T成分  <a href="#a17bb3b30457e45f4ba31fec4d8388224">[詳解]</a><br /></td></tr>
+<tr class="separator:a17bb3b30457e45f4ba31fec4d8388224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a022791069a56ccc91c2c2a1fa42e6c2c"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___vector3.html">S_Vector3</a>&#160;&#160;&#160;<a class="el" href="struct_utility_math_1_1_s___quaternion.html#a2ed5676d6bf82be06c07e837926946b5">v_</a></td></tr>
+<tr class="memdesc:a022791069a56ccc91c2c2a1fa42e6c2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">3Dベクトル  <a href="#a022791069a56ccc91c2c2a1fa42e6c2c">[詳解]</a><br /></td></tr>
+<tr class="separator:a022791069a56ccc91c2c2a1fa42e6c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0701963d727b40b5e5872f5ffc672a42"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a0701963d727b40b5e5872f5ffc672a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a223f13543ea480bd7b7a2873b868d981"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a223f13543ea480bd7b7a2873b868d981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+フレンド</h2></td></tr>
+<tr class="memitem:a472664d657f02c2cef4d620d408d649d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utility_math_1_1_s___quaternion.html#a472664d657f02c2cef4d620d408d649d">operator*</a> (float value, const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;rQuaternion)</td></tr>
+<tr class="memdesc:a472664d657f02c2cef4d620d408d649d"><td class="mdescLeft">&#160;</td><td class="mdescRight">float型の値とクォータニオンを乗算する  <a href="#a472664d657f02c2cef4d620d408d649d">[詳解]</a><br /></td></tr>
+<tr class="separator:a472664d657f02c2cef4d620d408d649d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>クォータニオン </p>
+<p>クォータニオンを表す構造体 </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a class="anchor" id="aae5fbc65802eec22b0307aefd4e57fbb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UtilityMath::S_Quaternion::S_Quaternion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a52abe4fc5ba69fe20544e8aa05a147ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UtilityMath::S_Quaternion::S_Quaternion </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ( 指定した1つの値で各成分の初期化 ) </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">値</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aace1b1209964b39ca4daf6e6bee5e4d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UtilityMath::S_Quaternion::S_Quaternion </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コンストラクタ( 指定した値で各成分の初期化 ) </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T成分</td><td></td></tr>
+    <tr><td class="paramname">X成分</td><td></td></tr>
+    <tr><td class="paramname">Y成分</td><td></td></tr>
+    <tr><td class="paramname">Z成分</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4d9c988a041ba87eea59a1b676a7698d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UtilityMath::S_Quaternion::S_Quaternion </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector3.html">S_Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>rV</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コンストラクタ( 指定した値と3Dベクトルで各成分の初期化 ) </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T成分</td><td></td></tr>
+    <tr><td class="paramname">3Dベクトル</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4be363dad2ef0ce0d340b0818562763e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UtilityMath::S_Quaternion::~S_Quaternion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>デストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a1bfb79f396cfb91eb58fc80c052594de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Quaternion::GetDotProduct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnother</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>内積を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>内積 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0441fddcdc8fc8e21dd65f1aee2f4f4d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_utility_math_1_1_s___quaternion.html">UtilityMath::S_Quaternion</a> UtilityMath::S_Quaternion::GetInverse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆クォータニオンを取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>逆クォータニオン </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___quaternion_a0441fddcdc8fc8e21dd65f1aee2f4f4d_cgraph.png" border="0" usemap="#struct_utility_math_1_1_s___quaternion_a0441fddcdc8fc8e21dd65f1aee2f4f4d_cgraph" alt=""/></div>
+<map name="struct_utility_math_1_1_s___quaternion_a0441fddcdc8fc8e21dd65f1aee2f4f4d_cgraph" id="struct_utility_math_1_1_s___quaternion_a0441fddcdc8fc8e21dd65f1aee2f4f4d_cgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___quaternion.html#acd0678375dae889faf336f75b1a5840b" title="逆クォータニオン化を行う " alt="" coords="224,5,395,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4f1939c125a23ad9019e5f1febe9eb5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Quaternion::GetLength </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>長さを取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>長さ </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___quaternion_a4f1939c125a23ad9019e5f1febe9eb5f_cgraph.png" border="0" usemap="#struct_utility_math_1_1_s___quaternion_a4f1939c125a23ad9019e5f1febe9eb5f_cgraph" alt=""/></div>
+<map name="struct_utility_math_1_1_s___quaternion_a4f1939c125a23ad9019e5f1febe9eb5f_cgraph" id="struct_utility_math_1_1_s___quaternion_a4f1939c125a23ad9019e5f1febe9eb5f_cgraph">
+<area shape="rect" id="node2" href="namespace_utility_math.html#ab13aca738fe90a4442944a43d9df9d5a" title="平方根を求める " alt="" coords="224,13,384,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aaba69c291a7b439d890a0722f860f02f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Quaternion::GetLengthSquare </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>長さの2乗を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>長さの２乗 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a668309d761548b10e42e1462682f5e75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_utility_math_1_1_s___quaternion.html">UtilityMath::S_Quaternion</a> UtilityMath::S_Quaternion::GetNormalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>正規化したクォータニオンを取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>正規化したクォータニオン </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___quaternion_a668309d761548b10e42e1462682f5e75_cgraph.png" border="0" usemap="#struct_utility_math_1_1_s___quaternion_a668309d761548b10e42e1462682f5e75_cgraph" alt=""/></div>
+<map name="struct_utility_math_1_1_s___quaternion_a668309d761548b10e42e1462682f5e75_cgraph" id="struct_utility_math_1_1_s___quaternion_a668309d761548b10e42e1462682f5e75_cgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___quaternion.html#a099469769a7d5f8673cbaa391fb37355" title="正規化を行う " alt="" coords="224,5,395,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a13fa824d2acdb566ecc1537e11cc69f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_utility_math_1_1_s___quaternion.html">UtilityMath::S_Quaternion</a> UtilityMath::S_Quaternion::GetSlerp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnother</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>coefficient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>もう一つのクォータニオンと球面線形補間した値を取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">もう一つのクォータニオン</td><td></td></tr>
+    <tr><td class="paramname">補間係数</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>もう一つのクォータニオンと球面線形補間した値 </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___quaternion_a13fa824d2acdb566ecc1537e11cc69f5_cgraph.png" border="0" usemap="#struct_utility_math_1_1_s___quaternion_a13fa824d2acdb566ecc1537e11cc69f5_cgraph" alt=""/></div>
+<map name="struct_utility_math_1_1_s___quaternion_a13fa824d2acdb566ecc1537e11cc69f5_cgraph" id="struct_utility_math_1_1_s___quaternion_a13fa824d2acdb566ecc1537e11cc69f5_cgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___quaternion.html#a099469769a7d5f8673cbaa391fb37355" title="正規化を行う " alt="" coords="224,5,395,47"/><area shape="rect" id="node3" href="namespace_utility_math.html#ad7b8e18631c91d12beab3bda8211522d" title="値のクランプを行う " alt="" coords="245,71,374,98"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b9a6894865f7496d2d7cefd6373466a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UtilityMath::S_Quaternion::Identity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>単位クォータニオン化する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acd0678375dae889faf336f75b1a5840b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UtilityMath::S_Quaternion::Inverse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆クォータニオン化を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___quaternion_acd0678375dae889faf336f75b1a5840b_icgraph.png" border="0" usemap="#struct_utility_math_1_1_s___quaternion_acd0678375dae889faf336f75b1a5840b_icgraph" alt=""/></div>
+<map name="struct_utility_math_1_1_s___quaternion_acd0678375dae889faf336f75b1a5840b_icgraph" id="struct_utility_math_1_1_s___quaternion_acd0678375dae889faf336f75b1a5840b_icgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___quaternion.html#a0441fddcdc8fc8e21dd65f1aee2f4f4d" title="逆クォータニオンを取得する " alt="" coords="224,5,395,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a099469769a7d5f8673cbaa391fb37355"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UtilityMath::S_Quaternion::Normalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>正規化を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>なし </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___quaternion_a099469769a7d5f8673cbaa391fb37355_icgraph.png" border="0" usemap="#struct_utility_math_1_1_s___quaternion_a099469769a7d5f8673cbaa391fb37355_icgraph" alt=""/></div>
+<map name="struct_utility_math_1_1_s___quaternion_a099469769a7d5f8673cbaa391fb37355_icgraph" id="struct_utility_math_1_1_s___quaternion_a099469769a7d5f8673cbaa391fb37355_icgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___quaternion.html#a668309d761548b10e42e1462682f5e75" title="正規化したクォータニオンを取得する " alt="" coords="224,5,395,47"/><area shape="rect" id="node3" href="struct_utility_math_1_1_s___quaternion.html#a13fa824d2acdb566ecc1537e11cc69f5" title="もう一つのクォータニオンと球面線形補間した値を取得する " alt="" coords="224,71,395,112"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a01855a3339cb9854e60210cad6e6434f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">UtilityMath::S_Quaternion</a> UtilityMath::S_Quaternion::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnother</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>もう一つのクォータニオンを乗算したクォータニオンを求める </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">もう一つのクォータニオン</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>乗算したクォータニオン </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afe202b79178689435663abb2d34a176d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">UtilityMath::S_Quaternion</a> UtilityMath::S_Quaternion::operator* </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>float型の値を乗算したクォータニオンを求める </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">float型の値</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>乗算したクォータニオン </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5cb2519584b5d30e37b477008eb0693d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">UtilityMath::S_Quaternion</a> &amp; UtilityMath::S_Quaternion::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnother</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>もう一つのクォータニオンを乗算する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">もう一つのクォータニオン</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>乗算したクォータニオン( 自分自身 ) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9d54c237dcb976bb2c50d5112ceb3638"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">UtilityMath::S_Quaternion</a> &amp; UtilityMath::S_Quaternion::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>float型の値を各成分に乗算する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">float型の値</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>乗算後のクォータニオン </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a66cbf34e7daf9e60bb3bbcc81538bae5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">UtilityMath::S_Quaternion</a> UtilityMath::S_Quaternion::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnother</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>もう一つのクォータニオンを加算したクォータニオンを求める </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">もう一つのクォータニオン</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>加算したクォータニオン </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3a50884cd45c2c100c64109b03df8327"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">UtilityMath::S_Quaternion</a> &amp; UtilityMath::S_Quaternion::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnother</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>もう一つのクォータニオンを加算する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">もう一つのクォータニオン</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>加算したクォータニオン( 自分自身 ) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a64ff24506e90c5cd0ada80f4e97e2e20"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">UtilityMath::S_Quaternion</a> UtilityMath::S_Quaternion::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnother</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>もう一つのクォータニオンを減算したクォータニオンを求める </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">もう一つのクォータニオン</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>減算したクォータニオン </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af9bcd6c26c28a1d0cc609b383c708b69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">UtilityMath::S_Quaternion</a> &amp; UtilityMath::S_Quaternion::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAnother</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>もう一つのクォータニオンを減算する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">もう一つのクォータニオン</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>減算したクォータニオン( 自分自身 ) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8322aa9b3e3b3fc67eed21b03f9a7d63"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_utility_math_1_1_s___quaternion.html">UtilityMath::S_Quaternion</a> UtilityMath::S_Quaternion::s_ConverMatrix4ToQuaternion </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___matrix4.html">S_Matrix4</a> &amp;&#160;</td>
+          <td class="paramname"><em>rMatrix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>4 * 4の行列からクォータニオンへ変換し、取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">4</td><td>* 4の行列 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>クォータニオン </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_utility_math_1_1_s___quaternion_a8322aa9b3e3b3fc67eed21b03f9a7d63_cgraph.png" border="0" usemap="#struct_utility_math_1_1_s___quaternion_a8322aa9b3e3b3fc67eed21b03f9a7d63_cgraph" alt=""/></div>
+<map name="struct_utility_math_1_1_s___quaternion_a8322aa9b3e3b3fc67eed21b03f9a7d63_cgraph" id="struct_utility_math_1_1_s___quaternion_a8322aa9b3e3b3fc67eed21b03f9a7d63_cgraph">
+<area shape="rect" id="node2" href="struct_utility_math_1_1_s___matrix4.html#a844d2c8ca822471c86e75913a83fc6e7" title="転置行列を取得する " alt="" coords="256,5,407,47"/><area shape="rect" id="node3" href="struct_utility_math_1_1_s___matrix4.html#afbd5fdb195d4328df5b9b5f2a36f2f4d" title="転置行列化する " alt="" coords="455,5,605,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ade34ef778a3640a6f0bd431437f4540b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_utility_math_1_1_s___quaternion.html">UtilityMath::S_Quaternion</a> UtilityMath::S_Quaternion::s_CreateRotationAxis </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___vector3.html">S_Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>rAxis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>任意軸から回転クォータニオンを作成する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">軸</td><td></td></tr>
+    <tr><td class="paramname">角度(</td><td>ラジアン値 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>回転クォータニオン </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aabcc12fc575e7e89135d23562166e69c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_utility_math_1_1_s___quaternion.html">UtilityMath::S_Quaternion</a> UtilityMath::S_Quaternion::s_CreateRotationPitchYawRoll </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pitch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>yaw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>roll</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>3軸の回転クォータニオンを掛け合わせた回転クォータニオンを作成する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ピッチ(</td><td>X軸の角度・ラジアン値 ) </td></tr>
+    <tr><td class="paramname">ヨー(</td><td>Y軸の角度・ラジアン値 ) </td></tr>
+    <tr><td class="paramname">ロール(</td><td>Z軸の角度・ラジアン値 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>回転クォータニオン </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">フレンドと関連関数の詳解</h2>
+<a class="anchor" id="a472664d657f02c2cef4d620d408d649d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> operator* </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_utility_math_1_1_s___quaternion.html">S_Quaternion</a> &amp;&#160;</td>
+          <td class="paramname"><em>rQuaternion</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>float型の値とクォータニオンを乗算する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">float型の値</td><td></td></tr>
+    <tr><td class="paramname">クォータニオン</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>乗算したクォータニオン </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a class="anchor" id="a223f13543ea480bd7b7a2873b868d981"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union { ... } </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a22c993bf69a3fe076b630d0f5984db15"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Quaternion::t_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>T成分 </p>
+
+</div>
+</div>
+<a class="anchor" id="a2ed5676d6bf82be06c07e837926946b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_utility_math_1_1_s___vector3.html">S_Vector3</a> UtilityMath::S_Quaternion::v_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>3Dベクトル </p>
+
+</div>
+</div>
+<a class="anchor" id="a3e58813576066f7b8aa1ada266978b0a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Quaternion::x_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>X成分 </p>
+
+</div>
+</div>
+<a class="anchor" id="acb367b99f6cf9f188c3987c03d328d64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Quaternion::y_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Y成分 </p>
+
+</div>
+</div>
+<a class="anchor" id="a58c4f6376f09760534a8612c756eb8ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UtilityMath::S_Quaternion::z_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Z成分 </p>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="_quaternion_8h_source.html">Quaternion.h</a></li>
+<li><a class="el" href="_quaternion_8cpp.html">Quaternion.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分53秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>OpenGL_Framework: Vector4.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">OpenGL_Framework
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>フレンド</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Vector4.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_vector4_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* 二重インクルード防止 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* ヘッダファイル */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vector3_8h.html">Vector3.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>UtilityMath</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span>    <span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___vector4.html">   23</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_utility_math_1_1_s___vector4.html">S_Vector4</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">/* 4つの成分 */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">union</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___vector4.html#a664c71bf79d10ed3e4f60928eb4573b9">   28</a></span>&#160;            <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a664c71bf79d10ed3e4f60928eb4573b9">v_</a>[4];                                                        </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">struct</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            {</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___vector4.html#aebc1968e6b21c8cb39926b4cd0b67290">   32</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#aebc1968e6b21c8cb39926b4cd0b67290">x_</a>;                                                       </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___vector4.html#a8d0854707a32ba2589618c0391aa5672">   33</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a8d0854707a32ba2589618c0391aa5672">y_</a>;                                                       </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___vector4.html#ae3c28fa10dd695ab1052228d7cb5e62b">   34</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#ae3c28fa10dd695ab1052228d7cb5e62b">z_</a>;                                                       </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___vector4.html#a70852ac2d428ebd04c26a3382598605a">   35</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a70852ac2d428ebd04c26a3382598605a">w_</a>;                                                       </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            };</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">struct</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            {</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___vector4.html#ada232e31476ac5c2b899f0a9c7060381">   40</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#ada232e31476ac5c2b899f0a9c7060381">red_</a>;                                                     </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___vector4.html#a12d4cea0b825609ee5f9c99622cb69c1">   41</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a12d4cea0b825609ee5f9c99622cb69c1">green_</a>;                                                   </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___vector4.html#af291691d126f1e9a3731e24b49a1a3a6">   42</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#af291691d126f1e9a3731e24b49a1a3a6">blue_</a>;                                                    </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___vector4.html#a8237e58d2a1855bf3053223efc30ebc2">   43</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a8237e58d2a1855bf3053223efc30ebc2">alpha_</a>;                                                   </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            };</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keyword">struct</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            {</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___vector4.html#ae2217b90517889b276dd59214977aab8">   48</a></span>&#160;                <a class="code" href="struct_utility_math_1_1_s___vector3.html">S_Vector3</a> <a class="code" href="struct_utility_math_1_1_s___vector4.html#ae2217b90517889b276dd59214977aab8">vector_</a>;                                              </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a70852ac2d428ebd04c26a3382598605a">w_</a>;                                                       </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            };</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        };</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>();                                                            <span class="comment">// コンストラクタ</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>(<span class="keywordtype">float</span> value);                                        <span class="comment">// コンストラクタ( 各成分を指定した1つの値で初期化 )</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, <span class="keywordtype">float</span> w);                          <span class="comment">// コンストラクタ( 各成分を指定した値で初期化 )</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> v[4]);                                   <span class="comment">// コンストラクタ( 各成分を指定した配列で初期化 )</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>(<span class="keyword">const</span> S_Vector3&amp; rVector, <span class="keywordtype">float</span> w);                           <span class="comment">// コンストラクタ( 各成分を指定した3Dベクトルと値で初期化 )</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="struct_utility_math_1_1_s___vector4.html#ac598edb697a77cc5f21479ebf6c5b6ba">~S_Vector4</a>();                                                           <span class="comment">// デストラクタ</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a9709107cb5cb6b851b10171d84cb941f">Zero</a>();                                                            <span class="comment">// ゼロベクトル化</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a806ece88a8210a56fb60aa3279997a4a">Fill</a>(<span class="keywordtype">float</span> value);                                                 <span class="comment">// 各成分を特定の値に変更</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#af61b093a822af845d5bdbf622343c775">Normalize</a>();                                                       <span class="comment">// 単位ベクトル化</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#acb7200d878476eea9afd513a840d3c78">Inversion</a>();                                                       <span class="comment">// ベクトルを反転</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">/* ゲッター */</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a8c90a792675b56de6874012be161af46">GetLength</a>() <span class="keyword">const</span>;                                                <span class="comment">// 長さを取得</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a47dd51926af8a121291ec7cb57ce2473">GetLengthSquare</a>() <span class="keyword">const</span>;                                          <span class="comment">// 長さの2乗を取得</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#aff048411beddba4eb8b18be4ef45c8a9">GetDotProduct</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; rAnother) <span class="keyword">const</span>;                   <span class="comment">// 内積を取得</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a512af6686952a1f41ec62bb05197e917">GetNormalize</a>() <span class="keyword">const</span>;                                         <span class="comment">// 単位ベクトルを取得</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a4a5354add791fe0bd7741787daabd7d4">GetInversion</a>() <span class="keyword">const</span>;                                         <span class="comment">// 反転したベクトルを取得</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a> <a class="code" href="struct_utility_math_1_1_s___vector4.html#adcb88c63c30f93c5fa6f5d071c3fd772">GetLerp</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; rAnother,                            <span class="comment">// 線形補間した値を取得</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                          <span class="keywordtype">float</span> coefficient) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">/* S_Vector4型との演算子のオーバーロード */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a3cf390a7922e1d24d84130854a2f6973">operator+</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; rAnother) <span class="keyword">const</span>;             <span class="comment">// +演算子のオーバーロード</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a24e1571058d8877aac85cd9bb18bd26b">operator-</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; rAnother) <span class="keyword">const</span>;             <span class="comment">// -演算子のオーバーロード</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a2126fc5e47541b5a0ac0e43a8f19f576">operator*</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; rAnother) <span class="keyword">const</span>;             <span class="comment">// *演算子のオーバーロード</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a> <a class="code" href="struct_utility_math_1_1_s___vector4.html#ab4a85430665aeb93bf03bc8cb9250fb2">operator/</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; rAnother) <span class="keyword">const</span>;             <span class="comment">// /演算子のオーバーロード</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; <a class="code" href="struct_utility_math_1_1_s___vector4.html#a9ec2063dde24aa53a796b3c8353ba0e8">operator+=</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; rAnother);                 <span class="comment">// +=演算子のオーバーロード</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; <a class="code" href="struct_utility_math_1_1_s___vector4.html#ab4b1270cb1b9731801afec6ca25dc804">operator-=</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; rAnother);                 <span class="comment">// -=演算子のオーバーロード</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; <a class="code" href="struct_utility_math_1_1_s___vector4.html#abc7763bfff7b72665d4ec261017c3b75">operator*=</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; rAnother);                 <span class="comment">// *=演算子のオーバーロード</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; <a class="code" href="struct_utility_math_1_1_s___vector4.html#a55118015a0afa1f59f5001c08443535f">operator/=</a>(<span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; rAnother);                 <span class="comment">// /=演算子のオーバーロード</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">/* float型との演算子のオーバーロード */</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a2126fc5e47541b5a0ac0e43a8f19f576">operator*</a>(<span class="keywordtype">float</span> value) <span class="keyword">const</span>;                           <span class="comment">// *演算子のオーバーロード</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a> <a class="code" href="struct_utility_math_1_1_s___vector4.html#ab4a85430665aeb93bf03bc8cb9250fb2">operator/</a>(<span class="keywordtype">float</span> value) <span class="keyword">const</span>;                           <span class="comment">// /演算子のオーバーロード</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; <a class="code" href="struct_utility_math_1_1_s___vector4.html#abc7763bfff7b72665d4ec261017c3b75">operator*=</a>(<span class="keywordtype">float</span> value);                               <span class="comment">// *=演算子のオーバーロード</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>&amp; <a class="code" href="struct_utility_math_1_1_s___vector4.html#a55118015a0afa1f59f5001c08443535f">operator/=</a>(<span class="keywordtype">float</span> value);                               <span class="comment">// /=演算子のオーバーロード</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">        #pragma region float型とのフレンド演算子のオーバーロード</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">/*************************************************************/</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___vector4.html#a9a0b37a76c502c51ceb7b037a60fb7ef">  101</a></span>&#160;        <span class="keyword">friend</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html">S_Vector4</a> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a9a0b37a76c502c51ceb7b037a60fb7ef">operator*</a>(<span class="keywordtype">float</span> value,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                   <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html">S_Vector4</a>&amp; rVector)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>(rVector.<a class="code" href="struct_utility_math_1_1_s___vector4.html#aebc1968e6b21c8cb39926b4cd0b67290">x_</a> * value,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                             rVector.<a class="code" href="struct_utility_math_1_1_s___vector4.html#a8d0854707a32ba2589618c0391aa5672">y_</a> * value,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                             rVector.<a class="code" href="struct_utility_math_1_1_s___vector4.html#ae3c28fa10dd695ab1052228d7cb5e62b">z_</a> * value,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                             rVector.<a class="code" href="struct_utility_math_1_1_s___vector4.html#a70852ac2d428ebd04c26a3382598605a">w_</a> * value);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="comment">/*************************************************************/</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="struct_utility_math_1_1_s___vector4.html#a79d0e4a94c45df832fbbdeab32349a63">  119</a></span>&#160;        <span class="keyword">friend</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html">S_Vector4</a> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a79d0e4a94c45df832fbbdeab32349a63">operator/</a>(<span class="keywordtype">float</span> value,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                   <span class="keyword">const</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html">S_Vector4</a>&amp; rVector)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            assert(value != 0.0f);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">S_Vector4</a>(rVector.<a class="code" href="struct_utility_math_1_1_s___vector4.html#aebc1968e6b21c8cb39926b4cd0b67290">x_</a> / value,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                             rVector.<a class="code" href="struct_utility_math_1_1_s___vector4.html#a8d0854707a32ba2589618c0391aa5672">y_</a> / value,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                             rVector.<a class="code" href="struct_utility_math_1_1_s___vector4.html#ae3c28fa10dd695ab1052228d7cb5e62b">z_</a> / value,</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                             rVector.<a class="code" href="struct_utility_math_1_1_s___vector4.html#a70852ac2d428ebd04c26a3382598605a">w_</a> / value);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">        #pragma endregion</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    };</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;};</div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a8d0854707a32ba2589618c0391aa5672"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a8d0854707a32ba2589618c0391aa5672">UtilityMath::S_Vector4::y_</a></div><div class="ttdeci">float y_</div><div class="ttdoc">Y成分 </div><div class="ttdef"><b>Definition:</b> Vector4.h:33</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a512af6686952a1f41ec62bb05197e917"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a512af6686952a1f41ec62bb05197e917">UtilityMath::S_Vector4::GetNormalize</a></div><div class="ttdeci">S_Vector4 GetNormalize() const </div><div class="ttdoc">単位ベクトルを取得する </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:236</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a8c90a792675b56de6874012be161af46"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a8c90a792675b56de6874012be161af46">UtilityMath::S_Vector4::GetLength</a></div><div class="ttdeci">float GetLength() const </div><div class="ttdoc">長さを取得する </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:194</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a70852ac2d428ebd04c26a3382598605a"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a70852ac2d428ebd04c26a3382598605a">UtilityMath::S_Vector4::w_</a></div><div class="ttdeci">float w_</div><div class="ttdoc">W成分 </div><div class="ttdef"><b>Definition:</b> Vector4.h:35</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a9709107cb5cb6b851b10171d84cb941f"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a9709107cb5cb6b851b10171d84cb941f">UtilityMath::S_Vector4::Zero</a></div><div class="ttdeci">void Zero()</div><div class="ttdoc">ゼロベクトル化する </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:124</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a79d0e4a94c45df832fbbdeab32349a63"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a79d0e4a94c45df832fbbdeab32349a63">UtilityMath::S_Vector4::operator/</a></div><div class="ttdeci">friend S_Vector4 operator/(float value, const S_Vector4 &amp;rVector)</div><div class="ttdoc">float型の値とベクトルを除算する </div><div class="ttdef"><b>Definition:</b> Vector4.h:119</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_ae2217b90517889b276dd59214977aab8"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#ae2217b90517889b276dd59214977aab8">UtilityMath::S_Vector4::vector_</a></div><div class="ttdeci">S_Vector3 vector_</div><div class="ttdoc">3Dベクトル </div><div class="ttdef"><b>Definition:</b> Vector4.h:48</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a12d4cea0b825609ee5f9c99622cb69c1"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a12d4cea0b825609ee5f9c99622cb69c1">UtilityMath::S_Vector4::green_</a></div><div class="ttdeci">float green_</div><div class="ttdoc">緑 </div><div class="ttdef"><b>Definition:</b> Vector4.h:41</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_aff048411beddba4eb8b18be4ef45c8a9"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#aff048411beddba4eb8b18be4ef45c8a9">UtilityMath::S_Vector4::GetDotProduct</a></div><div class="ttdeci">float GetDotProduct(const S_Vector4 &amp;rAnother) const </div><div class="ttdoc">もう一つのベクトルとの内積を取得する </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:220</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a4a5354add791fe0bd7741787daabd7d4"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a4a5354add791fe0bd7741787daabd7d4">UtilityMath::S_Vector4::GetInversion</a></div><div class="ttdeci">S_Vector4 GetInversion() const </div><div class="ttdoc">反転したベクトルを取得する </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:255</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a2126fc5e47541b5a0ac0e43a8f19f576"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a2126fc5e47541b5a0ac0e43a8f19f576">UtilityMath::S_Vector4::operator*</a></div><div class="ttdeci">const S_Vector4 operator*(const S_Vector4 &amp;rAnother) const </div><div class="ttdoc">もう一つのベクトルを乗算したベクトルを求める </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:327</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_ab4b1270cb1b9731801afec6ca25dc804"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#ab4b1270cb1b9731801afec6ca25dc804">UtilityMath::S_Vector4::operator-=</a></div><div class="ttdeci">const S_Vector4 &amp; operator-=(const S_Vector4 &amp;rAnother)</div><div class="ttdoc">もう一つのベクトルで減算する </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:382</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_ada232e31476ac5c2b899f0a9c7060381"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#ada232e31476ac5c2b899f0a9c7060381">UtilityMath::S_Vector4::red_</a></div><div class="ttdeci">float red_</div><div class="ttdoc">赤 </div><div class="ttdef"><b>Definition:</b> Vector4.h:40</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a664c71bf79d10ed3e4f60928eb4573b9"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a664c71bf79d10ed3e4f60928eb4573b9">UtilityMath::S_Vector4::v_</a></div><div class="ttdeci">float v_[4]</div><div class="ttdoc">4つの要素を持つ配列 </div><div class="ttdef"><b>Definition:</b> Vector4.h:28</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_af61b093a822af845d5bdbf622343c775"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#af61b093a822af845d5bdbf622343c775">UtilityMath::S_Vector4::Normalize</a></div><div class="ttdeci">void Normalize()</div><div class="ttdoc">単位ベクトル化する </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:156</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html">UtilityMath::S_Vector4</a></div><div class="ttdoc">ベクター4 </div><div class="ttdef"><b>Definition:</b> Vector4.h:23</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_abc7763bfff7b72665d4ec261017c3b75"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#abc7763bfff7b72665d4ec261017c3b75">UtilityMath::S_Vector4::operator*=</a></div><div class="ttdeci">const S_Vector4 &amp; operator*=(const S_Vector4 &amp;rAnother)</div><div class="ttdoc">もう一つのベクトルを乗算する </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:400</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a07f0752f73c9727646614ab1287d6fe2"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a07f0752f73c9727646614ab1287d6fe2">UtilityMath::S_Vector4::S_Vector4</a></div><div class="ttdeci">S_Vector4()</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:12</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_af291691d126f1e9a3731e24b49a1a3a6"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#af291691d126f1e9a3731e24b49a1a3a6">UtilityMath::S_Vector4::blue_</a></div><div class="ttdeci">float blue_</div><div class="ttdoc">青 </div><div class="ttdef"><b>Definition:</b> Vector4.h:42</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a3cf390a7922e1d24d84130854a2f6973"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a3cf390a7922e1d24d84130854a2f6973">UtilityMath::S_Vector4::operator+</a></div><div class="ttdeci">const S_Vector4 operator+(const S_Vector4 &amp;rAnother) const </div><div class="ttdoc">もう一つのベクトルを加算したベクトルを求める </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:295</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a47dd51926af8a121291ec7cb57ce2473"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a47dd51926af8a121291ec7cb57ce2473">UtilityMath::S_Vector4::GetLengthSquare</a></div><div class="ttdeci">float GetLengthSquare() const </div><div class="ttdoc">長さの2乗を取得する </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:207</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a24e1571058d8877aac85cd9bb18bd26b"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a24e1571058d8877aac85cd9bb18bd26b">UtilityMath::S_Vector4::operator-</a></div><div class="ttdeci">const S_Vector4 operator-(const S_Vector4 &amp;rAnother) const </div><div class="ttdoc">もう一つのベクトルで減算したベクトルを求める </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:311</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_ac598edb697a77cc5f21479ebf6c5b6ba"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#ac598edb697a77cc5f21479ebf6c5b6ba">UtilityMath::S_Vector4::~S_Vector4</a></div><div class="ttdeci">~S_Vector4()</div><div class="ttdoc">デストラクタ </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:112</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector3_html"><div class="ttname"><a href="struct_utility_math_1_1_s___vector3.html">UtilityMath::S_Vector3</a></div><div class="ttdoc">ベクター3 </div><div class="ttdef"><b>Definition:</b> Vector3.h:19</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a9ec2063dde24aa53a796b3c8353ba0e8"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a9ec2063dde24aa53a796b3c8353ba0e8">UtilityMath::S_Vector4::operator+=</a></div><div class="ttdeci">const S_Vector4 &amp; operator+=(const S_Vector4 &amp;rAnother)</div><div class="ttdoc">もう一つのベクトルを加算する </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:364</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_aebc1968e6b21c8cb39926b4cd0b67290"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#aebc1968e6b21c8cb39926b4cd0b67290">UtilityMath::S_Vector4::x_</a></div><div class="ttdeci">float x_</div><div class="ttdoc">X成分 </div><div class="ttdef"><b>Definition:</b> Vector4.h:32</div></div>
+<div class="ttc" id="_vector3_8h_html"><div class="ttname"><a href="_vector3_8h.html">Vector3.h</a></div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_acb7200d878476eea9afd513a840d3c78"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#acb7200d878476eea9afd513a840d3c78">UtilityMath::S_Vector4::Inversion</a></div><div class="ttdeci">void Inversion()</div><div class="ttdoc">ベクトルを反転する </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:178</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_ab4a85430665aeb93bf03bc8cb9250fb2"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#ab4a85430665aeb93bf03bc8cb9250fb2">UtilityMath::S_Vector4::operator/</a></div><div class="ttdeci">const S_Vector4 operator/(const S_Vector4 &amp;rAnother) const </div><div class="ttdoc">もう一つのベクトルで除算したベクトルを求める </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:343</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_ae3c28fa10dd695ab1052228d7cb5e62b"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#ae3c28fa10dd695ab1052228d7cb5e62b">UtilityMath::S_Vector4::z_</a></div><div class="ttdeci">float z_</div><div class="ttdoc">Z成分 </div><div class="ttdef"><b>Definition:</b> Vector4.h:34</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a9a0b37a76c502c51ceb7b037a60fb7ef"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a9a0b37a76c502c51ceb7b037a60fb7ef">UtilityMath::S_Vector4::operator*</a></div><div class="ttdeci">friend S_Vector4 operator*(float value, const S_Vector4 &amp;rVector)</div><div class="ttdoc">float型の値とベクトルを乗算する </div><div class="ttdef"><b>Definition:</b> Vector4.h:101</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a8237e58d2a1855bf3053223efc30ebc2"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a8237e58d2a1855bf3053223efc30ebc2">UtilityMath::S_Vector4::alpha_</a></div><div class="ttdeci">float alpha_</div><div class="ttdoc">アルファ </div><div class="ttdef"><b>Definition:</b> Vector4.h:43</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_adcb88c63c30f93c5fa6f5d071c3fd772"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#adcb88c63c30f93c5fa6f5d071c3fd772">UtilityMath::S_Vector4::GetLerp</a></div><div class="ttdeci">S_Vector4 GetLerp(const S_Vector4 &amp;rAnother, float coefficient) const </div><div class="ttdoc">もう一つのベクトルと線形補間した値を取得する </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:269</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a55118015a0afa1f59f5001c08443535f"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a55118015a0afa1f59f5001c08443535f">UtilityMath::S_Vector4::operator/=</a></div><div class="ttdeci">const S_Vector4 &amp; operator/=(const S_Vector4 &amp;rAnother)</div><div class="ttdoc">もう一つのベクトルで除算する </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:418</div></div>
+<div class="ttc" id="struct_utility_math_1_1_s___vector4_html_a806ece88a8210a56fb60aa3279997a4a"><div class="ttname"><a href="struct_utility_math_1_1_s___vector4.html#a806ece88a8210a56fb60aa3279997a4a">UtilityMath::S_Vector4::Fill</a></div><div class="ttdeci">void Fill(float value)</div><div class="ttdoc">各成分を特定の値に変更する </div><div class="ttdef"><b>Definition:</b> Vector4.cpp:140</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年07月19日(土) 16時29分50秒作成 - OpenGL_Framework / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

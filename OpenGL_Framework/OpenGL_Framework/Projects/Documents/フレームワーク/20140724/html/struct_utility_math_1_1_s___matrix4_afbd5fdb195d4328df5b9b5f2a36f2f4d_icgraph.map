@@ -1,0 +1,4 @@
+<map id="UtilityMath::S_Matrix4::Transpose" name="UtilityMath::S_Matrix4::Transpose">
+<area shape="rect" id="node2" href="$struct_utility_math_1_1_s___matrix4.html#a844d2c8ca822471c86e75913a83fc6e7" title="転置行列を取得する " alt="" coords="204,5,355,47"/>
+<area shape="rect" id="node3" href="$struct_utility_math_1_1_s___quaternion.html#a8322aa9b3e3b3fc67eed21b03f9a7d63" title="4 * 4の行列からクォータニオンへ変換し、取得する " alt="" coords="403,5,605,47"/>
+</map>

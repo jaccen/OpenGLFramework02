@@ -1,0 +1,5 @@
+<map id="クラス階層図" name="クラス階層図">
+<area shape="rect" id="node1" href="$class_i_c___framework.html" title="フレームワーク( インターフェース ) " alt="" coords="5,5,111,32"/>
+<area shape="rect" id="node2" href="$class_c___framework.html" title="フレームワーク " alt="" coords="159,5,261,32"/>
+<area shape="rect" id="node3" href="$class_c___test_game.html" title="テストゲーム " alt="" coords="309,5,408,32"/>
+</map>

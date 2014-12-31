@@ -1,0 +1,5 @@
+<map id="C_MouseManager::SetWheelScrollVertical" name="C_MouseManager::SetWheelScrollVertical">
+<area shape="rect" id="node2" href="$class_c___event_manager.html#ad1eb3cc25c3608ca73415531cfec10ef" title="イベントの更新処理を行う " alt="" coords="245,13,415,39"/>
+<area shape="rect" id="node3" href="$class_c___framework.html#a0d68de266751555a74db197ea90df219" title="ライブラリの更新処理を行う " alt="" coords="463,13,613,39"/>
+<area shape="rect" id="node4" href="$class_c___framework.html#a3cf73a67b3bdacf785b58b0a3573a60c" title="ゲームの実行処理を行う " alt="" coords="661,13,795,39"/>
+</map>
