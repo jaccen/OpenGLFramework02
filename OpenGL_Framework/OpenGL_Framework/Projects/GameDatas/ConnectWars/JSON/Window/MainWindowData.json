@@ -1,0 +1,16 @@
+{
+  "MainWindowData" :
+  {
+    "Title" : "ConnectWars",
+    "Size" :
+    {
+      "Width" : 1024,
+      "Height" : 768
+    },
+    "CreateFlag" :
+    {
+      "Resizeable" : false,
+      "FullScreen" : false
+    }
+  }
+}

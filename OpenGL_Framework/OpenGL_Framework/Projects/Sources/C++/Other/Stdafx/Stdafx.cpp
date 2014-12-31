@@ -1,0 +1,2 @@
+/* ヘッダファイル */
+#include "Stdafx.h"
