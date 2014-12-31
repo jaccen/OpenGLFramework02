@@ -1,0 +1,29 @@
+{
+  "OpenGLData" :
+  {
+    "Version" :
+    {
+      "Major" : 4,
+      "Minor" : 0
+    },
+    "Buffer" :
+    {
+      "Color" :
+      {
+        "Red" : 8,
+        "Green" : 8,
+        "Blue" : 8,
+        "Alpha" : 8
+      },
+      "Depth" : 24,
+      "Stencil" : 8
+    },
+    "MultiSample" :
+    {
+      "UseFlag" : true,
+      "SampleNumber" : 4
+    },
+    "UseSwapIntervalFlag" : false,
+    "UseShareRenderingContextFlag" : true
+  }
+}

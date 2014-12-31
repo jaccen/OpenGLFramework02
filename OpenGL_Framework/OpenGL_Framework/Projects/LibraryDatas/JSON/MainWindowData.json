@@ -1,0 +1,16 @@
+{
+  "MainWindowData" :
+  {
+    "Title" : "OpenGL_Framework",
+    "Size" :
+    {
+      "Width" : 640,
+      "Height" : 480
+    },
+    "CreateFlag" :
+    {
+      "Resizeable" : false,
+      "FullScreen" : false
+    }
+  }
+}
