@@ -24,11 +24,12 @@ namespace Input
         /* スティック */
         namespace Stick
         {
-            static const int32_t s_DEAD_ZONE;                               ///< @brief 遊び値
-            static const int32_t s_PUSH_MAXIMUM;                            ///< @brief 倒し具合の最大数
-            static const int32_t s_PUSH_MINIMUM;                            ///< @brief 倒し具合の最初値
+            static const int32_t s_DEAD_ZONE = 8500;                        ///< @brief 遊び値
+            static const int32_t s_PUSH_MAXIMUM = 32700;                    ///< @brief 倒し具合の最大数
+            static const int32_t s_PUSH_MINIMUM = -32700;                   ///< @brief 倒し具合の最初値
         }
     }
+
 
     //-------------------------------------------------------------
     //!
@@ -74,12 +75,12 @@ namespace Input
         virtual ~C_Gamepad();                                               // デストラクタ
         virtual void Update() = 0;                                          // 更新処理
         void Finalize();                                                    // 終了処理
-        int GetButtonPressingCount(eButton button) const;                   // ボタンの押しているフレーム数を取得
-        int GetButtonReleasingCount(eButton button) const;                  // ボタンの離しているフレーム数を取得
-        int GetStickXComponent(eStick stick) const;                         // スティックのX成分を取得
-        int GetStickYComponent(eStick stick) const;                         // スティックのY成分を取得
-        int GetStickPushingCount(eStick stick) const;                       // スティックを倒しているフレーム数を取得
-        int GetStickReleasingCount(eStick stick) const;                     // スティックを倒していないフレーム数を取得
+        int32_t GetButtonPressingCount(eButton button) const;               // ボタンの押しているフレーム数を取得
+        int32_t GetButtonReleasingCount(eButton button) const;              // ボタンの離しているフレーム数を取得
+        int32_t GetStickXComponent(eStick stick) const;                     // スティックのX成分を取得
+        int32_t GetStickYComponent(eStick stick) const;                     // スティックのY成分を取得
+        int32_t GetStickPushingCount(eStick stick) const;                   // スティックを倒しているフレーム数を取得
+        int32_t GetStickReleasingCount(eStick stick) const;                 // スティックを倒していないフレーム数を取得
     protected:
         GamepadData* pGamepad_ = nullptr;                                   ///< @brief ゲームパッド
         std::array<int32_t, BUTTON_TOTAL_NUMBER> buttonPressingCounts_;     ///< @brief ボタンを押しているフレーム数のカウンタ

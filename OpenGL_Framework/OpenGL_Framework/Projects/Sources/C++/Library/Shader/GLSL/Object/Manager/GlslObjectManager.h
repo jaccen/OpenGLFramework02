@@ -24,10 +24,6 @@ namespace Shader
     //-------------------------------------------------------------
     namespace GLSL
     {
-        /* 別名 */
-        using GlslObjectPtr = std::shared_ptr<C_GlslObject>;                                        // GlslObjectPtr型
-
-
         //-------------------------------------------------------------
         //!
         //! @brief GLSLオブジェクトマネージャー

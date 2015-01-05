@@ -1,9 +1,9 @@
 /* ヘッダファイル */
-#include "FrameworkImpl.h"
+#include "Framework.h"
 #include "../SDL/SdlManager.h"
 #include "../Window/Manager/WindowManager.h"
 #include "../Event/Manager/EventManager.h"
-#include "../Timer/TimeManager.h"
+#include "../Timer/Manager/TimeManager.h"
 #include "../JSON/JsonObject.h"
 #include "../OpenGL/Manager/OpenGlManager.h"
 #include "../Input/Keyboard/KeyboardManager.h"
@@ -13,6 +13,7 @@
 #include "../Texture/Manager/TextureManager.h"
 #include "../Debug/String/DebugString.h"
 #include "../Camera/Manager/CameraManager.h"
+#include "../Figure/FigureDrawer.h"
 
 
 /* マクロ定義 */
@@ -32,6 +33,7 @@
 namespace Framework
 {
     /* プロトタイプ宣言 */
+    static bool s_CommonInitialize(const Window::WindowPtr& prMainWindow);
     static bool s_InitializeMainWindowWithJsonFile(Window::C_BaseWindow* pMainWindow,
                                                    const std::string& rFilePath);
 
@@ -39,13 +41,13 @@ namespace Framework
     /*************************************************************//**
      *
      *  @brief  コンストラクタ
-     *  @param  なし
+     *  @param  ゲーム
      *
      ****************************************************************/
     C_Framework::C_Framework(C_Framework* pGame) :
 
-        // 実装情報
-        upImpl_(std::make_unique<C_FrameworkImpl>(pGame))
+        // ゲーム
+        pGame_(pGame)
 
     {
     }
@@ -76,24 +78,24 @@ namespace Framework
         FirstProcess();
 
         // 初期化処理
-        if (upImpl_->GetGame()->Initialize() == false) return false;
+        if (pGame_->Initialize() == false) return false;
 
         /* メインループ */
         while (Event::C_EventManager::s_GetInstance()->IsFinishFlag() == false)
         {
             // 更新処理
-            if (upImpl_->GetGame()->Update() == false) break;
+            if (pGame_->Update() == false) break;
 
             // 描画フラグが立っている場合は描画処理と画面の更新を行う
             if (Timer::C_TimeManager::s_GetInstance()->IsDrawFlag() == true)
             {
-                upImpl_->GetGame()->Draw();
-                upImpl_->GetGame()->UpdateScreen();
+                pGame_->Draw();
+                pGame_->UpdateScreen();
             }
         }
 
         // 終了処理
-        upImpl_->GetGame()->Finalize();
+        pGame_->Finalize();
 
         return true;
     }
@@ -121,26 +123,8 @@ namespace Framework
         // OpenGLマネージャーの初期化処理
         if (OpenGL::C_OpenGlManager::s_GetInstance()->Initialize(*pMainWindow) == false) return false;
 
-        // イベントマネージャーの初期化処理
-        Event::C_EventManager::s_GetInstance()->Initialize(*pMainWindow);
-
-        // タイムネージャーの初期化処理
-        Timer::C_TimeManager::s_GetInstance()->Initialize();
-
-        // キーボードマネージャーの初期化処理
-        Input::C_KeyboardManager::s_GetInstance()->Initialize();
-
-        // ゲームパッドマネージャーの初期化処理
-        Input::C_GamepadManager::s_GetInstance()->Initialize();
-
-        // サウンドマネージャーの初期化処理
-        if (Sound::C_SoundManager::s_GetInstance()->Initialize() == false) return false;
-
-        // フォントマネージャーの初期化処理
-        if (Font::C_FontManager::s_GetInstance()->Initialize() == false) return false;
-
-        // デバッグ文字列の初期化処理
-        if (Debug::C_DebugString::s_GetInstance()->Initialize() == false) return false;
+        // 共通部分の初期化処理
+        if (s_CommonInitialize(pMainWindow) == false) return false;
 
         return true;
     }
@@ -176,26 +160,8 @@ namespace Framework
             return false;
         }
 
-        // イベントマネージャーの初期化処理
-        Event::C_EventManager::s_GetInstance()->Initialize(*pMainWindow);
-
-        // タイムネージャーの初期化処理
-        Timer::C_TimeManager::s_GetInstance()->Initialize();
-
-        // キーボードマネージャーの初期化処理
-        Input::C_KeyboardManager::s_GetInstance()->Initialize();
-
-        // ゲームパッドマネージャーの初期化処理
-        Input::C_GamepadManager::s_GetInstance()->Initialize();
-
-        // サウンドマネージャーの初期化処理
-        if (Sound::C_SoundManager::s_GetInstance()->Initialize() == false) return false;
-        
-        // フォントマネージャーの初期化処理
-        if (Font::C_FontManager::s_GetInstance()->Initialize() == false) return false;
-
-        // デバッグ文字列の初期化処理
-        if (Debug::C_DebugString::s_GetInstance()->Initialize() == false) return false;
+        // 共通部分の初期化処理
+        if (s_CommonInitialize(pMainWindow) == false) return false;
 
         return true;
     }
@@ -269,7 +235,10 @@ namespace Framework
      ****************************************************************/
     void C_Framework::Finalize()
     {
-        // デバッグ文字列の終了処理
+        // フィギュアドロワーの終了処理
+        Figure::C_FigureDrawer::s_GetInstance()->Finalize();
+
+        // デバッグストリングの終了処理
         Debug::C_DebugString::s_GetInstance()->Finalize();
 
         // テクスチャを全て破棄
@@ -312,6 +281,44 @@ namespace Framework
 
         // メモリーリークが発生した位置を検知してくれる関数( 引数にメモリーリークした番号を入れる )
         //_CrtSetBreakAlloc(152);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  共通部分の初期化処理を行う
+     *  @param  メインウィンドウ
+     *  @return 正常終了：true
+     *  @return 以上終了：false
+     *
+     ****************************************************************/
+    bool s_CommonInitialize(const Window::WindowPtr& prMainWindow)
+    {
+        // イベントマネージャーの初期化処理
+        Event::C_EventManager::s_GetInstance()->Initialize(*prMainWindow);
+
+        // タイムネージャーの初期化処理
+        Timer::C_TimeManager::s_GetInstance()->Initialize();
+
+        // キーボードマネージャーの初期化処理
+        Input::C_KeyboardManager::s_GetInstance()->Initialize();
+
+        // ゲームパッドマネージャーの初期化処理
+        Input::C_GamepadManager::s_GetInstance()->Initialize();
+
+        // サウンドマネージャーの初期化処理
+        if (Sound::C_SoundManager::s_GetInstance()->Initialize() == false) return false;
+
+        // フォントマネージャーの初期化処理
+        if (Font::C_FontManager::s_GetInstance()->Initialize() == false) return false;
+
+        // デバッグストリングの初期化処理
+        if (Debug::C_DebugString::s_GetInstance()->Initialize() == false) return false;
+
+        // フィギュアドロワーの初期化処理
+        if (Figure::C_FigureDrawer::s_GetInstance()->Initialize() == false) return false;
+
+        return true;
     }
 
 

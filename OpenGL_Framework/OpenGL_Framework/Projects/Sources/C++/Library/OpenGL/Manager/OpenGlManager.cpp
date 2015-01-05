@@ -338,6 +338,19 @@ namespace OpenGL
 
     /*************************************************************//**
      *
+     *  @brief  シェーダープログラムでの点のサイズを有効化する
+     *  @param  有効か判断するフラグ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_OpenGlManager::EnableShaderProgramPointSize(bool validFlag)
+    {
+        (validFlag == true) ? ::glEnable(GL_PROGRAM_POINT_SIZE) : ::glDisable(GL_PROGRAM_POINT_SIZE);
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  ブレンドの関数の設定を行う
      *  @param  新しい色の要素
      *  @param  現在の色の要素
@@ -412,5 +425,117 @@ namespace OpenGL
                                             FaceEnum face)
     {
         glStencilOpSeparate(face, stencilFail, stencilPassAndDepthFail, stencilPassAndDepthPass);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  プリミティブの描画を行う
+     *  @param  プリミティブの種類
+     *  @param  頂点配列オブジェクトハンドル
+     *  @param  頂点数
+     *  @param  描画を開始する最初の頂点番号
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_OpenGlManager::DrawPrimitive(PrimitiveEnum primitive,
+                                        VertexArrayObjectHandle vertexArrayObjectHandle,
+                                        int32_t vertexCount,
+                                        int32_t firstVertexNumber)
+    {
+        assert(vertexArrayObjectHandle != 0);
+
+        glBindVertexArray(vertexArrayObjectHandle);
+        ::glDrawArrays(primitive, firstVertexNumber, vertexCount);
+        glBindVertexArray(0);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  プリミティブのインスタンシング描画を行う
+     *  @param  プリミティブの種類
+     *  @param  頂点配列オブジェクトハンドル
+     *  @param  頂点数
+     *  @param  インスタンス数
+     *  @param  描画を開始する最初の頂点番号
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_OpenGlManager::DrawPrimitiveInstanced(PrimitiveEnum primitive,
+                                                 VertexArrayObjectHandle vertexArrayObjectHandle,
+                                                 int32_t vertexCount,
+                                                 int32_t instanceCount,
+                                                 int32_t firstVertexNumber)
+    {
+        assert(vertexArrayObjectHandle != 0);
+
+        glBindVertexArray(vertexArrayObjectHandle);
+        ::glDrawArraysInstanced(primitive, firstVertexNumber, vertexCount, instanceCount);
+        glBindVertexArray(0);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  インデックスを用いてプリミティブの描画を行う
+     *  @param  プリミティブの種類
+     *  @param  頂点配列オブジェクトハンドル
+     *  @param  インデックスバッファオブジェクトハンドル
+     *  @param  インデックスのデータ型
+     *  @param  インデックス数
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_OpenGlManager::DrawPrimitiveWithIndices(PrimitiveEnum primitive,
+                                                   VertexArrayObjectHandle vertexArrayObjectHandle,
+                                                   IndexBufferObjenctHandle indexBufferObjectHandle,
+                                                   DataEnum indexDataType,
+                                                   int32_t indexCount)
+    {
+        assert(vertexArrayObjectHandle != 0);
+        assert(indexBufferObjectHandle != 0);
+        
+        glBindVertexArray(vertexArrayObjectHandle);
+        glBindBuffer(Buffer::s_INDEX, indexBufferObjectHandle);
+
+        const int32_t NO_USE_RAW_DATA_INDICES = 0;
+        ::glDrawElements(primitive, indexCount, indexDataType, reinterpret_cast<GLubyte*>(NO_USE_RAW_DATA_INDICES));
+
+        glBindBuffer(Buffer::s_INDEX, 0);
+        glBindVertexArray(0);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  インデックスを用いてプリミティブの描画を行う
+     *  @param  プリミティブの種類
+     *  @param  頂点配列オブジェクトハンドル
+     *  @param  インデックスバッファオブジェクトハンドル
+     *  @param  インデックスのデータ型
+     *  @param  インデックス数
+     *  @param  インスタンス数
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_OpenGlManager::DrawPrimitiveInstancedWithIndices(PrimitiveEnum primitive,
+                                                            VertexArrayObjectHandle vertexArrayObjectHandle,
+                                                            IndexBufferObjenctHandle indexBufferObjectHandle,
+                                                            DataEnum indexDataType,
+                                                            int32_t indexCount,
+                                                            int32_t instanceCount)
+    {
+        assert(vertexArrayObjectHandle != 0);
+        assert(indexBufferObjectHandle != 0);
+        
+        glBindVertexArray(vertexArrayObjectHandle);
+        glBindBuffer(Buffer::s_INDEX, indexBufferObjectHandle);
+
+        const int32_t NO_USE_RAW_DATA_INDICES = 0;
+        ::glDrawElementsInstanced(primitive, indexCount, indexDataType, reinterpret_cast<GLubyte*>(NO_USE_RAW_DATA_INDICES), instanceCount);
+
+        glBindBuffer(Buffer::s_INDEX, 0);
+        glBindVertexArray(0);
     }
 }

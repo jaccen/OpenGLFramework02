@@ -64,7 +64,7 @@ namespace Memory
                     pCurrent->lineNumber_ = lineNumber;
                     pCurrent->usePoolFlag_ = true;
 
-                    return static_cast<void*>(static_cast<char*>(pAllocPointer)+memoryListSize);
+                    return static_cast<void*>(static_cast<char*>(pAllocPointer) + memoryListSize);
                 }
             }
 

@@ -3,6 +3,11 @@
 #include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
 #include "../../Library/Texture/Manager/TextureManager.h"
 #include "../../Library/Math/Define/MathDefine.h"
+#include "../../Library/Figure/FigureDrawer.h"
+#include "../../Library/OpenGL/Manager/OpenGlManager.h"
+#include "../../Library/View/ViewHelper.h"
+#include "../../Library/Camera/Camera/Perspective/Test/TestCamera.h"
+
 
 //-------------------------------------------------------------
 //!
@@ -44,10 +49,10 @@ namespace ConnectWars
      ****************************************************************/
     Scene::ecSceneReturn C_TitleScene::Initialize()
     {
-        spCamera_ = std::make_shared<Camera::C_PerspectiveCamera>();
+        spCamera_ = std::make_shared<Camera::C_TestCamera>();
         spCamera_->SetEyePoint(Camera::Vector3(0.0f, 0.0f, 10.0f));
         spCamera_->SetTargetPoint(Camera::Vector3(0.0f, 0.0f, 0.0f));
-        spCamera_->SetFieldOfViewY(Math::s_PI_DIVISION4);
+        spCamera_->SetFieldOfViewY(static_cast<float>(Math::s_PI_DIVISION4));
         spCamera_->SetNearClippingPlane(1.0f);
         spCamera_->SetFarClippingPlane(1000.0f);
         spCamera_->SetUpVector(Camera::Vector3::s_UP_DIRECTION);
@@ -72,6 +77,8 @@ namespace ConnectWars
      ****************************************************************/
     Scene::ecSceneReturn C_TitleScene::Update()
     {
+        spCamera_->Update();
+
         return Scene::ecSceneReturn::CONTINUATIOIN;
     }
 
@@ -95,10 +102,14 @@ namespace ConnectWars
             if (wpParticleSystem.expired() == false)
             {
                 auto pParticleSystem = wpParticleSystem.lock();
-                pParticleSystem->Entry(60, Particle::Vector3(1.0f, 1.0f, 0.0f),  Particle::Vector3(0.0f, 0.05f, 0.0f),  Particle::Vector3(),  Particle::Vector3(), 1.57f, -1.57f);
+                
+                pParticleSystem->Entry(600, Particle::Vector3(1.0f, 1.0f, 0.0f),  Particle::Vector3(0.0f, 0.05f, 0.0f),  Particle::Vector3(),  Particle::Vector3());
                 // pParticleSystem->SetExternalPower(Particle::Vector3(0.001f, 0.0f, 0.0f));
             }
         }
+        
+        View::C_ViewHelper::s_DrawGrid(5.0f, 1.0f, 11, View::Vector4(1.0f, 1.0f, 1.0f, 0.1f), spCamera_->GetViewProjectionMatrix());
+        View::C_ViewHelper::s_DrawAxis(50.0f, spCamera_->GetViewProjectionMatrix());
     }
 
 

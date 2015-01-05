@@ -106,15 +106,12 @@ namespace Physics
     void C_PhysicsEngine::C_PhysicsEngineImpl::Initialize(const Vector3& rGravity,
                                                           float airDensity)
     {
-        // 重力
-        btVector3 gravity(0.0f, Default::s_GRAVITY, 0.0f);
-
         // ソフトボディ情報を設定
         upSoftBodyInfo_.reset(CreateSoftBodyInfo());
         upSoftBodyInfo_->m_dispatcher = upDispatcher_.get();
         upSoftBodyInfo_->m_broadphase = upBroadphase_.get();
-        upSoftBodyInfo_->m_gravity = gravity;
-        upSoftBodyInfo_->air_density = Default::s_AIR_DENSITY;
+        upSoftBodyInfo_->m_gravity = rGravity;
+        upSoftBodyInfo_->air_density = airDensity;
         upSoftBodyInfo_->water_density = 0.0f;
         upSoftBodyInfo_->water_offset = 0.0f;
         upSoftBodyInfo_->water_normal = btVector3(0.0f, 0.0f, 0.0f);
@@ -122,7 +119,7 @@ namespace Physics
 
         // ワールドの設定
         upWorld_->setDebugDrawer(nullptr);
-        upWorld_->setGravity(gravity);
+        upWorld_->setGravity(rGravity);
     }
 
 

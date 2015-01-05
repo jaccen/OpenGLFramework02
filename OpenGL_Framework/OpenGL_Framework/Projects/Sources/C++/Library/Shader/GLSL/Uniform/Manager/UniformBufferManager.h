@@ -4,6 +4,7 @@
 
 /* ヘッダファイル */
 #include "../../../../Singleton/Singleton.h"
+#include "../UniformBuffer.h"
 
 
 //-------------------------------------------------------------
@@ -22,14 +23,6 @@ namespace Shader
     //-------------------------------------------------------------
     namespace GLSL
     {
-        /* 前方宣言 */
-        class C_UniformBuffer;
-
-
-        /* 別名 */
-        using UniformBufferPtr = std::shared_ptr<C_UniformBuffer>;                                      // UniformBufferPtr型
-
-
         //-------------------------------------------------------------
         //!
         //! @brief ユニフォームバッファマネージャー
@@ -40,7 +33,7 @@ namespace Shader
         {
             friend C_Singleton<C_UniformBufferManager>;
         public:
-            void Entry(const UniformBufferPtr& prGlslObject, const std::string& rId);                   // 登録処理
+            void Entry(const UniformBufferPtr& prUniformBuffer, const std::string& rId);                // 登録処理
             void Remove(const std::string& rId);                                                        // 除去処理
             void AllRemove();                                                                           // 全てのユニフォームバッファを除去
             boost::optional<const UniformBufferPtr&> GetUniformBuffer(const std::string& rId) const;    // ユニフォームバッファを取得

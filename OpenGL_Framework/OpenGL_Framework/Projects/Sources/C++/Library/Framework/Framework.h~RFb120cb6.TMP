@@ -1,0 +1,69 @@
+/* 二重インクルード防止 */
+#pragma once
+
+
+//-------------------------------------------------------------
+//!
+//! @brief フレームワーク
+//! @brief フレームワーク関連の名前空間
+//!
+//-------------------------------------------------------------
+namespace Framework
+{
+    /** フレームワークの戻り値 */
+    enum class ecFrameworkReturn
+    {
+        CONTINUATIOIN,                                      ///< @brief 続行
+        SUCCESSFUL,                                         ///< @brief 正常終了
+        ERROR_TERMINATION,                                  ///< @brief エラー終了
+    };
+
+
+    //-------------------------------------------------------------
+    //!
+    //! @brief フレームワーク( インターフェース )
+    //! @brief フレームワークのインターフェース
+    //!
+    //-------------------------------------------------------------
+    class IC_Framework
+    {
+    public:
+        IC_Framework() = default;                           //!< @brief コンストラクタ
+        virtual ~IC_Framework() = default;                  //!< @brief デストラクタ
+        virtual ecFrameworkReturn Run() = 0;                //!< @brief 実行処理
+    };
+
+
+    //-------------------------------------------------------------
+    //!
+    //! @brief フレームワーク
+    //! @brief フレームワークを管理するクラス
+    //! @brief ゲームを作る際にはこのクラスを継承し、
+    //! @brief そのクラス内でこのクラス各処理を利用する
+    //! @brief また、継承したクラスはこのクラスのコンストラクタに
+    //! @brief 自分自身( this )を渡すこと
+    //!
+    //-------------------------------------------------------------
+    class C_Framework : public IC_Framework
+    {
+    public:
+        explicit C_Framework(C_Framework* pGame);                                                                                       // コンストラクタ
+        virtual ~C_Framework() override;                                                                                                // デストラクタ
+        ecFrameworkReturn Run() override final;                                                                                         // 実行処理
+    protected:
+        virtual ecFrameworkReturn Initialize();                                                                                                      // 初期化処理
+        ecFrameworkReturn InitializeWithJsonFile(const std::string& rMainWindowDataFilePath = "Projects/LibraryDatas/JSON/MainWindowData.json",      // JSONファイルで初期化処理
+                                    const std::string& rOpenGlDataFilePath = "Projects/LibraryDatas/JSON/OpenGLData.json");
+        virtual bool Update();                                                                                                          // 更新処理
+        virtual void Draw();                                                                                                            // 描画処理
+        virtual void UpdateScreen();                                                                                                    // 画面の更新
+        virtual void Finalize();                                                                                                        // 終了処理
+    private:
+        /* 前方宣言 */
+        class C_FrameworkImpl;
+
+        std::unique_ptr<C_FrameworkImpl> upImpl_;                                                                                       ///< @brief 実装情報
+
+        virtual void FirstProcess();                                                                                                    // 最初の処理
+    };
+}

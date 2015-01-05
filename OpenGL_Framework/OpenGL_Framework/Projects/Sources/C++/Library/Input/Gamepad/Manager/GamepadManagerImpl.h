@@ -29,12 +29,12 @@ namespace Input
         void Finalize();                                                                                            // 終了処理
 
         /* ゲッター */
-        int GetButtonPressingCount(C_Gamepad::eButton button, eGamepadNumber number) const;                         // ボタンを押しているフレーム数を取得
-        int GetButtonReleasingCount(C_Gamepad::eButton button, eGamepadNumber number) const;                        // ボタンを離しているフレーム数を取得
-        int GetStickXComponent(C_Gamepad::eStick stick, eGamepadNumber number) const;                               // スティックのX成分を取得
-        int GetStickYComponent(C_Gamepad::eStick stick, eGamepadNumber number) const;                               // スティックのY成分を取得
-        int GetStickPushingCount(C_Gamepad::eStick stick, eGamepadNumber number) const;                             // スティックを倒しているフレーム数を取得
-        int GetStickReleasingCount(C_Gamepad::eStick stick, eGamepadNumber number) const;                           // スティックを倒していないフレーム数を取得
+        int32_t GetButtonPressingCount(C_Gamepad::eButton button, eGamepadNumber number) const;                         // ボタンを押しているフレーム数を取得
+        int32_t GetButtonReleasingCount(C_Gamepad::eButton button, eGamepadNumber number) const;                        // ボタンを離しているフレーム数を取得
+        int32_t GetStickXComponent(C_Gamepad::eStick stick, eGamepadNumber number) const;                               // スティックのX成分を取得
+        int32_t GetStickYComponent(C_Gamepad::eStick stick, eGamepadNumber number) const;                               // スティックのY成分を取得
+        int32_t GetStickPushingCount(C_Gamepad::eStick stick, eGamepadNumber number) const;                             // スティックを倒しているフレーム数を取得
+        int32_t GetStickReleasingCount(C_Gamepad::eStick stick, eGamepadNumber number) const;                           // スティックを倒していないフレーム数を取得
     private:
         std::vector<std::unique_ptr<C_Gamepad>> upGamepads_;                                                        ///< @brief ゲームパッド
     };
@@ -169,8 +169,9 @@ namespace Input
      *  @return ボタンを押しているフレーム数
      *
      ****************************************************************/
-    int C_GamepadManager::C_GamepadManagerImpl::GetButtonPressingCount(C_Gamepad::eButton button, eGamepadNumber number) const
+    int32_t C_GamepadManager::C_GamepadManagerImpl::GetButtonPressingCount(C_Gamepad::eButton button, eGamepadNumber number) const
     {
+        if (upGamepads_.size() == 0) return 0;
         return upGamepads_.at(number)->GetButtonPressingCount(button);
     }
 
@@ -183,8 +184,9 @@ namespace Input
      *  @return ボタンを離しているフレーム数
      *
      ****************************************************************/
-    int C_GamepadManager::C_GamepadManagerImpl::GetButtonReleasingCount(C_Gamepad::eButton button, eGamepadNumber number) const
+    int32_t C_GamepadManager::C_GamepadManagerImpl::GetButtonReleasingCount(C_Gamepad::eButton button, eGamepadNumber number) const
     {
+        if (upGamepads_.size() == 0) return 0;
         return upGamepads_.at(number)->GetButtonReleasingCount(button);
     }
 
@@ -197,8 +199,9 @@ namespace Input
      *  @return スティックのX成分
      *
      ****************************************************************/
-    int C_GamepadManager::C_GamepadManagerImpl::GetStickXComponent(C_Gamepad::eStick stick, eGamepadNumber number) const
+    int32_t C_GamepadManager::C_GamepadManagerImpl::GetStickXComponent(C_Gamepad::eStick stick, eGamepadNumber number) const
     {
+        if (upGamepads_.size() == 0) return 0;
         return upGamepads_.at(number)->GetStickXComponent(stick);
     }
 
@@ -211,8 +214,9 @@ namespace Input
      *  @return スティックのY成分
      *
      ****************************************************************/
-    int C_GamepadManager::C_GamepadManagerImpl::GetStickYComponent(C_Gamepad::eStick stick, eGamepadNumber number) const
+    int32_t C_GamepadManager::C_GamepadManagerImpl::GetStickYComponent(C_Gamepad::eStick stick, eGamepadNumber number) const
     {
+        if (upGamepads_.size() == 0) return 0;
         return upGamepads_.at(number)->GetStickYComponent(stick);
     }
 
@@ -225,8 +229,9 @@ namespace Input
      *  @return スティックを倒しているフレーム数
      *
      ****************************************************************/
-    int C_GamepadManager::C_GamepadManagerImpl::GetStickPushingCount(C_Gamepad::eStick stick, eGamepadNumber number) const
+    int32_t C_GamepadManager::C_GamepadManagerImpl::GetStickPushingCount(C_Gamepad::eStick stick, eGamepadNumber number) const
     {
+        if (upGamepads_.size() == 0) return 0;
         return upGamepads_.at(number)->GetStickPushingCount(stick);
     }
 
@@ -239,8 +244,9 @@ namespace Input
      *  @return スティックを倒していないフレーム数
      *
      ****************************************************************/
-    int C_GamepadManager::C_GamepadManagerImpl::GetStickReleasingCount(C_Gamepad::eStick stick, eGamepadNumber number) const
+    int32_t C_GamepadManager::C_GamepadManagerImpl::GetStickReleasingCount(C_Gamepad::eStick stick, eGamepadNumber number) const
     {
+        if (upGamepads_.size() == 0) return 0;
         return upGamepads_.at(number)->GetStickReleasingCount(stick);
     }
 }

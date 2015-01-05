@@ -16,7 +16,7 @@
 namespace Input
 {
     /* ï ñº */
-    using KeyCode = SDL_Scancode;                                   // KeyCodeå^
+    using KeyCode = SDL_Scancode;                                           // KeyCodeå^
 
 
     //-------------------------------------------------------------

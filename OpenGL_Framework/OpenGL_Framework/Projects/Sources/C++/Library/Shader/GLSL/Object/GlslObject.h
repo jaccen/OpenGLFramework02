@@ -44,6 +44,14 @@ namespace Shader
     //-------------------------------------------------------------
     namespace GLSL
     {
+        /* 前方宣言 */
+        class C_GlslObject;
+
+
+        /* 別名 */
+        using GlslObjectPtr = std::shared_ptr<C_GlslObject>;                                        // GlslObjectPtr型
+
+
         //-------------------------------------------------------------
         //!
         //! @brief GLSLオブジェクト
@@ -94,8 +102,10 @@ namespace Shader
                                      int32_t elementCount = 1);
             SubroutineIndex GetSubroutineIndex(TypeEnum type, const std::string& rName);            // サブルーチンのインデックスを取得
             void BindActiveSubroutine(SubroutineIndex index, TypeEnum type);                        // アクティブなサブルーチンをバインド
-            ProgramObjectHandle GetProgramObject() const;                                           // プログラムオブジェクトを取得
+            ProgramObjectHandle GetProgramObjectHandle() const;                                     // プログラムオブジェクトのハンドルを取得
             bool IsLinkFlag() const;                                                                // リンク済みフラグを取得
+
+            static GlslObjectPtr s_Create();                                                        // 生成処理
         private:
             ProgramObjectHandle programObjectHandle_ = 0;                                           ///< @brief プログラムオブジェクトハンドル
             bool linkFlag_ = false;                                                                 ///< @brief リンク済みか判断するフラグ

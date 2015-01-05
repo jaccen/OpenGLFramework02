@@ -36,8 +36,8 @@ namespace Particle
     using InterpolationFunction = std::function<float(float, float, float)>;                // InterpolationFunction型
 
 
-    /** パーティクル情報 */
-    struct S_ParticleData
+    /** パーティクルデータ */
+    struct S_CreateDara
     {
         int32_t lifeFrame_ = 0;                                                             ///< @brief 生存フレーム数
         Vector3 position_;                                                                  ///< @brief 座標
@@ -53,8 +53,8 @@ namespace Particle
         Vector4 startColor_;                                                                ///< @brief 開始時の色
         Vector4 endColor_;                                                                  ///< @brief 終了時の色
 
-        S_ParticleData() = default;                                                         //!< @brief デフォルトコンストラクタ
-        ~S_ParticleData() = default;                                                        //!< @brief デストラクタ
+        S_CreateDara() = default;                                                           //!< @brief デフォルトコンストラクタ
+        ~S_CreateDara() = default;                                                          //!< @brief デストラクタ
 
         /*************************************************************//**
          *
@@ -72,34 +72,33 @@ namespace Particle
          *  @param  終了時の色
          *
          ****************************************************************/
-        S_ParticleData(int32_t lifeFrame,
-                       const Vector3& rPosition,
-                       const Vector3& rVelocity,
-                       const Vector3& rStartAcceleration,
-                       const Vector3& rEndAcceleration,
-                       float startAngle,
-                       float endAngle,
-                       float startWidth,
-                       float endWidth,
-                       float startHeight,
-                       float endHeight,
-                       const Vector4& rStartColor,
-                       const Vector4& rEndColor) :
+        S_CreateDara(int32_t lifeFrame,
+                     const Vector3& rPosition,
+                     const Vector3& rVelocity,
+                     const Vector3& rStartAcceleration,
+                     const Vector3& rEndAcceleration,
+                     float startAngle,
+                     float endAngle,
+                     float startWidth,
+                     float endWidth,
+                     float startHeight,
+                     float endHeight,
+                     const Vector4& rStartColor,
+                     const Vector4& rEndColor) :
 
-                       // 各情報を設定
-                       lifeFrame_(lifeFrame),
-                       position_(rPosition),
-                       velocity_(rVelocity),
-                       startAcceleration_(rStartAcceleration),
-                       endAcceleration_(rEndAcceleration),
-                       startAngle_(startAngle),
-                       endAngle_(endAngle),
-                       startWidth_(startWidth),
-                       endWidth_(endWidth),
-                       startHeight_(startHeight),
-                       endHeight_(endHeight),
-                       startColor_(rStartColor),
-                       endColor_(rEndColor)
+            lifeFrame_(lifeFrame),
+            position_(rPosition),
+            velocity_(rVelocity),
+            startAcceleration_(rStartAcceleration),
+            endAcceleration_(rEndAcceleration),
+            startAngle_(startAngle),
+            endAngle_(endAngle),
+            startWidth_(startWidth),
+            endWidth_(endWidth),
+            startHeight_(startHeight),
+            endHeight_(endHeight),
+            startColor_(rStartColor),
+            endColor_(rEndColor)
         {
         }
     };
@@ -151,7 +150,7 @@ namespace Particle
                            float endHeight = 1.0f,
                            const Vector4& rStartColor = Vector4(1.0f),
                            const Vector4& rEndColor = Vector4(1.0f)) = 0;
-        virtual void Entry(const S_ParticleData& rInfo) = 0;                                                    // パーティクルの情報からをパーティクルを追加
+        virtual void Entry(const S_CreateDara& rCreateData) = 0;                                                // パーティクルの情報からをパーティクルを追加
         virtual void SetMaxParticleCount(uint32_t maxParticleCount) = 0;                                        // パーティクルの最大数を設定
         virtual void EnableAutoBillboard(bool validFlag = true) = 0;                                            // ビルボードの自動化を有効化
         virtual void SetCamera(const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera) = 0;              // カメラを設定
@@ -198,7 +197,7 @@ namespace Particle
                    float endHeight = 1.0f,
                    const Vector4& rStartColor = Vector4(1.0f),
                    const Vector4& rEndColor = Vector4(1.0f)) override;
-        void Entry(const S_ParticleData& rInfo) override;                                                   // パーティクルの情報からをパーティクルを追加
+        void Entry(const S_CreateDara& rCreateData) override;                                               // パーティクルの情報からをパーティクルを追加
         void SetMaxParticleCount(uint32_t maxParticleNumber) override;                                      // パーティクルの最大数を設定
         void EnableAutoBillboard(bool validFlag = true) override;                                           // ビルボードの自動化を有効化
         void SetCamera(const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera) override;             // カメラを設定

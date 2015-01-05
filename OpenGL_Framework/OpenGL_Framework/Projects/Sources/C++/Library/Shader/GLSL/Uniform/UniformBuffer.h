@@ -4,6 +4,7 @@
 
 /* ヘッダファイル */
 #include "../GlslDefine.h"
+#include "../../../OpenGL/OpenGlDefine.h"
 
 
 //-------------------------------------------------------------
@@ -40,23 +41,23 @@ namespace Shader
         class C_UniformBuffer
         {
         public:
-            C_UniformBuffer(void* pBuffer,                                                                      // コンストラクタ
-                            uint32_t size,
+            C_UniformBuffer(void* pBuffer,                                                                          // コンストラクタ
+                            uint32_t bufferSize,
                             const std::string& rBlockName,
-                            ModifyEnum modifyType);
-            ~C_UniformBuffer();                                                                                 // デストラクタ
-            void Rewrite(void* pBuffer,                                                                         // 書き換え処理
-                         uint32_t size,
-                         ModifyEnum modifyType);
-            UniformBlockIndex GetBlockIndexFromProgramObject(ProgramObjectHandle programObjectHandle) const;    // プログラムオブジェクトからブロックのインデックスを取得
-            UniformBufferObjectHandle GetHandle() const;                                                        // ハンドルを取得
-            static UniformBufferPtr s_Create(void* pBuffer,                                                     // 生成処理
-                                             uint32_t size,
+                            OpenGL::ModifyEnum modifyType);
+            ~C_UniformBuffer();                                                                                     // デストラクタ
+            void Rewrite(void* pBuffer,                                                                             // 書き換え処理
+                         uint32_t bufferSize,
+                         OpenGL::ModifyEnum modifyType);
+            UniformBlockIndex GetBlockIndexFromProgramObject(ProgramObjectHandle programObjectHandle) const;        // プログラムオブジェクトからブロックのインデックスを取得
+            UniformBufferObjectHandle GetHandle() const;                                                            // ハンドルを取得
+            static UniformBufferPtr s_Create(void* pBuffer,                                                         // 生成処理
+                                             uint32_t bufferSize,
                                              const std::string& rBlockName,
-                                             ModifyEnum modifyType);
+                                             OpenGL::ModifyEnum modifyType);
         private:
-            UniformBufferObjectHandle handle_ = 0;                                                              ///< @brief ハンドル
-            std::string blockName_;                                                                             ///< @brief ブロック名 
+            UniformBufferObjectHandle handle_ = 0;                                                                  ///< @brief ハンドル
+            std::string blockName_;                                                                                 ///< @brief ブロック名 
         };
     }
 }

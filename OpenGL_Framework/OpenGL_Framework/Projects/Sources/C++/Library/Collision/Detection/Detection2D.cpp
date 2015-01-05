@@ -21,8 +21,8 @@ namespace Collision
      *  @param  もう一つの中心座標
      *  @param  もう一つの幅の半分
      *  @param  もう一つの高さの半分
-     *  @return 衝突した場合：true
-     *  @return 衝突しなかった場合：false
+     *  @return 衝突した場合    ：true
+     *  @return 衝突してない場合：false
      *
      ****************************************************************/
     template<typename T>
@@ -49,6 +49,35 @@ namespace Collision
     /*************************************************************//**
      *
      *  @brief  矩形同士の衝突判定を行う
+     *  @param  最小座標
+     *  @param  最大座標
+     *  @param  もう一つの最小座標
+     *  @param  もう一つの最大座標
+     *  @return 衝突した場合    ：true
+     *  @return 衝突してない場合：false
+     *
+     ****************************************************************/
+    template<typename T>
+    bool C_Detection2D<T>::s_CheckRectangleAndRectangle(const Point2& rMinPosition,
+                                                        const Point2& rMaxPosition,
+                                                        const Point2& rAnotherMinPosition,
+                                                        const Point2& rAnotherMaxPosition)
+    {
+        if ((rMinPosition.x_ <= rAnotherMaxPosition.x_)
+         && (rMaxPosition.x_ >= rAnotherMinPosition.x_)
+         && (rMinPosition.y_ <= rAnotherMaxPosition.y_)
+         && (rMaxPosition.y_ >= rAnotherMinPosition.y_))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  矩形同士の衝突判定を行う
      *  @param  中心座標
      *  @param  幅の半分
      *  @param  高さの半分
@@ -57,8 +86,8 @@ namespace Collision
      *  @param  もう一つの幅の半分
      *  @param  もう一つの高さの半分
      *  @param  もう一つの角度
-     *  @return 衝突した場合：true
-     *  @return 衝突しなかった場合：false
+     *  @return 衝突した場合    ：true
+     *  @return 衝突してない場合：false
      *
      ****************************************************************/
     template<typename T>
@@ -131,8 +160,8 @@ namespace Collision
      *  @param  半径
      *  @param  もう一つの中心座標
      *  @param  もう一つの半径
-     *  @return 衝突した場合：true
-     *  @return 衝突しなかった場合：false
+     *  @return 衝突した場合    ：true
+     *  @return 衝突してない場合：false
      *
      ****************************************************************/
     template<typename T>
@@ -163,8 +192,8 @@ namespace Collision
      *  @param  矩形の角度( ラジアン値 )
      *  @param  円の中心座標
      *  @param  円の半径
-     *  @return 衝突した場合：true
-     *  @return 衝突しなかった場合：false
+     *  @return 衝突した場合    ：true
+     *  @return 衝突してない場合：false
      *
      ****************************************************************/
     template<typename T>
@@ -247,8 +276,8 @@ namespace Collision
      *  @param  矩形の中心座標
      *  @param  円の半径
      *  @param  点
-     *  @return 衝突した場合：true
-     *  @return 衝突しなかった場合：false
+     *  @return 衝突した場合    ：true
+     *  @return 衝突してない場合：false
      *
      ****************************************************************/
     template<typename T>
@@ -273,8 +302,8 @@ namespace Collision
      *  @param  円の半径
      *  @param  線分の始点
      *  @param  線分の終点
-     *  @return 衝突した場合：true
-     *  @return 衝突しなかった場合：false
+     *  @return 衝突した場合    ：true
+     *  @return 衝突してない場合：false
      *
      ****************************************************************/
     template<typename T>
@@ -332,8 +361,8 @@ namespace Collision
      *  @brief  2Dの点と点の衝突判定を行う
      *  @param  点
      *  @param  もう一つの点
-     *  @return 衝突した場合：true
-     *  @return 衝突しなかった場合：false
+     *  @return 衝突した場合    ：true
+     *  @return 衝突してない場合：false
      *
      ****************************************************************/
     template<typename T>
@@ -357,8 +386,8 @@ namespace Collision
      *  @param  点
      *  @param  線分の始点
      *  @param  線分の終点
-     *  @return 衝突した場合：true
-     *  @return 衝突しなかった場合：false
+     *  @return 衝突した場合    ：true
+     *  @return 衝突してない場合：false
      *
      ****************************************************************/
     template<typename T>
@@ -395,8 +424,8 @@ namespace Collision
      *  @param  楕円の中心座標
      *  @param  楕円の軸長
      *  @param  楕円の角度( ラジアン値 )
-     *  @return 衝突した場合：true
-     *  @return 衝突しなかった場合：false
+     *  @return 衝突した場合    ：true
+     *  @return 衝突してない場合：false
      *
      ****************************************************************/
     template<typename T>
@@ -434,8 +463,8 @@ namespace Collision
      *  @param  終点
      *  @param  もう一つの始点
      *  @param  もう一つの終点
-     *  @return 衝突した場合：true
-     *  @return 衝突しなかった場合：false
+     *  @return 衝突した場合    ：true
+     *  @return 衝突してない場合：false
      *
      ****************************************************************/
     template<typename T>

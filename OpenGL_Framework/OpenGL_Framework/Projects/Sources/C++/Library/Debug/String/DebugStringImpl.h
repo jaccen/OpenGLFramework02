@@ -269,23 +269,23 @@ namespace Debug
     {
         if (!Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(Fixed::Shader::s_pGLSL_OBJECT_ID))
         {
-            auto pGlslObject = std::make_shared <Shader::GLSL::C_GlslObject>();
+            auto pGlslObject = Shader::GLSL::C_GlslObject::s_Create();
 
-            if (pGlslObject->CompileFromFile(Fixed::Shader::s_pVERTEX_FILE_PATH, Shader::GLSL::ShaderType::s_VERTEX) == false)
+            if (pGlslObject->CompileFromFile(Fixed::Shader::s_pVERTEX_FILE_PATH, Shader::GLSL::Type::s_VERTEX) == false)
             {
                 PrintLog("[ C_DebugStringImpl::Initialize ] : 頂点シェーダーのコンパイルに失敗しました。\n");
 
                 return false;
             }
 
-            if (pGlslObject->CompileFromFile(Fixed::Shader::s_pGEOMETRY_FILE_PATH, Shader::GLSL::ShaderType::s_GEOMETRY) == false)
+            if (pGlslObject->CompileFromFile(Fixed::Shader::s_pGEOMETRY_FILE_PATH, Shader::GLSL::Type::s_GEOMETRY) == false)
             {
                 PrintLog("[ C_DebugStringImpl::Initialize ] : ジオメトリシェーダーのコンパイルに失敗しました。\n");
 
                 return false;
             }
 
-            if (pGlslObject->CompileFromFile(Fixed::Shader::s_pFRAGMENT_FILE_PATH, Shader::GLSL::ShaderType::s_FRAGMENT) == false)
+            if (pGlslObject->CompileFromFile(Fixed::Shader::s_pFRAGMENT_FILE_PATH, Shader::GLSL::Type::s_FRAGMENT) == false)
             {
                 PrintLog("[ C_DebugStringImpl::Initialize ] : フラグメントシェーダーのコンパイルに失敗しました。\n");
 
@@ -301,6 +301,10 @@ namespace Debug
 
             Shader::GLSL::C_GlslObjectManager::s_GetInstance()->Entry(pGlslObject, Fixed::Shader::s_pGLSL_OBJECT_ID);
             pGlslObject_ = pGlslObject;
+        }
+        else
+        {
+            pGlslObject_ = Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(Fixed::Shader::s_pGLSL_OBJECT_ID).get();
         }
 
         return true;
@@ -342,5 +346,8 @@ namespace Debug
         // 各バッファをアンバインド
         glBindVertexArray(0);
         glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+        // 頂点バッファオブジェクトを削除
+        glDeleteBuffers(1, &vertexBufferObjectHandle);
     }
 }

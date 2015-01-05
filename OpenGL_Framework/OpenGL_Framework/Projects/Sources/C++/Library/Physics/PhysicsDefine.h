@@ -24,7 +24,7 @@ namespace Physics
     namespace
     {
         /* 形状の種類 */
-        namespace ShapeType
+        namespace Shape
         {
             const int32_t s_BOX = BOX_SHAPE_PROXYTYPE;                          ///< @brief ボックス形状
             const int32_t s_SPHERE = SPHERE_SHAPE_PROXYTYPE;                    ///< @brief 球形状

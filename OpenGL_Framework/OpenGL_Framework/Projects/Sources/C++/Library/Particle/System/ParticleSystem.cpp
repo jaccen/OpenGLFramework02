@@ -38,7 +38,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  パーティクルシステムの初期化処理を行う
+     *  @brief  初期化処理を行う
      *  @param  カメラ
      *  @param  テクスチャハンドル
      *  @param  パーティクルの最大数
@@ -58,7 +58,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  パーティクルシステムの更新処理を行う
+     *  @brief  更新処理を行う
      *  @param  なし
      *  @return 正常終了：true
      *  @return 異常終了：false
@@ -72,7 +72,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  パーティクルシステムの描画処理を行う
+     *  @brief  描画処理を行う
      *  @param  なし
      *  @return なし
      *
@@ -85,7 +85,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  パーティクルシステムの終了処理を行う
+     *  @brief  終了処理を行う
      *  @param  なし
      *  @return なし
      *
@@ -129,32 +129,32 @@ namespace Particle
                                  const Vector4& rStartColor,
                                  const Vector4& rEndColor)
     {
-        upImpl_->Entry(S_ParticleData(lifeFrame,
-                                      rPosition,
-                                      rVelocity,
-                                      rStartAcceleration,
-                                      rEndAcceleration,
-                                      startAngle,
-                                      endAngle,
-                                      startWidth,
-                                      endWidth,
-                                      startHeight,
-                                      endHeight,
-                                      rStartColor,
-                                      rEndColor));
+        upImpl_->Entry(S_CreateDara(lifeFrame,
+                                    rPosition,
+                                    rVelocity,
+                                    rStartAcceleration,
+                                    rEndAcceleration,
+                                    startAngle,
+                                    endAngle,
+                                    startWidth,
+                                    endWidth,
+                                    startHeight,
+                                    endHeight,
+                                    rStartColor,
+                                    rEndColor));
     }
 
 
     /*************************************************************//**
      *
-     *  @brief  パーティクルの情報からパーティクルの追加を行う
-     *  @param  パーティクルの情報
+     *  @brief  パーティクルの追加を行う
+     *  @param  生成情報
      *  @return なし
      *
      ****************************************************************/
-    void C_ParticleSystem::Entry(const S_ParticleData& rData)
+    void C_ParticleSystem::Entry(const S_CreateDara& rCreateData)
     {
-        upImpl_->Entry(rData);
+        upImpl_->Entry(rCreateData);
     }
 
 

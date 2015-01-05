@@ -16,7 +16,6 @@ namespace Texture
     using ParameterEnum = GLenum;                                                               // ParameterEnum型
     using FilterEnum = GLenum;                                                                  // FilterEnum型
     using WrapEnum = GLenum;                                                                    // WrapEnum型
-    using FormatType = GLint;                                                                   // FormatType型
     using CompareModeType = GLint;                                                              // CompareModeType型
     using CompareFunctionType = GLint;                                                          // CompareFunctionType型
 
@@ -57,8 +56,8 @@ namespace Texture
         }
 
 
-        /* フィルタの種類 */
-        namespace FilterType
+        /* フィルタ */
+        namespace Filter
         {
             /* 拡大 */
             namespace Magnification
@@ -100,24 +99,6 @@ namespace Texture
             const WrapEnum s_CLAMP = GL_CLAMP;                                                  ///< @brief 端のピクセル色を引き延ばす
             const WrapEnum s_CLAMP_TO_EDGE = GL_CLAMP_TO_EDGE;                                  ///< @brief 境界色より内側のピクセルを引き延ばす
             const WrapEnum s_CLAMP_TO_BORDER = GL_CLAMP_TO_BORDER;                              ///< @brief 境界色を引き延ばす
-        }
-
-        /* フォーマット */
-        namespace Format
-        {
-            const FormatType s_RGB = GL_RGB;                                                    ///< @brief RGB
-            const FormatType s_RGBA = GL_RGBA;                                                  ///< @brief RGBA
-            const FormatType s_RGB_4 = GL_RGB4;                                                 ///< @brief 各成分が4ビットRGB
-            const FormatType s_RGB_8 = GL_RGB8;                                                 ///< @brief 各成分が8ビットRGB
-            const FormatType s_RGB_16 = GL_RGB16;                                               ///< @brief 各成分が16ビットRGB
-            const FormatType s_RGBA_4 = GL_RGBA4;                                               ///< @brief 各成分が4ビットRGBA
-            const FormatType s_RGBA_8 = GL_RGBA8;                                               ///< @brief 各成分が8ビットRGBA
-            const FormatType s_RGBA_16 = GL_RGBA16;                                             ///< @brief 各成分が16ビットRGBA
-            const FormatType s_DEPTH_16 = GL_DEPTH_COMPONENT16;                                 ///< @brief 16ビット深度バッファ
-            const FormatType s_DEPTH_24 = GL_DEPTH_COMPONENT24;                                 ///< @brief 24ビット深度バッファ
-            const FormatType s_DEPTH_32 = GL_DEPTH_COMPONENT32;                                 ///< @brief 32ビット深度バッファ
-            const FormatType s_STENCIL_8 = GL_STENCIL_INDEX8;                                   ///< @brief 8ビットステンシルバッファ
-            const FormatType s_STENCIL_16 = GL_STENCIL_INDEX8;                                  ///< @brief 16ビットステンシルバッファ
         }
 
         /* 比較モード */
@@ -188,8 +169,8 @@ namespace Texture
      ****************************************************************/
     inline static void s_Default2DParameter()
     {
-        ::glTexParameteri(Type::s_2D, Parameter::s_MAGNIFICATION_FILTER, FilterType::Magnification::s_LINEAR);
-        ::glTexParameteri(Type::s_2D, Parameter::s_REDUCION_FILTER, FilterType::Reduction::s_LINEAR);
+        ::glTexParameteri(Type::s_2D, Parameter::s_MAGNIFICATION_FILTER, Filter::Magnification::s_LINEAR);
+        ::glTexParameteri(Type::s_2D, Parameter::s_REDUCION_FILTER, Filter::Reduction::s_LINEAR);
     }
 
 
@@ -202,8 +183,8 @@ namespace Texture
      ****************************************************************/
     inline static void s_DefaultCubeMapParameter()
     {
-        ::glTexParameteri(Type::s_CUBE_MAP, Parameter::s_MAGNIFICATION_FILTER, FilterType::Magnification::s_LINEAR);
-        ::glTexParameteri(Type::s_CUBE_MAP, Parameter::s_REDUCION_FILTER, FilterType::Reduction::s_LINEAR);
+        ::glTexParameteri(Type::s_CUBE_MAP, Parameter::s_MAGNIFICATION_FILTER, Filter::Magnification::s_LINEAR);
+        ::glTexParameteri(Type::s_CUBE_MAP, Parameter::s_REDUCION_FILTER, Filter::Reduction::s_LINEAR);
         ::glTexParameteri(Type::s_CUBE_MAP, Parameter::s_WRAP_S, WrapType::s_CLAMP_TO_EDGE);
         ::glTexParameteri(Type::s_CUBE_MAP, Parameter::s_WRAP_T, WrapType::s_CLAMP_TO_EDGE);
         ::glTexParameteri(Type::s_CUBE_MAP, Parameter::s_WRAP_R, WrapType::s_CLAMP_TO_EDGE);

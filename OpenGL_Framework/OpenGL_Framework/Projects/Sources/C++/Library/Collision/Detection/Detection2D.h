@@ -45,6 +45,11 @@ namespace Collision
                                                  T anotherHalfWidth,
                                                  T anotherHalfHeihgt);
 
+        static bool s_CheckRectangleAndRectangle(const Point2& rMinPosition,
+                                                 const Point2& rMaxPosition,
+                                                 const Point2& rAnotherMinPosition,
+                                                 const Point2& rAnotherMaxPosition);
+
         static bool s_CheckRectangleAndRectangle(const Point2& rCenterPosition,
                                                  T halfWidth,
                                                  T halfHeight,

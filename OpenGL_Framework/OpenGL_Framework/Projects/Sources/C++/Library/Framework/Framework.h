@@ -50,10 +50,7 @@ namespace Framework
         virtual void UpdateScreen();                                                                                                    // 画面の更新
         virtual void Finalize();                                                                                                        // 終了処理
     private:
-        /* 前方宣言 */
-        class C_FrameworkImpl;
-
-        std::unique_ptr<C_FrameworkImpl> upImpl_;                                                                                       ///< @brief 実装情報
+        C_Framework* pGame_ = nullptr;                                                                                                  ///< @brief ゲーム
 
         virtual void FirstProcess();                                                                                                    // 最初の処理
     };

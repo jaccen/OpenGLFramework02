@@ -12,9 +12,6 @@
 #include "../../Library/Physics/Engine/PhysicsEngine.h"
 
 
-
-
-
 //-------------------------------------------------------------
 //!
 //! @brief コネクトウォーズ
@@ -41,9 +38,6 @@ namespace ConnectWars
         std::unique_ptr<GameObject::C_GameObjectManager> upGameObjectManager_;              ///< @brief ゲームオブジェクトマネージャー
         std::unique_ptr<GameObject::Message::C_MessageDispatcher> upMessageDispatcher_;     ///< @brief メッセージディスパッチャー
         std::unique_ptr<Physics::C_PhysicsEngine> upPhysicsEngine_;                         ///< @brief フィジックスエンジン
-        /*
-        std::unique_ptr<C_ModelManager> upModelManager_;                ///< @brief モデルマネージャー
-        */
 
         bool Initialize() override;                                                         // 初期化処理
         bool Update() override;                                                             // 更新処理

@@ -9,14 +9,20 @@ namespace State
     /*************************************************************//**
      *
      *  @brief  コンストラクタ
-     *  @param  なし
+     *  @param  オーナー
+     *  @param  現在のステート
+     *  @param  グローバルステート
      *
      ****************************************************************/
     template<typename T>
-    C_StateMachine<T>::C_StateMachine(T* pOwner) :
+    C_StateMachine<T>::C_StateMachine(T* pOwner, State* pCurrentState, State* pGlobalState) :
 
         // オーナー
-        pOwner_(pOwner)
+        pOwner_(pOwner),
+
+        // 各ステート
+        pCurrentState_(pCurrentState),
+        pGlobalState_(pGlobalState)
 
     {
     }

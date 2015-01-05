@@ -1,5 +1,6 @@
 /* ヘッダファイル */
 #include "UniformBuffer.h"
+#include "../../../OpenGL/OpenGlDefine.h"
 
 
 //-------------------------------------------------------------
@@ -22,15 +23,15 @@ namespace Shader
          *
          *  @brief  コンストラクタ
          *  @param  転送するバッファ
-         *  @param  サイズ
+         *  @param  バッファのサイズ
          *  @param  ブロック名
          *  @param  修正の種類
          *
          ****************************************************************/
         C_UniformBuffer::C_UniformBuffer(void* pBuffer,
-                                         uint32_t size,
+                                         uint32_t bufferSize,
                                          const std::string& rBlockName,
-                                         ModifyEnum modifyType) :
+                                         OpenGL::ModifyEnum modifyType) :
 
             // ブロック名
             blockName_(rBlockName)
@@ -40,13 +41,13 @@ namespace Shader
             const int32_t CREWATE_BUFFER_NUMBER = 1;
 
             glGenBuffers(CREWATE_BUFFER_NUMBER, &handle_);
-            glBindBuffer(BufferType::s_UNIFORM, handle_);
+            glBindBuffer(OpenGL::Buffer::s_UNIFORM, handle_);
 
             // データを転送
-            glBufferData(BufferType::s_UNIFORM, size, pBuffer, modifyType);
+            glBufferData(OpenGL::Buffer::s_UNIFORM, bufferSize, pBuffer, modifyType);
 
             // ユニフォームバッファオブジェクトをアンバインド
-            glBindBuffer(BufferType::s_UNIFORM, 0);
+            glBindBuffer(OpenGL::Buffer::s_UNIFORM, 0);
         }
 
 
@@ -69,23 +70,23 @@ namespace Shader
          *
          *  @brief  バッファの書き換えを行う
          *  @param  バッファ
-         *  @param  サイズ
+         *  @param  バッファのサイズ
          *  @param  修正の種類
          *  @return なし
          *
          ****************************************************************/
         void C_UniformBuffer::Rewrite(void* pBuffer,
-                                      uint32_t size,
-                                      ModifyEnum modifyType)
+                                      uint32_t bufferSize,
+                                      OpenGL::ModifyEnum modifyType)
         {
             // ユニフォームバッファオブジェクトをバインド
-            glBindBuffer(BufferType::s_UNIFORM, handle_);
+            glBindBuffer(OpenGL::Buffer::s_UNIFORM, handle_);
 
             // データを転送
-            glBufferData(BufferType::s_UNIFORM, size, pBuffer, modifyType);
+            glBufferData(OpenGL::Buffer::s_UNIFORM, bufferSize, pBuffer, modifyType);
 
             // ユニフォームバッファオブジェクトをアンバインド
-            glBindBuffer(BufferType::s_UNIFORM, 0);
+            glBindBuffer(OpenGL::Buffer::s_UNIFORM, 0);
         }
 
 
@@ -118,17 +119,17 @@ namespace Shader
         /*************************************************************//**
          *
          *  @brief  生成処理を行う
-         *  @param  サイズ
+         *  @param  バッファのサイズ
          *  @param  ブロック名
          *  @return ユニフォームバッファ
          *
          ****************************************************************/
         UniformBufferPtr C_UniformBuffer::s_Create(void* pBuffer,
-                                                   uint32_t size,
+                                                   uint32_t bufferSize,
                                                    const std::string& rBlockName,
-                                                   ModifyEnum drawUsage)
+                                                   OpenGL::ModifyEnum drawUsage)
         {
-            return std::make_shared<C_UniformBuffer>(pBuffer, size, rBlockName, drawUsage);
+            return std::make_shared<C_UniformBuffer>(pBuffer, bufferSize, rBlockName, drawUsage);
         }
     }
 }

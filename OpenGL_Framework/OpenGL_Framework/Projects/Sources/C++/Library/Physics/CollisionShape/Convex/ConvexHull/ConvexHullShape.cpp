@@ -43,6 +43,6 @@ namespace Physics
      ****************************************************************/
     void C_ConvexHullShape::AddVertexPosition(const Vector3& rVertexPosition)
     {
-        dynamic_cast<btConvexHullShape*>(upCollisionShape_.get())->addPoint(rVertexPosition);
+        static_cast<btConvexHullShape*>(upCollisionShape_.get())->addPoint(rVertexPosition);
     }
 }

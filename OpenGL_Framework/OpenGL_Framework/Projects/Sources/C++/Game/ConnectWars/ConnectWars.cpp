@@ -3,7 +3,10 @@
 #include "../../Library/Scene/Manager/SceneManager.h"
 #include "../../Library/Debug/Helper/DebugHelper.h"
 #include "../../Library/Input/Keyboard/KeyboardManager.h"
+#include "../../Library/Camera/Manager/CameraManager.h"
+#include "../../Library/Timer/Manager/TimeManager.h"
 #include "TitleScene.h"
+#include "Stage01Scene.h"
 
 
 //-------------------------------------------------------------
@@ -69,8 +72,11 @@ namespace ConnectWars
             return false;
         }
 
+        // フィジックスエンジンの初期化処理
+        upPhysicsEngine_->Initialize(Physics::Vector3(0.0f, 0.0f, 0.0f), Physics::Default::s_AIR_DENSITY);
+
         // シーンマネージャーの初期化処理
-        upSceneManager_ = std::make_unique<Scene::C_SceneManager>(newEx C_TitleScene);
+        upSceneManager_ = std::make_unique<Scene::C_SceneManager>(newEx C_Stage01Scene);
         if (upSceneManager_->Initialize() == Scene::ecSceneReturn::ERROR_TERMINATION) return false;
 
         return true;
@@ -96,8 +102,14 @@ namespace ConnectWars
         // メッセージディスパッチャーの更新処理
         upMessageDispatcher_->Update();
 
+        // カメラマネージャーの更新処理
+        Camera::C_CameraManager::s_GetInstance()->Update();
+
         // シーンマネージャーの更新処理
         Scene::ecSceneReturn sceneReturnValue = upSceneManager_->Update();
+
+        // フィジックスエンジンの更新処理
+        upPhysicsEngine_->Update(Timer::C_TimeManager::s_GetInstance()->GetDeltaTime());
 
         if (sceneReturnValue != Scene::ecSceneReturn::CONTINUATIOIN)
         {
@@ -110,7 +122,8 @@ namespace ConnectWars
             return false;
         }
 
-        /* デバッグ時 */
+
+/* デバッグ時 */
 #ifdef _DEBUG
 
         // エスケープキー入力で強制終了
@@ -151,6 +164,9 @@ namespace ConnectWars
      ****************************************************************/
     void C_ConnectWars::Finalize()
     {
+        // フィジックスエンジンの終了処理
+        upPhysicsEngine_->Finalize();
+
         // シーンマネージャーの終了処理
         upSceneManager_->Finalize();
 

@@ -18,8 +18,8 @@ namespace Collision
      *  @param  点
      *  @param  線分の始点
      *  @param  線分の終点
-     *  @return 衝突した場合：true
-     *  @return 衝突しなかった場合：false
+     *  @return 衝突した場合    ：true
+     *  @return 衝突してない場合：false
      *
      ****************************************************************/
     template<typename T>
@@ -56,8 +56,8 @@ namespace Collision
      *  @param  線分の終点
      *  @param  平面上の点
      *  @param  平面の法線ベクトル
-     *  @return 衝突した場合：true
-     *  @return 衝突しなかった場合：false
+     *  @return 衝突した場合    ：true
+     *  @return 衝突してない場合：false
      *
      ****************************************************************/
     template<typename T>
@@ -90,8 +90,8 @@ namespace Collision
      *  @param  半径
      *  @param  もう一つの中心座標
      *  @param  もう一つの半径
-     *  @return 衝突した場合：true
-     *  @return 衝突しなかった場合：false
+     *  @return 衝突した場合    ：true
+     *  @return 衝突してない場合：false
      *
      ****************************************************************/
     template<typename T>

@@ -2,6 +2,10 @@
 #pragma once
 
 
+/* ヘッダファイル */
+#include "Message/Telegram/Telegram.h"
+
+
 //-------------------------------------------------------------
 //!
 //! @brief ゲームオブジェクト
@@ -10,13 +14,6 @@
 //-------------------------------------------------------------
 namespace GameObject
 {
-    /* 前方宣言 */
-    namespace Message
-    {
-        struct S_Telegram;
-    }
-
-
     //-------------------------------------------------------------
     //!
     //! @brief ゲームオブジェクト
@@ -26,9 +23,8 @@ namespace GameObject
     class C_GameObject
     {
     public:
-        C_GameObject() = default;                                                       // コンストラクタ
-        C_GameObject(const std::string& rId,                                            // コンストラクタ
-                     int32_t type);
+        C_GameObject() = default;                                                       // デフォルトコンストラクタ
+        C_GameObject(const std::string& rId, int32_t type);                             // コンストラクタ
         virtual ~C_GameObject();                                                        // デストラクタ
         virtual bool Update() = 0;                                                      // 更新処理
         virtual void Draw() = 0;                                                        // 描画処理

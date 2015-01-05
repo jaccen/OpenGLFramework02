@@ -1,6 +1,5 @@
 /* ヘッダファイル */
 #include "UniformBufferManager.h"
-#include "../UniformBuffer.h"
 #include <unordered_map>
 
 
@@ -73,7 +72,7 @@ namespace Shader
          ****************************************************************/
         void C_UniformBufferManager::C_UniformBufferManagerImpl::Entry(const UniformBufferPtr& prUniformBuffer, const std::string& rId)
         {
-            // シェーダーが既に登録されている場合
+            // ユニフォームバッファが既に登録されている場合
             if (pUniformBuffers_.find(rId) != pUniformBuffers_.end())
             {
                 std::cout << "[ C_UniformBufferManagerImpl::Entry ] : ユニフォームバッファが既に登録されています。" << std::endl;

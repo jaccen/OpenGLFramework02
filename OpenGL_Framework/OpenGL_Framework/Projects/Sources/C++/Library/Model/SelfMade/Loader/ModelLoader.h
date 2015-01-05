@@ -37,6 +37,7 @@ namespace Model
             void LoadModel(const std::string& rModelFilePath);                                          // モデルのロード処理
             void LoadMaterial(const std::string& rMaterialFilePath);                                    // マテリアルのロード処理
             void LoadAnimation(const std::string& rAnimationFilePath);                                  // アニメーションのロード処理
+            void Release();                                                                             // 解放処理
             uint32_t GetMeshCount() const;                                                              // メッシュ数を取得
             uint32_t GetBoneCount(uint32_t meshIndex) const;                                            // ボーン数を取得
             uint32_t GetMaterialCount() const;                                                          // マテリアル数を取得

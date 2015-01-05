@@ -1,0 +1,231 @@
+/* ヘッダファイル */
+#include "FrameBuffer.h"
+
+
+//-------------------------------------------------------------
+//!
+//! @brief OpenGL
+//! @brief OpenGL関連の名前空間
+//!
+//-------------------------------------------------------------
+namespace OpenGL
+{
+    /*************************************************************//**
+     *
+     *  @brief  コンストラクタ
+     *  @param  ウィンドウの幅
+     *  @param  ウィンドウの高さ
+     *  @param  デプスの内部フォーマット
+     *
+     ****************************************************************/
+    C_FrameBuffer::C_FrameBuffer(int32_t windowWidth, 
+                                 int32_t windowHeight,
+                                 OpenGL::FormatType depthInternalFormat)
+    {
+        // レンダーバッファオブジェクトを作成
+        glGenRenderbuffers(1, &renderBufferObjectHandle_);
+        glBindRenderbuffer(OpenGL::Buffer::s_RENDER, renderBufferObjectHandle_);
+        glRenderbufferStorage(OpenGL::Buffer::s_RENDER, depthInternalFormat, windowWidth, windowHeight);
+        glBindRenderbuffer(OpenGL::Buffer::s_RENDER, 0);
+        
+        // フレームバッファオブジェクトを作成し、バインド
+        glGenFramebuffers(1, &frameBufferObjectHandle_);
+        glBindFramebuffer(OpenGL::Buffer::s_FRAME, frameBufferObjectHandle_);
+
+        // レンダーバッファを関連付け 
+        glFramebufferRenderbuffer(OpenGL::Buffer::s_FRAME, GL_DEPTH_ATTACHMENT, OpenGL::Buffer::s_RENDER, renderBufferObjectHandle_);
+
+        // フレームバッファをアンバインド
+        glBindFramebuffer(OpenGL::Buffer::s_FRAME, 0);
+        
+
+        for (size_t i = 0; i < bufferCount; ++i)
+        {
+            // アタッチする種類を取得
+            uint32_t attachmentType = s_DistinctionAttachmentType(renderTargetDatas_[i].pixelDataType_);
+
+            if (renderTargetDatas_[i].type_ == RENDER)
+            {
+                glFramebufferRenderbuffer(GL_FRAMEBUFFER,
+                                          attachmentType,
+                                          GL_RENDERBUFFER,
+                                          renderTargetDatas_[i].handle_);
+            }
+            else
+            {
+                glFramebufferTexture2D(GL_FRAMEBUFFER,
+                                       attachmentType,
+                                       GL_TEXTURE_2D,
+                                       renderTargetDatas_[i].handle_,
+                                       0);
+            }
+
+            if (attachmentType == (GL_COLOR_ATTACHMENT0 + colorAttachmentCount))
+            {
+                colorBufferList.push_back(attachmentType);
+            }
+            else
+            {
+                colorBufferList.push_back(GL_NONE);
+            }
+        }
+
+        // カラーバッファのリストを設定
+        glDrawBuffers(colorBufferList.size(), colorBufferList.data());
+
+        // フレームバッファをアンバインド
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  デストラクタ
+     *  @param  なし
+     *
+     ****************************************************************/
+    C_FrameBuffer::~C_FrameBuffer()
+    {
+        // 各オブジェクトを破棄
+        glDeleteRenderbuffers(1, &renderBufferObjectHandle_);
+        glDeleteFramebuffers(1, &frameBufferObjectHandle_);
+    }
+
+
+
+    /*************************************************************//**
+     *
+     *  @brief  テクスチャの関連付けを行う
+     *  @param  テクスチャハンドル
+     *  @param  アタッチ番号
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_FrameBuffer::AttachTexture(Texture::TextureHandle textureHandle)
+    {
+        glGenFramebuffers(1, &frameBufferObjectHandle_);
+        glFramebufferTexture2D(OpenGL::Buffer::s_FRAME, GL_COLOR_ATTACHMENT0 + attachTextureCount_, Texture::Type::s_2D, textureHandle, 0);
+        glBindFramebuffer(OpenGL::Buffer::s_FRAME, 0);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  テクスチャの関連付けの無効化を行う
+     *  @param  アタッチ番号
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_FrameBuffer::DetachTexture()
+    {
+        Bind();
+
+        for (size_t i = 0; i < attachTextureCount_; i++)
+        {
+            glFramebufferTexture2D(OpenGL::Buffer::s_FRAME, GL_COLOR_ATTACHMENT0 + i, Texture::Type::s_2D, 0, 0);
+        }
+
+        attachTextureCount_ = 0;
+
+        glBindFramebuffer(OpenGL::Buffer::s_FRAME, 0);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  フレームバッファをバインドする
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_FrameBuffer::Bind()
+    {
+        glBindFramebuffer(OpenGL::Buffer::s_FRAME, frameBufferObjectHandle_);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  フレームバッファをアンバインドする
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_FrameBuffer::Unbind()
+    {
+        glBindFramebuffer(OpenGL::Buffer::s_FRAME, 0);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  生成処理を行う
+     *  @param  バッファのサイズ
+     *  @param  バッファの種類
+     *  @param  ピクセルデータの種類
+     *  @param  内部フォーマット
+     *  @param  ピクセルフォーマット
+     *  @param  バッファ生成時に用いる関数
+     *  @param  バッファの数
+     *  @return フレームバッファ
+     *
+     ****************************************************************/
+    FrameBufferPtr C_FrameBuffer::s_Create(S_BufferSize bufferSizes[],
+                                           eBufferType bufferTypes[],
+                                           ePixelDataType pixelDataTypes[],
+                                           FormatType internalFormats[],
+                                           FormatType pixelFormats[],
+                                           CreateBufferFunction pCreateBufferFunctions[],
+                                           uint32_t bufferCount)
+    {
+        return std::make_shared<C_FrameBuffer>(bufferSizes,
+                                               bufferTypes,
+                                               pixelDataTypes,
+                                               internalFormats,
+                                               pixelFormats,
+                                               pCreateBufferFunctions,
+                                               bufferCount);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  デフォルトのレンダーバッファ作成を行う
+     *  @param  レンダーターゲットデータ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_FrameBuffer::s_DefaultCreateRenderBufer(S_RenderTargetData* pRenderTargetData)
+    {
+        glGenRenderbuffers(1, &pRenderTargetData->handle_);
+        glBindRenderbuffer(GL_RENDERBUFFER, pRenderTargetData->handle_);
+        glRenderbufferStorage(GL_RENDERBUFFER, pRenderTargetData->internalFormat_, pRenderTargetData->size_.width_, pRenderTargetData->size_.height_);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  デフォルトの2Dテクスチャ作成を行う
+     *  @param  レンダーターゲットデータ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_FrameBuffer::s_DefaultCreateTexture2D(S_RenderTargetData* pRenderTargetData)
+    {
+        ::glGenTextures(1, &pRenderTargetData->handle_);
+        ::glBindTexture(GL_TEXTURE_2D, pRenderTargetData->handle_);
+
+        ::glTexImage2D(GL_TEXTURE_2D, 
+                       0,
+                       pRenderTargetData->internalFormat_,
+                       pRenderTargetData->size_.width_,
+                       pRenderTargetData->size_.height_,
+                       0,
+                       pRenderTargetData->pixelFormat_,
+                       GL_UNSIGNED_BYTE, 
+                       nullptr);
+
+        ::glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        ::glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    }
+}

@@ -109,8 +109,8 @@ namespace Texture
     void C_TextureManager::Create2DFromPixelData(void* pPixelDatas,
                                                  int32_t width,
                                                  int32_t height,
-                                                 FormatType internalFormat,
-                                                 FormatType pixelFormat,
+                                                 OpenGL::FormatType internalFormat,
+                                                 OpenGL::FormatType pixelFormat,
                                                  int32_t byteBoundary,
                                                  const std::string& rId,
                                                  const ParameterFunction& rParameterFunction)

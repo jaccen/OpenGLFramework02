@@ -1417,7 +1417,7 @@ namespace JSON
             bool resultFlag = false;
 
             /* ”’l‚Ìê‡ */
-            if (*pString >= '0' && *pString <= '9')
+            if ((*pString >= '0' && *pString <= '9') || *pString == '-')
             {
                 pString = s_AssignIntegerOrReal(pJsonObject, pString);
                 resultFlag = true;
@@ -1465,7 +1465,7 @@ namespace JSON
                 {
                     break;
                 }
-                else if ((pString[valueStringIndex] >= '0' && pString[valueStringIndex] <= '9') || pString[valueStringIndex] == '.')
+                else if ((pString[valueStringIndex] >= '0' && pString[valueStringIndex] <= '9') || pString[valueStringIndex] == '.' || pString[valueStringIndex] == '-')
                 {
                     valueString[valueStringIndex] = pString[valueStringIndex];
 

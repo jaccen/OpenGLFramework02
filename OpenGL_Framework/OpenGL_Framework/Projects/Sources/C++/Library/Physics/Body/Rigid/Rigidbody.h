@@ -34,7 +34,7 @@ namespace Physics
         void EnableCollisionResponse(bool validFlag = true);                                            // 衝突応答を有効化
         void EnableCollisionCallback(bool validFlag = true);                                            // 衝突コールバックを有効化
         void EnableFreezePosition(bool x = false, bool y = false, bool z = false);                      // 座標の固定を有効化
-        void EnableFreezeRotation(bool x = false, bool y = false, bool z = false);                      // 座標の固定を有効化
+        void EnableFreezeRotation(bool x = false, bool y = false, bool z = false);                      // 回転の固定を有効化
         void ApplyForce(const Vector3& rForce,                                                          // 力を加える
                         const Vector3& rOffsetFromCenter = Vector3(0.0f, 0.0f, 0.0f));
         void ApplyImpulse(const Vector3& rImpulse,                                                      // 撃力を加える

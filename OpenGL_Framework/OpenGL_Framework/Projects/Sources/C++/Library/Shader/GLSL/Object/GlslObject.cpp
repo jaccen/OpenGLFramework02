@@ -3,6 +3,7 @@
 #include "../../../Common/CommonHelper.h"
 #include "../../../Debug/Helper/DebugHelper.h"
 #include "../../../Math/MathAll.h"
+#include "../../../OpenGL/OpenGlDefine.h"
 #include <fstream>
 
 
@@ -146,9 +147,9 @@ namespace Shader
             const GLchar* pSourceArray[] = { rString.c_str() };
 
             // シェーダーオブジェクトハンドルにソースをコピー
-            const int32_t SHADER_COPY_NUMBER = 1;
+            const int32_t SHADER_COPY_COUNT = 1;
 
-            glShaderSource(shaderObjectHandle, SHADER_COPY_NUMBER, pSourceArray, nullptr);
+            glShaderSource(shaderObjectHandle, SHADER_COPY_COUNT, pSourceArray, nullptr);
 
             // シェーダーのコンパイル
             glCompileShader(shaderObjectHandle);
@@ -191,13 +192,13 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  シェーダーのリンクを行う
-        *  @param  なし
-        *  @return 正常終了：true
-        *  @return 異常終了：false
-        *
-        ****************************************************************/
+         *
+         *  @brief  シェーダーのリンクを行う
+         *  @param  なし
+         *  @return 正常終了：true
+         *  @return 異常終了：false
+         *
+         ****************************************************************/
         bool C_GlslObject::Link()
         {
             assert(programObjectHandle_ != 0);
@@ -232,12 +233,12 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  アクティブな属性を出力する
-        *  @param  なし
-        *  @return なし
-        *
-        ****************************************************************/
+         *
+         *  @brief  アクティブな属性を出力する
+         *  @param  なし
+         *  @return なし
+         *
+         ****************************************************************/
         void C_GlslObject::PrintActiveAttribute()
         {
             // 属性の数と属性の名前の長さ
@@ -276,12 +277,12 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  アクティブなユニフォーム変数を出力する
-        *  @param  なし
-        *  @return なし
-        *
-        ****************************************************************/
+         *
+         *  @brief  アクティブなユニフォーム変数を出力する
+         *  @param  なし
+         *  @return なし
+         *
+         ****************************************************************/
         void C_GlslObject::PrintActiveUniform()
         {
             // ユニフォーム変数の数とユニフォーム変数の名前の長さ
@@ -322,12 +323,12 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  シェーダーの使用を開始する
-        *  @param  なし
-        *  @return なし
-        *
-        ****************************************************************/
+         *
+         *  @brief  シェーダーの使用を開始する
+         *  @param  なし
+         *  @return なし
+         *
+         ****************************************************************/
         void C_GlslObject::Begin()
         {
             assert(programObjectHandle_ != 0);
@@ -337,13 +338,13 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  ユニフォームバッファを含めてシェーダーの使用を開始する
-        *  @param  ユニフォームバッファ
-        *          注：( シェーダー利用中に破棄されない領域に作成したものを使うこと )
-        *  @return なし
-        *
-        ****************************************************************/
+         *
+         *  @brief  ユニフォームバッファを含めてシェーダーの使用を開始する
+         *  @param  ユニフォームバッファ
+         *          注：( シェーダー利用中に破棄されない領域に作成したものを使うこと )
+         *  @return なし
+         *
+         ****************************************************************/
         void C_GlslObject::BeginWithUnifomBuffer(UniformBufferObjectHandle uniformBufferObjectHandle, 
                                                  UniformBlockIndex uniformBlockIndex)
         {
@@ -351,17 +352,17 @@ namespace Shader
             Begin();
 
             // ユニフォームバッファオブジェクトをバインド
-            glBindBufferBase(BufferType::s_UNIFORM, uniformBlockIndex, uniformBufferObjectHandle);
+            glBindBufferBase(OpenGL::Buffer::s_UNIFORM, uniformBlockIndex, uniformBufferObjectHandle);
         }
 
 
         /*************************************************************//**
-        *
-        *  @brief  シェーダーの使用を終了する
-        *  @param  なし
-        *  @return なし
-        *
-        ****************************************************************/
+         *
+         *  @brief  シェーダーの使用を終了する
+         *  @param  なし
+         *  @return なし
+         *
+         ****************************************************************/
         void C_GlslObject::End()
         {
             glUseProgram(0);
@@ -369,12 +370,12 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  シェーダーの削除を行う
-        *  @param  なし
-        *  @return なし
-        *
-        ****************************************************************/
+         *
+         *  @brief  シェーダーの削除を行う
+         *  @param  なし
+         *  @return なし
+         *
+         ****************************************************************/
         void C_GlslObject::Delete()
         {
             // プログラムオブジェクトの削除
@@ -387,14 +388,14 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  int型の値でユニフォーム変数を設定する
-        *  @param  ユニフォーム変数の名前
-        *  @param  値
-        *  @return 正常終了：true
-        *  @return 異常終了：false
-        *
-        ****************************************************************/
+         *
+         *  @brief  int型の値でユニフォーム変数を設定する
+         *  @param  ユニフォーム変数の名前
+         *  @param  値
+         *  @return 正常終了：true
+         *  @return 異常終了：false
+         *
+         ****************************************************************/
         bool C_GlslObject::SetUniform1i(const std::string& rName, int32_t value)
         {
             // ユニフォーム変数の場所を取得
@@ -414,14 +415,14 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  float型の値でユニフォーム変数を設定する
-        *  @param  ユニフォーム変数の名前
-        *  @param  値
-        *  @return 正常終了：true
-        *  @return 異常終了：false
-        *
-        ****************************************************************/
+         *
+         *  @brief  float型の値でユニフォーム変数を設定する
+         *  @param  ユニフォーム変数の名前
+         *  @param  値
+         *  @return 正常終了：true
+         *  @return 異常終了：false
+         *
+         ****************************************************************/
         bool C_GlslObject::SetUniform1f(const std::string& rName, float value)
         {
             // ユニフォーム変数の場所を取得
@@ -441,14 +442,14 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  bool型の値でユニフォーム変数を設定する
-        *  @param  ユニフォーム変数の名前
-        *  @param  値
-        *  @return 正常終了：true
-        *  @return 異常終了：false
-        *
-        ****************************************************************/
+         *
+         *  @brief  bool型の値でユニフォーム変数を設定する
+         *  @param  ユニフォーム変数の名前
+         *  @param  値
+         *  @return 正常終了：true
+         *  @return 異常終了：false
+         *
+         ****************************************************************/
         bool C_GlslObject::SetUniform1b(const std::string& rName, bool value)
         {
             // ユニフォーム変数の場所を取得
@@ -468,15 +469,15 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  float型の2つの値でユニフォーム変数を設定する
-        *  @param  ユニフォーム変数の名前
-        *  @param  値1
-        *  @param  値2
-        *  @return 正常終了：true
-        *  @return 異常終了：false
-        *
-        ****************************************************************/
+         *
+         *  @brief  float型の2つの値でユニフォーム変数を設定する
+         *  @param  ユニフォーム変数の名前
+         *  @param  値1
+         *  @param  値2
+         *  @return 正常終了：true
+         *  @return 異常終了：false
+         *
+         ****************************************************************/
         bool C_GlslObject::SetUniform2f(const std::string& rName,
                                         float x,
                                         float y)
@@ -498,16 +499,16 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  float型の3つの値でユニフォーム変数を設定する
-        *  @param  ユニフォーム変数の名前
-        *  @param  値1
-        *  @param  値2
-        *  @param  値3
-        *  @return 正常終了：true
-        *  @return 異常終了：false
-        *
-        ****************************************************************/
+         *
+         *  @brief  float型の3つの値でユニフォーム変数を設定する
+         *  @param  ユニフォーム変数の名前
+         *  @param  値1
+         *  @param  値2
+         *  @param  値3
+         *  @return 正常終了：true
+         *  @return 異常終了：false
+         *
+         ****************************************************************/
         bool C_GlslObject::SetUniform3f(const std::string& rName,
                                         float x,
                                         float y,
@@ -530,17 +531,17 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  float型の4つの値でユニフォーム変数を設定する
-        *  @param  ユニフォーム変数の名前
-        *  @param  値1
-        *  @param  値2
-        *  @param  値3
-        *  @param  値4
-        *  @return 正常終了：true
-        *  @return 異常終了：false
-        *
-        ****************************************************************/
+         *
+         *  @brief  float型の4つの値でユニフォーム変数を設定する
+         *  @param  ユニフォーム変数の名前
+         *  @param  値1
+         *  @param  値2
+         *  @param  値3
+         *  @param  値4
+         *  @return 正常終了：true
+         *  @return 異常終了：false
+         *
+         ****************************************************************/
         bool C_GlslObject::SetUniform4f(const std::string& rName,
                                         float x,
                                         float y,
@@ -564,14 +565,14 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  2Dベクトルでユニフォーム変数を設定する
-        *  @param  ユニフォーム変数の名前
-        *  @param  2Dベクトル
-        *  @return 正常終了：true
-        *  @return 異常終了：false
-        *
-        ****************************************************************/
+         *
+         *  @brief  2Dベクトルでユニフォーム変数を設定する
+         *  @param  ユニフォーム変数の名前
+         *  @param  2Dベクトル
+         *  @return 正常終了：true
+         *  @return 異常終了：false
+         *
+         ****************************************************************/
         bool C_GlslObject::SetUniformVector2(const std::string& rName,
                                              const Math::S_Vector2<float>& rVector)
         {
@@ -592,14 +593,14 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  3Dベクトルでユニフォーム変数を設定する
-        *  @param  ユニフォーム変数の名前
-        *  @param  3Dベクトル
-        *  @return 正常終了：true
-        *  @return 異常終了：false
-        *
-        ****************************************************************/
+         *
+         *  @brief  3Dベクトルでユニフォーム変数を設定する
+         *  @param  ユニフォーム変数の名前
+         *  @param  3Dベクトル
+         *  @return 正常終了：true
+         *  @return 異常終了：false
+         *
+         ****************************************************************/
         bool C_GlslObject::SetUniformVector3(const std::string& rName,
                                              const Math::S_Vector3<float>& rVector)
         {
@@ -620,14 +621,14 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  4Dベクトルでユニフォーム変数を設定する
-        *  @param  ユニフォーム変数の名前
-        *  @param  4Dベクトル
-        *  @return 正常終了：true
-        *  @return 異常終了：false
-        *
-        ****************************************************************/
+         *
+         *  @brief  4Dベクトルでユニフォーム変数を設定する
+         *  @param  ユニフォーム変数の名前
+         *  @param  4Dベクトル
+         *  @return 正常終了：true
+         *  @return 異常終了：false
+         *
+         ****************************************************************/
         bool C_GlslObject::SetUniformVector4(const std::string& rName,
                                              const Math::S_Vector4<float>& rVector)
         {
@@ -678,15 +679,15 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  4 * 4 の行列でユニフォーム変数を設定する
-        *  @param  ユニフォーム変数の名前
-        *  @param  4 * 4 の行列
-        *  @param  要素数
-        *  @return 正常終了：true
-        *  @return 異常終了：false
-        *
-        ****************************************************************/
+         *
+         *  @brief  4 * 4 の行列でユニフォーム変数を設定する
+         *  @param  ユニフォーム変数の名前
+         *  @param  4 * 4 の行列
+         *  @param  要素数
+         *  @return 正常終了：true
+         *  @return 異常終了：false
+         *
+         ****************************************************************/
         bool C_GlslObject::SetUniformMatrix4x4(const std::string& rName,
                                                const Math::S_Matrix4x4<float>& rMatrix,
                                                int32_t elementCount)
@@ -708,13 +709,13 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  サブルーチンのインデックスを取得する
-        *  @param  シェーダーの種類
-        *  @param  サブルーチン名
-        *  @return サブルーチンのインデックス
-        *
-        ****************************************************************/
+         *
+         *  @brief  サブルーチンのインデックスを取得する
+         *  @param  シェーダーの種類
+         *  @param  サブルーチン名
+         *  @return サブルーチンのインデックス
+         *
+         ****************************************************************/
         SubroutineIndex C_GlslObject::GetSubroutineIndex(TypeEnum type, const std::string& rName)
         {
             assert(programObjectHandle_ != 0);
@@ -724,13 +725,13 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  アクティブなサブルーチンをバインドする
-        *  @param  サブルーチンのインデックス
-        *  @param  シェーダーの種類
-        *  @return なし
-        *
-        ****************************************************************/
+         *
+         *  @brief  アクティブなサブルーチンをバインドする
+         *  @param  サブルーチンのインデックス
+         *  @param  シェーダーの種類
+         *  @return なし
+         *
+         ****************************************************************/
         void C_GlslObject::BindActiveSubroutine(SubroutineIndex index, TypeEnum type)
         {
             const int32_t BIND_SUBROUTINE_NUMBER = 1;
@@ -740,13 +741,13 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  プログラムオブジェクトを取得する
-        *  @param  なし
-        *  @return プログラムオブジェクト
-        *
-        ****************************************************************/
-        ProgramObjectHandle C_GlslObject::GetProgramObject() const
+         *
+         *  @brief  プログラムオブジェクトのハンドルを取得する
+         *  @param  なし
+         *  @return プログラムオブジェクトのハンドル
+         *
+         ****************************************************************/
+        ProgramObjectHandle C_GlslObject::GetProgramObjectHandle() const
         {
             assert(programObjectHandle_ != 0);
 
@@ -755,12 +756,12 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  リンク済みフラグを取得する
-        *  @param  なし
-        *  @return リンク済みフラグ
-        *
-        ****************************************************************/
+         *
+         *  @brief  リンク済みフラグを取得する
+         *  @param  なし
+         *  @return リンク済みフラグ
+         *
+         ****************************************************************/
         bool C_GlslObject::IsLinkFlag() const
         {
             return linkFlag_;
@@ -768,12 +769,25 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  コンパイル時のエラーを出力する
-        *  @param  なし
-        *  @return なし
-        *
-        ****************************************************************/
+         *
+         *  @brief  生成処理を行う
+         *  @param  なし
+         *  @return GLSLオブジェクト
+         *
+         ****************************************************************/
+        GlslObjectPtr C_GlslObject::s_Create()
+        {
+            return std::make_shared<C_GlslObject>();
+        }
+
+
+        /*************************************************************//**
+         *
+         *  @brief  コンパイル時のエラーを出力する
+         *  @param  なし
+         *  @return なし
+         *
+         ****************************************************************/
         void C_GlslObject::PrintCompileError(ShaderObjectHandle handle)
         {
             // ログの長さ
@@ -799,12 +813,12 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  リンク時のエラーを出力する
-        *  @param  なし
-        *  @return なし
-        *
-        ****************************************************************/
+         *
+         *  @brief  リンク時のエラーを出力する
+         *  @param  なし
+         *  @return なし
+         *
+         ****************************************************************/
         void C_GlslObject::PrintLinkError(ProgramObjectHandle handle)
         {
             // ログの長さ
@@ -830,12 +844,12 @@ namespace Shader
 
 
         /*************************************************************//**
-        *
-        *  @brief  ユニフォーム変数の場所を取得する
-        *  @param  ユニフォーム変数の名前
-        *  @return なし
-        *
-        ****************************************************************/
+         *
+         *  @brief  ユニフォーム変数の場所を取得する
+         *  @param  ユニフォーム変数の名前
+         *  @return なし
+         *
+         ****************************************************************/
         int32_t C_GlslObject::GetUniformLocation(const std::string& rName) const
         {
             assert(programObjectHandle_ != 0);

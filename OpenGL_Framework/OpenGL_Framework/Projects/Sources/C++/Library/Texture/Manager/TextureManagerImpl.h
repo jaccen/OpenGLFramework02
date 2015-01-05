@@ -24,10 +24,10 @@ namespace Texture
     public:
         C_TextureManagerImpl(C_TextureManager* pTextureManager);                                        // コンストラクタ
         ~C_TextureManagerImpl();                                                                        // デストラクタ
-        bool Create2DFromFile(const std::string& rFilePath,                                              // ファイルから2Dテクスチャの作成
+        bool Create2DFromFile(const std::string& rFilePath,                                             // ファイルから2Dテクスチャの作成
                               const std::string& rId,
                               const ParameterFunction& rParameterFunction);
-        bool Create2DFromFont(const Font::FontPtr& prFont,                                                    // フォントからテクスチャを作成
+        bool Create2DFromFont(const Font::FontPtr& prFont,                                              // フォントからテクスチャを作成
                               const std::string& rId,
                               const std::string& rWords,
                               uint8_t red,
@@ -37,8 +37,8 @@ namespace Texture
         void Create2DFromPixelData(void* pPixelDatas,                                                   // ピクセル情報からテクスチャを作成
                                    int32_t width,
                                    int32_t height,
-                                   FormatType internalFormat,
-                                   FormatType pixelFormat,
+                                   OpenGL::FormatType internalFormat,
+                                   OpenGL::FormatType pixelFormat,
                                    int32_t byteBoundary,
                                    const std::string& rId,
                                    const ParameterFunction& rParameterFunction);
@@ -218,8 +218,8 @@ namespace Texture
     void C_TextureManager::C_TextureManagerImpl::Create2DFromPixelData(void* pPixelDatas,
                                                                        int32_t width,
                                                                        int32_t height,
-                                                                       FormatType internalFormat,
-                                                                       FormatType pixelFormat,
+                                                                       OpenGL::FormatType internalFormat,
+                                                                       OpenGL::FormatType pixelFormat,
                                                                        int32_t byteBoundary,
                                                                        const std::string& rId,
                                                                        const ParameterFunction& rParameterFunction)
@@ -502,8 +502,8 @@ namespace Texture
         if (prSurface->format->BytesPerPixel == 4)
         {
             // 内部で保持するフォーマットとピクセルフォーマットを設定
-            (*pInternalFormat) = Format::s_RGBA_8;
-            (*pPixelFormat) = Format::s_RGBA;
+            (*pInternalFormat) = OpenGL::Format::Internal::s_RGBA_8_UNORM;
+            (*pPixelFormat) = OpenGL::Format::Pixel::s_RGBA;
 
             // バイト境界を設定
             (*pByteBoundary) = 4;
@@ -512,8 +512,8 @@ namespace Texture
         else if (prSurface->format->BytesPerPixel == 3)
         {
             // 内部で保持するフォーマットとピクセルフォーマットを設定
-            (*pInternalFormat) = Format::s_RGB_8;
-            (*pPixelFormat) = Format::s_RGB;
+            (*pInternalFormat) = OpenGL::Format::Internal::s_RGB_8_UNORM;
+            (*pPixelFormat) = OpenGL::Format::Pixel::s_RGB;
 
             // バイト境界を設定
             (*pByteBoundary) = 1;

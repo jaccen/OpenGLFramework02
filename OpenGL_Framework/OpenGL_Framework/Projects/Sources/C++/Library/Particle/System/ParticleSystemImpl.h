@@ -142,7 +142,7 @@ namespace Particle
         void Update();                                                                                  // 更新処理
         void Draw();                                                                                    // 描画処理
         void Finalize();                                                                                // 終了処理
-        void Entry(const S_ParticleData& rData);                                                        // パーティクルを追加
+        void Entry(const S_CreateDara& rCreateData);                                                    // パーティクルを追加
         void SetMaxParticleCount(uint32_t maxParticleNumber);                                           // パーティクルの最大数を設定
         void EnableModelMatrix(bool validFlag);                                                         // モデル行列を有効化
         void EnableAutoBillboard(bool validFlag);                                                       // ビルボードの自動化を有効化
@@ -221,7 +221,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  パーティクルシステムの初期化処理を行う
+     *  @brief  初期化処理を行う
      *  @param  カメラ
      *  @param  テクスチャハンドル
      *  @param  パーティクルの最大数
@@ -243,23 +243,23 @@ namespace Particle
         // GLSLオブジェクトを作成し、登録
         if (!Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(Fixed::Shader::s_pGLSL_OBJECT_ID))
         {
-            auto pGlslObject = std::make_shared<Shader::GLSL::C_GlslObject>();
+            auto pGlslObject = Shader::GLSL::C_GlslObject::s_Create();
 
-            if (pGlslObject->CompileFromFile(Fixed::Shader::s_pVERTEX_FILE_PATH, Shader::GLSL::ShaderType::s_VERTEX) == false)
+            if (pGlslObject->CompileFromFile(Fixed::Shader::s_pVERTEX_FILE_PATH, Shader::GLSL::Type::s_VERTEX) == false)
             {
                 PrintLog("[ C_ParticleSystemImpl::Initialize ] : 頂点シェーダーのコンパイルに失敗しました。\n");
 
                 return false;
             }
 
-            if (pGlslObject->CompileFromFile(Fixed::Shader::s_pGEOMETRY_FILE_PATH, Shader::GLSL::ShaderType::s_GEOMETRY) == false)
+            if (pGlslObject->CompileFromFile(Fixed::Shader::s_pGEOMETRY_FILE_PATH, Shader::GLSL::Type::s_GEOMETRY) == false)
             {
                 PrintLog("[ C_ParticleSystemImpl::Initialize ] : ジオメトリシェーダーのコンパイルに失敗しました。\n");
 
                 return false;
             }
 
-            if (pGlslObject->CompileFromFile(Fixed::Shader::s_pFRAGMENT_FILE_PATH, Shader::GLSL::ShaderType::s_FRAGMENT) == false)
+            if (pGlslObject->CompileFromFile(Fixed::Shader::s_pFRAGMENT_FILE_PATH, Shader::GLSL::Type::s_FRAGMENT) == false)
             {
                 PrintLog("[ C_ParticleSystemImpl::Initialize ] : フラグメントシェーダーのコンパイルに失敗しました。\n");
 
@@ -277,12 +277,15 @@ namespace Particle
             pGlslObject_ = pGlslObject;
             Shader::GLSL::C_GlslObjectManager::s_GetInstance()->Entry(pGlslObject_, Fixed::Shader::s_pGLSL_OBJECT_ID);
         }
+        else
+        {
+            pGlslObject_ = Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(Fixed::Shader::s_pGLSL_OBJECT_ID).get();
+        }
 
         // テクスチャユニットを設定
         pGlslObject_->Begin();
         pGlslObject_->SetUniform1i("texture", Fixed::Texture::s_UNIT_NUMBER);
         pGlslObject_->End();
-
 
         // 頂点配列オブジェクトを作成
         CreateVertexArrayObject();
@@ -293,7 +296,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  パーティクルシステムの更新処理を行う
+     *  @brief  更新処理を行う
      *  @param  なし
      *  @return 正常終了：true
      *  @return 異常終了：false
@@ -327,7 +330,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  パーティクルシステムの描画処理を行う
+     *  @brief  描画処理を行う
      *  @param  なし
      *  @return なし
      *
@@ -388,7 +391,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  パーティクルシステムの終了処理を行う
+     *  @brief  終了処理を行う
      *  @param  なし
      *  @return なし
      *
@@ -413,11 +416,11 @@ namespace Particle
     /*************************************************************//**
      *
      *  @brief  パーティクルの追加を行う
-     *  @param  パーティクルの情報
+     *  @param  生成情報
      *  @return なし
      *
      ****************************************************************/
-    void C_ParticleSystem::C_ParticleSystemImpl::Entry(const S_ParticleData& rData)
+    void C_ParticleSystem::C_ParticleSystemImpl::Entry(const S_CreateDara& rCreateData)
     {
         // 最大数を超えていた場合は何もしない
         if (drawParticleCount_ >= vertices_.size()) return;
@@ -425,28 +428,28 @@ namespace Particle
         // 情報をリストに追加
         const int32_t ELAPSED_FRAME = 0;
 
-        infoList_.emplace_front(rData.lifeFrame_,
+        infoList_.emplace_front(rCreateData.lifeFrame_,
                                 ELAPSED_FRAME,
-                                rData.position_,
-                                rData.velocity_,
-                                rData.startAcceleration_,
-                                rData.startAcceleration_,
-                                rData.endAcceleration_,
-                                rData.startAngle_,
-                                rData.startAngle_,
-                                rData.endAngle_,
-                                rData.startWidth_,
-                                rData.startWidth_,
-                                rData.endWidth_,
-                                rData.startHeight_,
-                                rData.startHeight_,
-                                rData.endHeight_,
-                                rData.startColor_,
-                                rData.startColor_,
-                                rData.endColor_);
+                                rCreateData.position_,
+                                rCreateData.velocity_,
+                                rCreateData.startAcceleration_,
+                                rCreateData.startAcceleration_,
+                                rCreateData.endAcceleration_,
+                                rCreateData.startAngle_,
+                                rCreateData.startAngle_,
+                                rCreateData.endAngle_,
+                                rCreateData.startWidth_,
+                                rCreateData.startWidth_,
+                                rCreateData.endWidth_,
+                                rCreateData.startHeight_,
+                                rCreateData.startHeight_,
+                                rCreateData.endHeight_,
+                                rCreateData.startColor_,
+                                rCreateData.startColor_,
+                                rCreateData.endColor_);
 
         // パーティクルを追加
-        AddParticle(rData.position_, rData.startAngle_, rData.startWidth_, rData.startHeight_, rData.startColor_);
+        AddParticle(rCreateData.position_, rCreateData.startAngle_, rCreateData.startWidth_, rCreateData.startHeight_, rCreateData.startColor_);
     }
 
 
@@ -649,7 +652,7 @@ namespace Particle
 
         // 頂点バッファをバインドし、全てのデータを転送
         glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObjectHandle_);
-        glBufferData(GL_ARRAY_BUFFER, vertices_.size() * BYTE_TOTAL_NUMBER, vertices_.data(), GL_DYNAMIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, vertices_.size() * BYTE_TOTAL_NUMBER, vertices_.data(), OpenGL::Modify::s_DYNAMIC);
 
         // 頂点配列オブジェクトを作成し、バインド
         const int32_t CREATE_VERTEX_ARRAY_OBJECT_NUMBER = 1;
@@ -710,11 +713,8 @@ namespace Particle
     void C_ParticleSystem::C_ParticleSystemImpl::DeleteVertexArrayObject()
     {
         // 各バッファを削除
-        const int32_t DELETE_VERTEX_ARRAY_OBJECT_NUMBER = 1;
-        const int32_t DELETE_VERTEX_BUFFER_OBJECT_NUMBER = 1;
-
-        glDeleteVertexArrays(DELETE_VERTEX_ARRAY_OBJECT_NUMBER, &vertexArrayObjectHandle_);
-        glDeleteBuffers(DELETE_VERTEX_BUFFER_OBJECT_NUMBER, &vertexBufferObjectHandle_);
+        glDeleteBuffers(1, &vertexBufferObjectHandle_);
+        glDeleteVertexArrays(1, &vertexArrayObjectHandle_);
 
         vertexArrayObjectHandle_ = 0;
         vertexBufferObjectHandle_ = 0;
@@ -734,23 +734,9 @@ namespace Particle
 
         // 頂点バッファオブジェクトをバインドし、マップ
         glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObjectHandle_);
-        float* pVertexData = reinterpret_cast<float*>(glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY));
+        S_ParticleVertex* pVertices = reinterpret_cast<S_ParticleVertex*>(glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY));
 
-        for (size_t i = 0, vertexIndex = 0; i < drawParticleCount_; ++i)
-        {
-            pVertexData[vertexIndex] = vertices_[i].position_.x_;
-            pVertexData[vertexIndex + 1] = vertices_[i].position_.y_;
-            pVertexData[vertexIndex + 2] = vertices_[i].position_.z_;
-            pVertexData[vertexIndex + 3] = vertices_[i].angle_;
-            pVertexData[vertexIndex + 4] = vertices_[i].width_;
-            pVertexData[vertexIndex + 5] = vertices_[i].height_;
-            pVertexData[vertexIndex + 6] = vertices_[i].color_.red_;
-            pVertexData[vertexIndex + 7] = vertices_[i].color_.green_;
-            pVertexData[vertexIndex + 8] = vertices_[i].color_.blue_;
-            pVertexData[vertexIndex + 9] = vertices_[i].color_.alpha_;
-
-            vertexIndex += 10;
-        }
+        for (size_t i = 0; i < drawParticleCount_; ++i) pVertices[i] = vertices_[i];
 
         // 頂点バッファをアンマップし、アンバインド
         glUnmapBuffer(GL_ARRAY_BUFFER);
@@ -858,15 +844,16 @@ namespace Particle
         // ビュー行列からビルボードさせる行列を求める
         if (autoBillboardFlag_ == true)
         {
-            billboardMatrix_ = Matrix4x4::s_CreateLookAt(Vector3(0.0f), spCamera_->GetEyePoint() - spCamera_->GetTargetPoint(), spCamera_->GetUpVector());
-            billboardMatrix_.Invert();
+            billboardMatrix_ = spCamera_->GetViewMatrix();
+
+            std::swap(billboardMatrix_.a12_, billboardMatrix_.a21_);
+            std::swap(billboardMatrix_.a13_, billboardMatrix_.a31_);
+            std::swap(billboardMatrix_.a23_, billboardMatrix_.a32_);
 
             billboardMatrix_.a41_ = 0.0f;
             billboardMatrix_.a42_ = 0.0f;
             billboardMatrix_.a43_ = 0.0f;
         }
-
-        billboardMatrix_.Identity();
 
         // 各行列を設定
         pGlslObject_->SetUniformMatrix4x4("modelMatrix", modelMatrix_);

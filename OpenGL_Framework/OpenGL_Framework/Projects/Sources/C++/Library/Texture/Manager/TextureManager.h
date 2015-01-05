@@ -6,6 +6,7 @@
 #include "../../Singleton/Singleton.h"
 #include "../TextureDefine.h"
 #include "../../Font/FontManager.h"
+#include "../../OpenGL/OpenGlDefine.h"
 #include <functional>
 #include <array>
 
@@ -43,7 +44,7 @@ namespace Texture
     {
         friend C_Singleton<C_TextureManager>;                                                                   // シングルトンクラスをフレンド化
     public:
-        bool Create2DFromFile(const std::string& rFilePath,                                                    // ファイルから2Dテクスチャの作成
+        bool Create2DFromFile(const std::string& rFilePath,                                                     // ファイルから2Dテクスチャの作成
                               const std::string& rId = ID::s_pSAME_FILE_PATH,
                               const ParameterFunction& rParameterFunction = s_Default2DParameter);
         bool Create2DFromFont(const Font::FontPtr& prFont,                                                      // フォントから2Dテクスチャを作成
@@ -56,8 +57,8 @@ namespace Texture
         void Create2DFromPixelData(void* pPixelDatas,                                                           // ピクセル情報から2Dテクスチャを作成
                                    int32_t width,
                                    int32_t height,
-                                   FormatType internalFormat,
-                                   FormatType pixelFormat,
+                                   OpenGL::FormatType internalFormat,
+                                   OpenGL::FormatType pixelFormat,
                                    int32_t byteBoundary,
                                    const std::string& rId,
                                    const ParameterFunction& rParameterFunction = s_Default2DParameter);
@@ -67,7 +68,7 @@ namespace Texture
                                    const std::string& rId,
                                    const ParameterFunction& rParameterFunction = s_DefaultCubeMapParameter);
         void Destroy(const std::string& rId);                                                                   // テクスチャの破棄
-        void AllDestroy();                                                                                      // 終了処理
+        void AllDestroy();                                                                                      // テクスチャを全て破棄
         void SetActiveUnit(uint32_t unitNumber = 0);                                                            // アクティブにするテクスチャユニットの設定
         void Bind(TypeEnum type, TextureHandle handle);                                                         // テクスチャをバインド
         void Unbind(TypeEnum type);                                                                             // テクスチャをアンバインド

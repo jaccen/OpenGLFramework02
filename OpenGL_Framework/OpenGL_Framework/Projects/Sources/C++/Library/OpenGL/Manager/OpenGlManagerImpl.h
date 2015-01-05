@@ -49,7 +49,7 @@ namespace OpenGL
         void ResetMainWindowData();                                                                     // メインウィンドウの情報をリセット
         void SetVersion(int32_t major, int32_t minor);                                                  // バージョンの設定
         void SetProfire(int32_t profire);                                                               // プロファイルを設定
-        void SetColorBuffferSize(int32_t redBufferSize,                                                // カラーバッファのサイズを設定
+        void SetColorBuffferSize(int32_t redBufferSize,                                                 // カラーバッファのサイズを設定
                                  int32_t greenBufferSize,
                                  int32_t blueBufferSize,
                                  int32_t alphaBufferSize);
