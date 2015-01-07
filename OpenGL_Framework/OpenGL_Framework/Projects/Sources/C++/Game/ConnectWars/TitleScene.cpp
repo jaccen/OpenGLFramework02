@@ -60,7 +60,7 @@ namespace ConnectWars
         spCamera_->Update();
 
         Texture::C_TextureManager::s_GetInstance()->Create2DFromFile("Projects/Images/Test/Marisa.png", "Test");
-        Particle::C_ParticleSystemManager::s_GetInstance()->Create("Test", spCamera_, Texture::C_TextureManager::s_GetInstance()->GetTextureData("Test").get()->textureHandle_);
+        Particle::C_ParticleSystemManager::s_GetInstance()->Create("Test", spCamera_, Texture::C_TextureManager::s_GetInstance()->GetTextureData("Test").get()->handle_);
 
         return Scene::ecSceneReturn::SUCCESSFUL;
     }

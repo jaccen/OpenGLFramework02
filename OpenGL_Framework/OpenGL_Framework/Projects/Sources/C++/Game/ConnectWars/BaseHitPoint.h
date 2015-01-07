@@ -19,17 +19,18 @@ namespace ConnectWars
     class C_BaseHitPoint
     {
     public:
-        C_BaseHitPoint(int32_t maxHitPoint);                        // コンストラクタ
-        virtual ~C_BaseHitPoint();                                  // デストラクタ
-        virtual void Reset();                                       // 初期状態へリセット
-        virtual void Add(int32_t hitPoint);                         // ヒットポイントを加える
-        virtual bool CheckRemainHitPoint() const;                   // ヒットポイントが残っているか確認
-        virtual int32_t GetHitPoint() const;                        // ヒットポイントを取得
-        virtual int32_t GetMaxHitPoint() const;                     // 最大ヒットポイントを取得
-        virtual void SetHitPoint(int32_t hitPoint);                 // ヒットポイントを設定
-        virtual void SetMaxHitPoint(int32_t maxHitPoint);           // 最大ヒットポイントを設定
+        C_BaseHitPoint(int32_t maxValue);                       // コンストラクタ
+        virtual ~C_BaseHitPoint();                              // デストラクタ
+        virtual void Reset();                                   // 初期状態へリセット
+        virtual void Add(int32_t value);                        // 値を足す
+        virtual void Subtract(int32_t value);                   // 値を引く
+        virtual bool CheckRemainValue() const;                  // 値が残っているか確認
+        virtual int32_t GetValue() const;                       // 値を取得
+        virtual int32_t GetMaxValue() const;                    // 最大値を取得
+        virtual void SetValue(int32_t value);                   // 値を設定
+        virtual void SetMaxValue(int32_t maxValue);             // 最大値を設定
     protected:
-        int32_t hitPoint_ = 0;                                      ///< @brief ヒットポイント
-        int32_t maxHitPoint_ = 0;                                   ///< @brief 最大ヒットポイント
+        int32_t value_ = 0;                                     ///< @brief 値
+        int32_t maxValue_ = 0;                                  ///< @brief 最大値
     };
 }

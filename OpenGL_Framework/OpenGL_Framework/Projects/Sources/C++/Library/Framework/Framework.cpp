@@ -19,7 +19,6 @@
 /* マクロ定義 */
 #define _CRTDBG_MAP_ALLOC           // <crtdbg.h>内の関数のメモリの割り当てを追跡するようにするマクロ
 
-
 /* VisualStudio関連のヘッダファイル */
 #include <crtdbg.h>
 
@@ -235,6 +234,9 @@ namespace Framework
      ****************************************************************/
     void C_Framework::Finalize()
     {
+        // カメラを全て除去
+        Camera::C_CameraManager::s_GetInstance()->AllRemove();
+
         // フィギュアドロワーの終了処理
         Figure::C_FigureDrawer::s_GetInstance()->Finalize();
 

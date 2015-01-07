@@ -23,13 +23,13 @@ namespace Common
     class C_CommonHelper
     {
     public:
-        /* 安全な削除処理 */
+        /* 安全なメモリの解放 */
         template <typename T>
-        static void s_SafeDelete(T*& prObject);
+        static void s_SafeDelete(T*& prDeletePointer);
 
-        /* 安全な配列の削除処理 */
+        /* 安全な配列用のメモリの解放 */
         template <typename T>
-        static void s_SafeDeleteArray(T*& prArrayObject);
+        static void s_SafeDeleteArray(T*& prDeletePointer);
 
         /* カスタムデリータを型推論するmake_unique */
         template<typename T, typename U>
@@ -52,41 +52,49 @@ namespace Common
         /* 配列数を取得 */
         template<typename T, std::size_t Size>
         static std::size_t s_ArraySize(const T(&)[Size]);
+
+        /* アライメントに対応したメモリの割り当て */
+        template<typename T, typename... Args>
+        static T* s_AlignedNew(Args&&... args);
+
+        /* アライメントに対応したメモリの解放 */
+        template<typename T>
+        static void s_AlignedDelete(T*& prDeletePointer);
     };
 
 
     /*************************************************************//**
      *
-     *  @brief  オブジェクトの削除を行う
-     *  @param  オブジェクト
+     *  @brief  安全にポインタを解放する
+     *  @param  解放するメモリのポインタ
      *  @return なし
      *
      ****************************************************************/
     template <typename T>
-    void C_CommonHelper::s_SafeDelete(T*& prObject)
+    void C_CommonHelper::s_SafeDelete(T*& prDeletePointer)
     {
-        if (prObject)
+        if (prDeletePointer)
         {
-            delete (prObject);
-            (prObject) = nullptr;
+            delete prDeletePointer;
+            prDeletePointer = nullptr;
         }
     }
 
 
     /*************************************************************//**
      *
-     *  @brief  オブジェクトの配列の削除を行う
-     *  @param  オブジェクトの配列
+     *  @brief  安全に配列として確保したポインタを解放する
+     *  @param  解放するメモリのポインタ
      *  @return なし
      *
      ****************************************************************/
     template <typename T>
-    void C_CommonHelper::s_SafeDeleteArray(T*& prArrayObject)
+    void C_CommonHelper::s_SafeDeleteArray(T*& prDeletePointer)
     {
-        if (prArrayObject)
+        if (prDeletePointer)
         {
-            delete[](prArrayObject);
-            (prArrayObject) = nullptr;
+            delete[] prDeletePointer;
+            (prDeletePointer) = nullptr;
         }
     }
 
@@ -117,5 +125,38 @@ namespace Common
     std::size_t C_CommonHelper::s_ArraySize(const T(&)[Size])
     {
         return Size;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  アライメントに対応したメモリの割り当てを行う
+     *  @param  必要分の引き数
+     *  @return 割り当てられたメモリのポインタ
+     *
+     ****************************************************************/
+    template<typename T, typename... Args>
+    T* C_CommonHelper::s_AlignedNew(Args&&... args)
+    {
+        return  new(::_aligned_malloc(sizeof(T), __alignof(T))) T(std::forward<Args>(args)...);
+    }
+    
+
+    /*************************************************************//**
+     *
+     *  @brief  アライメントに対応したメモリの解放を行う
+     *  @param  解放するメモリのポインタ
+     *  @return なし
+     *
+     ****************************************************************/
+    template<typename T>
+    void C_CommonHelper::s_AlignedDelete(T*& prDeletePointer)
+    {
+        if (prDeletePointer)
+        {
+            prDeletePointer->~T();
+            ::_aligned_free(prDeletePointer);
+            prDeletePointer = nullptr;
+        }
     }
 }

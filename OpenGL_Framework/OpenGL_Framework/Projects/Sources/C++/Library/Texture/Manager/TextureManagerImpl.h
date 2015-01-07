@@ -237,7 +237,7 @@ namespace Texture
         pTextureDatas_.emplace(rId, std::make_shared<S_TextureData>(width, height));
 
         // テクスチャをバインドし、有効にする
-        pTextureManager_->Bind(Type::s_2D, pTextureDatas_[rId]->textureHandle_);
+        pTextureManager_->Bind(Type::s_2D, pTextureDatas_[rId]->handle_);
 
         // バイト境界を設定
         ::glPixelStorei(GL_UNPACK_ALIGNMENT, byteBoundary);
@@ -444,7 +444,7 @@ namespace Texture
         int32_t byteBoundary = 0;
 
         // テクスチャをバインドし、有効にする
-        ::glBindTexture(Type::s_CUBE_MAP, pTextureDatas_[rId]->textureHandle_);
+        ::glBindTexture(Type::s_CUBE_MAP, pTextureDatas_[rId]->handle_);
 
         // テクスチャの設定
         rParameterFunction();

@@ -18,7 +18,11 @@ namespace ConnectWars
      *  @param  種類
      *
      ****************************************************************/
-    C_CollisionObject::C_CollisionObject(const std::string& rId, int32_t type)
+    C_CollisionObject::C_CollisionObject(const std::string& rId, int32_t type) :
+
+        // 衝突点
+        upCollisionPoint_(std::make_unique<Physics::Vector3>(0.0f, 0.0f, 0.0f))
+
     {
         // 4つ分のIDのメモリを確保
         collidedObjectIdList_.reserve(4);
@@ -68,6 +72,45 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  ヒットポイントを取得する
+     *  @param  なし
+     *  @return ヒットポイント
+     *
+     ****************************************************************/
+    C_BaseHitPoint* C_CollisionObject::GetHitPoint() const
+    {
+        return upHitPoint_.get();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  パワーを取得する
+     *  @param  なし
+     *  @return パワー
+     *
+     ****************************************************************/
+    C_BasePower* C_CollisionObject::GetPower() const
+    {
+        return upPower_.get();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  無敵フラグを取得する
+     *  @param  なし
+     *  @return 無敵フラグ
+     *
+     ****************************************************************/
+    bool C_CollisionObject::IsInvincibleFlag() const
+    {
+        return invincibleFlag_;
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  衝突点を設定する
      *  @param  衝突点
      *  @return なし
@@ -75,7 +118,20 @@ namespace ConnectWars
      ****************************************************************/
     void C_CollisionObject::SetCollisionPoint(const Physics::Vector3& rCollisionPoint)
     {
-        collisionPoint_ = rCollisionPoint;
+        *upCollisionPoint_ = rCollisionPoint;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  無敵フラグを設定する
+     *  @param  無敵フラグ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_CollisionObject::SetInvincibleFlag(bool invincibleFlag)
+    {
+        invincibleFlag_ = invincibleFlag;
     }
 
 
@@ -101,6 +157,6 @@ namespace ConnectWars
      ****************************************************************/
     const Physics::Vector3& C_CollisionObject::GetCollisionPoint() const
     {
-        return collisionPoint_;
+        return *upCollisionPoint_;
     }
 }

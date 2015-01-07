@@ -16,7 +16,7 @@
 namespace Window
 {
     /* 別名 */
-    using WindowPtr = std::shared_ptr<C_BaseWindow>;                                        // WindowPtr型
+    using WindowPtr = std::shared_ptr<C_BaseWindow>;                                                            // WindowPtr型
 
 
     namespace
@@ -24,7 +24,7 @@ namespace Window
         /* ID */
         namespace ID
         {
-            const char* s_pMAIN_WINDOW = "MainWindow";                                      ///< @brief メインウィンドウ
+            const char* s_pMAIN_WINDOW = "MainWindow";                                                          ///< @brief メインウィンドウ
         }
     }
 
@@ -45,8 +45,6 @@ namespace Window
                    const std::string& rId = ID::s_pMAIN_WINDOW);
         void Remove(const std::string& rId = ID::s_pMAIN_WINDOW);                                               // 除去処理
         void AllRemove();                                                                                       // 全てのウィンドウを除去
-
-        /* ゲッター */
         boost::optional<const WindowPtr&> GetWindow(const std::string& rId = ID::s_pMAIN_WINDOW) const;         // ウィンドウを取得
     private:
         /* 前方宣言 */

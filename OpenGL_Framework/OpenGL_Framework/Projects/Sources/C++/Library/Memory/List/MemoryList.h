@@ -34,7 +34,7 @@ namespace Memory
         bool usePoolFlag_ = false;                              ///< @brief プールを使用しているか判断するフラグ
         S_MemoryList* pNext_ = nullptr;                         ///< @brief 次のリスト
 
-        /* 汎用メモリプール使用時 */
+/* 汎用メモリプール使用時 */
 #ifdef USE_GENERAL_MEMORY_POOL
 
         static C_GeneralMemoryPool* s_pGeneralMemoryPool;       ///< @brief 汎用メモリプール

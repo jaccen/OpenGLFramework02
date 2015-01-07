@@ -27,8 +27,6 @@ namespace Window
                    const std::string& rId);
         void Remove(const std::string& rId);                                                // 除去処理
         void AllRemove();                                                                   // 全てのウィンドウを除去
-
-        /* ゲッター */
         boost::optional<const WindowPtr&> GetWindow(const std::string& rId) const;          // ウィンドウを取得
     private:
         std::unordered_map<std::string, WindowPtr> pWindows;                                ///< @brief ウィンドウ

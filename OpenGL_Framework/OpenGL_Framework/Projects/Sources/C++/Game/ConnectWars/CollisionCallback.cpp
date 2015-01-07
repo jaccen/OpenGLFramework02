@@ -42,5 +42,7 @@ namespace ConnectWars
             // Õ“ËŒŸ’m‚ð”­s
             pUserData->DispatchCollision(pAnotherUserData);
         }
+
+        return true;
     }
 }

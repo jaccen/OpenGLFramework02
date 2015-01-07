@@ -13,16 +13,16 @@ namespace ConnectWars
     /*************************************************************//**
      *
      *  @brief  コンストラクタ
-     *  @param  最大ヒットポイント
+     *  @param  最大値
      *
      ****************************************************************/
-    C_BaseHitPoint::C_BaseHitPoint(int32_t maxHitPoint) :
+    C_BaseHitPoint::C_BaseHitPoint(int32_t maxValue) :
 
-        // ヒットポイント
-        hitPoint_(maxHitPoint),
+        // 値
+        value_(maxValue),
 
-        // 最大ヒットポイント
-        maxHitPoint_(maxHitPoint)
+        // 最大値
+        maxValue_(maxValue)
 
     {
     }
@@ -41,94 +41,109 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
-     *  @brief  ヒットポイントを初期状態に戻す
-     *  @param  最大ヒットポイント
+     *  @brief  値を初期状態に戻す
+     *  @param  最大値
      *  @return なし
      *
      ****************************************************************/
     void C_BaseHitPoint::Reset()
     {
-        SetHitPoint(maxHitPoint_);
+        SetValue(maxValue_);
     }
 
 
     /*************************************************************//**
      *
-     *  @brief  ヒットポイントを加える
-     *  @param  ヒットポイント
+     *  @brief  値を足す
+     *  @param  値
      *  @return なし
      *
      ****************************************************************/
     void C_BaseHitPoint::Add(int32_t hitPoint)
     {
-        hitPoint_ += hitPoint;
+        value_ += hitPoint;
 
-        if (hitPoint_ > maxHitPoint_) SetHitPoint(maxHitPoint_);
+        if (value_ > maxValue_) SetValue(maxValue_);
     }
 
 
     /*************************************************************//**
      *
-     *  @brief  ヒットポイントが残っているか確認を行う
-     *  @param  なし
-     *  @return ヒットポイントが残っている  ：true
-     *  @return ヒットポイントが残っていない：false
-     *
-     ****************************************************************/
-    bool C_BaseHitPoint::CheckRemainHitPoint() const
-    {
-        return hitPoint_ > 0;
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  ヒットポイントを取得する
-     *  @param  なし
-     *  @return ヒットポイント
-     *
-     ****************************************************************/
-    int32_t C_BaseHitPoint::GetHitPoint() const
-    {
-        return hitPoint_;
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  最大ヒットポイントを取得する
-     *  @param  なし
-     *  @return 最大ヒットポイント
-     *
-     ****************************************************************/
-    int32_t C_BaseHitPoint::GetMaxHitPoint() const
-    {
-        return maxHitPoint_;
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  ヒットポイントを設定する
-     *  @param  ヒットポイント
+     *  @brief  値を引く
+     *  @param  値
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseHitPoint::SetHitPoint(int32_t hitPoint)
+    void C_BaseHitPoint::Subtract(int32_t hitPoint)
     {
-        (hitPoint <= maxHitPoint_) ? (hitPoint_ = hitPoint) : SetHitPoint(maxHitPoint_);
+        value_ -= hitPoint;
+
+        if (value_ > maxValue_) SetValue(maxValue_);
     }
 
 
     /*************************************************************//**
      *
-     *  @brief  最大ヒットポイントを設定する
-     *  @param  最大ヒットポイント
+     *  @brief  値が残っているか確認を行う
+     *  @param  なし
+     *  @return 値が残っている  ：true
+     *  @return 値が残っていない：false
+     *
+     ****************************************************************/
+    bool C_BaseHitPoint::CheckRemainValue() const
+    {
+        return value_ > 0;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  値を取得する
+     *  @param  なし
+     *  @return 値
+     *
+     ****************************************************************/
+    int32_t C_BaseHitPoint::GetValue() const
+    {
+        return value_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  最大値を取得する
+     *  @param  なし
+     *  @return 最大値
+     *
+     ****************************************************************/
+    int32_t C_BaseHitPoint::GetMaxValue() const
+    {
+        return maxValue_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  値を設定する
+     *  @param  値
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseHitPoint::SetMaxHitPoint(int32_t maxHitPoint)
+    void C_BaseHitPoint::SetValue(int32_t hitPoint)
     {
-        maxHitPoint_ = maxHitPoint;
+        (hitPoint <= maxValue_) ? (value_ = hitPoint) : SetValue(maxValue_);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  最大値を設定する
+     *  @param  最大値
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseHitPoint::SetMaxValue(int32_t maxValue)
+    {
+        maxValue_ = maxValue;
     }
 }

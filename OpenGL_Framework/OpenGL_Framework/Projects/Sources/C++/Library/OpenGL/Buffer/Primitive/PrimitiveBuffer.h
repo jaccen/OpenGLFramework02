@@ -46,7 +46,7 @@ namespace OpenGL
             ModifyEnum indexModifyType_ = Modify::s_STATIC;                                         ///< @brief インデックスの修正の種類
         };
 
-        template<typename T, typename U>
+        template<typename T, typename U = uint16_t>
         C_PrimitiveBuffer(T* pVertices,                                                             // コンストラクタ
                           uint32_t vertexCount,
                           uint32_t vertexAttributeCount,
@@ -56,7 +56,7 @@ namespace OpenGL
                           U* pIndices = nullptr,
                           uint32_t indexCount = 0,
                           ModifyEnum indexModifyType = Modify::s_STATIC);
-        template<typename T, typename U>
+        template<typename T, typename U = uint16_t>
         C_PrimitiveBuffer(const S_CreateData<T, U>& rCreateData);                                   // コンストラクタ
         virtual ~C_PrimitiveBuffer();                                                               // デストラクタ
         VertexArrayObjectHandle GetVertexArrayObjectHandle() const;                                 // 頂点配列オブジェクトハンドルを取得
@@ -68,7 +68,7 @@ namespace OpenGL
         template<typename T>
         void RewriteIndices(T indices[]);                                                           // インデックスの書き換え
 
-        template<typename T, typename U>
+        template<typename T, typename U = uint16_t>
         static PrimitiveBufferPtr s_Create(T* pVertices,                                            // 生成処理
                                            uint32_t vertexCount,
                                            uint32_t vertexAttributeCount,
@@ -78,7 +78,7 @@ namespace OpenGL
                                            U* pIndices = nullptr,
                                            uint32_t indexCount = 0,
                                            ModifyEnum indexModifyType = Modify::s_STATIC);
-        template<typename T, typename U>
+        template<typename T, typename U = uint16_t>
         static PrimitiveBufferPtr s_Create(const S_CreateData<T, U>& rCreateData);                  // 生成処理
     private:
         VertexArrayObjectHandle vertexArrayObjectHandle_ = 0;                                       ///< @brief 頂点配列オブジェクトハンドル

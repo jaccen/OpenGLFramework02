@@ -107,7 +107,7 @@ namespace Physics
                                                           float airDensity)
     {
         // ソフトボディ情報を設定
-        upSoftBodyInfo_.reset(CreateSoftBodyInfo());
+        upSoftBodyInfo_.reset(Common::C_CommonHelper::s_AlignedNew<SoftBodyInfo>());
         upSoftBodyInfo_->m_dispatcher = upDispatcher_.get();
         upSoftBodyInfo_->m_broadphase = upBroadphase_.get();
         upSoftBodyInfo_->m_gravity = rGravity;

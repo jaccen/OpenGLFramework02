@@ -2,6 +2,10 @@
 #pragma once
 
 
+/* ヘッダファイル */
+#include "../Common/CommonHelper.h"
+
+
 //-------------------------------------------------------------
 ///
 /// @brief フィジックス
@@ -51,18 +55,6 @@ namespace Physics
     };
 
 
-    /*************************************************************//**
-     *
-     *  @brief  ソフトボディ情報を作成する
-     *  @param  なし
-     *
-     ****************************************************************/
-    inline SoftBodyInfo* CreateSoftBodyInfo()
-    {
-        return new(_aligned_malloc(sizeof(SoftBodyInfo), __alignof(SoftBodyInfo))) SoftBodyInfo;
-    }
-
-
     //-------------------------------------------------------------
     //!
     //! @brief ソフトボディインフォーデリータ―
@@ -78,9 +70,8 @@ namespace Physics
             // セルのメモリを解放
             pSoftBodyInfo->m_sparsesdf.Reset();
 
-            // デストラクタを明示的に呼び出し、メモリを解放
-            pSoftBodyInfo->~btSoftBodyWorldInfo();
-            ::_aligned_free(pSoftBodyInfo);
+            // メモリを解放
+            Common::C_CommonHelper::s_AlignedDelete(pSoftBodyInfo);
         }
     };
 }

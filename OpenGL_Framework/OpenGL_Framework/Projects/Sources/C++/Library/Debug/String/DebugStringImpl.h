@@ -112,7 +112,7 @@ namespace Debug
         auto pMainWindow = Window::C_WindowManager::s_GetInstance()->GetWindow().get();
         
         orthographicProjectionMatrix_ = Matrix4x4::s_CreateOrthographicProjection(0.0f,
-                                                                                  static_cast<float>(pMainWindow->GetWidth()), 
+                                                                                  static_cast<float>(pMainWindow->GetWidth()),
                                                                                   static_cast<float>(pMainWindow->GetHeight()), 
                                                                                   0.0f);
 
@@ -146,16 +146,16 @@ namespace Debug
         OpenGL::C_OpenGlManager::s_GetInstance()->SetBlendFunction(OpenGL::BlendFactor::s_SOURCE_ALPHA, OpenGL::BlendFactor::s_ONE_MINUS_SOURCE_ALPHA);
 
         // フォントからテクスチャを作成
-        static const char* s_pFONT_ID = "___DebugFontTexture___";
+        static const char* s_pFONT_ID = "DebugFontTexture";
 
         assert(!Texture::C_TextureManager::s_GetInstance()->GetTextureData(s_pFONT_ID));
         Texture::C_TextureManager::s_GetInstance()->Create2DFromFont(pFont_, s_pFONT_ID, Common::C_CommonHelper::s_ConvertShiftJisToUtf8(rString), red, green, blue);
 
-        // テクスチャユニットを有効にし、テクスチャのバインド
+        // テクスチャユニットを設定し、テクスチャのバインド
         auto pTextureData = Texture::C_TextureManager::s_GetInstance()->GetTextureData(s_pFONT_ID).get();
 
         Texture::C_TextureManager::s_GetInstance()->SetActiveUnit(Fixed::Texture::s_UNIT_NUMBER);
-        Texture::C_TextureManager::s_GetInstance()->Bind(Texture::Type::s_2D, pTextureData->textureHandle_);
+        Texture::C_TextureManager::s_GetInstance()->Bind(Texture::Type::s_2D, pTextureData->handle_);
 
         // 深度のマスクを有効化
         OpenGL::C_OpenGlManager::s_GetInstance()->EnableDepthMask(true);

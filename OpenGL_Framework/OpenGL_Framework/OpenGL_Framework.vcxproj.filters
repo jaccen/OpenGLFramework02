@@ -559,6 +559,21 @@
     <Filter Include="Sources\C++\Game\ConnectWars\Collision">
       <UniqueIdentifier>{89cdf87f-7859-4ef6-be52-55ac6f2b9283}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Bomb">
+      <UniqueIdentifier>{e51d0b0b-4dac-4ad7-94df-496b30c3fa2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Effect">
+      <UniqueIdentifier>{87d11a0a-32cd-4d89-909c-bf398307dcda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Thread">
+      <UniqueIdentifier>{60187f9b-9d58-4719-b801-8dde65fe75a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Scene\Load">
+      <UniqueIdentifier>{8f9b0f94-ad0d-480b-a1aa-3f8cb6d6a2a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders\GLSL\Load">
+      <UniqueIdentifier>{dd593d4f-a7e1-4590-abbf-8cdcd6a9a34f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Projects\Sources\C++\Other\Stdafx\Stdafx.h">
@@ -1080,6 +1095,18 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\CollisionCallback.h">
       <Filter>Sources\C++\Game\ConnectWars\Collision</Filter>
     </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseBomb.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Bomb</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\LoadScene.h">
+      <Filter>Sources\C++\Game\ConnectWars\Scene\Load</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseEffect.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Thread\Thread.h">
+      <Filter>Sources\C++\Library\Thread</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Projects\Sources\C++\Other\Stdafx\Stdafx.cpp">
@@ -1448,6 +1475,21 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\CollisionCallback.cpp">
       <Filter>Sources\C++\Game\ConnectWars\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseBomb.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Bomb</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\LoadScene.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Scene\Load</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Memory\Manager\MemoryManager.cpp">
+      <Filter>Sources\C++\Library\Memory\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseEffect.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Thread\Thread.cpp">
+      <Filter>Sources\C++\Library\Thread</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Projects\Shaders\GLSL\Debug\DebugString.geom">
@@ -1497,6 +1539,15 @@
     </None>
     <None Include="Projects\Shaders\GLSL\HalfLambert\HalfLambert.vert">
       <Filter>Resources\Shaders\GLSL\HalfLambert</Filter>
+    </None>
+    <None Include="Projects\Shaders\GLSL\Load\Load.vert">
+      <Filter>Resources\Shaders\GLSL\Load</Filter>
+    </None>
+    <None Include="Projects\Shaders\GLSL\Load\Load.frag">
+      <Filter>Resources\Shaders\GLSL\Load</Filter>
+    </None>
+    <None Include="Projects\Shaders\GLSL\Load\Load.geom">
+      <Filter>Resources\Shaders\GLSL\Load</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -5,6 +5,7 @@
 #include "../../Library/Input/Keyboard/KeyboardManager.h"
 #include "../../Library/Camera/Manager/CameraManager.h"
 #include "../../Library/Timer/Manager/TimeManager.h"
+#include "LoadScene.h"
 #include "TitleScene.h"
 #include "Stage01Scene.h"
 
@@ -76,7 +77,7 @@ namespace ConnectWars
         upPhysicsEngine_->Initialize(Physics::Vector3(0.0f, 0.0f, 0.0f), Physics::Default::s_AIR_DENSITY);
 
         // シーンマネージャーの初期化処理
-        upSceneManager_ = std::make_unique<Scene::C_SceneManager>(newEx C_Stage01Scene);
+        upSceneManager_ = std::make_unique<Scene::C_SceneManager>(newEx C_LoadScene);
         if (upSceneManager_->Initialize() == Scene::ecSceneReturn::ERROR_TERMINATION) return false;
 
         return true;
@@ -101,15 +102,12 @@ namespace ConnectWars
 
         // メッセージディスパッチャーの更新処理
         upMessageDispatcher_->Update();
-
-        // カメラマネージャーの更新処理
-        Camera::C_CameraManager::s_GetInstance()->Update();
-
-        // シーンマネージャーの更新処理
-        Scene::ecSceneReturn sceneReturnValue = upSceneManager_->Update();
-
+        
         // フィジックスエンジンの更新処理
         upPhysicsEngine_->Update(Timer::C_TimeManager::s_GetInstance()->GetDeltaTime());
+
+        // シーンマネージャーの更新処理
+        auto sceneReturnValue = upSceneManager_->Update();
 
         if (sceneReturnValue != Scene::ecSceneReturn::CONTINUATIOIN)
         {

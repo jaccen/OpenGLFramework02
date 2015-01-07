@@ -123,7 +123,7 @@ namespace Texture
     //-------------------------------------------------------------
     struct S_TextureData
     {
-        TextureHandle textureHandle_ = 0;                               ///< @brief テクスチャハンドル
+        TextureHandle handle_ = 0;                                      ///< @brief テクスチャハンドル
         int32_t width_ = 0;                                             ///< @brief 幅
         int32_t height_ = 0;                                            ///< @brief 高さ
         int32_t depth_ = 0;                                             ///< @brief 奥行
@@ -144,7 +144,7 @@ namespace Texture
             depth_(depth)
 
         {
-            ::glGenTextures(1, &textureHandle_);
+            ::glGenTextures(1, &handle_);
         }
 
         /*************************************************************//**
@@ -155,7 +155,7 @@ namespace Texture
          ****************************************************************/
         ~S_TextureData()
         {
-            ::glDeleteTextures(1, &textureHandle_);
+            ::glDeleteTextures(1, &handle_);
         }
     };
 

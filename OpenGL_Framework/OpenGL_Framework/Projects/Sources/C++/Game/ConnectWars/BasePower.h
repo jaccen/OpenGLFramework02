@@ -21,10 +21,11 @@ namespace ConnectWars
     public:
         C_BasePower(int32_t power);                             // コンストラクタ
         virtual ~C_BasePower();                                 // デストラクタ
-        virtual void Add(int32_t power);                        // パワーを加える
-        virtual int32_t GetPower() const;                       // パワーを取得
-        virtual void SetPower(int32_t power);                   // パワーを設定
+        virtual void Add(int32_t power);                        // 値を足す
+        virtual void Subtract(int32_t power);                   // 値を引く
+        virtual int32_t GetValue() const;                       // 値を取得
+        virtual void SetValue(int32_t power);                   // 値を設定
     protected:
-        int32_t power_ = 0;                                     ///< @brief パワー
+        int32_t value_ = 0;                                     ///< @brief 値
     };
 }

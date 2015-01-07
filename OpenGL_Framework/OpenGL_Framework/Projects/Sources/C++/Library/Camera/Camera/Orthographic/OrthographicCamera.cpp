@@ -60,10 +60,7 @@ namespace Camera
      ****************************************************************/
     const Matrix4& C_OrthographicCamera::GetViewMatrix() const
     {
-        StrongAssert(false && "[C_OrthographicCamera::GetViewMatrix] : Ç±ÇÃä÷êîÇÕégópÇ≈Ç´Ç‹ÇπÇÒÅB");
-
-        static auto tempMatrix = Matrix4();
-        return tempMatrix;
+        return Matrix4::s_IDENTITY;
     }
 
 
@@ -103,10 +100,7 @@ namespace Camera
      *  @return Ç»Çµ
      *
      ****************************************************************/
-    void C_OrthographicCamera::SetClipSpace(float left,
-                                            float right,
-                                            float bottom,
-                                            float top)
+    void C_OrthographicCamera::SetClipSpace(float left, float right, float bottom, float top)
     {
         clipSpaceLeft_ = left;
         clipSpaceRight_ = right;

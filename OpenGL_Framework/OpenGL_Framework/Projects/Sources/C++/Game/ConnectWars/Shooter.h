@@ -52,19 +52,6 @@ namespace ConnectWars
         virtual void CollisionProcess(C_BaseBullet* pBullet) = 0;                               // 弾との衝突時処理
         virtual void CollisionProcess(C_BaseObstacle* pObstacle) = 0;                           // 障害物との衝突時処理
         virtual void CollisionProcess(C_BaseBomb* pBomb) = 0;                                   // ボムとの衝突時処理
-
-        /* ゲッター */
-        //C_BaseHitPoint* GetHitPoint() const;                                                  // ヒットポイントを取得
-        //C_BasePower* GetPower() const;                                                        // 攻撃力を取得
-        //bool IsInvincibleFlag() const;                                                        // 無敵フラグを取得
-
-        /* セッター */
-        //void SetInvincibleFlag(bool invincibleFlag);                                          // 無敵フラグを設定
     protected:
-        //std::unique_ptr<C_MoveLogic> upMoveLogic_;                                            ///< @brief 移動のロジック
-        //std::unique_ptr<C_RotateLogic> upRotateLogic_;                                        ///< @brief 回転のロジック
-        //std::unique_ptr<C_BaseHitPoint> upHitPoint_;                                          ///< @brief ヒットポイント
-        //std::unique_ptr<C_BasePower> upPower_;                                                ///< @brief 攻撃力
-        //bool invincibleFlag_ = false;                                                         ///< @brief 無敵フラグ
     };
 }

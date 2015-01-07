@@ -47,8 +47,10 @@ namespace ConnectWars
         void CollisionProcess(C_BaseObstacle* pObstacle) override;                          // 障害物との衝突時処理
         void CollisionProcess(C_BaseBomb* pBomb) override;                                  // 障害物との衝突時処理
         virtual void Move();                                                                // 移動処理
+        int32_t GetShooterType() const;                                                     // 射撃者の種類を取得
         State::C_StateMachine<C_BaseBullet>* GetStateMachine() const;                       // ステートマシーンを取得
     protected:
+        int32_t shooterType_ = 0;                                                           ///< @brief 射撃者の種類
         std::unique_ptr<Physics::C_CollisionShape> upCollisionShape_;                       ///< @brief 衝突形状
         std::unique_ptr<Physics::C_RigidBody> upRigidBody_;                                 ///< @brief 剛体
         std::unique_ptr<C_RigidBodyMoveLogic> upMoveLogic_;                                 ///< @brief 移動のロジック

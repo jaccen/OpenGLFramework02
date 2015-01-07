@@ -45,14 +45,14 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>C:\Libraries\FBX SDK\2015.1\include;C:\Libraries\boost_1_55_0;Projects\Libraries\BulletPhysics\bullet-2.82\include;Projects\Libraries\GLEW\glew-1.10.0\include;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\include;Projects\Libraries\Lua\luabind-0.9.1;Projects\Libraries\SDL\SDL2-2.0.1\include;Projects\Libraries\SDL\SDL2_image-2.0.0\include;Projects\Libraries\SDL\SDL2_ttf-2.0.12\include;Projects\Libraries\SDL\SDL2_mixer-2.0.0\include;Projects\Libraries\SDL\SDL2_net-2.0.0\include;Projects\Sources\C++\Other\Stdafx</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Libraries\FBX SDK\2015.1\include;C:\Libraries\boost_1_55_0;Projects\Libraries\BulletPhysics\bullet-2.82\include;Projects\Libraries\GLEW\glew-1.10.0\include;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\include;Projects\Libraries\Lua\luabind-0.9.1;Projects\Libraries\SDL\SDL2-2.0.3\include;Projects\Libraries\SDL\SDL2_image-2.0.0\include;Projects\Libraries\SDL\SDL2_ttf-2.0.12\include;Projects\Libraries\SDL\SDL2_mixer-2.0.0\include;Projects\Libraries\SDL\SDL2_net-2.0.0\include;Projects\Sources\C++\Other\Stdafx</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Stdafx.h</PrecompiledHeaderFile>
       <ForcedIncludeFiles>Stdafx.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Libraries\FBX SDK\2015.1\lib\vs2013\x86\debug;Projects\Libraries\BulletPhysics\bullet-2.82\lib\Debug;C:\Libraries\boost_1_55_0\stage\lib;Projects\Libraries\GLEW\glew-1.10.0\lib\Release\Win32;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\lib;Projects\Libraries\SDL\SDL2-2.0.1\lib\x86;Projects\Libraries\SDL\SDL2_image-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_ttf-2.0.12\lib\x86;Projects\Libraries\SDL\SDL2_mixer-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_net-2.0.0\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Libraries\FBX SDK\2015.1\lib\vs2013\x86\debug;Projects\Libraries\BulletPhysics\bullet-2.82\lib\Debug;Projects\Libraries\GLEW\glew-1.10.0\lib\Release\Win32;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\lib;Projects\Libraries\SDL\SDL2-2.0.3\lib\x86;Projects\Libraries\SDL\SDL2_image-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_ttf-2.0.12\lib\x86;Projects\Libraries\SDL\SDL2_mixer-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_net-2.0.0\lib\x86;C:\Libraries\boost_1_55_0\stage\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -63,7 +63,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>C:\Libraries\FBX SDK\2015.1\include;C:\Libraries\boost_1_55_0;Projects\Libraries\BulletPhysics\bullet-2.82\include;Projects\Libraries\GLEW\glew-1.10.0\include;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\include;Projects\Libraries\Lua\luabind-0.9.1;Projects\Libraries\SDL\SDL2-2.0.1\include;Projects\Libraries\SDL\SDL2_image-2.0.0\include;Projects\Libraries\SDL\SDL2_ttf-2.0.12\include;Projects\Libraries\SDL\SDL2_mixer-2.0.0\include;Projects\Libraries\SDL\SDL2_net-2.0.0\include;Projects\Sources\C++\Other\Stdafx</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Libraries\FBX SDK\2015.1\include;C:\Libraries\boost_1_55_0;Projects\Libraries\BulletPhysics\bullet-2.82\include;Projects\Libraries\GLEW\glew-1.10.0\include;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\include;Projects\Libraries\Lua\luabind-0.9.1;Projects\Libraries\SDL\SDL2-2.0.3\include;Projects\Libraries\SDL\SDL2_image-2.0.0\include;Projects\Libraries\SDL\SDL2_ttf-2.0.12\include;Projects\Libraries\SDL\SDL2_mixer-2.0.0\include;Projects\Libraries\SDL\SDL2_net-2.0.0\include;Projects\Sources\C++\Other\Stdafx</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Stdafx.h</PrecompiledHeaderFile>
       <ForcedIncludeFiles>Stdafx.h</ForcedIncludeFiles>
@@ -72,11 +72,13 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Libraries\FBX SDK\2015.1\lib\vs2013\x86\release;Projects\Libraries\BulletPhysics\bullet-2.82\lib\Release;C:\Libraries\boost_1_55_0\stage\lib;Projects\Libraries\GLEW\glew-1.10.0\lib\Release\Win32;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\lib;Projects\Libraries\SDL\SDL2-2.0.1\lib\x86;Projects\Libraries\SDL\SDL2_image-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_ttf-2.0.12\lib\x86;Projects\Libraries\SDL\SDL2_mixer-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_net-2.0.0\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Libraries\FBX SDK\2015.1\lib\vs2013\x86\release;Projects\Libraries\BulletPhysics\bullet-2.82\lib\Release;Projects\Libraries\GLEW\glew-1.10.0\lib\Release\Win32;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\lib;Projects\Libraries\SDL\SDL2-2.0.3\lib\x86;Projects\Libraries\SDL\SDL2_image-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_ttf-2.0.12\lib\x86;Projects\Libraries\SDL\SDL2_mixer-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_net-2.0.0\lib\x86;C:\Libraries\boost_1_55_0\stage\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseBomb.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseBullet.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseEffect.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseEnemy.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseGun.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseHitPoint.h" />
@@ -90,6 +92,7 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ConnectMachine.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ConnectWars.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ConnectWarsDefine.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\LoadScene.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\MoveLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\NormalPlayer.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventState.h" />
@@ -240,6 +243,7 @@
     <ClInclude Include="Projects\Sources\C++\Library\Texture\Manager\TextureManager.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Texture\Manager\TextureManagerImpl.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Texture\TextureDefine.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Thread\Thread.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Timer\Counter\Frame\FrameCounter.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Timer\Manager\TimeManager.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Timer\Manager\TimeManagerImpl.h" />
@@ -268,7 +272,9 @@
     <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\stack_content_by_name.cpp" />
     <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\weak_ref.cpp" />
     <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\wrapper_base.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseBomb.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseBullet.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseEffect.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseEnemy.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseGun.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseHitPoint.cpp" />
@@ -281,6 +287,7 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\CollisionProcess.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ConnectMachine.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ConnectWars.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\LoadScene.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\NormalPlayer.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerCombatState.cpp" />
@@ -327,6 +334,7 @@
     <ClCompile Include="Projects\Sources\C++\Library\Math\Vector\Vector3.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Math\Vector\Vector4.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Memory\List\MemoryList.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Memory\Manager\MemoryManager.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Model\FBX\Loader\FbxLoader.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Model\OBJ\Loader\ObjLoader.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Model\SelfMade\Loader\ModelLoader.cpp" />
@@ -366,6 +374,7 @@
     <ClCompile Include="Projects\Sources\C++\Library\Sound\SoundManager.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Task\System\General\GeneralTaskSystem.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Texture\Manager\TextureManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Thread\Thread.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Timer\Counter\Frame\FrameCounter.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Timer\Manager\TimeManager.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\View\ViewHelper.cpp" />
@@ -391,6 +400,9 @@
     <None Include="Projects\Shaders\GLSL\Figure\Figure.vert" />
     <None Include="Projects\Shaders\GLSL\HalfLambert\HalfLambert.frag" />
     <None Include="Projects\Shaders\GLSL\HalfLambert\HalfLambert.vert" />
+    <None Include="Projects\Shaders\GLSL\Load\Load.frag" />
+    <None Include="Projects\Shaders\GLSL\Load\Load.geom" />
+    <None Include="Projects\Shaders\GLSL\Load\Load.vert" />
     <None Include="Projects\Shaders\GLSL\Particle\Particle.frag" />
     <None Include="Projects\Shaders\GLSL\Particle\Particle.geom" />
     <None Include="Projects\Shaders\GLSL\Particle\Particle.vert" />
