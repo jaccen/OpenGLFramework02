@@ -32,6 +32,9 @@ namespace ConnectWars
         // パーティクルシステムマネージャー
         upParticleSystemManager_(std::make_unique<Particle::C_ParticleSystemManager>()),
 
+        // スプライトクリエイターマネージャー
+        upSpriteCreaterManager_(std::make_unique<Sprite::C_SpriteCreaterManager>()),
+
         // ゲームオブジェクトマネージャー
         upGameObjectManager_(std::make_unique<GameObject::C_GameObjectManager>()),
 
@@ -77,7 +80,7 @@ namespace ConnectWars
         upPhysicsEngine_->Initialize(Physics::Vector3(0.0f, 0.0f, 0.0f), Physics::Default::s_AIR_DENSITY);
 
         // シーンマネージャーの初期化処理
-        upSceneManager_ = std::make_unique<Scene::C_SceneManager>(newEx C_LoadScene);
+        upSceneManager_ = std::make_unique<Scene::C_SceneManager>(newEx C_TitleScene);
         if (upSceneManager_->Initialize() == Scene::ecSceneReturn::ERROR_TERMINATION) return false;
 
         return true;
@@ -148,6 +151,9 @@ namespace ConnectWars
         // パーティクルシステムマネージャーの描画処理
         upParticleSystemManager_->Draw();
 
+        // スプライトクリエイターマネージャーの描画処理
+        upSpriteCreaterManager_->Draw();
+
         // ライブラリの描画処理
         C_Framework::Draw();
     }
@@ -171,6 +177,9 @@ namespace ConnectWars
         // パーティクルシステムを全て破棄
         upParticleSystemManager_->AllDestroy();
         
+        // スプライトクリエイターを全て破棄
+        upSpriteCreaterManager_->AllDestroy();
+
         // ゲームオブジェクトを全て除去
         upGameObjectManager_->AllRemove();
 

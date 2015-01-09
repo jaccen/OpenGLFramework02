@@ -7,6 +7,8 @@
 #include "../../Library/OpenGL/Manager/OpenGlManager.h"
 #include "../../Library/View/ViewHelper.h"
 #include "../../Library/Camera/Camera/Perspective/Test/TestCamera.h"
+#include "../../Library/Sprite/Creater/Manager/SpriteCreaterManager.h"
+#include "../../Library/Debug/String/DebugString.h"
 
 
 //-------------------------------------------------------------
@@ -60,7 +62,7 @@ namespace ConnectWars
         spCamera_->Update();
 
         Texture::C_TextureManager::s_GetInstance()->Create2DFromFile("Projects/Images/Test/Marisa.png", "Test");
-        Particle::C_ParticleSystemManager::s_GetInstance()->Create("Test", spCamera_, Texture::C_TextureManager::s_GetInstance()->GetTextureData("Test").get()->handle_);
+        Sprite::C_SpriteCreaterManager::s_GetInstance()->Create("Test", spCamera_, Texture::C_TextureManager::s_GetInstance()->GetTextureData("Test").get());
 
         return Scene::ecSceneReturn::SUCCESSFUL;
     }
@@ -95,18 +97,10 @@ namespace ConnectWars
     {
         static int32_t count = 0;
 
-        if (count++ % 10 == 0)
-        {
-            auto wpParticleSystem = Particle::C_ParticleSystemManager::s_GetInstance()->GetParticleSystem("Test").get();
-
-            if (wpParticleSystem.expired() == false)
-            {
-                auto pParticleSystem = wpParticleSystem.lock();
-                
-                pParticleSystem->Entry(600, Particle::Vector3(1.0f, 1.0f, 0.0f),  Particle::Vector3(0.0f, 0.05f, 0.0f),  Particle::Vector3(),  Particle::Vector3());
-                // pParticleSystem->SetExternalPower(Particle::Vector3(0.001f, 0.0f, 0.0f));
-            }
-        }
+        auto pSpriteCreater = Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater("Test").get();
+        auto p = pSpriteCreater.lock();
+        
+        p->Entry(Sprite::Vector3(0.0f), Sprite::Vector2(10.0f), 0.0f, Sprite::Vector4(1.0f), Sprite::Vector2(0.0f), Sprite::Vector2(128.0f));
         
         View::C_ViewHelper::s_DrawGrid(5.0f, 1.0f, 11, View::Vector4(1.0f, 1.0f, 1.0f, 0.1f), spCamera_->GetViewProjectionMatrix());
         View::C_ViewHelper::s_DrawAxis(50.0f, spCamera_->GetViewProjectionMatrix());

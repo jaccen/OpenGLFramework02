@@ -11,12 +11,12 @@ layout (location = 0) out vec4 f_fragmentColor;					// フラグメント色
 
 
 /* ユニフォーム変数 */
-uniform sampler2D texture;										// テクスチャ
+uniform sampler2D Texture;										// テクスチャ
 
 
 /* メイン関数 */
 void main()
 {
-	vec4 textureColor = texture(texture, g_textureCoord);
+	vec4 textureColor = texture(Texture, g_textureCoord);
 	f_fragmentColor = textureColor * g_color;
 }
