@@ -2,11 +2,14 @@
 #include "LoadScene.h"
 #include "ConnectWarsDefine.h"
 #include "Stage01Scene.h"
-#include "../../Library/OpenGL/Manager/OpenGlManager.h"
 #include "../../Library/Font/FontManager.h"
 #include "../../Library/Camera/Camera/Orthographic/OrthographicCamera.h"
 #include "../../Library/Window/Manager/WindowManager.h"
 #include "../../Library/Debug/Helper/DebugHelper.h"
+#include "../../Library/Shader/GLSL/Uniform/Manager/UniformBufferManager.h"
+#include "../../Library/Model/SelfMade/Loader/ModelLoader.h"
+#include "../../Library/Camera/Manager/CameraManager.h"
+#include "../../Library/OpenGL/Buffer/Primitive/PrimitiveDefine.h"
 
 
 //-------------------------------------------------------------
@@ -44,12 +47,11 @@ namespace ConnectWars
         pCameraManager_(Camera::C_CameraManager::s_GetInstance()),
 
         // "Now Loading"の文字列の位置
-        nowLoadingStringPosition_(850.0f, 700.0f, 0.0f),
-
-        // ロードの終了を判断するフラグ
-        loadFinishFlag_(false)
+        nowLoadingStringPosition_(850.0f, 700.0f, 0.0f)
 
     {
+        // 終了のフラグを下げる
+        loadThreadData_.finishFlag_ = false;
     }
 
 
@@ -75,7 +77,7 @@ namespace ConnectWars
     Scene::ecSceneReturn C_LoadScene::Initialize()
     {
         // "Now Loading"という文字の描画するために必要なオブジェクトを作成
-        if (!pTextureManager_->GetTextureData(Id::Texture::s_pLOAD))
+        if (!pTextureManager_->GetTextureData(ID::Texture::s_pLOAD))
         {
             // フォントをロードし、取得
             if (!pFontManager_->GetFont(Path::Font::s_pLOAD, fontSize_))
@@ -86,29 +88,29 @@ namespace ConnectWars
             auto pFont = pFontManager_->GetFont(Path::Font::s_pLOAD, fontSize_).get();
 
             // テクスチャを作成
-            if (pTextureManager_->Create2DFromFont(pFont, Id::Texture::s_pLOAD, "Now Loading", 255, 255, 255) == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
+            if (pTextureManager_->Create2DFromFont(pFont, ID::Texture::s_pLOAD, "Now Loading", 255, 255, 255) == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
         }
         
         // テクスチャデータを取得
-        pTextureData_ = pTextureManager_->GetTextureData(Id::Texture::s_pLOAD).get();
+        pTextureData_ = pTextureManager_->GetTextureData(ID::Texture::s_pLOAD).get();
 
         // プリミティブを作成し、取得
-        if (!pPrimitiveBufferManager_->GetPrimitiveBuffer(Id::Primitive::s_pLOAD))
+        if (!pPrimitiveBufferManager_->GetPrimitiveBuffer(ID::Primitive::s_pLOAD))
         {
             uint32_t vertexAttributeElementCountList[] = { 3 };
             OpenGL::DataEnum vertexAttributeDataTypeList[] = { OpenGL::DataType::s_FLOAT };
 
             pRectangleData_ = OpenGL::C_PrimitiveBuffer::s_Create(&nowLoadingStringPosition_, 1, 1, vertexAttributeElementCountList, vertexAttributeDataTypeList, OpenGL::Modify::s_STATIC);
 
-            pPrimitiveBufferManager_->Entry(pRectangleData_, Id::Primitive::s_pLOAD);
+            pPrimitiveBufferManager_->Entry(pRectangleData_, ID::Primitive::s_pLOAD);
         }
         else
         {
-            pRectangleData_ = pPrimitiveBufferManager_->GetPrimitiveBuffer(Id::Primitive::s_pLOAD).get();
+            pRectangleData_ = pPrimitiveBufferManager_->GetPrimitiveBuffer(ID::Primitive::s_pLOAD).get();
         }
 
         // GLSLオブジェクトを作成し、取得
-        if (!pGlslObjectManager_->GetGlslObject(Id::Shader::s_pLOAD))
+        if (!pGlslObjectManager_->GetGlslObject(ID::Shader::s_pLOAD))
         {
             pGlslObject_ = Shader::GLSL::C_GlslObject::s_Create();
 
@@ -117,15 +119,15 @@ namespace ConnectWars
             if (pGlslObject_->CompileFromFile("Projects/Shaders/GLSL/Load/Load.frag", Shader::GLSL::Type::s_FRAGMENT) == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
             if (pGlslObject_->Link() == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
 
-            pGlslObjectManager_->Entry(pGlslObject_, Id::Shader::s_pLOAD);
+            pGlslObjectManager_->Entry(pGlslObject_, ID::Shader::s_pLOAD);
         }
         else
         {
-            pGlslObject_ = pGlslObjectManager_->GetGlslObject(Id::Shader::s_pLOAD).get();
+            pGlslObject_ = pGlslObjectManager_->GetGlslObject(ID::Shader::s_pLOAD).get();
         }
 
         // カメラを作成し、取得
-        if (!pCameraManager_->GetCamera(Id::Camera::s_pUI))
+        if (!pCameraManager_->GetCamera(ID::Camera::s_pUI))
         {
             assert(Window::C_WindowManager::s_GetInstance()->GetWindow());
             auto pMainWindow = Window::C_WindowManager::s_GetInstance()->GetWindow().get();
@@ -135,11 +137,11 @@ namespace ConnectWars
 
             pUiCamera_ = pOrthograhicCamera;
             pUiCamera_->Update();
-            pCameraManager_->Entry(pUiCamera_, Id::Camera::s_pUI);
+            pCameraManager_->Entry(pUiCamera_, ID::Camera::s_pUI);
         }
         else
         {
-            pUiCamera_ = pCameraManager_->GetCamera(Id::Camera::s_pUI).get();
+            pUiCamera_ = pCameraManager_->GetCamera(ID::Camera::s_pUI).get();
         }
 
         // ユニフォーム変数を設定
@@ -152,25 +154,40 @@ namespace ConnectWars
 
         pGlslObject_->End();
 
+        // TODO ： テスト
+        loadThreadData_.pFunction = []()
+        {
+            auto spCamera = std::make_shared<Camera::C_PerspectiveCamera>();
+            spCamera->SetEyePoint(Camera::Vector3(0.0f, 0.0f, 28.0f));
+            spCamera->SetTargetPoint(Camera::Vector3(0.0f, 0.0f, 0.0f));
+            spCamera->SetFieldOfViewY(static_cast<float>(Math::s_PI_DIVISION4));
+            spCamera->SetNearClippingPlane(1.0f);
+            spCamera->SetFarClippingPlane(1000.0f);
+            spCamera->SetUpVector(Camera::Vector3::s_UP_DIRECTION);
+            spCamera->SetAspectRatio(1024.0f / 768.0f);
+            spCamera->Update();
+
+            Camera::C_CameraManager::s_GetInstance()->Entry(spCamera, ID::Camera::s_pMAIN);
+
+            return true;
+        };
+
         // スレッドを作成
         loadThread_.Create([](void* pData)
         {
-            int32_t sum = 0;
+            auto pThreadData = reinterpret_cast<S_LoadThreadData*>(pData);
 
-            for (size_t i = 0; i < 150000000; i++)
+            if (pThreadData->pFunction)
             {
-                sum += i / 100;
+                if (pThreadData->pFunction() == false) return -1;
             }
 
-            *static_cast<std::atomic<bool>*>(pData) = true;
+            pThreadData->finishFlag_ = true;
 
-            return sum;
+            return 0;
         },
         "LoadThread",
-        &loadFinishFlag_);
-
-        // スレッドの管理を放棄
-        loadThread_.Detach();
+        &loadThreadData_);
 
         return Scene::ecSceneReturn::SUCCESSFUL;
     }
@@ -187,8 +204,10 @@ namespace ConnectWars
      ****************************************************************/
     Scene::ecSceneReturn C_LoadScene::Update()
     {
-        if (loadFinishFlag_ == true)
+        if (loadThreadData_.finishFlag_ == true)
         {
+            if (loadThread_.Join() == -1) return Scene::ecSceneReturn::ERROR_TERMINATION;
+
             // シーンを切り替え
             GetSceneChanger()->ReplaceScene(newEx C_Stage01Scene);
         }

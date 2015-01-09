@@ -42,12 +42,12 @@ namespace Camera
      ****************************************************************/
     void C_OrthographicCamera::Update()
     {
-        projectionMatrix_ = Matrix4::s_CreateOrthographicProjection(clipSpaceLeft_,
-                                                                    clipSpaceRight_,
-                                                                    clipSpaceBottom_,
-                                                                    clipSpaceTop_,
-                                                                    nearClippingPlane_,
-                                                                    farClippingPlane_);
+        projectionMatrix_ = Matrix4x4::s_CreateOrthographicProjection(clipSpaceLeft_,
+                                                                      clipSpaceRight_,
+                                                                      clipSpaceBottom_,
+                                                                      clipSpaceTop_,
+                                                                      nearClippingPlane_,
+                                                                      farClippingPlane_);
     }
 
 
@@ -58,9 +58,9 @@ namespace Camera
      *  @return ビュー行列
      *
      ****************************************************************/
-    const Matrix4& C_OrthographicCamera::GetViewMatrix() const
+    const Matrix4x4& C_OrthographicCamera::GetViewMatrix() const
     {
-        return Matrix4::s_IDENTITY;
+        return Matrix4x4::s_IDENTITY;
     }
 
 
@@ -71,7 +71,7 @@ namespace Camera
      *  @return プロジェクション行列
      *
      ****************************************************************/
-    const Matrix4& C_OrthographicCamera::GetProjectionMatrix() const
+    const Matrix4x4& C_OrthographicCamera::GetProjectionMatrix() const
     {
         return projectionMatrix_;
     }
@@ -84,7 +84,7 @@ namespace Camera
      *  @return ビュープロジェクション行列
      *
      ****************************************************************/
-    const Matrix4& C_OrthographicCamera::GetViewProjectionMatrix() const
+    const Matrix4x4& C_OrthographicCamera::GetViewProjectionMatrix() const
     {
         return projectionMatrix_;
     }

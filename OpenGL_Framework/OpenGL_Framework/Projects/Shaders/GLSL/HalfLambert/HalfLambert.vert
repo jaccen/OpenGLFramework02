@@ -11,7 +11,7 @@ out vec3 f_position;
 out vec3 f_normal;
 
 
-/* uniform value */
+/* uniform variable */
 uniform mat4 modelMatrix;
 
 

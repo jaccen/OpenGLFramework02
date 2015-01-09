@@ -38,8 +38,8 @@ namespace OpenGL
     public:
         C_FrameBuffer();                                                                                    // コンストラクタ
         ~C_FrameBuffer();                                                                                   // デストラクタ
-        void Initialize(int32_t windowWidth,                                                                // 初期化処理
-                        int32_t windowHeight,
+        void Initialize(int32_t textureWidth,                                                               // 初期化処理
+                        int32_t texturewHeight,
                         Texture::TextureHandle textureHandles[],
                         uint32_t textureHandleCount,
                         OpenGL::FormatType depthInternalFormat = OpenGL::Format::Internal::s_DEPTH_24);

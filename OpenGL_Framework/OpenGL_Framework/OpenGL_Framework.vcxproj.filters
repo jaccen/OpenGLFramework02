@@ -481,9 +481,6 @@
     <Filter Include="Sources\C++\Game\ConnectWars\Logic">
       <UniqueIdentifier>{d31925df-a766-45e9-bd8b-1ce40ad062b7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\C++\Game\ConnectWars\Logic\MoveLogic">
-      <UniqueIdentifier>{a06292c2-c07e-47f6-a700-423095da374e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Sources\C++\Game\ConnectWars\Parameter">
       <UniqueIdentifier>{58348119-9c5a-460a-8eba-09c11a45f082}</UniqueIdentifier>
     </Filter>
@@ -504,21 +501,6 @@
     </Filter>
     <Filter Include="Sources\C++\Game\ConnectWars\Gun">
       <UniqueIdentifier>{ce849ce4-f2b0-4e06-a2f4-af53c63299c8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\C++\Game\ConnectWars\Logic\MoveLogic\Body">
-      <UniqueIdentifier>{90389d3d-efce-40b0-ba8c-c5ee1fe48487}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\C++\Game\ConnectWars\Logic\MoveLogic\Body\Soft">
-      <UniqueIdentifier>{ed87f43f-133c-4ccb-b7cd-c4773c5f1529}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\C++\Game\ConnectWars\Logic\MoveLogic\Body\Rigid">
-      <UniqueIdentifier>{d466e502-d4eb-482f-8dc4-753b10de7c8c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\C++\Game\ConnectWars\Logic\MoveLogic\Body\Rigid\Straight">
-      <UniqueIdentifier>{f62a8da5-c8c5-44b6-9f27-23e1025b6136}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\C++\Game\ConnectWars\Logic\MoveLogic\Body\Rigid\Input">
-      <UniqueIdentifier>{a54ec883-7f71-4727-b804-503e0a59a124}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resources\GameDatas\ConnectWars\Input">
       <UniqueIdentifier>{ed999dac-1665-4050-bf3c-743152b6f3dd}</UniqueIdentifier>
@@ -573,6 +555,54 @@
     </Filter>
     <Filter Include="Resources\Shaders\GLSL\Load">
       <UniqueIdentifier>{dd593d4f-a7e1-4590-abbf-8cdcd6a9a34f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Logic\Move">
+      <UniqueIdentifier>{a06292c2-c07e-47f6-a700-423095da374e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Logic\Move\Body">
+      <UniqueIdentifier>{90389d3d-efce-40b0-ba8c-c5ee1fe48487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Logic\Move\Body\Soft">
+      <UniqueIdentifier>{ed87f43f-133c-4ccb-b7cd-c4773c5f1529}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid">
+      <UniqueIdentifier>{d466e502-d4eb-482f-8dc4-753b10de7c8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\Straight">
+      <UniqueIdentifier>{f62a8da5-c8c5-44b6-9f27-23e1025b6136}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\Input">
+      <UniqueIdentifier>{a54ec883-7f71-4727-b804-503e0a59a124}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Logic\Shot">
+      <UniqueIdentifier>{1d879ca4-cf1d-4c13-b3a5-a95843e3431d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Logic\Shot\Input">
+      <UniqueIdentifier>{afe48a4f-ef26-4d58-8358-d80dbef27445}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Logic\Shot\EvenInterval">
+      <UniqueIdentifier>{ca96504b-d71e-405b-bd6c-ecc547791bb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Gun\Normal">
+      <UniqueIdentifier>{baf4dc8a-b2e8-4db4-b9de-6b74558a6de4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Gun\RapidFire">
+      <UniqueIdentifier>{92f54d9d-dba0-4172-b951-3703f15ff9c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Generator">
+      <UniqueIdentifier>{abaf6a99-e6f8-48d9-b8c8-a55726861725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Sprite">
+      <UniqueIdentifier>{708efab4-6c9c-4f5b-8388-f64864adfb00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Sprite\Creater">
+      <UniqueIdentifier>{0be7125c-5ba9-43ce-8d4b-d8111bcbdf6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Sprite\Creater\Manager">
+      <UniqueIdentifier>{0300094c-2802-4760-b708-7195729eedf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders\GLSL\Sprite">
+      <UniqueIdentifier>{0ed60e1b-f107-46b6-91ae-4150610836ac}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1039,16 +1069,16 @@
       <Filter>Sources\C++\Library\Timer\Counter\Frame</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\MoveLogic.h">
-      <Filter>Sources\C++\Game\ConnectWars\Logic\MoveLogic</Filter>
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyMoveLogic.h">
-      <Filter>Sources\C++\Game\ConnectWars\Logic\MoveLogic\Body\Rigid</Filter>
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyStraightMoveLogic.h">
-      <Filter>Sources\C++\Game\ConnectWars\Logic\MoveLogic\Body\Rigid\Straight</Filter>
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\Straight</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyInputMoveLogic.h">
-      <Filter>Sources\C++\Game\ConnectWars\Logic\MoveLogic\Body\Rigid\Input</Filter>
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\Input</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Stage01Scene.h">
       <Filter>Sources\C++\Game\ConnectWars\Scene\Stage\01</Filter>
@@ -1106,6 +1136,30 @@
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Library\Thread\Thread.h">
       <Filter>Sources\C++\Library\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ShotLogic.h">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Shot</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\InputShotLogic.h">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Shot\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EvenIntervalShotLogic.h">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Shot\EvenInterval</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\NormalGun.h">
+      <Filter>Sources\C++\Game\ConnectWars\Gun\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RapidFireGun.h">
+      <Filter>Sources\C++\Game\ConnectWars\Gun\RapidFire</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Sprite\Creater\SpriteCreater.h">
+      <Filter>Sources\C++\Library\Sprite\Creater</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Sprite\Creater\Manager\SpriteCreaterManager.h">
+      <Filter>Sources\C++\Library\Sprite\Creater\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Sprite\Creater\Manager\SpriteCreaterManagerImpl.h">
+      <Filter>Sources\C++\Library\Sprite\Creater\Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1437,10 +1491,10 @@
       <Filter>Sources\C++\Library\Timer\Counter\Frame</Filter>
     </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyStraightMoveLogic.cpp">
-      <Filter>Sources\C++\Game\ConnectWars\Logic\MoveLogic\Body\Rigid\Straight</Filter>
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\Straight</Filter>
     </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyInputMoveLogic.cpp">
-      <Filter>Sources\C++\Game\ConnectWars\Logic\MoveLogic\Body\Rigid\Input</Filter>
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\Input</Filter>
     </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Stage01Scene.cpp">
       <Filter>Sources\C++\Game\ConnectWars\Scene\Stage\01</Filter>
@@ -1489,6 +1543,30 @@
     </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Library\Thread\Thread.cpp">
       <Filter>Sources\C++\Library\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\InputShotLogic.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Shot\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyMoveLogic.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ShotLogic.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Shot</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EvenIntervalShotLogic.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Shot\EvenInterval</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\NormalGun.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Gun\Normal</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RapidFireGun.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Gun\RapidFire</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Sprite\Creater\SpriteCreater.cpp">
+      <Filter>Sources\C++\Library\Sprite\Creater</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Sprite\Creater\Manager\SpriteCreaterManager.cpp">
+      <Filter>Sources\C++\Library\Sprite\Creater\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1548,6 +1626,15 @@
     </None>
     <None Include="Projects\Shaders\GLSL\Load\Load.geom">
       <Filter>Resources\Shaders\GLSL\Load</Filter>
+    </None>
+    <None Include="..\..\..\Framework\OpenGL_Framework\OpenGL_Framework\Project\Shader\Sprite\Sprite.vert">
+      <Filter>Resources\Shaders\GLSL\Sprite</Filter>
+    </None>
+    <None Include="..\..\..\Framework\OpenGL_Framework\OpenGL_Framework\Project\Shader\Sprite\Sprite.frag">
+      <Filter>Resources\Shaders\GLSL\Sprite</Filter>
+    </None>
+    <None Include="..\..\..\Framework\OpenGL_Framework\OpenGL_Framework\Project\Shader\Sprite\Sprite.geom">
+      <Filter>Resources\Shaders\GLSL\Sprite</Filter>
     </None>
   </ItemGroup>
 </Project>

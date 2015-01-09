@@ -37,16 +37,16 @@ namespace OpenGL
     /*************************************************************//**
      *
      *  @brief  初期化処理を行う
-     *  @param  ウィンドウ幅
-     *  @param  ウィンドウ高さ
+     *  @param  テクスチャの幅
+     *  @param  テクスチャの高さ
      *  @param  テクスチャハンドル
      *  @param  テクスチャハンドルの数
      *  @param  深度の内部フォーマット
      *  @return なし
      *
      ****************************************************************/
-    void C_FrameBuffer::Initialize(int32_t windowWidth,
-                                   int32_t windowHeight,
+    void C_FrameBuffer::Initialize(int32_t textureWidth,
+                                   int32_t textureHeight,
                                    Texture::TextureHandle textureHandles[],
                                    uint32_t textureHandleCount,
                                    OpenGL::FormatType depthInternalFormat)
@@ -54,7 +54,7 @@ namespace OpenGL
         // レンダーバッファオブジェクトを作成
         glGenRenderbuffers(1, &renderBufferObjectHandle_);
         glBindRenderbuffer(OpenGL::Buffer::s_RENDER, renderBufferObjectHandle_);
-        glRenderbufferStorage(OpenGL::Buffer::s_RENDER, depthInternalFormat, windowWidth, windowHeight);
+        glRenderbufferStorage(OpenGL::Buffer::s_RENDER, depthInternalFormat, textureWidth, textureHeight);
         glBindRenderbuffer(OpenGL::Buffer::s_RENDER, 0);
         
         // フレームバッファオブジェクトを作成し、バインド

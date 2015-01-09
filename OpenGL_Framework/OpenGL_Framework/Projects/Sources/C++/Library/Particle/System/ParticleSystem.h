@@ -5,6 +5,7 @@
 /* ヘッダファイル */
 #include "../../Math/Vector/Vector4.h"
 #include "../../Texture/TextureDefine.h"
+#include "../../Camera/Camera/Camera.h"
 
 
 /* 前方宣言 */
@@ -13,11 +14,6 @@ namespace Math
     template<typename T>
     struct S_Matrix4x4;
 };
-
-namespace Camera
-{
-    class C_PerspectiveCamera;
-}
 
 
 //-------------------------------------------------------------
@@ -36,7 +32,7 @@ namespace Particle
     using InterpolationFunction = std::function<float(float, float, float)>;                // InterpolationFunction型
 
 
-    /** パーティクルデータ */
+    /** 作成データ */
     struct S_CreateDara
     {
         int32_t lifeFrame_ = 0;                                                             ///< @brief 生存フレーム数
@@ -137,7 +133,7 @@ namespace Particle
     public:
         IC_ParticleSystem() = default;                                                                          // コンストラクタ
         virtual ~IC_ParticleSystem() = default;                                                                 // デストラクタ
-        virtual void Entry(int32_t lifeFrame,                                                                   // パーティクルを追加
+        virtual void Entry(int32_t lifeFrame,                                                                   // 登録処理
                            const Vector3& rPosition,
                            const Vector3& rVelocity,
                            const Vector3& rStartAcceleration,
@@ -150,10 +146,10 @@ namespace Particle
                            float endHeight = 1.0f,
                            const Vector4& rStartColor = Vector4(1.0f),
                            const Vector4& rEndColor = Vector4(1.0f)) = 0;
-        virtual void Entry(const S_CreateDara& rCreateData) = 0;                                                // パーティクルの情報からをパーティクルを追加
+        virtual void Entry(const S_CreateDara& rCreateData) = 0;                                                // 登録処理
         virtual void SetMaxParticleCount(uint32_t maxParticleCount) = 0;                                        // パーティクルの最大数を設定
         virtual void EnableAutoBillboard(bool validFlag = true) = 0;                                            // ビルボードの自動化を有効化
-        virtual void SetCamera(const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera) = 0;              // カメラを設定
+        virtual void SetCamera(const Camera::CameraPtr& prCamera) = 0;                                          // カメラを設定
         virtual void SetBillboardMatrix(const Matrix4x4& rBillboardMatrix) = 0;                                 // ビルボードさせるための行列を設定
         virtual void SetExternalPower(const Vector3& rExternalPower) = 0;                                       // 外部の力を設定
         virtual void SetModelMatrix(const Matrix4x4& rModelMatrix) = 0;                                         // モデル行列を設定
@@ -178,13 +174,13 @@ namespace Particle
     public:
         C_ParticleSystem();                                                                                 // コンストラクタ
         virtual ~C_ParticleSystem();                                                                        // デストラクタ
-        bool Initialize(const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera,                      // 初期化処理
+        bool Initialize(const Camera::CameraPtr& prCamera,                                                  // 初期化処理
                         Texture::TextureHandle textureHandle,
                         uint32_t maxParticleNumber = 10000);
         void Update();                                                                                      // 更新処理
         void Draw();                                                                                        // 描画処理
         void Finalize();                                                                                    // 終了処理
-        void Entry(int32_t lifeFrame,                                                                       // パーティクルを追加
+        void Entry(int32_t lifeFrame,                                                                       // 登録処理
                    const Vector3& rPosition,
                    const Vector3& rVelocity,
                    const Vector3& rStartAcceleration,
@@ -197,10 +193,10 @@ namespace Particle
                    float endHeight = 1.0f,
                    const Vector4& rStartColor = Vector4(1.0f),
                    const Vector4& rEndColor = Vector4(1.0f)) override;
-        void Entry(const S_CreateDara& rCreateData) override;                                               // パーティクルの情報からをパーティクルを追加
+        void Entry(const S_CreateDara& rCreateData) override;                                               // 登録処理
         void SetMaxParticleCount(uint32_t maxParticleNumber) override;                                      // パーティクルの最大数を設定
         void EnableAutoBillboard(bool validFlag = true) override;                                           // ビルボードの自動化を有効化
-        void SetCamera(const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera) override;             // カメラを設定
+        void SetCamera(const Camera::CameraPtr& prCamera) override;                                         // カメラを設定
         void SetBillboardMatrix(const Matrix4x4& rBillboardMatrix) override;                                // ビルボードさせるための行列を設定
         void SetExternalPower(const Vector3& rExternalPower) override;                                      // 外部の力を設定
         void SetModelMatrix(const Matrix4x4& rModelMatrix) override;                                        // モデル行列を設定

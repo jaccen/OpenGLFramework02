@@ -7,11 +7,10 @@
 #include "../../Library/Figure/FigureDrawer.h"
 #include "../../Library/OpenGL/Manager/OpenGlManager.h"
 #include "../../Library/View/ViewHelper.h"
-#include "../../Library/Camera/Manager/CameraManager.h"
 #include "../../Library/Camera/Camera/Perspective/Test/TestCamera.h"
 #include "../../Library/Window/Manager/WindowManager.h"
-#include "../../Library/Shader/GLSL/Uniform/Manager/UniformBufferManager.h"
 #include "../../Library/Model/SelfMade/Loader/ModelLoader.h"
+#include "../../Library/Camera/Manager/CameraManager.h"
 #include "../../Library/OpenGL/Buffer/Primitive/PrimitiveDefine.h"
 
 
@@ -60,28 +59,17 @@ namespace ConnectWars
             upTaskSystem_ = std::make_unique<Task::C_GeneralTaskSystem>();
         }
 
-        spCamera_ = std::make_shared<Camera::C_PerspectiveCamera>();
-        spCamera_->SetEyePoint(Camera::Vector3(0.0f, 0.0f, 28.0f));
-        spCamera_->SetTargetPoint(Camera::Vector3(0.0f, 0.0f, 0.0f));
-        spCamera_->SetFieldOfViewY(static_cast<float>(Math::s_PI_DIVISION4));
-        spCamera_->SetNearClippingPlane(1.0f);
-        spCamera_->SetFarClippingPlane(1000.0f);
-        spCamera_->SetUpVector(Camera::Vector3::s_UP_DIRECTION);
-        spCamera_->SetAspectRatio(1024.0f / 768.0f);
-        spCamera_->Update();
-
-        Camera::C_CameraManager::s_GetInstance()->Entry(spCamera_, "MainCamera");
+        spCamera_ = Camera::C_CameraManager::s_GetInstance()->GetCamera(ID::Camera::s_pMAIN).get();
 
         S_CameraData cameraMatrix;
 
         cameraMatrix.viewMatrix_ = spCamera_->GetViewMatrix();
         cameraMatrix.projectionMatrix_ = spCamera_->GetProjectionMatrix();
         cameraMatrix.viewProjectionMatrix_ = spCamera_->GetViewProjectionMatrix();
-        
+
         auto pUniformBuffer = Shader::GLSL::C_UniformBuffer::s_Create(&cameraMatrix, sizeof(S_CameraData), "CameraData", OpenGL::Modify::s_DYNAMIC);
         Shader::GLSL::C_UniformBufferManager::s_GetInstance()->Entry(pUniformBuffer, "CameraData");
-
-        // ‹…Œ`ó‚ð«¶¬
+        
         Model::SelfMade::C_ModelLoader modelLoader;
         modelLoader.LoadModel("Projects/Models/Test/Sphere/Sphere.model");
         auto& rMesh = modelLoader.GetMesh(0);
@@ -117,7 +105,8 @@ namespace ConnectWars
         pGlslObject->CompileFromFile("Projects/Shaders/GLSL/HalfLambert/HalfLambert.frag", Shader::GLSL::Type::s_FRAGMENT);
         pGlslObject->Link();
 
-        Shader::GLSL::C_GlslObjectManager::s_GetInstance()->Entry(pGlslObject, "HalfLambert");
+        Shader::GLSL::C_GlslObjectManager::s_GetInstance()->Entry(pGlslObject, ID::Shader::s_pHALF_LAMBERT);
+
 
         upPlayer_ = std::make_unique<C_BasePlayer>("Player", 0);
 

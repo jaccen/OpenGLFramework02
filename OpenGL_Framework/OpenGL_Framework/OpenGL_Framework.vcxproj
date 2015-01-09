@@ -53,6 +53,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\Libraries\FBX SDK\2015.1\lib\vs2013\x86\debug;Projects\Libraries\BulletPhysics\bullet-2.82\lib\Debug;Projects\Libraries\GLEW\glew-1.10.0\lib\Release\Win32;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\lib;Projects\Libraries\SDL\SDL2-2.0.3\lib\x86;Projects\Libraries\SDL\SDL2_image-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_ttf-2.0.12\lib\x86;Projects\Libraries\SDL\SDL2_mixer-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_net-2.0.0\lib\x86;C:\Libraries\boost_1_55_0\stage\lib</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -73,6 +74,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>C:\Libraries\FBX SDK\2015.1\lib\vs2013\x86\release;Projects\Libraries\BulletPhysics\bullet-2.82\lib\Release;Projects\Libraries\GLEW\glew-1.10.0\lib\Release\Win32;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\lib;Projects\Libraries\SDL\SDL2-2.0.3\lib\x86;Projects\Libraries\SDL\SDL2_image-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_ttf-2.0.12\lib\x86;Projects\Libraries\SDL\SDL2_mixer-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_net-2.0.0\lib\x86;C:\Libraries\boost_1_55_0\stage\lib</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -92,15 +94,20 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ConnectMachine.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ConnectWars.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ConnectWarsDefine.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EvenIntervalShotLogic.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\InputShotLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\LoadScene.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\MoveLogic.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\NormalGun.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\NormalPlayer.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventState.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerCombatState.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RapidFireGun.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyInputMoveLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyMoveLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyStraightMoveLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Shooter.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ShotLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Stage01Scene.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\TitleScene.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Camera.h" />
@@ -232,6 +239,9 @@
     <ClInclude Include="Projects\Sources\C++\Library\Singleton\SingletonImpl.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Sound\SoundManager.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Sound\SoundManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Sprite\Creater\Manager\SpriteCreaterManager.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Sprite\Creater\Manager\SpriteCreaterManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Sprite\Creater\SpriteCreater.h" />
     <ClInclude Include="Projects\Sources\C++\Library\State\Machine\StateMachine.h" />
     <ClInclude Include="Projects\Sources\C++\Library\State\Machine\StateMachineImpl.h" />
     <ClInclude Include="Projects\Sources\C++\Library\State\State.h" />
@@ -287,13 +297,19 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\CollisionProcess.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ConnectMachine.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ConnectWars.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EvenIntervalShotLogic.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\InputShotLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\LoadScene.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\NormalGun.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\NormalPlayer.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerCombatState.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RapidFireGun.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyInputMoveLogic.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyMoveLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyStraightMoveLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Shooter.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ShotLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Stage01Scene.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\TitleScene.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Camera\Camera\Orthographic\OrthographicCamera.cpp" />
@@ -372,6 +388,8 @@
     <ClCompile Include="Projects\Sources\C++\Library\Shader\GLSL\Uniform\Manager\UniformBufferManager.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Shader\GLSL\Uniform\UniformBuffer.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Sound\SoundManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Sprite\Creater\Manager\SpriteCreaterManager.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Sprite\Creater\SpriteCreater.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Task\System\General\GeneralTaskSystem.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Texture\Manager\TextureManager.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Thread\Thread.cpp" />
@@ -387,6 +405,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\Framework\OpenGL_Framework\OpenGL_Framework\Project\Shader\Sprite\Sprite.frag" />
+    <None Include="..\..\..\Framework\OpenGL_Framework\OpenGL_Framework\Project\Shader\Sprite\Sprite.geom" />
+    <None Include="..\..\..\Framework\OpenGL_Framework\OpenGL_Framework\Project\Shader\Sprite\Sprite.vert" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\OpenGL\OpenGLData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Window\MainWindowData.json" />
     <None Include="Projects\Models\Test\Box\Box.material" />

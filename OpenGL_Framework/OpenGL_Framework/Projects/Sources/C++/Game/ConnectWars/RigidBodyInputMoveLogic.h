@@ -31,14 +31,15 @@ namespace ConnectWars
     class C_RigidBodyInputMoveLogic : public C_RigidBodyMoveLogic
     {
     public:
-        C_RigidBodyInputMoveLogic(float movement = 1.0f, float movementScale = 1.0f);           // コンストラクタ
-        ~C_RigidBodyInputMoveLogic() override;                                                  // デストラクタ
-        virtual void Move(RigidBody* pRigidBody) override;                                      // 移動処理
-        void SetMovementScale(float movementScale);                                             // 移動量のスケールを設定
+        C_RigidBodyInputMoveLogic(float movement = 1.0f, float movementScale = 1.0f);       // コンストラクタ
+        ~C_RigidBodyInputMoveLogic() override;                                              // デストラクタ
+        void SetMovementScale(float movementScale);                                         // 移動量のスケールを設定
     private:
-        float movement_ = 1.0f;                                                                 ///< @brief 移動量
-        float movementScale_ = 1.0f;                                                            ///< @brief 移動量のスケール
-        Input::C_KeyboardManager* pKeyboardManager_ = nullptr;                                  ///< @brief キーボードマネージャー
-        Input::C_GamepadManager* pGamepadManager_ = nullptr;                                    ///< @brief ゲームパッドマネージャー
+        float movement_ = 1.0f;                                                             ///< @brief 移動量
+        float movementScale_ = 1.0f;                                                        ///< @brief 移動量のスケール
+        Input::C_KeyboardManager* pKeyboardManager_ = nullptr;                              ///< @brief キーボードマネージャー
+        Input::C_GamepadManager* pGamepadManager_ = nullptr;                                ///< @brief ゲームパッドマネージャー
+
+        void DoProcess(RigidBody* pRigidBody) override;                                     // 非公開の処理
     };
 }

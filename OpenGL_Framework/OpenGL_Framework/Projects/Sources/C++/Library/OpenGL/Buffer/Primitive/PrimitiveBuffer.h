@@ -64,10 +64,13 @@ namespace OpenGL
         uint32_t GetVertexCount() const;                                                            // 頂点数を取得
         uint32_t GetIndexCount() const;                                                             // インデックス数を取得
         template<typename T>
-        void RewriteVertices(T vertices[]);                                                         // 頂点の書き換え
+        void RewriteVertices(T vertices[],                                                          // 頂点の書き換え
+                             int32_t rewriteVertexCount,
+                             int32_t firstVertexNumber = 0);   
         template<typename T>
-        void RewriteIndices(T indices[]);                                                           // インデックスの書き換え
-
+        void RewriteIndices(T indices[],                                                            // インデックスの書き換え
+                            int32_t rewriteIndexCount,
+                            int32_t firstIndexNumber = 0);
         template<typename T, typename U = uint16_t>
         static PrimitiveBufferPtr s_Create(T* pVertices,                                            // 生成処理
                                            uint32_t vertexCount,
@@ -191,11 +194,15 @@ namespace OpenGL
      *
      *  @brief  頂点の書き換えを行う
      *  @param  頂点
+     *  @param  書き換える頂点数
+     *  @param  先頭の頂点番号
      *  @return なし
      *
      ****************************************************************/
     template<typename T>
-    void C_PrimitiveBuffer::RewriteVertices(T vertices[])
+    void C_PrimitiveBuffer::RewriteVertices(T vertices[],
+                                            int32_t rewriteVertexCount,
+                                            int32_t firstVertexNumber)
     {
         // 頂点バッファをバインド
         glBindBuffer(Buffer::s_VERTEX, vertexBufferObjectHandle_);
@@ -205,7 +212,14 @@ namespace OpenGL
         assert(pVertices);
 
         // 頂点バッファのデータを書き換え
-        for (int32_t i = 0; i < vertexCount_; ++i) pVertices[i] = vertices[i];
+        int32_t loopTotalCount = firstVertexNumber + rewriteVertexCount;
+        int32_t indexOfArgumentVertex = 0;
+
+        for (int32_t i = firstVertexNumber; i < loopTotalCount; ++i)
+        {
+            pVertices[i] = vertices[indexOfArgumentVertex];
+            ++indexOfArgumentVertex;
+        }
 
         // 頂点バッファをアンマップ
         glUnmapBuffer(Buffer::s_VERTEX);
@@ -219,11 +233,15 @@ namespace OpenGL
      *
      *  @brief  インデックスの書き換えを行う
      *  @param  インデックス
+     *  @param  書き換えるインデックス数
+     *  @param  先頭のインデックス番号
      *  @return なし
      *
      ****************************************************************/
     template<typename T>
-    void C_PrimitiveBuffer::RewriteIndices(T indices[])
+    void C_PrimitiveBuffer::RewriteIndices(T indices[],
+                                           int32_t rewriteIndexCount,
+                                           int32_t firstIndexNumber)
     {
         // インデックスバッファをバインド
         glBindBuffer(Buffer::s_INDEX, vertexBufferObjectHandle_);
@@ -233,7 +251,14 @@ namespace OpenGL
         assert(pVertices);
 
         // インデックスバッファのデータを書き換え
-        for (int32_t i = 0; i < indexCount_; ++i) pIndices[i] = indices[i];
+        int32_t loopTotalCount = firstVertexNumber + rewriteVertexCount;
+        int32_t indexOfArgumentIndex = 0;
+
+        for (int32_t i = firstIndexNumber; i < loopTotalCount; ++i)
+        {
+            pIndices[i] = indices[indexOfArgumentIndex];
+            ++indexOfArgumentIndex;
+        }
 
         // インデックスバッファをアンマップ
         glUnmapBuffer(Buffer::s_INDEX);

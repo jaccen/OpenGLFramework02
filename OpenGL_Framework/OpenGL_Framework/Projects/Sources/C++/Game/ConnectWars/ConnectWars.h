@@ -8,6 +8,7 @@
 #include "../../Library/Lua/LuaStateManager.h"
 #include "../../Library/GameObject/Manager/GameObjectManager.h"
 #include "../../Library/GameObject/Message/Dispatcher/MessageDispatcher.h"
+#include "../../Library/Sprite/Creater/Manager/SpriteCreaterManager.h"
 #include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
 #include "../../Library/Physics/Engine/PhysicsEngine.h"
 
@@ -34,6 +35,7 @@ namespace ConnectWars
     private:
         std::unique_ptr<Scene::C_SceneManager> upSceneManager_;                             ///< @brief シーンマネージャー
         std::unique_ptr<Lua::C_LuaStateManager> upLuaStateManager_;                         ///< @brief Luaステートマネージャー
+        std::unique_ptr<Sprite::C_SpriteCreaterManager> upSpriteCreaterManager_;            ///< @brief スプライトクリエイターマネージャー
         std::unique_ptr<Particle::C_ParticleSystemManager> upParticleSystemManager_;        ///< @brief パーティクルシステムマネージャー
         std::unique_ptr<GameObject::C_GameObjectManager> upGameObjectManager_;              ///< @brief ゲームオブジェクトマネージャー
         std::unique_ptr<GameObject::Message::C_MessageDispatcher> upMessageDispatcher_;     ///< @brief メッセージディスパッチャー

@@ -8,13 +8,6 @@
 #include "../ParticleSystem.h"
 
 
-/* 前方宣言 */
-namespace Camera
-{
-    class C_PerspectiveCamera;
-}
-
-
 //-------------------------------------------------------------
 //!
 //! @brief パーティクル
@@ -41,7 +34,7 @@ namespace Particle
         void Update();                                                                                          // 更新処理
         void Draw();                                                                                            // 描画処理
         bool Create(const std::string& rId,                                                                     // パーティクスシステムを作成
-                    const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera,
+                    const Camera::CameraPtr& prCamera,
                     Texture::TextureHandle textureHandle,
                     uint32_t maxParticleCount = 10000);
         void Destroy(const std::string& rId);                                                                   // パーティクルシステムを破棄

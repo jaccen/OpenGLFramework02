@@ -183,7 +183,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseBullet::Move()
     {
-        upMoveLogic_->Move(upRigidBody_.get());
+        upMoveLogic_->Process(upRigidBody_.get());
     }
 
 

@@ -153,6 +153,20 @@ namespace OpenGL
 
     /*************************************************************//**
      *
+     *  @brief  レンダリングコンテキストが作成されているか確認する
+     *  @param  なし
+     *  @return 作成されている  ：true
+     *  @return 作成されていない：false
+     *
+     ****************************************************************/
+    bool C_OpenGlManager::CheckRenderingContext(const std::string& rId) const
+    {
+        return upImpl_->CheckRenderingContext(rId);
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  バックバッファのクリアを行う
      *  @param  クリアカラーの赤
      *  @param  クリアカラーの緑

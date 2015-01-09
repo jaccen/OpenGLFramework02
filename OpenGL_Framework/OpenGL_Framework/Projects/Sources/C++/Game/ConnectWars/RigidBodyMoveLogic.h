@@ -16,7 +16,7 @@
 namespace ConnectWars
 {
     /* 別名 */
-    using RigidBody = Physics::C_RigidBody;                             // RIgidBody型
+    using RigidBody = Physics::C_RigidBody;                                 // RIgidBody型
 
 
     //-------------------------------------------------------------
@@ -28,8 +28,10 @@ namespace ConnectWars
     class C_RigidBodyMoveLogic : public IC_MoveLogic<RigidBody>
     {
     public:
-        C_RigidBodyMoveLogic() = default;                               //!< @brief コンストラクタ
-        virtual ~C_RigidBodyMoveLogic() override = default;             //!< @brief デストラクタ
-        virtual void Move(RigidBody* pRigidBody) override = 0;          //!< @brief 移動処理
+        C_RigidBodyMoveLogic() = default;                                   //!< @brief コンストラクタ
+        virtual ~C_RigidBodyMoveLogic() override = default;                 //!< @brief デストラクタ
+        void Process(RigidBody* pRigidBody) override final;                 //!< @brief 処理
+    private:
+        virtual void DoProcess(RigidBody* pRigidBody) = 0;                  // 非公開の処理
     };
 }

@@ -37,12 +37,12 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
-     *  @brief  ˆÚ“®ˆ—‚ðs‚¤
+     *  @brief  ”ñŒöŠJ‚Ìˆ—‚ðs‚¤
      *  @param  „‘Ì
      *  @return ‚È‚µ
      *
      ****************************************************************/
-    void C_RigidBodyStraightMoveLogic::Move(RigidBody* pRigidBody)
+    void C_RigidBodyStraightMoveLogic::DoProcess(RigidBody* pRigidBody)
     {
         pRigidBody->ApplyForce(applyForce_);
     }

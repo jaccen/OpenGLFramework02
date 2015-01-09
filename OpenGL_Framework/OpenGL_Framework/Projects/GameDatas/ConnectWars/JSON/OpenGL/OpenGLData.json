@@ -24,6 +24,6 @@
       "SampleNumber" : 4
     },
     "UseSwapIntervalFlag" : false,
-    "UseShareRenderingContextFlag" : true
+    "UseShareRenderingContextFlag" : false
   }
 }

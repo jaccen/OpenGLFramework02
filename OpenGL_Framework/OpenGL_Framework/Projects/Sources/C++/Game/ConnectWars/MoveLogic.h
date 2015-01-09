@@ -26,6 +26,6 @@ namespace ConnectWars
     public:
         IC_MoveLogic() = default;                           //!< @brief コンストラクタ
         virtual ~IC_MoveLogic() = default;                  //!< @brief デストラクタ
-        virtual void Move(T* pSomething) = 0;               //!< @brief 移動処理
+        virtual void Process(T* pSomething) = 0;            //!< @brief 処理
     };
 }

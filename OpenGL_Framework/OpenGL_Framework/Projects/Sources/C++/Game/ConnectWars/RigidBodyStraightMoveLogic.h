@@ -25,8 +25,9 @@ namespace ConnectWars
     public:
         C_RigidBodyStraightMoveLogic(const Physics::Vector3& rApplyForce);          // コンストラクタ
         virtual ~C_RigidBodyStraightMoveLogic() override;                           // デストラクタ
-        virtual void Move(RigidBody* pRigidBody) override;                          // 移動処理
     private:
         Physics::Vector3 applyForce_;                                               ///< @brief 加える力
+
+        void DoProcess(RigidBody* pRigidBody) override;                             // 非公開の処理
     };
 }

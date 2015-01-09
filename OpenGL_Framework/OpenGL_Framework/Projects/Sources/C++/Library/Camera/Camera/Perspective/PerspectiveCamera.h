@@ -29,9 +29,9 @@ namespace Camera
         const Vector3& GetEyePoint() const;                                         // 視点を取得
         const Vector3& GetTargetPoint() const;                                      // 注視点を取得
         const Vector3& GetUpVector() const;                                         // アップベクトルを取得
-        virtual const Matrix4& GetViewMatrix() const override;                      // ビュー行列を取得
-        virtual const Matrix4& GetProjectionMatrix() const override;                // プロジェクション行列を取得
-        virtual const Matrix4& GetViewProjectionMatrix() const override;            // ビュープロジェクション行列を取得
+        virtual const Matrix4x4& GetViewMatrix() const override;                    // ビュー行列を取得
+        virtual const Matrix4x4& GetProjectionMatrix() const override;              // プロジェクション行列を取得
+        virtual const Matrix4x4& GetViewProjectionMatrix() const override;          // ビュープロジェクション行列を取得
         virtual void SetEyePoint(const Vector3& rEyePoint);                         // 視点を設定
         virtual void SetTargetPoint(const Vector3& rTargetPoint);                   // 注視点を設定
         void SetUpVector(const Vector3& rUpVector);                                 // アップベクトルを設定
@@ -47,8 +47,8 @@ namespace Camera
         Vector3 eyePoint_;                                                          ///< @brief 視点
         Vector3 targetPoint_;                                                       ///< @brief 注視点
         Vector3 upVector_;                                                          ///< @brief アップベクトル
-        Matrix4 viewMatrix_;                                                        ///< @brief ビュー行列
-        Matrix4 projectionMatrix_;                                                  ///< @brief プロジェクション行列
-        Matrix4 viewProjectionMatrix_;                                              ///< @brief ビュープロジェクション行列
+        Matrix4x4 viewMatrix_;                                                      ///< @brief ビュー行列
+        Matrix4x4 projectionMatrix_;                                                ///< @brief プロジェクション行列
+        Matrix4x4 viewProjectionMatrix_;                                            ///< @brief ビュープロジェクション行列
     };
 }

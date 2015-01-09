@@ -36,6 +36,7 @@ namespace OpenGL
         void AllDestroyRenderingContext();                                                              // 全てのレンダリングコンテキストを破棄
         bool SetCurrentRenderingContext(const std::string& rId);                                        // レンダリングコンテキストをカレントに設定
         void ResetCurrentRenderingContext();                                                            // カレントのレンダリングコンテキストをリセット
+        bool CheckRenderingContext(const std::string& rId) const;                                       // レンダリングコンテキストが作成されているか確認
         void SwapBuffer();                                                                              // バッファの入れ替え
     private:
         std::unordered_map<std::string, RenderingContextPtr> pRenderingContexts_;                       ///< @brief レンダリングコンテキスト
@@ -155,7 +156,7 @@ namespace OpenGL
         pMainWindowData_ = rMainWindow.GetWindowData();
 
         // レンダリングコンテキストを作成
-        if (CreateRenderingContext(RenderingContextID::s_pMAIN) == false) return false;
+        if (CreateRenderingContext(Id::RenderingContext::s_pMAIN) == false) return false;
 
         // GLEWの初期化処理
         if (InitializeGlew() == false) return false;
@@ -245,7 +246,7 @@ namespace OpenGL
         pMainWindowData_ = rMainWindow.GetWindowData();
 
         // レンダリングコンテキストを作成
-        if (CreateRenderingContext(RenderingContextID::s_pMAIN) == false) return false;
+        if (CreateRenderingContext(Id::RenderingContext::s_pMAIN) == false) return false;
 
         // GLEWの初期化処理
         if (InitializeGlew() == false) return false;
@@ -405,6 +406,23 @@ namespace OpenGL
         assert(pMainWindowData_);
 
         ::SDL_GL_MakeCurrent(pMainWindowData_.get(), nullptr);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  レンダリングコンテキストが作成されているか確認する
+     *  @param  なし
+     *  @return 作成されている  ：true
+     *  @return 作成されていない：false
+     *
+     ****************************************************************/
+    bool C_OpenGlManager::C_OpenGlManagerImpl::CheckRenderingContext(const std::string& rId) const
+    {
+        auto iterator = pRenderingContexts_.find(rId);
+        if (iterator == pRenderingContexts_.end()) return false;
+
+        return true;
     }
 
 

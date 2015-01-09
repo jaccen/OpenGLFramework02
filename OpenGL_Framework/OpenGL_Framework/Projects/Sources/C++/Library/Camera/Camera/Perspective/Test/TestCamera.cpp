@@ -242,9 +242,9 @@ namespace Camera
             mouseRightDragAngleY_ = std::min(mouseRightDragAngleY_, static_cast<float>(Math::s_PI_DIVISION2 - RIGHT_DRAG_CORRECTION_VALUE));
 
             // âÒì]çsóÒÇçÏê¨
-            Matrix4 rotateMatrix = Matrix4::s_CreateRotationYawPitchRoll(mouseRightDragAngleY_,
-                mouseRightDragAngleX_,
-                0.0f);
+            Matrix4x4 rotateMatrix = Matrix4x4::s_CreateRotationYawPitchRoll(mouseRightDragAngleY_,
+                                                                             mouseRightDragAngleX_,
+                                                                             0.0f);
 
             // ãóó£ÇVector4Ç…ïœä∑
             Vector4 distanceV4(distance_, 0.0f);

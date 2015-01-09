@@ -46,11 +46,11 @@ namespace Particle
      *  @return 異常終了：false
      *
      ****************************************************************/
-    bool C_ParticleSystem::Initialize(const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera,
+    bool C_ParticleSystem::Initialize(const Camera::CameraPtr& prCamera,
                                       Texture::TextureHandle textureHandle,
                                       uint32_t maxParticleCount)
     {
-        if (upImpl_->Initialize(sprCamera, textureHandle, maxParticleCount) == false) return false;
+        if (upImpl_->Initialize(prCamera, textureHandle, maxParticleCount) == false) return false;
 
         return true;
     }
@@ -98,7 +98,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  パーティクルの追加を行う
+     *  @brief  登録処理を行う
      *  @param  生存フレーム数
      *  @param  座標
      *  @param  速度
@@ -147,7 +147,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  パーティクルの追加を行う
+     *  @brief  登録処理を行う
      *  @param  生成情報
      *  @return なし
      *
@@ -191,9 +191,9 @@ namespace Particle
      *  @return なし
      *
      ****************************************************************/
-    void C_ParticleSystem::SetCamera(const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera)
+    void C_ParticleSystem::SetCamera(const Camera::CameraPtr& prCamera)
     {
-        upImpl_->SetCamera(sprCamera);
+        upImpl_->SetCamera(prCamera);
     }
 
 

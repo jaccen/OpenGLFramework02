@@ -74,11 +74,11 @@ namespace Particle
      *
      ****************************************************************/
     bool C_ParticleSystemManager::Create(const std::string& rId,
-                                         const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera,
+                                         const Camera::CameraPtr& prCamera,
                                          Texture::TextureHandle textureHandle,
                                          uint32_t maxParticleNumber)
     {
-        if (upImpl_->Create(rId, sprCamera, textureHandle, maxParticleNumber) == false) return false;
+        if (upImpl_->Create(rId, prCamera, textureHandle, maxParticleNumber) == false) return false;
 
         return true;
     }

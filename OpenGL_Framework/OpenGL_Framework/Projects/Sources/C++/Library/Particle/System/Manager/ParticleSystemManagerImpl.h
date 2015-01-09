@@ -1,8 +1,6 @@
 /* ヘッダファイル */
 #include "ParticleSystemManager.h"
-#include "../../../Texture/Manager/TextureManager.h"
 #include "../../../Debug/Helper/DebugHelper.h"
-#include "../../../Camera/Camera/Perspective/PerspectiveCamera.h"
 #include <deque>
 
 
@@ -31,8 +29,8 @@ namespace Particle
         ~C_ParticleSystemManagerImpl();                                                                             // デストラクタ
         void Update();                                                                                              // 更新処理
         void Draw();                                                                                                // 描画処理
-        bool Create(const std::string& rId,                                                                         // パーティクスシステムを作成
-                    const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera,
+        bool Create(const std::string& rId,                                                                         // パーティクルシステムを作成
+                    const Camera::CameraPtr& prCamera,
                     Texture::TextureHandle textureHandle,
                     uint32_t maxParticleCount);
         void Destroy(const std::string& rId);                                                                       // パーティクルシステムを破棄
@@ -104,7 +102,7 @@ namespace Particle
      *
      ****************************************************************/
     bool C_ParticleSystemManager::C_ParticleSystemManagerImpl::Create(const std::string& rId,
-                                                                      const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera,
+                                                                      const Camera::CameraPtr& prCamera,
                                                                       Texture::TextureHandle textureHandle,
                                                                       uint32_t maxParticleCount)
     {
@@ -123,9 +121,9 @@ namespace Particle
         }
 
         // パーティクルシステムを生成し、初期化
-        std::shared_ptr<C_ParticleSystem> pParticleSystem = std::make_shared<C_ParticleSystem>();
+        auto pParticleSystem = std::make_shared<C_ParticleSystem>();
 
-        if (pParticleSystem->Initialize(sprCamera, textureHandle, maxParticleCount) == false)
+        if (pParticleSystem->Initialize(prCamera, textureHandle, maxParticleCount) == false)
         {
             PrintLog("[ C_ParticleSystemManagerImpl::Initialize ] : パーティクルシステムの初期化処理に失敗しました。");
 

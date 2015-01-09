@@ -3,6 +3,10 @@
 #include "../../Game/ConnectWars/ConnectWars.h"
 
 
+/* マクロ定義 */
+#undef main                 // mainのマクロ定義を打ち消す( <SDL_main.h>に定義されているため )
+
+
 /* リリース時 */
 #ifndef _DEBUG
 

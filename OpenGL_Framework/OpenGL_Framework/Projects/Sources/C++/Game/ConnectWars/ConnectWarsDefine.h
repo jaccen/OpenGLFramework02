@@ -36,7 +36,7 @@ namespace ConnectWars
     namespace
     {
         /* ID */
-        namespace Id
+        namespace ID
         {
             /* カメラ */
             namespace Camera
@@ -74,6 +74,12 @@ namespace ConnectWars
             namespace Primitive
             {
                 const char* s_pLOAD = "LoadPrimitive";                                          ///< @brief ロード用のプリミティブ
+            }
+
+            /* レンダリングコンテキスト */
+            namespace RenderingContext
+            {
+                const char* s_pLOAD = "LoadRenderingContext";                                   ///< @brief ロード用のレンダリングコンテキスト
             }
         }
 

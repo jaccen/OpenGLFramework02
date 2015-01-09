@@ -45,45 +45,11 @@ namespace ConnectWars
         upRigidBody_ = std::make_unique<Physics::C_RigidBody>(upSphereShape_.get(), transform, 1.0f);
         Physics::C_PhysicsEngine::s_GetInstance()->AddRigidBody(upRigidBody_.get());
 
-        Model::SelfMade::C_ModelLoader modelLoader;
-        modelLoader.LoadModel("Projects/Models/Test/Sphere/Sphere.model");
-        auto& rMesh = modelLoader.GetMesh(0);
-
-        uint32_t vertexCount = rMesh.vertices_.size();
-        std::vector<OpenGL::S_VertexPNT> vertices(vertexCount);
-
-        for (size_t i = 0; i < vertexCount; ++i)
-        {
-            vertices[i].position_ = rMesh.vertices_[i].position_;
-            vertices[i].normal_ = rMesh.vertices_[i].normal_;
-            vertices[i].textureCoord_ = rMesh.vertices_[i].textureCoord_;
-        }
-
-        uint32_t vertexAttributeElementCountList[] = { 3, 3, 2 };
-        OpenGL::DataEnum vertexAttributeDataTypeList[] = { OpenGL::DataType::s_FLOAT, OpenGL::DataType::s_FLOAT, OpenGL::DataType::s_FLOAT };
-        
-        pModelData_ = OpenGL::C_PrimitiveBuffer::s_Create(vertices.data(),
-                                                          vertexCount,
-                                                          3,
-                                                          vertexAttributeElementCountList,
-                                                          vertexAttributeDataTypeList,
-                                                          OpenGL::Modify::s_STATIC,
-                                                          rMesh.indices_.data(),
-                                                          rMesh.indices_.size(),
-                                                          OpenGL::Modify::s_STATIC);
-
-        pGlslObject_ = Shader::GLSL::C_GlslObject::s_Create();
-
-        pGlslObject_->CompileFromFile("Projects/Shaders/GLSL/HalfLambert/HalfLambert.vert", Shader::GLSL::Type::s_VERTEX);
-        pGlslObject_->CompileFromFile("Projects/Shaders/GLSL/HalfLambert/HalfLambert.frag", Shader::GLSL::Type::s_FRAGMENT);
-        pGlslObject_->Link();
-
-        assert(Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer("CameraData"));
-        pUniformBuffer_ = Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer("CameraData").get();
-        uniformBlockIndex_ = pUniformBuffer_->GetBlockIndexFromProgramObject(pGlslObject_->GetProgramObjectHandle());
+        pModelData_ = OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer("Sphere").get();
+        pGlslObject_ = Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(ID::Shader::s_pHALF_LAMBERT).get();
 
         pGlslObject_->Begin();
-        
+
         pGlslObject_->SetUniformMatrix4x4("modelMatrix", Math::Matrix4x4::s_IDENTITY);
         pGlslObject_->SetUniformVector3("material.diffuse", Vector3(0.5f, 1.0f, 0.5f));
         pGlslObject_->SetUniformVector3("material.ambient", Vector3(0.1f, 0.1f, 0.1f));
@@ -97,6 +63,9 @@ namespace ConnectWars
 
         pGlslObject_->End();
 
+        assert(Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer("CameraData"));
+        pUniformBuffer_ = Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer("CameraData").get();
+        uniformBlockIndex_ = pUniformBuffer_->GetBlockIndexFromProgramObject(pGlslObject_->GetProgramObjectHandle());
 
         upMoveLogic_ = std::make_unique<C_RigidBodyInputMoveLogic>(0.1f, 1.0f);
 
@@ -261,7 +230,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BasePlayer::Move()
     {
-        upMoveLogic_->Move(upRigidBody_.get());
+        upMoveLogic_->Process(upRigidBody_.get());
     }
 
 
@@ -666,7 +635,7 @@ namespace ConnectWars
         //upStateMachine_->Update();
         //ResetConnect();
 
-        upMoveLogic_->Move(upRigidBody_.get());
+        upMoveLogic_->Process(upRigidBody_.get());
         MoveLimitCheck();
     }
 

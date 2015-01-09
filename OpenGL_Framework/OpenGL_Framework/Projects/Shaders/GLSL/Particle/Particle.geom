@@ -54,7 +54,6 @@ void main()
 	// äeç¿ïWÇãÅÇﬂÇÈ
 	vec2 direction = vec2(-halfWidth, halfHeight);
 	
-	gl_Position = modelViewProjectionMatrix * (gl_in[0].gl_Position + direction);
 	gl_Position = modelViewProjectionMatrix * (gl_in[0].gl_Position + (billboardMatrix * RotationVectorAxisZ(direction, v_angle[0])));
 	g_color = v_color[0];
 	g_textureCoord = textureCoordUpperLeft;

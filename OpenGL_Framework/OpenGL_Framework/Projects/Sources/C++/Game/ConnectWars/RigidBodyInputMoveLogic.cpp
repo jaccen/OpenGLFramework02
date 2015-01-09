@@ -47,12 +47,25 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
-     *  @brief  移動処理を行う
+     *  @brief  移動量のスケールの設定する
+     *  @param  移動量のスケール
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_RigidBodyInputMoveLogic::SetMovementScale(float movementScale)
+    {
+        movementScale_ = movementScale;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  非公開の処理を行う
      *  @param  剛体
      *  @return なし
      *
      ****************************************************************/
-    void C_RigidBodyInputMoveLogic::Move(RigidBody* pRigidBody)
+    void C_RigidBodyInputMoveLogic::DoProcess(RigidBody* pRigidBody)
     {
         static const int32_t s_GAMEPAD_ENABLE_PUT_STICK = 18000;
 

@@ -27,7 +27,6 @@ namespace Input
     //-------------------------------------------------------------
     class C_KeyboardManager : public Singleton::C_Singleton<C_KeyboardManager>
     {
-
         friend C_Singleton<C_KeyboardManager>;                              // シングルトンクラスをフレンド化
     public:
         void Initialize();                                                  // 初期化処理

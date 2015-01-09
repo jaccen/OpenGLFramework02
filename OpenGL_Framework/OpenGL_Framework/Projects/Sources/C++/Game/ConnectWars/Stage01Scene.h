@@ -35,9 +35,7 @@ namespace ConnectWars
         void Finalize() override;                                                   // 終了処理
     private:
         std::unique_ptr<Task::C_GeneralTaskSystem> upTaskSystem_;                   ///< @brief タスクシステム
-
-        std::shared_ptr<Camera::C_PerspectiveCamera> spCamera_;                     // カメラ
-        OpenGL::FrameBufferPtr pFrameBuffer_;                                       // フレームバッファ
+        std::shared_ptr<Camera::IC_Camera> spCamera_;                               ///< @brief カメラ
         std::unique_ptr<C_BasePlayer> upPlayer_;
     };
 }

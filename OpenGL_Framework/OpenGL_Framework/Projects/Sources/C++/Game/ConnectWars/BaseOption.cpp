@@ -180,7 +180,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseOption::Move()
     {
-        upMoveLogic_->Move(upRigidBody_.get());
+        upMoveLogic_->Process(upRigidBody_.get());
     }
 
 

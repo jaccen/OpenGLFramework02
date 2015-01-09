@@ -136,17 +136,17 @@ namespace Particle
     public:
         C_ParticleSystemImpl();                                                                         // コンストラクタ  
         ~C_ParticleSystemImpl();                                                                        // デストラクタ
-        bool Initialize(const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera,                  // 初期化処理
+        bool Initialize(const Camera::CameraPtr& prCamera,                                              // 初期化処理
                         Texture::TextureHandle textureHandle,
                         uint32_t maxParticleCount);
         void Update();                                                                                  // 更新処理
         void Draw();                                                                                    // 描画処理
         void Finalize();                                                                                // 終了処理
-        void Entry(const S_CreateDara& rCreateData);                                                    // パーティクルを追加
+        void Entry(const S_CreateDara& rCreateData);                                                    // 登録処理
         void SetMaxParticleCount(uint32_t maxParticleNumber);                                           // パーティクルの最大数を設定
         void EnableModelMatrix(bool validFlag);                                                         // モデル行列を有効化
         void EnableAutoBillboard(bool validFlag);                                                       // ビルボードの自動化を有効化
-        void SetCamera(const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera_);                 // カメラを設定
+        void SetCamera(const Camera::CameraPtr& prCamera);                                              // カメラを設定
         void SetModelMatrix(const Matrix4x4& rModelMatrix);                                             // モデル行列を設定
         void SetBillboardMatrix(const Matrix4x4& rBillboardMatrix);                                     // ビルボードさせるための行列を設定
         void SetExternalPower(const Vector3& rExternalPower);                                           // 外部の力を設定
@@ -165,9 +165,9 @@ namespace Particle
         std::vector<S_ParticleVertex> vertices_;                                                        ///< @brief 頂点データ
         VertexBufferObjectHandle vertexBufferObjectHandle_ = 0;                                         ///< @brief 頂点バッファオブジェクトハンドル
         VertexArrayObjectHandle vertexArrayObjectHandle_ = 0;                                           ///< @brief 頂点配列オブジェクトハンドル
-        std::shared_ptr<Camera::C_PerspectiveCamera> spCamera_;                                         ///< @brief カメラ
-        Matrix4x4 modelMatrix_;                                                                           ///< @brief モデル行列
-        Matrix4x4 billboardMatrix_;                                                                       ///< @brief ビルボードさせるための行列
+        Camera::CameraPtr pCamera_;                                                                     ///< @brief カメラ
+        Matrix4x4 modelMatrix_;                                                                         ///< @brief モデル行列
+        Matrix4x4 billboardMatrix_;                                                                     ///< @brief ビルボードさせるための行列
         bool autoBillboardFlag_ = true;                                                                 ///< @brief ビルボードの自動化をさせるフラグ
         Texture::TextureHandle textureHandle_ = 0;                                                      ///< @brief テクスチャハンドル
         uint32_t drawParticleCount_ = 0;                                                                ///< @brief 描画するパーティクルのカウンタ
@@ -229,17 +229,10 @@ namespace Particle
      *  @return 異常終了：false
      *
      ****************************************************************/
-    bool C_ParticleSystem::C_ParticleSystemImpl::Initialize(const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera,
+    bool C_ParticleSystem::C_ParticleSystemImpl::Initialize(const Camera::CameraPtr& prCamera,
                                                             Texture::TextureHandle textureHandle,
                                                             uint32_t maxParticleCount)
     {
-        // カメラとテクスチャハンドルを設定
-        SetCamera(sprCamera);
-        SetTextureHandle(textureHandle);
-
-        // 頂点の領域を確保
-        vertices_.resize(maxParticleCount);
-
         // GLSLオブジェクトを作成し、登録
         if (!Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(Fixed::Shader::s_pGLSL_OBJECT_ID))
         {
@@ -289,6 +282,13 @@ namespace Particle
 
         // 頂点配列オブジェクトを作成
         CreateVertexArrayObject();
+
+        // カメラとテクスチャハンドルを設定
+        SetCamera(prCamera);
+        SetTextureHandle(textureHandle);
+
+        // 頂点の領域を確保
+        vertices_.resize(maxParticleCount);
 
         return true;
     }
@@ -415,7 +415,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  パーティクルの追加を行う
+     *  @brief  登録処理を行う
      *  @param  生成情報
      *  @return なし
      *
@@ -494,9 +494,9 @@ namespace Particle
      *  @return なし
      *
      ****************************************************************/
-    void C_ParticleSystem::C_ParticleSystemImpl::SetCamera(const std::shared_ptr<Camera::C_PerspectiveCamera>& sprCamera)
+    void C_ParticleSystem::C_ParticleSystemImpl::SetCamera(const Camera::CameraPtr& prCamera)
     {
-        spCamera_ = sprCamera;
+        pCamera_ = prCamera;
     }
 
 
@@ -844,7 +844,7 @@ namespace Particle
         // ビュー行列からビルボードさせる行列を求める
         if (autoBillboardFlag_ == true)
         {
-            billboardMatrix_ = spCamera_->GetViewMatrix();
+            billboardMatrix_ = pCamera_->GetViewMatrix();
 
             std::swap(billboardMatrix_.a12_, billboardMatrix_.a21_);
             std::swap(billboardMatrix_.a13_, billboardMatrix_.a31_);
@@ -857,7 +857,7 @@ namespace Particle
 
         // 各行列を設定
         pGlslObject_->SetUniformMatrix4x4("modelMatrix", modelMatrix_);
-        pGlslObject_->SetUniformMatrix4x4("viewProjectionMatrix", spCamera_->GetViewProjectionMatrix());
+        pGlslObject_->SetUniformMatrix4x4("viewProjectionMatrix", pCamera_->GetViewProjectionMatrix());
         pGlslObject_->SetUniformMatrix4x4("billboardMatrix", billboardMatrix_);
         pGlslObject_->SetUniformVector2("textureCoordUpperLeft", textureCoordUpperLeft_);
         pGlslObject_->SetUniformVector2("textureCoordLowerRight", textureCoordLowerRight_);

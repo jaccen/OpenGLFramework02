@@ -18,10 +18,14 @@ namespace OpenGL
 {
     namespace
     {
-        /* レンダリングコンテキストのID */
-        namespace RenderingContextID
+        /* ID */
+        namespace Id
         {
-            const char* s_pMAIN = "MainRenderingContext";
+            /* レンダリングコンテキスト */
+            namespace RenderingContext
+            {
+                const char* s_pMAIN = "MainRenderingContext";
+            }
         }
     }
 
@@ -43,8 +47,9 @@ namespace OpenGL
         bool CreateRenderingContext(const std::string& rId);                                                        // レンダリングコンテキストを作成
         void DestroyRenderingContext(const std::string& rId);                                                       // レンダリングコンテキストを破棄
         void AllDestroyRenderingContext();                                                                          // 全てのレンダリングコンテキストを破棄
-        bool SetCurrentRenderingContext(const std::string& rId = RenderingContextID::s_pMAIN);                      // レンダリングコンテキストをカレントに設定
+        bool SetCurrentRenderingContext(const std::string& rId = Id::RenderingContext::s_pMAIN);                    // レンダリングコンテキストをカレントに設定
         void ResetCurrentRenderingContext();                                                                        // カレントのレンダリングコンテキストをリセット
+        bool CheckRenderingContext(const std::string& rId) const;                                                   // レンダリングコンテキストが作成されているか確認
         void ClearBackBuffer(float red = 0.0f,                                                                      // バックバッファをクリア
                              float green = 0.0f,
                              float blue = 0.0f,

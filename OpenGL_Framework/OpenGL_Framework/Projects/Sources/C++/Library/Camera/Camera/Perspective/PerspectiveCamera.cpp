@@ -42,15 +42,15 @@ namespace Camera
     void C_PerspectiveCamera::Update()
     {
         // ビュー行列を更新
-        viewMatrix_ = Matrix4::s_CreateLookAt(eyePoint_,
-                                              targetPoint_,
-                                              upVector_);
+        viewMatrix_ = Matrix4x4::s_CreateLookAt(eyePoint_,
+                                                targetPoint_,
+                                                upVector_);
 
         // プロジェクション行列を更新
-        projectionMatrix_ = Matrix4::s_CreatePerspectiveProjection(fieldOfViewY_,
-                                                                   aspectRatio_,
-                                                                   nearClippingPlane_,
-                                                                   farClippingPlane_);
+        projectionMatrix_ = Matrix4x4::s_CreatePerspectiveProjection(fieldOfViewY_,
+                                                                     aspectRatio_,
+                                                                     nearClippingPlane_,
+                                                                     farClippingPlane_);
 
         // ビュープロジェクション行列を計算
         viewProjectionMatrix_ = projectionMatrix_ * viewMatrix_;
@@ -103,7 +103,7 @@ namespace Camera
      *  @return ビュー行列
      *
      ****************************************************************/
-    const Matrix4& C_PerspectiveCamera::GetViewMatrix() const
+    const Matrix4x4& C_PerspectiveCamera::GetViewMatrix() const
     {
         return viewMatrix_;
     }
@@ -116,7 +116,7 @@ namespace Camera
      *  @return プロジェクション行列
      *
      ****************************************************************/
-    const Matrix4& C_PerspectiveCamera::GetProjectionMatrix() const
+    const Matrix4x4& C_PerspectiveCamera::GetProjectionMatrix() const
     {
         return projectionMatrix_;
     }
@@ -129,7 +129,7 @@ namespace Camera
      *  @return ビュープロジェクション行列
      *
      ****************************************************************/
-    const Matrix4& C_PerspectiveCamera::GetViewProjectionMatrix() const
+    const Matrix4x4& C_PerspectiveCamera::GetViewProjectionMatrix() const
     {
         return viewProjectionMatrix_;
     }
