@@ -34,6 +34,9 @@ namespace ConnectWars
         // パーティクルシステムマネージャー
         upParticleSystemManager_(std::make_unique<Particle::C_ParticleSystemManager>()),
 
+        // スプライトクリエイターマネージャー
+        upSpriteCreaterManager_(std::make_unique<Sprite::C_SpriteCreaterManager>()),
+
         // ゲームオブジェクトマネージャー
         upGameObjectManager_(std::make_unique<GameObject::C_GameObjectManager>()),
 
@@ -80,15 +83,12 @@ namespace ConnectWars
         upPhysicsEngine_->SetCollisionCallbackFunction(C_CollisionCallback::s_ContactProcess);
 
         // シーンマネージャーの初期化処理
-<<<<<<< HEAD
         auto pFirstScene = newEx C_LoadScene;
         pFirstScene->SetLoadFunction(C_LoadFunction::s_LoadStage01Data);
         pFirstScene->SetNextSceneId(ID::Scene::s_pSTAGE01);
 
         upSceneManager_ = std::make_unique<Scene::C_SceneManager>(pFirstScene);
-=======
-        upSceneManager_ = std::make_unique<Scene::C_SceneManager>(newEx C_LoadScene);
->>>>>>> parent of f268703... 繧ｹ繝励Λ繧､繝医け繝ｪ繧ｨ繧､繧ｿ繝ｼ繝槭ロ繝ｼ繧ｸ繝｣繝ｼ繝�繧ｹ繝亥ｮ御ｺ�
+
         if (upSceneManager_->Initialize() == Scene::ecSceneReturn::ERROR_TERMINATION) return false;
 
         return true;
@@ -159,6 +159,9 @@ namespace ConnectWars
         // パーティクルシステムマネージャーの描画処理
         upParticleSystemManager_->Draw();
 
+        // スプライトクリエイターマネージャーの描画処理
+        upSpriteCreaterManager_->Draw();
+
         // ライブラリの描画処理
         C_Framework::Draw();
     }
@@ -178,6 +181,9 @@ namespace ConnectWars
 
         // フィジックスエンジンの終了処理
         upPhysicsEngine_->Finalize();
+
+        // スプライトクリエイターを全て破棄
+        upSpriteCreaterManager_->AllDestroy();
 
         // パーティクルシステムを全て破棄
         upParticleSystemManager_->AllDestroy();

@@ -7,13 +7,10 @@
 #include "../../Library/OpenGL/Manager/OpenGlManager.h"
 #include "../../Library/View/ViewHelper.h"
 #include "../../Library/Camera/Camera/Perspective/Test/TestCamera.h"
-<<<<<<< HEAD
 #include "../../Library/Sprite/Creater/Manager/SpriteCreaterManager.h"
 #include "../../Library/Debug/String/DebugString.h"
 #include "ConnectWarsDefine.h"
 #include "../../Library/Camera/Camera/Orthographic/OrthographicCamera.h"
-=======
->>>>>>> parent of f268703... スプライトクリエイターマネージャーテスト完了
 
 
 //-------------------------------------------------------------
@@ -73,11 +70,11 @@ namespace ConnectWars
         Camera::C_CameraManager::s_GetInstance()->Entry(spCamera_, ID::Camera::s_pMAIN);
 
         Texture::C_TextureManager::s_GetInstance()->Create2DFromFile("Projects/Images/Test/Marisa.png", "Test");
-<<<<<<< HEAD
+
         Sprite::C_SpriteCreaterManager::s_GetInstance()->Create("Test", pOrthograhicCamera, Texture::C_TextureManager::s_GetInstance()->GetTextureData("Test").get());
-=======
+
         Particle::C_ParticleSystemManager::s_GetInstance()->Create("Test", spCamera_, Texture::C_TextureManager::s_GetInstance()->GetTextureData("Test").get()->handle_);
->>>>>>> parent of f268703... スプライトクリエイターマネージャーテスト完了
+
 
         return Scene::ecSceneReturn::SUCCESSFUL;
     }
@@ -112,14 +109,12 @@ namespace ConnectWars
     {
         static int32_t count = 0;
 
-<<<<<<< HEAD
         auto pSpriteCreater = Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater("Test").get();
         auto p = pSpriteCreater.lock();
         
         p->SetCameraType(Camera::ORTHOGRAPHIC);
         p->Entry(Sprite::Vector3(100.0f, 100.0f, 0.0f), Sprite::Vector2(100.0f), 0.0f, Sprite::Vector4(1.0f), Sprite::Vector2(0.0f), Sprite::Vector2(128.0f));
 
-=======
         if (count++ % 10 == 0)
         {
             auto wpParticleSystem = Particle::C_ParticleSystemManager::s_GetInstance()->GetParticleSystem("Test").get();
@@ -133,7 +128,6 @@ namespace ConnectWars
             }
         }
         
->>>>>>> parent of f268703... スプライトクリエイターマネージャーテスト完了
         View::C_ViewHelper::s_DrawGrid(5.0f, 1.0f, 11, View::Vector4(1.0f, 1.0f, 1.0f, 0.1f), spCamera_->GetViewProjectionMatrix());
         View::C_ViewHelper::s_DrawAxis(50.0f, spCamera_->GetViewProjectionMatrix());
     }

@@ -68,7 +68,7 @@ namespace ConnectWars
         playerGenerator_.Create(ID::Generator::Player::s_pNORMAL);
 
         // オプションを生成
-        optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(0.0f, 2.0f, 0.0f));
+        // optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(0.0f, 2.0f, 0.0f));
         
         return Scene::ecSceneReturn::SUCCESSFUL;
     }
@@ -236,12 +236,17 @@ namespace ConnectWars
             Path::Texture::s_pSPRITE_BULLET,
         };
 
+        const float spritePriorityList[] =
+        {
+            Priority::Sprite::s_BILLBOARD,
+        };
+
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pSpriteIdList); i < arraySize; ++i)
         {
             auto pTextureData = Texture::C_TextureManager::s_GetInstance()->GetTextureData(pSpriteTextureDataIdList[i]);
             assert(pTextureData);
 
-            if (Sprite::C_SpriteCreaterManager::s_GetInstance()->Create(ID::Sprite::s_pBULLET, spMainCamera_, pTextureData.get(), 100, Priority::Sprite::s_BILLBOARD) == false) return false;
+            if (Sprite::C_SpriteCreaterManager::s_GetInstance()->Create(pSpriteIdList[i], spMainCamera_, pTextureData.get(), 100, spritePriorityList[i]) == false) return false;
         }
 
         // プレイヤーの生成機の設定

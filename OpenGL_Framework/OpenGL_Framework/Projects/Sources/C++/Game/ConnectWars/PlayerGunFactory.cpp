@@ -67,8 +67,6 @@ namespace ConnectWars
         pGun->SetBulletId((*pPlayerData)["GunDatas"][index]["BulletId"].GetValue<JSON::String>());
         pGun->SetBulletPower(newEx C_BasePower((*pPlayerData)["GunDatas"][index]["BulletPower"].GetValue<JSON::Integer>()));
 
-
-
         pGun->SetBulletMoveLogic(newEx C_RigidBodyStraightMoveLogic(direction * static_cast<float>((*pPlayerData)["GunDatas"][index]["BulletMovement"].GetValue<JSON::Real>())));
         pGun->SetOffsetFromShooter(offsetFromShooter);
         pGun->SetDirection(direction);

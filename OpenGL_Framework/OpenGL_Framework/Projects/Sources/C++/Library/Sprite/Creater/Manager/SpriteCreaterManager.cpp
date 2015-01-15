@@ -58,7 +58,7 @@ namespace Sprite
      ****************************************************************/
     void C_SpriteCreaterManager::Sort()
     {
-
+        upImpl_->Sort();
     }
 
 
