@@ -44,6 +44,7 @@ namespace ConnectWars
     bool C_BaseEffect::Update()
     {
         DoUpdate();
+        frameCounter_.CountUp();
 
         return C_GameObject::existenceFlag_;
     }
@@ -75,5 +76,18 @@ namespace ConnectWars
         if (DoMessageProcess(rTelegram) == false) return false;
 
         return true;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ç¿ïWÇÃê›íËÇÇ∑ÇÈ
+     *  @param  ç¿ïW
+     *  @return Ç»Çµ
+     *
+     ****************************************************************/
+    void C_BaseEffect::SetPosition(const Vector3& rPosition)
+    {
+        position_ = rPosition;
     }
 }

@@ -1,0 +1,64 @@
+{
+  "CreateData" :
+  {
+    "Position" :
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "HitPoint" : 5000,
+    "RemainLife" : 3,
+    "Radius" : 0.9,
+    "MoveSpeedLevel" : 0,
+    "Movement" : 0.2,
+    "MoveSpeedUpInterval" : 0.1,
+    "ConnectPetrifyFrame" : 10,
+    "BombChargeFrame" : 60,
+    "BombInvincibleFrame" : 100,
+    "Power": 100,
+    "Mass" :  1.0
+  },
+  "GunDataCount" : 2,
+  "GunDatas" :
+  [
+    {
+      "BulletId" : "PlayerBeamBullet",
+      "BulletPower" : 300,
+      "BulletMovement" : 25.0,  
+      "ShotInterval" : 5,
+      "OffsetFromShooter" : 
+      [
+        -0.7,
+        1.5,
+        0.0
+      ],
+      "Direction" : 
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "AutoDirectionFrag" : false
+    },
+    {
+      "BulletId" : "PlayerBeamBullet",
+      "BulletPower": 300,
+      "BulletMovement" : 25.0,  
+      "ShotInterval" : 5,
+      "OffsetFromShooter" : 
+      [
+        0.7,
+        1.5,
+        0.0
+      ],
+      "Direction" : 
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "AutoDirectionFrag" : false
+    }
+  ]
+}

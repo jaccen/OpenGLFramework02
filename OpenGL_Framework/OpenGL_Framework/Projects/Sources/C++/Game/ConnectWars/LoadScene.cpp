@@ -76,101 +76,8 @@ namespace ConnectWars
      ****************************************************************/
     Scene::ecSceneReturn C_LoadScene::Initialize()
     {
-        // "Now Loading"という文字の描画するために必要なオブジェクトを作成
-        if (!pTextureManager_->GetTextureData(ID::Texture::s_pLOAD))
-        {
-            // フォントをロードし、取得
-            if (!pFontManager_->GetFont(Path::Font::s_pLOAD, fontSize_))
-            {
-               if (pFontManager_->Load(Path::Font::s_pLOAD, fontSize_) == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
-            }
-
-            auto pFont = pFontManager_->GetFont(Path::Font::s_pLOAD, fontSize_).get();
-
-            // テクスチャを作成
-            if (pTextureManager_->Create2DFromFont(pFont, ID::Texture::s_pLOAD, "Now Loading", 255, 255, 255) == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
-        }
-        
-        // テクスチャデータを取得
-        pTextureData_ = pTextureManager_->GetTextureData(ID::Texture::s_pLOAD).get();
-
-        // プリミティブを作成し、取得
-        if (!pPrimitiveBufferManager_->GetPrimitiveBuffer(ID::Primitive::s_pLOAD))
-        {
-            uint32_t vertexAttributeElementCountList[] = { 3 };
-            OpenGL::DataEnum vertexAttributeDataTypeList[] = { OpenGL::DataType::s_FLOAT };
-
-            pRectangleData_ = OpenGL::C_PrimitiveBuffer::s_Create(&nowLoadingStringPosition_, 1, 1, vertexAttributeElementCountList, vertexAttributeDataTypeList, OpenGL::Modify::s_STATIC);
-
-            pPrimitiveBufferManager_->Entry(pRectangleData_, ID::Primitive::s_pLOAD);
-        }
-        else
-        {
-            pRectangleData_ = pPrimitiveBufferManager_->GetPrimitiveBuffer(ID::Primitive::s_pLOAD).get();
-        }
-
-        // GLSLオブジェクトを作成し、取得
-        if (!pGlslObjectManager_->GetGlslObject(ID::Shader::s_pLOAD))
-        {
-            pGlslObject_ = Shader::GLSL::C_GlslObject::s_Create();
-
-            if (pGlslObject_->CompileFromFile("Projects/Shaders/GLSL/Load/Load.vert", Shader::GLSL::Type::s_VERTEX) == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
-            if (pGlslObject_->CompileFromFile("Projects/Shaders/GLSL/Load/Load.geom", Shader::GLSL::Type::s_GEOMETRY) == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
-            if (pGlslObject_->CompileFromFile("Projects/Shaders/GLSL/Load/Load.frag", Shader::GLSL::Type::s_FRAGMENT) == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
-            if (pGlslObject_->Link() == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
-
-            pGlslObjectManager_->Entry(pGlslObject_, ID::Shader::s_pLOAD);
-        }
-        else
-        {
-            pGlslObject_ = pGlslObjectManager_->GetGlslObject(ID::Shader::s_pLOAD).get();
-        }
-
-        // カメラを作成し、取得
-        if (!pCameraManager_->GetCamera(ID::Camera::s_pUI))
-        {
-            assert(Window::C_WindowManager::s_GetInstance()->GetWindow());
-            auto pMainWindow = Window::C_WindowManager::s_GetInstance()->GetWindow().get();
-
-            auto pOrthograhicCamera = std::make_shared<Camera::C_OrthographicCamera>();
-            pOrthograhicCamera->SetClipSpace(0.0f, static_cast<float>(pMainWindow->GetWidth()), static_cast<float>(pMainWindow->GetHeight()), 0.0f);
-
-            pUiCamera_ = pOrthograhicCamera;
-            pUiCamera_->Update();
-            pCameraManager_->Entry(pUiCamera_, ID::Camera::s_pUI);
-        }
-        else
-        {
-            pUiCamera_ = pCameraManager_->GetCamera(ID::Camera::s_pUI).get();
-        }
-
-        // ユニフォーム変数を設定
-        pGlslObject_->Begin();
-
-        pGlslObject_->SetUniform1f("Width", static_cast<float>(pTextureData_->width_));
-        pGlslObject_->SetUniform1f("Height", static_cast<float>(pTextureData_->height_));
-        pGlslObject_->SetUniformMatrix4x4("OrthographicProjectionMatrix" , pUiCamera_->GetProjectionMatrix());
-        pGlslObject_->SetUniform1i("Texture", 0);
-
-        pGlslObject_->End();
-
-        // TODO ： テスト
-        loadThreadData_.pFunction = []()
-        {
-            auto spCamera = std::make_shared<Camera::C_PerspectiveCamera>();
-            spCamera->SetEyePoint(Camera::Vector3(0.0f, 0.0f, 28.0f));
-            spCamera->SetTargetPoint(Camera::Vector3(0.0f, 0.0f, 0.0f));
-            spCamera->SetFieldOfViewY(static_cast<float>(Math::s_PI_DIVISION4));
-            spCamera->SetNearClippingPlane(1.0f);
-            spCamera->SetFarClippingPlane(1000.0f);
-            spCamera->SetUpVector(Camera::Vector3::s_UP_DIRECTION);
-            spCamera->SetAspectRatio(1024.0f / 768.0f);
-            spCamera->Update();
-
-            Camera::C_CameraManager::s_GetInstance()->Entry(spCamera, ID::Camera::s_pMAIN);
-
-            return true;
-        };
+        // "Now Loading"文字列の準備
+        if (GetReadyLoadString() == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
 
         // スレッドを作成
         loadThread_.Create([](void* pData)
@@ -206,12 +113,14 @@ namespace ConnectWars
     {
         if (loadThreadData_.finishFlag_ == true)
         {
+            // スレッドの終了を待機
             if (loadThread_.Join() == -1) return Scene::ecSceneReturn::ERROR_TERMINATION;
 
             // シーンを切り替え
-            GetSceneChanger()->ReplaceScene(newEx C_Stage01Scene);
+            if (ChangeNextScene() == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
         }
 
+        // カウントアップ
         frameCounter_.CountUp();
 
         return Scene::ecSceneReturn::CONTINUATIOIN;
@@ -264,5 +173,148 @@ namespace ConnectWars
      ****************************************************************/
     void C_LoadScene::Finalize()
     {
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ロード時に利用する関数を設定する
+     *  @param  ロード時に利用する関数
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_LoadScene::SetLoadFunction(LoadFunction pLoadFunction)
+    {
+        loadThreadData_.pFunction = pLoadFunction;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  次のシーンのIDを設定
+     *  @param  次のシーンのID
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_LoadScene::SetNextSceneId(const std::string& rNextSceneId)
+    {
+        nextSceneId_ = rNextSceneId;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  "Now Loading"の文字列の準備する
+     *  @param  なし
+     *  @return 正常終了：true
+     *  @return 異常終了：false
+     *
+     ****************************************************************/
+    bool C_LoadScene::GetReadyLoadString()
+    {
+        // "Now Loading"という文字の描画するために必要なオブジェクトを作成
+        if (!pTextureManager_->GetTextureData(ID::Texture::s_pLOAD))
+        {
+            // フォントをロードし、取得
+            if (!pFontManager_->GetFont(Path::Font::s_pLOAD, fontSize_))
+            {
+               if (pFontManager_->Load(Path::Font::s_pLOAD, fontSize_) == false) return false;
+            }
+
+            auto pFont = pFontManager_->GetFont(Path::Font::s_pLOAD, fontSize_).get();
+
+            // テクスチャを作成
+            if (pTextureManager_->Create2DFromFont(pFont, ID::Texture::s_pLOAD, "Now Loading", 255, 255, 255) == false) return false;
+        }
+        
+        // テクスチャデータを取得
+        pTextureData_ = pTextureManager_->GetTextureData(ID::Texture::s_pLOAD).get();
+
+        // プリミティブを作成し、取得
+        if (!pPrimitiveBufferManager_->GetPrimitiveBuffer(ID::Primitive::s_pLOAD))
+        {
+            uint32_t vertexAttributeElementCountList[] = { 3 };
+            OpenGL::DataEnum vertexAttributeDataTypeList[] = { OpenGL::DataType::s_FLOAT };
+
+            pRectangleData_ = OpenGL::C_PrimitiveBuffer::s_Create(&nowLoadingStringPosition_, 1, 1, vertexAttributeElementCountList, vertexAttributeDataTypeList, OpenGL::Modify::s_STATIC);
+
+            pPrimitiveBufferManager_->Entry(pRectangleData_, ID::Primitive::s_pLOAD);
+        }
+        else
+        {
+            pRectangleData_ = pPrimitiveBufferManager_->GetPrimitiveBuffer(ID::Primitive::s_pLOAD).get();
+        }
+
+        // カメラを作成し、取得
+        if (!pCameraManager_->GetCamera(ID::Camera::s_pUI))
+        {
+            assert(Window::C_WindowManager::s_GetInstance()->GetWindow());
+            auto pMainWindow = Window::C_WindowManager::s_GetInstance()->GetWindow().get();
+
+            auto pOrthograhicCamera = std::make_shared<Camera::C_OrthographicCamera>();
+            pOrthograhicCamera->SetClipSpace(0.0f, static_cast<float>(pMainWindow->GetWidth()), static_cast<float>(pMainWindow->GetHeight()), 0.0f);
+
+            pUiCamera_ = pOrthograhicCamera;
+            pUiCamera_->Update();
+            pCameraManager_->Entry(pUiCamera_, ID::Camera::s_pUI);
+        }
+        else
+        {
+            pUiCamera_ = pCameraManager_->GetCamera(ID::Camera::s_pUI).get();
+        }
+
+        // GLSLオブジェクトを作成し、取得
+        if (!pGlslObjectManager_->GetGlslObject(ID::Shader::s_pLOAD))
+        {
+            pGlslObject_ = Shader::GLSL::C_GlslObject::s_Create();
+
+            if (pGlslObject_->CompileFromFile("Projects/Shaders/GLSL/Load/Load.vert", Shader::GLSL::Type::s_VERTEX) == false) return false;
+            if (pGlslObject_->CompileFromFile("Projects/Shaders/GLSL/Load/Load.geom", Shader::GLSL::Type::s_GEOMETRY) == false) return false;
+            if (pGlslObject_->CompileFromFile("Projects/Shaders/GLSL/Load/Load.frag", Shader::GLSL::Type::s_FRAGMENT) == false) return false;
+            if (pGlslObject_->Link() == false) return false;
+
+            // ユニフォーム変数を設定
+            pGlslObject_->Begin();
+
+            pGlslObject_->SetUniform1f("Width", static_cast<float>(pTextureData_->width_));
+            pGlslObject_->SetUniform1f("Height", static_cast<float>(pTextureData_->height_));
+            pGlslObject_->SetUniformMatrix4x4("OrthographicProjectionMatrix" , pUiCamera_->GetProjectionMatrix());
+            pGlslObject_->SetUniform1i("Texture", 0);
+
+            pGlslObject_->End();
+
+            pGlslObjectManager_->Entry(pGlslObject_, ID::Shader::s_pLOAD);
+        }
+        else
+        {
+            pGlslObject_ = pGlslObjectManager_->GetGlslObject(ID::Shader::s_pLOAD).get();
+        }
+
+        return true;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  次のシーンへ切り替えを行う
+     *  @param  なし
+     *  @return 切り替え成功：true
+     *  @return 切り替え失敗：false
+     *
+     ****************************************************************/
+    bool C_LoadScene::ChangeNextScene()
+    {
+        if (nextSceneId_ == ID::Scene::s_pTITLE)
+        {
+            
+        }
+        else if (nextSceneId_ == ID::Scene::s_pSTAGE01)
+        {
+            GetSceneChanger()->ReplaceScene(newEx C_Stage01Scene);
+
+            return true;
+        }
+
+        return false;
     }
 }

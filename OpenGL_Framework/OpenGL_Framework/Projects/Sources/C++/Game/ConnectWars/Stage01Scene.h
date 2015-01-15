@@ -8,6 +8,9 @@
 #include "../../Library/Task/System/General/GeneralTaskSystem.h"
 #include "../../Library/OpenGL/Buffer/Frame/FrameBuffer.h"
 #include "BasePlayer.h"
+#include "PlayerGenerator.h"
+#include "OptionGenerator.h"
+#include "BulletGenerator.h"
 
 
 //-------------------------------------------------------------
@@ -27,15 +30,20 @@ namespace ConnectWars
     class C_Stage01Scene : public Scene::C_BaseScene
     {
     public:
-        C_Stage01Scene();                                                           // コンストラクタ
-        ~C_Stage01Scene() override;                                                 // デストラクタ
-        Scene::ecSceneReturn Initialize() override;                                 // 初期化処理
-        Scene::ecSceneReturn Update() override;                                     // 更新処理
-        void Draw() override;                                                       // 描画処理
-        void Finalize() override;                                                   // 終了処理
+        C_Stage01Scene();                                               // コンストラクタ
+        ~C_Stage01Scene() override;                                     // デストラクタ
+        Scene::ecSceneReturn Initialize() override;                     // 初期化処理
+        Scene::ecSceneReturn Update() override;                         // 更新処理
+        void Draw() override;                                           // 描画処理
+        void Finalize() override;                                       // 終了処理
     private:
-        std::unique_ptr<Task::C_GeneralTaskSystem> upTaskSystem_;                   ///< @brief タスクシステム
-        std::shared_ptr<Camera::IC_Camera> spCamera_;                               ///< @brief カメラ
-        std::unique_ptr<C_BasePlayer> upPlayer_;
+        Task::C_GeneralTaskSystem taskSystem_;                          ///< @brief タスクシステム
+        C_PlayerGenerator playerGenerator_;                             ///< @brief プレイヤー生成機
+        C_OptionGenerator optionGenerator_;                             ///< @brief オプション生成機
+        C_BulletGenerator bulletGenerator_;                             ///< @brief 弾生成機
+        std::shared_ptr<Camera::IC_Camera> spMainCamera_;               ///< @brief メインカメラ
+        S_CameraData mainCameraData_;                                   ///< @brief メインカメラの情報
+
+        bool RemainLoadProcess();                                       // 残りのロード処理
     };
 }

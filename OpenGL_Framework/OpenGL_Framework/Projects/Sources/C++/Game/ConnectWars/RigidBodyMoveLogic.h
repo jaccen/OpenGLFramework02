@@ -28,10 +28,11 @@ namespace ConnectWars
     class C_RigidBodyMoveLogic : public IC_MoveLogic<RigidBody>
     {
     public:
-        C_RigidBodyMoveLogic() = default;                                   //!< @brief コンストラクタ
-        virtual ~C_RigidBodyMoveLogic() override = default;                 //!< @brief デストラクタ
-        void Process(RigidBody* pRigidBody) override final;                 //!< @brief 処理
+        C_RigidBodyMoveLogic() = default;                                   // コンストラクタ
+        virtual ~C_RigidBodyMoveLogic() override = default;                 // デストラクタ
+        virtual void Process(RigidBody* pRigidBody) override final;         // 処理
+        virtual C_RigidBodyMoveLogic* DeepCopy() = 0;                       //!< @brief ディープコピー
     private:
-        virtual void DoProcess(RigidBody* pRigidBody) = 0;                  // 非公開の処理
+        virtual void DoProcess(RigidBody* pRigidBody) = 0;                  //!< @brief 非公開の処理
     };
 }

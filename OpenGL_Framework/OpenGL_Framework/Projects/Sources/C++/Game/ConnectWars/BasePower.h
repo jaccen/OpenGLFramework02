@@ -19,6 +19,7 @@ namespace ConnectWars
     class C_BasePower
     {
     public:
+        C_BasePower() = default;                                // デフォルトコンストラクタ
         C_BasePower(int32_t power);                             // コンストラクタ
         virtual ~C_BasePower();                                 // デストラクタ
         virtual void Add(int32_t power);                        // 値を足す

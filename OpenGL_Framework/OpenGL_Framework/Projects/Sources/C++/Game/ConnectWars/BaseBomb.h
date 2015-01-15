@@ -6,6 +6,7 @@
 #include "CollisionObject.h"
 #include "BasePower.h"
 #include "../../Library/State/Machine/StateMachine.h"
+#include "../../Library/Physics/Body/Rigid/Rigidbody.h"
 
 
 //-------------------------------------------------------------
@@ -47,6 +48,7 @@ namespace ConnectWars
         virtual void CollisionProcess(C_BaseBomb* pBomb) override;                                  // ボムとの衝突時処理
     protected:
         std::unique_ptr<State::C_StateMachine<C_BaseBomb>> upStateMachine_;                         ///< @brief ステートマシーン
+        std::unique_ptr<Physics::C_RigidBody> upRigidBody_;                                         ///< @brief 剛体
         int32_t level_ = 0;                                                                         ///< @brief レベル
 
         virtual void DoUpdate() = 0;                                                                // 非公開の更新処理

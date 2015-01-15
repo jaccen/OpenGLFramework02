@@ -31,25 +31,27 @@ namespace ConnectWars
     class C_BaseGun
     {
     public:
-        C_BaseGun(C_Shooter* pShooter);                                                     // コンストラクタ
-        virtual ~C_BaseGun();                                                               // デストラクタ
-        void Shot();                                                                        // 射撃処理
-        void SetShotLogic(C_ShotLogic* pShotLogic);                                         // 射撃のロジックを設定
-        void SetOffsetFromShooter(const Physics::Vector3& rOffsetFromShooter);              // 射撃者からのオフセットを設定
-        void SetBulletId(const std::string& rBulletId);                                     // 弾のIDを設定
-        void SetBulletMoveLogic(C_RigidBodyMoveLogic* pBulletMoveLogic);                    // 弾の移動ロジックを設定
-        void SetBulletPower(C_BasePower* pBulletPower);                                     // 弾の攻撃力を設定
+        C_BaseGun(C_Shooter* pShooter);                                             // コンストラクタ
+        virtual ~C_BaseGun();                                                       // デストラクタ
+        void Shot();                                                                // 射撃処理
+        void SetShotLogic(C_ShotLogic* pShotLogic);                                 // 射撃のロジックを設定
+        void SetOffsetFromShooter(const Physics::Vector3& rOffsetFromShooter);      // 射撃者からのオフセットを設定
+        void SetBulletId(const std::string& rBulletId);                             // 弾のIDを設定
+        void SetBulletMoveLogic(C_RigidBodyMoveLogic* pBulletMoveLogic);            // 弾の移動ロジックを設定
+        void SetBulletPower(C_BasePower* pBulletPower);                             // 弾の攻撃力を設定
+        void SetDirection(const Physics::Vector3& rDirection);                      // 向きを設定
+        void SetAutoDirectionFlag(bool autoDirectionFlag);                          // 向きを自動化するフラグを設定
     protected:
-        C_Shooter* pShooter_ = nullptr;                                                     ///< @brief 射撃者
-        Physics::Vector3 offsetFromShooter_ = Physics::Vector3(0.0f, 0.0f, 0.0f);           ///< @brief 射撃者からのオフセット
-        Physics::Vector3 direction_ = Physics::Vector3(0.0f, 0.0f, 0.0f);                   ///< @brief 向き
-        bool autoDirectionFlag_ = false;                                                    ///< @brief 向きを自動化するフラグ
-        std::unique_ptr<C_ShotLogic> upShotLogic_;                                          ///< @brief 射撃のロジック
-        std::string bulletId_;                                                              ///< @brief 弾のID
-        std::unique_ptr<C_BasePower> upBulletPower_;                                        ///< @brief 弾の攻撃力
-        std::shared_ptr<C_RigidBodyMoveLogic> upBulletMoveLogic_;                           ///< @brief 弾の移動ロジック
+        C_Shooter* pShooter_ = nullptr;                                             ///< @brief 射撃者
+        std::unique_ptr<Physics::Vector3> upOffsetFromShooter_;                     ///< @brief 射撃者からのオフセット
+        std::unique_ptr<C_ShotLogic> upShotLogic_;                                  ///< @brief 射撃のロジック
+        std::string bulletId_;                                                      ///< @brief 弾のID
+        std::unique_ptr<C_BasePower> upBulletPower_;                                ///< @brief 弾の攻撃力
+        std::shared_ptr<C_RigidBodyMoveLogic> upBulletMoveLogic_;                   ///< @brief 弾の移動ロジック
+        std::unique_ptr<Physics::Vector3> upDirection_;                             ///< @brief 向き
+        bool autoDirectionFlag_ = false;                                            ///< @brief 向きを自動化するフラグ
 
-        virtual void DoShot() = 0;                                                          ///< @brief 非公開の射撃処理
+        virtual void DoShot() = 0;                                                  ///< @brief 非公開の射撃処理
     };
 }
 

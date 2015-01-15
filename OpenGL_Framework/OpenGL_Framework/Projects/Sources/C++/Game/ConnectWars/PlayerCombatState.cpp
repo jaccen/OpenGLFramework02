@@ -1,5 +1,8 @@
 /* ヘッダファイル */
 #include "PlayerCombatState.h"
+#include "BasePlayer.h"
+#include "ConnectWarsDefine.h"
+#include "PlayerDestroyedState.h"
 
 
 //-------------------------------------------------------------
@@ -53,7 +56,18 @@ namespace ConnectWars
      ****************************************************************/
     void C_PlayerCombatState::Execute(C_BasePlayer* pPlayer)
     {
+        // ヒットポイントがなくなった場合、破壊された状態へ変更
+        if (pPlayer->GetHitPoint()->CheckRemainValue() == false)
+        {
+            pPlayer->GetStateMachine()->ChangeState(C_PlayerDestroyedState::s_GetInstance());
+        }
 
+        pPlayer->Move();
+        pPlayer->MoveLimitCheck();
+        pPlayer->ResetMoveLimitBoundingBox();
+        pPlayer->Shot();
+        pPlayer->Bomb();
+        pPlayer->ResetConnect();
     }
 
 
@@ -80,6 +94,11 @@ namespace ConnectWars
      ****************************************************************/
     bool C_PlayerCombatState::MessageProcess(C_BasePlayer* pPlayer, const Telegram& rTelegram)
     {
+        if (rTelegram.message_ == Message::s_pCONNECT_CHECK)
+        {
+            pPlayer->ConnectCheck();
+        }
+
         return true;
     }
 }

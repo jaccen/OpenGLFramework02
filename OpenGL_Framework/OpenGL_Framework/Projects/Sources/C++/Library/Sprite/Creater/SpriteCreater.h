@@ -19,11 +19,16 @@
 //-------------------------------------------------------------
 namespace Sprite
 {
+    /* 前方宣言 */
+    class IC_SpriteCreater;
+
+
     /* 別名 */
     using Vector2 = Math::S_Vector2<float>;                                                                 // Vector2型
     using Vector3 = Math::S_Vector3<float>;                                                                 // Vector3型
     using Vector4 = Math::S_Vector4<float>;                                                                 // Vector4型
     using Matrix4x4 = Math::S_Matrix4x4<float>;                                                             // Matrix4x4型
+    using SpriteCreaterWeakPtr = std::weak_ptr<IC_SpriteCreater>;                                           // SpriteCreaterWeakPtr型
 
 
     /** 作成データ */
@@ -129,6 +134,9 @@ namespace Sprite
                            const Vector2& rTextureUpperLeft,
                            const Vector2& rTextureLowerRight) = 0;
         virtual void Entry(const S_CreateData& rCreateData) = 0;                                            //!< @brief 登録処理
+        virtual void SetAutoBillboardFlag(bool autoBillboardFlag = true) = 0;                               //!< @brief ビルボードの自動化をさせるフラグを設定
+        virtual void SetCamera(const Camera::CameraPtr& prCamera) = 0;                                      //!< @brief カメラを設定
+        virtual void SetCameraType(Camera::eType cameraType) = 0;                                           //!< @brief カメラの種類を設定
     };
 
 
@@ -155,6 +163,9 @@ namespace Sprite
                    const Vector2& rTextureUpperLeft,                       
                    const Vector2& rTextureLowerRight);                     
         void Entry(const S_CreateData& rCreateData);                                                        // 登録処理
+        void SetAutoBillboardFlag(bool autoBillboardFlag = true);                                           // ビルボードの自動化をさせるフラグを設定
+        void SetCamera(const Camera::CameraPtr& prCamera);                                                  // カメラを設定
+        void SetCameraType(Camera::eType cameraType);                                                       // カメラの種類を設定
     private:
         Shader::GLSL::GlslObjectPtr pGlslObject_;                                                           ///< @brief GLSLオブジェクト
         Camera::CameraPtr pCamera_;                                                                         ///< @brief カメラ
@@ -164,6 +175,8 @@ namespace Sprite
         uint32_t drawSpriteCount_ = 0;                                                                      ///< @brief 描画するスプライトの数
         Matrix4x4 billboardMatrix_;                                                                         ///< @brief ビルボード行列
         bool autoBillboardFlag_ = true;                                                                     ///< @brief ビルボードの自動化をさせるフラグ
+        int32_t subroutineIndices_[2];                                                                      ///< @brief サブルーチンのインデックス
+        Camera::eType cameraType_ = Camera::PERSPECTIVE;                                                    ///< @brief カメラの種類
 
         void SetUniformVariable();                                                                          // ユニフォーム変数を設定
     };

@@ -10,6 +10,17 @@
 //-------------------------------------------------------------
 namespace ConnectWars
 {
+#pragma region 静的メンバ変数の初期化
+
+
+    /* 自爆遅延フレーム数の間隔 */
+    uint32_t C_ConnectMachine::s_ownCrashDerayFrameInterval = 10;
+
+
+#pragma endregion
+
+
+
     /*************************************************************//**
      *
      *  @brief  コンストラクタ
@@ -72,5 +83,46 @@ namespace ConnectWars
     float C_ConnectMachine::GetRadius() const
     {
         return radius_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  座標を取得する
+     *  @param  なし
+     *  @return 座標
+     *
+     ****************************************************************/
+    const Physics::Vector3& C_ConnectMachine::GetPosition() const
+    {
+        return upRigidBody_->GetTransform().getOrigin();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  座標を設定する
+     *  @param  座標
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_ConnectMachine::SetPosition(const Physics::Vector3& rPosition)
+    {
+        auto transform = upRigidBody_->GetTransform();
+        transform.setOrigin(rPosition);
+        upRigidBody_->SetTransform(transform);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  自爆遅延フレーム数の間隔を設定する
+     *  @param  自爆遅延フレーム数の間隔
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_ConnectMachine::s_SetOwnCrashDerayFrameInterval(uint32_t ownCrashDerayFrameInterval)
+    {
+        s_ownCrashDerayFrameInterval = ownCrashDerayFrameInterval;
     }
 }

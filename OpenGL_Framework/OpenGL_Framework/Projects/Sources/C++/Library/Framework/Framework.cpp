@@ -4,7 +4,7 @@
 #include "../Window/Manager/WindowManager.h"
 #include "../Event/Manager/EventManager.h"
 #include "../Timer/Manager/TimeManager.h"
-#include "../JSON/JsonObject.h"
+#include "../JSON/Object/JsonObject.h"
 #include "../OpenGL/Manager/OpenGlManager.h"
 #include "../Input/Keyboard/KeyboardManager.h"
 #include "../Input/Mouse/MouseManager.h"

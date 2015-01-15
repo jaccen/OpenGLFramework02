@@ -12,9 +12,21 @@
 //-------------------------------------------------------------
 namespace Sprite
 {
+    /* 前方宣言 */
+    struct S_ManagementData;
+
+
     /* 別名 */
     using SpriteCreaterPtr = std::shared_ptr<C_SpriteCreater>;                                                      // SpriteCreaterPtr型
+    using ManagementPair = std::pair<std::string, S_ManagementData>;                                                // ManagementPair型
 
+
+    /** 管理情報 */
+    struct S_ManagementData
+    {
+        float priority_ = 0.0f;                                                                                     ///< @brief プライオリティ
+        SpriteCreaterPtr pSpriteCreater_;                                                                           ///< @brief スプライトクリエイター
+    };
 
     //-------------------------------------------------------------
     //!
@@ -27,17 +39,18 @@ namespace Sprite
     public:
         C_SpriteCreaterManagerImpl();                                                                               // コンストラクタ
         ~C_SpriteCreaterManagerImpl();                                                                              // デストラクタ
-        void Update();                                                                                              // 更新処理
         void Draw();                                                                                                // 描画処理
+        void Sort();                                                                                                // ソート処理
         bool Create(const std::string& rId,                                                                         // スプライトクリエイターを作成
                     const Camera::CameraPtr& prCamera,
                     const Texture::TextureDataPtr pTextureData,
-                    uint32_t maxParticleCount);
+                    uint32_t maxParticleCount,
+                    float priority);
         void Destroy(const std::string& rId);                                                                       // スプライトクリエイターを破棄
         void AllDestroy();                                                                                          // スプライトクリエイターを全て破棄
         boost::optional<SpriteCreaterWeakPtr> GetSpriteCreater(const std::string& rId);                             // スプライトクリエイターを取得
     private:
-        std::deque<std::pair<std::string, SpriteCreaterPtr>> pSpriteCreaters_;                                      ///< @brief スプライトクリエイター
+        std::deque<ManagementPair> managementDatas_;                                                                ///< @brief 管理情報
     };
 
 
@@ -60,7 +73,7 @@ namespace Sprite
      ****************************************************************/
     C_SpriteCreaterManager::C_SpriteCreaterManagerImpl::~C_SpriteCreaterManagerImpl()
     {
-        if (pSpriteCreaters_.empty() == false) AllDestroy();
+        if (managementDatas_.empty() == false) AllDestroy();
     }
 
 
@@ -73,9 +86,24 @@ namespace Sprite
      ****************************************************************/
     void C_SpriteCreaterManager::C_SpriteCreaterManagerImpl::Draw()
     {
-        for (auto &rPatricleSystem : pSpriteCreaters_) rPatricleSystem.second->Draw();
+        for (auto &rManagementData : managementDatas_) rManagementData.second.pSpriteCreater_->Draw();
     }
 
+
+    /*************************************************************//**
+     *
+     *  @brief  ソート処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_SpriteCreaterManager::C_SpriteCreaterManagerImpl::Sort()
+    {
+
+        std::sort(managementDatas_.begin(),
+                  managementDatas_.end(),
+                  [](const ManagementPair& rManagementData, const ManagementPair& rAnotherManagementData){ return rManagementData.second.priority_ > rAnotherManagementData.second.priority_; });
+    }
 
     /*************************************************************//**
      *
@@ -84,6 +112,7 @@ namespace Sprite
      *  @param  カメラ
      *  @parama テクスチャ情報
      *  @param  スプライトの最大数
+     *  @param  優先度
      *  @return 正常終了：true
      *  @return 異常終了：false
      *
@@ -91,15 +120,16 @@ namespace Sprite
     bool C_SpriteCreaterManager::C_SpriteCreaterManagerImpl::Create(const std::string& rId,
                                                                     const Camera::CameraPtr& prCamera,
                                                                     const Texture::TextureDataPtr pTextureData,
-                                                                    uint32_t maxParticleCount)
+                                                                    uint32_t maxSpriteCount,
+                                                                    float priority)
     {
         // 既に作成している場合
-        auto iterator = std::find_if(pSpriteCreaters_.begin(),
-                                     pSpriteCreaters_.end(),
-                                     [&](const std::pair<std::string, SpriteCreaterPtr>& rpPatricleSystem){ return rpPatricleSystem.first == rId; });
+        auto iterator = std::find_if(managementDatas_.begin(),
+                                     managementDatas_.end(),
+                                     [&](const ManagementPair& rpPatricleSystem){ return rpPatricleSystem.first == rId; });
 
 
-        if (iterator != pSpriteCreaters_.end())
+        if (iterator != managementDatas_.end())
         {
             std::cout << "[ C_SpriteCreaterManagerImpl::Create ] : 既に同じをスプライトクリエイターを作成しています。" << std::endl;
             std::cout << "                                    ID : " << rId << std::endl;
@@ -108,17 +138,21 @@ namespace Sprite
         }
 
         // スプライトクリエイターを生成し、初期化
-        auto pParticleSystem = std::make_shared<C_SpriteCreater>();
+        auto pSpriteCreater = std::make_shared<C_SpriteCreater>();
 
-        if (pParticleSystem->Initialize(prCamera, pTextureData, maxParticleCount) == false)
+        if (pSpriteCreater->Initialize(prCamera, pTextureData, maxSpriteCount) == false)
         {
             PrintLog("[ C_SpriteCreaterManagerImpl::Initialize ] : スプライトクリエイターの初期化処理に失敗しました。");
 
             return false;
         }
 
-        // スプライトクリエイターを保持する
-        pSpriteCreaters_.emplace_back(rId, pParticleSystem);
+        // 管理情報を設定し、保持
+        S_ManagementData managementData;
+        managementData.pSpriteCreater_ = pSpriteCreater;
+        managementData.priority_ = priority;
+
+        managementDatas_.emplace_back(rId, managementData);
 
         return true;
     }
@@ -134,20 +168,20 @@ namespace Sprite
     void C_SpriteCreaterManager::C_SpriteCreaterManagerImpl::Destroy(const std::string& rId)
     {
         // スプライトクリエイターが作成されていない場合
-        auto iterator = std::find_if(pSpriteCreaters_.begin(),
-                                     pSpriteCreaters_.end(),
-                                     [&](const std::pair<std::string, SpriteCreaterPtr>& rpPatricleSystem){ return rpPatricleSystem.first == rId; });
+        auto iterator = std::find_if(managementDatas_.begin(),
+                                     managementDatas_.end(),
+                                     [&](const ManagementPair& rManagementData){ return rManagementData.first == rId; });
 
 
-        if (iterator == pSpriteCreaters_.end())
+        if (iterator == managementDatas_.end())
         {
             std::cout << "[ C_SpriteCreaterManagerImpl::Destroy ] : スプライトクリエイターが作成されていません。" << std::endl;
 
             return;
         }
 
-        (*iterator).second->Finalize();
-        pSpriteCreaters_.erase(iterator);
+        (*iterator).second.pSpriteCreater_->Finalize();
+        managementDatas_.erase(iterator);
     }
 
 
@@ -160,8 +194,8 @@ namespace Sprite
      ****************************************************************/
     void C_SpriteCreaterManager::C_SpriteCreaterManagerImpl::AllDestroy()
     {
-        for (auto& rParticleSystem : pSpriteCreaters_) rParticleSystem.second->Finalize();
-        pSpriteCreaters_.clear();
+        for (auto& rManagementData : managementDatas_) rManagementData.second.pSpriteCreater_->Finalize();
+        managementDatas_.clear();
     }
 
 
@@ -175,11 +209,11 @@ namespace Sprite
      ****************************************************************/
     boost::optional<SpriteCreaterWeakPtr> C_SpriteCreaterManager::C_SpriteCreaterManagerImpl::GetSpriteCreater(const std::string& rId)
     {
-        auto iterator = std::find_if(pSpriteCreaters_.begin(),
-                                     pSpriteCreaters_.end(),
-                                     [&](const std::pair<std::string, SpriteCreaterPtr>& rpPatricleSystem){ return rpPatricleSystem.first == rId; });
+        auto iterator = std::find_if(managementDatas_.begin(),
+                                     managementDatas_.end(),
+                                     [&](const ManagementPair rpPatricleSystem){ return rpPatricleSystem.first == rId; });
         
-        if (iterator == pSpriteCreaters_.end()) return boost::none;
-        return (*iterator).second;
+        if (iterator == managementDatas_.end()) return boost::none;
+        return (*iterator).second.pSpriteCreater_;
     }
 }

@@ -33,6 +33,7 @@ namespace ConnectWars
     public:
         C_RigidBodyInputMoveLogic(float movement = 1.0f, float movementScale = 1.0f);       // コンストラクタ
         ~C_RigidBodyInputMoveLogic() override;                                              // デストラクタ
+        C_RigidBodyMoveLogic* DeepCopy() override;                                          // ディープコピー
         void SetMovementScale(float movementScale);                                         // 移動量のスケールを設定
     private:
         float movement_ = 1.0f;                                                             ///< @brief 移動量

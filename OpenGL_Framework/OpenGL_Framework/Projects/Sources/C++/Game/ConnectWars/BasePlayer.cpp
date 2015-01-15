@@ -2,13 +2,15 @@
 #include "BasePlayer.h"
 #include "BaseOption.h"
 #include "CollisionProcess.h"
+#include "InputShotLogic.h"
+#include "BaseGun.h"
+#include "PlayerCombatState.h"
+#include "PlayerConnectState.h"
+#include "PlayerBombChargeState.h"
 #include "RigidBodyInputMoveLogic.h"
 #include "../../Library/Debug/Helper/DebugHelper.h"
 #include "../../Library/Model/SelfMade/Loader/ModelLoader.h"
 #include "../../Library/OpenGL/Buffer/Primitive/PrimitiveDefine.h"
-#include "../../Library/Physics/Engine/PhysicsEngine.h"
-#include "../../Library/OpenGL/Manager/OpenGlManager.h"
-#include "../../Library/Shader/GLSL/Uniform/Manager/UniformBufferManager.h"
 
 
 //-------------------------------------------------------------
@@ -29,48 +31,9 @@ namespace ConnectWars
     C_BasePlayer::C_BasePlayer(const std::string& rId, int32_t type) : C_ConnectMachine(rId, type),
 
         // ステートマシーン
-        upStateMachine_(std::make_unique<State::C_StateMachine<C_BasePlayer>>(this))
+        upStateMachine_(std::make_unique<State::C_StateMachine<C_BasePlayer>>(this, C_PlayerCombatState::s_GetInstance()))
 
     {
-        // 球形状を性生成
-        radius_ = 0.9f;
-        upSphereShape_ = std::make_unique<Physics::C_SphereShape>(radius_);
-        ResetMoveLimitBoundingBox();
-
-        Physics::Transform transform;
-        transform.setIdentity();
-        
-        transform.setOrigin(Physics::Vector3(5.0f, 0.0f, 0.0f));
-
-        upRigidBody_ = std::make_unique<Physics::C_RigidBody>(upSphereShape_.get(), transform, 1.0f);
-        Physics::C_PhysicsEngine::s_GetInstance()->AddRigidBody(upRigidBody_.get());
-
-        pModelData_ = OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer("Sphere").get();
-        pGlslObject_ = Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(ID::Shader::s_pHALF_LAMBERT).get();
-
-        pGlslObject_->Begin();
-
-        pGlslObject_->SetUniformMatrix4x4("modelMatrix", Math::Matrix4x4::s_IDENTITY);
-        pGlslObject_->SetUniformVector3("material.diffuse", Vector3(0.5f, 1.0f, 0.5f));
-        pGlslObject_->SetUniformVector3("material.ambient", Vector3(0.1f, 0.1f, 0.1f));
-        pGlslObject_->SetUniformVector3("material.specular", Vector3(0.9f, 0.9f, 0.9f));
-        pGlslObject_->SetUniform1f("material.shininess", 100.0f);
-
-        pGlslObject_->SetUniformVector3("light.position", Vector3(0.0f, 100.0f, 0.0f));
-        pGlslObject_->SetUniformVector3("light.diffuse", Vector3(0.9f, 0.9f, 0.9f));
-        pGlslObject_->SetUniformVector3("light.ambient", Vector3(0.9f, 0.9f, 0.9f));
-        pGlslObject_->SetUniformVector3("light.specular", Vector3(0.9f, 0.9f, 0.9f));
-
-        pGlslObject_->End();
-
-        assert(Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer("CameraData"));
-        pUniformBuffer_ = Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer("CameraData").get();
-        uniformBlockIndex_ = pUniformBuffer_->GetBlockIndexFromProgramObject(pGlslObject_->GetProgramObjectHandle());
-
-        upMoveLogic_ = std::make_unique<C_RigidBodyInputMoveLogic>(0.1f, 1.0f);
-
-        // 移動制限境界ボックスをリセット
-        //ResetMoveLimitBoundingBox();
     }
 
 
@@ -243,7 +206,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BasePlayer::Shot()
     {
-        //for (auto& pGun : upGuns_) pGun->Shot();
+        for (auto& uprGun : upGuns_) uprGun->Shot();
     }
 
 
@@ -256,21 +219,17 @@ namespace ConnectWars
      ****************************************************************/
     void C_BasePlayer::Bomb()
     {
-        /*
-        if (bombEnableFlag_ == true && C_KeyboardManager::s_GetInstance()->GetPressingCount(KeyCode::SDL_SCANCODE_X) == 1)
+        if ((connectOptionCount_ > 0)
+         && (upStateMachine_->CheckCurrentState(*C_PlayerCombatState::s_GetInstance()) == true)
+         && ((Input::C_KeyboardManager::s_GetInstance()->GetPressingCount(bombKeyCode_) == 1)
+         ||  (Input::C_GamepadManager::s_GetInstance()->GetButtonPressingCount(bombGamepadButton_) == 1)))
         {
+            // ボムのチャージ状態に変更
             upStateMachine_->ChangeState(C_PlayerBombChargeState::s_GetInstance());
-            bombEnableFlag_ = false;
 
-            // オプションをすべて待機状態にする
-            auto pGameObjects = C_GameObjectManager::s_GetManagementInstance().GetGameObjectsWithType(GameObjectDefine::eType::OPTION);
-
-            for (auto& prGameObject : pGameObjects)
-            {
-                auto& prOption = std::dynamic_pointer_cast<C_BaseOption>(prGameObject);
-                if (prOption->IsOnceConnectFlag() == true) prOption->Wait();
-            }
-        }*/
+            // 連結しているオプションに自爆を発送
+            for (auto pOption : pConnectOptionList_) pOption->DispatchOwnCrash();
+        }
     }
 
 
@@ -336,9 +295,11 @@ namespace ConnectWars
 
                 if (pAnotherOption->IsOnceConnectFlag() == false)
                 {
+                    // プレイヤーを設定
+                    pAnotherOption->SetPlayer(this);
+
                     // 一度連結したか判断するフラグ
                     pAnotherOption->SetOnceConnectFlag(true);
-
 
                     // プレイヤーからのオフセットを求める
                     auto anotherOptionTransform = pAnotherOption->GetRigidBody()->GetTransform();
@@ -348,7 +309,7 @@ namespace ConnectWars
                     anotherOptionOffsetFromPlayer = pOption->GetOffsetFromPlayer()
                                                   + (anotherOptionOffsetFromPlayer * pOption->GetRadius())
                                                   + (anotherOptionOffsetFromPlayer * pAnotherOption->GetRadius());
-                    anotherOptionOffsetFromPlayer *= Connect::s_OffsetFactor;
+                    anotherOptionOffsetFromPlayer *= Connect::s_offsetFactor;
                     pAnotherOption->SetOffsetFromPlayer(anotherOptionOffsetFromPlayer);
 
                     // オプションの座標を設定
@@ -358,9 +319,6 @@ namespace ConnectWars
                     // 新規連結処理を行う
                     NewConnect();
                     pAnotherOption->NewConnect();
-
-                    // オプション数を1増加
-                    AddOptionCount(1);
 
                     // 連結の効果を処理
                     pAnotherOption->ConnectEffect();
@@ -385,11 +343,11 @@ namespace ConnectWars
      ****************************************************************/
     void C_BasePlayer::NewConnect()
     {
-        // ボムを有効化
-        if (bombEnableFlag_ == false) bombEnableFlag_ = true;
+        // オプション数を1増加
+        AddConnectOptionCount(1);
 
-        // ステートを連結状態に変更
-        //upStateMachine_->ChangeState(C_PlayerConnectionState::s_GetInstance());
+        // 連結状態に変更
+        upStateMachine_->ChangeState(C_PlayerConnectState::s_GetInstance());
     }
 
 
@@ -485,37 +443,33 @@ namespace ConnectWars
     void C_BasePlayer::AddMoveSpeedLevel(int32_t moveSpeedLevel)
     {
         moveSpeedLevel_ += moveSpeedLevel;
+
         assert(moveSpeedLevel_ >= 0);
+        assert(dynamic_cast<C_RigidBodyInputMoveLogic*>(upMoveLogic_.get()));
 
-        // TODO
-        //C_Shooter::upMoveLogic_->SetMoveScale(1.0f + 0.2f * speedLevel_);
+        auto pInputMoveLogic = static_cast<C_RigidBodyInputMoveLogic*>(upMoveLogic_.get());
+
+        if (moveSpeedLevel < s_MAX_MOVE_SPEED_LEVEL)
+        {
+            pInputMoveLogic->SetMovementScale(1.0f + moveSpeedUpInterval_ * moveSpeedLevel_);
+        }
+        else
+        {
+            pInputMoveLogic->SetMovementScale(1.0f + moveSpeedUpInterval_ * s_MAX_MOVE_SPEED_LEVEL);
+        }
     }
 
 
     /*************************************************************//**
      *
-     *  @brief  銃のレベルを加算する
-     *  @param  銃のレベル
+     *  @brief  連結したオプションの数を加算する
+     *  @param  連結したオプションの数
      *  @return なし
      *
      ****************************************************************/
-    void C_BasePlayer::AddGunLevel(int32_t gunLevel)
+    void C_BasePlayer::AddConnectOptionCount(int32_t connectOptionCount)
     {
-        gunLevel_ += gunLevel;
-        assert(gunLevel_ >= 0);
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  オプションの数を加算する
-     *  @param  オプションの数
-     *  @return なし
-     *
-     ****************************************************************/
-    void C_BasePlayer::AddOptionCount(int32_t optionCount)
-    {
-        optionCount_ += optionCount;
+        connectOptionCount_ += connectOptionCount;
     }
 
 
@@ -529,19 +483,6 @@ namespace ConnectWars
     State::C_StateMachine<C_BasePlayer>* C_BasePlayer::GetStateMachine() const
     {
         return upStateMachine_.get();
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  銃のレベルを取得する
-     *  @param  なし
-     *  @return 銃のレベル
-     *
-     ****************************************************************/
-    int32_t C_BasePlayer::GetGunLevel() const
-    {
-        return gunLevel_;
     }
 
 
@@ -599,19 +540,6 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
-     *  @brief  オプションの数を取得する
-     *  @param  なし
-     *  @return オプションの数
-     *
-     ****************************************************************/
-    int32_t C_BasePlayer::GetOptionCount() const
-    {
-        return optionCount_;
-    }
-
-
-    /*************************************************************//**
-     *
      *  @brief  ボムのチャージフラグを設定する
      *  @param  ボムのチャージフラグ
      *  @return なし
@@ -632,37 +560,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BasePlayer::DoUpdate()
     {
-        //upStateMachine_->Update();
-        //ResetConnect();
-
-        upMoveLogic_->Process(upRigidBody_.get());
-        MoveLimitCheck();
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  非公開の描画処理を行う
-     *  @param  なし
-     *  @return なし
-     *
-     ****************************************************************/
-    void C_BasePlayer::DoDraw()
-    {
-        pGlslObject_->BeginWithUnifomBuffer(pUniformBuffer_->GetHandle(), uniformBlockIndex_);
-
-        upRigidBody_->GetTransform().getOpenGLMatrix(modelMatrix_.a_);
-        pGlslObject_->SetUniformMatrix4x4("modelMatrix", modelMatrix_);
-
-        auto pOpenGlManager = OpenGL::C_OpenGlManager::s_GetInstance();
-
-        pOpenGlManager->DrawPrimitiveWithIndices(OpenGL::Primitive::s_TRIANGLE,
-                                                 pModelData_->GetVertexArrayObjectHandle(), 
-                                                 pModelData_->GetIndexBufferObjectHandle(),
-                                                 OpenGL::DataType::s_UNSIGNED_SHORT,
-                                                 static_cast<int32_t>(pModelData_->GetIndexCount()));
-
-        pGlslObject_->End();
+        upStateMachine_->Update();
     }
 
 

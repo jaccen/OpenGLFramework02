@@ -39,7 +39,7 @@ namespace ConnectWars
         bool Update() override final;                                                               // 更新処理
         void Draw() override final;                                                                 // 描画処理
         bool MessageProcess(const Telegram& rTelegram) override final;                              // メッセージ処理
-        void DispatchCollision(C_CollisionObject* pCollisionObject) override final;                 // 衝突を発送
+        void DispatchCollision(C_CollisionObject* pCollisionObject) override final;                 // 衝突検出を発送
         virtual void CollisionProcess(C_BasePlayer* pPlayer) override;                              // プレイヤーとの衝突時処理
         virtual void CollisionProcess(C_BaseOption* pOption) override;                              // オプションとの衝突時処理
         virtual void CollisionProcess(C_BaseEnemy* pEnemy) override;                                // 敵との衝突時処理
@@ -55,12 +55,11 @@ namespace ConnectWars
         virtual void MoveLimitCheck() override;                                                     // 移動制限を確認
         virtual void ConnectEffect();                                                               // 連結時の効果
         virtual void ResetEffect();                                                                 // 効果をリセット
-        virtual void Wait();                                                                        // 待機処理
-        virtual void SelfCrash();                                                                   // 自爆処理
+        virtual void DispatchOwnCrash();                                                            // 自爆を発送
+        virtual void OwnCrash();                                                                    // 自爆処理
         State::C_StateMachine<C_BaseOption>* GetStateMachine() const;                               // ステートマシーンを取得
         const Physics::Vector3& GetOffsetFromPlayer() const;                                        // プレイヤーからのオフセットを取得
         C_BasePlayer* GetPlayer() const;                                                            // プレイヤーを取得
-
         bool IsOnceConnectFlag() const;                                                             // 一度連結したか判断するフラグを取得
         bool IsConnectFlag() const;                                                                 // 連結フラグを取得
         bool IsDefeatedFlag() const;                                                                // 撃破フラグを取得
@@ -79,9 +78,10 @@ namespace ConnectWars
         C_BasePlayer* pPlayer_ = nullptr;                                                           ///< @brief プレイヤー
         bool defeatedFlag_ = false;                                                                 ///< @brief 撃破フラグ
         int32_t defeatedFrame_ = 60;                                                                ///< @brief 撃破状態のフレーム数
+        int32_t ownCrashDelayFrame_ = 0;                                                            ///< @brief 自爆遅延フレーム数
 
         virtual void DoUpdate();                                                                    // 非公開の更新処理
-        virtual void DoDraw();                                                                      // 非公開の描画処理
+        virtual void DoDraw() = 0;                                                                  // 非公開の描画処理
         virtual bool DoMessageProcess(const Telegram& rTelegram);                                   // 非公開のメッセージ処理
     };
 }

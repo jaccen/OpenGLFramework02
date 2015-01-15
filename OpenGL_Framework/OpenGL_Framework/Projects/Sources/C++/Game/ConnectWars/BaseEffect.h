@@ -5,6 +5,8 @@
 /* ヘッダファイル */
 #include "ConnectWarsDefine.h"
 #include "../../Library/GameObject/GameObject.h"
+#include "../../Library/Lua/LuaStateManager.h"
+#include "../../Library/Timer/Counter/Frame/FrameCounter.h"
 
 
 //-------------------------------------------------------------
@@ -29,7 +31,12 @@ namespace ConnectWars
         bool Update() override;                                                 // 更新処理
         void Draw() override;                                                   // 描画処理
         bool MessageProcess(const Telegram& rTelegram) override;                // メッセージ処理
+        void SetPosition(const Vector3& rPosition);                             // 座標を設定
     protected:
+        Lua::LuaStatePtr pLuaState_;                                            ///< @brief Luaステート
+        Timer::C_FrameCounter frameCounter_;                                    ///< @brief フレームカウンター
+        Vector3 position_;                                                      ///< @brief 座標
+
         virtual void DoUpdate() = 0;                                            // 非公開の更新処理
         virtual void DoDraw() = 0;                                              // 非公開の描画処理
         virtual bool DoMessageProcess(const Telegram& rTelegram) = 0;           // 非公開のメッセージ処理

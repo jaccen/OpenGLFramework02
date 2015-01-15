@@ -70,9 +70,11 @@ namespace ConnectWars
         virtual void MoveLimitCheck() = 0;                                                  // 移動制限を確認
         bool CheckCollidedObjectId(const std::string& rId);                                 // 衝突したオブジェクトのIDが存在するか確認
         void EntryCollidedObjectId(const std::string& rId);                                 // 衝突したオブジェクトのIDを登録
+        virtual const Physics::Vector3& GetPosition() const = 0;                            // 座標を取得  
         C_BaseHitPoint* GetHitPoint() const;                                                // ヒットポイントを取得
         C_BasePower* GetPower() const;                                                      // パワーを取得
         bool IsInvincibleFlag() const;                                                      // 無敵フラグを取得
+        virtual void SetPosition(const Physics::Vector3& rPosition) = 0;                    // 座標を設定
         void SetCollisionPoint(const Physics::Vector3& rCollisionPoint);                    // 衝突点を設定
         void SetInvincibleFlag(bool invincibleFlag);                                        // 無敵フラグを設定
     protected:

@@ -23,6 +23,14 @@ namespace Model
     //-------------------------------------------------------------
     namespace SelfMade
     {
+        /* 前方宣言 */
+        class C_ModelLoader;
+
+
+        /* 別名 */
+        using ModelLoaderPtr = std::shared_ptr<C_ModelLoader>;                                          // ModelLoaderPtr型
+
+
         //-------------------------------------------------------------
         //!
         //! @brief モデルローダー
@@ -48,6 +56,8 @@ namespace Model
             const Matrix4x4& GetBoneAnimationMatrix(uint32_t frame,                                     // ボーンのアニメーション行列を取得
                                                     uint32_t meshIndex,
                                                     uint32_t boneIndex) const;
+
+            static ModelLoaderPtr s_Create();                                                           // 生成処理
         private:
             std::vector<S_Mesh> meshList_;                                                              ///< @brief メッシュリスト
             std::vector<S_Material> materialList_;                                                      ///< @brief マテリアルリスト

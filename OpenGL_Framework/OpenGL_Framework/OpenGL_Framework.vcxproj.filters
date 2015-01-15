@@ -295,9 +295,6 @@
     <Filter Include="Sources\C++\Library\Debug\String">
       <UniqueIdentifier>{be09584d-ec09-4f9e-8f53-29bdc9943c18}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resources\Shaders">
-      <UniqueIdentifier>{b8a93952-3943-45a2-97c1-c072e2270715}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Sources\C++\Library\Particle">
       <UniqueIdentifier>{092afc37-3782-4f11-9f7b-15732b190e4f}</UniqueIdentifier>
     </Filter>
@@ -306,33 +303,6 @@
     </Filter>
     <Filter Include="Sources\C++\Library\Particle\System\Manager">
       <UniqueIdentifier>{5fb42cbb-7f9a-4ea4-aa08-8e00b99831e6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resources\Shaders\GLSL">
-      <UniqueIdentifier>{04eff106-4993-4148-af89-fa4d4239cc61}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resources\Shaders\GLSL\Particle">
-      <UniqueIdentifier>{f7aa9ef3-38d5-45cc-b63d-ee40a9f140cc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resources\Shaders\GLSL\Debug">
-      <UniqueIdentifier>{ccab02d9-b1df-4533-bd19-f6f2fef611bf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\C++\Library\Camera">
-      <UniqueIdentifier>{1b6ca14b-abc2-4800-aec9-29709219a1f2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\C++\Library\Camera\Manager">
-      <UniqueIdentifier>{1bf607da-4b0a-47f7-99fe-5d8af10d659c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\C++\Library\Camera\Camera">
-      <UniqueIdentifier>{b2ae9ce4-c2f6-4ccf-a67f-a30554a42f63}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\C++\Library\Camera\Camera\Orthographic">
-      <UniqueIdentifier>{e7b6000d-b69a-4141-b0d5-e12ad2702717}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\C++\Library\Camera\Camera\Perspective">
-      <UniqueIdentifier>{02b680b0-ef24-47e2-9b61-0a89ceac7a2c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\C++\Library\Camera\Camera\Perspective\Test">
-      <UniqueIdentifier>{f9c1ed5b-4225-4e3a-8958-cd52b51efbd4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resources\GameDatas">
       <UniqueIdentifier>{5acc8f72-d14e-4732-bfc2-1be59d16f40f}</UniqueIdentifier>
@@ -406,9 +376,6 @@
     <Filter Include="Sources\C++\Library\Figure">
       <UniqueIdentifier>{97809339-3367-4e8c-855f-aa9474c9a080}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resources\Shaders\GLSL\Figure">
-      <UniqueIdentifier>{b9a2c66c-7b6e-4f64-9a9a-99d1c5c15484}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Sources\C++\Library\View">
       <UniqueIdentifier>{115c1983-ef80-44ef-bc8e-175106088423}</UniqueIdentifier>
     </Filter>
@@ -474,9 +441,6 @@
     </Filter>
     <Filter Include="Resources\Models\Test\Sphere">
       <UniqueIdentifier>{ef851196-24f3-4224-a016-03b7a4606b83}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resources\Shaders\GLSL\HalfLambert">
-      <UniqueIdentifier>{4bda8d44-6a94-42a0-927a-6bf63f38a928}</UniqueIdentifier>
     </Filter>
     <Filter Include="Sources\C++\Game\ConnectWars\Logic">
       <UniqueIdentifier>{d31925df-a766-45e9-bd8b-1ce40ad062b7}</UniqueIdentifier>
@@ -553,9 +517,6 @@
     <Filter Include="Sources\C++\Game\ConnectWars\Scene\Load">
       <UniqueIdentifier>{8f9b0f94-ad0d-480b-a1aa-3f8cb6d6a2a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resources\Shaders\GLSL\Load">
-      <UniqueIdentifier>{dd593d4f-a7e1-4590-abbf-8cdcd6a9a34f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Sources\C++\Game\ConnectWars\Logic\Move">
       <UniqueIdentifier>{a06292c2-c07e-47f6-a700-423095da374e}</UniqueIdentifier>
     </Filter>
@@ -601,8 +562,167 @@
     <Filter Include="Sources\C++\Library\Sprite\Creater\Manager">
       <UniqueIdentifier>{0300094c-2802-4760-b708-7195729eedf2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\C++\Library\Collision\Camera">
+      <UniqueIdentifier>{1b6ca14b-abc2-4800-aec9-29709219a1f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Collision\Camera\Manager">
+      <UniqueIdentifier>{1bf607da-4b0a-47f7-99fe-5d8af10d659c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Collision\Camera\Camera">
+      <UniqueIdentifier>{b2ae9ce4-c2f6-4ccf-a67f-a30554a42f63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Collision\Camera\Camera\Orthographic">
+      <UniqueIdentifier>{e7b6000d-b69a-4141-b0d5-e12ad2702717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Collision\Camera\Camera\Perspective">
+      <UniqueIdentifier>{02b680b0-ef24-47e2-9b61-0a89ceac7a2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Collision\Camera\Camera\Perspective\Test">
+      <UniqueIdentifier>{f9c1ed5b-4225-4e3a-8958-cd52b51efbd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Bullet\Player">
+      <UniqueIdentifier>{310decdc-de4c-4df1-b319-7b1477b489ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Option">
+      <UniqueIdentifier>{419754cb-ade2-47e4-9b69-325a207873d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Bomb\Normal">
+      <UniqueIdentifier>{2df51182-5381-40de-99aa-5c4a6339ed53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Player\Combat">
+      <UniqueIdentifier>{044d432c-fb50-4433-9a1d-6209dcebde49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Player\Advent">
+      <UniqueIdentifier>{da4ed9cd-6ea6-4e6e-8f7f-130a27428c67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Player\BombCharge">
+      <UniqueIdentifier>{d69927cf-eab4-4cd1-befa-4178d5945c3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Player\Connect">
+      <UniqueIdentifier>{053381f3-c251-4f0c-9e1a-0c0275d1133c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Player\Destroyed">
+      <UniqueIdentifier>{30872cd5-3c8d-4453-bb86-2805549affd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Player\Invincible">
+      <UniqueIdentifier>{baa78e34-aaf5-4ac3-a591-bc790c62665d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Generator\Player">
+      <UniqueIdentifier>{8a3ef4e7-edfc-4ee4-8ce4-3ba33dcf659c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Gun\Factory">
+      <UniqueIdentifier>{eaed0e87-222f-42cb-aa7d-8a139212889a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Gun\Factory\Player">
+      <UniqueIdentifier>{7bfaa6f6-bcb0-48ab-9134-b1b71b1be2ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Gun\Factory\Option">
+      <UniqueIdentifier>{1eff5df8-7b10-41e2-b3b1-7d654b4168a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Gun\Factory\Enemy">
+      <UniqueIdentifier>{ab9b9571-fc73-4ad1-bcb1-48ac7b1ca4cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Option\WaitOwnCrash">
+      <UniqueIdentifier>{e0c9ca6f-28a6-48e0-8453-aeffae6ed59f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Bullet">
+      <UniqueIdentifier>{2963bd20-ab81-4964-9c2b-c7353c0f140c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Bullet\Fire">
+      <UniqueIdentifier>{74eb1141-47c0-48ea-90c3-b052b66a6a81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Bullet\Destroyed">
+      <UniqueIdentifier>{010eb14c-bd9d-409c-bd8b-84378155a886}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Generator\Bullet">
+      <UniqueIdentifier>{105de3a4-0fa1-4738-bba9-1fa9c185b008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Shooter\ConnectMachine\Option\SpeedUp">
+      <UniqueIdentifier>{f41d8785-5d49-40a5-9a29-cf205b54e553}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Option\Connect">
+      <UniqueIdentifier>{dbe0bfbc-d782-48e5-b1d0-b570e7f4a63a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Option\Drop">
+      <UniqueIdentifier>{fe145170-a305-4f58-9e6d-e198315bf300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Option\Combat">
+      <UniqueIdentifier>{8bfa5318-8c1b-4be9-8658-3f48bde4f0ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Option\Destroyed">
+      <UniqueIdentifier>{5f4b5445-f9a9-4dfa-bc95-55f50c51812a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\State\Option\OwnCrash">
+      <UniqueIdentifier>{afa8b124-bb7e-415f-9c06-75a61c579775}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Shooter\ConnectMachine\Option\SmallBeam">
+      <UniqueIdentifier>{9c4f58c8-7f8a-4ab8-8d8f-ef5e3d5ce5c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Shooter\ConnectMachine\Option\Shield">
+      <UniqueIdentifier>{9c6278d1-d661-4425-a1f2-0398a290aab5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Shooter\ConnectMachine\Option\Laser">
+      <UniqueIdentifier>{eb6502d5-dbcf-4e50-b92c-e10d5505de9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Effect\Bomb">
+      <UniqueIdentifier>{4abe9d47-70f9-416d-8318-dfee23b1ef75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Lua\Effect">
+      <UniqueIdentifier>{b57de289-0744-4dd3-a0c1-7378b6b23378}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Generator\Effect">
+      <UniqueIdentifier>{9ba11ec6-54ab-467f-ad94-3412701fa25f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\JSON\Object">
+      <UniqueIdentifier>{ea5bb880-18f9-4229-8ebc-146746aedf35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\JSON\Object\Manager">
+      <UniqueIdentifier>{4d3fac81-4733-4ca3-81c4-30a81b696720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Scene\Load\Function">
+      <UniqueIdentifier>{07464fb1-b679-48d9-8319-94f95d9ba650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Library\Model\SelfMade\Loader\Manager">
+      <UniqueIdentifier>{ac28ed83-55e3-44b4-bc8b-8d954be12ea3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\GameController">
+      <UniqueIdentifier>{13958113-2ba7-40eb-8b94-96a07a968158}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\CameraController">
+      <UniqueIdentifier>{680e72a0-21b5-48be-b677-719551b6f6a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\Player">
+      <UniqueIdentifier>{9e944a51-e1f5-4924-a398-34cad2a93f8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders">
+      <UniqueIdentifier>{b8a93952-3943-45a2-97c1-c072e2270715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders\GLSL">
+      <UniqueIdentifier>{04eff106-4993-4148-af89-fa4d4239cc61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders\GLSL\Particle">
+      <UniqueIdentifier>{f7aa9ef3-38d5-45cc-b63d-ee40a9f140cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders\GLSL\Debug">
+      <UniqueIdentifier>{ccab02d9-b1df-4533-bd19-f6f2fef611bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders\GLSL\Figure">
+      <UniqueIdentifier>{b9a2c66c-7b6e-4f64-9a9a-99d1c5c15484}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders\GLSL\Load">
+      <UniqueIdentifier>{dd593d4f-a7e1-4590-abbf-8cdcd6a9a34f}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Resources\Shaders\GLSL\Sprite">
       <UniqueIdentifier>{0ed60e1b-f107-46b6-91ae-4150610836ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders\GLSL\HalfLambertPhong">
+      <UniqueIdentifier>{4bda8d44-6a94-42a0-927a-6bf63f38a928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Generator\Option">
+      <UniqueIdentifier>{837c4ea7-a05e-4df5-a467-a235131fa4e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\Option">
+      <UniqueIdentifier>{0a6ecf08-3a71-4d5e-805d-96753dd53c55}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -628,9 +748,6 @@
       <Filter>Sources\C++\Library\Framework</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Library\Json\JsonDefine.h">
-      <Filter>Sources\C++\Library\JSON</Filter>
-    </ClInclude>
-    <ClInclude Include="Projects\Sources\C++\Library\Json\JsonObject.h">
       <Filter>Sources\C++\Library\JSON</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Library\SDL\SdlManager.h">
@@ -804,9 +921,6 @@
     <ClInclude Include="Projects\Sources\C++\Library\Model\FBX\Loader\FbxLoader.h">
       <Filter>Sources\C++\Library\Model\FBX\Loader</Filter>
     </ClInclude>
-    <ClInclude Include="Projects\Sources\C++\Library\Model\FBX\Loader\FbxLoaderImpl.h">
-      <Filter>Sources\C++\Library\Model\FBX\Loader</Filter>
-    </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Library\Path\PathAnalizer.h">
       <Filter>Sources\C++\Library\Path</Filter>
     </ClInclude>
@@ -913,22 +1027,22 @@
       <Filter>Sources\C++\Library\Particle\System\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\PerspectiveCamera.h">
-      <Filter>Sources\C++\Library\Camera\Camera\Perspective</Filter>
+      <Filter>Sources\C++\Library\Collision\Camera\Camera\Perspective</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\Test\TestCamera.h">
-      <Filter>Sources\C++\Library\Camera\Camera\Perspective\Test</Filter>
+      <Filter>Sources\C++\Library\Collision\Camera\Camera\Perspective\Test</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Orthographic\OrthographicCamera.h">
-      <Filter>Sources\C++\Library\Camera\Camera\Orthographic</Filter>
+      <Filter>Sources\C++\Library\Collision\Camera\Camera\Orthographic</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Camera.h">
-      <Filter>Sources\C++\Library\Camera\Camera</Filter>
+      <Filter>Sources\C++\Library\Collision\Camera\Camera</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Library\Camera\Manager\CameraManager.h">
-      <Filter>Sources\C++\Library\Camera\Manager</Filter>
+      <Filter>Sources\C++\Library\Collision\Camera\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Library\Camera\Manager\CameraManagerImpl.h">
-      <Filter>Sources\C++\Library\Camera\Manager</Filter>
+      <Filter>Sources\C++\Library\Collision\Camera\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Library\Scene\Manager\SceneManager.h">
       <Filter>Sources\C++\Library\Scene\Manager</Filter>
@@ -1050,9 +1164,6 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ConnectWarsDefine.h">
       <Filter>Sources\C++\Game\ConnectWars</Filter>
     </ClInclude>
-    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventState.h">
-      <Filter>Sources\C++\Game\ConnectWars\State\Player</Filter>
-    </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseHitPoint.h">
       <Filter>Sources\C++\Game\ConnectWars\Parameter\HitPoint</Filter>
     </ClInclude>
@@ -1103,9 +1214,6 @@
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Library\Light\Manager\LightManagerImpl.h">
       <Filter>Sources\C++\Library\Light\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerCombatState.h">
-      <Filter>Sources\C++\Game\ConnectWars\State\Player</Filter>
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseGun.h">
       <Filter>Sources\C++\Game\ConnectWars\Gun</Filter>
@@ -1160,6 +1268,111 @@
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Library\Sprite\Creater\Manager\SpriteCreaterManagerImpl.h">
       <Filter>Sources\C++\Library\Sprite\Creater\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Model\FBX\Loader\FbxLoaderImpl.h">
+      <Filter>Sources\C++\Library\Model\FBX\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\NormalBomb.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Bomb\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerCombatState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Player\Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Player\Advent</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerBombChargeState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Player\BombCharge</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerConnectState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Player\Connect</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerDestroyedState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Player\Destroyed</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerInvincibleState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Player\Invincible</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerGenerator.h">
+      <Filter>Sources\C++\Game\ConnectWars\Generator\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GunFactory.h">
+      <Filter>Sources\C++\Game\ConnectWars\Gun\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerGunFactory.h">
+      <Filter>Sources\C++\Game\ConnectWars\Gun\Factory\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionWaitOwnCrashState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Option\WaitOwnCrash</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerBullet.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Bullet\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BulletFireState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Bullet\Fire</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BulletDestroyedState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Bullet\Destroyed</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BulletGenerator.h">
+      <Filter>Sources\C++\Game\ConnectWars\Generator\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\SpeedUpOption.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Shooter\ConnectMachine\Option\SpeedUp</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionConnectState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Option\Connect</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionDropState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Option\Drop</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionCombatState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Option\Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionDestroyedState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Option\Destroyed</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionOwnCrashState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Option\OwnCrash</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\SmallBeamOption.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Shooter\ConnectMachine\Option\SmallBeam</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ShieldOption.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Shooter\ConnectMachine\Option\Shield</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BombChargeEffect.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Bomb</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EffectGenerator.h">
+      <Filter>Sources\C++\Game\ConnectWars\Generator\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\JSON\Object\JsonObject.h">
+      <Filter>Sources\C++\Library\JSON\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\JSON\Object\Manager\JsonObjectManager.h">
+      <Filter>Sources\C++\Library\JSON\Object\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\JSON\Object\Manager\JsonObjectManagerImpl.h">
+      <Filter>Sources\C++\Library\JSON\Object\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\LoadFunction.h">
+      <Filter>Sources\C++\Game\ConnectWars\Scene\Load\Function</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Model\SelfMade\Loader\Manager\ModelLoaderManager.h">
+      <Filter>Sources\C++\Library\Model\SelfMade\Loader\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Library\Model\SelfMade\Loader\Manager\ModelLoaderManagerImpl.h">
+      <Filter>Sources\C++\Library\Model\SelfMade\Loader\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GameController.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\GameController</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\CameraController.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CameraController</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionGenerator.h">
+      <Filter>Sources\C++\Game\ConnectWars\Generator\Option</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1395,16 +1608,16 @@
       <Filter>Sources\C++\Library\Particle\System\Manager</Filter>
     </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\PerspectiveCamera.cpp">
-      <Filter>Sources\C++\Library\Camera\Camera\Perspective</Filter>
+      <Filter>Sources\C++\Library\Collision\Camera\Camera\Perspective</Filter>
     </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\Test\TestCamera.cpp">
-      <Filter>Sources\C++\Library\Camera\Camera\Perspective\Test</Filter>
+      <Filter>Sources\C++\Library\Collision\Camera\Camera\Perspective\Test</Filter>
     </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Library\Camera\Camera\Orthographic\OrthographicCamera.cpp">
-      <Filter>Sources\C++\Library\Camera\Camera\Orthographic</Filter>
+      <Filter>Sources\C++\Library\Collision\Camera\Camera\Orthographic</Filter>
     </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Library\Camera\Manager\CameraManager.cpp">
-      <Filter>Sources\C++\Library\Camera\Manager</Filter>
+      <Filter>Sources\C++\Library\Collision\Camera\Manager</Filter>
     </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Library\Scene\Manager\SceneManager.cpp">
       <Filter>Sources\C++\Library\Scene\Manager</Filter>
@@ -1475,9 +1688,6 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\TitleScene.cpp">
       <Filter>Sources\C++\Game\ConnectWars\Scene\Title</Filter>
     </ClCompile>
-    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventState.cpp">
-      <Filter>Sources\C++\Game\ConnectWars\State\Player</Filter>
-    </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseHitPoint.cpp">
       <Filter>Sources\C++\Game\ConnectWars\Parameter\HitPoint</Filter>
     </ClCompile>
@@ -1507,9 +1717,6 @@
     </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Library\Light\Manager\LightManager.cpp">
       <Filter>Sources\C++\Library\Light\Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerCombatState.cpp">
-      <Filter>Sources\C++\Game\ConnectWars\State\Player</Filter>
     </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseGun.cpp">
       <Filter>Sources\C++\Game\ConnectWars\Gun</Filter>
@@ -1562,11 +1769,101 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RapidFireGun.cpp">
       <Filter>Sources\C++\Game\ConnectWars\Gun\RapidFire</Filter>
     </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Sprite\Creater\Manager\SpriteCreaterManager.cpp">
+      <Filter>Sources\C++\Library\Sprite\Creater\Manager</Filter>
+    </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Library\Sprite\Creater\SpriteCreater.cpp">
       <Filter>Sources\C++\Library\Sprite\Creater</Filter>
     </ClCompile>
-    <ClCompile Include="Projects\Sources\C++\Library\Sprite\Creater\Manager\SpriteCreaterManager.cpp">
-      <Filter>Sources\C++\Library\Sprite\Creater\Manager</Filter>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\NormalBomb.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Bomb\Normal</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerCombatState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Player\Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Player\Advent</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerBombChargeState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Player\BombCharge</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerConnectState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Player\Connect</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerDestroyedState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Player\Destroyed</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerInvincibleState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Player\Invincible</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerGenerator.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Generator\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerGunFactory.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Gun\Factory\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionWaitOwnCrashState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Option\WaitOwnCrash</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerBullet.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Bullet\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BulletFireState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Bullet\Fire</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BulletDestroyedState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Bullet\Destroyed</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BulletGenerator.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Generator\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\SpeedUpOption.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Shooter\ConnectMachine\Option\SpeedUp</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionConnectState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Option\Connect</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionDropState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Option\Drop</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionCombatState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Option\Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionDestroyedState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Option\Destroyed</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionOwnCrashState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Option\OwnCrash</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\SmallBeamOption.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Shooter\ConnectMachine\Option\SmallBeam</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ShieldOption.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Shooter\ConnectMachine\Option\Shield</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BombChargeEffect.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Bomb</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EffectGenerator.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Generator\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\JSON\Object\Manager\JsonObjectManager.cpp">
+      <Filter>Sources\C++\Library\JSON\Object\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\LoadFunction.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Scene\Load\Function</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Library\Model\SelfMade\Loader\Manager\ModelLoaderManager.cpp">
+      <Filter>Sources\C++\Library\Model\SelfMade\Loader\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\GameController.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\GameController</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\CameraController.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CameraController</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionGenerator.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Generator\Option</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1612,12 +1909,6 @@
     <None Include="Projects\Models\Test\Box\Box.material">
       <Filter>Resources\Models\Test\Box</Filter>
     </None>
-    <None Include="Projects\Shaders\GLSL\HalfLambert\HalfLambert.frag">
-      <Filter>Resources\Shaders\GLSL\HalfLambert</Filter>
-    </None>
-    <None Include="Projects\Shaders\GLSL\HalfLambert\HalfLambert.vert">
-      <Filter>Resources\Shaders\GLSL\HalfLambert</Filter>
-    </None>
     <None Include="Projects\Shaders\GLSL\Load\Load.vert">
       <Filter>Resources\Shaders\GLSL\Load</Filter>
     </None>
@@ -1627,14 +1918,29 @@
     <None Include="Projects\Shaders\GLSL\Load\Load.geom">
       <Filter>Resources\Shaders\GLSL\Load</Filter>
     </None>
-    <None Include="..\..\..\Framework\OpenGL_Framework\OpenGL_Framework\Project\Shader\Sprite\Sprite.vert">
+    <None Include="Projects\Shaders\GLSL\Sprite\Sprite.geom">
       <Filter>Resources\Shaders\GLSL\Sprite</Filter>
     </None>
-    <None Include="..\..\..\Framework\OpenGL_Framework\OpenGL_Framework\Project\Shader\Sprite\Sprite.frag">
+    <None Include="Projects\Shaders\GLSL\Sprite\Sprite.vert">
       <Filter>Resources\Shaders\GLSL\Sprite</Filter>
     </None>
-    <None Include="..\..\..\Framework\OpenGL_Framework\OpenGL_Framework\Project\Shader\Sprite\Sprite.geom">
+    <None Include="Projects\Shaders\GLSL\Sprite\Sprite.frag">
       <Filter>Resources\Shaders\GLSL\Sprite</Filter>
+    </None>
+    <None Include="Projects\Sources\Lua\Effect\BombChargeEffect.lua">
+      <Filter>Sources\Lua\Effect</Filter>
+    </None>
+    <None Include="Projects\Shaders\GLSL\HalfLambert\HalfLambertPhong.vert">
+      <Filter>Resources\Shaders\GLSL\HalfLambertPhong</Filter>
+    </None>
+    <None Include="Projects\Shaders\GLSL\HalfLambert\HalfLambertPhong.frag">
+      <Filter>Resources\Shaders\GLSL\HalfLambertPhong</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Player\NormalPlayerData.json">
+      <Filter>Resources\GameDatas\ConnectWars\Player</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Option\SpeedUpOptionData.json">
+      <Filter>Resources\GameDatas\ConnectWars\Option</Filter>
     </None>
   </ItemGroup>
 </Project>

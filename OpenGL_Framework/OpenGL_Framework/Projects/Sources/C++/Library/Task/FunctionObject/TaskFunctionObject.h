@@ -23,9 +23,6 @@ namespace Task
     class C_UpdateTaskSortObject
     {
     public:
-        C_UpdateTaskSortObject() = default;                     //!< @brief デフォルトコンストラクタ
-        ~C_UpdateTaskSortObject() = default;                    //!< @brief デフォルトデストラクタ
-
         /*************************************************************//**
          *
          *  @brief  関数呼び出し演算子のオーバーロード
@@ -51,9 +48,6 @@ namespace Task
     class C_DrawTaskSortObject
     {
     public:
-        C_DrawTaskSortObject() = default;                       //!< @brief デフォルトコンストラクタ
-        ~C_DrawTaskSortObject() = default;                      //!< @brief デフォルトデストラクタ
-
         /*************************************************************//**
          *
          *  @brief  関数呼び出し演算子のオーバーロード

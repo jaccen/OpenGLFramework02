@@ -16,10 +16,6 @@
 //-------------------------------------------------------------
 namespace Sprite
 {
-    /* 別名 */
-    using SpriteCreaterWeakPtr = std::weak_ptr<IC_SpriteCreater>;                                                   // SpriteCreaterWeakPtr型
-
-
     //-------------------------------------------------------------
     //!
     //! @brief スプライトクリエイターマネージャー
@@ -32,10 +28,12 @@ namespace Sprite
         C_SpriteCreaterManager();                                                                                   // コンストラクタ
         ~C_SpriteCreaterManager() override;                                                                         // デストラクタ
         void Draw();                                                                                                // 描画処理
+        void Sort();                                                                                                // ソート処理
         bool Create(const std::string& rId,                                                                         // スプライトクリエイターを作成
                     const Camera::CameraPtr& prCamera,
                     const Texture::TextureDataPtr pTextureData,
-                    uint32_t maxSpriteCount = 100);
+                    uint32_t maxSpriteCount = 100,
+                    float priority = 0.0f);
         void Destroy(const std::string& rId);                                                                       // スプライトクリエイターを破棄
         void AllDestroy();                                                                                          // スプライトクリエイターを全て破棄
         boost::optional<SpriteCreaterWeakPtr> GetSpriteCreater(const std::string& rId);                             // スプライトクリエイターを取得

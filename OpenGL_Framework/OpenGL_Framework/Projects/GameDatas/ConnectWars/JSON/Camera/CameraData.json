@@ -1,0 +1,23 @@
+{
+  "CameraData" :
+  {
+    "MainCamera" :
+    {
+      "EyePoint" :
+      [
+        0.0,
+        0.0,
+        28.0
+      ],
+      "TargetPoint" :
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "FieldOfViewY" : 0.785398,
+      "NearClippingPlane" : 1.0,
+      "FarClippngPlane" : 500.0
+    }
+  }
+}

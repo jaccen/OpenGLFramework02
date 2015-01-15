@@ -51,11 +51,25 @@ namespace Sprite
 
     /*************************************************************//**
      *
+     *  @brief  ソート処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_SpriteCreaterManager::Sort()
+    {
+
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  スプライトシステムの作成する
      *  @param  ID
      *  @param  カメラ
      *  @parama テクスチャ情報
      *  @param  スプライトの最大数
+     *  @param  優先度
      *  @return 正常終了：true
      *  @return 異常終了：false
      *
@@ -63,9 +77,10 @@ namespace Sprite
     bool C_SpriteCreaterManager::Create(const std::string& rId,
                                         const Camera::CameraPtr& prCamera,
                                         const Texture::TextureDataPtr pTextureData,
-                                        uint32_t maxSpriteCount)
+                                        uint32_t maxSpriteCount,
+                                        float priority)
     {
-        if (upImpl_->Create(rId, prCamera, pTextureData, maxSpriteCount) == false) return false;
+        if (upImpl_->Create(rId, prCamera, pTextureData, maxSpriteCount, priority) == false) return false;
 
         return true;
     }

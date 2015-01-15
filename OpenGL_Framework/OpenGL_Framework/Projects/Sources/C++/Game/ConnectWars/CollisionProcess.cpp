@@ -48,6 +48,9 @@ namespace ConnectWars
     {
         if (pOption->IsOnceConnectFlag() == false)
         {
+            // プレイヤーを設定
+            pOption->SetPlayer(pPlayer);
+
             // 一度連結したか判断するフラグを設定
             pOption->SetOnceConnectFlag(true);
 
@@ -60,7 +63,7 @@ namespace ConnectWars
 
             offsetFromPlayer = offsetFromPlayer * pPlayer->GetRadius()
                              + offsetFromPlayer * pOption->GetRadius();
-            offsetFromPlayer *= Connect::s_OffsetFactor;
+            offsetFromPlayer *= Connect::s_offsetFactor;
             pOption->SetOffsetFromPlayer(offsetFromPlayer);
 
             // オプションの座標を設定
@@ -74,9 +77,15 @@ namespace ConnectWars
             // 連結の効果を処理
             pOption->ConnectEffect();
 
-            // オプション数を1増加
-            pPlayer->AddOptionCount(1);
+            // 連結しているオプション数を1増加
+            pPlayer->AddConnectOptionCount(1);
         }
+
+        // 連結フラグを設定
+        pOption->SetConnectFlag(true);
+
+        // オプションを追加
+        pPlayer->AddConnectOption(pOption);
     }
 
 

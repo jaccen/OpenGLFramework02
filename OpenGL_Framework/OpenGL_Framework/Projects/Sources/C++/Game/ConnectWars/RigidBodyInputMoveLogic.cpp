@@ -3,6 +3,7 @@
 #include "../../Library/Input/Keyboard/KeyboardManager.h"
 #include "../../Library/Input/Gamepad/Manager/GamepadManager.h"
 #include "../../Library/Math/Define/MathDefine.h"
+#include "../../Library/Debug/Helper/DebugHelper.h"
 
 
 //-------------------------------------------------------------
@@ -42,6 +43,19 @@ namespace ConnectWars
      ****************************************************************/
     C_RigidBodyInputMoveLogic::~C_RigidBodyInputMoveLogic()
     {
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ディープコピーを行う
+     *  @param  なし
+     *  @return 自身のコピー
+     *
+     ****************************************************************/
+    C_RigidBodyMoveLogic* C_RigidBodyInputMoveLogic::DeepCopy()
+    {
+        return newEx C_RigidBodyInputMoveLogic(*this);
     }
 
 

@@ -1,0 +1,10 @@
+{
+  "CreateData" :
+  {
+    "HitPoint" : 500,
+    "Radius" : 0.4,
+    "Power" : 50,
+    "Movement" : 0.1,
+    "Mass" : 1.0
+  }
+}

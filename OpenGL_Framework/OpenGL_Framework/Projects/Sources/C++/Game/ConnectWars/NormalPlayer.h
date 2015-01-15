@@ -4,6 +4,7 @@
 
 /* ヘッダファイル */
 #include "BasePlayer.h"
+#include <deque>
 
 
 //-------------------------------------------------------------
@@ -23,8 +24,9 @@ namespace ConnectWars
     class C_NormalPlayer : public C_BasePlayer
     {
     public:
-        C_NormalPlayer(const std::string& rId, int32_t type);                   // コンストラクタ
-        ~C_NormalPlayer() override;                                             // デストラクタ
+        C_NormalPlayer(const std::string& rId, int32_t type);       // コンストラクタ
+        ~C_NormalPlayer() override;                                 // デストラクタ
     private:
+        void DoDraw() override;                                     // 非公開の描画処理
     };
 }

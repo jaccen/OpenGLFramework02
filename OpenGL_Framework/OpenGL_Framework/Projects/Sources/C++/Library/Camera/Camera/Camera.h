@@ -25,6 +25,14 @@ namespace Camera
     using CameraPtr = std::shared_ptr<IC_Camera>;                               // CameraPtrŒ^
 
 
+    /* Ží—Þ */
+    enum eType
+    {
+        PERSPECTIVE,                                                            ///< @biref “§Ž‹“Š‰e
+        ORTHOGRAPHIC,                                                           ///< @brief ³“Š‰e
+    };
+
+
     //-------------------------------------------------------------
     //!
     //! @brief ƒJƒƒ‰

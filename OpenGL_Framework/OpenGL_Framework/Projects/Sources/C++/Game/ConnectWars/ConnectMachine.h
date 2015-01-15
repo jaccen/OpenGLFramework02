@@ -7,6 +7,7 @@
 #include "RigidBodyMoveLogic.h"
 #include "../../Library/Physics/Body/Rigid/Rigidbody.h"
 #include "../../Library/Physics/CollisionShape/Convex/Sphere/SphereShape.h"
+#include "../../Library/OpenGL/Buffer/Primitive/Manager/PrimitiveBufferManager.h"
 
 
 //-------------------------------------------------------------
@@ -35,9 +36,8 @@ namespace ConnectWars
     {
     public:
         /* 定数 */
-        static const int32_t s_MAX_MOVE_SPEED_LEVEL = 5;                                        ///< @brief 移動スピードの最大レベル 
-        static const int32_t s_MAX_GUN_LEVEL = 3;                                               ///< @brief 銃の最大レベル
-
+        static const int32_t s_MAX_MOVE_SPEED_LEVEL = 4;                                        ///< @brief 移動スピードの最大レベル 
+        
         C_ConnectMachine(const std::string& rId, int32_t type);                                 // コンストラクタ
         virtual ~C_ConnectMachine() override;                                                   // デストラクタ
         virtual bool Update() override = 0;                                                     // 更新処理
@@ -58,11 +58,18 @@ namespace ConnectWars
         std::vector<C_BaseOption*>* GetConnectOptionList();                                     // 連結しているオプションのリストを取得
         Physics::C_RigidBody* GetRigidBody() const;                                             // 剛体を取得
         float GetRadius() const;                                                                // 半径を取得
+        virtual const Physics::Vector3& GetPosition() const override;                           // 座標を取得
+        virtual void SetPosition(const Physics::Vector3& rPosition) override;                   // 座標を設定
+
+        static void s_SetOwnCrashDerayFrameInterval(uint32_t ownCrashDerayFrameInterval);       // 自爆遅延フレーム数の間隔を設定
     protected:
         std::vector<C_BaseOption*> pConnectOptionList_;                                         ///< @brief 連結しているオプションのリスト
         std::unique_ptr<Physics::C_SphereShape> upSphereShape_;                                 ///< @brief 球形状
         float radius_ = 0.0f;                                                                   ///< @brief 半径
         std::unique_ptr<Physics::C_RigidBody> upRigidBody_;                                     ///< @brief 剛体
         std::unique_ptr<C_RigidBodyMoveLogic> upMoveLogic_;                                     ///< @brief 移動ロジック
+        OpenGL::PrimitiveBufferPtr pModelData_;                                                 ///< @brief モデル情報
+
+        static uint32_t s_ownCrashDerayFrameInterval;                                           ///< @brief 自爆遅延フレーム数の間隔
     };
 }

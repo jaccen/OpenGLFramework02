@@ -1,4 +1,5 @@
 #include "RigidBodyStraightMoveLogic.h"
+#include "../../Library/Debug/Helper/DebugHelper.h"
 
 
 //-------------------------------------------------------------
@@ -12,13 +13,13 @@ namespace ConnectWars
     /*************************************************************//**
      *
      *  @brief  コンストラクタ
-     *  @param  加える力
+     *  @param  速度
      *
      ****************************************************************/
-    C_RigidBodyStraightMoveLogic::C_RigidBodyStraightMoveLogic(const Physics::Vector3& rApplyForce) :
+    C_RigidBodyStraightMoveLogic::C_RigidBodyStraightMoveLogic(const Physics::Vector3& rVelocity) :
 
-        // 加える力
-        applyForce_(rApplyForce)
+        // 速度
+        upVelocity_(std::make_unique<Physics::Vector3>(rVelocity))
 
     {
     }
@@ -37,6 +38,32 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  ディープコピーを行う
+     *  @param  なし
+     *  @return 自身のコピー
+     *
+     ****************************************************************/
+    C_RigidBodyMoveLogic* C_RigidBodyStraightMoveLogic::DeepCopy()
+    {
+        return newEx C_RigidBodyStraightMoveLogic(*upVelocity_);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  加える力を設定する
+     *  @param  加える力
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_RigidBodyStraightMoveLogic::SetVelocity(const Physics::Vector3& rVelocity)
+    {
+        *upVelocity_ = rVelocity;
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  非公開の処理を行う
      *  @param  剛体
      *  @return なし
@@ -44,6 +71,6 @@ namespace ConnectWars
      ****************************************************************/
     void C_RigidBodyStraightMoveLogic::DoProcess(RigidBody* pRigidBody)
     {
-        pRigidBody->ApplyForce(applyForce_);
+        pRigidBody->SetLinearVelocity(*upVelocity_);
     }
 }

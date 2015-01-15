@@ -54,9 +54,9 @@ namespace ConnectWars
     bool C_InputShotLogic::DoProcess()
     {
         if (((pKeyboardManager_->GetPressingCount(keyCode_) > 0)   
-          && (pKeyboardManager_->GetPressingCount(keyCode_) % shotInterval_ == 0))
+          && (pKeyboardManager_->GetPressingCount(keyCode_) % shotInterval_ == 1))
          || ((pGamepadManager_->GetButtonPressingCount(gamepadButton_) > 0)
-          && (pGamepadManager_->GetButtonPressingCount(gamepadButton_) % shotInterval_ == 0)))
+          && (pGamepadManager_->GetButtonPressingCount(gamepadButton_) % shotInterval_ == 1)))
         {
             return true;
         }

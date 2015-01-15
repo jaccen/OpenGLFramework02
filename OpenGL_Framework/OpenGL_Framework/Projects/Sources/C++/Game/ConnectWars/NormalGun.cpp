@@ -2,6 +2,8 @@
 #include "NormalGun.h"
 #include "Shooter.h"
 #include "ShotLogic.h"
+#include "BulletGenerator.h"
+#include "RigidBodyMoveLogic.h"
 
 
 //-------------------------------------------------------------
@@ -45,7 +47,11 @@ namespace ConnectWars
     {
         if (upShotLogic_->Process() == true)
         {
-
+            C_BulletGenerator::s_GetInstance()->Create(bulletId_, 
+                                                       pShooter_->GetPosition() + (*upOffsetFromShooter_),
+                                                       upBulletPower_->GetValue(),
+                                                       upBulletMoveLogic_->DeepCopy(),
+                                                       pShooter_->GetType());
         }
     }
 }

@@ -65,6 +65,8 @@ namespace ConnectWars
         Scene::ecSceneReturn Update() override;                                         // 更新処理
         void Draw() override;                                                           // 描画処理
         void Finalize() override;                                                       // 終了処理
+        void SetLoadFunction(LoadFunction pLoadFunction);                               // ロード時に利用する関数を設定
+        void SetNextSceneId(const std::string& rNextSceneId);                           // 次のシーンのIDを設定
     private:
         Texture::C_TextureManager* pTextureManager_ = nullptr;                          ///< @brief テクスチャマネージャー
         Texture::TextureDataPtr pTextureData_;                                          ///< @brief テクスチャデータ
@@ -81,5 +83,9 @@ namespace ConnectWars
         Timer::C_FrameCounter frameCounter_;                                            ///< @breif フレーム数のカウンタ
         Thread::C_Thread loadThread_;                                                   ///< @brief ロード処理用のスレッド
         S_LoadThreadData loadThreadData_;                                               ///< @brief ロード用のスレッドの情報
+        std::string nextSceneId_;                                                       ///< @brief 次のシーンのID
+
+        bool GetReadyLoadString();                                                      // "Now Loading"の文字列の準備
+        bool ChangeNextScene();                                                         // 次のシーンへ切り替え
     };
 }

@@ -23,10 +23,12 @@ namespace ConnectWars
     class C_RigidBodyStraightMoveLogic : public C_RigidBodyMoveLogic
     {
     public:
-        C_RigidBodyStraightMoveLogic(const Physics::Vector3& rApplyForce);          // コンストラクタ
+        C_RigidBodyStraightMoveLogic(const Physics::Vector3& rVelocity);            // コンストラクタ
         virtual ~C_RigidBodyStraightMoveLogic() override;                           // デストラクタ
+        C_RigidBodyMoveLogic* DeepCopy() override;                                  // ディープコピー
+        void SetVelocity(const Physics::Vector3& rVelocity);                        // 加える力を設定
     private:
-        Physics::Vector3 applyForce_;                                               ///< @brief 加える力
+        std::unique_ptr<Physics::Vector3> upVelocity_;                              ///< @brief 速度
 
         void DoProcess(RigidBody* pRigidBody) override;                             // 非公開の処理
     };

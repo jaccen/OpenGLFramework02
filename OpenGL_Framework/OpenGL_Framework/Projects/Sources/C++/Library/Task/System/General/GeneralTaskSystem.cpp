@@ -113,6 +113,7 @@ namespace Task
     void C_GeneralTaskSystem::AllRemove()
     {
         pUpdateTaskList_.clear();
+        pReserveTasks_.clear();
         wpDrawTaskList_.clear();
     }
 

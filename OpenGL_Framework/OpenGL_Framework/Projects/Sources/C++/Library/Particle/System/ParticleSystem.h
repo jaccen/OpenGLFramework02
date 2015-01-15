@@ -24,12 +24,17 @@ namespace Math
 //-------------------------------------------------------------
 namespace Particle
 {
+    /* ëOï˚êÈåæ */
+    class IC_ParticleSystem;
+
+
     /* ï ñº */
     using Vector2 = Math::S_Vector2<float>;                                                 // Vector2å^
     using Vector3 = Math::S_Vector3<float>;                                                 // Vector3å^
     using Vector4 = Math::S_Vector4<float>;                                                 // Vector4å^
     using Matrix4x4 = Math::S_Matrix4x4<float>;                                             // Matrix4x4å^
     using InterpolationFunction = std::function<float(float, float, float)>;                // InterpolationFunctionå^
+    using ParticleSystemWeakPtr = std::weak_ptr<IC_ParticleSystem>;                         // ParticleSystemWeakPtrå^
 
 
     /** çÏê¨ÉfÅ[É^ */

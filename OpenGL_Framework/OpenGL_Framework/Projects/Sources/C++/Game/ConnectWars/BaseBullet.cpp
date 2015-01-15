@@ -1,6 +1,7 @@
 /* ヘッダファイル */
 #include "BaseBullet.h"
 #include "CollisionProcess.h"
+#include "BulletFireState.h"
 
 
 //-------------------------------------------------------------
@@ -21,9 +22,11 @@ namespace ConnectWars
     C_BaseBullet::C_BaseBullet(const std::string& rId, int32_t type) : C_CollisionObject(rId, type),
 
         // ステートマシーン
-        upStateMachine_(std::make_unique<State::C_StateMachine<C_BaseBullet>>(this))
+        upStateMachine_(std::make_unique<State::C_StateMachine<C_BaseBullet>>(this, C_BulletFireState::s_GetInstance()))
 
     {
+        // パワーを生成
+        upPower_ = std::make_unique<C_BasePower>();
     }
 
 
@@ -189,6 +192,28 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  移動制限の確認を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseBullet::MoveLimitCheck()
+    {
+        auto transform = upRigidBody_->GetTransform();
+        auto& rPosition = transform.getOrigin();
+
+        if (rPosition.x() < StageSize::s_left
+         || rPosition.x() > StageSize::s_right
+         || rPosition.y() < StageSize::s_bottom
+         || rPosition.y() > StageSize::s_top)
+        {
+            existenceFlag_ = false;
+        }
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  射撃者の種類を取得する
      *  @param  なし
      *  @return 射撃者の種類
@@ -215,6 +240,60 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  座標を取得する
+     *  @param  なし
+     *  @return 座標
+     *
+     ****************************************************************/
+    const Physics::Vector3& C_BaseBullet::GetPosition() const
+    {
+        return upRigidBody_->GetTransform().getOrigin();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  射撃者の種類を設定する
+     *  @param  射撃者の種類
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseBullet::SetShooterType(int32_t shooterType)
+    {
+        shooterType_ = shooterType;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  移動のロジックを設定する
+     *  @param  移動のロジック
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseBullet::SetMoveLogic(C_RigidBodyMoveLogic* pMoveLogic)
+    {
+        upMoveLogic_.reset(pMoveLogic);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  座標を設定する
+     *  @param  座標
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseBullet::SetPosition(const Physics::Vector3& rPosition)
+    {
+        auto transform = upRigidBody_->GetTransform();
+        transform.setOrigin(rPosition);
+        upRigidBody_->SetTransform(transform);
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  非公開の更新処理を行う
      *  @param  なし
      *  @return なし
@@ -223,18 +302,6 @@ namespace ConnectWars
     void C_BaseBullet::DoUpdate()
     {
         upStateMachine_->Update();
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  非公開の描画処理を行う
-     *  @param  なし
-     *  @return なし
-     *
-     ****************************************************************/
-    void C_BaseBullet::DoDraw()
-    {
     }
 
 

@@ -16,10 +16,6 @@
 //-------------------------------------------------------------
 namespace Particle
 {
-    /* 別名 */
-    using ParticleSystemWeakPtr = std::weak_ptr<IC_ParticleSystem>;                                             // ParticleSystemWeakPtr型
-
-
     //-------------------------------------------------------------
     //!
     //! @brief パーティクルシステムマネージャー

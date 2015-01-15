@@ -23,7 +23,13 @@ namespace ConnectWars
     C_BaseGun::C_BaseGun(C_Shooter* pShooter) :
 
         // 射撃者
-        pShooter_(pShooter)
+        pShooter_(pShooter),
+
+        // 射撃者からのオフセット
+        upOffsetFromShooter_(std::make_unique<Physics::Vector3>(0.0f, 0.0f, 0.0f)),
+
+        // 向き
+        upDirection_(std::make_unique<Physics::Vector3>(0.0f, 0.0f, 0.0f))
 
     {
     }
@@ -37,6 +43,19 @@ namespace ConnectWars
      ****************************************************************/
     C_BaseGun::~C_BaseGun()
     {
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  射撃処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseGun::Shot()
+    {
+        DoShot();
     }
 
 
@@ -62,7 +81,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseGun::SetOffsetFromShooter(const Physics::Vector3& rOffsetFromShooter)
     {
-        offsetFromShooter_ = rOffsetFromShooter;
+        *upOffsetFromShooter_ = rOffsetFromShooter;
     }
 
 
@@ -102,5 +121,31 @@ namespace ConnectWars
     void C_BaseGun::SetBulletPower(C_BasePower* pBulletPower)
     {
         upBulletPower_.reset(pBulletPower);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  向きを設定する
+     *  @param  向き
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseGun::SetDirection(const Physics::Vector3& rDirection)
+    {
+        *upDirection_ = rDirection;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  向きを自動化するフラグを設定する
+     *  @param  向きを自動化するフラグ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseGun::SetAutoDirectionFlag(bool autoDirectionFlag)
+    {
+        autoDirectionFlag_ = autoDirectionFlag;
     }
 }

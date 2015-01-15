@@ -1,7 +1,7 @@
 /* ヘッダファイル */
 #include "OpenGlManager.h"
 #include "../../Debug/Helper/DebugHelper.h"
-#include "../../JSON/JsonObject.h"
+#include "../../JSON/Object/JsonObject.h"
 #include <unordered_map>
 
 

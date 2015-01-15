@@ -6,8 +6,10 @@
 #include "../../Library/Camera/Manager/CameraManager.h"
 #include "../../Library/Timer/Manager/TimeManager.h"
 #include "LoadScene.h"
-#include "TitleScene.h"
 #include "Stage01Scene.h"
+#include "LoadFunction.h"
+#include "TitleScene.h"
+#include "CollisionCallback.h"
 
 
 //-------------------------------------------------------------
@@ -78,9 +80,14 @@ namespace ConnectWars
 
         // フィジックスエンジンの初期化処理
         upPhysicsEngine_->Initialize(Physics::Vector3(0.0f, 0.0f, 0.0f), Physics::Default::s_AIR_DENSITY);
+        upPhysicsEngine_->SetCollisionCallbackFunction(C_CollisionCallback::s_ContactProcess);
 
         // シーンマネージャーの初期化処理
-        upSceneManager_ = std::make_unique<Scene::C_SceneManager>(newEx C_TitleScene);
+        auto pFirstScene = newEx C_LoadScene;
+        pFirstScene->SetLoadFunction(C_LoadFunction::s_LoadStage01Data);
+        pFirstScene->SetNextSceneId(ID::Scene::s_pSTAGE01);
+
+        upSceneManager_ = std::make_unique<Scene::C_SceneManager>(pFirstScene);
         if (upSceneManager_->Initialize() == Scene::ecSceneReturn::ERROR_TERMINATION) return false;
 
         return true;
@@ -168,11 +175,11 @@ namespace ConnectWars
      ****************************************************************/
     void C_ConnectWars::Finalize()
     {
-        // フィジックスエンジンの終了処理
-        upPhysicsEngine_->Finalize();
-
         // シーンマネージャーの終了処理
         upSceneManager_->Finalize();
+
+        // フィジックスエンジンの終了処理
+        upPhysicsEngine_->Finalize();
 
         // パーティクルシステムを全て破棄
         upParticleSystemManager_->AllDestroy();

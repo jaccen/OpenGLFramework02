@@ -2,7 +2,9 @@
 #include "BaseOption.h"
 #include "BasePlayer.h"
 #include "CollisionProcess.h"
-
+#include "OptionDropState.h"
+#include "OptionConnectState.h"
+#include "OptionWaitOwnCrashState.h"
 
 
 //-------------------------------------------------------------
@@ -20,7 +22,11 @@ namespace ConnectWars
      *  @param  種類
      *
      ****************************************************************/
-    C_BaseOption::C_BaseOption(const std::string& rId, int32_t type) : C_ConnectMachine(rId, type)
+    C_BaseOption::C_BaseOption(const std::string& rId, int32_t type) : C_ConnectMachine(rId, type),
+
+        // ステートマシーン
+        upStateMachine_(std::make_unique<State::C_StateMachine<C_BaseOption>>(this, C_OptionDropState::s_GetInstance()))
+
     {
     }
 
@@ -33,7 +39,7 @@ namespace ConnectWars
      ****************************************************************/
     C_BaseOption::~C_BaseOption()
     {
-        if (onceConnectFlag_ == true) pPlayer_->AddOptionCount(-1);
+        if (onceConnectFlag_ == true) pPlayer_->AddConnectOptionCount(-1);
     }
 
 
@@ -47,8 +53,6 @@ namespace ConnectWars
      ****************************************************************/
     bool C_BaseOption::Update()
     {
-        assert(pPlayer_);
-
         DoUpdate();
 
         return C_GameObject::existenceFlag_;
@@ -132,6 +136,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseOption::CollisionProcess(C_BaseEnemy* pEnemy)
     {
+        C_CollisionProcess::s_OptionAndEnemy(this, pEnemy);
     }
 
 
@@ -144,6 +149,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseOption::CollisionProcess(C_BaseBullet* pBullet)
     {
+        C_CollisionProcess::s_OptionAndBullet(this, pBullet);
     }
 
 
@@ -156,6 +162,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseOption::CollisionProcess(C_BaseObstacle* pObstacle)
     {
+        C_CollisionProcess::s_OptionAndObstacle(this, pObstacle);
     }
 
 
@@ -168,6 +175,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseOption::CollisionProcess(C_BaseBomb* pBomb)
     {
+        C_CollisionProcess::s_OptionAndBomb(this, pBomb);
     }
 
 
@@ -261,7 +269,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseOption::NewConnect()
     {
-        // upStateMachine_->ChangeState(C_OptionConnectionState::s_GetInstance());
+        upStateMachine_->ChangeState(C_OptionConnectState::s_GetInstance());
     }
 
 
@@ -298,14 +306,17 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
-     *  @brief  待機処理を行う
+     *  @brief  自爆の発送を行う
      *  @param  なし
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseOption::Wait()
+    void C_BaseOption::DispatchOwnCrash()
     {
-        //upStateMachine_->ChangeState(C_OptionWaitState::s_GetInstance());
+        if (upStateMachine_->CheckCurrentState(*C_OptionWaitOwnCrashState::s_GetInstance()) == false)
+        {
+            upStateMachine_->ChangeState(C_OptionWaitOwnCrashState::s_GetInstance());
+        }
     }
 
 
@@ -316,7 +327,7 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseOption::SelfCrash()
+    void C_BaseOption::OwnCrash()
     {
         //upStateMachine_->ChangeState(C_OptionSelfCrashState::s_GetInstance());
     }
@@ -422,6 +433,7 @@ namespace ConnectWars
      ****************************************************************/
     const std::string& C_BaseOption::GetBombSelfCrashEffectId() const
     {
+        // TODO TODO TODO
         //return bombSelfCrashEffectId_;
         static std::string s;
         return s;
@@ -503,18 +515,6 @@ namespace ConnectWars
     void C_BaseOption::DoUpdate()
     {
         upStateMachine_->Update();
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  非公開の描画処理を行う
-     *  @param  なし
-     *  @return なし
-     *
-     ****************************************************************/
-    void C_BaseOption::DoDraw()
-    {
     }
 
 

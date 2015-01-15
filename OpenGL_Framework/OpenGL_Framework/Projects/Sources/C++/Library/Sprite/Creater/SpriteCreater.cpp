@@ -83,6 +83,10 @@ namespace Sprite
 
             pGlslObject_ = pGlslObject;
             Shader::GLSL::C_GlslObjectManager::s_GetInstance()->Entry(pGlslObject_, Fixed::Shader::s_pGLSL_OBJECT_ID);
+
+            // サブルーチンのインデックスを取得
+            subroutineIndices_[Camera::PERSPECTIVE] = pGlslObject_->GetSubroutineIndex(Shader::GLSL::Type::s_GEOMETRY, "PerspectiveProcess");
+            subroutineIndices_[Camera::ORTHOGRAPHIC] = pGlslObject_->GetSubroutineIndex(Shader::GLSL::Type::s_GEOMETRY, "OrthographicProcess");
         }
         else
         {
@@ -135,6 +139,9 @@ namespace Sprite
         // シェーダーの使用開始
         pGlslObject_->Begin();
 
+        // サブルーチンを設定
+        pGlslObject_->BindActiveSubroutine(subroutineIndices_[cameraType_], Shader::GLSL::Type::s_GEOMETRY);
+        
         // ユニフォーム変数を設定
         SetUniformVariable();
 
@@ -241,6 +248,45 @@ namespace Sprite
         vertices_[drawSpriteCount_].textureSize_.height_ = static_cast<float>(pTextureData_->height_);
 
         ++drawSpriteCount_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ビルボードの自動化をさせるフラグを設定する
+     *  @param  ビルボードの自動化をさせるフラグ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_SpriteCreater::SetAutoBillboardFlag(bool autoBillboardFlag)
+    {
+        autoBillboardFlag_ = autoBillboardFlag;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  カメラを設定
+     *  @param  カメラ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_SpriteCreater::SetCamera(const Camera::CameraPtr& prCamera)
+    {
+        pCamera_ = prCamera;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  カメラの種類を設定
+     *  @param  カメラの種類
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_SpriteCreater::SetCameraType(Camera::eType cameraType)
+    {
+        cameraType_ = cameraType;
     }
 
 
