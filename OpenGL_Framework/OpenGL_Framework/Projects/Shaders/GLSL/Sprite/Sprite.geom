@@ -15,9 +15,9 @@ layout (triangle_strip, max_vertices = 4) out;			// 三角形ストリップ( 出力 )
 in vec2 v_size[];										// サイズ
 in float v_angle[];										// 角度
 in vec4 v_color[];										// 色
+in vec2 v_textureSize[];								// テクスチャのサイズ
 in vec2 v_textureUpperLeft[];							// テクスチャの左上座標
 in vec2 v_textureLowerRight[];							// テクスチャの右下座標
-in vec2 v_textureSize[];								// テクスチャのサイズ
 
 
 /* 出力 */
@@ -60,13 +60,7 @@ void PerspectiveProcess()
 	vec2 direction = vec2(-halfWidth, halfHeight);
 	gl_Position = viewProjectionMatrix * (gl_in[0].gl_Position + (billboardMatrix * RotationVectorAxisZ(direction, v_angle[0])));
 	g_color = v_color[0];
-	g_textureCoord = textureCoordUpperLeft;
-	EmitVertex();
-
-	direction = vec2(-halfWidth, -halfHeight);
-	gl_Position = viewProjectionMatrix * (gl_in[0].gl_Position + (billboardMatrix * RotationVectorAxisZ(direction, v_angle[0])));
-	g_color = v_color[0];
-	g_textureCoord = vec2(textureCoordUpperLeft.x, textureCoordLowerRight.y);
+	g_textureCoord = vec2(textureCoordUpperLeft.x, textureCoordUpperLeft.y);
 	EmitVertex();
 	
 	direction = vec2(halfWidth, halfHeight);
@@ -75,10 +69,16 @@ void PerspectiveProcess()
 	g_textureCoord = vec2(textureCoordLowerRight.x, textureCoordUpperLeft.y);
 	EmitVertex();
 
+	direction = vec2(-halfWidth, -halfHeight);
+	gl_Position = viewProjectionMatrix * (gl_in[0].gl_Position + (billboardMatrix * RotationVectorAxisZ(direction, v_angle[0])));
+	g_color = v_color[0];
+	g_textureCoord = vec2(textureCoordUpperLeft.x, textureCoordLowerRight.y);
+	EmitVertex();
+	
 	direction = vec2(halfWidth, -halfHeight);
 	gl_Position = viewProjectionMatrix * (gl_in[0].gl_Position + (billboardMatrix * RotationVectorAxisZ(direction, v_angle[0])));
 	g_color = v_color[0];
-	g_textureCoord = textureCoordLowerRight;
+	g_textureCoord = vec2(textureCoordLowerRight.x, textureCoordLowerRight.y);
 	EmitVertex();
 }
 

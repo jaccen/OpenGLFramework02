@@ -99,11 +99,11 @@ namespace Sprite
         // プリミティブを作成し、取得
         if (!OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(Fixed::Primitive::s_pSPRITE_ID))
         {
-            uint32_t vertexAttributeElementCountList[] = { 3, 2, 1, 4, 2, 2, 2 };
-            std::array<OpenGL::DataEnum, 7> vertexAttributeDataTypeList;
+            uint32_t vertexAttributeElementCountList[] = { 3, 2, 1, 4, 2, 2 };
+            std::array<OpenGL::DataEnum, 6> vertexAttributeDataTypeList;
             vertexAttributeDataTypeList.fill(OpenGL::DataType::s_FLOAT);
 
-            pPointDatas_ = OpenGL::C_PrimitiveBuffer::s_Create(vertices_.data(), vertices_.size(), 7, vertexAttributeElementCountList, vertexAttributeDataTypeList.data(), OpenGL::Modify::s_DYNAMIC);
+            pPointDatas_ = OpenGL::C_PrimitiveBuffer::s_Create(vertices_.data(), vertices_.size(), 6, vertexAttributeElementCountList, vertexAttributeDataTypeList.data(), OpenGL::Modify::s_DYNAMIC);
             OpenGL::C_PrimitiveBufferManager::s_GetInstance()->Entry(pPointDatas_, Fixed::Primitive::s_pSPRITE_ID);
         }
         else
@@ -180,9 +180,6 @@ namespace Sprite
 
         // シェーダーの使用終了
         pGlslObject_->End();
-
-        // 描画するスプライトの数をリセット
-        drawSpriteCount_ = 0;
     }
 
 
