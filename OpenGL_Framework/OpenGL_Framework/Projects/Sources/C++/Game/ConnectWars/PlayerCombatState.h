@@ -17,8 +17,8 @@
 //-------------------------------------------------------------
 namespace ConnectWars
 {
-    /* 前方宣言 */
-    class C_BasePlayer;
+	/* 前方宣言 */
+	class C_BasePlayer;
 
 
     //-------------------------------------------------------------
@@ -28,10 +28,10 @@ namespace ConnectWars
     //!
     //-------------------------------------------------------------
     class C_PlayerCombatState : public State::IC_State<C_BasePlayer>,
-                                public Singleton::C_Singleton<C_PlayerCombatState>
+							    public Singleton::C_Singleton<C_PlayerCombatState>
     {
-        friend C_Singleton<C_PlayerCombatState>;                                                        // シングルトンクラスをフレンド化
-    public:
+		friend C_Singleton<C_PlayerCombatState>;														// シングルトンクラスをフレンド化
+	public:
         void Enter(C_BasePlayer* pPlayer) override;                                                     //!< @brief 開始処理
         void Execute(C_BasePlayer* pPlayer) override;                                                   //!< @brief 実行処理
         void Exit(C_BasePlayer* pPlayer) override;                                                      //!< @brief 終了処理

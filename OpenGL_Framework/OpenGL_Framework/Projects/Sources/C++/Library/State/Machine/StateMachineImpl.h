@@ -15,14 +15,10 @@ namespace State
      *
      ****************************************************************/
     template<typename T>
-    C_StateMachine<T>::C_StateMachine(T* pOwner, State* pCurrentState, State* pGlobalState) :
+    C_StateMachine<T>::C_StateMachine(T* pOwner) :
 
         // オーナー
-        pOwner_(pOwner),
-
-        // 各ステート
-        pCurrentState_(pCurrentState),
-        pGlobalState_(pGlobalState)
+        pOwner_(pOwner)
 
     {
     }
@@ -87,7 +83,7 @@ namespace State
      *
      ****************************************************************/
     template<typename T>
-    void C_StateMachine<T>::ChangeState(State* pNewState)
+    void C_StateMachine<T>::ChangeState(StatePtr pNewState)
     {
         assert(pNewState);
 
@@ -128,9 +124,9 @@ namespace State
      *
      ****************************************************************/
     template<typename T>
-    bool C_StateMachine<T>::CheckCurrentState(const State& rState) const
+	bool C_StateMachine<T>::CheckCurrentState(StatePtr pState) const
     {
-        return (typeid(*pCurrentState_) == typeid(rState)) ? true : false;
+		return (typeid(*pCurrentState_) == typeid(*pState)) ? true : false;
     }
 
 
@@ -142,7 +138,7 @@ namespace State
      *
      ****************************************************************/
     template<typename T>
-    typename C_StateMachine<T>::State* C_StateMachine<T>::GetCurrentState() const
+    typename C_StateMachine<T>::StatePtr C_StateMachine<T>::GetCurrentState() const
     {
         return pCurrentState_;
     }
@@ -156,7 +152,7 @@ namespace State
      *
      ****************************************************************/
     template<typename T>
-    typename C_StateMachine<T>::State* C_StateMachine<T>::GetPreviousState() const
+    typename C_StateMachine<T>::StatePtr C_StateMachine<T>::GetPreviousState() const
     {
         return pPreviousState_;
     }
@@ -170,7 +166,7 @@ namespace State
      *
      ****************************************************************/
     template<typename T>
-    typename C_StateMachine<T>::State* C_StateMachine<T>::GetGlobalState() const
+    typename C_StateMachine<T>::StatePtr C_StateMachine<T>::GetGlobalState() const
     {
         return pGlobalState_;
     }
@@ -184,7 +180,7 @@ namespace State
      *
      ****************************************************************/
     template<typename T>
-    void C_StateMachine<T>::SetCurrentState(typename C_StateMachine<T>::State* pCurrentState)
+    void C_StateMachine<T>::SetCurrentState(StatePtr pCurrentState)
     {
         pCurrentState_ = pCurrentState;
     }
@@ -198,7 +194,7 @@ namespace State
      *
      ****************************************************************/
     template<typename T>
-    void C_StateMachine<T>::SetPreviousState(typename C_StateMachine<T>::State* pPreviousState)
+    void C_StateMachine<T>::SetPreviousState(StatePtr pPreviousState)
     {
         pPreviousState_ = pPreviousState;
     }
@@ -212,7 +208,7 @@ namespace State
      *
      ****************************************************************/
     template<typename T>
-    void C_StateMachine<T>::SetGlobalState(typename C_StateMachine<T>::State* pGlobalState)
+    void C_StateMachine<T>::SetGlobalState(StatePtr pGlobalState)
     {
         pGlobalState_ = pGlobalState;
     }

@@ -54,6 +54,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\Libraries\FBX SDK\2015.1\lib\vs2013\x86\debug;Projects\Libraries\BulletPhysics\bullet-2.82\lib\Debug;Projects\Libraries\GLEW\glew-1.10.0\lib\Release\Win32;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\lib;Projects\Libraries\SDL\SDL2-2.0.3\lib\x86;Projects\Libraries\SDL\SDL2_image-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_ttf-2.0.12\lib\x86;Projects\Libraries\SDL\SDL2_mixer-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_net-2.0.0\lib\x86;C:\Libraries\boost_1_55_0\stage\lib</AdditionalLibraryDirectories>
       <SubSystem>Console</SubSystem>
+      <StackReserveSize>2000000</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -75,6 +76,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>C:\Libraries\FBX SDK\2015.1\lib\vs2013\x86\release;Projects\Libraries\BulletPhysics\bullet-2.82\lib\Release;Projects\Libraries\GLEW\glew-1.10.0\lib\Release\Win32;Projects\Libraries\Lua\lua5_1_4_Win32_dll8_lib\lib;Projects\Libraries\SDL\SDL2-2.0.3\lib\x86;Projects\Libraries\SDL\SDL2_image-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_ttf-2.0.12\lib\x86;Projects\Libraries\SDL\SDL2_mixer-2.0.0\lib\x86;Projects\Libraries\SDL\SDL2_net-2.0.0\lib\x86;C:\Libraries\boost_1_55_0\stage\lib</AdditionalLibraryDirectories>
       <SubSystem>Console</SubSystem>
+      <StackReserveSize>2000000</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -3,6 +3,7 @@
 #include "../../Library/Physics/Engine/PhysicsEngine.h"
 #include "../../Library/Physics/CollisionShape/Convex/Box/BoxShape.h"
 #include "../../Library/Sprite/Creater/Manager/SpriteCreaterManager.h"
+#include "../../Library/Debug/Helper/DebugHelper.h"
 
 
 //-------------------------------------------------------------
@@ -28,14 +29,11 @@ namespace ConnectWars
         // ヒットポイントを生成
         C_BaseBullet::upHitPoint_ = std::make_unique<C_BaseHitPoint>(1);
 
-        // ボックス形状を性生成
-        upCollisionShape_ = std::make_unique<Physics::C_BoxShape>(0.2f, 0.5f, 0.1f);
-
         // 剛体を作成し、物理エンジンに追加
         Physics::Transform transform;
         transform.setIdentity();
 
-        upRigidBody_ = std::make_unique<Physics::C_RigidBody>(upCollisionShape_.get(), transform, 1.0f);
+		upRigidBody_ = std::make_unique<Physics::C_RigidBody>(newEx Physics::C_BoxShape(0.2f, 0.5f, 0.1f), transform, 1.0f);
 
         if (shooterType == TYPE_ENEMY)
         {
@@ -43,7 +41,7 @@ namespace ConnectWars
                                   | C_CollisionObject::FILTER_TYPE_OPTION 
                                   | C_CollisionObject::FILTER_TYPE_OBSTACLE;
 
-            Physics::C_PhysicsEngine::s_GetInstance()->AddRigidBody(upRigidBody_.get(), FILTER_TYPE_ENEMY_BULLET, collisionMask);
+			Physics::C_PhysicsEngine::s_GetInstance()->AddRigidBody(upRigidBody_.get(), FILTER_TYPE_ENEMY_BULLET, collisionMask);
         }
         else
         {

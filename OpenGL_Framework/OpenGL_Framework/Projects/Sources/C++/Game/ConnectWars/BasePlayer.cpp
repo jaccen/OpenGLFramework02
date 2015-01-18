@@ -31,9 +31,10 @@ namespace ConnectWars
     C_BasePlayer::C_BasePlayer(const std::string& rId, int32_t type) : C_ConnectMachine(rId, type),
 
         // ステートマシーン
-        upStateMachine_(std::make_unique<State::C_StateMachine<C_BasePlayer>>(this, C_PlayerCombatState::s_GetInstance()))
+		upStateMachine_(std::make_unique<State::C_StateMachine<ConnectWars::C_BasePlayer>>(this))
 
     {
+		upStateMachine_->SetCurrentState(ConnectWars::C_PlayerCombatState::s_GetInstance());
     }
 
 
@@ -220,7 +221,7 @@ namespace ConnectWars
     void C_BasePlayer::Bomb()
     {
         if ((connectOptionCount_ > 0)
-         && (upStateMachine_->CheckCurrentState(*C_PlayerCombatState::s_GetInstance()) == true)
+         && (upStateMachine_->CheckCurrentState(C_PlayerCombatState::s_GetInstance()) == true)
          && ((Input::C_KeyboardManager::s_GetInstance()->GetPressingCount(bombKeyCode_) == 1)
          ||  (Input::C_GamepadManager::s_GetInstance()->GetButtonPressingCount(bombGamepadButton_) == 1)))
         {

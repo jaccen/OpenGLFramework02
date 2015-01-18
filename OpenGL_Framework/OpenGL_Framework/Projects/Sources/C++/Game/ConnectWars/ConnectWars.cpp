@@ -87,8 +87,7 @@ namespace ConnectWars
         pFirstScene->SetLoadFunction(C_LoadFunction::s_LoadStage01Data);
         pFirstScene->SetNextSceneId(ID::Scene::s_pSTAGE01);
 
-        upSceneManager_ = std::make_unique<Scene::C_SceneManager>(pFirstScene);
-
+		upSceneManager_ = std::make_unique<Scene::C_SceneManager>(pFirstScene);
         if (upSceneManager_->Initialize() == Scene::ecSceneReturn::ERROR_TERMINATION) return false;
 
         return true;

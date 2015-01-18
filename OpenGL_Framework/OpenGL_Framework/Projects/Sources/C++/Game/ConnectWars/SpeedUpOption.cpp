@@ -1,9 +1,11 @@
 /* ヘッダファイル */
 #include "SpeedUpOption.h"
 #include "BasePlayer.h"
+#include "RigidBodyStraightMoveLogic.h"
 #include "../../Library/Physics/Engine/PhysicsEngine.h"
 #include "../../Library/JSON/Object/Manager/JsonObjectManager.h"
-#include "RigidBodyStraightMoveLogic.h"
+#include "../../Library/OpenGL/Manager/OpenGlManager.h"
+#include "../../Library/Debug/Helper/DebugHelper.h"
 
 
 //-------------------------------------------------------------
@@ -30,7 +32,6 @@ namespace ConnectWars
 
         // 球形状を性生成
         radius_ = static_cast<float>((*pOptionData)["CreateData"]["Radius"].GetValue<JSON::Real>());
-        upSphereShape_ = std::make_unique<Physics::C_SphereShape>(radius_);
 
         // 剛体を作成し、物理エンジンに追加
         Physics::Transform transform;
@@ -42,7 +43,7 @@ namespace ConnectWars
                               | C_CollisionObject::FILTER_TYPE_ENEMY_BULLET
                               | C_CollisionObject::FILTER_TYPE_OBSTACLE;
 
-        upRigidBody_ = std::make_unique<Physics::C_RigidBody>(upSphereShape_.get(), transform, static_cast<float>((*pOptionData)["CreateData"]["Mass"].GetValue<JSON::Real>()));
+		upRigidBody_ = std::make_unique<Physics::C_RigidBody>(newEx Physics::C_SphereShape(radius_), transform, static_cast<float>((*pOptionData)["CreateData"]["Mass"].GetValue<JSON::Real>()));
         Physics::C_PhysicsEngine::s_GetInstance()->AddRigidBody(upRigidBody_.get(), 
                                                                 C_CollisionObject::FILTER_TYPE_OPTION,
                                                                 collisionMask);
@@ -128,5 +129,30 @@ namespace ConnectWars
      ****************************************************************/
     void C_SpeedUpOption::DoDraw()
     {
+        pGlslObject_->BeginWithUnifomBuffer(pUniformBuffer_->GetHandle(), uniformBlockIndex_);
+
+        // マテリアルを設定
+        pGlslObject_->SetUniformVector3("material.diffuse", Vector3(0.5f, 1.0f, 0.5f));
+        pGlslObject_->SetUniformVector3("material.ambient", Vector3(0.1f, 0.1f, 0.1f));
+        pGlslObject_->SetUniformVector3("material.specular", Vector3(0.9f, 0.9f, 0.9f));
+        pGlslObject_->SetUniform1f("material.shininess", 100.0f);
+        pGlslObject_->SetUniformVector3("light.position", Vector3(0.0f, 100.0f, 0.0f));
+        pGlslObject_->SetUniformVector3("light.diffuse", Vector3(0.9f, 0.9f, 0.9f));
+        pGlslObject_->SetUniformVector3("light.ambient", Vector3(0.9f, 0.9f, 0.9f));
+        pGlslObject_->SetUniformVector3("light.specular", Vector3(0.9f, 0.9f, 0.9f));
+
+        upRigidBody_->GetTransform().getOpenGLMatrix(modelMatrix_.a_);
+        modelMatrix_ = modelMatrix_ * Matrix4x4::s_CreateScaling(Vector3(radius_));
+        pGlslObject_->SetUniformMatrix4x4("modelMatrix", modelMatrix_);
+
+        auto pOpenGlManager = OpenGL::C_OpenGlManager::s_GetInstance();
+
+        pOpenGlManager->DrawPrimitiveWithIndices(OpenGL::Primitive::s_TRIANGLE,
+                                                 pModelData_->GetVertexArrayObjectHandle(), 
+                                                 pModelData_->GetIndexBufferObjectHandle(),
+                                                 OpenGL::DataType::s_UNSIGNED_SHORT,
+                                                 static_cast<int32_t>(pModelData_->GetIndexCount()));
+
+        pGlslObject_->End();
     }
 }

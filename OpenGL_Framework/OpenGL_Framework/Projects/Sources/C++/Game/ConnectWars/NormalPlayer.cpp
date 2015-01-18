@@ -8,6 +8,7 @@
 #include "../../Library/Shader/GLSL/Uniform/Manager/UniformBufferManager.h"
 #include "../../Library/Debug/Helper/DebugHelper.h"
 #include "../../Library/JSON/Object/Manager/JsonObjectManager.h"
+#include "../../Library/Debug/Helper/DebugHelper.h"
 
 
 //-------------------------------------------------------------
@@ -33,7 +34,6 @@ namespace ConnectWars
 
         // 球形状を性生成
         radius_ = static_cast<float>((*pPlayerData)["CreateData"]["Radius"].GetValue<JSON::Real>());
-        upSphereShape_ = std::make_unique<Physics::C_SphereShape>(radius_);
         ResetMoveLimitBoundingBox();
 
         // 剛体を作成し、物理エンジンに追加
@@ -48,7 +48,7 @@ namespace ConnectWars
                               | C_CollisionObject::FILTER_TYPE_ENEMY_BULLET
                               | C_CollisionObject::FILTER_TYPE_OBSTACLE;
 
-        upRigidBody_ = std::make_unique<Physics::C_RigidBody>(upSphereShape_.get(), transform, static_cast<float>((*pPlayerData)["CreateData"]["Mass"].GetValue<JSON::Real>()));
+		upRigidBody_ = std::make_unique<Physics::C_RigidBody>(newEx Physics::C_SphereShape(radius_), transform, static_cast<float>((*pPlayerData)["CreateData"]["Mass"].GetValue<JSON::Real>()));
         Physics::C_PhysicsEngine::s_GetInstance()->AddRigidBody(upRigidBody_.get(), 
                                                                 C_CollisionObject::FILTER_TYPE_PLAYER,
                                                                 collisionMask);
@@ -126,7 +126,6 @@ namespace ConnectWars
         pGlslObject_->BeginWithUnifomBuffer(pUniformBuffer_->GetHandle(), uniformBlockIndex_);
 
         // マテリアルを設定
-        pGlslObject_->SetUniformMatrix4x4("modelMatrix", Math::Matrix4x4::s_IDENTITY);
         pGlslObject_->SetUniformVector3("material.diffuse", Vector3(0.5f, 1.0f, 0.5f));
         pGlslObject_->SetUniformVector3("material.ambient", Vector3(0.1f, 0.1f, 0.1f));
         pGlslObject_->SetUniformVector3("material.specular", Vector3(0.9f, 0.9f, 0.9f));

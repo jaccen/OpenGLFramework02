@@ -1,8 +1,8 @@
 /* ヘッダファイル */
 #include "PlayerCombatState.h"
-#include "BasePlayer.h"
 #include "ConnectWarsDefine.h"
 #include "PlayerDestroyedState.h"
+#include "BasePlayer.h"
 
 
 //-------------------------------------------------------------

@@ -56,7 +56,6 @@ namespace ConnectWars
         void SetPosition(const Physics::Vector3& rPosition) override;                       // 座標を設定
     protected:
         int32_t shooterType_ = 0;                                                           ///< @brief 射撃者の種類
-        std::unique_ptr<Physics::C_CollisionShape> upCollisionShape_;                       ///< @brief 衝突形状
         std::unique_ptr<Physics::C_RigidBody> upRigidBody_;                                 ///< @brief 剛体
         std::unique_ptr<C_RigidBodyMoveLogic> upMoveLogic_;                                 ///< @brief 移動のロジック
         std::unique_ptr<State::C_StateMachine<C_BaseBullet>> upStateMachine_;               ///< @brief ステートマシーン

@@ -64,7 +64,6 @@ namespace ConnectWars
         static void s_SetOwnCrashDerayFrameInterval(uint32_t ownCrashDerayFrameInterval);       // 自爆遅延フレーム数の間隔を設定
     protected:
         std::vector<C_BaseOption*> pConnectOptionList_;                                         ///< @brief 連結しているオプションのリスト
-        std::unique_ptr<Physics::C_SphereShape> upSphereShape_;                                 ///< @brief 球形状
         float radius_ = 0.0f;                                                                   ///< @brief 半径
         std::unique_ptr<Physics::C_RigidBody> upRigidBody_;                                     ///< @brief 剛体
         std::unique_ptr<C_RigidBodyMoveLogic> upMoveLogic_;                                     ///< @brief 移動ロジック

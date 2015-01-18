@@ -26,10 +26,11 @@ namespace Physics
     {
         // モーションステートを作成し、剛体を作成する
         upMotionState_ = std::make_unique<btDefaultMotionState>(rTransform);
-        
+
+		upCollisionShape_.reset(pCollisionShape);
         upRigidBody_ = std::make_unique<btRigidBody>(mass, 
                                                      upMotionState_.get(),
-                                                     pCollisionShape->GetCollisionShape(),
+													 upCollisionShape_->GetCollisionShape(),
                                                      rInertia);
     }
 

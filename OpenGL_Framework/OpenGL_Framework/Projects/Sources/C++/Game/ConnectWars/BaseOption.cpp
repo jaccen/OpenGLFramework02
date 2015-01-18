@@ -25,9 +25,10 @@ namespace ConnectWars
     C_BaseOption::C_BaseOption(const std::string& rId, int32_t type) : C_ConnectMachine(rId, type),
 
         // ステートマシーン
-        upStateMachine_(std::make_unique<State::C_StateMachine<C_BaseOption>>(this, C_OptionDropState::s_GetInstance()))
+        upStateMachine_(std::make_unique<State::C_StateMachine<C_BaseOption>>(this))
 
     {
+		upStateMachine_->SetCurrentState(C_OptionDropState::s_GetInstance());
     }
 
 
@@ -204,7 +205,7 @@ namespace ConnectWars
         auto transform = upRigidBody_->GetTransform();
         auto position = transform.getOrigin();
 
-        transform.setOrigin(pPlayer_->GetRigidBody()->GetTransform().getOrigin() + position);
+        transform.setOrigin(pPlayer_->GetRigidBody()->GetTransform().getOrigin() + offsetFromPlayer_);
         upRigidBody_->SetTransform(transform);
     }
 
@@ -313,7 +314,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseOption::DispatchOwnCrash()
     {
-        if (upStateMachine_->CheckCurrentState(*C_OptionWaitOwnCrashState::s_GetInstance()) == false)
+        if (upStateMachine_->CheckCurrentState(C_OptionWaitOwnCrashState::s_GetInstance()) == false)
         {
             upStateMachine_->ChangeState(C_OptionWaitOwnCrashState::s_GetInstance());
         }

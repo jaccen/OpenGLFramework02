@@ -22,9 +22,11 @@ namespace ConnectWars
     C_BaseBullet::C_BaseBullet(const std::string& rId, int32_t type) : C_CollisionObject(rId, type),
 
         // ステートマシーン
-        upStateMachine_(std::make_unique<State::C_StateMachine<C_BaseBullet>>(this, C_BulletFireState::s_GetInstance()))
+        upStateMachine_(std::make_unique<State::C_StateMachine<C_BaseBullet>>(this))
 
     {
+		upStateMachine_->SetCurrentState(C_BulletFireState::s_GetInstance());
+
         // パワーを生成
         upPower_ = std::make_unique<C_BasePower>();
     }

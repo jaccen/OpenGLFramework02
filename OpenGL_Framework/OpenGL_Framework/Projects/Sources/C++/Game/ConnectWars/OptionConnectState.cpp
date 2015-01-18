@@ -51,10 +51,10 @@ namespace ConnectWars
             {
                 pOption->GetStateMachine()->ChangeState(C_OptionWaitOwnCrashState::s_GetInstance());
             }
-        }
-        else
-        {
-            pOption->GetStateMachine()->ChangeState(C_OptionCombatState::s_GetInstance());
+            else
+            {
+                pOption->GetStateMachine()->ChangeState(C_OptionCombatState::s_GetInstance());
+            }
         }
     }
 
