@@ -4,7 +4,10 @@
 #include "LoadFunction.h"
 #include "ConnectWarsDefine.h"
 #include "SpeedUpOption.h"
+#include "SmallBeamOption.h"
 #include "PlayerBullet.h"
+#include "OptionBullet.h"
+#include "BombChargeEffect.h"
 #include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
 #include "../../Library/Texture/Manager/TextureManager.h"
 #include "../../Library/Math/Define/MathDefine.h"
@@ -19,6 +22,8 @@
 #include "../../Library/JSON/Object/Manager/JsonObjectManager.h"
 #include "../../Library/Debug/Helper/DebugHelper.h"
 #include "../../Library/Sprite/Creater/Manager/SpriteCreaterManager.h"
+#include "../../Library/GameObject/Message/Dispatcher/MessageDispatcher.h"
+
 
 
 //-------------------------------------------------------------
@@ -68,7 +73,10 @@ namespace ConnectWars
         playerGenerator_.Create(ID::Generator::Player::s_pNORMAL);
 
         // オプションを生成
-        // optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(0.0f, 2.0f, 0.0f));
+        optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(0.0f, 2.0f, 0.0f));
+        optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(2.0f, 4.0f, 0.0f));
+        optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(4.0f, 6.0f, 0.0f));
+        optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(6.0f, 8.0f, 0.0f));
         
         return Scene::ecSceneReturn::SUCCESSFUL;
     }
@@ -85,6 +93,9 @@ namespace ConnectWars
      ****************************************************************/
     Scene::ecSceneReturn C_Stage01Scene::Update()
     {
+        // 衝突確認メッセージを送信
+		GameObject::Message::C_MessageDispatcher::s_GetInstance()->Send("Messanger", ID::GameObject::s_pPLAYER, Message::s_pCONNECT_CHECK);
+
         taskSystem_.Update();
 
 #ifdef _DEBUG
@@ -96,6 +107,12 @@ namespace ConnectWars
             pNextScene->SetNextSceneId(ID::Scene::s_pSTAGE01);
 
             GetSceneChanger()->ReplaceScene(pNextScene);
+        }
+
+
+        if (Input::C_KeyboardManager::s_GetInstance()->GetPressingCount(Input::KeyCode::SDL_SCANCODE_E) == 1)
+        {
+            effectGenerator_.Create(ID::Generator::Effect::Bomb::s_pCHARGE, Vector3(0.0f, 0.0f, 0.0f));
         }
 
 #endif
@@ -219,11 +236,17 @@ namespace ConnectWars
         const char* pTexturePathList[] =
         {
             Path::Texture::s_pSPRITE_BULLET,
+            Path::Texture::s_pCIRCLE_01,
+            Path::Texture::s_pCIRCLE_02,
+            Path::Texture::s_pRING_01,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pTexturePathList); i < arraySize; ++i)
         {
-            if (Texture::C_TextureManager::s_GetInstance()->Create2DFromFile(pTexturePathList[i]) == false) return false;
+            if (!Texture::C_TextureManager::s_GetInstance()->GetTextureData(pTexturePathList[i]))
+            {
+                if (Texture::C_TextureManager::s_GetInstance()->Create2DFromFile(pTexturePathList[i]) == false) return false;
+            }
         }
 
         const char* pSpriteIdList[] = 
@@ -243,10 +266,38 @@ namespace ConnectWars
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pSpriteIdList); i < arraySize; ++i)
         {
-            auto pTextureData = Texture::C_TextureManager::s_GetInstance()->GetTextureData(pSpriteTextureDataIdList[i]);
-            assert(pTextureData);
+            if (!Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater(pSpriteIdList[i]))
+            {
+                auto pTextureData = Texture::C_TextureManager::s_GetInstance()->GetTextureData(pSpriteTextureDataIdList[i]);
+                assert(pTextureData);
 
-            if (Sprite::C_SpriteCreaterManager::s_GetInstance()->Create(pSpriteIdList[i], spMainCamera_, pTextureData.get(), 100, spritePriorityList[i]) == false) return false;
+                if (Sprite::C_SpriteCreaterManager::s_GetInstance()->Create(pSpriteIdList[i], spMainCamera_, pTextureData.get(), 100, spritePriorityList[i]) == false) return false;
+            }
+        }
+
+        const char* pParticleTextureDataIdList[] =
+        {
+            Path::Texture::s_pCIRCLE_01,
+            Path::Texture::s_pCIRCLE_02,
+            Path::Texture::s_pRING_01,
+        };
+
+        const char* pParticleIdList[] = 
+        {
+            ID::Particle::s_pCIRCLE_01,
+            ID::Particle::s_pCIRCLE_02,
+            ID::Particle::s_pRING_01,
+        };
+
+        for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pParticleIdList); i < arraySize; ++i)
+        {
+            if (!Particle::C_ParticleSystemManager::s_GetInstance()->GetParticleSystem(pParticleIdList[i]))
+            {
+                auto pTextureData = Texture::C_TextureManager::s_GetInstance()->GetTextureData(pParticleTextureDataIdList[i]);
+                assert(pTextureData);
+
+                if (Particle::C_ParticleSystemManager::s_GetInstance()->Create(pParticleIdList[i], spMainCamera_, pTextureData.get()->handle_) == false) return false;
+            }
         }
 
         // プレイヤーの生成機の設定
@@ -255,10 +306,16 @@ namespace ConnectWars
         // オプション生成機の設定
         optionGenerator_.SetTaskSystem(&taskSystem_);
         optionGenerator_.RegistFunction(ID::Generator::Option::s_pSPEED_UP, []()->C_BaseOption*{ return newEx C_SpeedUpOption(ID::GameObject::s_pOPTION, TYPE_OPTION); });
+        optionGenerator_.RegistFunction(ID::Generator::Option::s_pSMALL_BEAM, []()->C_BaseOption*{ return newEx C_SmallBeamOption(ID::GameObject::s_pOPTION, TYPE_OPTION); });
 
         // 弾生成機の設定
         bulletGenerator_.SetTaskSystem(&taskSystem_);
         bulletGenerator_.RegistFunction(ID::Generator::Bullet::Player::s_pBEAM, [](int32_t shooterType)->C_BaseBullet*{ return newEx C_PlayerBeamBullet(ID::GameObject::s_pBULLET, TYPE_BULLET, shooterType); });
+        bulletGenerator_.RegistFunction(ID::Generator::Bullet::Option::s_pSMALL_BEAM, [](int32_t shooterType)->C_BaseBullet*{ return newEx C_PlayerBeamBullet(ID::GameObject::s_pBULLET, TYPE_BULLET, shooterType); });
+
+        // エフェクト生成機の設定
+        effectGenerator_.SetTaskSystem(&taskSystem_);
+        effectGenerator_.RegistFunction(ID::Generator::Effect::Bomb::s_pCHARGE, []()->C_BaseEffect*{ return newEx C_BombChargeEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
 
         return true;
     }

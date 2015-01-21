@@ -80,7 +80,6 @@ namespace ConnectWars
      ****************************************************************/
     bool C_PlayerAdventState::MessageProcess(C_BasePlayer* pPlayer, const Telegram& rTelegram)
     {
-
         return true;
     }
 }

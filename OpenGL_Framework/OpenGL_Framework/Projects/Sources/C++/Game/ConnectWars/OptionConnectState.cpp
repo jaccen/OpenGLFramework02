@@ -68,6 +68,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_OptionConnectState::Execute(C_BaseOption* pOption)
     {
+        pOption->ResetConnect();
     }
 
 

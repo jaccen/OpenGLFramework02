@@ -5,11 +5,7 @@
 #include "../../Library/Input/Keyboard/KeyboardManager.h"
 #include "../../Library/Camera/Manager/CameraManager.h"
 #include "../../Library/Timer/Manager/TimeManager.h"
-#include "LoadScene.h"
-#include "Stage01Scene.h"
-#include "LoadFunction.h"
-#include "TitleScene.h"
-#include "CollisionCallback.h"
+#include "RootScene.h"
 
 
 //-------------------------------------------------------------
@@ -80,14 +76,9 @@ namespace ConnectWars
 
         // フィジックスエンジンの初期化処理
         upPhysicsEngine_->Initialize(Physics::Vector3(0.0f, 0.0f, 0.0f), Physics::Default::s_AIR_DENSITY);
-        upPhysicsEngine_->SetCollisionCallbackFunction(C_CollisionCallback::s_ContactProcess);
 
         // シーンマネージャーの初期化処理
-        auto pFirstScene = newEx C_LoadScene;
-        pFirstScene->SetLoadFunction(C_LoadFunction::s_LoadStage01Data);
-        pFirstScene->SetNextSceneId(ID::Scene::s_pSTAGE01);
-
-		upSceneManager_ = std::make_unique<Scene::C_SceneManager>(pFirstScene);
+        upSceneManager_ = std::make_unique<Scene::C_SceneManager>(newEx C_RootScene);
         if (upSceneManager_->Initialize() == Scene::ecSceneReturn::ERROR_TERMINATION) return false;
 
         return true;
@@ -114,7 +105,7 @@ namespace ConnectWars
         upMessageDispatcher_->Update();
         
         // フィジックスエンジンの更新処理
-        upPhysicsEngine_->Update(Timer::C_TimeManager::s_GetInstance()->GetDeltaTime());
+        upPhysicsEngine_->Update();
 
         // シーンマネージャーの更新処理
         auto sceneReturnValue = upSceneManager_->Update();

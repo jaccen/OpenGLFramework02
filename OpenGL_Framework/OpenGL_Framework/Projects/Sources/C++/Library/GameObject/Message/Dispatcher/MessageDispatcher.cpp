@@ -61,7 +61,9 @@ namespace GameObject
          *
          *  @brief  メッセージの送信処理を行う
          *  @param  送信者のID
-         *  @param  
+         *  @param  受信者のID
+         *  @param  メッセージ
+         *  @param  遅延フレーム
          *  @return なし
          *
          ****************************************************************/
@@ -71,6 +73,19 @@ namespace GameObject
                                        int32_t delayFrame)
         {
             upImpl_->Send(rSenderId, rReceiverId, rMessage, delayFrame);
+        }
+
+        
+        /*************************************************************//**
+         *
+         *  @brief  アクティブ状態を有効化する
+         *  @param  有効か判断するフラグ
+         *  @return なし
+         *
+         ****************************************************************/
+        void C_MessageDispatcher::EnableActive(bool validFlag)
+        {
+            upImpl_->EnableActive(validFlag);
         }
     }
 }

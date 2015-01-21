@@ -23,6 +23,7 @@ namespace ConnectWars
     class C_BaseBullet;
     class C_BaseObstacle;
     class C_BaseBomb;
+    class C_BaseGun;
 
 
     //-------------------------------------------------------------
@@ -47,7 +48,6 @@ namespace ConnectWars
         virtual void CollisionProcess(C_BaseObstacle* pObstacle) override;                          // 障害物との衝突時処理
         virtual void CollisionProcess(C_BaseBomb* pBomb) override;                                  // ボムとの衝突時処理
         virtual void Move() override;                                                               // 移動処理
-        virtual void ConnectMove();                                                                 // 連結時の移動処理
         virtual void Shot() override;                                                               // 射撃処理
         virtual void AddConnectOption(C_BaseOption* pOption);                                       // 連結しているオプションを追加
         virtual void ResetConnect() override;                                                       // 連結をリセット
@@ -79,6 +79,7 @@ namespace ConnectWars
         bool defeatedFlag_ = false;                                                                 ///< @brief 撃破フラグ
         int32_t defeatedFrame_ = 60;                                                                ///< @brief 撃破状態のフレーム数
         int32_t ownCrashDelayFrame_ = 0;                                                            ///< @brief 自爆遅延フレーム数
+        std::vector<std::unique_ptr<C_BaseGun>> upGuns_;                                            ///< @brief 銃
 
         virtual void DoUpdate();                                                                    // 非公開の更新処理
         virtual void DoDraw() = 0;                                                                  // 非公開の描画処理

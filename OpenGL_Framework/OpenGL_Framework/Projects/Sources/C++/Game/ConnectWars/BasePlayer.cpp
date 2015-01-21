@@ -59,7 +59,14 @@ namespace ConnectWars
      ****************************************************************/
     bool C_BasePlayer::Update()
     {
+        // 常に剛体をアクティブ状態とする
+        upRigidBody_->EnableActive(true);
+
+        // 非公開の更新処理
         DoUpdate();
+
+        // 衝突したオブジェクトのIDを全てリセット
+        ResetCollidedObjectId();
 
         return existenceFlag_;
     }

@@ -2,6 +2,7 @@
 #include "BombChargeEffect.h"
 #include "../../Library/Debug/Helper/DebugHelper.h"
 #include "../../Library/Random/RandomGenerator.h"
+#include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
 #include <sstream>
 
 
@@ -24,6 +25,12 @@ namespace ConnectWars
     {
         assert(Lua::C_LuaStateManager::s_GetInstance()->GetState());
         pLuaState_ = Lua::C_LuaStateManager::s_GetInstance()->GetState().get();
+
+        assert(Particle::C_ParticleSystemManager::s_GetInstance()->GetParticleSystem(ID::Particle::s_pCIRCLE_01));
+        wpCircleParticleSystem_ = Particle::C_ParticleSystemManager::s_GetInstance()->GetParticleSystem(ID::Particle::s_pCIRCLE_01).get();
+
+        assert(Particle::C_ParticleSystemManager::s_GetInstance()->GetParticleSystem(ID::Particle::s_pRING_01));
+        wpRingParticleSystem_ = Particle::C_ParticleSystemManager::s_GetInstance()->GetParticleSystem(ID::Particle::s_pRING_01).get();;
     }
 
 
@@ -73,10 +80,12 @@ namespace ConnectWars
                 stream << errorMessage << std::endl;
 
                 PrintLog("[ C_BombChargeEffect::DoUpdate ] : 関数の呼び出しに失敗しました。\n");
-                PrintLog("            エラーメッセージ : %s\n", stream.str().c_str());
+                PrintLog("                エラーメッセージ : %s\n", stream.str().c_str());
 
                 existenceFlag_ = false;
             }
+
+#else
 
             // エフェクトのロジックを処理
             existenceFlag_ = luabind::call_function<bool>(pLuaState_.get(),

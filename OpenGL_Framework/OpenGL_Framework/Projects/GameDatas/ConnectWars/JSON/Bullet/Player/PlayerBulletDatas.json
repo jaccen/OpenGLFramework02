@@ -1,0 +1,45 @@
+{
+  "PlayerBulletDatas" :
+  {
+    "Beam" :
+    {
+      "HitPoint" : 1,
+      "CollisionSize" :
+      [
+        0.2,
+        0.5,
+        0.1
+      ],
+      "Mass" : 1.0,
+      "SpriteData" :
+      {
+        "Size" :
+        [
+          0.2,
+          0.5
+        ],
+        "Angle" : 0.0,
+        "Color" :
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "Texture" :
+        {
+          "UpperLeft" :
+          [
+            0.0,
+            0.0
+          ],
+          "LowerRight" :
+          [
+            16.0,
+            48.0
+          ]
+        }
+      }
+    } 
+  }
+}

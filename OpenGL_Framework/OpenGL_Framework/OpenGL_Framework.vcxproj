@@ -49,6 +49,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Stdafx.h</PrecompiledHeaderFile>
       <ForcedIncludeFiles>Stdafx.h</ForcedIncludeFiles>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -98,12 +99,15 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EffectGenerator.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GameController.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\LoadFunction.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionBullet.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionCombatState.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionConnectState.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionDestroyedState.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionDropState.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionGenerator.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionGunFactory.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionOwnCrashState.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PauseScene.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerGunFactory.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\CollisionCallback.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\CollisionObject.h" />
@@ -129,9 +133,12 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerGenerator.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerInvincibleState.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RapidFireGun.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyConnectMoveLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyInputMoveLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyMoveLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyStraightMoveLogic.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyForceMoveLogic.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RootScene.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ShieldOption.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Shooter.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ShotLogic.h" />
@@ -344,12 +351,15 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\NormalBomb.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\NormalGun.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\NormalPlayer.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionBullet.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionCombatState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionConnectState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionDestroyedState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionDropState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionGenerator.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionGunFactory.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionOwnCrashState.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PauseScene.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerBullet.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionWaitOwnCrashState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventState.cpp" />
@@ -361,9 +371,12 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerGenerator.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerInvincibleState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RapidFireGun.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyConnectMoveLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyInputMoveLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyMoveLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyStraightMoveLogic.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyForceMoveLogic.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RootScene.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ShieldOption.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Shooter.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ShotLogic.cpp" />
@@ -466,7 +479,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Bullet\Option\OptionBulletDatas.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Bullet\Player\PlayerBulletDatas.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\OpenGL\OpenGLData.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Option\SmallBeamOptionData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Option\SpeedUpOptionData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Player\NormalPlayerData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Window\MainWindowData.json" />
@@ -492,7 +508,19 @@
     <None Include="Projects\Shaders\GLSL\Sprite\Sprite.vert" />
     <None Include="Projects\Sources\Lua\Effect\BombChargeEffect.lua" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Projects_2GameDatas_2ConnectWars_2JSON_2Bullet_2Player_2PlayerBulletDatas_1json__JSONSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

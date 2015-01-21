@@ -48,7 +48,7 @@ namespace Physics
         ~C_PhysicsEngine() override;                                                                                            // デストラクタ
         void Initialize(const Vector3& rGravity = Default::s_GRAVITY,                                                           // 初期化処理
                         float airDensity = Default::s_AIR_DENSITY);
-        void Update(float deltaTime);                                                                                           // 更新処理
+        void Update();                                                                                                          // 更新処理
         void Finalize();                                                                                                        // 終了処理
         void AddRigidBody(C_RigidBody* pRigidBody,                                                                              // 剛体を追加
                           int16_t collisionType = BroadphaseFilterType::AllFilter, 
@@ -65,6 +65,9 @@ namespace Physics
         void SetSimulationSubstepCallbackFunction(SimulationSubstepCallbackFunction pSimulationSubstepCallbackFunction,         // シミュレーションのサブステップコールバック関数を設定
                                                   void* pWorldUserInfo = nullptr,
                                                   bool previousSubstepCallbackFlag = false);
+        void SetFrameSimulationTime(float frameSimulationTime = 1.0f / 60.0f);                                                  // 1フレームのシミュレーション時間
+        void SetMaxSubStepCount(int32_t maxSubStepCount = 5);                                                                   // 最大サブステップ数を設定
+        void EnableActive(bool validFlag = true);                                                                               // アクティブ状態を有効化
     private:
         /* 前方宣言 */
         class C_PhysicsEngineImpl;

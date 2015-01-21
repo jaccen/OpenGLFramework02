@@ -18,7 +18,7 @@ namespace ConnectWars
      *  @param  éÌóﬁ
      *
      ****************************************************************/
-    C_CollisionObject::C_CollisionObject(const std::string& rId, int32_t type) :
+	C_CollisionObject::C_CollisionObject(const std::string& rId, int32_t type) : GameObject::C_GameObject(rId, type),
 
         // è’ìÀì_
         upCollisionPoint_(std::make_unique<Physics::Vector3>(0.0f, 0.0f, 0.0f))

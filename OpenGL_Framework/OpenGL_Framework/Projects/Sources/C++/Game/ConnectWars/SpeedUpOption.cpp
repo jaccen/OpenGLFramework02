@@ -44,12 +44,13 @@ namespace ConnectWars
                               | C_CollisionObject::FILTER_TYPE_OBSTACLE;
 
 		upRigidBody_ = std::make_unique<Physics::C_RigidBody>(newEx Physics::C_SphereShape(radius_), transform, static_cast<float>((*pOptionData)["CreateData"]["Mass"].GetValue<JSON::Real>()));
+        
+        upRigidBody_->EnableCollisionResponse(false);
+        upRigidBody_->EnableFreezeRotation(true, true, true);
+        
         Physics::C_PhysicsEngine::s_GetInstance()->AddRigidBody(upRigidBody_.get(), 
                                                                 C_CollisionObject::FILTER_TYPE_OPTION,
                                                                 collisionMask);
-
-        upRigidBody_->EnableCollisionResponse(false);
-        upRigidBody_->EnableFreezeRotation(true, true, true);
 
         // 自身を設定
         upRigidBody_->SetUserPointer(this);
@@ -66,7 +67,6 @@ namespace ConnectWars
         assert(Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer(ID::UniformBuffer::s_pMAIN_CAMERA));
         pUniformBuffer_ = Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer(ID::UniformBuffer::s_pMAIN_CAMERA).get();
         uniformBlockIndex_ = pUniformBuffer_->GetBlockIndexFromProgramObject(pGlslObject_->GetProgramObjectHandle());
-
         
         // パワーとヒットポイントを作成
         upPower_ = std::make_unique<C_BasePower>((*pOptionData)["CreateData"]["Power"].GetValue<JSON::Integer>());

@@ -724,6 +724,33 @@
     <Filter Include="Resources\GameDatas\ConnectWars\Option">
       <UniqueIdentifier>{0a6ecf08-3a71-4d5e-805d-96753dd53c55}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Scene\Root">
+      <UniqueIdentifier>{3bfe2601-b59f-45d3-93d0-80e9335f5da8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Scene\Pause">
+      <UniqueIdentifier>{5e22d49c-3787-4458-b6dd-b0308c253053}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Scene\Ranking">
+      <UniqueIdentifier>{773772d8-c9c5-46bd-99fa-8f59ffc4ab8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\Force">
+      <UniqueIdentifier>{d9ec3ead-18fd-43fc-8078-517111db4ece}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Bullet\Option">
+      <UniqueIdentifier>{bebdac01-6ae8-43b3-a3bf-776d858d2390}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\Bullet">
+      <UniqueIdentifier>{5fd4c747-f790-4776-856e-0124ca0961a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\Bullet\Player">
+      <UniqueIdentifier>{27d824b2-3373-43d7-a5b9-917d282712d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\Bullet\Option">
+      <UniqueIdentifier>{d32320ab-9784-4408-87f0-b10df220d255}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\Connect">
+      <UniqueIdentifier>{3fa2d080-6a8f-43df-ad93-b8bfeebd3db3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Projects\Sources\C++\Other\Stdafx\Stdafx.h">
@@ -1374,6 +1401,24 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionGenerator.h">
       <Filter>Sources\C++\Game\ConnectWars\Generator\Option</Filter>
     </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RootScene.h">
+      <Filter>Sources\C++\Game\ConnectWars\Scene\Root</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PauseScene.h">
+      <Filter>Sources\C++\Game\ConnectWars\Scene\Pause</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyForceMoveLogic.h">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\Force</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionBullet.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Bullet\Option</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionGunFactory.h">
+      <Filter>Sources\C++\Game\ConnectWars\Gun\Factory\Option</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyConnectMoveLogic.h">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\Connect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Projects\Sources\C++\Other\Stdafx\Stdafx.cpp">
@@ -1865,6 +1910,24 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionGenerator.cpp">
       <Filter>Sources\C++\Game\ConnectWars\Generator\Option</Filter>
     </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RootScene.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Scene\Root</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PauseScene.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Scene\Pause</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyForceMoveLogic.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\Force</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionBullet.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Bullet\Option</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionGunFactory.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Gun\Factory\Option</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyConnectMoveLogic.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\Connect</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Projects\Shaders\GLSL\Debug\DebugString.geom">
@@ -1941,6 +2004,15 @@
     </None>
     <None Include="Projects\GameDatas\ConnectWars\JSON\Option\SpeedUpOptionData.json">
       <Filter>Resources\GameDatas\ConnectWars\Option</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Option\SmallBeamOptionData.json">
+      <Filter>Resources\GameDatas\ConnectWars\Option</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Bullet\Player\PlayerBulletDatas.json">
+      <Filter>Resources\GameDatas\ConnectWars\Bullet\Player</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Bullet\Option\OptionBulletDatas.json">
+      <Filter>Resources\GameDatas\ConnectWars\Bullet\Option</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -37,11 +37,34 @@ namespace Scene
         void SetParentScene(C_BaseScene* pParentScene);                     // 親のシーンを設定
     protected:
         IC_SceneChanger* GetSceneChanger() const;                           // シーンチェンジャーを取得
-        C_BaseScene* GetParentScene() const;                                // 親のシーンを取得
+
+        template<typename T>
+        T* GetParentScene() const;                                          // 親のシーンを取得
     private:
         bool updateFlag_ = true;                                            ///< @brief 更新フラグ
         bool drawFlag_ = true;                                              ///< @brief 描画フラグ
         IC_SceneChanger* pSceneChanger_ = nullptr;                          ///< @brief シーンチェンジャー
         C_BaseScene* pParentScene_ = nullptr;                               ///< @brief 親のシーン
     };
+
+
+#pragma region メンバ関数
+
+
+    /*************************************************************//**
+     *
+     *  @brief  親のシーンを取得する
+     *  @param  なし
+     *  @return 親のシーン
+     *
+     ****************************************************************/
+    template<typename T>
+    T* C_BaseScene::GetParentScene() const
+    {
+        return static_cast<T*>(pParentScene_);
+    }
+
+
+#pragma endregion
+
 }

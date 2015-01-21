@@ -12,7 +12,7 @@
     "Radius" : 0.9,
     "MoveSpeedLevel" : 0,
     "Movement" : 0.2,
-    "MoveSpeedUpInterval" : 0.1,
+    "MoveSpeedUpInterval" : 0.5,
     "ConnectPetrifyFrame" : 10,
     "BombChargeFrame" : 60,
     "BombInvincibleFrame" : 100,

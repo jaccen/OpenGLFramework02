@@ -4,7 +4,6 @@
 #include "../../Math/Matrix/Matrix4x4.h"
 #include "../../Math/Easing/Easing.h"
 #include "../../Shader/GLSL/Object/Manager/GlslObjectManager.h"
-#include "../../OpenGL/Manager/OpenGlManager.h"
 #include "../../Debug/Helper/DebugHelper.h"
 #include "../../Camera/Camera/Perspective/PerspectiveCamera.h"
 #include <vector>
@@ -132,13 +131,13 @@ namespace Particle
     class C_ParticleSystem::C_ParticleSystemImpl
     {
     private:
-        
+
     public:
         C_ParticleSystemImpl();                                                                         // コンストラクタ  
         ~C_ParticleSystemImpl();                                                                        // デストラクタ
         bool Initialize(const Camera::CameraPtr& prCamera,                                              // 初期化処理
-                        Texture::TextureHandle textureHandle,
-                        uint32_t maxParticleCount);
+            Texture::TextureHandle textureHandle,
+            uint32_t maxParticleCount);
         void Update();                                                                                  // 更新処理
         void Draw();                                                                                    // 描画処理
         void Finalize();                                                                                // 終了処理
@@ -157,6 +156,8 @@ namespace Particle
         void SetColorInterpolationFunction(const InterpolationFunction& rFunction);                     // 色に用いる補間関数を設定
         virtual void SetTextureCoordUpperLeft(const Vector2& textureCoordUpperLeft);                    // テクスチャ座標の左上を設定
         virtual void SetTextureCoordLowerRight(const Vector2& textureCoordLowerRight);                  // テクスチャ座標の右下を設定
+        bool GetEnableFlag() const;                                                                     // パーティクルシステムが有効か判断するフラグを取得
+        void SetEnableFlag(bool enableFlag);                                                            // パーティクルシステムが有効か判断するフラグを設定
     private:
         std::string id_;                                                                                ///< @brief ID
         std::forward_list<S_ParticleInfo> infoList_;                                                    ///< @brief 情報のリスト
@@ -177,6 +178,7 @@ namespace Particle
         InterpolationFunction colorInterpolationFunction_ = Math::C_Easing<float>::s_Linear;            ///< @brief 色に用いる補間関数
         Vector2 textureCoordUpperLeft_ = Vector2(0.0f);                                                 ///< @brief テクスチャ座標の左上
         Vector2 textureCoordLowerRight_ = Vector2(1.0f);                                                ///< @brief テクスチャ座標の右下
+        bool enableFlag_ = true;                                                                        ///< @brief パーティクルシステムが有効か判断するフラグ
 
         void CreateVertexArrayObject();                                                                 // 頂点配列オブジェクトを作成
         void DeleteVertexArrayObject();                                                                 // 頂点配列オブジェクトを破棄
@@ -607,7 +609,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  テクスチャ座標の左上を設定
+     *  @brief  テクスチャ座標の左上を設定する
      *  @param  テクスチャ座標の左上
      *  @return なし
      *
@@ -620,7 +622,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  テクスチャ座標の右下を設定
+     *  @brief  テクスチャ座標の右下を設定する
      *  @param  テクスチャ座標の右下
      *  @return なし
      *
@@ -628,6 +630,32 @@ namespace Particle
     void C_ParticleSystem::C_ParticleSystemImpl::SetTextureCoordLowerRight(const Vector2& rTextureCoordLowerRight)
     {
         textureCoordLowerRight_ = rTextureCoordLowerRight;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  パーティクルシステムが有効か判断するフラグを取得する
+     *  @param  なし
+     *  @return パーティクルシステムが有効か判断するフラグ
+     *
+     ****************************************************************/
+    bool C_ParticleSystem::C_ParticleSystemImpl::GetEnableFlag() const
+    {
+        return enableFlag_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  パーティクルシステムが有効か判断するフラグを設定する
+     *  @param  パーティクルシステムが有効か判断するフラグ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_ParticleSystem::C_ParticleSystemImpl::SetEnableFlag(bool enableFlag)
+    {
+        enableFlag_ = enableFlag;
     }
 
 

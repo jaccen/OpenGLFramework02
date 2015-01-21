@@ -103,6 +103,8 @@ namespace ConnectWars
         {
             ID::JSON::s_pNORMAL_PLAYER,
             ID::JSON::s_pSPEED_UP_OPTION,
+            ID::JSON::s_pPLAYER_BULLET,
+            ID::JSON::s_pOPTION_BULLET,
         };
 
 
@@ -110,6 +112,8 @@ namespace ConnectWars
         {
             Path::JSON::s_pNORMAL_PLAYER,
             Path::JSON::s_pSPEED_UP_OPTION,
+            Path::JSON::s_pPLAYER_BULLET,
+            Path::JSON::s_pOPTION_BULLET,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pJsonIdList); i < arraySize; ++i)

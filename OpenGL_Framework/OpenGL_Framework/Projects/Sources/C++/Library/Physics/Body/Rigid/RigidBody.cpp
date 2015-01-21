@@ -173,6 +173,32 @@ namespace Physics
 
     /*************************************************************//**
      *
+     *  @brief  トルクを加える
+     *  @param  トルク
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_RigidBody::ApplayTorque(const Vector3& rTorque)
+    {
+        upRigidBody_->applyTorque(rTorque);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  トルク撃力を加える
+     *  @param  トルク撃力
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_RigidBody::ApplayTorqueImpulse(const Vector3& rTorqueImpulse)
+    {
+        upRigidBody_->applyTorqueImpulse(rTorqueImpulse);
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  座標を加える
      *  @param  座標
      *  @return なし

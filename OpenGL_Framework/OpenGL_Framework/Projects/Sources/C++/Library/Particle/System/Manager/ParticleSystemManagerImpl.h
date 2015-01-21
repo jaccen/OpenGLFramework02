@@ -73,7 +73,10 @@ namespace Particle
      ****************************************************************/
     void C_ParticleSystemManager::C_ParticleSystemManagerImpl::Update()
     {
-        for (auto& rParticleSystem : pParticleSystems_) rParticleSystem.second->Update();
+        for (auto& rParticleSystem : pParticleSystems_)
+        {
+            if (rParticleSystem.second->GetEnableFlag() == true) rParticleSystem.second->Update();
+        }
     }
 
 
@@ -86,7 +89,10 @@ namespace Particle
      ****************************************************************/
     void C_ParticleSystemManager::C_ParticleSystemManagerImpl::Draw()
     {
-        for (auto &rPatricleSystem : pParticleSystems_) rPatricleSystem.second->Draw();
+        for (auto &rParticleSystem : pParticleSystems_)
+        {
+            if (rParticleSystem.second->GetEnableFlag() == true) rParticleSystem.second->Draw();
+        }
     }
 
 

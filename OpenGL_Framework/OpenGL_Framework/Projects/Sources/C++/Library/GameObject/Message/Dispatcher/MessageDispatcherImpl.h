@@ -38,9 +38,11 @@ namespace GameObject
                       const std::string& rReceiverId,
                       const std::string& rMessage,
                       int32_t delayFrame);
+            void EnableActive(bool validFlag);              // アクティブ状態を有効化
         private:
             std::set<S_Telegram> telegrams;                 ///< @brief テレグラム
             int32_t frameCount_ = 0;                        ///< @brief フレーム数のカウンタ
+            bool activeFlag_ = true;                        ///< @brief アクティブ状態を判断するフラグ
         };
 
 
@@ -75,29 +77,32 @@ namespace GameObject
          ****************************************************************/
         void C_MessageDispatcher::C_MessageDispatcherImpl::Update()
         {
-            // フレーム数を1増加
-            ++frameCount_;
-
-            // 送信フレーム数の最も小さいテレグラムが
-            // 送信条件を完了していた場合、メッセージを送信
-            while ((telegrams.empty() == false)
-                && (telegrams.begin()->sendFrame_ <= frameCount_))
+            if (activeFlag_ == true)
             {
-                // テレグラムを取得
-                const S_Telegram& rTelegram = (*telegrams.begin());
+                // フレーム数を1増加
+                ++frameCount_;
 
-                // 受信者を取得
-                auto pReceiver = C_GameObjectManager::s_GetInstance()->GetGameObjectWithId(rTelegram.receiverId_);
-                assert(pReceiver);
-
-                // 受信者からメッセージ処理
-                if (pReceiver.get()->MessageProcess(rTelegram) == false)
+                // 送信フレーム数の最も小さいテレグラムが
+                // 送信条件を完了していた場合、メッセージを送信
+                while ((telegrams.empty() == false)
+                    && (telegrams.begin()->sendFrame_ <= frameCount_))
                 {
-                    std::cout << "[ C_MessageDispatcherImpl::Update ] メッセージ処理に失敗しました。" << std::endl;
-                }
+                    // テレグラムを取得
+                    const S_Telegram& rTelegram = (*telegrams.begin());
 
-                // テレグラムを除去
-                telegrams.erase(telegrams.begin());
+                    // 受信者を取得
+                    auto pReceiver = C_GameObjectManager::s_GetInstance()->GetGameObjectWithId(rTelegram.receiverId_);
+                    assert(pReceiver);
+
+                    // 受信者からメッセージ処理
+                    if (pReceiver.get()->MessageProcess(rTelegram) == false)
+                    {
+                        std::cout << "[ C_MessageDispatcherImpl::Update ] メッセージ処理に失敗しました。" << std::endl;
+                    }
+
+                    // テレグラムを除去
+                    telegrams.erase(telegrams.begin());
+                }
             }
         }
 
@@ -117,33 +122,49 @@ namespace GameObject
                                                                 const std::string& rMessage,
                                                                 int32_t delayFrame)
         {
-            // テレグラムを作成
-            S_Telegram telegram(rSenderId, Type::s_NONE, rReceiverId, rMessage, delayFrame);
-
-            // 送信者が登録されている場合、その送信者の種類をテレグラムに設定
-            if (auto pSender = C_GameObjectManager::s_GetInstance()->GetGameObjectWithId(rSenderId))
+            if (activeFlag_ == true)
             {
-                telegram.senderType_ = (*pSender)->GetType();
-            }
+                // テレグラムを作成
+                S_Telegram telegram(rSenderId, Type::s_NONE, rReceiverId, rMessage, delayFrame);
 
-            // 受信者を取得
-            auto pReceiver = C_GameObjectManager::s_GetInstance()->GetGameObjectWithId(rReceiverId);
-            assert(pReceiver);
-
-            if (delayFrame <= 0)
-            {
-                // メッセージを送信
-                if (pReceiver.get()->MessageProcess(telegram) == false)
+                // 送信者が登録されている場合、その送信者の種類をテレグラムに設定
+                if (auto pSender = C_GameObjectManager::s_GetInstance()->GetGameObjectWithId(rSenderId))
                 {
-                    std::cout << "[ C_MessageDispatcherImpl::Update ]メッセージ処理に失敗しました。" << std::endl;
+                    telegram.senderType_ = (*pSender)->GetType();
+                }
+
+                // 受信者を取得
+                auto pReceiver = C_GameObjectManager::s_GetInstance()->GetGameObjectWithId(rReceiverId);
+                assert(pReceiver);
+
+                if (delayFrame <= 0)
+                {
+                    // メッセージを送信
+                    if (pReceiver.get()->MessageProcess(telegram) == false)
+                    {
+                        std::cout << "[ C_MessageDispatcherImpl::Update ]メッセージ処理に失敗しました。" << std::endl;
+                    }
+                }
+                else
+                {
+                    // 送信フレームを設定し、テレグラムを追加
+                    telegram.sendFrame_ += frameCount_;
+                    telegrams.emplace(telegram);
                 }
             }
-            else
-            {
-                // 送信フレームを設定し、テレグラムを追加
-                telegram.sendFrame_ += frameCount_;
-                telegrams.emplace(telegram);
-            }
+        }
+
+
+        /*************************************************************//**
+         *
+         *  @brief  アクティブ状態を有効化する
+         *  @param  有効か判断するフラグ
+         *  @return なし
+         *
+         ****************************************************************/
+        void C_MessageDispatcher::C_MessageDispatcherImpl::EnableActive(bool validFlag)
+        {
+            activeFlag_ = validFlag;
         }
     }
 }

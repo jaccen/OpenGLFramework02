@@ -85,6 +85,7 @@ namespace ConnectWars
 
         // ˆÚ“®§ŒÀ‚ÌŠm”F
         pPlayer->MoveLimitCheck();
+        pPlayer->ResetConnect();
     }
 
 

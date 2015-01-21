@@ -5,6 +5,8 @@
 #include "OptionDropState.h"
 #include "OptionConnectState.h"
 #include "OptionWaitOwnCrashState.h"
+#include "BaseGun.h"
+#include "RigidBodyConnectMoveLogic.h"
 
 
 //-------------------------------------------------------------
@@ -28,6 +30,7 @@ namespace ConnectWars
         upStateMachine_(std::make_unique<State::C_StateMachine<C_BaseOption>>(this))
 
     {
+        // 現在のステートを設定
 		upStateMachine_->SetCurrentState(C_OptionDropState::s_GetInstance());
     }
 
@@ -40,6 +43,7 @@ namespace ConnectWars
      ****************************************************************/
     C_BaseOption::~C_BaseOption()
     {
+        // 連結していた場合は連結されているオプションの数を1減らす
         if (onceConnectFlag_ == true) pPlayer_->AddConnectOptionCount(-1);
     }
 
@@ -54,7 +58,14 @@ namespace ConnectWars
      ****************************************************************/
     bool C_BaseOption::Update()
     {
+        // 常に剛体をアクティブ状態とする
+        upRigidBody_->EnableActive(true);
+
+        // 非公開の更新処理
         DoUpdate();
+
+        // 衝突したオブジェクトのIDを全てリセット
+        ResetCollidedObjectId();
 
         return C_GameObject::existenceFlag_;
     }
@@ -195,23 +206,6 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
-     *  @brief  連結時の移動処理を行う
-     *  @param  なし
-     *  @return なし
-     *
-     ****************************************************************/
-    void C_BaseOption::ConnectMove()
-    {
-        auto transform = upRigidBody_->GetTransform();
-        auto position = transform.getOrigin();
-
-        transform.setOrigin(pPlayer_->GetRigidBody()->GetTransform().getOrigin() + offsetFromPlayer_);
-        upRigidBody_->SetTransform(transform);
-    }
-
-
-    /*************************************************************//**
-     *
      *  @brief  射撃処理を行う
      *  @param  なし
      *  @return なし
@@ -219,6 +213,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseOption::Shot()
     {
+        for (auto& uprGun : upGuns_) uprGun->Shot();
     }
 
 
@@ -270,7 +265,12 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseOption::NewConnect()
     {
+        // 連結状態へ変更
         upStateMachine_->ChangeState(C_OptionConnectState::s_GetInstance());
+
+        // 連結時の移動ロジックに変更
+        assert(pPlayer_);
+        upMoveLogic_ = std::make_unique<C_RigidBodyConnectMoveLogic>(pPlayer_, offsetFromPlayer_);
     }
 
 

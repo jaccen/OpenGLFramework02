@@ -11,6 +11,7 @@
 #include "PlayerGenerator.h"
 #include "OptionGenerator.h"
 #include "BulletGenerator.h"
+#include "EffectGenerator.h"
 
 
 //-------------------------------------------------------------
@@ -41,6 +42,7 @@ namespace ConnectWars
         C_PlayerGenerator playerGenerator_;                             ///< @brief プレイヤー生成機
         C_OptionGenerator optionGenerator_;                             ///< @brief オプション生成機
         C_BulletGenerator bulletGenerator_;                             ///< @brief 弾生成機
+        C_EffectGenerator effectGenerator_;                             ///< @brief エフェクト生成機
         std::shared_ptr<Camera::IC_Camera> spMainCamera_;               ///< @brief メインカメラ
         S_CameraData mainCameraData_;                                   ///< @brief メインカメラの情報
 

@@ -49,6 +49,7 @@ namespace GameObject
                       const std::string& rReceiverId,
                       const std::string& rMessage,
                       int32_t delayFrame = 0);
+            void EnableActive(bool validFlag = true);                   // アクティブ状態を有効化
         private:
             /* 前方宣言 */
             class C_MessageDispatcherImpl;

@@ -39,6 +39,8 @@ namespace Physics
                         const Vector3& rOffsetFromCenter = Vector3(0.0f, 0.0f, 0.0f));
         void ApplyImpulse(const Vector3& rImpulse,                                                      // 撃力を加える
                           const Vector3& rOffsetFromCenter = Vector3(0.0f, 0.0f, 0.0f));
+        void ApplayTorque(const Vector3& rTorque);                                                      // トルクを加える
+        void ApplayTorqueImpulse(const Vector3& rTorqueImpulse);                                        // トルク撃力を加える
         void AddPosition(const Vector3& rPosition);                                                     // 座標を加える
         void ResetVelocity();                                                                           // 速度をリセット
         btRigidBody* GetRigidBody() const;                                                              // 剛体を取得

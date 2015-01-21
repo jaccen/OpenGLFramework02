@@ -30,11 +30,17 @@ namespace Physics
         ~C_PhysicsEngineImpl();                                                             // デストラクタ
         void Initialize(const Vector3& rGravity,                                            // 初期化処理
                         float airDensity);
-        void Update(float deltaTime);                                                       // 更新処理
+        void Update();                                                                      // 更新処理
         void Finalize();                                                                    // 終了処理
         btSoftRigidDynamicsWorld* GetWorld() const;                                         // ワールドを取得
         SoftBodyInfo* GetSoftBodyInfo() const;                                              // ソフトボディ情報を取得
+        void SetFrameSimulationTime(float frameSimulationTime);                             // 1フレームのシミュレーション時間を設定
+        void SetMaxSubStepCount(int32_t maxSubStepCount);                                   // 最大サブステップ数を設定
+        void EnableActive(bool validFlag);                                                  // アクティブ状態を有効化
     private:
+        float frameSimulationTime_ = 1.0f / 60.0f;                                          ///< @brief 1フーレムのシミュレーション時間
+        int32_t maxSubStepCount_ = 5;                                                       ///< @brief 最大サブステップ数
+        bool activeFlag_ = true;                                                            ///< @brief アクティブ状態を判断するフラグ
         std::unique_ptr<btDefaultCollisionConfiguration> upConfig_;                         ///< @brief コンフィグ
         std::unique_ptr<btCollisionDispatcher> upDispatcher_;                               ///< @brief ディスパッチャー
         std::unique_ptr<btBroadphaseInterface> upBroadphase_;                               ///< @brief ブロードフェーズ
@@ -126,21 +132,20 @@ namespace Physics
     /*************************************************************//**
      *
      *  @brief  物理エンジンの更新処理を行う
-     *  @param  差分時間( 秒 )
+     *  @param  なし
      *  @return なし
      *
      ****************************************************************/
-    void C_PhysicsEngine::C_PhysicsEngineImpl::Update(float deltaTime)
+    void C_PhysicsEngine::C_PhysicsEngineImpl::Update()
     {
-        // 最大サブステップ数と固定タイムステップ( 0.0166666f / 5.0f )
-        const int32_t MAX_SUB_STEP_COUNT = 5;
-        const float FIXED_TIME_STEP = 0.0033333f;
+        if (activeFlag_ == true)
+        {
+            // シミュレーションを行う
+            upWorld_->stepSimulation(frameSimulationTime_, maxSubStepCount_, frameSimulationTime_ / static_cast<float>(maxSubStepCount_));
 
-        // シミュレーションを行う
-        upWorld_->stepSimulation(deltaTime, MAX_SUB_STEP_COUNT, FIXED_TIME_STEP);
-
-        // ソフトボディ情報のセルをガーベジコレクションする
-        upSoftBodyInfo_->m_sparsesdf.GarbageCollect();
+            // ソフトボディ情報のセルをガーベジコレクションする
+            upSoftBodyInfo_->m_sparsesdf.GarbageCollect();
+        }
     }
 
 
@@ -181,5 +186,44 @@ namespace Physics
     SoftBodyInfo* C_PhysicsEngine::C_PhysicsEngineImpl::GetSoftBodyInfo() const
     {
         return upSoftBodyInfo_.get();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  1フレームのシミュレーション時間を設定する
+     *  @param  1フレームのシミュレーション時間
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_PhysicsEngine::C_PhysicsEngineImpl::SetFrameSimulationTime(float frameSimulationTime)
+    {
+        frameSimulationTime_ = frameSimulationTime;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  最大サブステップ数を設定する
+     *  @param  最大サブステップ数
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_PhysicsEngine::C_PhysicsEngineImpl::SetMaxSubStepCount(int32_t maxSubStepCount)
+    {
+        maxSubStepCount_ = maxSubStepCount;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  最大サブステップ数を設定する
+     *  @param  最大サブステップ数
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_PhysicsEngine::C_PhysicsEngineImpl::EnableActive(bool validFlag)
+    {
+        activeFlag_ = validFlag;
     }
 }

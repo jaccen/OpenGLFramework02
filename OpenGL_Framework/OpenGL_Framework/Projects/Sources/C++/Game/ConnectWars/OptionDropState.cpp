@@ -43,7 +43,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_OptionDropState::Enter(C_BaseOption* pOption)
     {
-        //pOption->SetInvincibleFlag(true);
+        pOption->SetInvincibleFlag(true);
     }
 
 

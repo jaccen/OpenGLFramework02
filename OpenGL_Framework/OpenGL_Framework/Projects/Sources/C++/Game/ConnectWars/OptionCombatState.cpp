@@ -56,13 +56,15 @@ namespace ConnectWars
      ****************************************************************/
     void C_OptionCombatState::Execute(C_BaseOption* pOption)
     {
+        pOption->GetRigidBody()->ResetVelocity();
+
         if (pOption->GetHitPoint()->CheckRemainValue() == false || pOption->IsConnectFlag() == false)
         {
             pOption->GetStateMachine()->ChangeState(C_OptionDestroyedState::s_GetInstance());
         }
 
         pOption->Shot();
-        pOption->ConnectMove();
+        pOption->Move();
         pOption->ResetConnect();
     }
 
@@ -77,7 +79,7 @@ namespace ConnectWars
     void C_OptionCombatState::Exit(C_BaseOption* pOption)
     {
     }
-
+	
 
     /*************************************************************//**
      *

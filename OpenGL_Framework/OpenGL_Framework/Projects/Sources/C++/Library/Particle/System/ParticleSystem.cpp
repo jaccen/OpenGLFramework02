@@ -180,7 +180,7 @@ namespace Particle
      ****************************************************************/
     void C_ParticleSystem::EnableAutoBillboard(bool validFlag)
     {
-
+        upImpl_->EnableAutoBillboard(validFlag);
     }
 
 
@@ -303,7 +303,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  テクスチャ座標の左上を設定
+     *  @brief  テクスチャ座標の左上を設定する
      *  @param  テクスチャ座標の左上
      *  @return なし
      *
@@ -316,7 +316,7 @@ namespace Particle
 
     /*************************************************************//**
      *
-     *  @brief  テクスチャ座標の右下を設定
+     *  @brief  テクスチャ座標の右下を設定する
      *  @param  テクスチャ座標の右下
      *  @return なし
      *
@@ -324,5 +324,45 @@ namespace Particle
     void C_ParticleSystem::SetTextureCoordLowerRight(const Vector2& rTextureCoordLowerRight)
     {
         upImpl_->SetTextureCoordLowerRight(rTextureCoordLowerRight);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  パーティクルシステムが有効か判断するフラグを取得する
+     *  @param  なし
+     *  @return パーティクルシステムが有効か判断するフラグ
+     *
+     ****************************************************************/
+    bool C_ParticleSystem::GetEnableFlag() const
+    {
+        return upImpl_->GetEnableFlag();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  パーティクルシステムが有効か判断するフラグを設定する
+     *  @param  パーティクルシステムが有効か判断するフラグ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_ParticleSystem::SetEnableFlag(bool enableFlag)
+    {
+        upImpl_->SetEnableFlag(enableFlag);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ブレンド関数の設定する
+     *  @param  新しい色の要素
+     *  @param  現在の色の要素
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_ParticleSystem::SetBlendFunction(OpenGL::BlendEnum sourceFactor, OpenGL::BlendEnum destinationFactor)
+    {
+
     }
 }

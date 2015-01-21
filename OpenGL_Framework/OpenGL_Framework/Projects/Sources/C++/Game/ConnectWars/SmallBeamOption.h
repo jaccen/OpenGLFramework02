@@ -29,5 +29,7 @@ namespace ConnectWars
     public:
         C_SmallBeamOption(const std::string& rId, int32_t type);            // コンストラクタ
         virtual ~C_SmallBeamOption() override;                              // デストラクタ
+    private:
+        void DoDraw() override;                                             // 非公開の描画処理
     };
 }

@@ -147,17 +147,4 @@ namespace Scene
     {
         return pSceneChanger_;
     }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  親のシーンを取得する
-     *  @param  なし
-     *  @return 親のシーン
-     *
-     ****************************************************************/
-    C_BaseScene* C_BaseScene::GetParentScene() const
-    {
-        return pParentScene_;
-    }
 }

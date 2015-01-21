@@ -22,14 +22,14 @@ namespace Physics
      *  @param  最大オブジェクト数
      *
      ****************************************************************/
-    C_PhysicsEngine::C_PhysicsEngine(const Vector3& rWorldMin, 
-                                     const Vector3& rWorldMax,
-                                     uint16_t maxObjectCount) :
+    C_PhysicsEngine::C_PhysicsEngine(const Vector3& rWorldMin,
+        const Vector3& rWorldMax,
+        uint16_t maxObjectCount) :
 
         // 実装情報
-        upImpl_(std::make_unique<C_PhysicsEngineImpl>(rWorldMin, 
-                                                      rWorldMax,
-                                                      maxObjectCount))
+        upImpl_(std::make_unique<C_PhysicsEngineImpl>(rWorldMin,
+        rWorldMax,
+        maxObjectCount))
 
     {
     }
@@ -55,7 +55,7 @@ namespace Physics
      *
      ****************************************************************/
     void C_PhysicsEngine::Initialize(const Vector3& rGravity,
-                                     float airDensity)
+        float airDensity)
     {
         upImpl_->Initialize(rGravity, airDensity);
     }
@@ -64,13 +64,13 @@ namespace Physics
     /*************************************************************//**
      *
      *  @brief  物理エンジンの更新処理を行う
-     *  @param  経過時間( 秒 )
+     *  @param  なし
      *  @return なし
      *
      ****************************************************************/
-    void C_PhysicsEngine::Update(float deltaTime)
+    void C_PhysicsEngine::Update()
     {
-        upImpl_->Update(deltaTime);
+        upImpl_->Update();
     }
 
 
@@ -97,8 +97,8 @@ namespace Physics
      *
      ****************************************************************/
     void C_PhysicsEngine::AddRigidBody(C_RigidBody* pRigidBody,
-                                       int16_t collisionObjectType, 
-                                       int16_t collisionMask)
+        int16_t collisionObjectType,
+        int16_t collisionMask)
     {
         if (collisionObjectType == -1 || collisionMask == -1)
         {
@@ -121,8 +121,8 @@ namespace Physics
      *
      ****************************************************************/
     void C_PhysicsEngine::AddSoftBody(C_SoftBody* pSoftBody,
-                                      int16_t collisionObjectType,
-                                      int16_t collisionMask)
+        int16_t collisionObjectType,
+        int16_t collisionMask)
     {
         upImpl_->GetWorld()->addSoftBody(pSoftBody->GetSoftBody(), collisionObjectType, collisionMask);
     }
@@ -216,11 +216,50 @@ namespace Physics
      *
      ****************************************************************/
     void C_PhysicsEngine::SetSimulationSubstepCallbackFunction(SimulationSubstepCallbackFunction pSimulationSubstepCallbackFunction,
-                                                               void* pWorldUserInfo,
-                                                               bool previousSubstepCallbackFlag)
+        void* pWorldUserInfo,
+        bool previousSubstepCallbackFlag)
     {
-        upImpl_->GetWorld()->setInternalTickCallback(pSimulationSubstepCallbackFunction, 
-                                                     pWorldUserInfo,
-                                                     previousSubstepCallbackFlag);
+        upImpl_->GetWorld()->setInternalTickCallback(pSimulationSubstepCallbackFunction,
+            pWorldUserInfo,
+            previousSubstepCallbackFlag);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  1フレームのシミュレーション時間を設定する
+     *  @param  1フレームのシミュレーション時間
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_PhysicsEngine::SetFrameSimulationTime(float frameSimulationTime)
+    {
+        upImpl_->SetFrameSimulationTime(frameSimulationTime);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  最大サブステップ数を設定する
+     *  @param  最大サブステップ数
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_PhysicsEngine::SetMaxSubStepCount(int32_t maxSubStepCount)
+    {
+        upImpl_->SetMaxSubStepCount(maxSubStepCount);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  アクティブ状態を有効化する
+     *  @param  有効か判断するフラグ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_PhysicsEngine::EnableActive(bool validFlag)
+    {
+
     }
 }

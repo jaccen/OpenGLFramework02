@@ -25,7 +25,7 @@ namespace Task
 namespace ConnectWars
 {
     /* ï ñº */
-    using PlayerPtr = std::shared_ptr<C_BasePlayer>;                                                // PlayerPtrå^
+    using PlayerPtr = std::shared_ptr<C_BasePlayer>;                            // PlayerPtrå^
 
 
     //-------------------------------------------------------------

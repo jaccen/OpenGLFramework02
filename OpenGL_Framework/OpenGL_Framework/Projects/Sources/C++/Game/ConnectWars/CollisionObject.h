@@ -77,6 +77,8 @@ namespace ConnectWars
         virtual void SetPosition(const Physics::Vector3& rPosition) = 0;                    // 座標を設定
         void SetCollisionPoint(const Physics::Vector3& rCollisionPoint);                    // 衝突点を設定
         void SetInvincibleFlag(bool invincibleFlag);                                        // 無敵フラグを設定
+        void ResetCollidedObjectId();                                                       // 衝突したオブジェクトのIDをリセット
+        const Physics::Vector3& GetCollisionPoint() const;                                  // 衝突点を取得
     protected:
         Matrix4x4 modelMatrix_;                                                             ///< @brief モデル行列
         std::unique_ptr<C_BaseHitPoint> upHitPoint_;                                        ///< @brief ヒットポイント
@@ -84,9 +86,6 @@ namespace ConnectWars
         Shader::GLSL::GlslObjectPtr pGlslObject_;                                           ///< @brief GLSLオブジェクト
         Shader::GLSL::UniformBufferPtr pUniformBuffer_;                                     ///< @brief ユニフォームバッファ
         Shader::GLSL::UniformBlockIndex uniformBlockIndex_ = 0;                             ///< @brief ユニフォームブロックのインデックス
-
-        void ResetCollidedObjectId();                                                       // 衝突したオブジェクトのIDをリセット
-        const Physics::Vector3& GetCollisionPoint() const;                                  // 衝突点を取得
     private:
         std::vector<std::string> collidedObjectIdList_;                                     ///< @brief 衝突したオブジェクトのIDリスト
         std::unique_ptr<Physics::Vector3> upCollisionPoint_;                                ///< @brief 衝突点

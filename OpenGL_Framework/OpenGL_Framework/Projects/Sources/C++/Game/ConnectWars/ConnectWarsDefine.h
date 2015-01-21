@@ -86,13 +86,12 @@ namespace ConnectWars
                     const char* s_pNORMAL = "NormalPlayer";                                                                     ///< @brief 通常プレイヤー
                 }
 
-
                 /* オプション */
                 namespace Option
                 {
                     const char* s_pSPEED_UP = "SpeedUpOption";                                                                  ///< @brief スピードアップオプション
+                    const char* s_pSMALL_BEAM = "SmallBeamOption";                                                              ///< @brief スモールビームオプション
                 }
-
 
                 /* 弾 */
                 namespace Bullet
@@ -101,6 +100,21 @@ namespace ConnectWars
                     namespace Player
                     {
                         const char* s_pBEAM = "PlayerBeamBullet";                                                               ///< @brief ビーム弾
+                    }
+
+                    /* オプション */
+                    namespace Option
+                    {
+                        const char* s_pSMALL_BEAM = "OptionSmallBeamBullet";                                                    ///< @brief 小さいビーム弾
+                    }
+                }
+
+                /* エフェクト */
+                namespace Effect
+                {
+                    namespace Bomb
+                    {
+                        const char* s_pCHARGE = "BombChargeEffect";                                                             ///< @brief ボムチャージ
                     }
                 }
             }
@@ -120,6 +134,7 @@ namespace ConnectWars
                 const char* s_pPLAYER = "Player";                                                                               ///< @brief プレイヤー
                 const char* s_pOPTION = "Option";                                                                               ///< @brief オプション
                 const char* s_pBULLET = "Bullet";                                                                               ///< @brief 弾
+                const char* s_pEFFECT = "Effect";                                                                               ///< @brief エフェクト
             }
 
 
@@ -127,7 +142,10 @@ namespace ConnectWars
             namespace JSON
             {
                 const char* s_pNORMAL_PLAYER = "NormalPlayerJson";                                                              ///< @brief 通常プレイヤー
-                const char* s_pSPEED_UP_OPTION = "SpeedUpOption";                                                               ///< @brief スピードアップオプション
+                const char* s_pSPEED_UP_OPTION = "SpeedUpOptionJson";                                                           ///< @brief スピードアップオプション
+                const char* s_pSMALL_BEAM_OPTION = "SmallBeamOptionJson";                                                       ///< @brief スモールビームオプション
+                const char* s_pPLAYER_BULLET = "PlayerBulletJson";                                                              ///< @brief プレイヤー弾
+                const char* s_pOPTION_BULLET = "OptionBulletJson";                                                              ///< @brief オプション弾
             }
 
             /* モデル */
@@ -141,6 +159,14 @@ namespace ConnectWars
             {
                 const char* s_pBULLET = "BulletSprite";                                                                         ///< @brief　弾
             }
+
+            /* パーティクル */
+            namespace Particle
+            {
+                const char* s_pCIRCLE_01 = "Circle01";                                                                          ///< @brief 円01
+                const char* s_pCIRCLE_02 = "Circle02";                                                                          ///< @brief 円02
+                const char* s_pRING_01 = "Ring01";                                                                              ///< @brief 輪01
+            }
         }
 
 
@@ -151,6 +177,9 @@ namespace ConnectWars
             namespace Texture
             {
                 const char* s_pSPRITE_BULLET = "Projects/Images/ConnectWars/Bullet/SpriteBullet.png";                           ///< @brief スプライトの弾
+                const char* s_pCIRCLE_01 = "Projects/Images/ConnectWars/Effect/Circle01.png";                                   ///< @brief 円01
+                const char* s_pCIRCLE_02 = "Projects/Images/ConnectWars/Effect/Circle02.png";                                   ///< @brief 円02
+                const char* s_pRING_01 = "Projects/Images/ConnectWars/Effect/Ring01.png";                                       ///< @brief 輪01
             }
 
             /* フォント */
@@ -172,7 +201,16 @@ namespace ConnectWars
             {
                 const char* s_pCAMERA = "Projects/GameDatas/ConnectWars/JSON/Camera/CameraData.json";                           ///< @brief カメラ
                 const char* s_pNORMAL_PLAYER = "Projects/GameDatas/ConnectWars/JSON/Player/NormalPlayerData.json";              ///< @brief 通常プレイヤー
-                const char* s_pSPEED_UP_OPTION = "Projects/GameDatas/ConnectWars/JSON/Option/SpeedUpOptionData.json";           ///< @brief 通常プレイヤー
+                const char* s_pSPEED_UP_OPTION = "Projects/GameDatas/ConnectWars/JSON/Option/SpeedUpOptionData.json";           ///< @brief スピードアップオプション
+                const char* s_pSMALL_BEAM_OPTION = "Projects/GameDatas/ConnectWars/JSON/Option/SmallBeamOptionData.json";       ///< @brief スモールビームオプション
+                const char* s_pPLAYER_BULLET = "Projects/GameDatas/ConnectWars/JSON/Bullet/Player/PlayerBulletDatas.json";      ///< @brief プレイヤー弾
+                const char* s_pOPTION_BULLET = "Projects/GameDatas/ConnectWars/JSON/Bullet/Option/OptionBulletDatas.json";      ///< @brief オプション弾
+            }
+
+            /* Lua */
+            namespace Lua
+            {
+                const char* s_pBOMB_CHARGE_EFFECT = "Projects/Sources/Lua/Effect/BombChargeEffect.lua";                         ///< @brief ボムのチャージエフェクト
             }
         }
 

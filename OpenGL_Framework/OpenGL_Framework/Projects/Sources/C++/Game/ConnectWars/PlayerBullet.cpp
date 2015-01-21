@@ -4,6 +4,7 @@
 #include "../../Library/Physics/CollisionShape/Convex/Box/BoxShape.h"
 #include "../../Library/Sprite/Creater/Manager/SpriteCreaterManager.h"
 #include "../../Library/Debug/Helper/DebugHelper.h"
+#include "../../Library/JSON/Object/Manager/JsonObjectManager.h"
 
 
 //-------------------------------------------------------------
@@ -26,15 +27,25 @@ namespace ConnectWars
                                            int32_t type,
                                            int32_t shooterType) : C_BaseBullet(rId, type)
     {
+        // JSONのデータを取得
+        assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pPLAYER_BULLET));
+        auto pPlayerBulletData = JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pPLAYER_BULLET).get();
+        auto& rPlayerBeamBulletData = (*pPlayerBulletData)["PlayerBulletDatas"]["Beam"];
+
         // ヒットポイントを生成
-        C_BaseBullet::upHitPoint_ = std::make_unique<C_BaseHitPoint>(1);
+        C_BaseBullet::upHitPoint_ = std::make_unique<C_BaseHitPoint>((*pPlayerBulletData)["PlayerBulletDatas"]["Beam"]["HitPoint"].GetValue<JSON::Integer>());
 
         // 剛体を作成し、物理エンジンに追加
         Physics::Transform transform;
         transform.setIdentity();
 
-		upRigidBody_ = std::make_unique<Physics::C_RigidBody>(newEx Physics::C_BoxShape(0.2f, 0.5f, 0.1f), transform, 1.0f);
+		upRigidBody_ = std::make_unique<Physics::C_RigidBody>(newEx Physics::C_BoxShape(static_cast<float>(rPlayerBeamBulletData["CollisionSize"][0].GetValue<JSON::Real>()),
+                                                                                        static_cast<float>(rPlayerBeamBulletData["CollisionSize"][1].GetValue<JSON::Real>()),
+                                                                                        static_cast<float>(rPlayerBeamBulletData["CollisionSize"][2].GetValue<JSON::Real>())),
+                                                                                        transform,
+                                                                                        static_cast<float>(rPlayerBeamBulletData["Mass"].GetValue<JSON::Real>()));
 
+        // 衝突判定のマスクをかける
         if (shooterType == TYPE_ENEMY)
         {
             int32_t collisionMask = C_CollisionObject::FILTER_TYPE_PLAYER
@@ -51,21 +62,29 @@ namespace ConnectWars
             Physics::C_PhysicsEngine::s_GetInstance()->AddRigidBody(upRigidBody_.get(), FILTER_TYPE_CONNECTMACHINE_BULLET, collisionMask);
         }
 
-        upRigidBody_->EnableCollisionResponse(false);
+        // 回転をフリーズし、自身を設定
         upRigidBody_->EnableFreezeRotation(true, true, true);
-
-        // 自身を設定
         upRigidBody_->SetUserPointer(this);
 
         // スプライトクリエイターを取得
         assert(Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater(ID::Sprite::s_pBULLET));
         wpSpriteCreater_ = Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater(ID::Sprite::s_pBULLET).get();
 
-        spriteCreateData_.size_.x_ = 0.4f;
-        spriteCreateData_.size_.y_ = 0.9f;
-        spriteCreateData_.color_.Fill(1.0f);
-        spriteCreateData_.textureLowerRight_.x_ = 16.0f;
-        spriteCreateData_.textureLowerRight_.y_ = 48.0f;
+        // スプライトの生成情報を設定
+        spriteCreateData_.size_.x_ = static_cast<float>(rPlayerBeamBulletData["SpriteData"]["Size"][0].GetValue<JSON::Real>());
+        spriteCreateData_.size_.y_ = static_cast<float>(rPlayerBeamBulletData["SpriteData"]["Size"][1].GetValue<JSON::Real>());
+
+        spriteCreateData_.angle_ = static_cast<float>(rPlayerBeamBulletData["SpriteData"]["Angle"].GetValue<JSON::Real>());
+
+        spriteCreateData_.color_.red_ = static_cast<float>(rPlayerBeamBulletData["SpriteData"]["Color"][0].GetValue<JSON::Real>());
+        spriteCreateData_.color_.green_ = static_cast<float>(rPlayerBeamBulletData["SpriteData"]["Color"][1].GetValue<JSON::Real>());
+        spriteCreateData_.color_.blue_ = static_cast<float>(rPlayerBeamBulletData["SpriteData"]["Color"][2].GetValue<JSON::Real>());
+        spriteCreateData_.color_.alpha_ = static_cast<float>(rPlayerBeamBulletData["SpriteData"]["Color"][3].GetValue<JSON::Real>());
+
+        spriteCreateData_.textureUpperLeft_.x_ = static_cast<float>(rPlayerBeamBulletData["SpriteData"]["Texture"]["UpperLeft"][0].GetValue<JSON::Real>());
+        spriteCreateData_.textureUpperLeft_.y_ = static_cast<float>(rPlayerBeamBulletData["SpriteData"]["Texture"]["UpperLeft"][1].GetValue<JSON::Real>());
+        spriteCreateData_.textureLowerRight_.x_ = static_cast<float>(rPlayerBeamBulletData["SpriteData"]["Texture"]["LowerRight"][0].GetValue<JSON::Real>());
+        spriteCreateData_.textureLowerRight_.y_ = static_cast<float>(rPlayerBeamBulletData["SpriteData"]["Texture"]["LowerRight"][1].GetValue<JSON::Real>());
     }
     
     

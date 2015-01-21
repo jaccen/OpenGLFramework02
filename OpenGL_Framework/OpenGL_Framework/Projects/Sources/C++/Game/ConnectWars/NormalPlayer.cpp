@@ -6,7 +6,6 @@
 #include "../../Library/Physics/Engine/PhysicsEngine.h"
 #include "../../Library/OpenGL/Manager/OpenGlManager.h"
 #include "../../Library/Shader/GLSL/Uniform/Manager/UniformBufferManager.h"
-#include "../../Library/Debug/Helper/DebugHelper.h"
 #include "../../Library/JSON/Object/Manager/JsonObjectManager.h"
 #include "../../Library/Debug/Helper/DebugHelper.h"
 
@@ -49,13 +48,14 @@ namespace ConnectWars
                               | C_CollisionObject::FILTER_TYPE_OBSTACLE;
 
 		upRigidBody_ = std::make_unique<Physics::C_RigidBody>(newEx Physics::C_SphereShape(radius_), transform, static_cast<float>((*pPlayerData)["CreateData"]["Mass"].GetValue<JSON::Real>()));
-        Physics::C_PhysicsEngine::s_GetInstance()->AddRigidBody(upRigidBody_.get(), 
-                                                                C_CollisionObject::FILTER_TYPE_PLAYER,
-                                                                collisionMask);
-
+        
         // 衝突応答をなくし、回転を全てフリーズ
         upRigidBody_->EnableCollisionResponse(false);
         upRigidBody_->EnableFreezeRotation(true, true, true);
+        
+        Physics::C_PhysicsEngine::s_GetInstance()->AddRigidBody(upRigidBody_.get(), 
+                                                                C_CollisionObject::FILTER_TYPE_PLAYER,
+                                                                collisionMask);
 
         // 自身を設定
         upRigidBody_->SetUserPointer(this);

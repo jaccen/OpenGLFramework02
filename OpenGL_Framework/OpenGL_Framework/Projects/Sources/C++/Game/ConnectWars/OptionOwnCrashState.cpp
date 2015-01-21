@@ -46,7 +46,7 @@ namespace ConnectWars
         pOption->SetDefeatedFlag(true);
 
         // エフェクトを生成
-        //C_EffectGenerator::s_GetManagementInstance().Create(pOption->GetBombSelfCrashEffectId(), pOption->GetPosition());
+        // C_EffectGenerator::s_GetManagementInstance().Create(pOption->GetBombSelfCrashEffectId(), pOption->GetPosition());
     }
 
 

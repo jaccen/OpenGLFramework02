@@ -26,7 +26,7 @@ namespace ConnectWars
         C_RigidBodyStraightMoveLogic(const Physics::Vector3& rVelocity);            // コンストラクタ
         virtual ~C_RigidBodyStraightMoveLogic() override;                           // デストラクタ
         C_RigidBodyMoveLogic* DeepCopy() override;                                  // ディープコピー
-        void SetVelocity(const Physics::Vector3& rVelocity);                        // 加える力を設定
+        void SetVelocity(const Physics::Vector3& rVelocity);                        // 速度を設定
     private:
         std::unique_ptr<Physics::Vector3> upVelocity_;                              ///< @brief 速度
 
