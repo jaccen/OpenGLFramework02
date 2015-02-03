@@ -60,6 +60,7 @@ namespace ConnectWars
         float GetRadius() const;                                                                // ”¼Œa‚ğæ“¾
         virtual const Physics::Vector3& GetPosition() const override;                           // À•W‚ğæ“¾
         virtual void SetPosition(const Physics::Vector3& rPosition) override;                   // À•W‚ğİ’è
+        virtual const Physics::Matrix3x3& GetRotation() const override;                         // ‰ñ“]—Ê‚ğæ“¾
 
         static void s_SetOwnCrashDerayFrameInterval(uint32_t ownCrashDerayFrameInterval);       // ©”š’x‰„ƒtƒŒ[ƒ€”‚ÌŠÔŠu‚ğİ’è
     protected:

@@ -76,4 +76,30 @@ namespace ConnectWars
     {
         return true;
     }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  待機状態を有効化する
+     *  @param  有効か判断するフラグ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_GameController::EnableWait(bool validFlag)
+    {
+        waitFlag_ = validFlag;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  現在のフレーム数を取得する
+     *  @param  なし
+     *  @return 現在のフレーム数
+     *
+     ****************************************************************/
+    int32_t C_GameController::GetNowFrame() const
+    {
+        return frameCounter_.GetCount();
+    }
 }

@@ -31,7 +31,7 @@ namespace ConnectWars
         assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pNORMAL_PLAYER));
         auto pPlayerData = JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pNORMAL_PLAYER).get();
 
-        // ‹…Œ`ó‚ğ«¶¬
+        // ‹…Œ`ó‚ğ¶¬
         radius_ = static_cast<float>((*pPlayerData)["CreateData"]["Radius"].GetValue<JSON::Real>());
         ResetMoveLimitBoundingBox();
 

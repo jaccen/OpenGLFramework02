@@ -48,6 +48,19 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  移動量を設定する
+     *  @param  移動量
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_RigidBodyInputMoveLogic::SetMovement(float movement)
+    {
+        movement_ = movement;
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  ディープコピーを行う
      *  @param  なし
      *  @return 自身のコピー
@@ -55,7 +68,7 @@ namespace ConnectWars
      ****************************************************************/
     C_RigidBodyMoveLogic* C_RigidBodyInputMoveLogic::DeepCopy()
     {
-        return newEx C_RigidBodyInputMoveLogic(*this);
+        return newEx C_RigidBodyInputMoveLogic(movement_, movementScale_);
     }
 
 

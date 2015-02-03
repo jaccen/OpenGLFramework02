@@ -81,6 +81,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseBackground.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseBomb.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseBullet.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseEffect.h" />
@@ -92,11 +93,14 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BasePlayer.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BasePower.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BombChargeEffect.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BoxEnemy.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BulletDestroyedState.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BulletFireState.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BulletGenerator.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\CameraController.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EffectGenerator.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EnemyAdventState.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EnemyGenerator.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GameController.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\LoadFunction.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionBullet.h" />
@@ -143,6 +147,7 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Shooter.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ShotLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\SmallBeamOption.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Space.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\SpeedUpOption.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Stage01Scene.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\TitleScene.h" />
@@ -194,7 +199,11 @@
     <ClInclude Include="Projects\Sources\C++\Library\JSON\Object\JsonObject.h" />
     <ClInclude Include="Projects\Sources\C++\Library\JSON\Object\Manager\JsonObjectManager.h" />
     <ClInclude Include="Projects\Sources\C++\Library\JSON\Object\Manager\JsonObjectManagerImpl.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\KeyFrame\Key.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\KeyFrame\KeyAnimation.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Light\Light\Directional\DirectionalLight.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Light\Light\Light.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Light\Light\Point\PointLight.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Light\Manager\LightManager.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Light\Manager\LightManagerImpl.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Lua\LuaStateManager.h" />
@@ -202,6 +211,7 @@
     <ClInclude Include="Projects\Sources\C++\Library\Material\Manager\MaterialManager.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Material\Manager\MaterialManagerImpl.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Material\Material\Material.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Material\Material\Phong\PhongMaterial.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Math\Define\MathDefine.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Math\Easing\Easing.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Math\Fuzzy\Fuzzy.h" />
@@ -293,7 +303,8 @@
     <ClInclude Include="Projects\Sources\C++\Library\Texture\Manager\TextureManager.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Texture\Manager\TextureManagerImpl.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Texture\TextureDefine.h" />
-    <ClInclude Include="Projects\Sources\C++\Library\Thread\Thread.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Thread\Mutex\Mutex.h" />
+    <ClInclude Include="Projects\Sources\C++\Library\Thread\Thread\Thread.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Timer\Counter\Frame\FrameCounter.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Timer\Manager\TimeManager.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Timer\Manager\TimeManagerImpl.h" />
@@ -322,6 +333,7 @@
     <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\stack_content_by_name.cpp" />
     <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\weak_ref.cpp" />
     <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\wrapper_base.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseBackground.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseBomb.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseBullet.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseEffect.cpp" />
@@ -343,6 +355,8 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ConnectMachine.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ConnectWars.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EffectGenerator.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EnemyAdventState.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EnemyGenerator.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EvenIntervalShotLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\GameController.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\InputShotLogic.cpp" />
@@ -380,7 +394,9 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ShieldOption.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Shooter.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ShotLogic.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BoxEnemy.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\SmallBeamOption.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Space.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\SpeedUpOption.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Stage01Scene.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\TitleScene.cpp" />
@@ -466,7 +482,8 @@
     <ClCompile Include="Projects\Sources\C++\Library\Sprite\Creater\SpriteCreater.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Task\System\General\GeneralTaskSystem.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Texture\Manager\TextureManager.cpp" />
-    <ClCompile Include="Projects\Sources\C++\Library\Thread\Thread.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Thread\Mutex\Mutex.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Library\Thread\Thread\Thread.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Timer\Counter\Frame\FrameCounter.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Timer\Manager\TimeManager.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\View\ViewHelper.cpp" />
@@ -481,10 +498,12 @@
   <ItemGroup>
     <None Include="Projects\GameDatas\ConnectWars\JSON\Bullet\Option\OptionBulletDatas.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Bullet\Player\PlayerBulletDatas.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Enemy\Stage01\Stage01EnemyData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\OpenGL\OpenGLData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Option\SmallBeamOptionData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Option\SpeedUpOptionData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Player\NormalPlayerData.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Task\TaskPriorityData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Window\MainWindowData.json" />
     <None Include="Projects\Models\Test\Box\Box.material" />
     <None Include="Projects\Models\Test\Box\Box.model" />
@@ -495,8 +514,8 @@
     <None Include="Projects\Shaders\GLSL\Debug\DebugString.vert" />
     <None Include="Projects\Shaders\GLSL\Figure\Figure.frag" />
     <None Include="Projects\Shaders\GLSL\Figure\Figure.vert" />
-    <None Include="Projects\Shaders\GLSL\HalfLambert\HalfLambertPhong.frag" />
-    <None Include="Projects\Shaders\GLSL\HalfLambert\HalfLambertPhong.vert" />
+    <None Include="Projects\Shaders\GLSL\HalfLambertPhong\HalfLambertPhong.frag" />
+    <None Include="Projects\Shaders\GLSL\HalfLambertPhong\HalfLambertPhong.vert" />
     <None Include="Projects\Shaders\GLSL\Load\Load.frag" />
     <None Include="Projects\Shaders\GLSL\Load\Load.geom" />
     <None Include="Projects\Shaders\GLSL\Load\Load.vert" />

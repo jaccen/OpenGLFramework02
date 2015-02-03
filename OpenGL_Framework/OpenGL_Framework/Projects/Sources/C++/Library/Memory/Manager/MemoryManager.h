@@ -8,6 +8,7 @@
 
 /* ヘッダファイル */
 #include "../List/MemoryList.h"
+#include "../../Thread/Mutex/Mutex.h"
 
 
 //-------------------------------------------------------------
@@ -37,6 +38,15 @@ namespace Memory
 
         /* 解放していないメモリを出力 */
         static void s_PrintNoDeleteMemory();
+
+        /* メモリー用のミューテックスを作成 */
+        static void s_CreateMemoryMutex();
+
+        /* メモリー用のミューテックスを破棄 */
+        static void s_DestoryMemoryMutex();
+
+        /* メモリー用のミューテックスを取得 */
+        static Thread::C_Mutex* s_GetMemoryMutex();
     };
 }
 
@@ -53,7 +63,20 @@ namespace Memory
  ****************************************************************/
 inline void* operator new(std::size_t size)
 {
-    return Memory::C_MemoryManager::s_MemoryAlloc(size, "Unknown", 0);
+    void* pPointer = nullptr;
+
+    if (Memory::C_MemoryManager::s_GetMemoryMutex())
+    {
+        Memory::C_MemoryManager::s_GetMemoryMutex()->Lock();
+        pPointer = Memory::C_MemoryManager::s_MemoryAlloc(size, "Unknown", 0);
+        Memory::C_MemoryManager::s_GetMemoryMutex()->Unlock();
+    }
+    else
+    {
+        pPointer = Memory::C_MemoryManager::s_MemoryAlloc(size, "Unknown", 0);
+    }
+
+    return pPointer;
 }
 
 
@@ -68,7 +91,20 @@ inline void* operator new(std::size_t size)
  ****************************************************************/
 inline void* operator new(std::size_t size, const char* pFileName, int32_t lineNumber)
 {
-    return Memory::C_MemoryManager::s_MemoryAlloc(size, pFileName, lineNumber);
+    void* pPointer = nullptr;
+
+    if (Memory::C_MemoryManager::s_GetMemoryMutex())
+    {
+        Memory::C_MemoryManager::s_GetMemoryMutex()->Lock();
+        pPointer = Memory::C_MemoryManager::s_MemoryAlloc(size, pFileName, lineNumber);
+        Memory::C_MemoryManager::s_GetMemoryMutex()->Unlock();
+    }
+    else
+    {
+        pPointer = Memory::C_MemoryManager::s_MemoryAlloc(size, pFileName, lineNumber);
+    }
+
+    return pPointer;
 }
 
 
@@ -83,7 +119,20 @@ inline void* operator new(std::size_t size, const char* pFileName, int32_t lineN
  ****************************************************************/
 inline void* operator new[](std::size_t size, const char* pFileName, int32_t lineNumber)
 {
-    return ::operator new(size, pFileName, lineNumber);
+    void* pPointer = nullptr;
+
+    if (Memory::C_MemoryManager::s_GetMemoryMutex())
+    {
+        Memory::C_MemoryManager::s_GetMemoryMutex()->Lock();
+        pPointer = ::operator new(size, pFileName, lineNumber);
+        Memory::C_MemoryManager::s_GetMemoryMutex()->Unlock();
+    }
+    else
+    {
+        pPointer = ::operator new(size, pFileName, lineNumber);
+    }
+
+    return pPointer;
 }
 
 
@@ -96,7 +145,16 @@ inline void* operator new[](std::size_t size, const char* pFileName, int32_t lin
  ****************************************************************/
 inline void operator delete(void* pDeletePointer) 
 {
-    Memory::C_MemoryManager::s_MemoryFree(pDeletePointer);
+    if (Memory::C_MemoryManager::s_GetMemoryMutex())
+    {
+        Memory::C_MemoryManager::s_GetMemoryMutex()->Lock();
+        Memory::C_MemoryManager::s_MemoryFree(pDeletePointer);
+        Memory::C_MemoryManager::s_GetMemoryMutex()->Unlock();
+    }
+    else
+    {
+        Memory::C_MemoryManager::s_MemoryFree(pDeletePointer);
+    }
 }
 
 
@@ -109,7 +167,16 @@ inline void operator delete(void* pDeletePointer)
  ****************************************************************/
 inline void operator delete[](void* pDeletePointer)
 {
-    ::operator delete(pDeletePointer);
+    if (Memory::C_MemoryManager::s_GetMemoryMutex())
+    {
+        Memory::C_MemoryManager::s_GetMemoryMutex()->Lock();
+        ::operator delete(pDeletePointer);
+        Memory::C_MemoryManager::s_GetMemoryMutex()->Unlock();
+    }
+    else
+    {
+        ::operator delete(pDeletePointer);
+    }
 }
 
 
@@ -124,7 +191,16 @@ inline void operator delete[](void* pDeletePointer)
  ****************************************************************/
 inline void operator delete(void* pDeletePointer, const char* pFileName, int32_t lineNumber) 
 {
-    Memory::C_MemoryManager::s_MemoryFree(pDeletePointer);
+    if (Memory::C_MemoryManager::s_GetMemoryMutex())
+    {
+        Memory::C_MemoryManager::s_GetMemoryMutex()->Lock();
+        Memory::C_MemoryManager::s_MemoryFree(pDeletePointer);
+        Memory::C_MemoryManager::s_GetMemoryMutex()->Unlock();
+    }
+    else
+    {
+        Memory::C_MemoryManager::s_MemoryFree(pDeletePointer);
+    }
 }
 
 
@@ -139,7 +215,17 @@ inline void operator delete(void* pDeletePointer, const char* pFileName, int32_t
  ****************************************************************/
 inline void operator delete[](void* pDeletePointer, const char* pFileName, int32_t lineNumber)
 {
-    ::operator delete(pDeletePointer);
+    if (Memory::C_MemoryManager::s_GetMemoryMutex())
+    {
+        Memory::C_MemoryManager::s_GetMemoryMutex()->Lock();
+        ::operator delete(pDeletePointer);
+        Memory::C_MemoryManager::s_GetMemoryMutex()->Unlock();
+    }
+    else
+    {
+        ::operator delete(pDeletePointer);
+    }
+
 }
 
 

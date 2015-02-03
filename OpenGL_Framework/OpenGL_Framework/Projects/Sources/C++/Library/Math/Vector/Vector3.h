@@ -101,6 +101,25 @@ namespace Math
         S_Vector3 GetClampLength(T minLength, T maxLength) const;                                                   // 長さでクランプしたベクトルを取得
         std::string GetConvertToString() const;                                                                     // ベクトルを文字列へ変換して取得
 
+        /* Swizzle */
+        template<eVectorFactor factor0>
+        S_Vector3 Get() const
+        {
+            return S_Vector3(a_[factor0], a_[factor0], a_[factor0]);
+        }
+         
+        template<eVectorFactor factor0, eVectorFactor factor1>
+        S_Vector3 Get() const
+        {
+            return S_Vector3(a_[factor0], a_[factor1], a_[factor1]);
+        }
+         
+        template<eVectorFactor factor0, eVectorFactor factor1, eVectorFactor factor2>
+        S_Vector3 Get() const
+        {
+            return S_Vector3(a_[factor0], a_[factor1], a_[factor2]);
+        }
+
         /* 静的メンバ変数 */
         static T s_DotProduct(const S_Vector3& rLhs, const S_Vector3& rRhs);                                        // 内積
         static S_Vector3 s_CrossProduct(const S_Vector3& rLhs, const S_Vector3& rRhs);                              // 外積

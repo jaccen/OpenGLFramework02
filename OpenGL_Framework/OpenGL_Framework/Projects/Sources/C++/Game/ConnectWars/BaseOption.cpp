@@ -270,7 +270,7 @@ namespace ConnectWars
 
         // 連結時の移動ロジックに変更
         assert(pPlayer_);
-        upMoveLogic_ = std::make_unique<C_RigidBodyConnectMoveLogic>(pPlayer_, offsetFromPlayer_);
+        upMoveLogic_ = std::make_unique<C_RigidBodyConnectMoveLogic>(pPlayer_, *upOffsetFromPlayer_);
     }
 
 
@@ -356,7 +356,7 @@ namespace ConnectWars
      ****************************************************************/
     const Physics::Vector3& C_BaseOption::GetOffsetFromPlayer() const
     {
-        return offsetFromPlayer_;
+        return *upOffsetFromPlayer_;
     }
 
 
@@ -476,7 +476,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseOption::SetOffsetFromPlayer(const Physics::Vector3& rOffsetFromPlayer)
     {
-        offsetFromPlayer_ = rOffsetFromPlayer;
+        upOffsetFromPlayer_ = std::make_unique<Physics::Vector3>(rOffsetFromPlayer);
     }
 
 

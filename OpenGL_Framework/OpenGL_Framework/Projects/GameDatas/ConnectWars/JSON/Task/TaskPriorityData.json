@@ -1,0 +1,27 @@
+{
+  "Priority" :
+  {
+    "Update" :
+    {
+      "GameController" : 100.0,
+      "Player" : 10.0,
+      "Option" : 9.0,
+      "Enemy" : 8.0,
+      "Bullet" : 7.0,
+      "Obstacle" : 6.0,
+      "Bomb" : 5.0,
+      "Effect" : 4.0
+    },
+    "Draw" :
+    {
+      "GameController" : 100.0,
+      "Player" : 4.0,
+      "Option" : 5.0,
+      "Enemy" : 6.0,
+      "Bullet" : 7.0,
+      "Obstacle" : 8.0,
+      "Bomb" : 9.0,
+      "Effect" : 10.0
+    }
+  }
+}

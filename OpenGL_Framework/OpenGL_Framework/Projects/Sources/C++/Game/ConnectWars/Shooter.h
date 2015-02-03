@@ -48,5 +48,6 @@ namespace ConnectWars
         virtual void MoveLimitCheck() override = 0;                                             // 移動制限を確認
         virtual const Physics::Vector3& GetPosition() const override = 0;                       // 座標を取得  
         virtual void SetPosition(const Physics::Vector3& rPosition) override = 0;               // 座標を設定
+        virtual const Physics::Matrix3x3& GetRotation() const = 0;                              // 回転量を取得
     };
 }

@@ -116,6 +116,19 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  ‰ñ“]—Ê‚ğæ“¾‚·‚é
+     *  @param  ‚È‚µ
+     *  @return ‰ñ“]—Ê
+     *
+     ****************************************************************/
+    const Physics::Matrix3x3& C_ConnectMachine::GetRotation() const
+    {
+        return upRigidBody_->GetTransform().getBasis();
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  ©”š’x‰„ƒtƒŒ[ƒ€”‚ÌŠÔŠu‚ğİ’è‚·‚é
      *  @param  ©”š’x‰„ƒtƒŒ[ƒ€”‚ÌŠÔŠu
      *  @return ‚È‚µ

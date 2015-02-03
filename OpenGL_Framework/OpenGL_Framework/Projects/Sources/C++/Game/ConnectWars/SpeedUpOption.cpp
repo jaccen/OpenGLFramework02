@@ -73,7 +73,9 @@ namespace ConnectWars
         upHitPoint_ = std::make_unique<C_BaseHitPoint>((*pOptionData)["CreateData"]["HitPoint"].GetValue<JSON::Integer>());
 
         // ˆÚ“®‚ÌƒƒWƒbƒN‚ğì¬
-        upMoveLogic_ = std::make_unique<C_RigidBodyStraightMoveLogic>(Physics::Vector3(0.0f, -1.0f, 0.0f) * static_cast<float>((*pOptionData)["CreateData"]["Movement"].GetValue<JSON::Real>()));
+        upMoveLogic_ = std::make_unique<C_RigidBodyStraightMoveLogic>();
+        upMoveLogic_->SetDirection(Physics::Vector3(0.0f, -1.0f, 0.0f));
+        upMoveLogic_->SetMovement(static_cast<float>((*pOptionData)["CreateData"]["Movement"].GetValue<JSON::Real>()));
     }
 
 

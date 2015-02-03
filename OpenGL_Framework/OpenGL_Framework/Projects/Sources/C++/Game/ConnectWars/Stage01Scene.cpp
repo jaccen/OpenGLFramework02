@@ -1,6 +1,7 @@
 /* ヘッダファイル */
 #include "Stage01Scene.h"
 #include "LoadScene.h"
+#include "RootScene.h"
 #include "LoadFunction.h"
 #include "ConnectWarsDefine.h"
 #include "SpeedUpOption.h"
@@ -8,6 +9,7 @@
 #include "PlayerBullet.h"
 #include "OptionBullet.h"
 #include "BombChargeEffect.h"
+#include "BoxEnemy.h"
 #include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
 #include "../../Library/Texture/Manager/TextureManager.h"
 #include "../../Library/Math/Define/MathDefine.h"
@@ -69,6 +71,9 @@ namespace ConnectWars
         // 残りのロード処理
         if (RemainLoadProcess() == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
 
+        // ゲームコントローラを生成
+        taskSystem_.Entry(std::make_shared<C_GameController>(ID::GameObject::s_pGAME_CONTROLLER, TYPE_CAMERA_CONTROLLER), Priority::Task::Update::s_gameController, Priority::Task::Draw::s_gameController);
+
         // プレイヤーを生成
         playerGenerator_.Create(ID::Generator::Player::s_pNORMAL);
 
@@ -77,6 +82,10 @@ namespace ConnectWars
         optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(2.0f, 4.0f, 0.0f));
         optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(4.0f, 6.0f, 0.0f));
         optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(6.0f, 8.0f, 0.0f));
+
+        optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f, 0.0f, 0.0f));
+
+        //enemyGenerator_.Create(ID::Generator::Enemy::s_pBOX);
         
         return Scene::ecSceneReturn::SUCCESSFUL;
     }
@@ -102,10 +111,11 @@ namespace ConnectWars
 
         if (Input::C_KeyboardManager::s_GetInstance()->GetPressingCount(Input::KeyCode::SDL_SCANCODE_R) == 1)
         {
-            auto pNextScene = newEx C_LoadScene;
-            pNextScene->SetLoadFunction(C_LoadFunction::s_LoadStage01Data);
-            pNextScene->SetNextSceneId(ID::Scene::s_pSTAGE01);
+            auto pNextScene = newEx C_RootScene;
+            //pNextScene->SetLoadFunction(C_LoadFunction::s_LoadStage01Data);
+            //pNextScene->SetNextSceneId(ID::Scene::s_pSTAGE01);
 
+            GetSceneChanger()->PopScene();
             GetSceneChanger()->ReplaceScene(pNextScene);
         }
 
@@ -158,6 +168,9 @@ namespace ConnectWars
     {
         taskSystem_.AllRemove();
         GameObject::C_GameObjectManager::s_GetInstance()->AllRemove();
+
+        JSON::C_JsonObjectManager::s_GetInstance()->AllRemove();
+        Model::SelfMade::C_ModelLoaderManager::s_GetInstance()->AllRemove();
     }
 
 
@@ -186,38 +199,59 @@ namespace ConnectWars
         }
 
         // 各モデルのバッファを作成
-        if (!OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pNORMAL_PLAYER))
+        const char* pPrimitiveIdList[] =
         {
-            assert(Model::SelfMade::C_ModelLoaderManager::s_GetInstance()->GetModelLoader(ID::Model::s_pNORMAL_PLAYER));
-            auto pPlayerModel = Model::SelfMade::C_ModelLoaderManager::s_GetInstance()->GetModelLoader(ID::Model::s_pNORMAL_PLAYER).get();
+            ID::Primitive::s_pNORMAL_PLAYER,
+            ID::Primitive::s_pBOX_ENEMY,
+            ID::Primitive::s_pSPACE,
+        };
 
-            // シングルメッシュ前提とする
-            auto& rMesh = pPlayerModel->GetMesh(0);
+        const char* pModelIdList[] = 
+        {
+            ID::Model::s_pNORMAL_PLAYER,
+            ID::Model::s_pBOX_ENEMY,
+            ID::Model::s_pSPACE,
+        };
 
-            uint32_t vertexCount = rMesh.vertices_.size();
-            std::vector<OpenGL::S_VertexPNT> vertices(vertexCount);
-
-            for (size_t i = 0; i < vertexCount; ++i)
+        for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pPrimitiveIdList); i < arraySize; ++i)
+        {
+            if (!OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(pPrimitiveIdList[i]))
             {
-                vertices[i].position_ = rMesh.vertices_[i].position_;
-                vertices[i].normal_ = rMesh.vertices_[i].normal_;
-                vertices[i].textureCoord_ = rMesh.vertices_[i].textureCoord_;
+                assert(Model::SelfMade::C_ModelLoaderManager::s_GetInstance()->GetModelLoader(pModelIdList[i]));
+                auto pModelData = Model::SelfMade::C_ModelLoaderManager::s_GetInstance()->GetModelLoader(pModelIdList[i]).get();
+
+                // シングルメッシュ前提とする
+                auto& rMesh = pModelData->GetMesh(0);
+
+                uint32_t vertexAttributeElementCountList[] = { 3, 3, 2, 4, 4, 4, 4 };
+                uint32_t vertexByteOffsetFlag[] = { 4, 4, 4, 4, 4, 1, 4 };
+                bool vertexTransferFlagList[] = { true, true, false, false, false, false, false };
+
+                OpenGL::DataEnum vertexAttributeDataTypeList[] =
+                {
+                    OpenGL::DataType::s_FLOAT,
+                    OpenGL::DataType::s_FLOAT,
+                    OpenGL::DataType::s_FLOAT,
+                    OpenGL::DataType::s_FLOAT,
+                    OpenGL::DataType::s_FLOAT,
+                    OpenGL::DataType::s_INT,
+                    OpenGL::DataType::s_FLOAT,
+                };
+
+                auto pModelBuffer = OpenGL::C_PrimitiveBuffer::s_Create(rMesh.vertices_.data(),
+                                                                        rMesh.vertices_.size(),
+                                                                        7,
+                                                                        vertexAttributeElementCountList,
+                                                                        vertexAttributeDataTypeList,
+                                                                        OpenGL::Modify::s_STATIC,
+                                                                        vertexByteOffsetFlag,
+                                                                        vertexTransferFlagList,
+                                                                        rMesh.indices_.data(),
+                                                                        rMesh.indices_.size(),
+                                                                        OpenGL::Modify::s_STATIC);
+
+                OpenGL::C_PrimitiveBufferManager::s_GetInstance()->Entry(pModelBuffer, pPrimitiveIdList[i]);
             }
-
-            uint32_t vertexAttributeElementCountList[] = { 3, 3, 2 };
-            OpenGL::DataEnum vertexAttributeDataTypeList[] = { OpenGL::DataType::s_FLOAT, OpenGL::DataType::s_FLOAT, OpenGL::DataType::s_FLOAT };
-            
-            auto ModelData = OpenGL::C_PrimitiveBuffer::s_Create(vertices.data(),
-                                                                 vertexCount,
-                                                                 3,
-                                                                 vertexAttributeElementCountList,
-                                                                 vertexAttributeDataTypeList,
-                                                                 OpenGL::Modify::s_STATIC,
-                                                                 rMesh.indices_.data(),
-                                                                 rMesh.indices_.size(),
-                                                                 OpenGL::Modify::s_STATIC);
-
-            OpenGL::C_PrimitiveBufferManager::s_GetInstance()->Entry(ModelData, ID::Primitive::s_pNORMAL_PLAYER);
         }
 
         // 各GLSLオブジェクトを作成
@@ -308,10 +342,20 @@ namespace ConnectWars
         optionGenerator_.RegistFunction(ID::Generator::Option::s_pSPEED_UP, []()->C_BaseOption*{ return newEx C_SpeedUpOption(ID::GameObject::s_pOPTION, TYPE_OPTION); });
         optionGenerator_.RegistFunction(ID::Generator::Option::s_pSMALL_BEAM, []()->C_BaseOption*{ return newEx C_SmallBeamOption(ID::GameObject::s_pOPTION, TYPE_OPTION); });
 
+        // 敵生成機の設定
+        /*
+        enemyGenerator_.SetTaskSystem(&taskSystem_);
+
+        assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_ENEMY_DATA));
+        enemyGenerator_.SetEnemyData(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_ENEMY_DATA).get());
+
+        enemyGenerator_.RegistFunction(ID::Generator::Enemy::s_pBOX, []()->C_BaseEnemy*{ return newEx C_BoxEnemy(ID::GameObject::s_pENEMY, TYPE_ENEMY); });
+        */
+
         // 弾生成機の設定
         bulletGenerator_.SetTaskSystem(&taskSystem_);
         bulletGenerator_.RegistFunction(ID::Generator::Bullet::Player::s_pBEAM, [](int32_t shooterType)->C_BaseBullet*{ return newEx C_PlayerBeamBullet(ID::GameObject::s_pBULLET, TYPE_BULLET, shooterType); });
-        bulletGenerator_.RegistFunction(ID::Generator::Bullet::Option::s_pSMALL_BEAM, [](int32_t shooterType)->C_BaseBullet*{ return newEx C_PlayerBeamBullet(ID::GameObject::s_pBULLET, TYPE_BULLET, shooterType); });
+        bulletGenerator_.RegistFunction(ID::Generator::Bullet::Option::s_pSMALL_BEAM, [](int32_t shooterType)->C_BaseBullet*{ return newEx C_OptionSmallBeamBullet(ID::GameObject::s_pBULLET, TYPE_BULLET, shooterType); });
 
         // エフェクト生成機の設定
         effectGenerator_.SetTaskSystem(&taskSystem_);

@@ -25,6 +25,15 @@ namespace Math
         const double s_EPSILON = 0.00001;                               ///< @brief 誤差値を示す極小の値
     }
 
+    /** 各成分 */
+    enum eVectorFactor
+    {
+        X = 0,                                                          ///< @brief X成分
+        Y = 1,                                                          ///< @brief Y成分
+        Z = 2,                                                          ///< @brief Z成分
+        W = 3,                                                          ///< @brief W成分
+    };
+
     /* 度数からラジアン値へ変換 */
     template<typename T>
     T ConvertDegreeToRadian(T degrees);

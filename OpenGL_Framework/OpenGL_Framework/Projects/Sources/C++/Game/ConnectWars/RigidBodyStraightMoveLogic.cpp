@@ -16,10 +16,10 @@ namespace ConnectWars
      *  @param  ‘¬“x
      *
      ****************************************************************/
-    C_RigidBodyStraightMoveLogic::C_RigidBodyStraightMoveLogic(const Physics::Vector3& rVelocity) :
+    C_RigidBodyStraightMoveLogic::C_RigidBodyStraightMoveLogic() :
 
-        // ‘¬“x
-        upVelocity_(std::make_unique<Physics::Vector3>(rVelocity))
+        // Œü‚«
+        upDirection_(std::make_unique<Physics::Vector3>())
 
     {
     }
@@ -45,20 +45,38 @@ namespace ConnectWars
      ****************************************************************/
     C_RigidBodyMoveLogic* C_RigidBodyStraightMoveLogic::DeepCopy()
     {
-        return newEx C_RigidBodyStraightMoveLogic(*upVelocity_);
+        auto pMoveLogic = newEx C_RigidBodyStraightMoveLogic();
+
+        pMoveLogic->SetDirection(*upDirection_);
+        pMoveLogic->SetMovement(movement_);
+
+        return pMoveLogic;
     }
 
 
     /*************************************************************//**
      *
-     *  @brief  ‰Á‚¦‚é—Í‚ðÝ’è‚·‚é
-     *  @param  ‰Á‚¦‚é—Í
+     *  @brief  Œü‚«‚ðÝ’è‚·‚é
+     *  @param  Œü‚«
      *  @return ‚È‚µ
      *
      ****************************************************************/
-    void C_RigidBodyStraightMoveLogic::SetVelocity(const Physics::Vector3& rVelocity)
+    void C_RigidBodyStraightMoveLogic::SetDirection(const Physics::Vector3& rDirection)
     {
-        *upVelocity_ = rVelocity;
+        *upDirection_ = rDirection;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ˆÚ“®—Ê‚ðÝ’è‚·‚é
+     *  @param  ˆÚ“®—Ê
+     *  @return ‚È‚µ
+     *
+     ****************************************************************/
+    void C_RigidBodyStraightMoveLogic::SetMovement(float movement)
+    {
+        movement_ = movement;
     }
 
 
@@ -71,6 +89,6 @@ namespace ConnectWars
      ****************************************************************/
     void C_RigidBodyStraightMoveLogic::DoProcess(RigidBody* pRigidBody)
     {
-        pRigidBody->SetLinearVelocity(*upVelocity_);
+        pRigidBody->SetLinearVelocity((*upDirection_) * movement_);
     }
 }

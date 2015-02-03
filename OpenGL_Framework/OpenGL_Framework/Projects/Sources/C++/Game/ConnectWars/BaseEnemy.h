@@ -4,6 +4,8 @@
 
 /* ヘッダファイル */
 #include "Shooter.h"
+#include "../../Library/State/Machine/StateMachine.h"
+#include "../../Library/Json/Object/JsonObject.h"
 
 
 //-------------------------------------------------------------
@@ -20,6 +22,14 @@ namespace ConnectWars
     class C_BaseBullet;
     class C_BaseObstacle;
     class C_BaseBomb;
+    class C_BaseGun;
+
+
+    /** ステートの種類 */
+    enum eStateType
+    {
+        ADVENT,                                                                             ///< @brief 出現
+    };
 
 
     //-------------------------------------------------------------
@@ -45,7 +55,11 @@ namespace ConnectWars
         virtual void CollisionProcess(C_BaseBomb* pBomb) override;                          // ボムとの衝突時処理
         virtual void Move();                                                                // 移動処理
         virtual void Shot();                                                                // 射撃処理
+        virtual void SetCreateDataWithJson(JSON::JsonObject* pJsonObject) = 0;              // JSONオブジェクトからデータを設定
+        virtual void ChangeState(int32_t stateType) = 0;                                    // ステートの変更処理
     protected:
+        std::vector<std::unique_ptr<C_BaseGun>> upGuns_;                                    ///< @brief 銃
+
         virtual void DoUpdate() = 0;                                                        // 非公開の更新処理
         virtual void DoDraw() = 0;                                                          // 非公開の描画処理
         virtual bool DoMessageProcess(const Telegram& rTelegram) = 0;                       // 非公開のメッセージ処理

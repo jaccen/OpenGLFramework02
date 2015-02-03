@@ -3,7 +3,6 @@
 #include "ConnectWarsDefine.h"
 #include "Stage01Scene.h"
 #include "../../Library/Font/FontManager.h"
-#include "../../Library/Camera/Camera/Orthographic/OrthographicCamera.h"
 #include "../../Library/Window/Manager/WindowManager.h"
 #include "../../Library/Debug/Helper/DebugHelper.h"
 #include "../../Library/Shader/GLSL/Uniform/Manager/UniformBufferManager.h"
@@ -236,7 +235,17 @@ namespace ConnectWars
             uint32_t vertexAttributeElementCountList[] = { 3 };
             OpenGL::DataEnum vertexAttributeDataTypeList[] = { OpenGL::DataType::s_FLOAT };
 
-            pRectangleData_ = OpenGL::C_PrimitiveBuffer::s_Create(&nowLoadingStringPosition_, 1, 1, vertexAttributeElementCountList, vertexAttributeDataTypeList, OpenGL::Modify::s_STATIC);
+            uint32_t vertexByteOffsetList[] = { 4 };
+            bool vertexTransferFlagList[] = { true };
+
+            pRectangleData_ = OpenGL::C_PrimitiveBuffer::s_Create(&nowLoadingStringPosition_,
+                                                                  1,
+                                                                  1,
+                                                                  vertexAttributeElementCountList,
+                                                                  vertexAttributeDataTypeList,
+                                                                  OpenGL::Modify::s_STATIC,
+                                                                  vertexByteOffsetList,
+                                                                  vertexTransferFlagList);
 
             pPrimitiveBufferManager_->Entry(pRectangleData_, ID::Primitive::s_pLOAD);
         }
@@ -245,23 +254,9 @@ namespace ConnectWars
             pRectangleData_ = pPrimitiveBufferManager_->GetPrimitiveBuffer(ID::Primitive::s_pLOAD).get();
         }
 
-        // カメラを作成し、取得
-        if (!pCameraManager_->GetCamera(ID::Camera::s_pUI))
-        {
-            assert(Window::C_WindowManager::s_GetInstance()->GetWindow());
-            auto pMainWindow = Window::C_WindowManager::s_GetInstance()->GetWindow().get();
-
-            auto pOrthograhicCamera = std::make_shared<Camera::C_OrthographicCamera>();
-            pOrthograhicCamera->SetClipSpace(0.0f, static_cast<float>(pMainWindow->GetWidth()), static_cast<float>(pMainWindow->GetHeight()), 0.0f);
-
-            pUiCamera_ = pOrthograhicCamera;
-            pUiCamera_->Update();
-            pCameraManager_->Entry(pUiCamera_, ID::Camera::s_pUI);
-        }
-        else
-        {
-            pUiCamera_ = pCameraManager_->GetCamera(ID::Camera::s_pUI).get();
-        }
+        // カメラを取得
+        assert(pCameraManager_->GetCamera(ID::Camera::s_pUI));
+        pUiCamera_ = pCameraManager_->GetCamera(ID::Camera::s_pUI).get();
 
         // GLSLオブジェクトを作成し、取得
         if (!pGlslObjectManager_->GetGlslObject(ID::Shader::s_pLOAD))

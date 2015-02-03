@@ -16,7 +16,7 @@
 
 
 /* OpenGL関連のヘッダファイル */
-#include <GL/glew.h>                                                    // OpenGL関連のヘッダ内で一番最初読み込む必要あり
+#include <GL/glew.h>                                                    // OpenGL関連のヘッダ内で一番最初読み込む必要がある
 #include <GL/glu.h>
 
 

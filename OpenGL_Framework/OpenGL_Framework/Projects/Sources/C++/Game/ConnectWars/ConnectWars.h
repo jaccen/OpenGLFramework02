@@ -11,6 +11,7 @@
 #include "../../Library/Sprite/Creater/Manager/SpriteCreaterManager.h"
 #include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
 #include "../../Library/Physics/Engine/PhysicsEngine.h"
+#include "../../Library/Thread/Thread/Thread.h"
 
 
 //-------------------------------------------------------------
@@ -40,6 +41,7 @@ namespace ConnectWars
         std::unique_ptr<GameObject::C_GameObjectManager> upGameObjectManager_;              ///< @brief ゲームオブジェクトマネージャー
         std::unique_ptr<GameObject::Message::C_MessageDispatcher> upMessageDispatcher_;     ///< @brief メッセージディスパッチャー
         std::unique_ptr<Physics::C_PhysicsEngine> upPhysicsEngine_;                         ///< @brief フィジックスエンジン
+        Thread::C_Thread physicsThread_;                                                    ///< @brief フィジックスエンジン用のスレッド
 
         bool Initialize() override;                                                         // 初期化処理
         bool Update() override;                                                             // 更新処理

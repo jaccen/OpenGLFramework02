@@ -47,10 +47,18 @@ namespace ConnectWars
     {
         if (upShotLogic_->Process() == true)
         {
+            auto pBulletMoveLogic = upBulletMoveLogic_->DeepCopy();
+
+            if (autoDirectionFlag_ == true)
+            {
+                auto bulletDirection = pShooter_->GetRotation() * (*upDirection_);
+                pBulletMoveLogic->SetDirection(bulletDirection);
+            }
+
             C_BulletGenerator::s_GetInstance()->Create(bulletId_, 
                                                        pShooter_->GetPosition() + (*upOffsetFromShooter_),
                                                        upBulletPower_->GetValue(),
-                                                       upBulletMoveLogic_->DeepCopy(),
+                                                       pBulletMoveLogic,
                                                        pShooter_->GetType());
         }
     }

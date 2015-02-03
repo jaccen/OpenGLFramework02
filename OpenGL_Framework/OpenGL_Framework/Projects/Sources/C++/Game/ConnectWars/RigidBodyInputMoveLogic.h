@@ -33,6 +33,8 @@ namespace ConnectWars
     public:
         C_RigidBodyInputMoveLogic(float movement = 1.0f, float movementScale = 1.0f);       // コンストラクタ
         ~C_RigidBodyInputMoveLogic() override;                                              // デストラクタ
+        void SetDirection(const Physics::Vector3& rDirection) override {};                  // 向きを設定
+        void SetMovement(float movement) override;                                          // 移動量を設定
         C_RigidBodyMoveLogic* DeepCopy() override;                                          // ディープコピー
         void SetMovementScale(float movementScale);                                         // 移動量のスケールを設定
     private:

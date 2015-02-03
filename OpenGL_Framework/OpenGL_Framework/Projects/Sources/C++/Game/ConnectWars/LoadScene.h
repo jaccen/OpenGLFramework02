@@ -11,7 +11,7 @@
 #include "../../Library/Shader/GLSL/Object/GlslObject.h"
 #include "../../Library/Camera/Manager/CameraManager.h"
 #include "../../Library/Timer/Counter/Frame/FrameCounter.h"
-#include "../../Library/Thread/Thread.h"
+#include "../../Library/Thread/Thread/Thread.h"
 #include <atomic>
 
 

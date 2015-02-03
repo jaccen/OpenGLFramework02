@@ -95,17 +95,27 @@ namespace ConnectWars
      ****************************************************************/
     bool C_ConnectWars::Update()
     {
+        // フィジックスエンジン用のスレッドを作成
+        physicsThread_.Create([](void* pData)
+        {
+            // フィジックスエンジンの更新処理
+            Physics::C_PhysicsEngine::s_GetInstance()->Update();
+
+            return 0;
+        },
+        "PhysicsThread");
+
         // ライブラリの更新処理
         if (C_Framework::Update() == false) return false;
 
         // パーティクルシステムマネージャーの更新処理
-        upParticleSystemManager_->Update();
+        Particle::C_ParticleSystemManager::s_GetInstance()->Update();
+
+        // フィジックスエンジン用スレッドの終了を待機
+        physicsThread_.Join();
 
         // メッセージディスパッチャーの更新処理
         upMessageDispatcher_->Update();
-        
-        // フィジックスエンジンの更新処理
-        upPhysicsEngine_->Update();
 
         // シーンマネージャーの更新処理
         auto sceneReturnValue = upSceneManager_->Update();

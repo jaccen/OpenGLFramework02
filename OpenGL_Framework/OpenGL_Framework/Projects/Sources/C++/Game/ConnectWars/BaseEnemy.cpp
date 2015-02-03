@@ -1,5 +1,6 @@
 /* ヘッダファイル */
 #include "BaseEnemy.h"
+#include "BaseGun.h"
 #include "CollisionProcess.h"
 
 
@@ -166,7 +167,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseEnemy::CollisionProcess(C_BaseBomb* pBomb)
     {
-        
+        C_CollisionProcess::s_EnemyAndBomb(this, pBomb);
     }
 
 

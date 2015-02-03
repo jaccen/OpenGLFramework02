@@ -1,7 +1,7 @@
 /* ヘッダファイル */
 #include "BulletGenerator.h"
 #include "BaseBullet.h"
-#include "../../Library//Task/System/General/GeneralTaskSystem.h"
+#include "../../Library/Task/System/General/GeneralTaskSystem.h"
 
 
 //-------------------------------------------------------------
@@ -37,7 +37,7 @@ namespace ConnectWars
     /*************************************************************//**
      *
      *  @brief  生成処理を行う
-     *  @param  弾のID
+     *  @param  ID
      *  @param  座標
      *  @param  パワー
      *  @param  移動のロジック

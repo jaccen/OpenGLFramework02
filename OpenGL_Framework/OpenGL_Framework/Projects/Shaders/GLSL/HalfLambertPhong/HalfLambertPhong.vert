@@ -2,8 +2,13 @@
 
 
 /* input */
-layout (location = 0) in vec3 v_position;
-layout (location = 1) in vec3 v_normal;
+layout (location = 0) in vec3 v_position;			// Use
+layout (location = 1) in vec3 v_normal;				// Use
+layout (location = 2) in vec3 v_textureCoord;		// Unused 
+layout (location = 3) in vec3 v_color;				// Unused 
+layout (location = 4) in vec3 v_tangent;			// Unused 
+layout (location = 5) in ivec4 v_boneIndex;			// Unused 
+layout (location = 6) in vec4 v_boneWeight;			// Unused 
 
 
 /* output */

@@ -75,6 +75,31 @@ namespace Math
         S_Vector4 GetClampLength(T minLength, T maxLength) const;                               // 長さでクランプしたベクトルを取得
         std::string GetConvertToString() const;                                                 // ベクトルを文字列へ変換して取得
 
+        /* Swizzle */
+        template<eVectorFactor factor0>
+        S_Vector4 Get() const
+        {
+            return S_Vector4(a_[factor0], a_[factor0], a_[factor0], a_[factor0]);
+        }
+         
+        template<eVectorFactor factor0, eVectorFactor factor1>
+        S_Vector4 Get() const
+        {
+            return S_Vector4(a_[factor0], a_[factor1], a_[factor1], a_[factor1]);
+        }
+         
+        template<eVectorFactor factor0, eVectorFactor factor1, eVectorFactor factor2>
+        S_Vector4 Get() const
+        {
+            return S_Vector4(a_[factor0], a_[factor1], a_[factor2], a_[factor2]);
+        }
+         
+        template<eVectorFactor factor0, eVectorFactor factor1, eVectorFactor factor2, eVectorFactor factor3>
+        S_Vector4 Get() const
+        {
+            return S_Vector4(a_[factor0], a_[factor1], a_[factor2], a_[factor3]);
+        }
+
         /* 静的メンバ関数 */
         static T s_DotProduct(const S_Vector4& rVector, const S_Vector4& rAnotherVector);       // 内積
         static S_Vector4 s_Lerp(const S_Vector4& rStartPoint,                                   // 線形補間

@@ -31,6 +31,8 @@ namespace ConnectWars
         C_RigidBodyConnectMoveLogic(C_CollisionObject* pTarget,                         // コンストラクタ
                                     const Physics::Vector3& rOffsetFromTarget);             
         virtual ~C_RigidBodyConnectMoveLogic() override;                                // デストラクタ
+        void SetDirection(const Physics::Vector3& rDirection) override {};              // 向きを設定
+        void SetMovement(float movement) override {};                                   // 移動量を設定
         C_RigidBodyMoveLogic* DeepCopy() override;                                      // ディープコピー
     private:
         C_CollisionObject* pTarget_ = nullptr;                                          ///< @brief ターゲット

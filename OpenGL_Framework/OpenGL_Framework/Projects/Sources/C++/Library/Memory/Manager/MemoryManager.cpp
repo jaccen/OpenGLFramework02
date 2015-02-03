@@ -2,6 +2,10 @@
 #include "MemoryManager.h"
 
 
+/* メモリー用のミューテックス */
+static std::unique_ptr<Thread::C_Mutex> s_upMemoryMutex_;
+
+
 //-------------------------------------------------------------
 //!
 //! @brief メモリ
@@ -146,5 +150,44 @@ namespace Memory
         {
             std::cout << "[ Memory::LeakReport ] : FileName : " << pLast->pFileName_ << ", LineNo(" << pLast->lineNumber_ << ")" << ", Size(" << pLast->size_ << ")" << std::endl;
         }
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  メモリー用のミューテックスを作成する
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_MemoryManager::s_CreateMemoryMutex()
+    {
+        s_upMemoryMutex_ = std::make_unique<Thread::C_Mutex>();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  メモリー用のミューテックスを破棄する
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_MemoryManager::s_DestoryMemoryMutex()
+    {
+        s_upMemoryMutex_.reset();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  メモリー用のミューテックスを取得する
+     *  @param  なし
+     *  @return メモリー用のミューテックス
+     *
+     ****************************************************************/
+    Thread::C_Mutex* C_MemoryManager::s_GetMemoryMutex()
+    {
+        return s_upMemoryMutex_.get();
     }
 }

@@ -74,6 +74,25 @@ namespace NeuralNetwork
 #pragma endregion
 
 
+#pragma region C_ActiveFunctionクラス
+
+
+    /*************************************************************//**
+     *
+     *  @brief  シグモイド導関数から傾きを求める
+     *  @param  値
+     *  @return 傾き
+     *
+     ****************************************************************/
+    float C_DerivativeFunction::s_Sigmoid(float x)
+    {
+        return x * (1.0f - x);
+    }
+
+
+#pragma endregion
+
+
 #pragma region S_Layer構造体
 
 
@@ -248,9 +267,7 @@ namespace NeuralNetwork
      ****************************************************************/
     void S_Layer::CalculateError()
     {
-        // シグモイド関数の導関数
-        static auto s_SigmoidDerivative = [](float x){ return x * (1.0f - x); };
-
+        /* 入力レイヤー時 */
         if (pParentLayer_ == nullptr)
         {
             for (auto& rNode : nodes_)
@@ -258,13 +275,15 @@ namespace NeuralNetwork
                 rNode.error_ = 0.0f;
             }
         }
+        /* 出力レイヤー時 */
         else if (pChildLayer_ == nullptr)
         {
             for (auto& rNode : nodes_)
             {
-                rNode.error_ = (rNode.targetOutputValue_ - rNode.outputValue_) * s_SigmoidDerivative(rNode.outputValue_);
+                rNode.error_ = (rNode.targetOutputValue_ - rNode.outputValue_) * pDerivativeFunction_(rNode.outputValue_);
             }
         }
+        /* 隠れレイヤー時 */
         else
         {
             // エラーの合計
@@ -279,7 +298,7 @@ namespace NeuralNetwork
                     errorSum += pChildLayer_->nodes_[i].error_ * rNode.weights_[i];
                 }
 
-                rNode.error_ = errorSum * s_SigmoidDerivative(rNode.outputValue_);
+                rNode.error_ = errorSum * pDerivativeFunction_(rNode.outputValue_);
             }
         }
     }

@@ -74,7 +74,7 @@ namespace ConnectWars
         std::unique_ptr<State::C_StateMachine<C_BaseOption>> upStateMachine_;                       ///< @brief ステートマシーン
         bool onceConnectFlag_ = false;                                                              ///< @brief 一度連結したか判断するフラグ
         bool connectFlag_ = false;                                                                  ///< @brief 連結されているか判断するフラグ
-        Physics::Vector3 offsetFromPlayer_;                                                         ///< @brief プレイヤーからのオフセット
+        std::unique_ptr<Physics::Vector3> upOffsetFromPlayer_;                                      ///< @brief プレイヤーからのオフセット
         C_BasePlayer* pPlayer_ = nullptr;                                                           ///< @brief プレイヤー
         bool defeatedFlag_ = false;                                                                 ///< @brief 撃破フラグ
         int32_t defeatedFrame_ = 60;                                                                ///< @brief 撃破状態のフレーム数

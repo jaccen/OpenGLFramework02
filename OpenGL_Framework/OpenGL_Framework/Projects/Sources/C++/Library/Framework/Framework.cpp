@@ -207,7 +207,7 @@ namespace Framework
      ****************************************************************/
     void C_Framework::Draw()
     {
-        Debug::C_DebugString::s_GetInstance()->Draw("[ FPS : " + std::to_string(Timer::C_TimeManager::s_GetInstance()->GetNowFps()) + " ]", Debug::Vector3(0.0f, 0.0f, 0.0f), 0.7f, 255, 255, 255);
+        //Debug::C_DebugString::s_GetInstance()->Draw("[ FPS : " + std::to_string(Timer::C_TimeManager::s_GetInstance()->GetNowFps()) + " ]", Debug::Vector3(0.0f, 0.0f, 0.0f), 0.7f, 255, 255, 255);
     }
 
 
@@ -255,6 +255,9 @@ namespace Framework
         // ゲームパッドマネージャーの終了処理
         Input::C_GamepadManager::s_GetInstance()->Finalize();
 
+        // メモリー用のミューテックスを破棄
+        Memory::C_MemoryManager::s_DestoryMemoryMutex();
+
         // OpenGLマネージャーの終了処理
         OpenGL::C_OpenGlManager::s_GetInstance()->Finalize();
 
@@ -282,7 +285,7 @@ namespace Framework
         _CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
 
         // メモリーリークが発生した位置を検知してくれる関数( 引数にメモリーリークした番号を入れる )
-        //_CrtSetBreakAlloc(152);
+        // _CrtSetBreakAlloc(5892);
     }
 
 
@@ -296,6 +299,9 @@ namespace Framework
      ****************************************************************/
     bool s_CommonInitialize(const Window::WindowPtr& prMainWindow)
     {
+        // メモリー用のミューテックスを作成
+        Memory::C_MemoryManager::s_CreateMemoryMutex();
+
         // イベントマネージャーの初期化処理
         Event::C_EventManager::s_GetInstance()->Initialize(*prMainWindow);
 

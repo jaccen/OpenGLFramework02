@@ -16,7 +16,7 @@ namespace Memory
     //! @brief 基本的なメモリプールを表すクラス
     //!
     //-------------------------------------------------------------
-    template<typename T, size_t DefaultExpandNumber = 10000>
+    template<typename T, size_t DefaultExpandNumber = 1000>
     class C_MemoryPool
     {
     public:
@@ -62,7 +62,10 @@ namespace Memory
         void* Alloc()
         {
             // メモリが足りない場合はさらにメモリを拡張
-            if (pNext_ == nullptr) ExpandFreeList(DefaultExpandNumber);
+            if (pNext_ == nullptr)
+            {
+                ExpandFreeList(DefaultExpandNumber);
+            }
 
             // 次のポインタを設定
             MemoryPtr pHead = pNext_;
@@ -110,7 +113,7 @@ namespace Memory
             pNext_ = pRunner;
 
             // 残りの拡張数分だけメモリを拡張
-            for (size_t i = 0, remainNumber = expandNumber - 1; i < remainNumber; ++i)
+            for (size_t i = 0; i < expandNumber; ++i)
             {
                 pRunner->pNext_ = reinterpret_cast<MemoryPtr>(std::malloc(size));
                 pRunner = pRunner->pNext_;

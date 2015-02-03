@@ -1,0 +1,20 @@
+{
+  "EnemyCount" : 1,
+  "EnemyData" :
+  [
+    {
+      "ID" : "BoxEnemy",
+      "Frame" : 150,
+      "Position" : [ 0.0, 10.0, 0.0 ],
+      "Power" : 100,
+      "HitPoint" : 100,
+      "FirstAddForce": [ 0.0, 0.0, 0.0 ],
+      "FirstAddTorque": [ 0.0, 0.0, 0.0 ],
+      "Movement" : 0.5,
+      "Direction" : [ 0.0, -1.0, 0.0 ],
+      "AddTorque": [ 0.0, 0.0, 0.0 ],
+      "Mass" : 0.2,
+      "CollisionSize" : [ 0.5, 0.5, 0.5 ]
+    }
+  ]
+}

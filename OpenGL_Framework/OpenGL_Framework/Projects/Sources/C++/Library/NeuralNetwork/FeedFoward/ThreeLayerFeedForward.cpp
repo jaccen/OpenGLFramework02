@@ -134,7 +134,7 @@ namespace NeuralNetwork
 
         for (auto& rOutputLayerNode : outputLayer_.nodes_)
         {
-            error = Math::Square(rOutputLayerNode.outputValue_ - rOutputLayerNode.targetOutputValue_);
+            error += Math::Square(rOutputLayerNode.outputValue_ - rOutputLayerNode.targetOutputValue_);
         }
 
         error /= outputLayer_.nodes_.size();
@@ -294,6 +294,44 @@ namespace NeuralNetwork
             inputLayer_.pActiveFuction_ = pActiveFunction;
             hiddenLayer_.pActiveFuction_ = pActiveFunction;
             outputLayer_.pActiveFuction_ = pActiveFunction;
+
+            break;
+        }
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ì±ä÷êîÇê›íËÇ∑ÇÈ
+     *  @param  ì±ä÷êî
+     *  @param  ÉåÉCÉÑÅ[ÇÃéÌóﬁ
+     *  @return Ç»Çµ
+     *
+     ****************************************************************/
+    void ThreeLayerFeedForward::SetDerivativeFunction(DerivativeFunction pDerivativeFunction, eLayerType layerType)
+    {
+        switch (layerType)
+        {
+        case INPUT:
+
+            inputLayer_.pDerivativeFunction_ = pDerivativeFunction;
+
+            break;
+        case HIDDEN:
+
+            hiddenLayer_.pDerivativeFunction_ = pDerivativeFunction;
+
+            break;
+        case OUTPUT:
+
+            outputLayer_.pDerivativeFunction_ = pDerivativeFunction;
+            
+            break;
+        default:
+
+            inputLayer_.pDerivativeFunction_ = pDerivativeFunction;
+            hiddenLayer_.pDerivativeFunction_ = pDerivativeFunction;
+            outputLayer_.pActiveFuction_ = pDerivativeFunction;
 
             break;
         }

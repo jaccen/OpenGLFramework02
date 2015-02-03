@@ -31,10 +31,10 @@ namespace ConnectWars
     C_BasePlayer::C_BasePlayer(const std::string& rId, int32_t type) : C_ConnectMachine(rId, type),
 
         // ステートマシーン
-		upStateMachine_(std::make_unique<State::C_StateMachine<ConnectWars::C_BasePlayer>>(this))
+		upStateMachine_(std::make_unique<State::C_StateMachine<C_BasePlayer>>(this))
 
     {
-		upStateMachine_->SetCurrentState(ConnectWars::C_PlayerCombatState::s_GetInstance());
+		upStateMachine_->SetCurrentState(C_PlayerCombatState::s_GetInstance());
     }
 
 

@@ -10,8 +10,10 @@
 #include "BasePlayer.h"
 #include "PlayerGenerator.h"
 #include "OptionGenerator.h"
+#include "EnemyGenerator.h"
 #include "BulletGenerator.h"
 #include "EffectGenerator.h"
+#include "GameController.h"
 
 
 //-------------------------------------------------------------
@@ -41,8 +43,10 @@ namespace ConnectWars
         Task::C_GeneralTaskSystem taskSystem_;                          ///< @brief タスクシステム
         C_PlayerGenerator playerGenerator_;                             ///< @brief プレイヤー生成機
         C_OptionGenerator optionGenerator_;                             ///< @brief オプション生成機
+        C_EnemyGenerator enemyGenerator_;                               ///< @brief エネミー生成機
         C_BulletGenerator bulletGenerator_;                             ///< @brief 弾生成機
         C_EffectGenerator effectGenerator_;                             ///< @brief エフェクト生成機
+        std::shared_ptr<C_GameController> spGameController_;            ///< @brief ゲームコントローラ
         std::shared_ptr<Camera::IC_Camera> spMainCamera_;               ///< @brief メインカメラ
         S_CameraData mainCameraData_;                                   ///< @brief メインカメラの情報
 

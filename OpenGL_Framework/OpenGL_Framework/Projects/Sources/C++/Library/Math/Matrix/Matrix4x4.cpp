@@ -757,7 +757,19 @@ namespace Math
                                                const S_Vector3<T>& rRotation, 
                                                const S_Vector3<T>& rScalingRate)
     {
-        S_Matrix4x4 TRSMatrix = s_CreateRotationYawPitchRoll(rRotation) * s_CreateScaling(rScalingRate);
+        S_Matrix4x4 TRSMatrix = s_CreateRotationYawPitchRoll(rRotation);
+
+        TRSMatrix.a11_ *= rScalingRate.x_;
+        TRSMatrix.a12_ *= rScalingRate.x_;
+        TRSMatrix.a13_ *= rScalingRate.x_;
+
+        TRSMatrix.a21_ *= rScalingRate.y_;
+        TRSMatrix.a22_ *= rScalingRate.y_;
+        TRSMatrix.a23_ *= rScalingRate.y_;
+
+        TRSMatrix.a31_ *= rScalingRate.z_;
+        TRSMatrix.a32_ *= rScalingRate.z_;
+        TRSMatrix.a33_ *= rScalingRate.z_;
     
         TRSMatrix.a41_ = rMovement.x_;
         TRSMatrix.a42_ = rMovement.y_;

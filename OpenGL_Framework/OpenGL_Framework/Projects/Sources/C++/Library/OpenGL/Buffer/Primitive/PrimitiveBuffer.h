@@ -41,6 +41,8 @@ namespace OpenGL
             uint32_t* vertexAttributeElementCountList_ = nullptr;                                   ///< @brief 頂点の属性の要素数リスト
             DataEnum* vertexAttributeDataTypeList_ = nullptr;                                       ///< @brief 頂点の属性のデータ型リスト
             ModifyEnum vertexModifyType_ = 0;                                                       ///< @brief 頂点の修正の種類
+            uint32_t* vertexByteOffsetList_ = nullptr;                                              ///< @brief 頂点のバイトオフセットリスト
+            bool* vertexTransferFlagList_ = nullptr;                                                ///< @brief 頂点の転送を判断するフラグリスト
             U* pIndices_ = nullptr;                                                                 ///< @brief インデックス
             uint32_t indexCount_ = 0;                                                               ///< @brief インデックス数
             ModifyEnum indexModifyType_ = Modify::s_STATIC;                                         ///< @brief インデックスの修正の種類
@@ -53,6 +55,8 @@ namespace OpenGL
                           uint32_t vertexAttributeElementCountList[],
                           DataEnum vertexAttributeDataTypeList[],
                           ModifyEnum vertexModifyType,
+                          uint32_t vertexByteOffsetList[],
+                          bool vertexTransferFlagList[],
                           U* pIndices = nullptr,
                           uint32_t indexCount = 0,
                           ModifyEnum indexModifyType = Modify::s_STATIC);
@@ -78,6 +82,8 @@ namespace OpenGL
                                            uint32_t vertexAttributeElementCountList[],
                                            DataEnum vertexAttributeDataTypeList[],
                                            ModifyEnum vertexModifyType,
+                                           uint32_t vertexByteOffsetList[],
+                                           bool vertexTransferFlagList[],
                                            U* pIndices = nullptr,
                                            uint32_t indexCount = 0,
                                            ModifyEnum indexModifyType = Modify::s_STATIC);
@@ -101,6 +107,8 @@ namespace OpenGL
      *  @param  頂点の属性の要素数のリスト
      *  @param  頂点の属性の型のリスト
      *  @param  頂点の修正の種類
+     *  @param  頂点のバイトオフセットリスト
+     *  @param  頂点の転送を判断するフラグ
      *  @param  インデックス
      *  @param  インデックス数
      *  @param  インデックスの修正の種類
@@ -113,6 +121,8 @@ namespace OpenGL
                                          uint32_t vertexAttributeElementCountList[],
                                          DataEnum vertexAttributeDataTypeList[],
                                          ModifyEnum vertexModifyType,
+                                         uint32_t vertexByteOffsetList[],
+                                         bool vertexTransferFlagList[],
                                          U* pIndices,
                                          uint32_t indexCount,
                                          ModifyEnum indexModifyType) :
@@ -139,20 +149,11 @@ namespace OpenGL
 
         for (size_t i = 0; i < vertexAttributeCount; ++i)
         {
-            glEnableVertexAttribArray(i);
-            glVertexAttribPointer(i, vertexAttributeElementCountList[i], vertexAttributeDataTypeList[i], GL_FALSE, sizeof(T), reinterpret_cast<GLubyte*>(byteOffset));
-
-            if (DataType::s_DOUBLE == vertexAttributeDataTypeList[i])
+            if (vertexTransferFlagList[i] == true)
             {
-                byteOffset += vertexAttributeElementCountList[i] * 8;
-            }
-            else if (DataType::s_BOOL == vertexAttributeDataTypeList[i])
-            {
-                byteOffset += vertexAttributeElementCountList[i] * 1;
-            }
-            else
-            {
-                byteOffset += vertexAttributeElementCountList[i] * 4;
+                glEnableVertexAttribArray(i);
+                glVertexAttribPointer(i, vertexAttributeElementCountList[i], vertexAttributeDataTypeList[i], GL_FALSE, sizeof(T), reinterpret_cast<GLubyte*>(byteOffset));
+                byteOffset += vertexAttributeElementCountList[i] * vertexByteOffsetList[i];
             }
         }
 
@@ -183,6 +184,8 @@ namespace OpenGL
                                                                                                     rCreateData.vertexAttributeElementCountList_,
                                                                                                     rCreateData.vertexAttributeDataTypeList_,
                                                                                                     rCreateData.vertexModifyType_,
+                                                                                                    rCreateData.vertexByteOffsetList_,
+                                                                                                    rCreateData.vertexTransferFlagList_,
                                                                                                     rCreateData.pIndices_,
                                                                                                     rCreateData.indexCount_,
                                                                                                     rCreateData.indexModifyType_)
@@ -290,6 +293,8 @@ namespace OpenGL
                                                    uint32_t vertexAttributeElementCountList[],
                                                    DataEnum vertexAttributeDataTypeList[],
                                                    ModifyEnum vertexModifyType,
+                                                   uint32_t vertexByteOffsetList[],
+                                                   bool vertexTransferFlagList[],
                                                    U* pIndices,
                                                    uint32_t indexCount,
                                                    ModifyEnum indexModifyType)
@@ -300,6 +305,8 @@ namespace OpenGL
                                                    vertexAttributeElementCountList,
                                                    vertexAttributeDataTypeList,
                                                    vertexModifyType,
+                                                   vertexByteOffsetList,
+                                                   vertexTransferFlagList,
                                                    pIndices,
                                                    indexCount,
                                                    indexModifyType);
@@ -322,6 +329,8 @@ namespace OpenGL
                         rCreateData.vertexAttributeElementCountList_,
                         rCreateData.vertexAttributeDataTypeList_,
                         rCreateData.vertexModifyType_,
+                        rCreateData.vertexByteOffsetList_,
+                        rCreateData.vertexTransferFlagList_,
                         rCreateData.pIndices_,
                         rCreateData.indexCount_,
                         rCreateData.indexModifyType_);

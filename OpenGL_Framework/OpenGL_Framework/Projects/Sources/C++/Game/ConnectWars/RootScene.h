@@ -33,6 +33,8 @@ namespace ConnectWars
     private:
         void SetPhysicsEngine();                                        // 物理エンジンの設定
         bool BindToLua();                                               // Luaへのバインド処理
+        void SetTaskPriority();                                         // タスクの優先度を設定
+        void CreateCameras();                                           // カメラの作成
         void PushNextScene();                                           // 次のシーンを追加
     };
 }

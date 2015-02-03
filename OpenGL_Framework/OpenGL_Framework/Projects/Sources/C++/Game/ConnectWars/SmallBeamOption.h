@@ -29,7 +29,10 @@ namespace ConnectWars
     public:
         C_SmallBeamOption(const std::string& rId, int32_t type);            // コンストラクタ
         virtual ~C_SmallBeamOption() override;                              // デストラクタ
+        void ConnectEffect() override;                                      // 連結時の効果
     private:
+        int32_t gunDataCount_ = 0;                                          ///< @brief 銃の情報の数
+
         void DoDraw() override;                                             // 非公開の描画処理
     };
 }

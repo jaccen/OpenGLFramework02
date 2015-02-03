@@ -102,8 +102,18 @@ namespace Sprite
             uint32_t vertexAttributeElementCountList[] = { 3, 2, 1, 4, 2, 2, 2 };
             std::array<OpenGL::DataEnum, 7> vertexAttributeDataTypeList;
             vertexAttributeDataTypeList.fill(OpenGL::DataType::s_FLOAT);
+            uint32_t vertexByteOffsetList[] = { 4, 4, 4, 4, 4, 4, 4 };
+            bool vertexTransferFlagList[] = { true, true, true, true, true, true, true };
 
-            pPointDatas_ = OpenGL::C_PrimitiveBuffer::s_Create(vertices_.data(), vertices_.size(), 7, vertexAttributeElementCountList, vertexAttributeDataTypeList.data(), OpenGL::Modify::s_DYNAMIC);
+            pPointDatas_ = OpenGL::C_PrimitiveBuffer::s_Create(vertices_.data(),        
+                                                               vertices_.size(),
+                                                               7, 
+                                                               vertexAttributeElementCountList,
+                                                               vertexAttributeDataTypeList.data(),
+                                                               OpenGL::Modify::s_DYNAMIC,
+                                                               vertexByteOffsetList,
+                                                               vertexTransferFlagList);
+
             OpenGL::C_PrimitiveBufferManager::s_GetInstance()->Entry(pPointDatas_, Fixed::Primitive::s_pSPRITE_ID);
         }
         else

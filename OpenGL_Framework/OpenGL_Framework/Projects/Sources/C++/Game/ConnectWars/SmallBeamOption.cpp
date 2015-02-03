@@ -74,18 +74,12 @@ namespace ConnectWars
         upHitPoint_ = std::make_unique<C_BaseHitPoint>((*pOptionData)["CreateData"]["HitPoint"].GetValue<JSON::Integer>());
 
         // ˆÚ“®‚ÌƒƒWƒbƒN‚ğì¬
-        upMoveLogic_ = std::make_unique<C_RigidBodyStraightMoveLogic>(Physics::Vector3(0.0f, -1.0f, 0.0f) * static_cast<float>((*pOptionData)["CreateData"]["Movement"].GetValue<JSON::Real>()));
+        upMoveLogic_ = std::make_unique<C_RigidBodyStraightMoveLogic>();
+        upMoveLogic_->SetDirection(Physics::Vector3(0.0f, -1.0f, 0.0f));
+        upMoveLogic_->SetMovement(static_cast<float>((*pOptionData)["CreateData"]["Movement"].GetValue<JSON::Real>()));
 
-        // e‚ğì¬
-        C_OptionSmallBeamGunFactory optionSmallBeamGunFactory;
-        int32_t gunDataCount = (*pOptionData)["GunDataCount"].GetValue<JSON::Integer>();
-
-        upGuns_.reserve(gunDataCount);
-
-        for (int32_t i = 0; i < gunDataCount; ++i)
-        {
-            upGuns_.emplace_back(optionSmallBeamGunFactory.Create(this, i));
-        }
+        // e‚Ìî•ñ‚Ì”‚ğæ“¾
+        gunDataCount_ = (*pOptionData)["GunDataCount"].GetValue<JSON::Integer>();
     }
 
 
@@ -97,6 +91,29 @@ namespace ConnectWars
      ****************************************************************/
     C_SmallBeamOption::~C_SmallBeamOption()
     {
+        Physics::C_PhysicsEngine::s_GetInstance()->RemoveRigidBody(upRigidBody_.get());
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ˜AŒ‹‚ÌŒø‰Ê‚ğˆ—‚·‚é
+     *  @param  ‚È‚µ
+     *  @return ‚È‚µ
+     *
+     ****************************************************************/
+    void C_SmallBeamOption::ConnectEffect()
+    {
+        assert(pPlayer_);
+
+        // e‚ğì¬
+        C_OptionSmallBeamGunFactory optionSmallBeamGunFactory;
+        upGuns_.reserve(gunDataCount_);
+
+        for (int32_t i = 0; i < gunDataCount_; ++i)
+        {
+            upGuns_.emplace_back(optionSmallBeamGunFactory.Create(this, i));
+        }
     }
 
 

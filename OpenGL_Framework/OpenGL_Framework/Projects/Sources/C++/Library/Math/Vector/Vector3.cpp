@@ -1,6 +1,5 @@
 /* ヘッダファイル */
 #include "Vector3.h"
-#include "../Define/MathDefine.h"
 #include "../Quaternion/Quaternion.h"
 
 

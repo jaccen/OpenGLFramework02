@@ -2,6 +2,10 @@
 #pragma once
 
 
+/* ヘッダファイル */
+#include "../../Math/Vector/Vector3.h"
+
+
 //-------------------------------------------------------------
 //!
 //! @brief ライト
@@ -15,6 +19,7 @@ namespace Light
 
 
     /* 別名 */
+    using Vector3 = Math::S_Vector3<float>;             // Vector3型
     using LightPtr = std::shared_ptr<S_Light>;          // LightPtr型
 
 

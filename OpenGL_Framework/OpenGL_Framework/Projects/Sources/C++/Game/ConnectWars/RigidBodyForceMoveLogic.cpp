@@ -24,7 +24,11 @@ namespace ConnectWars
         upFirstAddForce_(std::make_unique<Physics::Vector3>(rFirstAddForce)),
 
         // 最初に加えるトルク
-        upFirstAddTorque_(std::make_unique<Physics::Vector3>(rFirstAddTorque))
+        upFirstAddTorque_(std::make_unique<Physics::Vector3>(rFirstAddTorque)),
+
+        // 向きと加えるトルク
+        upDirection_(std::make_unique<Physics::Vector3>()),
+        upAddTorque_(std::make_unique<Physics::Vector3>())
 
     {
     }
@@ -52,7 +56,8 @@ namespace ConnectWars
     {
         auto pRigidBodyMoveLogic = newEx C_RigidBodyForceMoveLogic(*upFirstAddForce_, *upAddTorque_);
 
-        pRigidBodyMoveLogic->SetAddForce(*upAddForce_);
+        pRigidBodyMoveLogic->SetDirection(*upDirection_);
+        pRigidBodyMoveLogic->SetMovement(movement_);
         pRigidBodyMoveLogic->SetAddTorque(*upAddTorque_);
 
         return pRigidBodyMoveLogic;
@@ -66,9 +71,22 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_RigidBodyForceMoveLogic::SetAddForce(const Physics::Vector3& rAddForce)
+    void C_RigidBodyForceMoveLogic::SetDirection(const Physics::Vector3& rDirection)
     {
-        *upAddForce_ = rAddForce;
+        *upDirection_ = rDirection;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  移動量を設定する
+     *  @param  移動量
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_RigidBodyForceMoveLogic::SetMovement(float movement)
+    {
+        movement_ = movement;
     }
 
 
@@ -106,7 +124,7 @@ namespace ConnectWars
             firstAddTorqueFlag_ = true;
         }
 
-        pRigidBody->ApplyForce(*upAddForce_);
+        pRigidBody->ApplyForce((*upDirection_) * movement_);
         pRigidBody->ApplayTorque(*upAddTorque_);
     }
 }
