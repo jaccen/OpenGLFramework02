@@ -14,6 +14,7 @@
 #include "../../Library/Window/Manager/WindowManager.h"
 #include "../../Library/Camera/Manager/CameraManager.h"
 #include "../../Library/Camera/Camera/Perspective/PerspectiveCamera.h"
+#include "../../Library/Camera/Camera/Perspective/Test/TestCamera.h"
 #include "../../Library/Camera/Camera/Orthographic/OrthographicCamera.h"
 #include "LoadScene.h"
 #include "LoadFunction.h"
@@ -257,6 +258,7 @@ namespace ConnectWars
         Priority::Task::Update::s_bomb = static_cast<float>(taskPriorityData["Priority"]["Update"]["Bomb"].GetValue<JSON::Real>());
         Priority::Task::Update::s_obstacle = static_cast<float>(taskPriorityData["Priority"]["Update"]["Obstacle"].GetValue<JSON::Real>());
         Priority::Task::Update::s_effect = static_cast<float>(taskPriorityData["Priority"]["Update"]["Effect"].GetValue<JSON::Real>());
+        Priority::Task::Update::s_background = static_cast<float>(taskPriorityData["Priority"]["Update"]["Background"].GetValue<JSON::Real>());
 
         // ï`âÊóDêÊìxÇê›íË
         Priority::Task::Draw::s_gameController = static_cast<float>(taskPriorityData["Priority"]["Draw"]["GameController"].GetValue<JSON::Real>());
@@ -267,6 +269,7 @@ namespace ConnectWars
         Priority::Task::Draw::s_bomb = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Bomb"].GetValue<JSON::Real>());
         Priority::Task::Draw::s_obstacle = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Obstacle"].GetValue<JSON::Real>());
         Priority::Task::Draw::s_effect = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Effect"].GetValue<JSON::Real>());
+        Priority::Task::Draw::s_background = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Background"].GetValue<JSON::Real>());
     }
 
 
@@ -296,24 +299,40 @@ namespace ConnectWars
             {
                 auto cameraData = JSON::JsonObject::s_CreateFromFile(Path::JSON::s_pCAMERA);
 
-                auto pMainCamera = std::make_shared<Camera::C_PerspectiveCamera>();
+#ifdef _DEBUG
 
-                pMainCamera->SetEyePoint(Camera::Vector3(static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["EyePoint"][0].GetValue<JSON::Real>()),
-                                                         static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["EyePoint"][1].GetValue<JSON::Real>()),
-                                                         static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["EyePoint"][2].GetValue<JSON::Real>())));
+                std::shared_ptr<Camera::C_PerspectiveCamera> pCamera;
 
-                pMainCamera->SetTargetPoint(Camera::Vector3(static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["TargetPoint"][0].GetValue<JSON::Real>()),
-                                                            static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["TargetPoint"][1].GetValue<JSON::Real>()),
-                                                            static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["TargetPoint"][2].GetValue<JSON::Real>())));
+                if (i == 0)
+                {
+                    pCamera = std::make_shared<Camera::C_PerspectiveCamera>();
+                }
+                else
+                {
+                    pCamera = std::make_shared<Camera::C_TestCamera>();
+                }
+#else
 
-                pMainCamera->SetFieldOfViewY(static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["FieldOfViewY"].GetValue<JSON::Real>()));
-                pMainCamera->SetNearClippingPlane(static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["NearClippingPlane"].GetValue<JSON::Real>()));
-                pMainCamera->SetFarClippingPlane(static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["FarClippngPlane"].GetValue<JSON::Real>()));
-                pMainCamera->SetUpVector(Camera::Vector3::s_UP_DIRECTION);
-                pMainCamera->SetAspectRatio(pMainWindow->GetAspectRatio<float>());
-                pMainCamera->Update();
+                auto pCamera = std::make_shared<Camera::C_PerspectiveCamera>();
 
-                Camera::C_CameraManager::s_GetInstance()->Entry(pMainCamera, pPerspectiveCameraIdList[i]);
+#endif
+
+                pCamera->SetEyePoint(Camera::Vector3(static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["EyePoint"][0].GetValue<JSON::Real>()),
+                                                     static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["EyePoint"][1].GetValue<JSON::Real>()),
+                                                     static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["EyePoint"][2].GetValue<JSON::Real>())));
+
+                pCamera->SetTargetPoint(Camera::Vector3(static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["TargetPoint"][0].GetValue<JSON::Real>()),
+                                                        static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["TargetPoint"][1].GetValue<JSON::Real>()),
+                                                        static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["TargetPoint"][2].GetValue<JSON::Real>())));
+
+                pCamera->SetFieldOfViewY(static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["FieldOfViewY"].GetValue<JSON::Real>()));
+                pCamera->SetNearClippingPlane(static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["NearClippingPlane"].GetValue<JSON::Real>()));
+                pCamera->SetFarClippingPlane(static_cast<float>(cameraData["CameraData"][pPerspectiveCameraIdList[i]]["FarClippngPlane"].GetValue<JSON::Real>()));
+                pCamera->SetUpVector(Camera::Vector3::s_UP_DIRECTION);
+                pCamera->SetAspectRatio(pMainWindow->GetAspectRatio<float>());
+                pCamera->Update();
+
+                Camera::C_CameraManager::s_GetInstance()->Entry(pCamera, pPerspectiveCameraIdList[i]);
             }
         }
 

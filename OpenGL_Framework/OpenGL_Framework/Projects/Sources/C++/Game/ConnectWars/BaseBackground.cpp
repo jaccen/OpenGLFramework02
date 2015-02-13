@@ -45,6 +45,15 @@ namespace ConnectWars
     {
         DoUpdate();
 
+        if (lifeFrame_ == frameCounter_.GetCount())
+        {
+            existenceFlag_ = false;
+        }
+        else
+        {
+            frameCounter_.CountUp();
+        }
+
         return C_GameObject::existenceFlag_;
     }
 
@@ -73,5 +82,31 @@ namespace ConnectWars
     bool C_BaseBackground::MessageProcess(const Telegram& rTelegram)
     {
         return DoMessageProcess(rTelegram);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  座標を設定する
+     *  @param  座標
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseBackground::SetPosition(const Vector3& rPosition)
+    {
+        position_ = rPosition;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  生存フレーム数を設定する
+     *  @param  生存フレーム数
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseBackground::SetLifeFrame(int32_t lifeFrame)
+    {
+        lifeFrame_ = lifeFrame;
     }
 }

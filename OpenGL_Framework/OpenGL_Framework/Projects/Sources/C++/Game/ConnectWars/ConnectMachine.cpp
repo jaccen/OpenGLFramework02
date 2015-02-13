@@ -1,5 +1,7 @@
 /* ヘッダファイル */
 #include "ConnectMachine.h"
+#include "../../Library/Light/Light/Point/PointLight.h"
+#include "../../Library/Material/Material/Phong/PhongMaterial.h"
 
 
 //-------------------------------------------------------------
@@ -33,6 +35,20 @@ namespace ConnectWars
     {
         // オプション4個分のメモリをあらかじめ確保しておく
         pConnectOptionList_.reserve(4);
+
+        // 各マテリアルを取得
+        assert(Material::C_MaterialManager::s_GetInstance()->GetMaterial(ID::Material::s_pBASIC));
+        pBasicMaterial_ = Material::C_MaterialManager::s_GetInstance()->GetMaterial(ID::Material::s_pBASIC).get();
+
+        assert(Material::C_MaterialManager::s_GetInstance()->GetMaterial(ID::Material::s_pDAMAGE));
+        pDamageMaterial_ = Material::C_MaterialManager::s_GetInstance()->GetMaterial(ID::Material::s_pDAMAGE).get();
+
+        // 現在のマテリアルを設定
+        pNowMaterial_ = pBasicMaterial_;
+
+        // 各ライトを取得
+        assert(Light::C_LightManager::s_GetInstance()->GetLight(ID::Light::s_pMAIN));
+        pMainLight_ = Light::C_LightManager::s_GetInstance()->GetLight(ID::Light::s_pMAIN).get();
     }
 
 
@@ -124,6 +140,45 @@ namespace ConnectWars
     const Physics::Matrix3x3& C_ConnectMachine::GetRotation() const
     {
         return upRigidBody_->GetTransform().getBasis();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  マテリアルを設定する
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_ConnectMachine::SetMaterial(const Material::MaterialPtr& prMaterial)
+    {
+        auto pMaterial = std::static_pointer_cast<Material::S_PhongMaterial>(prMaterial);
+
+        pGlslObject_->SetUniformVector3("u_material.diffuse", pMaterial->diffuse_);
+        pGlslObject_->SetUniformVector3("u_material.ambient", pMaterial->ambient_);
+        pGlslObject_->SetUniformVector3("u_material.specular", pMaterial->specular_);
+        pGlslObject_->SetUniform1f("u_material.shininess", pMaterial->shininess_);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  メインライトを設定する
+     *  @param  ライト
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_ConnectMachine::SetLight(const Light::LightPtr& prLight)
+    {
+        auto pLight = std::static_pointer_cast<Light::S_PointLight>(prLight);
+
+        pGlslObject_->SetUniformVector3("u_light.position", pLight->position_);
+        pGlslObject_->SetUniform1f("u_light.constantAttenuation", pLight->constantAttenuation_);
+        pGlslObject_->SetUniform1f("u_light.linearAttenuation", pLight->linearAttenuation_);
+        pGlslObject_->SetUniform1f("u_light.quadraticAttenuation", pLight->quadraticAttenuation_);
+        pGlslObject_->SetUniformVector3("u_light.diffuse", pLight->diffuse_);
+        pGlslObject_->SetUniformVector3("u_light.ambient", pLight->ambient_);
+        pGlslObject_->SetUniformVector3("u_light.specular", pLight->specular_);
     }
 
 

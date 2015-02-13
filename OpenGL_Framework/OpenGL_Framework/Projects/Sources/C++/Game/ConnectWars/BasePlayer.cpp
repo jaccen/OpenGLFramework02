@@ -298,9 +298,6 @@ namespace ConnectWars
         {
             if (pAnotherOption->IsConnectFlag() == false)
             {
-                // 連結フラグを設定
-                pAnotherOption->SetConnectFlag(true);
-
                 if (pAnotherOption->IsOnceConnectFlag() == false)
                 {
                     // プレイヤーを設定
@@ -312,16 +309,19 @@ namespace ConnectWars
                     // プレイヤーからのオフセットを求める
                     auto anotherOptionTransform = pAnotherOption->GetRigidBody()->GetTransform();
 
-                    Physics::Vector3 anotherOptionOffsetFromPlayer = anotherOptionTransform.getOrigin() - pOption->GetRigidBody()->GetTransform().getOrigin();
+                    Physics::Vector3 anotherOptionOffsetFromPlayer = anotherOptionTransform.getOrigin() - (GetPosition() + pOption->GetOffsetFromPlayer());
+                    anotherOptionOffsetFromPlayer.setZ(0.0f);
                     anotherOptionOffsetFromPlayer = anotherOptionOffsetFromPlayer.normalize();
+
                     anotherOptionOffsetFromPlayer = pOption->GetOffsetFromPlayer()
-                                                  + (anotherOptionOffsetFromPlayer * pOption->GetRadius())
-                                                  + (anotherOptionOffsetFromPlayer * pAnotherOption->GetRadius());
-                    anotherOptionOffsetFromPlayer *= Connect::s_offsetFactor;
+                                                  + ((anotherOptionOffsetFromPlayer * pOption->GetRadius())
+                                                   + (anotherOptionOffsetFromPlayer * pAnotherOption->GetRadius()) 
+                                                   * Connect::s_offsetFactor);
+
                     pAnotherOption->SetOffsetFromPlayer(anotherOptionOffsetFromPlayer);
 
                     // オプションの座標を設定
-                    anotherOptionTransform.setOrigin(upRigidBody_->GetTransform().getOrigin() + anotherOptionOffsetFromPlayer);
+                    anotherOptionTransform.setOrigin(GetPosition() + anotherOptionOffsetFromPlayer);
                     pAnotherOption->GetRigidBody()->SetTransform(anotherOptionTransform);
 
                     // 新規連結処理を行う
@@ -330,10 +330,13 @@ namespace ConnectWars
 
                     // 連結の効果を処理
                     pAnotherOption->ConnectEffect();
-
-                    // 移動制限境界ボックスの更新
-                    UpdateMoveLimitBoundingBox(pAnotherOption);
                 }
+
+                // 連結フラグを設定
+                pAnotherOption->SetConnectFlag(true);
+
+                // 移動制限境界ボックスの更新
+                UpdateMoveLimitBoundingBox(pAnotherOption);
 
                 // そのオプションの連結の確認
                 ConnectCheck(pAnotherOption);

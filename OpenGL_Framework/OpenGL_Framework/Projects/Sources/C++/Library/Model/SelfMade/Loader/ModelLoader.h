@@ -56,6 +56,7 @@ namespace Model
             const Matrix4x4& GetBoneAnimationMatrix(uint32_t frame,                                     // ボーンのアニメーション行列を取得
                                                     uint32_t meshIndex,
                                                     uint32_t boneIndex) const;
+            void InvertTextureCoord(bool u, bool v);                                                    // テクスチャ座標を反転
 
             static ModelLoaderPtr s_Create();                                                           // 生成処理
         private:

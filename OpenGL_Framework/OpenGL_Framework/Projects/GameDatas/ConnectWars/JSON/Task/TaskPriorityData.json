@@ -10,7 +10,8 @@
       "Bullet" : 7.0,
       "Obstacle" : 6.0,
       "Bomb" : 5.0,
-      "Effect" : 4.0
+      "Effect" : 4.0,
+      "Background" : 3.0, 
     },
     "Draw" :
     {
@@ -21,7 +22,8 @@
       "Bullet" : 7.0,
       "Obstacle" : 8.0,
       "Bomb" : 9.0,
-      "Effect" : 10.0
+      "Effect" : 10.0,
+      "Background" : 11.0 
     }
   }
 }

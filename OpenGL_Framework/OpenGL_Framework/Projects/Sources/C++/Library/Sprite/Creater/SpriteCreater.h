@@ -110,7 +110,7 @@ namespace Sprite
             /* テクスチャ */
             namespace Texture
             {
-                const int32_t s_UNIT_NUMBER = 30;                                                           ///< @brief ユニット番号
+                const int32_t s_UNIT_NUMBER = 28;                                                           ///< @brief ユニット番号
             }
         }
     }

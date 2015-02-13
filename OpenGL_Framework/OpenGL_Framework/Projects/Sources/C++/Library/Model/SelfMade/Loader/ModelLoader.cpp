@@ -254,6 +254,27 @@ namespace Model
 
         /*************************************************************//**
          *
+         *  @brief  テクスチャ座標を反転する
+         *  @param  U座標を反転するか判断するフラグ
+         *  @param  V座標を反転するか判断するフラグ
+         *  @return なし
+         *
+         ****************************************************************/
+        void C_ModelLoader::InvertTextureCoord(bool u, bool v)
+        {
+            for (auto& rMesh : meshList_)
+            {
+                for (auto& rVertex : rMesh.vertices_)
+                {
+                    if (u == true) rVertex.textureCoord_.u_ = 1.0f - rVertex.textureCoord_.u_;
+                    if (v == true) rVertex.textureCoord_.v_ = 1.0f - rVertex.textureCoord_.v_;
+                }
+            }
+        }
+
+
+        /*************************************************************//**
+         *
          *  @brief  生成処理を行う
          *  @param  なし
          *  @return モデルローダー

@@ -4,6 +4,10 @@
 
 /* ヘッダファイル */
 #include "CollisionObject.h"
+#include "../../Library/OpenGL/Buffer/Primitive/Manager/PrimitiveBufferManager.h"
+#include "../../Library/Texture/Manager/TextureManager.h"
+#include "../../Library/Material/Manager/MaterialManager.h"
+#include "../../Library/Light/Manager/LightManager.h"
 
 
 //-------------------------------------------------------------
@@ -49,5 +53,14 @@ namespace ConnectWars
         virtual const Physics::Vector3& GetPosition() const override = 0;                       // 座標を取得  
         virtual void SetPosition(const Physics::Vector3& rPosition) override = 0;               // 座標を設定
         virtual const Physics::Matrix3x3& GetRotation() const = 0;                              // 回転量を取得
+        virtual void SetMaterial(const Material::MaterialPtr& prMaterial) = 0;                  // マテリアルを設定
+        virtual void SetLight(const Light::LightPtr& prLight) = 0;                              // ライトを設定
+    protected:
+        OpenGL::PrimitiveBufferPtr pModelData_;                                                 ///< @brief モデル情報
+        Texture::TextureDataPtr pModelTextureData_;                                             ///< @brief モデルのテクスチャ情報
+        Material::MaterialPtr pBasicMaterial_;                                                  ///< @brief 基本のマテリアル
+        Material::MaterialPtr pDamageMaterial_;                                                 ///< @brief ダメージマテリアル
+        Material::MaterialPtr pNowMaterial_;                                                    ///< @brief 現在のマテリアル
+        Light::LightPtr pMainLight_;                                                            ///< @brief メインライト
     };
 }

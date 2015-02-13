@@ -10,6 +10,8 @@
 #include "OptionBullet.h"
 #include "BombChargeEffect.h"
 #include "BoxEnemy.h"
+#include "Space.h"
+#include "CameraController.h"
 #include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
 #include "../../Library/Texture/Manager/TextureManager.h"
 #include "../../Library/Math/Define/MathDefine.h"
@@ -72,7 +74,13 @@ namespace ConnectWars
         if (RemainLoadProcess() == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
 
         // ゲームコントローラを生成
-        taskSystem_.Entry(std::make_shared<C_GameController>(ID::GameObject::s_pGAME_CONTROLLER, TYPE_CAMERA_CONTROLLER), Priority::Task::Update::s_gameController, Priority::Task::Draw::s_gameController);
+        taskSystem_.Entry(std::make_shared<C_GameController>(ID::GameObject::s_pGAME_CONTROLLER, TYPE_GAME_CONTROLLER), Priority::Task::Update::s_gameController, Priority::Task::Draw::s_gameController);
+
+        // カメラコントローラを生成
+        auto pCameraController = taskSystem_.Entry(std::make_shared<C_CameraController>(ID::GameObject::s_pCAMERA_CONTROLLER, TYPE_CAMERA_CONTROLLER), Priority::Task::Update::s_cameraController, Priority::Task::Draw::s_cameraController);
+
+        assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_CAMERAWORK_DATA));
+        pCameraController->SetCameraData(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_CAMERAWORK_DATA).get());
 
         // プレイヤーを生成
         playerGenerator_.Create(ID::Generator::Player::s_pNORMAL);
@@ -84,6 +92,19 @@ namespace ConnectWars
         optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(6.0f, 8.0f, 0.0f));
 
         optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f, 0.0f, 0.0f));
+        optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-10.0f, 0.0f, 0.0f));
+        optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f, 20.0f, 0.0f));
+        optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f, 30.0f, 0.0f));
+        optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f, 40.0f, 0.0f));
+        optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(5.0f, 0.0f, 0.0f));
+        optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(10.0f, 0.0f, 0.0f));
+        optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f, 5.0f, 0.0f));
+        optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f,10.0f, 0.0f));
+        optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f,15.0f, 0.0f));
+
+        // 背景を生成
+        auto pSpace = taskSystem_.Entry(std::make_shared<C_Space>(ID::GameObject::s_pBACKGROUND, TYPE_BACKGROUND), Priority::Task::Update::s_background, Priority::Task::Draw::s_background);
+        pSpace->SetLifeFrame(-1);
 
         //enemyGenerator_.Create(ID::Generator::Enemy::s_pBOX);
         
@@ -141,19 +162,10 @@ namespace ConnectWars
      ****************************************************************/
     void C_Stage01Scene::Draw()
     {
-        S_CameraData cameraMatrix;
-
-        cameraMatrix.viewMatrix_ = spMainCamera_->GetViewMatrix();
-        cameraMatrix.projectionMatrix_ = spMainCamera_->GetProjectionMatrix();
-        cameraMatrix.viewProjectionMatrix_ = spMainCamera_->GetViewProjectionMatrix();
-
-        auto pUniform = Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer(ID::UniformBuffer::s_pMAIN_CAMERA).get();
-        pUniform->Rewrite(&cameraMatrix, sizeof(S_CameraData), OpenGL::Modify::s_DYNAMIC);
-
         taskSystem_.Draw();
 
-        // View::C_ViewHelper::s_DrawGrid(5.0f, 1.0f, 11, View::Vector4(1.0f, 1.0f, 1.0f, 0.1f), spMainCamera_->GetViewProjectionMatrix());
-        // View::C_ViewHelper::s_DrawAxis(50.0f, spMainCamera_->GetViewProjectionMatrix());
+        View::C_ViewHelper::s_DrawGrid(5.0f, 1.0f, 11, View::Vector4(1.0f, 1.0f, 1.0f, 0.1f), pMainCamera_->GetViewProjectionMatrix());
+        View::C_ViewHelper::s_DrawAxis(50.0f, pMainCamera_->GetViewProjectionMatrix());
     }
 
 
@@ -171,6 +183,9 @@ namespace ConnectWars
 
         JSON::C_JsonObjectManager::s_GetInstance()->AllRemove();
         Model::SelfMade::C_ModelLoaderManager::s_GetInstance()->AllRemove();
+
+        Light::C_LightManager::s_GetInstance()->AllRemove();
+        Material::C_MaterialManager::s_GetInstance()->AllRemove();
     }
 
 
@@ -184,19 +199,45 @@ namespace ConnectWars
      ****************************************************************/
     bool C_Stage01Scene::RemainLoadProcess()
     {
-        // メインカメラを取得し、情報を設定
-        assert(Camera::C_CameraManager::s_GetInstance()->GetCamera(ID::Camera::s_pMAIN));
-        spMainCamera_ = Camera::C_CameraManager::s_GetInstance()->GetCamera(ID::Camera::s_pMAIN).get();
-
-        mainCameraData_.viewMatrix_ = spMainCamera_->GetViewMatrix();
-        mainCameraData_.projectionMatrix_ = spMainCamera_->GetProjectionMatrix();
-        mainCameraData_.viewProjectionMatrix_ = spMainCamera_->GetViewProjectionMatrix();
-
-        if (!Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer(ID::UniformBuffer::s_pMAIN_CAMERA))
+        // 各ユニフォームバッファを作成
+        const char* pCameraIdList[] =
         {
-            auto pUniformBuffer = Shader::GLSL::C_UniformBuffer::s_Create(&mainCameraData_, sizeof(S_CameraData), "CameraData", OpenGL::Modify::s_DYNAMIC);
-            Shader::GLSL::C_UniformBufferManager::s_GetInstance()->Entry(pUniformBuffer, ID::UniformBuffer::s_pMAIN_CAMERA);
+            ID::Camera::s_pMAIN,
+            ID::Camera::s_pBACKGROUND,
+        };
+
+        const char* pUniformBufferIdList[] =
+        {
+            ID::UniformBuffer::s_pMAIN_CAMERA,
+            ID::UniformBuffer::s_pBACKGROUND_CAMERA,
+        };
+
+        const char* pUniformBlockNameList[] =
+        {
+            "MainCameraData",
+            "BackgroundCameraData"
+        };
+
+        for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pCameraIdList); i < arraySize; ++i)
+        {
+            if (!Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer(pUniformBufferIdList[i]))
+            {
+                assert(Camera::C_CameraManager::s_GetInstance()->GetCamera(pCameraIdList[i]));
+                auto pCamera = Camera::C_CameraManager::s_GetInstance()->GetCamera(pCameraIdList[i]).get();
+
+                 S_CameraData cameraData;
+
+                cameraData.viewMatrix_ = pCamera->GetViewMatrix();
+                cameraData.projectionMatrix_ = pCamera->GetProjectionMatrix();
+                cameraData.viewProjectionMatrix_ = pCamera->GetViewProjectionMatrix();
+
+                auto pUniformBuffer = Shader::GLSL::C_UniformBuffer::s_Create(&cameraData, sizeof(S_CameraData), pUniformBlockNameList[i], OpenGL::Modify::s_DYNAMIC);
+                Shader::GLSL::C_UniformBufferManager::s_GetInstance()->Entry(pUniformBuffer, pUniformBufferIdList[i]);
+            }
         }
+
+        // メインカメラを保持
+        pMainCamera_ = Camera::C_CameraManager::s_GetInstance()->GetCamera(ID::Camera::s_pMAIN).get();
 
         // 各モデルのバッファを作成
         const char* pPrimitiveIdList[] =
@@ -204,6 +245,9 @@ namespace ConnectWars
             ID::Primitive::s_pNORMAL_PLAYER,
             ID::Primitive::s_pBOX_ENEMY,
             ID::Primitive::s_pSPACE,
+            ID::Primitive::s_pSHELTER,
+            ID::Primitive::s_pSPEED_UP_OPTION,
+            ID::Primitive::s_pSMALL_BEAM_OPTION,
         };
 
         const char* pModelIdList[] = 
@@ -211,6 +255,19 @@ namespace ConnectWars
             ID::Model::s_pNORMAL_PLAYER,
             ID::Model::s_pBOX_ENEMY,
             ID::Model::s_pSPACE,
+            ID::Model::s_pSHELTER,
+            ID::Model::s_pSPPED_UP_OPTION,
+            ID::Model::s_pSMALL_BEAM_OPTION,
+        };
+
+        bool vertexTransferFlagList[][7] =
+        {
+            { true, true, true, false, false, false, false },       // ノーマルプレイヤー
+            { true, true, false, false, false, false, false },      // ボックスエネミー
+            { true, false, true, false, false, false, false },      // 宇宙
+            { true, true, true, false, true, false, false },        // シェルター
+            { true, true, true, false, false, false, false },       // スピードアップオプション
+            { true, true, true, false, false, false, false },       // スモールビームオプション
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pPrimitiveIdList); i < arraySize; ++i)
@@ -225,7 +282,6 @@ namespace ConnectWars
 
                 uint32_t vertexAttributeElementCountList[] = { 3, 3, 2, 4, 4, 4, 4 };
                 uint32_t vertexByteOffsetFlag[] = { 4, 4, 4, 4, 4, 1, 4 };
-                bool vertexTransferFlagList[] = { true, true, false, false, false, false, false };
 
                 OpenGL::DataEnum vertexAttributeDataTypeList[] =
                 {
@@ -245,7 +301,7 @@ namespace ConnectWars
                                                                         vertexAttributeDataTypeList,
                                                                         OpenGL::Modify::s_STATIC,
                                                                         vertexByteOffsetFlag,
-                                                                        vertexTransferFlagList,
+                                                                        vertexTransferFlagList[i],
                                                                         rMesh.indices_.data(),
                                                                         rMesh.indices_.size(),
                                                                         OpenGL::Modify::s_STATIC);
@@ -255,24 +311,56 @@ namespace ConnectWars
         }
 
         // 各GLSLオブジェクトを作成
-        if (!Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(ID::Shader::s_pHALF_LAMBERT_PHONG))
+        const char* pGlslObjectIdList[] =
         {
-            auto pGlslObject = Shader::GLSL::C_GlslObject::s_Create();
+            ID::Shader::s_pPHONG,
+            ID::Shader::s_pPHONG_TEXTURE,
+            ID::Shader::s_pCELESTIAL_SPHERE,
+        };
 
-            if (pGlslObject->CompileFromFile("Projects/Shaders/GLSL/HalfLambertPhong/HalfLambertPhong.vert", Shader::GLSL::Type::s_VERTEX) == false) return false;
-            if (pGlslObject->CompileFromFile("Projects/Shaders/GLSL/HalfLambertPhong/HalfLambertPhong.frag", Shader::GLSL::Type::s_FRAGMENT) == false) return false;
-            if (pGlslObject->Link() == false) return false;
+        const char* pVertexShaderPathList[] = 
+        {
+            Path::Shader::Vertex::s_pPHONG,
+            Path::Shader::Vertex::s_pPHONG_TEXTURE,
+            Path::Shader::Vertex::s_pCELESTINAL_SPHERE,
+        };
 
-            Shader::GLSL::C_GlslObjectManager::s_GetInstance()->Entry(pGlslObject, ID::Shader::s_pHALF_LAMBERT_PHONG);
+
+        const char* pFragmentShaderPathList[] =
+        {
+            Path::Shader::Fragment::s_pPHONG,
+            Path::Shader::Fragment::s_pPHONG_TEXTURE,
+            Path::Shader::Fragment::s_pCELESTINAL_SPHERE,
+        };
+
+        for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pGlslObjectIdList); i < arraySize; ++i)
+        {
+            if (!Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(pGlslObjectIdList[i]))
+            {
+                auto pGlslObject = Shader::GLSL::C_GlslObject::s_Create();
+
+                if (pGlslObject->CompileFromFile(pVertexShaderPathList[i], Shader::GLSL::Type::s_VERTEX) == false) return false;
+                if (pGlslObject->CompileFromFile(pFragmentShaderPathList[i], Shader::GLSL::Type::s_FRAGMENT) == false) return false;
+                if (pGlslObject->Link() == false) return false;
+
+                Shader::GLSL::C_GlslObjectManager::s_GetInstance()->Entry(pGlslObject, pGlslObjectIdList[i]);
+            }
         }
+
 
         // 各テクスチャの作成
         const char* pTexturePathList[] =
         {
+            Path::Texture::s_pNORMAL_PLAYER,
             Path::Texture::s_pSPRITE_BULLET,
             Path::Texture::s_pCIRCLE_01,
             Path::Texture::s_pCIRCLE_02,
             Path::Texture::s_pRING_01,
+            Path::Texture::s_pSPACE,
+            Path::Texture::s_pSHELTER,
+            Path::Texture::s_pSHALTER_NORMAL,
+            Path::Texture::s_pSPPED_UP_OPTION,
+            Path::Texture::s_pSMALL_BEAM_OPTION,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pTexturePathList); i < arraySize; ++i)
@@ -283,6 +371,7 @@ namespace ConnectWars
             }
         }
 
+        // 各スプライトクリエイターを作成
         const char* pSpriteIdList[] = 
         {
             ID::Sprite::s_pBULLET,
@@ -305,10 +394,11 @@ namespace ConnectWars
                 auto pTextureData = Texture::C_TextureManager::s_GetInstance()->GetTextureData(pSpriteTextureDataIdList[i]);
                 assert(pTextureData);
 
-                if (Sprite::C_SpriteCreaterManager::s_GetInstance()->Create(pSpriteIdList[i], spMainCamera_, pTextureData.get(), 100, spritePriorityList[i]) == false) return false;
+                if (Sprite::C_SpriteCreaterManager::s_GetInstance()->Create(pSpriteIdList[i], pMainCamera_, pTextureData.get(), 100, spritePriorityList[i]) == false) return false;
             }
         }
 
+        // 各パーティクルシステムを作成
         const char* pParticleTextureDataIdList[] =
         {
             Path::Texture::s_pCIRCLE_01,
@@ -330,7 +420,7 @@ namespace ConnectWars
                 auto pTextureData = Texture::C_TextureManager::s_GetInstance()->GetTextureData(pParticleTextureDataIdList[i]);
                 assert(pTextureData);
 
-                if (Particle::C_ParticleSystemManager::s_GetInstance()->Create(pParticleIdList[i], spMainCamera_, pTextureData.get()->handle_) == false) return false;
+                if (Particle::C_ParticleSystemManager::s_GetInstance()->Create(pParticleIdList[i], pMainCamera_, pTextureData.get()->handle_) == false) return false;
             }
         }
 

@@ -21,7 +21,7 @@ namespace ConnectWars
      ****************************************************************/
     C_Space::C_Space(const std::string& rId, int32_t type) : C_BaseBackground(rId, type)
     {
-        // プレイヤーの情報を取得
+        // スペースの情報を取得
         assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSPACE));
         auto pSpaceData = JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSPACE).get();
 
@@ -33,9 +33,17 @@ namespace ConnectWars
         assert(OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pSPACE));
         pModelData_ = OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pSPACE).get();
 
+        // テクスチャデータを取得
+        assert(Texture::C_TextureManager::s_GetInstance()->GetTextureData(Path::Texture::s_pSPACE));
+        pTextureData_ = Texture::C_TextureManager::s_GetInstance()->GetTextureData(Path::Texture::s_pSPACE).get();
+
         // GLSLオブジェクトを取得
-        assert(Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(ID::Shader::s_pHALF_LAMBERT_PHONG));
-        pGlslObject_ = Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(ID::Shader::s_pHALF_LAMBERT_PHONG).get();
+        assert(Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(ID::Shader::s_pCELESTIAL_SPHERE));
+        pGlslObject_ = Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(ID::Shader::s_pCELESTIAL_SPHERE).get();
+
+        pGlslObject_->Begin();
+        pGlslObject_->SetUniform1i("u_texture", 0);
+        pGlslObject_->End();
 
         // ユニフォームバッファとインデックスを取得
         assert(Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer(ID::UniformBuffer::s_pBACKGROUND_CAMERA));
@@ -79,23 +87,26 @@ namespace ConnectWars
     {
         pGlslObject_->BeginWithUnifomBuffer(pUniformBuffer_->GetHandle(), uniformBlockIndex_);
 
-        // マテリアルを設定
-        pGlslObject_->SetUniformVector3("material.diffuse", Vector3(0.5f, 1.0f, 0.5f));
-        pGlslObject_->SetUniformVector3("material.ambient", Vector3(0.1f, 0.1f, 0.1f));
-        pGlslObject_->SetUniformVector3("material.specular", Vector3(0.9f, 0.9f, 0.9f));
-        pGlslObject_->SetUniform1f("material.shininess", 100.0f);
-        pGlslObject_->SetUniformVector3("light.position", Vector3(0.0f, 100.0f, 0.0f));
-        pGlslObject_->SetUniformVector3("light.diffuse", Vector3(0.9f, 0.9f, 0.9f));
-        pGlslObject_->SetUniformVector3("light.ambient", Vector3(0.9f, 0.9f, 0.9f));
-        pGlslObject_->SetUniformVector3("light.specular", Vector3(0.9f, 0.9f, 0.9f));
+        pGlslObject_->SetUniformMatrix4x4("u_modelMatrix", modelMatrix_);
 
         auto pOpenGlManager = OpenGL::C_OpenGlManager::s_GetInstance();
+        auto pTextureManager = Texture::C_TextureManager::s_GetInstance();
+
+        pOpenGlManager->SetCullingFace(OpenGL::Face::s_FRONT);
+
+        // アクティブなテクスチャユニットを設定し、テクスチャをバインド
+        pTextureManager->SetActiveUnit(0);
+        pTextureManager->Bind(Texture::Type::s_2D, pTextureData_->handle_);
 
         pOpenGlManager->DrawPrimitiveWithIndices(OpenGL::Primitive::s_TRIANGLE,
                                                  pModelData_->GetVertexArrayObjectHandle(), 
                                                  pModelData_->GetIndexBufferObjectHandle(),
                                                  OpenGL::DataType::s_UNSIGNED_SHORT,
                                                  static_cast<int32_t>(pModelData_->GetIndexCount()));
+
+        pTextureManager->Unbind(Texture::Type::s_2D);
+
+        pOpenGlManager->SetCullingFace(OpenGL::Face::s_BACK);
 
         pGlslObject_->End();
     }

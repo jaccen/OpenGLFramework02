@@ -81,6 +81,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BackgroundGenerator.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseBackground.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseBomb.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseBullet.h" />
@@ -143,6 +144,7 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyStraightMoveLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyForceMoveLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RootScene.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Shelter.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ShieldOption.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Shooter.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ShotLogic.h" />
@@ -333,6 +335,7 @@
     <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\stack_content_by_name.cpp" />
     <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\weak_ref.cpp" />
     <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\wrapper_base.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BackgroundGenerator.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseBackground.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseBomb.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseBullet.cpp" />
@@ -391,6 +394,7 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyStraightMoveLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyForceMoveLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RootScene.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Shelter.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ShieldOption.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Shooter.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ShotLogic.cpp" />
@@ -496,9 +500,15 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Background\ShelterData.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Background\SpaceData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Bullet\Option\OptionBulletDatas.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Bullet\Player\PlayerBulletDatas.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Camera\CameraData.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Camera\Stage01\Stage01CameraworkData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Enemy\Stage01\Stage01EnemyData.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Light\LightData.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Material\MaterialData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\OpenGL\OpenGLData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Option\SmallBeamOptionData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Option\SpeedUpOptionData.json" />
@@ -509,19 +519,25 @@
     <None Include="Projects\Models\Test\Box\Box.model" />
     <None Include="Projects\Models\Test\Sphere\Sphere.material" />
     <None Include="Projects\Models\Test\Sphere\Sphere.model" />
+    <None Include="Projects\Shaders\GLSL\CelestialSphere\CelestialSphere.frag" />
+    <None Include="Projects\Shaders\GLSL\CelestialSphere\CelestialSphere.vert" />
     <None Include="Projects\Shaders\GLSL\Debug\DebugString.frag" />
     <None Include="Projects\Shaders\GLSL\Debug\DebugString.geom" />
     <None Include="Projects\Shaders\GLSL\Debug\DebugString.vert" />
     <None Include="Projects\Shaders\GLSL\Figure\Figure.frag" />
     <None Include="Projects\Shaders\GLSL\Figure\Figure.vert" />
-    <None Include="Projects\Shaders\GLSL\HalfLambertPhong\HalfLambertPhong.frag" />
-    <None Include="Projects\Shaders\GLSL\HalfLambertPhong\HalfLambertPhong.vert" />
     <None Include="Projects\Shaders\GLSL\Load\Load.frag" />
     <None Include="Projects\Shaders\GLSL\Load\Load.geom" />
     <None Include="Projects\Shaders\GLSL\Load\Load.vert" />
     <None Include="Projects\Shaders\GLSL\Particle\Particle.frag" />
     <None Include="Projects\Shaders\GLSL\Particle\Particle.geom" />
     <None Include="Projects\Shaders\GLSL\Particle\Particle.vert" />
+    <None Include="Projects\Shaders\GLSL\Phong\Phong.frag" />
+    <None Include="Projects\Shaders\GLSL\Phong\Phong.vert" />
+    <None Include="Projects\Shaders\GLSL\Phong\PhongNormal.frag" />
+    <None Include="Projects\Shaders\GLSL\Phong\PhongNormal.vert" />
+    <None Include="Projects\Shaders\GLSL\Phong\PhongTexture.frag" />
+    <None Include="Projects\Shaders\GLSL\Phong\PhongTexture.vert" />
     <None Include="Projects\Shaders\GLSL\Sprite\Sprite.frag" />
     <None Include="Projects\Shaders\GLSL\Sprite\Sprite.geom" />
     <None Include="Projects\Shaders\GLSL\Sprite\Sprite.vert" />
@@ -539,7 +555,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties Projects_2GameDatas_2ConnectWars_2JSON_2Bullet_2Player_2PlayerBulletDatas_1json__JSONSchema="" />
+      <UserProperties Projects_2GameDatas_2ConnectWars_2JSON_2Bullet_2Player_2PlayerBulletDatas_1json__JSONSchema="" Projects_2GameDatas_2ConnectWars_2JSON_2Camera_2Stage01CameraworkData_1json__JSONSchema="Point" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

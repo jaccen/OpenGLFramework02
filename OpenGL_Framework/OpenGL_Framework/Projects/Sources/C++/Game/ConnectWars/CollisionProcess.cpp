@@ -59,6 +59,7 @@ namespace ConnectWars
             auto optionTransform = pOption->GetRigidBody()->GetTransform();
 
             Physics::Vector3 offsetFromPlayer = optionTransform.getOrigin() - playerPosition;
+            offsetFromPlayer.setZ(0.0f);
             offsetFromPlayer = offsetFromPlayer.normalize();
 
             offsetFromPlayer = offsetFromPlayer * pPlayer->GetRadius()

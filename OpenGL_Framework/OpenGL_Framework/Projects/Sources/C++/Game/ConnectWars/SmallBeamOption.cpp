@@ -57,18 +57,22 @@ namespace ConnectWars
         upRigidBody_->SetUserPointer(this);
 
         // モデル情報を取得
-        assert(OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pNORMAL_PLAYER));
-        pModelData_ = OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pNORMAL_PLAYER).get();
+        assert(OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pSMALL_BEAM_OPTION));
+        pModelData_ = OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pSMALL_BEAM_OPTION).get();
+
+        // テクスチャ情報を取得
+        assert(Texture::C_TextureManager::s_GetInstance()->GetTextureData(Path::Texture::s_pSMALL_BEAM_OPTION));
+        pModelTextureData_ = Texture::C_TextureManager::s_GetInstance()->GetTextureData(Path::Texture::s_pSMALL_BEAM_OPTION).get();
 
         // GLSLオブジェクトを取得
-        assert(Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(ID::Shader::s_pHALF_LAMBERT_PHONG));
-        pGlslObject_ = Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(ID::Shader::s_pHALF_LAMBERT_PHONG).get();
+        assert(Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(ID::Shader::s_pPHONG_TEXTURE));
+        pGlslObject_ = Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(ID::Shader::s_pPHONG_TEXTURE).get();
 
         // ユニフォームバッファとインデックスを取得
         assert(Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer(ID::UniformBuffer::s_pMAIN_CAMERA));
         pUniformBuffer_ = Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer(ID::UniformBuffer::s_pMAIN_CAMERA).get();
         uniformBlockIndex_ = pUniformBuffer_->GetBlockIndexFromProgramObject(pGlslObject_->GetProgramObjectHandle());
-        
+
         // パワーとヒットポイントを作成
         upPower_ = std::make_unique<C_BasePower>((*pOptionData)["CreateData"]["Power"].GetValue<JSON::Integer>());
         upHitPoint_ = std::make_unique<C_BaseHitPoint>((*pOptionData)["CreateData"]["HitPoint"].GetValue<JSON::Integer>());
@@ -80,6 +84,15 @@ namespace ConnectWars
 
         // 銃の情報の数を取得
         gunDataCount_ = (*pOptionData)["GunDataCount"].GetValue<JSON::Integer>();
+
+        // ユニフォーム変数を設定
+        pGlslObject_->Begin();
+
+        SetMaterial(pBasicMaterial_);
+        pGlslObject_->SetUniform1i("u_texture", 0);
+        pGlslObject_->SetUniform1f("u_gamma", 2.2f);
+
+        pGlslObject_->End();
     }
 
 
@@ -128,27 +141,29 @@ namespace ConnectWars
     {
         pGlslObject_->BeginWithUnifomBuffer(pUniformBuffer_->GetHandle(), uniformBlockIndex_);
 
-        // マテリアルを設定
-        pGlslObject_->SetUniformVector3("material.diffuse", Vector3(0.5f, 1.0f, 0.5f));
-        pGlslObject_->SetUniformVector3("material.ambient", Vector3(0.1f, 0.1f, 0.1f));
-        pGlslObject_->SetUniformVector3("material.specular", Vector3(0.9f, 0.9f, 0.9f));
-        pGlslObject_->SetUniform1f("material.shininess", 100.0f);
-        pGlslObject_->SetUniformVector3("light.position", Vector3(0.0f, 100.0f, 0.0f));
-        pGlslObject_->SetUniformVector3("light.diffuse", Vector3(0.9f, 0.9f, 0.9f));
-        pGlslObject_->SetUniformVector3("light.ambient", Vector3(0.9f, 0.9f, 0.9f));
-        pGlslObject_->SetUniformVector3("light.specular", Vector3(0.9f, 0.9f, 0.9f));
-
         upRigidBody_->GetTransform().getOpenGLMatrix(modelMatrix_.a_);
         modelMatrix_ = modelMatrix_ * Matrix4x4::s_CreateScaling(Vector3(radius_));
-        pGlslObject_->SetUniformMatrix4x4("modelMatrix", modelMatrix_);
+        pGlslObject_->SetUniformMatrix4x4("u_modelMatrix", modelMatrix_);
+
+        // ライトとマテリアルを設定
+        SetLight(pMainLight_);
+        SetMaterial(pNowMaterial_);
 
         auto pOpenGlManager = OpenGL::C_OpenGlManager::s_GetInstance();
+        auto pTextureManager = Texture::C_TextureManager::s_GetInstance();
+
+        // アクティブなテクスチャユニットを設定し、テクスチャをバインド
+        pTextureManager->SetActiveUnit(0);
+        pModelTextureData_ = Texture::C_TextureManager::s_GetInstance()->GetTextureData(Path::Texture::s_pSMALL_BEAM_OPTION).get();
+        pTextureManager->Bind(Texture::Type::s_2D, pModelTextureData_->handle_);
 
         pOpenGlManager->DrawPrimitiveWithIndices(OpenGL::Primitive::s_TRIANGLE,
                                                  pModelData_->GetVertexArrayObjectHandle(), 
                                                  pModelData_->GetIndexBufferObjectHandle(),
                                                  OpenGL::DataType::s_UNSIGNED_SHORT,
                                                  static_cast<int32_t>(pModelData_->GetIndexCount()));
+
+        pTextureManager->Unbind(Texture::Type::s_2D);
 
         pGlslObject_->End();
     }

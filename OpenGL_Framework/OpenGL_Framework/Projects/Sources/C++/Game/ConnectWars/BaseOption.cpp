@@ -67,6 +67,8 @@ namespace ConnectWars
         // 衝突したオブジェクトのIDを全てリセット
         ResetCollidedObjectId();
 
+        frameCount_++;
+
         return C_GameObject::existenceFlag_;
     }
 
@@ -268,6 +270,12 @@ namespace ConnectWars
         // 連結状態へ変更
         upStateMachine_->ChangeState(C_OptionConnectState::s_GetInstance());
 
+        // 剛体に加えられている力をリセット
+        upRigidBody_->EnableActive(true);
+        upRigidBody_->SetLinearVelocity();
+        upRigidBody_->SetAngularVelocity();
+        upRigidBody_->ResetVelocity();
+
         // 連結時の移動ロジックに変更
         assert(pPlayer_);
         upMoveLogic_ = std::make_unique<C_RigidBodyConnectMoveLogic>(pPlayer_, *upOffsetFromPlayer_);
@@ -316,6 +324,7 @@ namespace ConnectWars
     {
         if (upStateMachine_->CheckCurrentState(C_OptionWaitOwnCrashState::s_GetInstance()) == false)
         {
+            ResetConnect();
             upStateMachine_->ChangeState(C_OptionWaitOwnCrashState::s_GetInstance());
         }
     }

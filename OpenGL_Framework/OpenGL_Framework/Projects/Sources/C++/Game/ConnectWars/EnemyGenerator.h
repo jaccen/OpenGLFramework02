@@ -48,6 +48,7 @@ namespace ConnectWars
         C_EnemyGenerator();                                                                         // コンストラクタ
         ~C_EnemyGenerator() override;                                                               // デストラクタ
         EnemyPtr Create(const std::string& rId);                                                    // 生成処理
+        void AutoCreate(int32_t frame);                                                             // 自動生成処理
         void RegistFunction(const std::string& rId, CreateFunction pCreateFunction);                // 関数の登録
         void SetTaskSystem(Task::C_GeneralTaskSystem* pTaskSystem);                                 // タスクシステムを設定
         void SetEnemyData(const JSON::JsonObjectPtr& prEnemyData);                                  // 敵データを設定

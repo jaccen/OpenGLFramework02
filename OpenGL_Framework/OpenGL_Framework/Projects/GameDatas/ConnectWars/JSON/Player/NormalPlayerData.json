@@ -9,7 +9,7 @@
     ],
     "HitPoint" : 5000,
     "RemainLife" : 3,
-    "Radius" : 0.9,
+    "Radius" : 1.2,
     "MoveSpeedLevel" : 0,
     "Movement" : 0.2,
     "MoveSpeedUpInterval" : 0.5,

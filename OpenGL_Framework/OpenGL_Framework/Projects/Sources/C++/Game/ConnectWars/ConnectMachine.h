@@ -7,7 +7,6 @@
 #include "RigidBodyMoveLogic.h"
 #include "../../Library/Physics/Body/Rigid/Rigidbody.h"
 #include "../../Library/Physics/CollisionShape/Convex/Sphere/SphereShape.h"
-#include "../../Library/OpenGL/Buffer/Primitive/Manager/PrimitiveBufferManager.h"
 
 
 //-------------------------------------------------------------
@@ -61,6 +60,8 @@ namespace ConnectWars
         virtual const Physics::Vector3& GetPosition() const override;                           // 座標を取得
         virtual void SetPosition(const Physics::Vector3& rPosition) override;                   // 座標を設定
         virtual const Physics::Matrix3x3& GetRotation() const override;                         // 回転量を取得
+        void SetMaterial(const Material::MaterialPtr& prMaterial) override;                     // マテリアルを設定
+        void SetLight(const Light::LightPtr& prLight) override;                                 // ライトを設定
 
         static void s_SetOwnCrashDerayFrameInterval(uint32_t ownCrashDerayFrameInterval);       // 自爆遅延フレーム数の間隔を設定
     protected:
@@ -68,7 +69,6 @@ namespace ConnectWars
         float radius_ = 0.0f;                                                                   ///< @brief 半径
         std::unique_ptr<Physics::C_RigidBody> upRigidBody_;                                     ///< @brief 剛体
         std::unique_ptr<C_RigidBodyMoveLogic> upMoveLogic_;                                     ///< @brief 移動ロジック
-        OpenGL::PrimitiveBufferPtr pModelData_;                                                 ///< @brief モデル情報
 
         static uint32_t s_ownCrashDerayFrameInterval;                                           ///< @brief 自爆遅延フレーム数の間隔
     };

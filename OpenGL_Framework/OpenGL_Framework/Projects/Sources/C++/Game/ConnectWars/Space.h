@@ -5,6 +5,7 @@
 /* ヘッダファイル */
 #include "../../Library/OpenGL/Buffer/Primitive/Manager/PrimitiveBufferManager.h"
 #include "../../Library/Shader/GLSL/Uniform/Manager/UniformBufferManager.h"
+#include "../../Library/Texture/Manager/TextureManager.h"
 #include "BaseBackground.h"
 
 
@@ -19,7 +20,7 @@ namespace ConnectWars
     //-------------------------------------------------------------
     //!
     //! @brief スペース
-    //! @brief 宇宙のスカイスフィアを描画するクラス
+    //! @brief 宇宙を表すクラス
     //!
     //-------------------------------------------------------------
     class C_Space : public C_BaseBackground
@@ -29,7 +30,7 @@ namespace ConnectWars
         virtual ~C_Space();                                                     // デストラクタ
     private:
         OpenGL::PrimitiveBufferPtr pModelData_;                                 ///< @brief モデル情報
-        Vector3 rotation_;                                                      ///< @brief 回転量
+        Texture::TextureDataPtr pTextureData_;                                  ///< @brief テクスチャデータ
         Matrix4x4 modelMatrix_;                                                 ///< @brief モデル行列
 
         virtual void DoUpdate() override;                                       // 非公開の更新処理

@@ -207,7 +207,7 @@ namespace Framework
      ****************************************************************/
     void C_Framework::Draw()
     {
-        //Debug::C_DebugString::s_GetInstance()->Draw("[ FPS : " + std::to_string(Timer::C_TimeManager::s_GetInstance()->GetNowFps()) + " ]", Debug::Vector3(0.0f, 0.0f, 0.0f), 0.7f, 255, 255, 255);
+        Debug::C_DebugString::s_GetInstance()->Draw("[ FPS : " + std::to_string(Timer::C_TimeManager::s_GetInstance()->GetNowFps()) + " ]", Debug::Vector3(0.0f, 0.0f, 0.0f), 0.7f, 255, 255, 255);
     }
 
 
@@ -285,7 +285,7 @@ namespace Framework
         _CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
 
         // メモリーリークが発生した位置を検知してくれる関数( 引数にメモリーリークした番号を入れる )
-        // _CrtSetBreakAlloc(5892);
+        _CrtSetBreakAlloc(483);
     }
 
 

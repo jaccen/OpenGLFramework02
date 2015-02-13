@@ -54,7 +54,20 @@ namespace JSON
          ****************************************************************/
         void* operator()(std::size_t size)
         {
-            return Memory::C_MemoryManager::s_MemoryAlloc(size, "Unknown", 0);
+            void* pPointer = nullptr;
+
+            if (Memory::C_MemoryManager::s_GetMemoryMutex())
+            {
+                Memory::C_MemoryManager::s_GetMemoryMutex()->Lock();
+                pPointer = Memory::C_MemoryManager::s_MemoryAlloc(size, "Unknown", 0);
+                Memory::C_MemoryManager::s_GetMemoryMutex()->Unlock();
+            }
+            else
+            {
+                pPointer = Memory::C_MemoryManager::s_MemoryAlloc(size, "Unknown", 0);
+            }
+
+            return pPointer;
         }
     };
 
@@ -74,7 +87,16 @@ namespace JSON
          ****************************************************************/
         void operator()(void* pDeletePointer)
         {
-            Memory::C_MemoryManager::s_MemoryFree(pDeletePointer);
+            if (Memory::C_MemoryManager::s_GetMemoryMutex())
+            {
+                Memory::C_MemoryManager::s_GetMemoryMutex()->Lock();
+                Memory::C_MemoryManager::s_MemoryFree(pDeletePointer);
+                Memory::C_MemoryManager::s_GetMemoryMutex()->Unlock();
+            }
+            else
+            {
+                Memory::C_MemoryManager::s_MemoryFree(pDeletePointer);
+            }
         }
     };
 }

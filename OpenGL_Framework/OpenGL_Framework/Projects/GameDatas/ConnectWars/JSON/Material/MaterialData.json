@@ -3,7 +3,7 @@
   {
     "Basic" :
     {
-      "Ambient" : [ 0.1, 0.1, 0.1 ],
+      "Ambient" : [ 0.2, 0.2, 0.3 ],
       "Diffuse" : [ 0.9, 0.9, 0.9 ],
       "Specular" : [ 0.7, 0.7, 0.7 ],
       "Emissive" : [ 0.0, 0.0, 0.0 ],
@@ -14,7 +14,7 @@
     "Damage" :
     {
       "Ambient" : [ 0.2, 0.1, 0.1 ],
-      "Diffuse" : [ 0.9, 0.1, 0.1 ],
+      "Diffuse" : [ 0.7, 1.0, 0.1 ],
       "Specular" : [ 0.7, 0.2, 0.1 ],
       "Emissive" : [ 0.0, 0.0, 0.0 ],
       "Shininess" : 100.0,

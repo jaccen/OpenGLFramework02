@@ -1,0 +1,59 @@
+{
+  "BackgroundCameraData" :
+  {
+    "EyePointDataCount" : 5,
+    "TargetPointDataCount" : 1,
+    "UpVectorDataCount" : 1,
+    "EyePoint" :
+    [
+        {
+            "Frame": 0,
+            "Type": "Hermite",
+            "Point": [ 0.0, 0.0, 100.0 ],
+            "Tangent": [ 0.0, 0.0, 1.0 ]
+        },
+        {
+            "Frame": 200,
+            "Type": "Hermite",
+            "Point": [ 0.0, 200.0, 1000.0 ],
+            "Tangent": [ 0.0, 0.0, 1.0 ]
+        },
+        {
+            "Frame": 500,
+            "Type": "Constant",
+            "Point": [ 50.0, 50.0, 500.0 ],
+            "Tangent": [ 0.0, 0.0, 1.0 ]
+        },
+        {
+            "Frame": 700,
+            "Type": "Linear",
+            "Point": [ 50.0, 50.0, 500.0 ],
+            "Tangent": [ 0.0, 0.0, 1.0 ]
+        },
+        {
+            "Frame": 1000,
+            "Type": "Hermite",
+            "Point": [ 0.0, 0.0, 100.0 ],
+            "Tangent": [ 0.0, 0.0, 1.0 ]
+        }
+    ],
+    "TargetPoint" :
+    [
+      { 
+        "Frame" : 0,
+        "Type" : "Constant",
+        "Point" : [ 0.0, 0.0, 0.0 ],
+        "Tangent" : [ 0.0, 0.0, 0.0 ]
+      }
+    ],
+    "UpVector" :
+    [
+      {
+        "Frame" : 0,
+        "Type" : "Constant",
+        "Direction" : [ 0.0, 1.0, 0.0 ],
+        "Tangent" : [ 0.0, 0.0, 0.0 ]
+      }
+    ] 
+  }
+}

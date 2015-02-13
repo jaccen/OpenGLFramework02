@@ -136,8 +136,8 @@ namespace Particle
         C_ParticleSystemImpl();                                                                         // コンストラクタ  
         ~C_ParticleSystemImpl();                                                                        // デストラクタ
         bool Initialize(const Camera::CameraPtr& prCamera,                                              // 初期化処理
-            Texture::TextureHandle textureHandle,
-            uint32_t maxParticleCount);
+                        Texture::TextureHandle textureHandle,
+                        uint32_t maxParticleCount);
         void Update();                                                                                  // 更新処理
         void Draw();                                                                                    // 描画処理
         void Finalize();                                                                                // 終了処理

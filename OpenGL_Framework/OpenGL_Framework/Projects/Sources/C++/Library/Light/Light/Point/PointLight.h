@@ -20,7 +20,7 @@ namespace Light
     //! @brief 点光源を表す構造体
     //!
     //-------------------------------------------------------------
-    struct S_PointLight
+    struct S_PointLight : public S_Light
     {
         Vector3 position_;                          ///< @brief 座標
         float constantAttenuation_;                 ///< @brief 一定減衰率

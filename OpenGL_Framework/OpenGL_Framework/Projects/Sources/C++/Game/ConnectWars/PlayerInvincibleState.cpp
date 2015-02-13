@@ -65,6 +65,7 @@ namespace ConnectWars
         pPlayer->MoveLimitCheck();
         pPlayer->ResetMoveLimitBoundingBox();
         pPlayer->Shot();
+        pPlayer->ResetConnect();
 
         if (pPlayer->GetBombInvincibleFrame() <= frameCounter_.GetCount())
         {

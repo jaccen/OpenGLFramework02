@@ -42,8 +42,8 @@ namespace ConnectWars
             /* カメラ */
             namespace Camera
             {
-                const char* s_pMAIN = "Main";                                                                                                 ///< @brief メインカメラ
-                const char* s_pBACKGROUND = "Background";                                                                                     ///< @brief 背景用カメラ
+                const char* s_pMAIN = "Main";                                                                                                       ///< @brief メインカメラ
+                const char* s_pBACKGROUND = "Background";                                                                                           ///< @brief 背景用カメラ
                 const char* s_pUI = "UICamera";                                                                                                     ///< @brief UIカメラ
             }
 
@@ -51,7 +51,9 @@ namespace ConnectWars
             /* シェーダー */
             namespace Shader
             {
-                const char* s_pHALF_LAMBERT_PHONG = "HalfLamberPhongShader";                                                                        ///< @brief ハーフランバートフォン
+                const char* s_pPHONG = "PhongShader";                                                                                               ///< @brief フォン
+                const char* s_pPHONG_TEXTURE = "PhongTextureShader";                                                                                ///< @brief フォン( テクスチャ )
+                const char* s_pCELESTIAL_SPHERE = "CelestialSphereShader";                                                                          ///< @brief 天球
                 const char* s_pLOAD = "LoadShader";                                                                                                 ///< @brief ロード用
             }
 
@@ -67,7 +69,6 @@ namespace ConnectWars
             namespace Light
             {
                 const char* s_pMAIN = "Main";                                                                                                       ///< @brief メイン
-                const char* s_pSUB = "Sub";                                                                                                         ///< @brief サブ
             }
 
 
@@ -83,8 +84,11 @@ namespace ConnectWars
             {
                 const char* s_pLOAD = "LoadPrimitive";                                                                                              ///< @brief ロード用
                 const char* s_pNORMAL_PLAYER = "NormalPlayerPrimitive";                                                                             ///< @brief 通常プレイヤー
+                const char* s_pSPEED_UP_OPTION = "SpeedUpOptionPrimitive";                                                                          ///< @brief スピードアップオプション
+                const char* s_pSMALL_BEAM_OPTION = "SmallBeamOptionPrimitive";                                                                      ///< @brief スモールビームオプション
                 const char* s_pBOX_ENEMY = "BoxEnemyPrimitive";                                                                                     ///< @brief ボックスエネミー
                 const char* s_pSPACE = "SpacePrimitive";                                                                                            ///< @brief 宇宙
+                const char* s_pSHELTER = "ShelterPrimitive";                                                                                        ///< @brief シェルター
             }
 
 
@@ -159,11 +163,13 @@ namespace ConnectWars
             namespace GameObject
             {
                 const char* s_pGAME_CONTROLLER = "GameController";                                                                                  ///< @brief ゲームコントローラー
+                const char* s_pCAMERA_CONTROLLER = "CameraController";                                                                              ///< @brief カメラコントローラー
                 const char* s_pPLAYER = "Player";                                                                                                   ///< @brief プレイヤー
                 const char* s_pOPTION = "Option";                                                                                                   ///< @brief オプション
                 const char* s_pENEMY = "Enemy";                                                                                                     ///< @brief 敵
                 const char* s_pBULLET = "Bullet";                                                                                                   ///< @brief 弾
                 const char* s_pEFFECT = "Effect";                                                                                                   ///< @brief エフェクト
+                const char* s_pBACKGROUND = "Background";                                                                                           ///< @brief 背景
             }
 
 
@@ -178,14 +184,19 @@ namespace ConnectWars
                 const char* s_pOPTION_BULLET = "OptionBulletJson";                                                                                  ///< @brief オプション弾
                 const char* s_pSTAGE_01_ENEMY_DATA = "Stage01EnemyDataJson";                                                                        ///< @brief ステージ01敵データ
                 const char* s_pSPACE = "SpaceJson";                                                                                                 ///< @brief 宇宙
+                const char* s_pSHELTER = "ShelterJson";                                                                                             ///< @brief シェルター
+                const char* s_pSTAGE_01_CAMERAWORK_DATA = "Stage01CameraworkDataJson";                                                              ///< @brief ステージ01カメラワークデータ
             }
 
             /* モデル */
             namespace Model
             {
                 const char* s_pNORMAL_PLAYER = "NormalPlayerModel";                                                                                 ///< @brief 通常プレイヤー
+                const char* s_pSPPED_UP_OPTION = "SpeedUpOptionModel";                                                                              ///< @brief スピードアップオプション
+                const char* s_pSMALL_BEAM_OPTION = "SmallBeamOptionModel";                                                                          ///< @brief スモールビームオプション
                 const char* s_pBOX_ENEMY = "BoxEnemyModel";                                                                                         ///< @brief ボックスエネミー
                 const char* s_pSPACE = "SpaceModel";                                                                                                ///< @brief 宇宙
+                const char* s_pSHELTER = "ShelterModel";                                                                                            ///< @brief シェルター
             }
 
             /* スプライト */
@@ -207,14 +218,44 @@ namespace ConnectWars
         /* パス */
         namespace Path
         {
+            /* シェーダー */
+            namespace Shader
+            {
+                namespace Vertex
+                {
+                    const char* s_pPHONG = "Projects/Shaders/GLSL/Phong/Phong.vert";                                                                ///< @brief フォン
+                    const char* s_pPHONG_TEXTURE = "Projects/Shaders/GLSL/Phong/PhongTexture.vert";                                                 ///< @brief フォン( テクスチャ )
+                    const char* s_pCELESTINAL_SPHERE = "Projects/Shaders/GLSL/CelestialSphere/CelestialSphere.vert";                                ///< @brief 天球
+                }
+
+
+                namespace Geometry
+                {
+                }
+
+
+                namespace Fragment
+                {
+                    const char* s_pPHONG = "Projects/Shaders/GLSL/Phong/Phong.frag";                                                                ///< @brief フォン
+                    const char* s_pPHONG_TEXTURE = "Projects/Shaders/GLSL/Phong/PhongTexture.frag";                                                 ///< @brief フォン( テクスチャ )
+                    const char* s_pCELESTINAL_SPHERE = "Projects/Shaders/GLSL/CelestialSphere/CelestialSphere.frag";                                ///< @brief 天球
+                }
+            }
+
+
             /* テクスチャ */
             namespace Texture
             {
+                const char* s_pNORMAL_PLAYER = "Projects/Images/ConnectWars/Player/NormalPlayer.png";                                               ///< @brief 通常プレイヤー
+                const char* s_pSPPED_UP_OPTION = "Projects/Images/ConnectWars/Option/SpeedUpOption.png";                                            ///< @brief スピードアップオプション
+                const char* s_pSMALL_BEAM_OPTION = "Projects/Images/ConnectWars/Option/SmallBeamOption.png";                                        ///< @brief スモールビームオプション
                 const char* s_pSPRITE_BULLET = "Projects/Images/ConnectWars/Bullet/SpriteBullet.png";                                               ///< @brief スプライトの弾
                 const char* s_pCIRCLE_01 = "Projects/Images/ConnectWars/Effect/Circle01.png";                                                       ///< @brief 円01
                 const char* s_pCIRCLE_02 = "Projects/Images/ConnectWars/Effect/Circle02.png";                                                       ///< @brief 円02
                 const char* s_pRING_01 = "Projects/Images/ConnectWars/Effect/Ring01.png";                                                           ///< @brief 輪01
                 const char* s_pSPACE = "Projects/Images/ConnectWars/Background/Space.png";                                                          ///< @brief 宇宙
+                const char* s_pSHELTER = "Projects/Images/ConnectWars/Background/Shelter.png";                                                      ///< @brief シェルター
+                const char* s_pSHALTER_NORMAL = "Projects/Images/ConnectWars/Background/Shelter_NormalMap.png";                                     ///< @brief シェルター( 法線マップ )
             }
 
             /* フォント */
@@ -227,9 +268,12 @@ namespace ConnectWars
             /* モデル */
             namespace Model
             {
-                const char* s_pNORMAL_PLAYER = "Projects/Models/Test/Sphere/Sphere.model";                                                          ///< @brief 通常プレイヤー
+                const char* s_pNORMAL_PLAYER = "Projects/Models/ConnectWars/Player/Normal/NormalPlayer.model";                                      ///< @brief 通常プレイヤー
+                const char* s_pSPEED_UP_OPTION = "Projects/Models/ConnectWars/Option/SpeedUp/SpeedUpOption.model";                                  ///< @brief スピードアップオプション
+                const char* s_pSMALL_BEAM_OPTION = "Projects/Models/ConnectWars/Option/SmallBeam/SmallBeamOption.model";                            ///< @brief スモールビームオプション
                 const char* s_pBOX_ENEMY = "Projects/Models/Test/Box/Box.model";                                                                    ///< @brief ボックスエネミー
-                const char* s_pSPACE = "Projects/Models/ConnectWars/Background/Sphere.model";                                                       ///< @brief 通常プレイヤー
+                const char* s_pSPACE = "Projects/Models/ConnectWars/Background/Space/Sphere.model";                                                 ///< @brief 宇宙
+                const char* s_pSHELTER = "Projects/Models/ConnectWars/Background/Shelter/Shelter.model";                                            ///< @brief シェルター
             }
 
 
@@ -245,8 +289,10 @@ namespace ConnectWars
                 const char* s_pSTAGE_01_ENEMY_DATA = "Projects/GameDatas/ConnectWars/JSON/Enemy/Stage01/Stage01EnemyData.json";                     ///< @breif ステージ01敵データ
                 const char* s_pTASK_PRIORITY_DATA = "Projects/GameDatas/ConnectWars/JSON/Task/TaskPriorityData.json";                               ///< @breif タスクの優先度データ
                 const char* s_pSPACE = "Projects/GameDatas/ConnectWars/JSON/Background/SpaceData.json";                                             ///< @brief 宇宙
+                const char* s_pSHELTER = "Projects/GameDatas/ConnectWars/JSON/Background/ShelterData.json";                                         ///< @brief シェルター
                 const char* s_pMATERIAL_DATA = "Projects/GameDatas/ConnectWars/JSON/Material/MaterialData.json";                                    ///< @brief マテリアルデータ
                 const char* s_pLIGHT_DATA = "Projects/GameDatas/ConnectWars/JSON/Light/LightData.json";                                             ///< @brief ライト情報
+                const char* s_pSTAGE_01_CAMERAWORK_DATA = "Projects/GameDatas/ConnectWars/JSON/Camera/Stage01/Stage01CameraworkData.json";          ///< @brief ステージ01カメラワークデータ
             }
 
             /* Lua */
@@ -270,7 +316,7 @@ namespace ConnectWars
         /* 連結 */
         namespace Connect
         {
-            float s_offsetFactor = 0.8f;                                                                                                            ///< @brief オフセット係数
+            float s_offsetFactor = 0.92f;                                                                                                           ///< @brief オフセット係数
         }
 
 
@@ -292,6 +338,7 @@ namespace ConnectWars
                 namespace Update
                 {
                     float s_gameController = 100.0f;                                                                                                ///< @brief ゲームコントローラ
+                    float s_cameraController = 50.0f;                                                                                               ///< @brief カメラコントローラ
                     float s_player = 10.0f;                                                                                                         ///< @brief プレイヤー
                     float s_option = 9.0f;                                                                                                          ///< @brief オプション
                     float s_enemy = 8.0f;                                                                                                           ///< @brief 敵
@@ -299,12 +346,15 @@ namespace ConnectWars
                     float s_obstacle = 6.0f;                                                                                                        ///< @brief 障害物
                     float s_effect = 5.0f;                                                                                                          ///< @brief エフェクト
                     float s_bomb = 4.0f;                                                                                                            ///< @brief ボム
+                    float s_background = 3.0f;                                                                                                      ///< @brief 背景
                 }
 
                 /* 描画 */
                 namespace Draw
                 {
                     float s_gameController = 100.0f;                                                                                                ///< @brief ゲームコントローラ
+                    float s_cameraController = 50.0f;                                                                                               ///< @brief カメラコントローラ
+                    float s_background = 11.0f;                                                                                                     ///< @brief 背景
                     float s_bomb = 10.0f;                                                                                                           ///< @brief ボム
                     float s_effect = 9.0f;                                                                                                          ///< @brief エフェクト
                     float s_obstacle = 8.0f;                                                                                                        ///< @brief 障害物
@@ -338,6 +388,7 @@ namespace ConnectWars
         TYPE_OBSTACLE,                                                                                                                              ///< @brief 障害物
         TYPE_EFFECT,                                                                                                                                ///< @brief エフェクト
         TYPE_BOMB,                                                                                                                                  ///< @brief ボム
+        TYPE_BACKGROUND,                                                                                                                            ///< @brief 背景
 
         TYPE_TYPE_NUMBER,                                                                                                                           ///< @brief 種類の数
     };

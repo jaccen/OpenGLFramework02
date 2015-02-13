@@ -1,7 +1,6 @@
 {
   "SpaceData" :
   {
-    "Radius" : 25.0,
-    "Rotation" : [ 0.0, 0.5, 0.0 ]
+    "Radius" : 500.0
   }
 }

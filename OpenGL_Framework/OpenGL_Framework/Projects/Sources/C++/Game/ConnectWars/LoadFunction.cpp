@@ -7,7 +7,7 @@
 #include "../../Library/Material/Manager/MaterialManager.h"
 #include "../../Library/Material/Material/Phong/PhongMaterial.h"
 #include "../../Library/Light/Manager/LightManager.h"
-#include "../../Library/Light/Light/Directional/DirectionalLight.h"
+#include "../../Library/Light//Light/Point/PointLight.h"
 #include "../../Library/Common/CommonHelper.h"
 
 
@@ -53,6 +53,9 @@ namespace ConnectWars
             ID::Primitive::s_pNORMAL_PLAYER,
             ID::Primitive::s_pBOX_ENEMY,
             ID::Primitive::s_pSPACE,
+            ID::Primitive::s_pSHELTER,
+            ID::Primitive::s_pSPEED_UP_OPTION,
+            ID::Primitive::s_pSMALL_BEAM_OPTION,
         };
 
         const char* pModelPathList[] =
@@ -60,6 +63,9 @@ namespace ConnectWars
             Path::Model::s_pNORMAL_PLAYER,
             Path::Model::s_pBOX_ENEMY,
             Path::Model::s_pSPACE,
+            Path::Model::s_pSHELTER,
+            Path::Model::s_pSPEED_UP_OPTION,
+            Path::Model::s_pSMALL_BEAM_OPTION,
         };
 
         const char* pModelIdList[] =
@@ -67,6 +73,9 @@ namespace ConnectWars
             ID::Model::s_pNORMAL_PLAYER,
             ID::Model::s_pBOX_ENEMY,
             ID::Model::s_pSPACE,
+            ID::Model::s_pSHELTER,
+            ID::Model::s_pSPPED_UP_OPTION,
+            ID::Model::s_pSMALL_BEAM_OPTION,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pPrimitiveIdList); i < arraySize; ++i)
@@ -75,6 +84,7 @@ namespace ConnectWars
             {
                 auto pModelLoader = Model::SelfMade::C_ModelLoader::s_Create();
                 pModelLoader->LoadModel(pModelPathList[i]);
+                pModelLoader->InvertTextureCoord(false, true);
 
                 Model::SelfMade::C_ModelLoaderManager::s_GetInstance()->Entry(pModelLoader, pModelIdList[i]);
             }
@@ -96,6 +106,8 @@ namespace ConnectWars
             ID::JSON::s_pSMALL_BEAM_OPTION,
             ID::JSON::s_pSTAGE_01_ENEMY_DATA,
             ID::JSON::s_pSPACE,
+            ID::JSON::s_pSHELTER,
+            ID::JSON::s_pSTAGE_01_CAMERAWORK_DATA,
         };
 
 
@@ -108,6 +120,8 @@ namespace ConnectWars
             Path::JSON::s_pSMALL_BEAM_OPTION,
             Path::JSON::s_pSTAGE_01_ENEMY_DATA,
             Path::JSON::s_pSPACE,
+            Path::JSON::s_pSHELTER,
+            Path::JSON::s_pSTAGE_01_CAMERAWORK_DATA,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pJsonIdList); i < arraySize; ++i)
@@ -183,11 +197,15 @@ namespace ConnectWars
         {
             if (!Light::C_LightManager::s_GetInstance()->GetLight(pDirectionalLightIdList[i]))
             {
-                std::shared_ptr<Light::S_DirectionalLight> spLight = std::make_shared<Light::S_DirectionalLight>();
+                std::shared_ptr<Light::S_PointLight> spLight = std::make_shared<Light::S_PointLight>();
                 
-                spLight->direction_.x_ = static_cast<float>(lightData["LightDatas"][pDirectionalLightIdList[i]]["Direction"][0].GetValue<JSON::Real>());
-                spLight->direction_.y_ = static_cast<float>(lightData["LightDatas"][pDirectionalLightIdList[i]]["Direction"][1].GetValue<JSON::Real>());
-                spLight->direction_.z_ = static_cast<float>(lightData["LightDatas"][pDirectionalLightIdList[i]]["Direction"][2].GetValue<JSON::Real>());
+                spLight->position_.x_ = static_cast<float>(lightData["LightDatas"][pDirectionalLightIdList[i]]["Position"][0].GetValue<JSON::Real>());
+                spLight->position_.y_ = static_cast<float>(lightData["LightDatas"][pDirectionalLightIdList[i]]["Position"][1].GetValue<JSON::Real>());
+                spLight->position_.z_ = static_cast<float>(lightData["LightDatas"][pDirectionalLightIdList[i]]["Position"][2].GetValue<JSON::Real>());
+
+                spLight->constantAttenuation_ = static_cast<float>(lightData["LightDatas"][pDirectionalLightIdList[i]]["ConstantAttenuation"].GetValue<JSON::Real>());
+                spLight->linearAttenuation_ = static_cast<float>(lightData["LightDatas"][pDirectionalLightIdList[i]]["LinearAttenuation"].GetValue<JSON::Real>());
+                spLight->quadraticAttenuation_ = static_cast<float>(lightData["LightDatas"][pDirectionalLightIdList[i]]["QuadraticAttenuation"].GetValue<JSON::Real>());
 
                 spLight->diffuse_.x_ = static_cast<float>(lightData["LightDatas"][pDirectionalLightIdList[i]]["Diffuse"][0].GetValue<JSON::Real>());
                 spLight->diffuse_.y_ = static_cast<float>(lightData["LightDatas"][pDirectionalLightIdList[i]]["Diffuse"][1].GetValue<JSON::Real>());

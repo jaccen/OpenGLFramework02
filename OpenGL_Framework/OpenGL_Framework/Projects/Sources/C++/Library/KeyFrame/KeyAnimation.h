@@ -27,9 +27,9 @@ namespace KeyFrame
     {
     public:
         /* 別名 */
-        using Key = S_Key<T>;                                               // Key型
-        using LinearFunction = T(*)(T, T, U);                               // LinearFunction型
-        using HermiteFunction = T(*)(T, T, T, T, U);                        // HermiteFunction型
+        using Key = S_Key<T>;                                                                   // Key型
+        using LinearFunction = T(*)(const T&, const T&, U);                                     // LinearFunction型
+        using HermiteFunction = T(*)(const T&, const T&, const T&, const T&, U);                // HermiteFunction型
         
         
         /*************************************************************//**
@@ -68,14 +68,20 @@ namespace KeyFrame
             // インデックスが最後で、かつループをする場合インデックスをリセット
             if (index_ == keys_.size() - 1)
             {
-                if (loopFlag_ == true) index_ = 0;
+                if (loopFlag_ == true)
+                {
+                    index_ = 0;
+                    ++loopCount_;
+                }
             }
 
+            S_Key<T> startKey, endKey;
+
             // キーを2つ取得する。ない場合は1つ分のキーの値を設定し、終了
-            if (index_ + 1 < keys_.size())
+            if (index_ + 1 < static_cast<int32_t>(keys_.size()))
             {
-                startKey = keys_[index];
-                endKey = keys_[index + 1];
+                startKey = keys_[index_];
+                endKey = keys_[index_ + 1];
             }
             else
             {
@@ -95,7 +101,7 @@ namespace KeyFrame
             {
                 value_ = pLinearFunction_(startKey.value_,
                                           endKey.value_,
-                                          static_cast<U>(frameCounter_.GetCount()) / static_cast<U>(endKey.frame_ - startKey.frame_);
+                                          static_cast<U>(frameCounter_.GetCount() - (keys_[keys_.size() - 1].frame_ * loopCount_) - startKey.frame_) / static_cast<U>(endKey.frame_ - startKey.frame_));
             }
                 break;
             case ecInterpolationType::HERMITE:
@@ -104,14 +110,14 @@ namespace KeyFrame
                                            startKey.tangent_,
                                            endKey.value_,
                                            endKey.tangent_,
-                                           static_cast<U>(frameCounter_.GetCount()) / static_cast<U>(endKey.frame_ - startKey.frame_);
+                                           static_cast<U>(frameCounter_.GetCount() - (keys_[keys_.size() - 1].frame_ * loopCount_) - startKey.frame_) / static_cast<U>(endKey.frame_ - startKey.frame_));
             }
                 break;
             }
 
             // フレーム数が次のキーまで達したら、次のキーへ進める
-            frameCounter_.CountUp();
-            if (endKey.frame_ == frameCounter_.GetCount()) ++index_;
+            if (waitFlag_ == false) frameCounter_.CountUp();
+            if (endKey.frame_ == frameCounter_.GetCount() - (keys_[keys_.size() - 1].frame_ * loopCount_)) ++index_;
         }
 
 
@@ -204,13 +210,67 @@ namespace KeyFrame
         {
             return frameCounter_.GetCount();
         }
+
+
+        /*************************************************************//**
+         *
+         *  @brief  ループ回数を取得する
+         *  @param  なし
+         *  @return ループ回数
+         *
+         ****************************************************************/
+        int32_t GetLoopCount() const
+        {
+            return loopCount_;
+        }
+
+
+        /*************************************************************//**
+         *
+         *  @brief  線形補間関数を設定する
+         *  @param  線形補間関数
+         *  @return なし
+         *
+         ****************************************************************/
+        void SetLinearFunction(LinearFunction pLinearFunction)
+        {
+            pLinearFunction_ = pLinearFunction;
+        }
+
+
+        /*************************************************************//**
+         *
+         *  @brief  エルミート補間関数を設定する
+         *  @param  エルミート補間関数
+         *  @return なし
+         *
+         ****************************************************************/
+        void SetHermiteFunction(HermiteFunction pHermiteFunction)
+        {
+            pHermiteFunction_ = pHermiteFunction;
+        }
+
+
+        /*************************************************************//**
+         *
+         *  @brief  待機を有効化する
+         *  @param  有効か判断するフラグ
+         *  @return なし
+         *
+         ****************************************************************/
+        void EnableWait(bool validFlag = true)
+        {
+            waitFlag_ = validFlag;
+        }
     private:
-        std::deque<Key> keys_;                                              ///< @brief キー
-        int32_t index_ = 0;                                                 ///< @brief インデックス
-        Timer::C_FrameCounter frameCounter_;                                ///< @brief フレームカウンター
-        T value_;                                                           ///< @brief 値
-        bool loopFlag_ = false;                                             ///< @brief ループフラグ
-        LinearFunction pLinearFunction_ = nullptr;                          ///< @brief 線形補間関数
-        HermiteFunction pHermiteFunction_ = nullptr;                        ///< @brief エルミート補間関数
+        std::deque<Key> keys_;                                                                  ///< @brief キー
+        int32_t index_ = 0;                                                                     ///< @brief インデックス
+        Timer::C_FrameCounter frameCounter_;                                                    ///< @brief フレームカウンター
+        T value_;                                                                               ///< @brief 値
+        bool loopFlag_ = false;                                                                 ///< @brief ループフラグ
+        LinearFunction pLinearFunction_ = nullptr;                                              ///< @brief 線形補間関数
+        HermiteFunction pHermiteFunction_ = nullptr;                                            ///< @brief エルミート補間関数
+        bool waitFlag_ = false;                                                                 ///< @brief 待機フラグ
+        int32_t loopCount_ = 0;                                                                 ///< @brief ループ回数
     };
 }

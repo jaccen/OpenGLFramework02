@@ -46,9 +46,8 @@ namespace ConnectWars
         C_EnemyGenerator enemyGenerator_;                               ///< @brief エネミー生成機
         C_BulletGenerator bulletGenerator_;                             ///< @brief 弾生成機
         C_EffectGenerator effectGenerator_;                             ///< @brief エフェクト生成機
-        std::shared_ptr<C_GameController> spGameController_;            ///< @brief ゲームコントローラ
-        std::shared_ptr<Camera::IC_Camera> spMainCamera_;               ///< @brief メインカメラ
-        S_CameraData mainCameraData_;                                   ///< @brief メインカメラの情報
+        Camera::CameraPtr pMainCamera_;                                 ///< @brief メインカメラ
+        Camera::CameraPtr pBackgroundCamera_;                           ///< @brief 背景用カメラ
 
         bool RemainLoadProcess();                                       // 残りのロード処理
     };

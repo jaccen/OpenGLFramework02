@@ -33,5 +33,7 @@ int main(int argc, char* argv[])
     auto pGame = std::make_unique<ConnectWars::C_ConnectWars>();
     if (pGame->Run() == false) return -1;
 
+    pGame.reset();
+
     return 0;
 }
