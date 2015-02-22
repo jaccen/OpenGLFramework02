@@ -16,6 +16,8 @@
 #include "../../Library/Camera/Camera/Perspective/PerspectiveCamera.h"
 #include "../../Library/Camera/Camera/Perspective/Test/TestCamera.h"
 #include "../../Library/Camera/Camera/Orthographic/OrthographicCamera.h"
+#include "../../Library/Sprite/Creater/Manager/SpriteCreaterManager.h"
+#include "../../Library/Sprite/Creater/SpriteCreater.h"
 #include "LoadScene.h"
 #include "LoadFunction.h"
 
@@ -71,6 +73,12 @@ namespace ConnectWars
 
         // カメラを作成
         CreateCameras();
+
+        // テクスチャのロード処理とスプライトクリエイターの作成
+        if (LoadTexturesAndCreateSpriteCreater() == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
+
+        // UIフォントを生成
+        upUiFont_ = std::make_unique<C_UiFont>();
 
         return Scene::ecSceneReturn::SUCCESSFUL;
     }
@@ -250,7 +258,9 @@ namespace ConnectWars
         auto taskPriorityData = JSON::JsonObject::s_CreateFromFile(Path::JSON::s_pTASK_PRIORITY_DATA);
 
         // 更新優先度を設定
-        Priority::Task::Update::s_gameController = static_cast<float>(taskPriorityData["Priority"]["Update"]["GameController"].GetValue<JSON::Real>());
+        Priority::Task::Update::s_sceneController = static_cast<float>(taskPriorityData["Priority"]["Update"]["SceneController"].GetValue<JSON::Real>());
+        Priority::Task::Update::s_ui = static_cast<float>(taskPriorityData["Priority"]["Update"]["Ui"].GetValue<JSON::Real>());
+        Priority::Task::Update::s_cameraController = static_cast<float>(taskPriorityData["Priority"]["Update"]["CameraController"].GetValue<JSON::Real>());
         Priority::Task::Update::s_player = static_cast<float>(taskPriorityData["Priority"]["Update"]["Player"].GetValue<JSON::Real>());
         Priority::Task::Update::s_option = static_cast<float>(taskPriorityData["Priority"]["Update"]["Option"].GetValue<JSON::Real>());
         Priority::Task::Update::s_enemy = static_cast<float>(taskPriorityData["Priority"]["Update"]["Enemy"].GetValue<JSON::Real>());
@@ -261,7 +271,9 @@ namespace ConnectWars
         Priority::Task::Update::s_background = static_cast<float>(taskPriorityData["Priority"]["Update"]["Background"].GetValue<JSON::Real>());
 
         // 描画優先度を設定
-        Priority::Task::Draw::s_gameController = static_cast<float>(taskPriorityData["Priority"]["Draw"]["GameController"].GetValue<JSON::Real>());
+        Priority::Task::Draw::s_sceneController = static_cast<float>(taskPriorityData["Priority"]["Draw"]["SceneController"].GetValue<JSON::Real>());
+        Priority::Task::Draw::s_ui = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Ui"].GetValue<JSON::Real>());
+        Priority::Task::Draw::s_cameraController = static_cast<float>(taskPriorityData["Priority"]["Draw"]["CameraController"].GetValue<JSON::Real>());
         Priority::Task::Draw::s_player = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Player"].GetValue<JSON::Real>());
         Priority::Task::Draw::s_option = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Option"].GetValue<JSON::Real>());
         Priority::Task::Draw::s_enemy = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Enemy"].GetValue<JSON::Real>());
@@ -336,11 +348,78 @@ namespace ConnectWars
             }
         }
 
-        // 正投影カメラを作成
+        // UI用カメラを作成
         auto pUiCamera = std::make_shared<Camera::C_OrthographicCamera>();
         pUiCamera->SetClipSpace(0.0f, static_cast<float>(pMainWindow->GetWidth()), static_cast<float>(pMainWindow->GetHeight()), 0.0f);
         pUiCamera->Update();
         Camera::C_CameraManager::s_GetInstance()->Entry(pUiCamera, ID::Camera::s_pUI);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  テクスチャのロード処理とスプライトクリエイターの作成を行う
+     *  @param  なし
+     *  @return 正常終了：true
+     *  @return 異常終了：false
+     *
+     ****************************************************************/
+    bool C_RootScene::LoadTexturesAndCreateSpriteCreater()
+    {
+        // 各テクスチャの作成
+        const char* pTexturePathList[] =
+        {
+            Path::Texture::s_pUI_FONT,
+            Path::Texture::s_pFADE,
+        };
+
+        for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pTexturePathList); i < arraySize; ++i)
+        {
+            if (!Texture::C_TextureManager::s_GetInstance()->GetTextureData(pTexturePathList[i]))
+            {
+                if (Texture::C_TextureManager::s_GetInstance()->Create2DFromFile(pTexturePathList[i]) == false) return false;
+            }
+        }
+
+        // UI用カメラを取得
+        assert(Camera::C_CameraManager::s_GetInstance()->GetCamera(ID::Camera::s_pUI));
+        auto pUiCamera = Camera::C_CameraManager::s_GetInstance()->GetCamera(ID::Camera::s_pUI).get();
+
+        // 各スプライトクリエイターを作成
+        const char* pSpriteIdList[] = 
+        {
+            ID::Sprite::s_pUI_FONT,
+            ID::Sprite::s_pFADE,
+        };
+
+        const char* pSpriteTextureDataIdList[] =
+        {
+            Path::Texture::s_pUI_FONT,
+            Path::Texture::s_pFADE,
+        };
+
+        const float spritePriorityList[] =
+        {
+            Priority::Sprite::s_FONT,
+            Priority::Sprite::s_FADE,
+        };
+
+        for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pSpriteIdList); i < arraySize; ++i)
+        {
+            if (!Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater(pSpriteIdList[i]))
+            {
+                auto pTextureData = Texture::C_TextureManager::s_GetInstance()->GetTextureData(pSpriteTextureDataIdList[i]);
+                assert(pTextureData);
+
+                if (Sprite::C_SpriteCreaterManager::s_GetInstance()->Create(pSpriteIdList[i], pUiCamera, pTextureData.get(), 1000, spritePriorityList[i]) == false) return false;
+               
+                // カメラのタイプを正投影に設定
+                auto pSpriteCreater = Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater(pSpriteIdList[i]).get().lock();
+                pSpriteCreater->SetCameraType(Camera::ORTHOGRAPHIC);
+            }
+        }
+
+        return true;
     }
 
 
@@ -355,9 +434,12 @@ namespace ConnectWars
     {
         auto pNextScene = newEx C_LoadScene;
 
-        pNextScene->SetLoadFunction(C_LoadFunction::s_LoadStage01Data);
-        pNextScene->SetNextSceneId(ID::Scene::s_pSTAGE01);
+        // pNextScene->SetLoadFunction(C_LoadFunction::s_LoadStage01Data);
+        // pNextScene->SetNextSceneId(ID::Scene::s_pSTAGE01);
 
+        pNextScene->SetLoadFunction(C_LoadFunction::s_LoadTitleData);
+        pNextScene->SetNextSceneId(ID::Scene::s_pTITLE);
+        
         GetSceneChanger()->PushScene(pNextScene);
     }
 }

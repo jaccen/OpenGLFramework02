@@ -3,7 +3,9 @@
   {
     "Update" :
     {
-      "GameController" : 100.0,
+      "SceneController" : 100.0,
+      "Ui" : 90.0,
+      "CameraController" : 80.0,
       "Player" : 10.0,
       "Option" : 9.0,
       "Enemy" : 8.0,
@@ -15,7 +17,9 @@
     },
     "Draw" :
     {
-      "GameController" : 100.0,
+      "SceneController" : 100.0,
+      "Ui" : 90.0,
+      "CameraController" : 80.0,
       "Player" : 4.0,
       "Option" : 5.0,
       "Enemy" : 6.0,

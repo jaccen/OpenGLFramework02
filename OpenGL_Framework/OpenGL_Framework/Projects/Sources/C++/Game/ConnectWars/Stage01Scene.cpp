@@ -74,7 +74,7 @@ namespace ConnectWars
         if (RemainLoadProcess() == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
 
         // ゲームコントローラを生成
-        taskSystem_.Entry(std::make_shared<C_GameController>(ID::GameObject::s_pGAME_CONTROLLER, TYPE_GAME_CONTROLLER), Priority::Task::Update::s_gameController, Priority::Task::Draw::s_gameController);
+        taskSystem_.Entry(std::make_shared<C_GameController>(ID::GameObject::s_pSCENE_CONTROLLER, TYPE_SCENE_CONTROLLER), Priority::Task::Update::s_sceneController, Priority::Task::Draw::s_sceneController);
 
         // カメラコントローラを生成
         auto pCameraController = taskSystem_.Entry(std::make_shared<C_CameraController>(ID::GameObject::s_pCAMERA_CONTROLLER, TYPE_CAMERA_CONTROLLER), Priority::Task::Update::s_cameraController, Priority::Task::Draw::s_cameraController);

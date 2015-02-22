@@ -86,7 +86,7 @@ namespace Sprite
      ****************************************************************/
     void C_SpriteCreaterManager::C_SpriteCreaterManagerImpl::Draw()
     {
-        for (auto &rManagementData : managementDatas_) rManagementData.second.pSpriteCreater_->Draw();
+        for (auto& rManagementData : managementDatas_) rManagementData.second.pSpriteCreater_->Draw();
     }
 
 

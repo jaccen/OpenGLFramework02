@@ -20,6 +20,7 @@ namespace ConnectWars
     {
     public:
         static bool s_LoadTitleData();                      // タイトルのデータのロード処理
+        static bool s_LoadRankingData();                    // ランキングのデータのロード処理
         static bool s_LoadStage01Data();                    // ステージ01のデータのロード処理
     };
 }

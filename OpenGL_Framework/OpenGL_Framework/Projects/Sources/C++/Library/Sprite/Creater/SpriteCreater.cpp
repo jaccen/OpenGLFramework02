@@ -91,6 +91,10 @@ namespace Sprite
         else
         {
             pGlslObject_ = Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(Fixed::Shader::s_pGLSL_OBJECT_ID).get();
+
+            // サブルーチンのインデックスを取得
+            subroutineIndices_[Camera::PERSPECTIVE] = pGlslObject_->GetSubroutineIndex(Shader::GLSL::Type::s_GEOMETRY, "PerspectiveProcess");
+            subroutineIndices_[Camera::ORTHOGRAPHIC] = pGlslObject_->GetSubroutineIndex(Shader::GLSL::Type::s_GEOMETRY, "OrthographicProcess");
         }
 
         // 頂点のメモリを確保
@@ -161,7 +165,7 @@ namespace Sprite
 
         // ブレンドを有効化し、ブレンドに使用する関数を設定
         pOpenGlManager->EnableBlend(true);
-        pOpenGlManager->SetBlendFunction(OpenGL::BlendFactor::s_SOURCE_ALPHA, OpenGL::BlendFactor::s_ALL_ONE);
+        pOpenGlManager->SetBlendFunction(sourceFactor_, destinationFactor_);
 
         // カリングを無効化
         pOpenGlManager->EnableCulling(false);
@@ -296,6 +300,21 @@ namespace Sprite
     void C_SpriteCreater::SetCameraType(Camera::eType cameraType)
     {
         cameraType_ = cameraType;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ブレンドの関数を設定する
+     *  @param  新しい色の要素
+     *  @param  現在の色の要素
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_SpriteCreater::SetBlendFunction(OpenGL::BlendEnum sourceFactor, OpenGL::BlendEnum destinationFactor)
+    {
+        sourceFactor_ = sourceFactor;
+        destinationFactor_ = destinationFactor;
     }
 
 

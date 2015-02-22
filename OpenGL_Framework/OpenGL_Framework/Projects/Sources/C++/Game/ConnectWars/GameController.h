@@ -3,9 +3,7 @@
 
 
 /* ヘッダファイル */
-#include "ConnectWarsDefine.h"
-#include "../../Library/GameObject/GameObject.h"
-#include "../../Library/Timer/Counter/Frame/FrameCounter.h"
+#include "SceneController.h"
 
 
 //-------------------------------------------------------------
@@ -22,18 +20,14 @@ namespace ConnectWars
     //! @brief ゲームを制御するためのクラス
     //!
     //-------------------------------------------------------------
-    class C_GameController : public GameObject::C_GameObject
+    class C_GameController : public C_SceneController
     {
     public:
         C_GameController(const std::string& rId, int32_t type);                 // コンストラクタ
         virtual ~C_GameController() override;                                   // デストラクタ
-        bool Update() override;                                                 // 更新処理
-        void Draw() override;                                                   // 描画処理
-        bool MessageProcess(const Telegram& rTelegram) override;                // メッセージ処理
-        void EnableWait(bool validFlag = true);                                 // 待機を有効化
-        int32_t GetNowFrame() const;                                            // 現在のフレーム数を取得
     protected:
-        Timer::C_FrameCounter frameCounter_;                                    ///< @brief フレームカウンター
-        bool waitFlag_ = false;                                                 ///< @brief 待機フラグ
+        void DoUpdate() override;                                               // 非公開の更新処理
+        void DoDraw() override;                                                 // 非公開の描画処理
+        bool DoMessageProcess(const Telegram& rTelegram) override;              // 非公開のメッセージ処理
     };
 }

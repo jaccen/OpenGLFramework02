@@ -670,9 +670,6 @@
     <Filter Include="Sources\C++\Library\Model\SelfMade\Loader\Manager">
       <UniqueIdentifier>{ac28ed83-55e3-44b4-bc8b-8d954be12ea3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\GameController">
-      <UniqueIdentifier>{13958113-2ba7-40eb-8b94-96a07a968158}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Sources\C++\Game\ConnectWars\GameObject\CameraController">
       <UniqueIdentifier>{680e72a0-21b5-48be-b677-719551b6f6a0}</UniqueIdentifier>
     </Filter>
@@ -828,6 +825,51 @@
     </Filter>
     <Filter Include="Resources\GameDatas\ConnectWars\Material">
       <UniqueIdentifier>{8b0a5cb0-1379-4f50-968b-3e3d210d6de4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\UiFont">
+      <UniqueIdentifier>{08f45014-8786-4e1b-996e-559b76154b47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\UI">
+      <UniqueIdentifier>{c8228ec1-32da-41d0-af95-563c3965d5ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\UI\Title">
+      <UniqueIdentifier>{e69d6ca3-4c1f-4773-8e18-a0850f859d6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Fade">
+      <UniqueIdentifier>{7c21b184-2837-4aff-956a-cb05284c1094}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\UI\Ranking">
+      <UniqueIdentifier>{cd4082c4-cccf-4e17-8001-11eb10b22f7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\UI\Game">
+      <UniqueIdentifier>{a57e20fe-dc3e-4b76-8a09-7b95e46ba118}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\UI">
+      <UniqueIdentifier>{bd409b6b-6e80-4525-a45c-61b2f2a81ee5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\SceneController">
+      <UniqueIdentifier>{13958113-2ba7-40eb-8b94-96a07a968158}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\SceneController\Game">
+      <UniqueIdentifier>{c1509523-a21d-4862-94dd-79d03b649791}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\SceneController\Title">
+      <UniqueIdentifier>{a6d9aa24-c779-4821-87f0-df209367d7c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\SceneController\Ranking">
+      <UniqueIdentifier>{cb890373-1dbf-480d-bf2c-a57e66053ac7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\UI\Pause">
+      <UniqueIdentifier>{ea69a382-f304-4a27-8f45-6d801a4f59bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\SceneController\Pause">
+      <UniqueIdentifier>{46bb943f-aba1-4dbd-af3d-5e6c905d98aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\Config">
+      <UniqueIdentifier>{2f5f7e10-b16e-4377-92f2-e03ad4e9b914}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\Ranking">
+      <UniqueIdentifier>{c7131f4c-1110-49a9-87e0-64f175049487}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1467,9 +1509,6 @@
     <ClInclude Include="Projects\Sources\C++\Library\Model\SelfMade\Loader\Manager\ModelLoaderManagerImpl.h">
       <Filter>Sources\C++\Library\Model\SelfMade\Loader\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GameController.h">
-      <Filter>Sources\C++\Game\ConnectWars\GameObject\GameController</Filter>
-    </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\CameraController.h">
       <Filter>Sources\C++\Game\ConnectWars\GameObject\CameraController</Filter>
     </ClInclude>
@@ -1535,6 +1574,39 @@
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Shelter.h">
       <Filter>Sources\C++\Game\ConnectWars\GameObject\Background\Shelter</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\UiFont.h">
+      <Filter>Sources\C++\Game\ConnectWars\UiFont</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\TitleUi.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\UI\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseUi.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RankingUi.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\UI\Ranking</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RankingScene.h">
+      <Filter>Sources\C++\Game\ConnectWars\Scene\Ranking</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\SceneController.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\SceneController</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GameController.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\SceneController\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\TitleController.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\SceneController\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Fade.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Fade</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RankingController.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\SceneController\Ranking</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PauseController.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\SceneController\Pause</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -2015,9 +2087,6 @@
     <ClCompile Include="Projects\Sources\C++\Library\Model\SelfMade\Loader\Manager\ModelLoaderManager.cpp">
       <Filter>Sources\C++\Library\Model\SelfMade\Loader\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\GameController.cpp">
-      <Filter>Sources\C++\Game\ConnectWars\GameObject\GameController</Filter>
-    </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\CameraController.cpp">
       <Filter>Sources\C++\Game\ConnectWars\GameObject\CameraController</Filter>
     </ClCompile>
@@ -2068,6 +2137,39 @@
     </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Shelter.cpp">
       <Filter>Sources\C++\Game\ConnectWars\GameObject\Background\Shelter</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\UiFont.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\UiFont</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseUi.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\TitleUi.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\UI\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RankingUi.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\UI\Ranking</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RankingScene.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Scene\Ranking</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\SceneController.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\SceneController</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\GameController.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\SceneController\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\TitleController.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\SceneController\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Fade.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Fade</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RankingController.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\SceneController\Ranking</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PauseController.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\SceneController\Pause</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2196,6 +2298,21 @@
     </None>
     <None Include="Projects\GameDatas\ConnectWars\JSON\Material\MaterialData.json">
       <Filter>Resources\GameDatas\ConnectWars\Material</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\UI\RankingUiData.json">
+      <Filter>Resources\GameDatas\ConnectWars\UI</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\UI\TitleUiData.json">
+      <Filter>Resources\GameDatas\ConnectWars\UI</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\UI\GameUiData.json">
+      <Filter>Resources\GameDatas\ConnectWars\UI</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Config\ConfigData.json">
+      <Filter>Resources\GameDatas\ConnectWars\Config</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Ranking\RankingData.json">
+      <Filter>Resources\GameDatas\ConnectWars\Ranking</Filter>
     </None>
   </ItemGroup>
 </Project>

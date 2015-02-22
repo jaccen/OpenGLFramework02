@@ -1,0 +1,29 @@
+{
+  "GameUiData" :
+  {
+    "HitPointBar" :
+    {
+      "Position" : [ 0.0, 0.0 ],
+      "Size" : [ 0.0, 0.0 ],
+      "Color" : [ 1.0, 1.0, 1.0, 1.0 ],
+      "TextureUpperLeft" : [ 0.0, 0.0 ],
+      "TextureLowerRight" : [ 0.0, 0.0 ]
+    },
+    "Life" :
+    {
+      "Words" : "Life :",
+      "Position" : [ 0.0, 0.0 ],
+      "Size" : [ 0.0, 0.0 ],
+      "Color" : [ 1.0, 1.0, 1.0, 1.0 ],
+      "WordOffset" : 0.0
+    },
+    "Score" :
+    {
+      "Words" : "Score :",
+      "Position" : [ 0.0, 0.0 ],
+      "Size" : [ 0.0, 0.0 ],
+      "Color" : [ 1.0, 1.0, 1.0, 1.0 ],
+      "WordOffset" : 0.0
+    }
+  }
+}

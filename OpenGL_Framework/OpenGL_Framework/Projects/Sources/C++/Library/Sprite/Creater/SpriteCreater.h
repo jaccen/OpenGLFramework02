@@ -166,6 +166,7 @@ namespace Sprite
         void SetAutoBillboardFlag(bool autoBillboardFlag = true);                                           // ビルボードの自動化をさせるフラグを設定
         void SetCamera(const Camera::CameraPtr& prCamera);                                                  // カメラを設定
         void SetCameraType(Camera::eType cameraType);                                                       // カメラの種類を設定
+        void SetBlendFunction(OpenGL::BlendEnum sourceFactor, OpenGL::BlendEnum destinationFactor);         // ブレンドの関数を設定
     private:
         Shader::GLSL::GlslObjectPtr pGlslObject_;                                                           ///< @brief GLSLオブジェクト
         Camera::CameraPtr pCamera_;                                                                         ///< @brief カメラ
@@ -177,6 +178,8 @@ namespace Sprite
         bool autoBillboardFlag_ = true;                                                                     ///< @brief ビルボードの自動化をさせるフラグ
         int32_t subroutineIndices_[2];                                                                      ///< @brief サブルーチンのインデックス
         Camera::eType cameraType_ = Camera::PERSPECTIVE;                                                    ///< @brief カメラの種類
+        OpenGL::BlendEnum sourceFactor_ = OpenGL::BlendFactor::s_SOURCE_ALPHA;                              ///< @brief 新しい色の要素
+        OpenGL::BlendEnum destinationFactor_ = OpenGL::BlendFactor::s_ONE_MINUS_SOURCE_ALPHA;               ///< @brief 現在の色の要素
 
         void SetUniformVariable();                                                                          // ユニフォーム変数を設定
     };

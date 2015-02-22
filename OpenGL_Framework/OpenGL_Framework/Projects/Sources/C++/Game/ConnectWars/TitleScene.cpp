@@ -1,16 +1,16 @@
 /* ヘッダファイル */
 #include "TitleScene.h"
-#include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
-#include "../../Library/Texture/Manager/TextureManager.h"
-#include "../../Library/Math/Define/MathDefine.h"
-#include "../../Library/Figure/FigureDrawer.h"
-#include "../../Library/OpenGL/Manager/OpenGlManager.h"
-#include "../../Library/View/ViewHelper.h"
-#include "../../Library/Camera/Camera/Perspective/Test/TestCamera.h"
-#include "../../Library/Sprite/Creater/Manager/SpriteCreaterManager.h"
-#include "../../Library/Debug/String/DebugString.h"
+#include "RootScene.h"
 #include "ConnectWarsDefine.h"
-#include "../../Library/Camera/Camera/Orthographic/OrthographicCamera.h"
+#include "TitleUi.h"
+#include "TitleController.h"
+#include "../../Library/Texture/Manager/TextureManager.h"
+#include "../../Library/Sprite/Creater/Manager/SpriteCreaterManager.h"
+#include "../../Library/Sprite/Creater/SpriteCreater.h"
+#include "../../Library/Common/CommonHelper.h"
+#include "../../Library/Input/Keyboard/KeyboardManager.h"
+#include "../../Library/Debug/Helper/DebugHelper.h"
+#include "../../Library/GameObject/Manager/GameObjectManager.h"
 
 
 //-------------------------------------------------------------
@@ -53,28 +53,18 @@ namespace ConnectWars
      ****************************************************************/
     Scene::ecSceneReturn C_TitleScene::Initialize()
     {
-        spCamera_ = std::make_shared<Camera::C_TestCamera>();
-        spCamera_->SetEyePoint(Camera::Vector3(0.0f, 0.0f, 10.0f));
-        spCamera_->SetTargetPoint(Camera::Vector3(0.0f, 0.0f, 0.0f));
-        spCamera_->SetFieldOfViewY(static_cast<float>(Math::s_PI_DIVISION4));
-        spCamera_->SetNearClippingPlane(1.0f);
-        spCamera_->SetFarClippingPlane(1000.0f);
-        spCamera_->SetUpVector(Camera::Vector3::s_UP_DIRECTION);
-        spCamera_->SetAspectRatio(1024.0f / 768.0f);
-        spCamera_->Update();
+        if (RemainLoadProcess() == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
 
-        auto pOrthograhicCamera = std::make_shared<Camera::C_OrthographicCamera>();
-        pOrthograhicCamera->SetClipSpace(0.0f, static_cast<float>(1024), static_cast<float>(768), 0.0f);
-        pOrthograhicCamera->Update();
+        // タイトルUIを登録
+        auto pTitleUi = std::make_shared<C_TitleUi>(ID::GameObject::s_pUI, TYPE_UI);
+        taskSystem_.Entry(pTitleUi,  Priority::Task::Update::s_ui, Priority::Task::Draw::s_ui);
+        GameObject::C_GameObjectManager::s_GetInstance()->Entry(pTitleUi);
 
-        Camera::C_CameraManager::s_GetInstance()->Entry(spCamera_, ID::Camera::s_pMAIN);
-
-        Texture::C_TextureManager::s_GetInstance()->Create2DFromFile("Projects/Images/Test/Marisa.png", "Test");
-
-        Sprite::C_SpriteCreaterManager::s_GetInstance()->Create("Test", pOrthograhicCamera, Texture::C_TextureManager::s_GetInstance()->GetTextureData("Test").get());
-
-        Particle::C_ParticleSystemManager::s_GetInstance()->Create("Test", spCamera_, Texture::C_TextureManager::s_GetInstance()->GetTextureData("Test").get()->handle_);
-
+        // タイトルコントローラを登録
+        auto pTitleController = std::make_shared<C_TitleController>(ID::GameObject::s_pSCENE_CONTROLLER, TYPE_SCENE_CONTROLLER);
+        taskSystem_.Entry(pTitleController, Priority::Task::Update::s_sceneController, Priority::Task::Draw::s_sceneController);
+        pTitleController->SetSceneChanger(GetSceneChanger());
+        GameObject::C_GameObjectManager::s_GetInstance()->Entry(pTitleController);
 
         return Scene::ecSceneReturn::SUCCESSFUL;
     }
@@ -91,7 +81,21 @@ namespace ConnectWars
      ****************************************************************/
     Scene::ecSceneReturn C_TitleScene::Update()
     {
-        spCamera_->Update();
+        taskSystem_.Update();
+
+        #ifdef _DEBUG
+
+        if (Input::C_KeyboardManager::s_GetInstance()->GetPressingCount(Input::KeyCode::SDL_SCANCODE_R) == 1)
+        {
+            auto pNextScene = newEx C_RootScene;
+            //pNextScene->SetLoadFunction(C_LoadFunction::s_LoadStage01Data);
+            //pNextScene->SetNextSceneId(ID::Scene::s_pSTAGE01);
+
+            GetSceneChanger()->PopScene();
+            GetSceneChanger()->ReplaceScene(pNextScene);
+        }
+
+#endif
 
         return Scene::ecSceneReturn::CONTINUATIOIN;
     }
@@ -107,29 +111,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_TitleScene::Draw()
     {
-        static int32_t count = 0;
-
-        auto pSpriteCreater = Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater("Test").get();
-        auto p = pSpriteCreater.lock();
-        
-        p->SetCameraType(Camera::ORTHOGRAPHIC);
-        p->Entry(Sprite::Vector3(100.0f, 100.0f, 0.0f), Sprite::Vector2(100.0f), 0.0f, Sprite::Vector4(1.0f), Sprite::Vector2(0.0f), Sprite::Vector2(128.0f));
-
-        if (count++ % 10 == 0)
-        {
-            auto wpParticleSystem = Particle::C_ParticleSystemManager::s_GetInstance()->GetParticleSystem("Test").get();
-
-            if (wpParticleSystem.expired() == false)
-            {
-                auto pParticleSystem = wpParticleSystem.lock();
-                
-                pParticleSystem->Entry(600, Particle::Vector3(1.0f, 1.0f, 0.0f),  Particle::Vector3(0.0f, 0.05f, 0.0f),  Particle::Vector3(),  Particle::Vector3());
-                // pParticleSystem->SetExternalPower(Particle::Vector3(0.001f, 0.0f, 0.0f));
-            }
-        }
-        
-        View::C_ViewHelper::s_DrawGrid(5.0f, 1.0f, 11, View::Vector4(1.0f, 1.0f, 1.0f, 0.1f), spCamera_->GetViewProjectionMatrix());
-        View::C_ViewHelper::s_DrawAxis(50.0f, spCamera_->GetViewProjectionMatrix());
+        taskSystem_.Draw();
     }
 
 
@@ -142,5 +124,76 @@ namespace ConnectWars
      ****************************************************************/
     void C_TitleScene::Finalize()
     {
+        JSON::C_JsonObjectManager::s_GetInstance()->AllRemove();
+        GameObject::C_GameObjectManager::s_GetInstance()->AllRemove();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  残りのロード処理を行う
+     *  @param  なし
+     *  @return 正常終了：true
+     *  @return 異常終了：false
+     *
+     ****************************************************************/
+    bool C_TitleScene::RemainLoadProcess()
+    {
+        // UI用カメラを取得
+        assert(Camera::C_CameraManager::s_GetInstance()->GetCamera(ID::Camera::s_pUI));
+        pUiCamera_ = Camera::C_CameraManager::s_GetInstance()->GetCamera(ID::Camera::s_pUI).get();
+
+        // 各テクスチャの作成
+        const char* pTexturePathList[] =
+        {
+            Path::Texture::s_pTITLE_BACKGROUND,
+            Path::Texture::s_pTITLE_UI,
+        };
+
+        for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pTexturePathList); i < arraySize; ++i)
+        {
+            if (!Texture::C_TextureManager::s_GetInstance()->GetTextureData(pTexturePathList[i]))
+            {
+                if (Texture::C_TextureManager::s_GetInstance()->Create2DFromFile(pTexturePathList[i]) == false) return false;
+            }
+        }
+
+        // 各スプライトクリエイターを作成
+        const char* pSpriteIdList[] = 
+        {
+            ID::Sprite::s_pTITLE_BACKGROUND,
+            ID::Sprite::s_pTITLE_UI,
+        };
+
+        const char* pSpriteTextureDataIdList[] =
+        {
+            Path::Texture::s_pTITLE_BACKGROUND,
+            Path::Texture::s_pTITLE_UI,
+        };
+
+        const float spritePriorityList[] =
+        {
+            Priority::Sprite::s_BACKGROUND,
+            Priority::Sprite::s_IMAGE_UI
+        };
+
+        for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pSpriteIdList); i < arraySize; ++i)
+        {
+            if (!Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater(pSpriteIdList[i]))
+            {
+                auto pTextureData = Texture::C_TextureManager::s_GetInstance()->GetTextureData(pSpriteTextureDataIdList[i]);
+                assert(pTextureData);
+
+                if (Sprite::C_SpriteCreaterManager::s_GetInstance()->Create(pSpriteIdList[i], pUiCamera_, pTextureData.get(), 3, spritePriorityList[i]) == false) return false;
+               
+                // カメラのタイプを正投影に設定
+                auto pSpriteCreater = Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater(pSpriteIdList[i]).get().lock();
+                pSpriteCreater->SetCameraType(Camera::ORTHOGRAPHIC);
+            }
+        }
+
+        Sprite::C_SpriteCreaterManager::s_GetInstance()->Sort();
+
+        return true;
     }
 }

@@ -1,6 +1,8 @@
 /* ヘッダファイル */
 #include "LoadScene.h"
 #include "ConnectWarsDefine.h"
+#include "TitleScene.h"
+#include "RankingScene.h"
 #include "Stage01Scene.h"
 #include "../../Library/Font/FontManager.h"
 #include "../../Library/Window/Manager/WindowManager.h"
@@ -301,15 +303,21 @@ namespace ConnectWars
     {
         if (nextSceneId_ == ID::Scene::s_pTITLE)
         {
-            
+            GetSceneChanger()->ReplaceScene(newEx C_TitleScene);
+        }
+        else if (nextSceneId_ == ID::Scene::s_pRANKING)
+        {
+            GetSceneChanger()->ReplaceScene(newEx C_RankingScene);
         }
         else if (nextSceneId_ == ID::Scene::s_pSTAGE01)
         {
             GetSceneChanger()->ReplaceScene(newEx C_Stage01Scene);
-
-            return true;
+        }
+        else
+        {
+            return false;
         }
 
-        return false;
+        return true;
     }
 }

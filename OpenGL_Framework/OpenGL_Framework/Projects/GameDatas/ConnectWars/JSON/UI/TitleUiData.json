@@ -1,0 +1,116 @@
+{
+    "TitleUiData": {
+        "Logo": {
+            "Position": [ 645.0, 155.0 ],
+            "Size": [ 740.0, 115.0 ],
+            "Color": [ 0.98, 0.9, 0.8, 0.84 ],
+            "TextureUpperLeft": [ 0.0, 0.0 ],
+            "TextureLowerRight": [ 800.0, 125.0 ]
+        },
+        "Sheet": {
+            "Position": [ 700.0, 520.0 ],
+            "Size": [ 750.0, 550.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 0.25 ],
+            "TextureUpperLeft": [ 0.0, 125.0 ],
+            "TextureLowerRight": [ 800.0, 700.0 ]
+        },
+        "Start": {
+            "Words": "Start",
+            "Position": [ 128.0, 570.0 ],
+            "Size": [ 30.0, 30.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -12.0
+        },
+        "Ranking": {
+            "Words": "Ranking",
+            "Position": [ 128.0, 620.0 ],
+            "Size": [ 30.0, 30.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -12.0
+        },
+        "Config": {
+            "Words": "Config",
+            "Position": [ 128.0, 670.0 ],
+            "Size": [ 30.0, 30.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -12.0
+        },
+        "StageSelect": {
+            "Words": "-- Stage Select --",
+            "Position": [ 445.0, 320.0 ],
+            "Size": [ 38.0, 38.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -16.0
+        },
+        "Stage01": {
+            "Words": "Stage 01",
+            "Position": [ 560.0, 440.0 ],
+            "Size": [ 30.0, 30.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -12.0
+        },
+        "Stage02": {
+            "Words": "Stage 02",
+            "Position": [ 560.0, 520.0 ],
+            "Size": [ 30.0, 30.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -12.0
+        },
+        "Stage03": {
+            "Words": "Stage 03",
+            "Position": [ 560.0, 600.0 ],
+            "Size": [ 30.0, 30.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -12.0
+        },
+        "PlayerLife": {
+            "Words": "Player life",
+            "Position": [ 390.0, 310.0 ],
+            "Size": [ 30.0, 30.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -15.0
+        },
+        "Sound": {
+            "Words": "-- Sound --",
+            "Position": [ 517.0, 375.0 ],
+            "Size": [ 38.0, 38.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -17.0
+        },
+        "SE": {
+            "Words": "SE",
+            "Position": [ 465.0, 440.0 ],
+            "Size": [ 30.0, 30.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -5.0
+        },
+        "BGM": {
+            "Words": "BGM",
+            "Position": [ 445.0, 490.0 ],
+            "Size": [ 30.0, 30.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -1.0
+        },
+        "ButtonSetting": {
+            "Words": "-- Button setting --",
+            "Position": [ 430.0, 555.0 ],
+            "Size": [ 38.0, 38.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -17.0
+        },
+        "Shot": {
+            "Words": "Shot      Button",
+            "Position": [ 450.0, 620.0 ],
+            "Size": [ 30.0, 30.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -12.0
+        },
+        "Bomb": {
+            "Words": "Bomb      Button",
+            "Position": [ 450.0, 670.0 ],
+            "Size": [ 30.0, 30.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -12.0
+        }
+    }
+}

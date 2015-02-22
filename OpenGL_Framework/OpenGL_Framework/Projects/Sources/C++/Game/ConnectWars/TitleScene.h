@@ -4,7 +4,8 @@
 
 /* ヘッダファイル */
 #include "../../Library/Scene/BaseScene.h"
-#include "../../Library/Camera/Camera/Perspective/PerspectiveCamera.h"
+#include "../../Library/Camera/Manager/CameraManager.h"
+#include "../../Library/Task/System/General/GeneralTaskSystem.h"
 
 
 //-------------------------------------------------------------
@@ -31,6 +32,9 @@ namespace ConnectWars
         void Draw() override;                                           // 描画処理
         void Finalize() override;                                       // 終了処理
     private:
-        std::shared_ptr<Camera::C_PerspectiveCamera> spCamera_;         // カメラ
+        Task::C_GeneralTaskSystem taskSystem_;                          ///< @brief タスクシステム
+        Camera::CameraPtr pUiCamera_;                                   ///< @brief UI用カメラ
+
+        bool RemainLoadProcess();                                       // 残りのロード処理
     };
 }

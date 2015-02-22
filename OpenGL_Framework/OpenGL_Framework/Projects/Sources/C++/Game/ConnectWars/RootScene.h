@@ -5,6 +5,7 @@
 /* ヘッダファイル */
 #include "../../Library/Scene/BaseScene.h"
 #include "../../Library/Camera/Camera/Perspective/PerspectiveCamera.h"
+#include "UiFont.h"
 
 
 //-------------------------------------------------------------
@@ -31,10 +32,13 @@ namespace ConnectWars
         void Draw() override;                                           // 描画処理
         void Finalize() override;                                       // 終了処理
     private:
+        std::unique_ptr<C_UiFont> upUiFont_;                            ///< @brief UIフォント
+
         void SetPhysicsEngine();                                        // 物理エンジンの設定
         bool BindToLua();                                               // Luaへのバインド処理
         void SetTaskPriority();                                         // タスクの優先度を設定
         void CreateCameras();                                           // カメラの作成
+        bool LoadTexturesAndCreateSpriteCreater();                      // テクスチャのロード処理とスプライトクリエイターの作成
         void PushNextScene();                                           // 次のシーンを追加
     };
 }

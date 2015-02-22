@@ -93,6 +93,7 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseOption.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BasePlayer.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BasePower.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseUi.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BombChargeEffect.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BoxEnemy.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BulletDestroyedState.h" />
@@ -102,6 +103,7 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EffectGenerator.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EnemyAdventState.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EnemyGenerator.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Fade.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GameController.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\LoadFunction.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionBullet.h" />
@@ -112,6 +114,7 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionGenerator.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionGunFactory.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionOwnCrashState.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PauseController.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PauseScene.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerGunFactory.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\CollisionCallback.h" />
@@ -137,6 +140,9 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerDestroyedState.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerGenerator.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerInvincibleState.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RankingController.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RankingScene.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RankingUi.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RapidFireGun.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyConnectMoveLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyInputMoveLogic.h" />
@@ -144,6 +150,7 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyStraightMoveLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyForceMoveLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\RootScene.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\SceneController.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Shelter.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ShieldOption.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Shooter.h" />
@@ -152,7 +159,10 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Space.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\SpeedUpOption.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Stage01Scene.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\TitleController.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\TitleScene.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\TitleUi.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\UiFont.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Camera.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Orthographic\OrthographicCamera.h" />
     <ClInclude Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\PerspectiveCamera.h" />
@@ -347,6 +357,7 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseOption.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BasePlayer.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BasePower.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseUi.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BombChargeEffect.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BulletDestroyedState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BulletFireState.cpp" />
@@ -361,6 +372,7 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EnemyAdventState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EnemyGenerator.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EvenIntervalShotLogic.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Fade.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\GameController.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\InputShotLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\LoadFunction.cpp" />
@@ -376,6 +388,7 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionGenerator.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionGunFactory.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionOwnCrashState.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PauseController.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PauseScene.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerBullet.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionWaitOwnCrashState.cpp" />
@@ -387,6 +400,9 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerDestroyedState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerGenerator.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerInvincibleState.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RankingController.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RankingScene.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RankingUi.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RapidFireGun.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyConnectMoveLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyInputMoveLogic.cpp" />
@@ -394,6 +410,7 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyStraightMoveLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RigidBodyForceMoveLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\RootScene.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\SceneController.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Shelter.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ShieldOption.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Shooter.cpp" />
@@ -403,7 +420,10 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Space.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\SpeedUpOption.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Stage01Scene.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\TitleController.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\TitleScene.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\TitleUi.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\UiFont.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Camera\Camera\Orthographic\OrthographicCamera.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\PerspectiveCamera.cpp" />
     <ClCompile Include="Projects\Sources\C++\Library\Camera\Camera\Perspective\Test\TestCamera.cpp" />
@@ -506,6 +526,7 @@
     <None Include="Projects\GameDatas\ConnectWars\JSON\Bullet\Player\PlayerBulletDatas.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Camera\CameraData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Camera\Stage01\Stage01CameraworkData.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Config\ConfigData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Enemy\Stage01\Stage01EnemyData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Light\LightData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Material\MaterialData.json" />
@@ -513,7 +534,11 @@
     <None Include="Projects\GameDatas\ConnectWars\JSON\Option\SmallBeamOptionData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Option\SpeedUpOptionData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Player\NormalPlayerData.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Ranking\RankingData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Task\TaskPriorityData.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\UI\GameUiData.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\UI\RankingUiData.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\UI\TitleUiData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Window\MainWindowData.json" />
     <None Include="Projects\Models\Test\Box\Box.material" />
     <None Include="Projects\Models\Test\Box\Box.model" />
@@ -555,7 +580,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties Projects_2GameDatas_2ConnectWars_2JSON_2Bullet_2Player_2PlayerBulletDatas_1json__JSONSchema="" Projects_2GameDatas_2ConnectWars_2JSON_2Camera_2Stage01CameraworkData_1json__JSONSchema="Point" />
+      <UserProperties Projects_2GameDatas_2ConnectWars_2JSON_2Bullet_2Player_2PlayerBulletDatas_1json__JSONSchema="" Projects_2GameDatas_2ConnectWars_2JSON_2Camera_2Stage01CameraworkData_1json__JSONSchema="Point" Projects_2GameDatas_2ConnectWars_2JSON_2UI_2RankingUiData_1json__JSONSchema="" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

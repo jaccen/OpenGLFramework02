@@ -1,0 +1,53 @@
+{
+    "RankingUiData": {
+        "Ranking": {
+            "Words": "Ranking",
+            "Position": [ 400.0, 85.0 ],
+            "Size": [ 48.0, 48.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -15.0
+        },
+        "1st": {
+            "Words": "1st",
+            "Position": [ 150.0, 210.0 ],
+            "Size": [ 32.0, 32.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -10.0
+        },
+        "2nd": {
+            "Words": "2nd",
+            "Position": [ 150.0, 310.0 ],
+            "Size": [ 32.0, 32.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -10.0
+        },
+        "3rd": {
+            "Words": "3rd",
+            "Position": [ 150.0, 410.0 ],
+            "Size": [ 32.0, 32.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -10.0
+        },
+        "4th": {
+            "Words": "4th",
+            "Position": [ 150.0, 510.0 ],
+            "Size": [ 32.0, 32.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -10.0
+        },
+        "5th": {
+            "Words": "5th",
+            "Position": [ 150.0, 610.0 ],
+            "Size": [ 32.0, 32.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -10.0
+        },
+        "NewRecord": {
+            "Words": "New record !!",
+            "Position": [ 400.0, 230.0 ],
+            "Size": [ 28.0, 28.0 ],
+            "Color": [ 0.0, 1.0, 1.0, 1.0 ],
+            "WordOffset": -9.0
+        }
+    }
+}

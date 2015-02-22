@@ -30,7 +30,80 @@ namespace ConnectWars
      ****************************************************************/
     bool C_LoadFunction::s_LoadTitleData()
     {
+
+#pragma region JSONからデータをロード
+
+
+        const char* pJsonIdList[] =
+        {
+            ID::JSON::s_pTITLE_UI_DATA,
+            ID::JSON::s_pCONFIG_DATA,
+        };
+
+
+        const char* pJsonPathList[] =
+        {
+            Path::JSON::s_pTITLE_UI_DATA,
+            Path::JSON::s_pCONFIG_DATA,
+        };
+
+        for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pJsonIdList); i < arraySize; ++i)
+        {
+            if (!JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(pJsonIdList[i]))
+            {
+                auto pJsonObject = JSON::JsonObject::s_CreatePointerFromFile(pJsonPathList[i]);
+                JSON::C_JsonObjectManager::s_GetInstance()->Entry(pJsonObject, pJsonIdList[i]);
+            }
+        }
+
+
+#pragma endregion
+
         return true;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ランキングのデータのロード処理を行う
+     *  @param  なし
+     *  @return 正常終了：true
+     *  @return 異常終了：false
+     *
+     ****************************************************************/
+    bool C_LoadFunction::s_LoadRankingData()
+    {
+
+#pragma region JSONからデータをロード
+
+
+        const char* pJsonIdList[] =
+        {
+            ID::JSON::s_pRANKING_UI_DATA,
+            ID::JSON::s_pRANKING_DATA,
+        };
+
+
+        const char* pJsonPathList[] =
+        {
+            Path::JSON::s_pRANKING_UI_DATA,
+            Path::JSON::s_pRANKING_DATA,
+        };
+
+        for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pJsonIdList); i < arraySize; ++i)
+        {
+            if (!JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(pJsonIdList[i]))
+            {
+                auto pJsonObject = JSON::JsonObject::s_CreatePointerFromFile(pJsonPathList[i]);
+                JSON::C_JsonObjectManager::s_GetInstance()->Entry(pJsonObject, pJsonIdList[i]);
+            }
+        }
+
+
+#pragma endregion
+
+        return true;
+
     }
 
 
