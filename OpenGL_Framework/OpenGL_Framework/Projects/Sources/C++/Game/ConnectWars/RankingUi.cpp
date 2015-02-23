@@ -531,7 +531,6 @@ namespace ConnectWars
 
             C_UiFont::s_GetInstance()->DrawArrow(Vector2(420.0f + static_cast<float>(newRecordData_.name_.size()) * 100.0f, 375.0f), static_cast<float>(-Math::s_PI_DIVISION2), Vector2(30.0f));
             C_UiFont::s_GetInstance()->DrawArrow(Vector2(420.0f + static_cast<float>(newRecordData_.name_.size()) * 100.0f, 525.0f), static_cast<float>(Math::s_PI_DIVISION2), Vector2(30.0f));
-
         }
     }
 

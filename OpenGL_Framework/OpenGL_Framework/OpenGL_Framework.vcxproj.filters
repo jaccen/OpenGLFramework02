@@ -451,9 +451,6 @@
     <Filter Include="Sources\C++\Game\ConnectWars\Gun">
       <UniqueIdentifier>{ce849ce4-f2b0-4e06-a2f4-af53c63299c8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resources\GameDatas\ConnectWars\Input">
-      <UniqueIdentifier>{ed999dac-1665-4050-bf3c-743152b6f3dd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Sources\C++\Game\ConnectWars\Scene\Stage\01">
       <UniqueIdentifier>{c95b7bf5-6db7-4a8e-a21e-8c9789a06161}</UniqueIdentifier>
     </Filter>
@@ -1608,6 +1605,12 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PauseController.h">
       <Filter>Sources\C++\Game\ConnectWars\GameObject\SceneController\Pause</Filter>
     </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PauseUi.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\UI\Pause</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GameUi.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\UI\Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Projects\Sources\C++\Other\Stdafx\Stdafx.cpp">
@@ -2171,6 +2174,12 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PauseController.cpp">
       <Filter>Sources\C++\Game\ConnectWars\GameObject\SceneController\Pause</Filter>
     </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PauseUi.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\UI\Pause</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\GameUi.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\UI\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Projects\Shaders\GLSL\Debug\DebugString.geom">
@@ -2313,6 +2322,9 @@
     </None>
     <None Include="Projects\GameDatas\ConnectWars\JSON\Ranking\RankingData.json">
       <Filter>Resources\GameDatas\ConnectWars\Ranking</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\UI\PauseUiData.json">
+      <Filter>Resources\GameDatas\ConnectWars\UI</Filter>
     </None>
   </ItemGroup>
 </Project>

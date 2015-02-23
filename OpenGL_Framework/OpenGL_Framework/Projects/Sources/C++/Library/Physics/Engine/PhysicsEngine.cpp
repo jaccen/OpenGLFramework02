@@ -220,8 +220,8 @@ namespace Physics
         bool previousSubstepCallbackFlag)
     {
         upImpl_->GetWorld()->setInternalTickCallback(pSimulationSubstepCallbackFunction,
-            pWorldUserInfo,
-            previousSubstepCallbackFlag);
+                                                     pWorldUserInfo,
+                                                     previousSubstepCallbackFlag);
     }
 
 
@@ -260,6 +260,6 @@ namespace Physics
      ****************************************************************/
     void C_PhysicsEngine::EnableActive(bool validFlag)
     {
-
+        upImpl_->EnableActive(validFlag);
     }
 }

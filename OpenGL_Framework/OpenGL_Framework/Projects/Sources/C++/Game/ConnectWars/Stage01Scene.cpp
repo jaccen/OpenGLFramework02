@@ -74,7 +74,10 @@ namespace ConnectWars
         if (RemainLoadProcess() == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
 
         // ゲームコントローラを生成
-        taskSystem_.Entry(std::make_shared<C_GameController>(ID::GameObject::s_pSCENE_CONTROLLER, TYPE_SCENE_CONTROLLER), Priority::Task::Update::s_sceneController, Priority::Task::Draw::s_sceneController);
+        auto pGameController = std::make_shared<C_GameController>(ID::GameObject::s_pSCENE_CONTROLLER, TYPE_SCENE_CONTROLLER);
+        taskSystem_.Entry(pGameController, Priority::Task::Update::s_sceneController, Priority::Task::Draw::s_sceneController);
+        pGameController->SetSceneChanger(GetSceneChanger());
+        GameObject::C_GameObjectManager::s_GetInstance()->Entry(pGameController);
 
         // カメラコントローラを生成
         auto pCameraController = taskSystem_.Entry(std::make_shared<C_CameraController>(ID::GameObject::s_pCAMERA_CONTROLLER, TYPE_CAMERA_CONTROLLER), Priority::Task::Update::s_cameraController, Priority::Task::Draw::s_cameraController);
@@ -236,8 +239,13 @@ namespace ConnectWars
             }
         }
 
-        // メインカメラを保持
+        // メインカメラを取得
+        assert(Camera::C_CameraManager::s_GetInstance()->GetCamera(ID::Camera::s_pMAIN));
         pMainCamera_ = Camera::C_CameraManager::s_GetInstance()->GetCamera(ID::Camera::s_pMAIN).get();
+
+        // UI用カメラを取得
+        assert(Camera::C_CameraManager::s_GetInstance()->GetCamera(ID::Camera::s_pUI));
+        pUiCamera_ = Camera::C_CameraManager::s_GetInstance()->GetCamera(ID::Camera::s_pUI).get();
 
         // 各モデルのバッファを作成
         const char* pPrimitiveIdList[] =
@@ -361,6 +369,7 @@ namespace ConnectWars
             Path::Texture::s_pSHALTER_NORMAL,
             Path::Texture::s_pSPPED_UP_OPTION,
             Path::Texture::s_pSMALL_BEAM_OPTION,
+            Path::Texture::s_pPAUSE_BACKGROUND,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pTexturePathList); i < arraySize; ++i)
@@ -372,29 +381,54 @@ namespace ConnectWars
         }
 
         // 各スプライトクリエイターを作成
-        const char* pSpriteIdList[] = 
+        const char* pBillboardSpriteIdList[] = 
         {
             ID::Sprite::s_pBULLET,
         };
 
-        const char* pSpriteTextureDataIdList[] =
+        const char* pBillboardSpriteTextureDataIdList[] =
         {
             Path::Texture::s_pSPRITE_BULLET,
         };
 
-        const float spritePriorityList[] =
+        for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pBillboardSpriteIdList); i < arraySize; ++i)
         {
-            Priority::Sprite::s_BILLBOARD,
-        };
-
-        for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pSpriteIdList); i < arraySize; ++i)
-        {
-            if (!Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater(pSpriteIdList[i]))
+            if (!Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater(pBillboardSpriteIdList[i]))
             {
-                auto pTextureData = Texture::C_TextureManager::s_GetInstance()->GetTextureData(pSpriteTextureDataIdList[i]);
+                auto pTextureData = Texture::C_TextureManager::s_GetInstance()->GetTextureData(pBillboardSpriteTextureDataIdList[i]);
                 assert(pTextureData);
 
-                if (Sprite::C_SpriteCreaterManager::s_GetInstance()->Create(pSpriteIdList[i], pMainCamera_, pTextureData.get(), 100, spritePriorityList[i]) == false) return false;
+                if (Sprite::C_SpriteCreaterManager::s_GetInstance()->Create(pBillboardSpriteIdList[i], pMainCamera_, pTextureData.get(), 100, Priority::Sprite::s_BILLBOARD) == false) return false;
+            }
+        }
+
+        const char* pUiSpriteIdList[] = 
+        {
+            ID::Sprite::s_pPAUSE_BACKGROUND,
+        };
+
+        const char* pUiSpriteTextureDataIdList[] =
+        {
+            Path::Texture::s_pPAUSE_BACKGROUND,
+        };
+
+        const float uiSpritePriorityList[] =
+        {
+            Priority::Sprite::s_BACKGROUND,
+        };
+
+        for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pUiSpriteIdList); i < arraySize; ++i)
+        {
+            if (!Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater(pUiSpriteIdList[i]))
+            {
+                auto pTextureData = Texture::C_TextureManager::s_GetInstance()->GetTextureData(pUiSpriteTextureDataIdList[i]);
+                assert(pTextureData);
+
+                if (Sprite::C_SpriteCreaterManager::s_GetInstance()->Create(pUiSpriteIdList[i], pUiCamera_, pTextureData.get(), 3, uiSpritePriorityList[i]) == false) return false;
+               
+                // カメラのタイプを正投影に設定
+                auto pSpriteCreater = Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater(pUiSpriteIdList[i]).get().lock();
+                pSpriteCreater->SetCameraType(Camera::ORTHOGRAPHIC);
             }
         }
 

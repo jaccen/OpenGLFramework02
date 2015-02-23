@@ -1,0 +1,29 @@
+{
+  "PauseUiData" :
+  {
+    "Resume": 
+    {
+      "Words": "Resume the game",
+      "Position": [ 350.0, 300.0 ],
+      "Size": [ 30.0, 30.0 ],
+      "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+      "WordOffset": -8.0
+    },
+    "Restart": 
+    {
+      "Words": "Restart the game",
+      "Position": [ 350.0, 380.0 ],
+      "Size": [ 30.0, 30.0 ],
+      "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+      "WordOffset": -8.0
+    },
+    "Title": 
+    {
+      "Words": "Return to title",
+      "Position": [ 350.0, 460.0 ],
+      "Size": [ 30.0, 30.0 ],
+      "Color": [ 1.0, 1.0, 1.0, 1.0 ],
+      "WordOffset": -8.0
+    }
+  }
+}

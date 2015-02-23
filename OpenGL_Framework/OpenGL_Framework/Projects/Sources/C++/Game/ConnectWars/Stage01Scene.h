@@ -47,6 +47,7 @@ namespace ConnectWars
         C_BulletGenerator bulletGenerator_;                             ///< @brief 弾生成機
         C_EffectGenerator effectGenerator_;                             ///< @brief エフェクト生成機
         Camera::CameraPtr pMainCamera_;                                 ///< @brief メインカメラ
+        Camera::CameraPtr pUiCamera_;                                   ///< @brief UI用カメラ
         Camera::CameraPtr pBackgroundCamera_;                           ///< @brief 背景用カメラ
 
         bool RemainLoadProcess();                                       // 残りのロード処理

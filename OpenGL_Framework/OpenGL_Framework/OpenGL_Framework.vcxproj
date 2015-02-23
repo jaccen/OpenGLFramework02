@@ -105,6 +105,7 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EnemyGenerator.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Fade.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GameController.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GameUi.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\LoadFunction.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionBullet.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionCombatState.h" />
@@ -116,6 +117,7 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionOwnCrashState.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PauseController.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PauseScene.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PauseUi.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerGunFactory.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\CollisionCallback.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\CollisionObject.h" />
@@ -374,6 +376,7 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EvenIntervalShotLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Fade.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\GameController.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\GameUi.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\InputShotLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\LoadFunction.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\LoadScene.cpp" />
@@ -390,6 +393,7 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionOwnCrashState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PauseController.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PauseScene.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PauseUi.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerBullet.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionWaitOwnCrashState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventState.cpp" />
@@ -537,6 +541,7 @@
     <None Include="Projects\GameDatas\ConnectWars\JSON\Ranking\RankingData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Task\TaskPriorityData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\UI\GameUiData.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\UI\PauseUiData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\UI\RankingUiData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\UI\TitleUiData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Window\MainWindowData.json" />

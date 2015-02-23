@@ -85,7 +85,7 @@ namespace ConnectWars
      ****************************************************************/
     bool C_RankingController::DoMessageProcess(const Telegram& rTelegram)
     {
-        if (Message::s_pTO_TITLE_SCENE)
+        if (rTelegram.message_ == Message::s_pTO_TITLE_SCENE)
         {
             toTitleFlag_ = true;
            

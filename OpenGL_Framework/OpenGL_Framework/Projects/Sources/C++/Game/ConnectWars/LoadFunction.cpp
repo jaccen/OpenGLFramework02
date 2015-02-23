@@ -181,6 +181,7 @@ namespace ConnectWars
             ID::JSON::s_pSPACE,
             ID::JSON::s_pSHELTER,
             ID::JSON::s_pSTAGE_01_CAMERAWORK_DATA,
+            ID::JSON::s_pPAUSE_UI_DATA,
         };
 
 
@@ -195,6 +196,7 @@ namespace ConnectWars
             Path::JSON::s_pSPACE,
             Path::JSON::s_pSHELTER,
             Path::JSON::s_pSTAGE_01_CAMERAWORK_DATA,
+            Path::JSON::s_pPAUSE_UI_DATA,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pJsonIdList); i < arraySize; ++i)

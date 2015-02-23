@@ -96,16 +96,30 @@ namespace ConnectWars
      ****************************************************************/
     bool C_TitleController::DoMessageProcess(const Telegram& rTelegram)
     {
-        if (Message::s_pTO_RANKING_SCENE)
+        if (rTelegram.message_ == Message::s_pTO_RANKING_SCENE)
         {
             toRankingFlag_ = true;
            
             assert(upFade_);
             upFade_->FadeOut();
         }
-        else if (Message::s_pTO_GAME_01_SCENE)
+        else if (rTelegram.message_ == Message::s_pTO_GAME_01_SCENE)
         {
-             toStage01Flag_ = true;
+            toStage01Flag_ = true;
+           
+            assert(upFade_);
+            upFade_->FadeOut();
+        }
+        else if (rTelegram.message_ == Message::s_pTO_GAME_02_SCENE)
+        {
+            toStage01Flag_ = true;
+           
+            assert(upFade_);
+            upFade_->FadeOut();
+        }
+        else if (rTelegram.message_ == Message::s_pTO_GAME_03_SCENE)
+        {
+            toStage01Flag_ = true;
            
             assert(upFade_);
             upFade_->FadeOut();

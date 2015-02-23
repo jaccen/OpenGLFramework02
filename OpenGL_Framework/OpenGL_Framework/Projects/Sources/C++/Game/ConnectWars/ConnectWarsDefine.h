@@ -163,8 +163,10 @@ namespace ConnectWars
             namespace GameObject
             {
                 const char* s_pUI = "Ui";                                                                                                           ///< @brief UI
-                const char* s_pSCENE_CONTROLLER = "SceneController";                                                                                ///< @brief シーンコントローラー
-                const char* s_pCAMERA_CONTROLLER = "CameraController";                                                                              ///< @brief カメラコントローラー
+                const char* s_pPAUSE_UI = "PauseUi";                                                                                                ///< @brief ポーズUI
+                const char* s_pSCENE_CONTROLLER = "SceneController";                                                                                ///< @brief シーンコントローラ
+                const char* s_pPAUSE_CONTROLLER = "PauseController";                                                                                ///< @brief ポーズコントローラ
+                const char* s_pCAMERA_CONTROLLER = "CameraController";                                                                              ///< @brief カメラコントローラ
                 const char* s_pPLAYER = "Player";                                                                                                   ///< @brief プレイヤー
                 const char* s_pOPTION = "Option";                                                                                                   ///< @brief オプション
                 const char* s_pENEMY = "Enemy";                                                                                                     ///< @brief 敵
@@ -193,6 +195,7 @@ namespace ConnectWars
                 const char* s_pGAME_UI_DATA = "GameUiData";                                                                                         ///< @brief ゲームUIデータ
                 const char* s_pCONFIG_DATA = "ConfigData";                                                                                          ///< @brief コンフィグデータ
                 const char* s_pRANKING_DATA = "RankingData";                                                                                        ///< @brief ランキングデータ
+                const char* s_pPAUSE_UI_DATA = "PauseUiDataJson";                                                                                   ///< @brief ポーズUIデータ
             }
 
             /* モデル */
@@ -214,7 +217,8 @@ namespace ConnectWars
                 const char* s_pBULLET = "BulletSprite";                                                                                             ///< @brief 弾
                 const char* s_pTITLE_UI = "TitleUiSPrite";                                                                                          ///< @brief タイトルUI
                 const char* s_pFADE = "FadeSprite";                                                                                                 ///< @brief フェード
-                const char* s_pRANKING_BACKGROUND = "RankingBackground";                                                                            ///< @brief ランキング背景
+                const char* s_pRANKING_BACKGROUND = "RankingBackgroundSprite";                                                                      ///< @brief ランキング背景
+                const char* s_pPAUSE_BACKGROUND = "PauseBackgroundSprite";                                                                          ///< @brief ポーズ背景
             }
 
             /* パーティクル */
@@ -262,6 +266,7 @@ namespace ConnectWars
                 const char* s_pTITLE_UI = "Projects/Images/ConnectWars/UI/TitleUI.png";                                                             ///< @brief タイトルUI
                 const char* s_pTITLE_BACKGROUND = "Projects/Images/ConnectWars/Background/TitleBackground.png";                                     ///< @brief タイトル背景
                 const char* s_pRANKING_BACKGROUND = "Projects/Images/ConnectWars/Background/RankingBackground.png";                                 ///< @brief ランキング背景
+                const char* s_pPAUSE_BACKGROUND = "Projects/Images/ConnectWars/Background/PauseBackground.png";                                     ///< @brief ポーズ背景
                 const char* s_pNORMAL_PLAYER = "Projects/Images/ConnectWars/Player/NormalPlayer.png";                                               ///< @brief 通常プレイヤー
                 const char* s_pSPPED_UP_OPTION = "Projects/Images/ConnectWars/Option/SpeedUpOption.png";                                            ///< @brief スピードアップオプション
                 const char* s_pSMALL_BEAM_OPTION = "Projects/Images/ConnectWars/Option/SmallBeamOption.png";                                        ///< @brief スモールビームオプション
@@ -315,6 +320,7 @@ namespace ConnectWars
                 const char* s_pGAME_UI_DATA = "Projects/GameDatas/ConnectWars/JSON/UI/GameUiData.json";                                             ///< @brief ゲームUIデータ
                 const char* s_pRANKING_DATA = "Projects/GameDatas/ConnectWars/JSON/Ranking/RankingData.json";                                       ///< @brief ランキングデータ
                 const char* s_pCONFIG_DATA = "Projects/GameDatas/ConnectWars/JSON/Config/ConfigData.json";                                          ///< @brief コンフィグデータ
+                const char* s_pPAUSE_UI_DATA = "Projects/GameDatas/ConnectWars/JSON/UI/PauseUiData.json";                                           ///< @brief ポーズUIデータ
             }
 
             /* Lua */
@@ -353,6 +359,8 @@ namespace ConnectWars
             const char* s_pTO_GAME_02_SCENE = "ToGame02Scene";                                                                                      ///< @brief ゲーム02シーンへ変更
             const char* s_pTO_GAME_03_SCENE = "ToGame03Scene";                                                                                      ///< @brief ゲーム03シーンへ変更
             const char* s_pTO_PAUSE = "ToPauseScene";                                                                                               ///< @brief ポーズシーンへ変更
+            const char* s_pRESUME_GAME = "ResumeGame";                                                                                              ///< @brief ゲームを再開
+            const char* s_pRESTART_GAME = "RestartGame";                                                                                            ///< @brief ゲームをリスタート
         }
 
 
