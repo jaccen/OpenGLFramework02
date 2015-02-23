@@ -62,6 +62,7 @@ namespace ConnectWars
         taskSystem_.Entry(pPauseController, Priority::Task::Update::s_sceneController, Priority::Task::Draw::s_sceneController);
         pPauseController->SetSceneChanger(GetSceneChanger());
         GameObject::C_GameObjectManager::s_GetInstance()->Entry(pPauseController);
+        pPauseController->SetSceneChanger(GetSceneChanger());
 
         return Scene::ecSceneReturn::SUCCESSFUL;
     }
@@ -124,6 +125,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_PauseScene::Finalize()
     {
+        GameObject::C_GameObjectManager::s_GetInstance()->Remove(ID::GameObject::s_pPAUSE_CONTROLLER);
     }
 
 
