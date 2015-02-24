@@ -868,6 +868,9 @@
     <Filter Include="Resources\GameDatas\ConnectWars\Ranking">
       <UniqueIdentifier>{c7131f4c-1110-49a9-87e0-64f175049487}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Background\ExitRing">
+      <UniqueIdentifier>{700ea647-ead9-4453-9b29-6b64364524b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Projects\Sources\C++\Other\Stdafx\Stdafx.h">
@@ -1611,6 +1614,9 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GameUi.h">
       <Filter>Sources\C++\Game\ConnectWars\GameObject\UI\Game</Filter>
     </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ExitRing.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Background\ExitRing</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Projects\Sources\C++\Other\Stdafx\Stdafx.cpp">
@@ -2179,6 +2185,9 @@
     </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\GameUi.cpp">
       <Filter>Sources\C++\Game\ConnectWars\GameObject\UI\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ExitRing.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Background\ExitRing</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

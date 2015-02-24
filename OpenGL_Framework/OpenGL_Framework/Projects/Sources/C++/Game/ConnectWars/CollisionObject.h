@@ -86,6 +86,7 @@ namespace ConnectWars
         Shader::GLSL::GlslObjectPtr pGlslObject_;                                           ///< @brief GLSLオブジェクト
         Shader::GLSL::UniformBufferPtr pUniformBuffer_;                                     ///< @brief ユニフォームバッファ
         Shader::GLSL::UniformBlockIndex uniformBlockIndex_ = 0;                             ///< @brief ユニフォームブロックのインデックス
+        int32_t cameraSubroutineIndex_ = 0;                                                 ///< @brief カメラサブルーチンインデックス
     private:
         std::vector<std::string> collidedObjectIdList_;                                     ///< @brief 衝突したオブジェクトのIDリスト
         std::unique_ptr<Physics::Vector3> upCollisionPoint_;                                ///< @brief 衝突点

@@ -87,7 +87,7 @@ void main()
 	mat3 tangentSpaceMatrix = mat3(tangent.x, binormal.x, normal.x,
 								   tangent.y, binormal.y, normal.y,
 								   tangent.z, binormal.z, normal.z);
-	
+
 	// Calculate eye direction and light direction.
 	vec3 position = vec3(u_modelMatrix * vec4(v_position, 1.0));
 	

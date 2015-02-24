@@ -20,12 +20,13 @@ uniform mat4 u_modelMatrix;
 
 
 /* uniform block */
-layout (std140) uniform BackgroundCameraData
+layout (std140)
+uniform BackgroundCamera
 {
     mat4 viewMatrix;
     mat4 projectionMatrix;
     mat4 viewProjectionMatrix;
-} backgroundCamera;
+} u_backgroundCameraData;
 
 
 /* main function */
@@ -34,6 +35,6 @@ void main()
 	f_textureCoord = v_textureCoord;
 
 	// set vertex position
-	mat4 mvp = backgroundCamera.viewProjectionMatrix * u_modelMatrix;
+	mat4 mvp = u_backgroundCameraData.viewProjectionMatrix * u_modelMatrix;
 	gl_Position = mvp * vec4(v_position, 1.0);
 }

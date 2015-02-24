@@ -17,17 +17,48 @@ out vec3 f_normal;
 out vec2 f_textureCoord;
 
 
+/* subroutine */
+subroutine mat4 CameraFunction();
+
+
 /* uniform variable */
 uniform mat4 u_modelMatrix;
+subroutine uniform CameraFunction u_cameraFunction;
 
 
 /* uniform block */
-layout (std140) uniform MainCameraData
+layout (std140) 
+uniform MainCameraData
 {
     mat4 viewMatrix;
     mat4 projectionMatrix;
     mat4 viewProjectionMatrix;
 } u_mainCameraData;
+
+
+layout (std140)
+uniform BackgroundCamera
+{
+    mat4 viewMatrix;
+    mat4 projectionMatrix;
+    mat4 viewProjectionMatrix;
+} u_backgroundCameraData;
+
+
+
+// Get main camera's view projection matrix.
+subroutine (CameraFunction)
+mat4 GetMainViewProjectionMatrix()
+{
+	return u_mainCameraData.viewProjectionMatrix;
+}
+
+// Get background camera's view projection matrix.
+subroutine (CameraFunction)
+mat4 GetBackgroundViewProjectionMatrix()
+{
+	return u_backgroundCameraData.viewProjectionMatrix;
+}
 
 
 /* main function */
@@ -37,6 +68,6 @@ void main()
 	f_normal = normalize(mat3(u_modelMatrix) * v_normal);
 	f_textureCoord = v_textureCoord;
 	
-	mat4 mvp = u_mainCameraData.viewProjectionMatrix * u_modelMatrix;
+	mat4 mvp = u_cameraFunction() * u_modelMatrix;
 	gl_Position = mvp * vec4(v_position, 1.0);
 }

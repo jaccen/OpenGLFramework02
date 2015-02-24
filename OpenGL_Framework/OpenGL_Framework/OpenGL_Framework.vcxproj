@@ -103,6 +103,7 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EffectGenerator.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EnemyAdventState.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EnemyGenerator.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ExitRing.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Fade.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GameController.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GameUi.h" />
@@ -374,6 +375,7 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EnemyAdventState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EnemyGenerator.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EvenIntervalShotLogic.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ExitRing.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Fade.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\GameController.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\GameUi.cpp" />
@@ -585,7 +587,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties Projects_2GameDatas_2ConnectWars_2JSON_2Bullet_2Player_2PlayerBulletDatas_1json__JSONSchema="" Projects_2GameDatas_2ConnectWars_2JSON_2Camera_2Stage01CameraworkData_1json__JSONSchema="Point" Projects_2GameDatas_2ConnectWars_2JSON_2UI_2RankingUiData_1json__JSONSchema="" />
+      <UserProperties Projects_2GameDatas_2ConnectWars_2JSON_2Bullet_2Player_2PlayerBulletDatas_1json__JSONSchema="" Projects_2GameDatas_2ConnectWars_2JSON_2Camera_2Stage01_2Stage01CameraworkData_1json__JSONSchema="" Projects_2GameDatas_2ConnectWars_2JSON_2Camera_2Stage01CameraworkData_1json__JSONSchema="Point" Projects_2GameDatas_2ConnectWars_2JSON_2UI_2RankingUiData_1json__JSONSchema="" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

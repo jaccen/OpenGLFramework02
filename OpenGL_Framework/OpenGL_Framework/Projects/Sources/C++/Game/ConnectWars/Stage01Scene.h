@@ -13,6 +13,7 @@
 #include "EnemyGenerator.h"
 #include "BulletGenerator.h"
 #include "EffectGenerator.h"
+#include "BackgroundGenerator.h"
 #include "GameController.h"
 
 
@@ -46,6 +47,7 @@ namespace ConnectWars
         C_EnemyGenerator enemyGenerator_;                               ///< @brief エネミー生成機
         C_BulletGenerator bulletGenerator_;                             ///< @brief 弾生成機
         C_EffectGenerator effectGenerator_;                             ///< @brief エフェクト生成機
+        C_BackgroundGenerator backgroundGenerator_;                     ///< @brief 背景生成機
         Camera::CameraPtr pMainCamera_;                                 ///< @brief メインカメラ
         Camera::CameraPtr pUiCamera_;                                   ///< @brief UI用カメラ
         Camera::CameraPtr pBackgroundCamera_;                           ///< @brief 背景用カメラ

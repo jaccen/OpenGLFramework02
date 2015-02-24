@@ -63,6 +63,7 @@ namespace ConnectWars
         // GLSLオブジェクトを取得
         assert(Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(ID::Shader::s_pPHONG_TEXTURE));
         pGlslObject_ = Shader::GLSL::C_GlslObjectManager::s_GetInstance()->GetGlslObject(ID::Shader::s_pPHONG_TEXTURE).get();
+        cameraSubroutineIndex_ =  pGlslObject_->GetSubroutineIndex(Shader::GLSL::Type::s_VERTEX, "GetMainViewProjectionMatrix");
 
         // ユニフォームバッファとインデックスを取得
         assert(Shader::GLSL::C_UniformBufferManager::s_GetInstance()->GetUniformBuffer(ID::UniformBuffer::s_pMAIN_CAMERA));
@@ -136,6 +137,7 @@ namespace ConnectWars
     void C_NormalPlayer::DoDraw()
     {
         pGlslObject_->BeginWithUnifomBuffer(pUniformBuffer_->GetHandle(), uniformBlockIndex_);
+        pGlslObject_->BindActiveSubroutine(cameraSubroutineIndex_, Shader::GLSL::Type::s_VERTEX);
 
         upRigidBody_->GetTransform().getOpenGLMatrix(modelMatrix_.a_);
         modelMatrix_ = modelMatrix_ * Matrix4x4::s_CreateScaling(Vector3(radius_));

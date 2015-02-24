@@ -129,6 +129,7 @@ namespace ConnectWars
             ID::Primitive::s_pSHELTER,
             ID::Primitive::s_pSPEED_UP_OPTION,
             ID::Primitive::s_pSMALL_BEAM_OPTION,
+            ID::Primitive::s_pEXIT_RING,
         };
 
         const char* pModelPathList[] =
@@ -139,6 +140,7 @@ namespace ConnectWars
             Path::Model::s_pSHELTER,
             Path::Model::s_pSPEED_UP_OPTION,
             Path::Model::s_pSMALL_BEAM_OPTION,
+            Path::Model::s_pEXIT_RING,
         };
 
         const char* pModelIdList[] =
@@ -149,6 +151,7 @@ namespace ConnectWars
             ID::Model::s_pSHELTER,
             ID::Model::s_pSPPED_UP_OPTION,
             ID::Model::s_pSMALL_BEAM_OPTION,
+            ID::Model::s_pEXIT_RING,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pPrimitiveIdList); i < arraySize; ++i)
@@ -264,6 +267,7 @@ namespace ConnectWars
         const char* pDirectionalLightIdList[] =
         {
             ID::Light::s_pMAIN,
+            ID::Light::s_pSHELTER,
         };
 
         auto lightData = JSON::JsonObject::s_CreateFromFile(Path::JSON::s_pLIGHT_DATA);

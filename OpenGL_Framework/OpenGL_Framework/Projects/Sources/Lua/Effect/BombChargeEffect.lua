@@ -92,63 +92,24 @@ function BombChargeEffectLogic(rCircleParticleSystem, rRingParticleSystem, rFram
 	-- Œ»İ‚ÌƒtƒŒ[ƒ€”
 	local nowFrame = rFrameCounter:GetCount()
 
-	if  nowFrame < 40 then
+	if  nowFrame < 30 then
 
-		if nowFrame % 15 == 1 then
+		particleCreateData.lifeFrame_ = 30
+		particleCreateData.position_ = rPosition + S_Vector3(0.0, 0.0, 1.5)
+		particleCreateData.velocity_ = S_Vector3()
+		particleCreateData.startAcceleration_ = S_Vector3()
+		particleCreateData.endAcceleration_ = S_Vector3()
+		particleCreateData.startAngle_ = 0.0
+		particleCreateData.endAngle_ = 0.0
+		particleCreateData.startWidth_ = 28.0
+		particleCreateData.endWidth_ = 0.5
+		particleCreateData.startHeight_ = 28.0
+		particleCreateData.endHeight_ = 0.5
+		particleCreateData.startColor_ = S_Vector4(1.0, 0.8, 0.5, 0.01)
+		particleCreateData.endColor_ = S_Vector4(0.9, 0.6, 0.8, 0.11)
 
-			particleCreateData.lifeFrame_ = 25
-			particleCreateData.position_ = rPosition
-			particleCreateData.velocity_ = S_Vector3()
-			particleCreateData.startAcceleration_ = S_Vector3()
-			particleCreateData.endAcceleration_ = S_Vector3()
-			particleCreateData.startAngle_ = 0.0
-			particleCreateData.endAngle_ = 0.0
-			particleCreateData.startWidth_ = 32.0
-			particleCreateData.endWidth_ = 0.1
-			particleCreateData.startHeight_ = 32.0
-			particleCreateData.endHeight_ = 0.1
-			particleCreateData.startColor_ = S_Vector4(0.9, 0.9, 0.9, 0.1)
-			particleCreateData.endColor_ = S_Vector4(0.9, 0.9, 0.9, 0.15)
+		rCircleParticleSystem:Entry(particleCreateData)
 
-			rCircleParticleSystem:Entry(particleCreateData)
-
-			particleCreateData.lifeFrame_ = 25
-			particleCreateData.position_ = rPosition
-			particleCreateData.velocity_ = S_Vector3()
-			particleCreateData.startAcceleration_ = S_Vector3()
-			particleCreateData.endAcceleration_ = S_Vector3()
-			particleCreateData.startAngle_ = 0.0
-			particleCreateData.endAngle_ = 0.0
-			particleCreateData.startWidth_ = 25.0
-			particleCreateData.endWidth_ = 0.5
-			particleCreateData.startHeight_ = 25.0
-			particleCreateData.endHeight_ = 0.5
-			particleCreateData.startColor_ = S_Vector4(1.0, 0.8, 1.0, 0.1)
-			particleCreateData.endColor_ = S_Vector4(0.9, 0.5, 0.1, 0.2)
-
-			rCircleParticleSystem:Entry(particleCreateData)
-
-		end
-
-		if nowFrame % 6 == 1 then
-
-			particleCreateData.lifeFrame_ = 25
-			particleCreateData.position_ = rPosition + S_Vector3(0.0, 0.0, 1.5)
-			particleCreateData.velocity_ = S_Vector3()
-			particleCreateData.startAcceleration_ = S_Vector3()
-			particleCreateData.endAcceleration_ = S_Vector3()
-			particleCreateData.startAngle_ = 0.0
-			particleCreateData.endAngle_ = 0.0
-			particleCreateData.startWidth_ = 25.0
-			particleCreateData.endWidth_ = 0.1
-			particleCreateData.startHeight_ = 25.0
-			particleCreateData.endHeight_ = 0.1
-			particleCreateData.startColor_ = S_Vector4(1.0, 0.8, 0.5, 0.2)
-			particleCreateData.endColor_ = S_Vector4(0.9, 0.6, 0.8, 0.1)
-
-			rCircleParticleSystem:Entry(particleCreateData)
-
-		end
 
 	end
 

@@ -1,15 +1,22 @@
 {
-  "LightDatas" :
-  {
-    "Main" :
-    {
-      "Position" : [ 0.0, 0.0, 3.0 ],
-      "ConstantAttenuation" : 1.2,
-      "LinearAttenuation" : 0.0,
-      "QuadraticAttenuation" : 0.0,
-      "Diffuse" : [ 0.9, 0.9, 0.9 ],
-      "Ambient" : [ 0.3, 0.3, 0.3 ],
-      "Specular" : [ 0.6, 0.6, 0.6 ]
+    "LightDatas": {
+        "Main": {
+            "Position": [ 0.0, 0.0, 3.0 ],
+            "ConstantAttenuation": 1.2,
+            "LinearAttenuation": 0.0,
+            "QuadraticAttenuation": 0.0,
+            "Diffuse": [ 0.9, 0.9, 0.9 ],
+            "Ambient": [ 0.3, 0.3, 0.3 ],
+            "Specular": [ 0.6, 0.6, 0.6 ]
+        },
+        "Shelter": { 
+            "Position": [ 0.0, 0.0, 0.0 ],
+            "ConstantAttenuation": 1.85,
+            "LinearAttenuation": 0.01,
+            "QuadraticAttenuation": 0.0,
+            "Diffuse": [ 0.9, 0.9, 0.9 ],
+            "Ambient": [ 0.3, 0.3, 0.3 ],
+            "Specular": [ 0.6, 0.6, 0.6 ]
+        }
     }
-  }
 }

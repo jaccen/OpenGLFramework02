@@ -155,6 +155,10 @@ namespace OpenGL
                 glVertexAttribPointer(i, vertexAttributeElementCountList[i], vertexAttributeDataTypeList[i], GL_FALSE, sizeof(T), reinterpret_cast<GLubyte*>(byteOffset));
                 byteOffset += vertexAttributeElementCountList[i] * vertexByteOffsetList[i];
             }
+            else
+            {
+                byteOffset += vertexAttributeElementCountList[i] * vertexByteOffsetList[i];
+            }
         }
 
         if (pIndices)

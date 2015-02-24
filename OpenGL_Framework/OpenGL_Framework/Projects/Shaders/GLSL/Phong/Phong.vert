@@ -26,7 +26,8 @@ subroutine uniform CameraFunction u_cameraFunction;
 
 
 /* uniform block */
-layout (std140) uniform MainCameraData
+layout (std140) 
+uniform MainCameraData
 {
     mat4 viewMatrix;
     mat4 projectionMatrix;

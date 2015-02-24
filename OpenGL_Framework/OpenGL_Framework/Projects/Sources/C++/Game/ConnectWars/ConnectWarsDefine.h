@@ -52,6 +52,7 @@ namespace ConnectWars
             {
                 const char* s_pPHONG = "PhongShader";                                                                                               ///< @brief フォン
                 const char* s_pPHONG_TEXTURE = "PhongTextureShader";                                                                                ///< @brief フォン( テクスチャ )
+                const char* s_pPHONG_NORMAL_TEXTURE = "PhongNormalTexture";                                                                         ///< @brief フォン( ノーマルテクスチャ )
                 const char* s_pCELESTIAL_SPHERE = "CelestialSphereShader";                                                                          ///< @brief 天球
                 const char* s_pLOAD = "LoadShader";                                                                                                 ///< @brief ロード用
             }
@@ -68,6 +69,7 @@ namespace ConnectWars
             namespace Light
             {
                 const char* s_pMAIN = "Main";                                                                                                       ///< @brief メイン
+                const char* s_pSHELTER = "Shelter";                                                                                                 ///< @brief シェルター
             }
 
 
@@ -88,6 +90,7 @@ namespace ConnectWars
                 const char* s_pBOX_ENEMY = "BoxEnemyPrimitive";                                                                                     ///< @brief ボックスエネミー
                 const char* s_pSPACE = "SpacePrimitive";                                                                                            ///< @brief 宇宙
                 const char* s_pSHELTER = "ShelterPrimitive";                                                                                        ///< @brief シェルター
+                const char* s_pEXIT_RING = "ExitRingPrimitive";                                                                                     ///< @brief エグジットリング
             }
 
 
@@ -146,6 +149,14 @@ namespace ConnectWars
                     {
                         const char* s_pCHARGE = "BombChargeEffect";                                                                                 ///< @brief ボムチャージ
                     }
+                }
+
+                /* 背景 */
+                namespace Background
+                {
+                    const char* s_pSPACE = "Space";                                                                                                 ///< @brief 空間
+                    const char* s_pSHELTER = "Shelter";                                                                                             ///< @brief シェルター
+                    const char* s_pEXIT_RING = "ExitRing";                                                                                          ///< @brief エグジットリング 
                 }
             }
 
@@ -207,6 +218,7 @@ namespace ConnectWars
                 const char* s_pBOX_ENEMY = "BoxEnemyModel";                                                                                         ///< @brief ボックスエネミー
                 const char* s_pSPACE = "SpaceModel";                                                                                                ///< @brief 宇宙
                 const char* s_pSHELTER = "ShelterModel";                                                                                            ///< @brief シェルター
+                const char* s_pEXIT_RING = "ExitRingModel";                                                                                         ///< @brief エグジットリング
             }
 
             /* スプライト */
@@ -242,6 +254,7 @@ namespace ConnectWars
                     const char* s_pPHONG = "Projects/Shaders/GLSL/Phong/Phong.vert";                                                                ///< @brief フォン
                     const char* s_pPHONG_TEXTURE = "Projects/Shaders/GLSL/Phong/PhongTexture.vert";                                                 ///< @brief フォン( テクスチャ )
                     const char* s_pCELESTINAL_SPHERE = "Projects/Shaders/GLSL/CelestialSphere/CelestialSphere.vert";                                ///< @brief 天球
+                    const char* s_pPHONG_NORMAL_TEXTURE = "Projects/Shaders/GLSL/Phong/PhongNormal.vert";                                           ///< @brief フォン( ノーマル )
                 }
 
 
@@ -255,6 +268,7 @@ namespace ConnectWars
                     const char* s_pPHONG = "Projects/Shaders/GLSL/Phong/Phong.frag";                                                                ///< @brief フォン
                     const char* s_pPHONG_TEXTURE = "Projects/Shaders/GLSL/Phong/PhongTexture.frag";                                                 ///< @brief フォン( テクスチャ )
                     const char* s_pCELESTINAL_SPHERE = "Projects/Shaders/GLSL/CelestialSphere/CelestialSphere.frag";                                ///< @brief 天球
+                    const char* s_pPHONG_NORMAL_TEXTURE = "Projects/Shaders/GLSL/Phong/PhongNormal.frag";                                           ///< @brief フォン( ノーマル )
                 }
             }
 
@@ -296,6 +310,7 @@ namespace ConnectWars
                 const char* s_pBOX_ENEMY = "Projects/Models/Test/Box/Box.model";                                                                    ///< @brief ボックスエネミー
                 const char* s_pSPACE = "Projects/Models/ConnectWars/Background/Space/Sphere.model";                                                 ///< @brief 宇宙
                 const char* s_pSHELTER = "Projects/Models/ConnectWars/Background/Shelter/Shelter.model";                                            ///< @brief シェルター
+                const char* s_pEXIT_RING = "Projects/Models/ConnectWars/Background/ExitRing/ExitRing.model";                                        ///< @brief エグジットリング
             }
 
 

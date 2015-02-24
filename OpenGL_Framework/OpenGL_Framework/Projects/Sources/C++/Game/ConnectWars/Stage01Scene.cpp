@@ -11,7 +11,9 @@
 #include "BombChargeEffect.h"
 #include "BoxEnemy.h"
 #include "Space.h"
+#include "Shelter.h"
 #include "CameraController.h"
+#include "ExitRing.h"
 #include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
 #include "../../Library/Texture/Manager/TextureManager.h"
 #include "../../Library/Math/Define/MathDefine.h"
@@ -84,6 +86,7 @@ namespace ConnectWars
 
         assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_CAMERAWORK_DATA));
         pCameraController->SetCameraData(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_CAMERAWORK_DATA).get());
+        pCameraController->Update();
 
         // プレイヤーを生成
         playerGenerator_.Create(ID::Generator::Player::s_pNORMAL);
@@ -106,8 +109,13 @@ namespace ConnectWars
         optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f,15.0f, 0.0f));
 
         // 背景を生成
-        auto pSpace = taskSystem_.Entry(std::make_shared<C_Space>(ID::GameObject::s_pBACKGROUND, TYPE_BACKGROUND), Priority::Task::Update::s_background, Priority::Task::Draw::s_background);
-        pSpace->SetLifeFrame(-1);
+        backgroundGenerator_.Create(ID::Generator::Background::s_pSPACE, Vector3());
+        backgroundGenerator_.Create(ID::Generator::Background::s_pSHELTER, Vector3());
+        backgroundGenerator_.Create(ID::Generator::Background::s_pEXIT_RING, Vector3(0.0f, 0.0f, 350.0f));
+        backgroundGenerator_.Create(ID::Generator::Background::s_pEXIT_RING, Vector3(0.0f, 0.0f, 500.0f));
+        backgroundGenerator_.Create(ID::Generator::Background::s_pEXIT_RING, Vector3(0.0f, 0.0f, 650.0f));
+        backgroundGenerator_.Create(ID::Generator::Background::s_pEXIT_RING, Vector3(0.0f, 0.0f, 800.0f));
+        backgroundGenerator_.Create(ID::Generator::Background::s_pEXIT_RING, Vector3(0.0f, 0.0f, 950.0f));
 
         //enemyGenerator_.Create(ID::Generator::Enemy::s_pBOX);
         
@@ -136,8 +144,6 @@ namespace ConnectWars
         if (Input::C_KeyboardManager::s_GetInstance()->GetPressingCount(Input::KeyCode::SDL_SCANCODE_R) == 1)
         {
             auto pNextScene = newEx C_RootScene;
-            //pNextScene->SetLoadFunction(C_LoadFunction::s_LoadStage01Data);
-            //pNextScene->SetNextSceneId(ID::Scene::s_pSTAGE01);
 
             GetSceneChanger()->PopScene();
             GetSceneChanger()->ReplaceScene(pNextScene);
@@ -167,8 +173,8 @@ namespace ConnectWars
     {
         taskSystem_.Draw();
 
-        View::C_ViewHelper::s_DrawGrid(5.0f, 1.0f, 11, View::Vector4(1.0f, 1.0f, 1.0f, 0.1f), pMainCamera_->GetViewProjectionMatrix());
-        View::C_ViewHelper::s_DrawAxis(50.0f, pMainCamera_->GetViewProjectionMatrix());
+        // View::C_ViewHelper::s_DrawGrid(5.0f, 1.0f, 11, View::Vector4(1.0f, 1.0f, 1.0f, 0.1f), pMainCamera_->GetViewProjectionMatrix());
+        // View::C_ViewHelper::s_DrawAxis(50.0f, pMainCamera_->GetViewProjectionMatrix());
     }
 
 
@@ -218,7 +224,7 @@ namespace ConnectWars
         const char* pUniformBlockNameList[] =
         {
             "MainCameraData",
-            "BackgroundCameraData"
+            "BackgroundCamera"
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pCameraIdList); i < arraySize; ++i)
@@ -256,6 +262,7 @@ namespace ConnectWars
             ID::Primitive::s_pSHELTER,
             ID::Primitive::s_pSPEED_UP_OPTION,
             ID::Primitive::s_pSMALL_BEAM_OPTION,
+            ID::Primitive::s_pEXIT_RING,
         };
 
         const char* pModelIdList[] = 
@@ -266,6 +273,7 @@ namespace ConnectWars
             ID::Model::s_pSHELTER,
             ID::Model::s_pSPPED_UP_OPTION,
             ID::Model::s_pSMALL_BEAM_OPTION,
+            ID::Model::s_pEXIT_RING,
         };
 
         bool vertexTransferFlagList[][7] =
@@ -276,6 +284,7 @@ namespace ConnectWars
             { true, true, true, false, true, false, false },        // シェルター
             { true, true, true, false, false, false, false },       // スピードアップオプション
             { true, true, true, false, false, false, false },       // スモールビームオプション
+            { true, true, false, false, false, false, false },      // エグジットリング
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pPrimitiveIdList); i < arraySize; ++i)
@@ -324,6 +333,7 @@ namespace ConnectWars
             ID::Shader::s_pPHONG,
             ID::Shader::s_pPHONG_TEXTURE,
             ID::Shader::s_pCELESTIAL_SPHERE,
+            ID::Shader::s_pPHONG_NORMAL_TEXTURE,
         };
 
         const char* pVertexShaderPathList[] = 
@@ -331,6 +341,7 @@ namespace ConnectWars
             Path::Shader::Vertex::s_pPHONG,
             Path::Shader::Vertex::s_pPHONG_TEXTURE,
             Path::Shader::Vertex::s_pCELESTINAL_SPHERE,
+            Path::Shader::Vertex::s_pPHONG_NORMAL_TEXTURE,
         };
 
 
@@ -339,6 +350,7 @@ namespace ConnectWars
             Path::Shader::Fragment::s_pPHONG,
             Path::Shader::Fragment::s_pPHONG_TEXTURE,
             Path::Shader::Fragment::s_pCELESTINAL_SPHERE,
+            Path::Shader::Fragment::s_pPHONG_NORMAL_TEXTURE,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pGlslObjectIdList); i < arraySize; ++i)
@@ -354,7 +366,6 @@ namespace ConnectWars
                 Shader::GLSL::C_GlslObjectManager::s_GetInstance()->Entry(pGlslObject, pGlslObjectIdList[i]);
             }
         }
-
 
         // 各テクスチャの作成
         const char* pTexturePathList[] =
@@ -484,6 +495,12 @@ namespace ConnectWars
         // エフェクト生成機の設定
         effectGenerator_.SetTaskSystem(&taskSystem_);
         effectGenerator_.RegistFunction(ID::Generator::Effect::Bomb::s_pCHARGE, []()->C_BaseEffect*{ return newEx C_BombChargeEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
+
+        // 背景生成機の設定
+        backgroundGenerator_.SetTaskSystem(&taskSystem_);
+        backgroundGenerator_.RegistFunction(ID::Generator::Background::s_pSPACE, []()->C_BaseBackground*{ return newEx C_Space(ID::GameObject::s_pBACKGROUND, TYPE_BACKGROUND); });
+        backgroundGenerator_.RegistFunction(ID::Generator::Background::s_pSHELTER, []()->C_BaseBackground*{ return newEx C_Shelter(ID::GameObject::s_pBACKGROUND, TYPE_BACKGROUND); });
+        backgroundGenerator_.RegistFunction(ID::Generator::Background::s_pEXIT_RING, []()->C_BaseBackground*{ return newEx C_ExitRing(ID::GameObject::s_pBACKGROUND, TYPE_BACKGROUND); });
 
         return true;
     }

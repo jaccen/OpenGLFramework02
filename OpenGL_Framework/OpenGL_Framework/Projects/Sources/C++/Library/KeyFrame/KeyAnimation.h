@@ -99,18 +99,22 @@ namespace KeyFrame
                 break;
             case ecInterpolationType::LINEAR:
             {
+                auto coefficient = static_cast<U>(frameCounter_.GetCount() - (keys_[keys_.size() - 1].frame_ * loopCount_) - startKey.frame_) / static_cast<U>(endKey.frame_ - startKey.frame_);
+                
                 value_ = pLinearFunction_(startKey.value_,
                                           endKey.value_,
-                                          static_cast<U>(frameCounter_.GetCount() - (keys_[keys_.size() - 1].frame_ * loopCount_) - startKey.frame_) / static_cast<U>(endKey.frame_ - startKey.frame_));
+                                          coefficient);
             }
                 break;
             case ecInterpolationType::HERMITE:
             {
+                auto coefficient = static_cast<U>(frameCounter_.GetCount() - (keys_[keys_.size() - 1].frame_ * loopCount_) - startKey.frame_) / static_cast<U>(endKey.frame_ - startKey.frame_);
+
                 value_ = pHermiteFunction_(startKey.value_, 
                                            startKey.tangent_,
                                            endKey.value_,
                                            endKey.tangent_,
-                                           static_cast<U>(frameCounter_.GetCount() - (keys_[keys_.size() - 1].frame_ * loopCount_) - startKey.frame_) / static_cast<U>(endKey.frame_ - startKey.frame_));
+                                           coefficient);
             }
                 break;
             }

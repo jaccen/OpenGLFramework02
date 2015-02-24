@@ -87,6 +87,10 @@ namespace ConnectWars
     {
         pGlslObject_->BeginWithUnifomBuffer(pUniformBuffer_->GetHandle(), uniformBlockIndex_);
 
+        modelMatrix_.a41_ = position_.x_;
+        modelMatrix_.a42_ = position_.y_;
+        modelMatrix_.a43_ = position_.z_;
+
         pGlslObject_->SetUniformMatrix4x4("u_modelMatrix", modelMatrix_);
 
         auto pOpenGlManager = OpenGL::C_OpenGlManager::s_GetInstance();

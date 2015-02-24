@@ -39,15 +39,17 @@ namespace ConnectWars
      *  @brief  ¶¬ˆ—‚ðs‚¤
      *  @param  ID
      *  @param  À•W
+     *  @param  ¶‘¶ƒtƒŒ[ƒ€”
      *  @return ”wŒi
      *
      ****************************************************************/
-    BackgroundPtr C_BackgroundGenerator::Create(const std::string& rId, const Vector3& rPosition)
+    BackgroundPtr C_BackgroundGenerator::Create(const std::string& rId, const Vector3& rPosition, int32_t lifeFrame)
     {
         // ”wŒi‚ð¶¬‚µAÀ•W‚ðÝ’è
         BackgroundPtr pBackground(pCreateFunctions_.at(rId)());
         pBackground->SetPosition(rPosition);
         pBackground->AddStringToId(std::to_string(number));
+        pBackground->SetLifeFrame(lifeFrame);
 
         // ƒ^ƒXƒNƒVƒXƒeƒ€‚É“o˜^
         pTaskSystem_->Entry(pBackground, Priority::Task::Update::s_background, Priority::Task::Draw::s_background);

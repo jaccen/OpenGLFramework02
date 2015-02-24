@@ -30,7 +30,7 @@ namespace ConnectWars
 
 
     /* 別名 */
-    using BackgroundPtr = std::shared_ptr<C_BaseBackground>;                                // BackgroundPtr型
+    using BackgroundPtr = std::shared_ptr<C_BaseBackground>;                                            // BackgroundPtr型
 
 
     //-------------------------------------------------------------
@@ -43,19 +43,19 @@ namespace ConnectWars
     {
     public:
         /* 別名 */
-        using CreateFunction = C_BaseBackground*(*)();                                      // CreateFunction型
+        using CreateFunction = C_BaseBackground*(*)();                                                          // CreateFunction型
 
-        C_BackgroundGenerator();                                                            // コンストラクタ
-        ~C_BackgroundGenerator() override;                                                  // デストラクタ
-        BackgroundPtr Create(const std::string& rId, const Vector3& rPosition);             // 生成処理
-        void AutoCreate(int32_t frame);                                                     // 自動生成処理
-        void RegistFunction(const std::string& rId, CreateFunction pCreateFunction);        // 関数の登録
-        void SetTaskSystem(Task::C_GeneralTaskSystem* pTaskSystem);                         // タスクシステムを設定
-        void SetBackgroundData(const JSON::JsonObjectPtr& prBackgroundData);                // 背景データを設定
+        C_BackgroundGenerator();                                                                                // コンストラクタ
+        ~C_BackgroundGenerator() override;                                                                      // デストラクタ
+        BackgroundPtr Create(const std::string& rId, const Vector3& rPosition, int32_t lifeFrame = -1);         // 生成処理
+        void AutoCreate(int32_t frame);                                                                         // 自動生成処理
+        void RegistFunction(const std::string& rId, CreateFunction pCreateFunction);                            // 関数の登録
+        void SetTaskSystem(Task::C_GeneralTaskSystem* pTaskSystem);                                             // タスクシステムを設定
+        void SetBackgroundData(const JSON::JsonObjectPtr& prBackgroundData);                                    // 背景データを設定
     private:
-        std::unordered_map<std::string, CreateFunction> pCreateFunctions_;                  ///< @brief 生成関数
-        Task::C_GeneralTaskSystem* pTaskSystem_ = nullptr;                                  ///< @brief タスクシステム
-        int32_t number = 0;                                                                 ///< @brief 番号
-        JSON::JsonObjectPtr pBackgroundData_;                                               ///< @brief 背景データ
+        std::unordered_map<std::string, CreateFunction> pCreateFunctions_;                                      ///< @brief 生成関数
+        Task::C_GeneralTaskSystem* pTaskSystem_ = nullptr;                                                      ///< @brief タスクシステム
+        int32_t number = 0;                                                                                     ///< @brief 番号
+        JSON::JsonObjectPtr pBackgroundData_;                                                                   ///< @brief 背景データ
     };
 }
