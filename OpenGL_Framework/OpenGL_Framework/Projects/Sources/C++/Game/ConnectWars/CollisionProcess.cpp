@@ -46,6 +46,9 @@ namespace ConnectWars
      ****************************************************************/
     void C_CollisionProcess::s_PlayerAndOption(C_BasePlayer* pPlayer, C_BaseOption* pOption)
     {
+        // 連結可能でない場合は何もしない
+        if (pPlayer->IsEnableConnectFlag() == false || pOption->IsEnableConnectFlag() == false) return;
+
         if (pOption->IsOnceConnectFlag() == false)
         {
             // プレイヤーを設定
@@ -163,6 +166,9 @@ namespace ConnectWars
     {
         // どちらも一度も連結していない場合は何もしない
         if (pOption->IsOnceConnectFlag() == false && pAnotherOption->IsOnceConnectFlag() == false) return;
+
+        // 連結可能でない場合は何もしない
+        if (pOption->IsEnableConnectFlag() == false || pAnotherOption->IsEnableConnectFlag() == false) return;
 
         // 各オプションを追加
         pOption->AddConnectOption(pAnotherOption);

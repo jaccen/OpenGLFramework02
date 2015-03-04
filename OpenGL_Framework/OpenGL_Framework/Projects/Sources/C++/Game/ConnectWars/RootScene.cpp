@@ -229,6 +229,9 @@ namespace ConnectWars
         const char* pLuaPathList[] =
         {
             Path::Lua::s_pBOMB_CHARGE_EFFECT,
+            Path::Lua::s_pPLAYER_FLAREBACK_EFFECT,
+            Path::Lua::s_pCONNECT_EFFECT,
+            Path::Lua::s_pPLAYER_EXPLOSION_EFFECT,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pLuaPathList); i < arraySize; ++i)

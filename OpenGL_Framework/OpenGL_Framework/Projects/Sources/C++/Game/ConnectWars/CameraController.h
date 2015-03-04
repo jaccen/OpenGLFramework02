@@ -21,6 +21,15 @@
 //-------------------------------------------------------------
 namespace ConnectWars
 {
+    /** カメラデータの種類 */
+    enum class ecCameraDataType
+    {
+        BACKGROUND_EYE_POINT,
+        BACKGROUND_TARGET_POINT,
+        BACKGROUND_UP_VECTOR,
+    };
+
+
     //-------------------------------------------------------------
     //!
     //! @brief カメラコントローラー
@@ -36,6 +45,8 @@ namespace ConnectWars
         void Draw() override;                                                   // 描画処理
         bool MessageProcess(const Telegram& rTelegram) override;                // メッセージ処理
         void SetCameraData(const JSON::JsonObjectPtr& prCameraData);            // カメラデータを設定
+        void SetNowFrame(int32_t frame);                                        // 現在のフレーム数を設定
+        void SetIndex(int32_t index, ecCameraDataType cameraDataType);          // インデックスの設定
     protected:
         Camera::CameraPtr pMainCamera_;                                         ///< @brief メインカメラ
         std::shared_ptr<Camera::C_PerspectiveCamera> pBackgroundCamera_;        ///< @brief 背景カメラ

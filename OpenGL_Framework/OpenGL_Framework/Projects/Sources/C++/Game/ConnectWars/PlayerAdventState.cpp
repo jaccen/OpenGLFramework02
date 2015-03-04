@@ -1,5 +1,7 @@
 /* ヘッダファイル */
 #include "PlayerAdventState.h"
+#include "BasePlayer.h"
+#include "PlayerCombatState.h"
 
 
 //-------------------------------------------------------------
@@ -53,7 +55,13 @@ namespace ConnectWars
      ****************************************************************/
     void C_PlayerAdventState::Execute(C_BasePlayer* pPlayer)
     {
+        pPlayer->Move();
 
+        if (pPlayer->IsFinishAdvent() == true)
+        {
+            pPlayer->ChangeMove(C_BasePlayer::INPUT);
+            pPlayer->GetStateMachine()->ChangeState(C_PlayerCombatState::s_GetInstance());
+        }
     }
 
 
@@ -66,6 +74,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_PlayerAdventState::Exit(C_BasePlayer* pPlayer)
     {
+            pPlayer->SetEnableConnectFlag(true);
     }
 
 

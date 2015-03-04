@@ -983,7 +983,7 @@ namespace Math
     
         convertionMatrix.a21_ = static_cast<T>(2) * (xy - zt);
         convertionMatrix.a22_ = static_cast<T>(1) - static_cast<T>(2) * (xx + zz);
-        convertionMatrix.a23_ = static_cast<T>(2) * (yt + xt);
+        convertionMatrix.a23_ = static_cast<T>(2) * (yz + xt);
     
         convertionMatrix.a31_ = static_cast<T>(2) * (xz + yt);
         convertionMatrix.a32_ = static_cast<T>(2) * (yz - xt);

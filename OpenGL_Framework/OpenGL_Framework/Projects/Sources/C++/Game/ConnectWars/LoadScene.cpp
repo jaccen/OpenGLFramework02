@@ -138,7 +138,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_LoadScene::Draw()
     {
-        if (frameCounter_.GetCount() % 100 < 50)
+        if (frameCounter_.GetCount() % 30 < 60)
         {
             pOpenGlManager_->EnableBlend(true);
             pOpenGlManager_->SetBlendFunction(OpenGL::BlendFactor::s_SOURCE_ALPHA, OpenGL::BlendFactor::s_ONE_MINUS_SOURCE_ALPHA);

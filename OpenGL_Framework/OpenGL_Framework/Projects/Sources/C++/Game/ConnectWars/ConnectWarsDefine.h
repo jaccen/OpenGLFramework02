@@ -91,6 +91,9 @@ namespace ConnectWars
                 const char* s_pSPACE = "SpacePrimitive";                                                                                            ///< @brief 宇宙
                 const char* s_pSHELTER = "ShelterPrimitive";                                                                                        ///< @brief シェルター
                 const char* s_pEXIT_RING = "ExitRingPrimitive";                                                                                     ///< @brief エグジットリング
+                const char* s_pMETEOR = "Meteor";                                                                                                   ///< @brief 隕石
+                const char* s_pROCK = "Rock";                                                                                                       ///< @brief 岩
+                const char* s_pBACKGROUND_METEOR = "BackgroundMeteor";                                                                              ///< @brief 背景隕石
             }
 
 
@@ -145,10 +148,10 @@ namespace ConnectWars
                 /* エフェクト */
                 namespace Effect
                 {
-                    namespace Bomb
-                    {
-                        const char* s_pCHARGE = "BombChargeEffect";                                                                                 ///< @brief ボムチャージ
-                    }
+                    const char* s_pBOMB_CHARGE = "BombChargeEffect";                                                                                ///< @brief ボムチャージ
+                    const char* s_pPLAYER_FLAREBACK = "PlayerFlaerBackEffect";                                                                      ///< @brief プレイヤーフレーヤーバック
+                    const char* s_pCONNECT = "ConnectEffect";                                                                                       ///< @brief 連結エフェクト
+                    const char* s_pPLAYER_EXPLOSION = "PlayerExplosionEffect";                                                                      ///< @brief プレイヤー爆発エフェクト
                 }
 
                 /* 背景 */
@@ -157,6 +160,8 @@ namespace ConnectWars
                     const char* s_pSPACE = "Space";                                                                                                 ///< @brief 空間
                     const char* s_pSHELTER = "Shelter";                                                                                             ///< @brief シェルター
                     const char* s_pEXIT_RING = "ExitRing";                                                                                          ///< @brief エグジットリング 
+                    const char* s_pEARTH = "Earth";                                                                                                 ///< @brief 地球
+                    const char* s_pBACKGROUND_METEOR = "BackgroundMeteor";                                                                          ///< @brief 背景隕石
                 }
             }
 
@@ -198,8 +203,6 @@ namespace ConnectWars
                 const char* s_pPLAYER_BULLET = "PlayerBulletJson";                                                                                  ///< @brief プレイヤー弾
                 const char* s_pOPTION_BULLET = "OptionBulletJson";                                                                                  ///< @brief オプション弾
                 const char* s_pSTAGE_01_ENEMY_DATA = "Stage01EnemyDataJson";                                                                        ///< @brief ステージ01敵データ
-                const char* s_pSPACE = "SpaceJson";                                                                                                 ///< @brief 宇宙
-                const char* s_pSHELTER = "ShelterJson";                                                                                             ///< @brief シェルター
                 const char* s_pSTAGE_01_CAMERAWORK_DATA = "Stage01CameraworkDataJson";                                                              ///< @brief ステージ01カメラワークデータ
                 const char* s_pTITLE_UI_DATA = "TitleUiDataJson";                                                                                   ///< @brief タイトルUIデータ
                 const char* s_pRANKING_UI_DATA = "RankingUiDataJson";                                                                               ///< @brief ランキングUIデータ
@@ -207,6 +210,7 @@ namespace ConnectWars
                 const char* s_pCONFIG_DATA = "ConfigData";                                                                                          ///< @brief コンフィグデータ
                 const char* s_pRANKING_DATA = "RankingData";                                                                                        ///< @brief ランキングデータ
                 const char* s_pPAUSE_UI_DATA = "PauseUiDataJson";                                                                                   ///< @brief ポーズUIデータ
+                const char* s_pSTAGE_01_BACKGROUND_DATA = "Stage01BackgroundDataJson";                                                              ///< @brief ステージ01背景データ
             }
 
             /* モデル */
@@ -219,6 +223,8 @@ namespace ConnectWars
                 const char* s_pSPACE = "SpaceModel";                                                                                                ///< @brief 宇宙
                 const char* s_pSHELTER = "ShelterModel";                                                                                            ///< @brief シェルター
                 const char* s_pEXIT_RING = "ExitRingModel";                                                                                         ///< @brief エグジットリング
+                const char* s_pMETEOR = "MeteorModel";                                                                                              ///< @brief 隕石
+                const char* s_pROCK = "RockModel";                                                                                                  ///< @brief 岩
             }
 
             /* スプライト */
@@ -231,6 +237,7 @@ namespace ConnectWars
                 const char* s_pFADE = "FadeSprite";                                                                                                 ///< @brief フェード
                 const char* s_pRANKING_BACKGROUND = "RankingBackgroundSprite";                                                                      ///< @brief ランキング背景
                 const char* s_pPAUSE_BACKGROUND = "PauseBackgroundSprite";                                                                          ///< @brief ポーズ背景
+                const char* s_pGAME_UI = "GameUiSprite";                                                                                            ///< @brief ゲームUI
             }
 
             /* パーティクル */
@@ -239,6 +246,7 @@ namespace ConnectWars
                 const char* s_pCIRCLE_01 = "Circle01Particle";                                                                                      ///< @brief 円01
                 const char* s_pCIRCLE_02 = "Circle02Particle";                                                                                      ///< @brief 円02
                 const char* s_pRING_01 = "Ring01Particle";                                                                                          ///< @brief 輪01
+                const char* s_pSMOKE_01 = "Smoke01Particle";                                                                                        ///< @brief 煙01
             }
         }
 
@@ -292,6 +300,14 @@ namespace ConnectWars
                 const char* s_pSHELTER = "Projects/Images/ConnectWars/Background/Shelter.png";                                                      ///< @brief シェルター
                 const char* s_pSHALTER_NORMAL = "Projects/Images/ConnectWars/Background/Shelter_NormalMap.png";                                     ///< @brief シェルター( 法線マップ )
                 const char* s_pFADE = "Projects/Images/ConnectWars/Fade/BlackDot.png";                                                              ///< @brief フェード
+                const char* s_pEARTH = "Projects/Images/ConnectWars/Background/Earth.png";                                                          ///< @brief 地球
+                const char* s_pMETOAR = "Projects/Images/ConnectWars/Obstacle/Meteor.png";                                                          ///< @brief 隕石
+                const char* s_pMETOAR_NORMAL = "Projects/Images/ConnectWars/Obstacle/MeteorNormalMap.png";                                          ///< @brief 隕石(  法線マップ
+                const char* s_pBACKGROND_METEOR = "Projects/Images/ConnectWars/Background/BackgroundMeteor.png";                                    ///< @brief 背景隕石
+                const char* s_pROCK = "Projects/Images/ConnectWars/Obstacle/Rock.png";                                                              ///< @brief 岩
+                const char* s_pROCK_NORMAL = "Projects/Images/ConnectWars/Obstacle/RockNormalMap.png";                                              ///< @brief 岩( 法線マップ )
+                const char* s_pGAME_UI = "Projects/Images/ConnectWars/UI/GameUI.png";                                                               ///< @brief ゲームUI
+                const char* s_pSMOKE_01 = "Projects/Images/ConnectWars/Effect/Smoke01.png";                                                         ///< @brief 煙01
             }
 
             /* フォント */
@@ -311,6 +327,8 @@ namespace ConnectWars
                 const char* s_pSPACE = "Projects/Models/ConnectWars/Background/Space/Sphere.model";                                                 ///< @brief 宇宙
                 const char* s_pSHELTER = "Projects/Models/ConnectWars/Background/Shelter/Shelter.model";                                            ///< @brief シェルター
                 const char* s_pEXIT_RING = "Projects/Models/ConnectWars/Background/ExitRing/ExitRing.model";                                        ///< @brief エグジットリング
+                const char* s_pMETEOR = "Projects/Models/ConnectWars/Obstacle/Meteor/Meteor.model";                                                 ///< @brief 隕石
+                const char* s_pROCK = "Projects/Models/ConnectWars/Obstacle/Rock/Rock.model";                                                       ///< @brief 岩
             }
 
 
@@ -325,8 +343,6 @@ namespace ConnectWars
                 const char* s_pOPTION_BULLET = "Projects/GameDatas/ConnectWars/JSON/Bullet/Option/OptionBulletDatas.json";                          ///< @brief オプション弾
                 const char* s_pSTAGE_01_ENEMY_DATA = "Projects/GameDatas/ConnectWars/JSON/Enemy/Stage01/Stage01EnemyData.json";                     ///< @breif ステージ01敵データ
                 const char* s_pTASK_PRIORITY_DATA = "Projects/GameDatas/ConnectWars/JSON/Task/TaskPriorityData.json";                               ///< @breif タスクの優先度データ
-                const char* s_pSPACE = "Projects/GameDatas/ConnectWars/JSON/Background/SpaceData.json";                                             ///< @brief 宇宙
-                const char* s_pSHELTER = "Projects/GameDatas/ConnectWars/JSON/Background/ShelterData.json";                                         ///< @brief シェルター
                 const char* s_pMATERIAL_DATA = "Projects/GameDatas/ConnectWars/JSON/Material/MaterialData.json";                                    ///< @brief マテリアルデータ
                 const char* s_pLIGHT_DATA = "Projects/GameDatas/ConnectWars/JSON/Light/LightData.json";                                             ///< @brief ライト情報
                 const char* s_pSTAGE_01_CAMERAWORK_DATA = "Projects/GameDatas/ConnectWars/JSON/Camera/Stage01/Stage01CameraworkData.json";          ///< @brief ステージ01カメラワークデータ
@@ -336,12 +352,16 @@ namespace ConnectWars
                 const char* s_pRANKING_DATA = "Projects/GameDatas/ConnectWars/JSON/Ranking/RankingData.json";                                       ///< @brief ランキングデータ
                 const char* s_pCONFIG_DATA = "Projects/GameDatas/ConnectWars/JSON/Config/ConfigData.json";                                          ///< @brief コンフィグデータ
                 const char* s_pPAUSE_UI_DATA = "Projects/GameDatas/ConnectWars/JSON/UI/PauseUiData.json";                                           ///< @brief ポーズUIデータ
+                const char* s_pSTAGE_01_BACKGROUND_DATA = "Projects/GameDatas/ConnectWars/JSON/Background/Stage01/Stage01BackgroundData.json";      ///< @brief ステージ01背景データ
             }
 
             /* Lua */
             namespace Lua
             {
                 const char* s_pBOMB_CHARGE_EFFECT = "Projects/Sources/Lua/Effect/BombChargeEffect.lua";                                             ///< @brief ボムのチャージエフェクト
+                const char* s_pPLAYER_FLAREBACK_EFFECT = "Projects/Sources/Lua/Effect/PlayerFlarebackEffect.lua";                                   ///< @brief プレイヤーフレーヤーバックエフェクト
+                const char* s_pCONNECT_EFFECT = "Projects/Sources/Lua/Effect/ConnectEffect.lua";                                                    ///< @brief 連結エフェクト
+                const char* s_pPLAYER_EXPLOSION_EFFECT = "Projects/Sources/Lua/Effect/PlayerExplosionEffect.lua";                                   ///< @brief プレイヤーの爆発エフェクト
             }
         }
 

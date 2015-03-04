@@ -5,6 +5,7 @@
 #include "../../Library/Input/Gamepad/Manager/GamepadManager.h"
 #include "../../Library/Debug/Helper/DebugHelper.h"
 #include "../../Library/Physics/Engine/PhysicsEngine.h"
+#include "../../Library/Debug//String/DebugString.h"
 
 
 //-------------------------------------------------------------
@@ -24,6 +25,7 @@ namespace ConnectWars
      ****************************************************************/
     C_GameController::C_GameController(const std::string& rId, int32_t type) : C_SceneController(rId, type)
     {
+        upFade_ = std::make_unique<C_Fade>(ID::GameObject::s_pFADE, eGameObjectType::TYPE_FADE, 30, true);
     }
 
 
@@ -66,6 +68,10 @@ namespace ConnectWars
             // 物理エンジンの更新を停止
             Physics::C_PhysicsEngine::s_GetInstance()->EnableActive(false);
         }
+
+        pBackgroundGenerator_->AutoCreate(frameCounter_.GetCount());
+
+        upFade_->Update();
     }
     
 
@@ -78,6 +84,9 @@ namespace ConnectWars
      ****************************************************************/
     void C_GameController::DoDraw()
     {
+        upFade_->Draw();
+
+        std::cout << frameCounter_.GetCount() << std::endl;
     }
 
 
@@ -92,5 +101,31 @@ namespace ConnectWars
     bool C_GameController::DoMessageProcess(const Telegram& rTelegram)
     {
         return true;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  バックグラウンドジェネレータを設定する
+     *  @param  バックグラウンドジェネレータ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_GameController::SetBackgroundGenerator(C_BackgroundGenerator* pBackgroundGenerator)
+    {
+        pBackgroundGenerator_ = pBackgroundGenerator;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  エネミージェネレータを設定する
+     *  @param  エネミージェネレータ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_GameController::SetEnemyGenerator(C_EnemyGenerator* pEnemyGenerator)
+    {
+        pEnemyGenerator_ = pEnemyGenerator;
     }
 }

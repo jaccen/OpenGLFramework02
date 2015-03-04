@@ -184,6 +184,32 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  連結可能フラグを取得する
+     *  @param  なし
+     *  @return 連結可能フラグ
+     *
+     ****************************************************************/
+    bool C_ConnectMachine::IsEnableConnectFlag() const
+    {
+        return enableConnectFlag_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  連結可能フラグを設定する
+     *  @param  連結可能フラグ
+     *  @return なし
+     *
+     ****************************************************************/
+    void  C_ConnectMachine::SetEnableConnectFlag(bool enableConnectFlag) 
+    {
+        enableConnectFlag_ = enableConnectFlag;
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  自爆遅延フレーム数の間隔を設定する
      *  @param  自爆遅延フレーム数の間隔
      *  @return なし

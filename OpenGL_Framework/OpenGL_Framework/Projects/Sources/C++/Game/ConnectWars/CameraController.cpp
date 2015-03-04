@@ -48,7 +48,6 @@ namespace ConnectWars
         {
             rCameraWorker.SetLinearFunction(Vector3::s_Lerp);
             rCameraWorker.SetHermiteFunction(Vector3::s_Hermite);
-            rCameraWorker.EnableLoop();
         }
     }
 
@@ -222,6 +221,43 @@ namespace ConnectWars
 
             // キーを追加
             backgroundCameraWorkers_[2].Add(key);
+        }
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  現在のフレーム数を設定する
+     *  @param  フレーム数
+     *  @param  なし
+     *
+     ****************************************************************/
+    void C_CameraController::SetNowFrame(int32_t frame)
+    {
+        for (auto& rCameraWorker : backgroundCameraWorkers_) rCameraWorker.SetNowFrame(frame);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  インデックスを設定する
+     *  @param  フレーム図鵜
+     *  @param  なし
+     *
+     ****************************************************************/
+    void C_CameraController::SetIndex(int32_t index, ecCameraDataType cameraDataType)
+    {
+        if (cameraDataType == ecCameraDataType::BACKGROUND_EYE_POINT)
+        {
+            backgroundCameraWorkers_[0].SetIndex(index);
+        }
+        else if (cameraDataType == ecCameraDataType::BACKGROUND_TARGET_POINT)
+        {
+            backgroundCameraWorkers_[1].SetIndex(index);
+        }
+        else
+        {
+            backgroundCameraWorkers_[2].SetIndex(index);
         }
     }
 }

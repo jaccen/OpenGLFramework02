@@ -871,6 +871,39 @@
     <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Background\ExitRing">
       <UniqueIdentifier>{700ea647-ead9-4453-9b29-6b64364524b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\CreateData">
+      <UniqueIdentifier>{6a0e31c8-0daf-4b0e-be2f-bab0bb3d2a8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\Enemy\Stage01">
+      <UniqueIdentifier>{a2cd690e-c2de-4778-af1b-07a63b70bd56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\Background\Stage01">
+      <UniqueIdentifier>{3c71ec78-24ba-4e37-b2e7-42f1528375d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Background\Earth">
+      <UniqueIdentifier>{17e1dd45-5bf8-4804-a591-39d6bd5d700e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Background\Meteo">
+      <UniqueIdentifier>{ef50794a-7c8d-457d-94c6-8dd749f6a2b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Logic\Move\Background">
+      <UniqueIdentifier>{0f4fd339-e889-461e-9414-ffff0c345ec0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Logic\Move\Background\Straight">
+      <UniqueIdentifier>{804895c0-4a13-4622-aac5-4233d988cda9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\PlayerAdvent">
+      <UniqueIdentifier>{d5ad8931-9ea1-4711-b818-d4a46d9659f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Effect\Flareback">
+      <UniqueIdentifier>{ceb6f5df-381c-4c3d-bd27-ec9b7be650b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Effect\Connect">
+      <UniqueIdentifier>{ff8808fc-57e5-4d91-8cf8-2ea4b776a207}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Effect\Explosion">
+      <UniqueIdentifier>{4a183c8f-9904-46c0-852d-44550fa4a515}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Projects\Sources\C++\Other\Stdafx\Stdafx.h">
@@ -1617,6 +1650,30 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ExitRing.h">
       <Filter>Sources\C++\Game\ConnectWars\GameObject\Background\ExitRing</Filter>
     </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Earth.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Background\Earth</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BackgroundMeteor.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Background\Meteo</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BackgroundMoveLogic.h">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BackgroundStraightMoveLogic.h">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Background\Straight</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventMoveLogic.h">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\PlayerAdvent</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerFlarebackEffect.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Flareback</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ConnectEffect.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Connect</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerExplosionEffect.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Explosion</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Projects\Sources\C++\Other\Stdafx\Stdafx.cpp">
@@ -2189,6 +2246,30 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ExitRing.cpp">
       <Filter>Sources\C++\Game\ConnectWars\GameObject\Background\ExitRing</Filter>
     </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Earth.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Background\Earth</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BackgroundMeteor.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Background\Meteo</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BackgroundMoveLogic.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Background</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BackgroundStraightMoveLogic.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Background\Straight</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventMoveLogic.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Logic\Move\Body\Rigid\PlayerAdvent</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerFlarebackEffect.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Flareback</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ConnectEffect.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Connect</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerExplosionEffect.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Explosion</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Projects\Shaders\GLSL\Debug\DebugString.geom">
@@ -2269,9 +2350,6 @@
     <None Include="Projects\GameDatas\ConnectWars\JSON\Bullet\Option\OptionBulletDatas.json">
       <Filter>Resources\GameDatas\ConnectWars\Bullet\Option</Filter>
     </None>
-    <None Include="Projects\GameDatas\ConnectWars\JSON\Enemy\Stage01\Stage01EnemyData.json">
-      <Filter>Resources\GameDatas\ConnectWars\Enemy</Filter>
-    </None>
     <None Include="Projects\GameDatas\ConnectWars\JSON\Task\TaskPriorityData.json">
       <Filter>Resources\GameDatas\ConnectWars\Task</Filter>
     </None>
@@ -2281,9 +2359,6 @@
     <None Include="Projects\Shaders\GLSL\CelestialSphere\CelestialSphere.vert">
       <Filter>Resources\Shaders\GLSL\CelestialSphere</Filter>
     </None>
-    <None Include="Projects\GameDatas\ConnectWars\JSON\Background\SpaceData.json">
-      <Filter>Resources\GameDatas\ConnectWars\Background</Filter>
-    </None>
     <None Include="Projects\GameDatas\ConnectWars\JSON\Camera\CameraData.json">
       <Filter>Resources\GameDatas\ConnectWars\Camera</Filter>
     </None>
@@ -2292,9 +2367,6 @@
     </None>
     <None Include="Projects\GameDatas\ConnectWars\JSON\Light\LightData.json">
       <Filter>Resources\GameDatas\ConnectWars\Light</Filter>
-    </None>
-    <None Include="Projects\GameDatas\ConnectWars\JSON\Background\ShelterData.json">
-      <Filter>Resources\GameDatas\ConnectWars\Background</Filter>
     </None>
     <None Include="Projects\Shaders\GLSL\Phong\PhongNormal.vert">
       <Filter>Resources\Shaders\GLSL\Phong</Filter>
@@ -2334,6 +2406,21 @@
     </None>
     <None Include="Projects\GameDatas\ConnectWars\JSON\UI\PauseUiData.json">
       <Filter>Resources\GameDatas\ConnectWars\UI</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Enemy\Stage01\Stage01EnemyData.json">
+      <Filter>Resources\GameDatas\ConnectWars\Enemy\Stage01</Filter>
+    </None>
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Background\Stage01\Stage01BackgroundData.json">
+      <Filter>Resources\GameDatas\ConnectWars\Background\Stage01</Filter>
+    </None>
+    <None Include="Projects\Sources\Lua\Effect\PlayerFlarebackEffect.lua">
+      <Filter>Sources\Lua\Effect</Filter>
+    </None>
+    <None Include="Projects\Sources\Lua\Effect\ConnectEffect.lua">
+      <Filter>Sources\Lua\Effect</Filter>
+    </None>
+    <None Include="Projects\Sources\Lua\Effect\PlayerExplosionEffect.lua">
+      <Filter>Sources\Lua\Effect</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -32,15 +32,6 @@ namespace ConnectWars
         assert(Light::C_LightManager::s_GetInstance()->GetLight(ID::Light::s_pSHELTER));
         pLight_ = Light::C_LightManager::s_GetInstance()->GetLight(ID::Light::s_pSHELTER).get();
 
-        // シェルターの情報を取得
-        assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSHELTER));
-        auto pShelterData = JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSHELTER).get();
-
-        // モデル行列を作成
-        modelMatrix_ = Matrix4x4::s_CreateScaling(static_cast<float>((*pShelterData)["ShelterData"]["Size"][0].GetValue<JSON::Real>()), 
-                                                  static_cast<float>((*pShelterData)["ShelterData"]["Size"][1].GetValue<JSON::Real>()),
-                                                  static_cast<float>((*pShelterData)["ShelterData"]["Size"][2].GetValue<JSON::Real>()));
-
         // モデル情報を取得
         assert(OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pSHELTER));
         pModelData_ = OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pSHELTER).get();
@@ -112,12 +103,8 @@ namespace ConnectWars
         pGlslObject_->BeginWithUnifomBuffer(pUniformBuffer_->GetHandle(), uniformBlockIndex_);
         pGlslObject_->BindActiveSubroutine(cameraSubroutineIndex_, Shader::GLSL::Type::s_VERTEX);
 
-        modelMatrix_.a41_ = position_.x_;
-        modelMatrix_.a42_ = position_.y_;
-        modelMatrix_.a43_ = position_.z_;
-
+        modelMatrix_ = Matrix4x4::s_CreateTRS(position_, rotation_, scale_);
         pGlslObject_->SetUniformMatrix4x4("u_modelMatrix", modelMatrix_);
-
 
         Vector3 eyePoint = std::static_pointer_cast<Camera::C_PerspectiveCamera>(pCamera_)->GetEyePoint();
         pGlslObject_->SetUniformVector3("u_eyePosition", eyePoint);
@@ -129,7 +116,7 @@ namespace ConnectWars
         auto pOpenGlManager = OpenGL::C_OpenGlManager::s_GetInstance();
         auto pTextureManager = Texture::C_TextureManager::s_GetInstance();
 
-        pOpenGlManager->SetCullingFace(OpenGL::Face::s_FRONT);
+        pOpenGlManager->EnableCulling(false);
 
         // アクティブなテクスチャユニットを設定し、テクスチャをバインド
         pTextureManager->SetActiveUnit(0);
@@ -146,7 +133,7 @@ namespace ConnectWars
 
         pTextureManager->Unbind(Texture::Type::s_2D);
 
-        pOpenGlManager->SetCullingFace(OpenGL::Face::s_BACK);
+        pOpenGlManager->EnableCulling(true);
 
         pGlslObject_->End();
     }

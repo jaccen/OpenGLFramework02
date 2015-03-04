@@ -130,6 +130,8 @@ namespace ConnectWars
             ID::Primitive::s_pSPEED_UP_OPTION,
             ID::Primitive::s_pSMALL_BEAM_OPTION,
             ID::Primitive::s_pEXIT_RING,
+            ID::Primitive::s_pMETEOR,
+            ID::Primitive::s_pROCK,
         };
 
         const char* pModelPathList[] =
@@ -141,6 +143,8 @@ namespace ConnectWars
             Path::Model::s_pSPEED_UP_OPTION,
             Path::Model::s_pSMALL_BEAM_OPTION,
             Path::Model::s_pEXIT_RING,
+            Path::Model::s_pMETEOR,
+            Path::Model::s_pROCK,
         };
 
         const char* pModelIdList[] =
@@ -152,6 +156,8 @@ namespace ConnectWars
             ID::Model::s_pSPPED_UP_OPTION,
             ID::Model::s_pSMALL_BEAM_OPTION,
             ID::Model::s_pEXIT_RING,
+            ID::Model::s_pMETEOR,
+            ID::Model::s_pROCK,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pPrimitiveIdList); i < arraySize; ++i)
@@ -181,10 +187,10 @@ namespace ConnectWars
             ID::JSON::s_pOPTION_BULLET,
             ID::JSON::s_pSMALL_BEAM_OPTION,
             ID::JSON::s_pSTAGE_01_ENEMY_DATA,
-            ID::JSON::s_pSPACE,
-            ID::JSON::s_pSHELTER,
             ID::JSON::s_pSTAGE_01_CAMERAWORK_DATA,
             ID::JSON::s_pPAUSE_UI_DATA,
+            ID::JSON::s_pSTAGE_01_BACKGROUND_DATA,
+            ID::JSON::s_pGAME_UI_DATA,
         };
 
 
@@ -196,10 +202,10 @@ namespace ConnectWars
             Path::JSON::s_pOPTION_BULLET,
             Path::JSON::s_pSMALL_BEAM_OPTION,
             Path::JSON::s_pSTAGE_01_ENEMY_DATA,
-            Path::JSON::s_pSPACE,
-            Path::JSON::s_pSHELTER,
             Path::JSON::s_pSTAGE_01_CAMERAWORK_DATA,
             Path::JSON::s_pPAUSE_UI_DATA,
+            Path::JSON::s_pSTAGE_01_BACKGROUND_DATA,
+            Path::JSON::s_pGAME_UI_DATA,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pJsonIdList); i < arraySize; ++i)

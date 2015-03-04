@@ -33,8 +33,6 @@ namespace ConnectWars
         virtual ~C_ExitRing();                                                  // デストラクタ
     private:
         OpenGL::PrimitiveBufferPtr pModelData_;                                 ///< @brief モデル情報
-        Texture::TextureDataPtr pTextureData_;                                  ///< @brief テクスチャデータ
-        Texture::TextureDataPtr pNormalTextureData_;                            ///< @brief 法線テクスチャデータ
         Matrix4x4 modelMatrix_;                                                 ///< @brief モデル行列
         Material::MaterialPtr pMaterial_;                                       ///< @brief マテリアル
         Light::LightPtr pLight_;                                                ///< @brief ライト

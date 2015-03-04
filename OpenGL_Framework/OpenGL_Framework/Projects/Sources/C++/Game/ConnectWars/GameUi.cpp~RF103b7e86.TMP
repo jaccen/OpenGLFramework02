@@ -1,0 +1,248 @@
+/* ヘッダファイル */
+#include "GameUi.h"
+#include "UiFont.h"
+#include "../../Library/Window/Manager/WindowManager.h"
+#include "../../Library/Sprite/Creater/Manager/SpriteCreaterManager.h"
+#include "../../Library/GameObject/Message/Dispatcher/MessageDispatcher.h"
+
+
+//-------------------------------------------------------------
+//!
+//! @brief コネクトウォーズ
+//! @brief コネクトウォーズ関連の名前空間
+//!
+//-------------------------------------------------------------
+namespace ConnectWars
+{
+    /*************************************************************//**
+     *
+     *  @brief  コンストラクタ
+     *  @param  ID
+     *  @param  種類
+     *
+     ****************************************************************/
+    C_GameUi::C_GameUi(const std::string& rId, int32_t type) : C_BaseUi(rId, type)
+    {
+        assert(Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater(ID::Sprite::s_pGAME_UI));
+        wpUiSpriteCreater_ = Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater(ID::Sprite::s_pGAME_UI).get();
+
+        assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pGAME_UI_DATA));
+        auto pGameUiData = JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pGAME_UI_DATA).get();
+
+        LoadUiWords(&(*pGameUiData)["GameUiData"]);
+        LoadUiSpriteData(&(*pGameUiData)["GameUiData"]);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  デストラクタ
+     *  @param  なし
+     *
+     ****************************************************************/
+    C_GameUi::~C_GameUi()
+    {
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  非公開の更新処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_GameUi::DoUpdate()
+    {
+        UpdateUiWords();
+        UpdateUiSprite();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  非公開の描画処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_GameUi::DoDraw()
+    {
+        DrawUiWords();
+        DrawUiSprite();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  非公開のメッセージ処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    bool C_GameUi::DoMessageProcess(const Telegram& rTelegram)
+    {
+        return true;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  UI文字列のロード処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_GameUi::LoadUiWords(JSON::JsonObject* pData)
+    {
+        uiWords_[0].words_ = (*pData)["Life"]["Words"].GetValue<JSON::String>();
+        uiWords_[0].position_.x_ = static_cast<float>((*pData)["Life"]["Position"][0].GetValue<JSON::Real>());
+        uiWords_[0].position_.y_ = static_cast<float>((*pData)["Life"]["Position"][1].GetValue<JSON::Real>());
+        uiWords_[0].size_.x_ = static_cast<float>((*pData)["Life"]["Size"][0].GetValue<JSON::Real>());
+        uiWords_[0].size_.y_ = static_cast<float>((*pData)["Life"]["Size"][1].GetValue<JSON::Real>());
+        uiWords_[0].color_.red_ = static_cast<float>((*pData)["Life"]["Color"][0].GetValue<JSON::Real>());
+        uiWords_[0].color_.green_ = static_cast<float>((*pData)["Life"]["Color"][1].GetValue<JSON::Real>());
+        uiWords_[0].color_.blue_ = static_cast<float>((*pData)["Life"]["Color"][2].GetValue<JSON::Real>());
+        uiWords_[0].color_.alpha_ = static_cast<float>((*pData)["Life"]["Color"][3].GetValue<JSON::Real>());
+        uiWords_[0].wordOffset_ = static_cast<float>((*pData)["Life"]["WordOffset"].GetValue<JSON::Real>());
+    
+        uiWords_[1].words_ = (*pData)["Score"]["Words"].GetValue<JSON::String>();
+        uiWords_[1].position_.x_ = static_cast<float>((*pData)["Score"]["Position"][0].GetValue<JSON::Real>());
+        uiWords_[1].position_.y_ = static_cast<float>((*pData)["Score"]["Position"][1].GetValue<JSON::Real>());
+        uiWords_[1].size_.x_ = static_cast<float>((*pData)["Score"]["Size"][0].GetValue<JSON::Real>());
+        uiWords_[1].size_.y_ = static_cast<float>((*pData)["Score"]["Size"][1].GetValue<JSON::Real>());
+        uiWords_[1].color_.red_ = static_cast<float>((*pData)["Score"]["Color"][0].GetValue<JSON::Real>());
+        uiWords_[1].color_.green_ = static_cast<float>((*pData)["Score"]["Color"][1].GetValue<JSON::Real>());
+        uiWords_[1].color_.blue_ = static_cast<float>((*pData)["Score"]["Color"][2].GetValue<JSON::Real>());
+        uiWords_[1].color_.alpha_ = static_cast<float>((*pData)["Score"]["Color"][3].GetValue<JSON::Real>());
+        uiWords_[1].wordOffset_ = static_cast<float>((*pData)["Score"]["WordOffset"].GetValue<JSON::Real>());
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  UIスプライトデータのロード処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_GameUi::LoadUiSpriteData(JSON::JsonObject* pData)
+    {
+        imageUis_[0].position_.x_ = static_cast<float>((*pData)["HitPointBar"]["Position"][0].GetValue<JSON::Real>());
+        imageUis_[0].position_.y_ = static_cast<float>((*pData)["HitPointBar"]["Position"][1].GetValue<JSON::Real>());
+        imageUis_[0].size_.x_ = static_cast<float>((*pData)["HitPointBar"]["Size"][0].GetValue<JSON::Real>());
+        imageUis_[0].size_.y_ = static_cast<float>((*pData)["HitPointBar"]["Size"][1].GetValue<JSON::Real>());
+        imageUis_[0].color_.red_ = static_cast<float>((*pData)["HitPointBar"]["Color"][0].GetValue<JSON::Real>());
+        imageUis_[0].color_.green_ = static_cast<float>((*pData)["HitPointBar"]["Color"][1].GetValue<JSON::Real>());
+        imageUis_[0].color_.blue_ = static_cast<float>((*pData)["HitPointBar"]["Color"][2].GetValue<JSON::Real>());
+        imageUis_[0].color_.alpha_ = static_cast<float>((*pData)["HitPointBar"]["Color"][3].GetValue<JSON::Real>());
+        imageUis_[0].textureUpperLeft_.x_ = static_cast<float>((*pData)["HitPointBar"]["TextureUpperLeft"][0].GetValue<JSON::Real>());
+        imageUis_[0].textureUpperLeft_.y_ = static_cast<float>((*pData)["HitPointBar"]["TextureUpperLeft"][1].GetValue<JSON::Real>());
+        imageUis_[0].textureLowerRight_.x_ = static_cast<float>((*pData)["HitPointBar"]["TextureLowerRight"][0].GetValue<JSON::Real>());
+        imageUis_[0].textureLowerRight_.y_ = static_cast<float>((*pData)["HitPointBar"]["TextureLowerRight"][1].GetValue<JSON::Real>());
+
+        imageUis_[1].position_.x_ = static_cast<float>((*pData)["PlayerHpGauge"]["Position"][0].GetValue<JSON::Real>());
+        imageUis_[1].position_.y_ = static_cast<float>((*pData)["PlayerHpGauge"]["Position"][1].GetValue<JSON::Real>());
+        imageUis_[1].size_.x_ = static_cast<float>((*pData)["PlayerHpGauge"]["Size"][0].GetValue<JSON::Real>());
+        imageUis_[1].size_.y_ = static_cast<float>((*pData)["PlayerHpGauge"]["Size"][1].GetValue<JSON::Real>());
+        imageUis_[1].color_.red_ = static_cast<float>((*pData)["PlayerHpGauge"]["Color"][0].GetValue<JSON::Real>());
+        imageUis_[1].color_.green_ = static_cast<float>((*pData)["PlayerHpGauge"]["Color"][1].GetValue<JSON::Real>());
+        imageUis_[1].color_.blue_ = static_cast<float>((*pData)["PlayerHpGauge"]["Color"][2].GetValue<JSON::Real>());
+        imageUis_[1].color_.alpha_ = static_cast<float>((*pData)["PlayerHpGauge"]["Color"][3].GetValue<JSON::Real>());
+        imageUis_[1].textureUpperLeft_.x_ = static_cast<float>((*pData)["PlayerHpGauge"]["TextureUpperLeft"][0].GetValue<JSON::Real>());
+        imageUis_[1].textureUpperLeft_.y_ = static_cast<float>((*pData)["PlayerHpGauge"]["TextureUpperLeft"][1].GetValue<JSON::Real>());
+        imageUis_[1].textureLowerRight_.x_ = static_cast<float>((*pData)["PlayerHpGauge"]["TextureLowerRight"][0].GetValue<JSON::Real>());
+        imageUis_[1].textureLowerRight_.y_ = static_cast<float>((*pData)["PlayerHpGauge"]["TextureLowerRight"][1].GetValue<JSON::Real>());
+
+        imageUis_[2].position_.x_ = static_cast<float>((*pData)["PlayerIcon"]["Position"][0].GetValue<JSON::Real>());
+        imageUis_[2].position_.y_ = static_cast<float>((*pData)["PlayerIcon"]["Position"][1].GetValue<JSON::Real>());
+        imageUis_[2].size_.x_ = static_cast<float>((*pData)["PlayerIcon"]["Size"][0].GetValue<JSON::Real>());
+        imageUis_[2].size_.y_ = static_cast<float>((*pData)["PlayerIcon"]["Size"][1].GetValue<JSON::Real>());
+        imageUis_[2].color_.red_ = static_cast<float>((*pData)["PlayerIcon"]["Color"][0].GetValue<JSON::Real>());
+        imageUis_[2].color_.green_ = static_cast<float>((*pData)["PlayerIcon"]["Color"][1].GetValue<JSON::Real>());
+        imageUis_[2].color_.blue_ = static_cast<float>((*pData)["PlayerIcon"]["Color"][2].GetValue<JSON::Real>());
+        imageUis_[2].color_.alpha_ = static_cast<float>((*pData)["PlayerIcon"]["Color"][3].GetValue<JSON::Real>());
+        imageUis_[2].textureUpperLeft_.x_ = static_cast<float>((*pData)["PlayerIcon"]["TextureUpperLeft"][0].GetValue<JSON::Real>());
+        imageUis_[2].textureUpperLeft_.y_ = static_cast<float>((*pData)["PlayerIcon"]["TextureUpperLeft"][1].GetValue<JSON::Real>());
+        imageUis_[2].textureLowerRight_.x_ = static_cast<float>((*pData)["PlayerIcon"]["TextureLowerRight"][0].GetValue<JSON::Real>());
+        imageUis_[2].textureLowerRight_.y_ = static_cast<float>((*pData)["PlayerIcon"]["TextureLowerRight"][1].GetValue<JSON::Real>());
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  UI文字列の更新処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_GameUi::UpdateUiWords()
+    {
+    }
+
+
+    
+
+    /*************************************************************//**
+     *
+     *  @brief  UI文字列の描画処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_GameUi::DrawUiWords()
+    {
+        for (auto& rUiWord : uiWords_)
+        {
+            C_UiFont::s_GetInstance()->Draw(rUiWord.words_, rUiWord.position_, 0.0f, rUiWord.size_, rUiWord.wordOffset_);
+        }
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  UIスプライトの描画処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_GameUi::DrawUiSprite()
+    {
+        if (wpUiSpriteCreater_.expired() == false)
+        {
+            auto pUiSpriteCreater = wpUiSpriteCreater_.lock();
+            Sprite::S_CreateData createData;
+
+            createData.position_.xy_ = imageUis_[0].position_;
+            createData.size_ = imageUis_[0].size_;
+            createData.color_ = imageUis_[0].color_;
+            createData.textureUpperLeft_ = imageUis_[0].textureUpperLeft_;
+            createData.textureLowerRight_ = imageUis_[0].textureLowerRight_;
+
+            pUiSpriteCreater->Entry(createData);
+
+            createData.position_.xy_ = imageUis_[1].position_;
+            createData.size_ = imageUis_[1].size_;
+            createData.size_.x_ = createData.size_.x_ * (static_cast<float>(playerUiData_.hp_) / static_cast<float>(playerUiData_.maxHp_));
+            createData.color_ = imageUis_[1].color_;
+            createData.textureUpperLeft_ = imageUis_[1].textureUpperLeft_;
+            createData.textureLowerRight_ = imageUis_[1].textureLowerRight_;
+
+            pUiSpriteCreater->Entry(createData);
+
+
+            for (size_t i = 0; i < playerUiData_.remainLife_; ++i)
+            {
+                createData.position_.xy_ = imageUis_[2].position_;
+                createData.size_ = imageUis_[2].size_;
+                createData.color_ = imageUis_[2].color_;
+                createData.textureUpperLeft_ = imageUis_[2].textureUpperLeft_;
+                createData.textureLowerRight_ = imageUis_[2].textureLowerRight_;
+
+                pUiSpriteCreater->Entry(createData);
+            }
+        }
+        
+    }
+
+}

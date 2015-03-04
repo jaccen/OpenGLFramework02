@@ -3,6 +3,7 @@
 #include "RigidBodyInputMoveLogic.h"
 #include "NormalGun.h"
 #include "PlayerGunFactory.h"
+#include "PlayerAdventMoveLogic.h"
 #include "../../Library/Physics/Engine/PhysicsEngine.h"
 #include "../../Library/OpenGL/Manager/OpenGlManager.h"
 #include "../../Library/Shader/GLSL/Uniform/Manager/UniformBufferManager.h"
@@ -85,7 +86,9 @@ namespace ConnectWars
         // ˆÚ“®‚ÌƒƒWƒbƒN‚ğì¬
         moveSpeedLevel_ = (*pPlayerData)["CreateData"]["MoveSpeedLevel"].GetValue<JSON::Integer>();
         moveSpeedUpInterval_ = static_cast<float>((*pPlayerData)["CreateData"]["MoveSpeedUpInterval"].GetValue<JSON::Real>());
-        upMoveLogic_ = std::make_unique<C_RigidBodyInputMoveLogic>(static_cast<float>((*pPlayerData)["CreateData"]["Movement"].GetValue<JSON::Real>()), 1.0f);
+        // upMoveLogic_ = std::make_unique<C_RigidBodyInputMoveLogic>(static_cast<float>((*pPlayerData)["CreateData"]["Movement"].GetValue<JSON::Real>()), 1.0f);
+
+        upMoveLogic_ = std::make_unique<C_PlayerAdventMoveLogic>();
 
         // e‚ğì¬
         C_PlayerBeamGunFactory playerBeamGunFactory;

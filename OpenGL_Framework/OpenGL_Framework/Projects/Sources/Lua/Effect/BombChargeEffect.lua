@@ -74,8 +74,6 @@
  end
 
 
---[[ ボムのチャージエフェクトのロジックを処理する --]]
-
 --[[ 引き数 ]]
 
 -- IC_ParticleSystem& rCircleParticleSystem

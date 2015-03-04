@@ -74,6 +74,9 @@ namespace ConnectWars
             return false;
         }
 
+        // フレームスキップを無効化
+        Timer::C_TimeManager::s_GetInstance()->EnableFrameSkip(false);
+
         // フィジックスエンジンの初期化処理
         upPhysicsEngine_->Initialize(Physics::Vector3(0.0f, 0.0f, 0.0f), Physics::Default::s_AIR_DENSITY);
 

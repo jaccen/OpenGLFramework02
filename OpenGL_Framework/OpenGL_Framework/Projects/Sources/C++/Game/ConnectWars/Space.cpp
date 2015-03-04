@@ -21,14 +21,6 @@ namespace ConnectWars
      ****************************************************************/
     C_Space::C_Space(const std::string& rId, int32_t type) : C_BaseBackground(rId, type)
     {
-        // スペースの情報を取得
-        assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSPACE));
-        auto pSpaceData = JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSPACE).get();
-
-        // モデル行列を作成
-        float radius = static_cast<float>((*pSpaceData)["SpaceData"]["Radius"].GetValue<JSON::Real>());
-        modelMatrix_ = Matrix4x4::s_CreateScaling(radius, radius, radius);
-
         // モデル情報を取得
         assert(OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pSPACE));
         pModelData_ = OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pSPACE).get();
@@ -87,10 +79,7 @@ namespace ConnectWars
     {
         pGlslObject_->BeginWithUnifomBuffer(pUniformBuffer_->GetHandle(), uniformBlockIndex_);
 
-        modelMatrix_.a41_ = position_.x_;
-        modelMatrix_.a42_ = position_.y_;
-        modelMatrix_.a43_ = position_.z_;
-
+        modelMatrix_ = Matrix4x4::s_CreateTRS(position_, rotation_, scale_);
         pGlslObject_->SetUniformMatrix4x4("u_modelMatrix", modelMatrix_);
 
         auto pOpenGlManager = OpenGL::C_OpenGlManager::s_GetInstance();

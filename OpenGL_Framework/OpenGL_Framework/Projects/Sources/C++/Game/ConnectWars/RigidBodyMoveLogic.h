@@ -16,7 +16,7 @@
 namespace ConnectWars
 {
     /* ï ñº */
-    using RigidBody = Physics::C_RigidBody;                                     // RIgidBodyå^
+    using RigidBody = Physics::C_RigidBody;                                     // RigidBodyå^
 
 
     //-------------------------------------------------------------

@@ -82,6 +82,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BackgroundGenerator.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BackgroundMeteor.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BackgroundMoveLogic.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BackgroundStraightMoveLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseBackground.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseBomb.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BaseBullet.h" />
@@ -100,11 +103,15 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BulletFireState.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BulletGenerator.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\CameraController.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ConnectEffect.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Earth.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EffectGenerator.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EnemyAdventState.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EnemyGenerator.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ExitRing.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\Fade.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerExplosionEffect.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerFlarebackEffect.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GameController.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\GameUi.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\LoadFunction.h" />
@@ -119,6 +126,7 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PauseController.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PauseScene.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PauseUi.h" />
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventMoveLogic.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerGunFactory.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\CollisionCallback.h" />
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\CollisionObject.h" />
@@ -349,6 +357,9 @@
     <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\weak_ref.cpp" />
     <ClCompile Include="Projects\Libraries\Lua\luabind-0.9.1\src\wrapper_base.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BackgroundGenerator.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BackgroundMeteor.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BackgroundMoveLogic.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BackgroundStraightMoveLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseBackground.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseBomb.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BaseBullet.cpp" />
@@ -369,14 +380,18 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\CollisionCallback.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\CollisionObject.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\CollisionProcess.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ConnectEffect.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ConnectMachine.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ConnectWars.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Earth.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EffectGenerator.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EnemyAdventState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EnemyGenerator.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EvenIntervalShotLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ExitRing.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\Fade.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerExplosionEffect.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerFlarebackEffect.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\GameController.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\GameUi.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\InputShotLogic.cpp" />
@@ -396,6 +411,7 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PauseController.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PauseScene.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PauseUi.cpp" />
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventMoveLogic.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerBullet.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionWaitOwnCrashState.cpp" />
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerAdventState.cpp" />
@@ -526,8 +542,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Projects\GameDatas\ConnectWars\JSON\Background\ShelterData.json" />
-    <None Include="Projects\GameDatas\ConnectWars\JSON\Background\SpaceData.json" />
+    <None Include="Projects\GameDatas\ConnectWars\JSON\Background\Stage01\Stage01BackgroundData.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Bullet\Option\OptionBulletDatas.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Bullet\Player\PlayerBulletDatas.json" />
     <None Include="Projects\GameDatas\ConnectWars\JSON\Camera\CameraData.json" />
@@ -574,6 +589,9 @@
     <None Include="Projects\Shaders\GLSL\Sprite\Sprite.geom" />
     <None Include="Projects\Shaders\GLSL\Sprite\Sprite.vert" />
     <None Include="Projects\Sources\Lua\Effect\BombChargeEffect.lua" />
+    <None Include="Projects\Sources\Lua\Effect\ConnectEffect.lua" />
+    <None Include="Projects\Sources\Lua\Effect\PlayerExplosionEffect.lua" />
+    <None Include="Projects\Sources\Lua\Effect\PlayerFlarebackEffect.lua" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -587,7 +605,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties Projects_2GameDatas_2ConnectWars_2JSON_2Bullet_2Player_2PlayerBulletDatas_1json__JSONSchema="" Projects_2GameDatas_2ConnectWars_2JSON_2Camera_2Stage01_2Stage01CameraworkData_1json__JSONSchema="" Projects_2GameDatas_2ConnectWars_2JSON_2Camera_2Stage01CameraworkData_1json__JSONSchema="Point" Projects_2GameDatas_2ConnectWars_2JSON_2UI_2RankingUiData_1json__JSONSchema="" />
+      <UserProperties Projects_2GameDatas_2ConnectWars_2JSON_2Background_2Stage01_2Stage01BackgroundData_1json__JSONSchema="" Projects_2GameDatas_2ConnectWars_2JSON_2Bullet_2Player_2PlayerBulletDatas_1json__JSONSchema="" Projects_2GameDatas_2ConnectWars_2JSON_2Camera_2Stage01_2Stage01CameraworkData_1json__JSONSchema="" Projects_2GameDatas_2ConnectWars_2JSON_2Camera_2Stage01CameraworkData_1json__JSONSchema="Point" Projects_2GameDatas_2ConnectWars_2JSON_2UI_2RankingUiData_1json__JSONSchema="" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

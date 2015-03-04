@@ -62,6 +62,8 @@ namespace ConnectWars
         virtual const Physics::Matrix3x3& GetRotation() const override;                         // 回転量を取得
         void SetMaterial(const Material::MaterialPtr& prMaterial) override;                     // マテリアルを設定
         void SetLight(const Light::LightPtr& prLight) override;                                 // ライトを設定
+        bool IsEnableConnectFlag() const;                                                       // 連結可能フラグを取得
+        void SetEnableConnectFlag(bool enableConnectFlag);                                      // 連結可能フラグを設定
 
         static void s_SetOwnCrashDerayFrameInterval(uint32_t ownCrashDerayFrameInterval);       // 自爆遅延フレーム数の間隔を設定
     protected:
@@ -69,6 +71,7 @@ namespace ConnectWars
         float radius_ = 0.0f;                                                                   ///< @brief 半径
         std::unique_ptr<Physics::C_RigidBody> upRigidBody_;                                     ///< @brief 剛体
         std::unique_ptr<C_RigidBodyMoveLogic> upMoveLogic_;                                     ///< @brief 移動ロジック
+        bool enableConnectFlag_ = true;                                                         ///< @brief 連結可能フラグ
 
         static uint32_t s_ownCrashDerayFrameInterval;                                           ///< @brief 自爆遅延フレーム数の間隔
     };

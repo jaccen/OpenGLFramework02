@@ -2,6 +2,7 @@
 #include "BackgroundGenerator.h"
 #include "../../Library/Task/System/General/GeneralTaskSystem.h"
 #include "BaseBackground.h"
+#include "BackgroundMoveLogic.h"
 
 
 //-------------------------------------------------------------
@@ -39,15 +40,35 @@ namespace ConnectWars
      *  @brief  ê∂ê¨èàóùÇçsÇ§
      *  @param  ID
      *  @param  ç¿ïW
+     *  @param  âÒì]ó 
+     *  @param  ägëÂó¶
+     *  @param  ë¨ìx
+     *  @param  â¡ë¨ìx
+     *  @param  âÒì]ë¨ìx
+     *  @param  âÒì]â¡ë¨ìx
      *  @param  ê∂ë∂ÉtÉåÅ[ÉÄêî
      *  @return îwåi
      *
      ****************************************************************/
-    BackgroundPtr C_BackgroundGenerator::Create(const std::string& rId, const Vector3& rPosition, int32_t lifeFrame)
+    BackgroundPtr C_BackgroundGenerator::Create(const std::string& rId,
+                                                const Vector3& rPosition, 
+                                                const Vector3& rRotation, 
+                                                const Vector3& rScale,
+                                                const Vector3& rVelocity,
+                                                const Vector3& rAccelaration,
+                                                const Vector3& rRotationVelocity,
+                                                const Vector3& rRotationAccelaration,
+                                                int32_t lifeFrame)
     {
         // îwåiÇê∂ê¨ÇµÅAç¿ïWÇê›íË
         BackgroundPtr pBackground(pCreateFunctions_.at(rId)());
         pBackground->SetPosition(rPosition);
+        pBackground->SetRotation(rRotation);
+        pBackground->SetScale(rScale);
+        pBackground->GetMoveLogic()->SetVelocity(rVelocity);
+        pBackground->GetMoveLogic()->SetAccelaration(rAccelaration);
+        pBackground->GetMoveLogic()->SetRotationVelocity(rRotationVelocity);
+        pBackground->GetMoveLogic()->SetRotationAccelaration(rRotationAccelaration);
         pBackground->AddStringToId(std::to_string(number));
         pBackground->SetLifeFrame(lifeFrame);
 
@@ -57,6 +78,56 @@ namespace ConnectWars
         ++number;
         
         return pBackground;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  é©ìÆê∂ê¨èàóùÇçsÇ§
+     *  @param  ÉtÉåÅ[ÉÄêî
+     *  @return Ç»Çµ
+     *
+     ****************************************************************/
+    void C_BackgroundGenerator::AutoCreate(int32_t frame)
+    {
+        while (autoCreateIndex_ < autoCreateMaxCount_ && (*pBackgroundData_)[autoCreateIndex_]["Frame"].GetValue<JSON::Integer>() <= frame)
+        {
+            std::string id = (*pBackgroundData_)[autoCreateIndex_]["Id"].GetValue<JSON::String>();
+            
+            Vector3 position = Vector3(static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Position"][0].GetValue<JSON::Real>()),
+                                       static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Position"][1].GetValue<JSON::Real>()),
+                                       static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Position"][2].GetValue<JSON::Real>()));
+
+            Vector3 rotation = Vector3(static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Rotation"][0].GetValue<JSON::Real>()),
+                                       static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Rotation"][1].GetValue<JSON::Real>()),
+                                       static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Rotation"][2].GetValue<JSON::Real>()));
+
+            Vector3 scale = Vector3(static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Scale"][0].GetValue<JSON::Real>()),
+                                    static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Scale"][1].GetValue<JSON::Real>()),
+                                    static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Scale"][2].GetValue<JSON::Real>()));
+
+            Vector3 velocity = Vector3(static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Velocity"][0].GetValue<JSON::Real>()),
+                                       static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Velocity"][1].GetValue<JSON::Real>()),
+                                       static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Velocity"][2].GetValue<JSON::Real>()));
+
+            Vector3 accelaration = Vector3(static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Acceleration"][0].GetValue<JSON::Real>()),
+                                           static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Acceleration"][1].GetValue<JSON::Real>()),
+                                           static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["Acceleration"][2].GetValue<JSON::Real>()));
+
+            Vector3 rotationVelocity = Vector3(static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["RotationVelocity"][0].GetValue<JSON::Real>()),
+                                               static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["RotationVelocity"][1].GetValue<JSON::Real>()),
+                                               static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["RotationVelocity"][2].GetValue<JSON::Real>()));
+
+            Vector3 rotationAccelaration = Vector3(static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["RotationAcceleration"][0].GetValue<JSON::Real>()),
+                                                   static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["RotationAcceleration"][1].GetValue<JSON::Real>()),
+                                                   static_cast<float>((*pBackgroundData_)[autoCreateIndex_]["RotationAcceleration"][2].GetValue<JSON::Real>()));
+
+            int32_t lifeFrame = (*pBackgroundData_)[autoCreateIndex_]["LifeFrame"].GetValue<JSON::Integer>();
+
+            Create(id, position, rotation, scale, velocity, accelaration, rotationVelocity, rotationAccelaration, lifeFrame);
+
+            autoCreateIndex_++;
+        }
     }
 
 
@@ -94,8 +165,21 @@ namespace ConnectWars
      *  @return Ç»Çµ
      *
      ****************************************************************/
-    void C_BackgroundGenerator::SetBackgroundData(const JSON::JsonObjectPtr& prBackgroundData)
+    void C_BackgroundGenerator::SetBackgroundData(JSON::JsonObject* pBackgroundData)
     {
-        pBackgroundData_ = prBackgroundData;
+        pBackgroundData_ = pBackgroundData;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  é©ìÆê∂ê¨ÇÃç≈ëÂêîÇê›íËÇ∑ÇÈ
+     *  @param  é©ìÆê∂ê¨ÇÃç≈ëÂêî
+     *  @return Ç»Çµ
+     *
+     ****************************************************************/
+    void C_BackgroundGenerator::SetAutoCreateMaxCount(int32_t autoCreateMaxCount)
+    {
+        autoCreateMaxCount_ = autoCreateMaxCount;
     }
 }

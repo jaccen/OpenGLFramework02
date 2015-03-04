@@ -397,8 +397,8 @@ namespace Math
      ****************************************************************/
     template<typename T>
     S_Quaternion<T> S_Quaternion<T>::s_CreateRotationPitchYawRoll(T pitch,
-        T yaw,
-        T roll)
+                                                                  T yaw,
+                                                                  T roll)
     {
         // 各角度を調節
         pitch = AdjustAngleFrom0ToPI2(pitch);
@@ -419,10 +419,10 @@ namespace Math
         T cosineZ = std::cos(roll * static_cast<T>(0.5));
 
         // 回転クォータニオンを求める
-        rotationQuaternion.t_ = (cosineY * cosineZ * cosineX) - (sineY * sineZ   * sineX);
-        rotationQuaternion.x_ = (sineY *   sineZ * cosineX) + (cosineY * cosineZ * sineX);
-        rotationQuaternion.y_ = (sineY * cosineZ * cosineX) + (cosineY * sineZ   * sineX);
-        rotationQuaternion.z_ = (cosineY *   sineZ * cosineX) - (sineY * cosineZ * sineX);
+        rotationQuaternion.t_ = (cosineY * cosineZ * cosineX) - (sineY *   sineZ   * sineX);
+        rotationQuaternion.x_ = (sineY *     sineZ * cosineX) + (cosineY * cosineZ * sineX);
+        rotationQuaternion.y_ = (sineY *   cosineZ * cosineX) + (cosineY * sineZ   * sineX);
+        rotationQuaternion.z_ = (cosineY *   sineZ * cosineX) - (sineY *   cosineZ * sineX);
 
         return rotationQuaternion;
     }

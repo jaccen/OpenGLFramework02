@@ -14,6 +14,12 @@
 #include "Shelter.h"
 #include "CameraController.h"
 #include "ExitRing.h"
+#include "Earth.h"
+#include "BackgroundMeteor.h"
+#include "GameUi.h"
+#include "PlayerFlarebackEffect.h"
+#include "ConnectEffect.h"
+#include "PlayerExplosionEffect.h"
 #include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
 #include "../../Library/Texture/Manager/TextureManager.h"
 #include "../../Library/Math/Define/MathDefine.h"
@@ -80,13 +86,23 @@ namespace ConnectWars
         taskSystem_.Entry(pGameController, Priority::Task::Update::s_sceneController, Priority::Task::Draw::s_sceneController);
         pGameController->SetSceneChanger(GetSceneChanger());
         GameObject::C_GameObjectManager::s_GetInstance()->Entry(pGameController);
+        pGameController->SetBackgroundGenerator(&backgroundGenerator_);
 
         // カメラコントローラを生成
         auto pCameraController = taskSystem_.Entry(std::make_shared<C_CameraController>(ID::GameObject::s_pCAMERA_CONTROLLER, TYPE_CAMERA_CONTROLLER), Priority::Task::Update::s_cameraController, Priority::Task::Draw::s_cameraController);
 
         assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_CAMERAWORK_DATA));
         pCameraController->SetCameraData(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_CAMERAWORK_DATA).get());
+        // pCameraController->SetNowFrame(1349);
+        // pCameraController->SetIndex(7, ecCameraDataType::BACKGROUND_EYE_POINT);
+        // pCameraController->SetIndex(10, ecCameraDataType::BACKGROUND_TARGET_POINT);
         pCameraController->Update();
+
+        // ゲームUIの生成
+        auto pGameUi = std::make_shared<C_GameUi>(ID::GameObject::s_pUI, TYPE_UI);
+        taskSystem_.Entry(pGameUi, Priority::Task::Update::s_ui, Priority::Task::Draw::s_ui);
+        GameObject::C_GameObjectManager::s_GetInstance()->Entry(pGameUi);
+
 
         // プレイヤーを生成
         playerGenerator_.Create(ID::Generator::Player::s_pNORMAL);
@@ -108,15 +124,6 @@ namespace ConnectWars
         optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f,10.0f, 0.0f));
         optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f,15.0f, 0.0f));
 
-        // 背景を生成
-        backgroundGenerator_.Create(ID::Generator::Background::s_pSPACE, Vector3());
-        backgroundGenerator_.Create(ID::Generator::Background::s_pSHELTER, Vector3());
-        backgroundGenerator_.Create(ID::Generator::Background::s_pEXIT_RING, Vector3(0.0f, 0.0f, 350.0f));
-        backgroundGenerator_.Create(ID::Generator::Background::s_pEXIT_RING, Vector3(0.0f, 0.0f, 500.0f));
-        backgroundGenerator_.Create(ID::Generator::Background::s_pEXIT_RING, Vector3(0.0f, 0.0f, 650.0f));
-        backgroundGenerator_.Create(ID::Generator::Background::s_pEXIT_RING, Vector3(0.0f, 0.0f, 800.0f));
-        backgroundGenerator_.Create(ID::Generator::Background::s_pEXIT_RING, Vector3(0.0f, 0.0f, 950.0f));
-
         //enemyGenerator_.Create(ID::Generator::Enemy::s_pBOX);
         
         return Scene::ecSceneReturn::SUCCESSFUL;
@@ -136,7 +143,7 @@ namespace ConnectWars
     {
         // 衝突確認メッセージを送信
 		GameObject::Message::C_MessageDispatcher::s_GetInstance()->Send("Messanger", ID::GameObject::s_pPLAYER, Message::s_pCONNECT_CHECK);
-
+        
         taskSystem_.Update();
 
 #ifdef _DEBUG
@@ -152,8 +159,9 @@ namespace ConnectWars
 
         if (Input::C_KeyboardManager::s_GetInstance()->GetPressingCount(Input::KeyCode::SDL_SCANCODE_E) == 1)
         {
-            effectGenerator_.Create(ID::Generator::Effect::Bomb::s_pCHARGE, Vector3(0.0f, 0.0f, 0.0f));
+            effectGenerator_.Create(ID::Generator::Effect::s_pPLAYER_EXPLOSION, Vector3());
         }
+
 
 #endif
 
@@ -172,9 +180,6 @@ namespace ConnectWars
     void C_Stage01Scene::Draw()
     {
         taskSystem_.Draw();
-
-        // View::C_ViewHelper::s_DrawGrid(5.0f, 1.0f, 11, View::Vector4(1.0f, 1.0f, 1.0f, 0.1f), pMainCamera_->GetViewProjectionMatrix());
-        // View::C_ViewHelper::s_DrawAxis(50.0f, pMainCamera_->GetViewProjectionMatrix());
     }
 
 
@@ -263,6 +268,9 @@ namespace ConnectWars
             ID::Primitive::s_pSPEED_UP_OPTION,
             ID::Primitive::s_pSMALL_BEAM_OPTION,
             ID::Primitive::s_pEXIT_RING,
+            ID::Primitive::s_pMETEOR,
+            ID::Primitive::s_pROCK,
+            ID::Primitive::s_pBACKGROUND_METEOR,
         };
 
         const char* pModelIdList[] = 
@@ -274,6 +282,9 @@ namespace ConnectWars
             ID::Model::s_pSPPED_UP_OPTION,
             ID::Model::s_pSMALL_BEAM_OPTION,
             ID::Model::s_pEXIT_RING,
+            ID::Model::s_pMETEOR,
+            ID::Model::s_pROCK,
+            ID::Model::s_pMETEOR,
         };
 
         bool vertexTransferFlagList[][7] =
@@ -285,6 +296,9 @@ namespace ConnectWars
             { true, true, true, false, false, false, false },       // スピードアップオプション
             { true, true, true, false, false, false, false },       // スモールビームオプション
             { true, true, false, false, false, false, false },      // エグジットリング
+            { true, true, true, false, true, false, false },        // 隕石
+            { true, true, true, false, true, false, false },        // 岩
+            { true, true, true, false, false, false, false },       // 背景隕石
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pPrimitiveIdList); i < arraySize; ++i)
@@ -381,6 +395,10 @@ namespace ConnectWars
             Path::Texture::s_pSPPED_UP_OPTION,
             Path::Texture::s_pSMALL_BEAM_OPTION,
             Path::Texture::s_pPAUSE_BACKGROUND,
+            Path::Texture::s_pEARTH,
+            Path::Texture::s_pBACKGROND_METEOR,
+            Path::Texture::s_pGAME_UI,
+            Path::Texture::s_pSMOKE_01,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pTexturePathList); i < arraySize; ++i)
@@ -416,16 +434,19 @@ namespace ConnectWars
         const char* pUiSpriteIdList[] = 
         {
             ID::Sprite::s_pPAUSE_BACKGROUND,
+            ID::Sprite::s_pGAME_UI,
         };
 
         const char* pUiSpriteTextureDataIdList[] =
         {
             Path::Texture::s_pPAUSE_BACKGROUND,
+            Path::Texture::s_pGAME_UI,
         };
 
         const float uiSpritePriorityList[] =
         {
             Priority::Sprite::s_BACKGROUND,
+            Priority::Sprite::s_IMAGE_UI,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pUiSpriteIdList); i < arraySize; ++i)
@@ -435,7 +456,7 @@ namespace ConnectWars
                 auto pTextureData = Texture::C_TextureManager::s_GetInstance()->GetTextureData(pUiSpriteTextureDataIdList[i]);
                 assert(pTextureData);
 
-                if (Sprite::C_SpriteCreaterManager::s_GetInstance()->Create(pUiSpriteIdList[i], pUiCamera_, pTextureData.get(), 3, uiSpritePriorityList[i]) == false) return false;
+                if (Sprite::C_SpriteCreaterManager::s_GetInstance()->Create(pUiSpriteIdList[i], pUiCamera_, pTextureData.get(), 100, uiSpritePriorityList[i]) == false) return false;
                
                 // カメラのタイプを正投影に設定
                 auto pSpriteCreater = Sprite::C_SpriteCreaterManager::s_GetInstance()->GetSpriteCreater(pUiSpriteIdList[i]).get().lock();
@@ -449,6 +470,7 @@ namespace ConnectWars
             Path::Texture::s_pCIRCLE_01,
             Path::Texture::s_pCIRCLE_02,
             Path::Texture::s_pRING_01,
+            Path::Texture::s_pSMOKE_01,
         };
 
         const char* pParticleIdList[] = 
@@ -456,6 +478,7 @@ namespace ConnectWars
             ID::Particle::s_pCIRCLE_01,
             ID::Particle::s_pCIRCLE_02,
             ID::Particle::s_pRING_01,
+            ID::Particle::s_pSMOKE_01,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pParticleIdList); i < arraySize; ++i)
@@ -494,13 +517,25 @@ namespace ConnectWars
 
         // エフェクト生成機の設定
         effectGenerator_.SetTaskSystem(&taskSystem_);
-        effectGenerator_.RegistFunction(ID::Generator::Effect::Bomb::s_pCHARGE, []()->C_BaseEffect*{ return newEx C_BombChargeEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
+        effectGenerator_.RegistFunction(ID::Generator::Effect::s_pBOMB_CHARGE, []()->C_BaseEffect*{ return newEx C_BombChargeEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
+        effectGenerator_.RegistFunction(ID::Generator::Effect::s_pPLAYER_FLAREBACK, []()->C_BaseEffect*{ return newEx C_PlayerFlarebackEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
+        effectGenerator_.RegistFunction(ID::Generator::Effect::s_pCONNECT, []()->C_BaseEffect*{ return newEx C_ConnectEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
+        effectGenerator_.RegistFunction(ID::Generator::Effect::s_pPLAYER_EXPLOSION, []()->C_BaseEffect*{ return newEx C_PlayerExplosionEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
 
         // 背景生成機の設定
         backgroundGenerator_.SetTaskSystem(&taskSystem_);
         backgroundGenerator_.RegistFunction(ID::Generator::Background::s_pSPACE, []()->C_BaseBackground*{ return newEx C_Space(ID::GameObject::s_pBACKGROUND, TYPE_BACKGROUND); });
         backgroundGenerator_.RegistFunction(ID::Generator::Background::s_pSHELTER, []()->C_BaseBackground*{ return newEx C_Shelter(ID::GameObject::s_pBACKGROUND, TYPE_BACKGROUND); });
         backgroundGenerator_.RegistFunction(ID::Generator::Background::s_pEXIT_RING, []()->C_BaseBackground*{ return newEx C_ExitRing(ID::GameObject::s_pBACKGROUND, TYPE_BACKGROUND); });
+        backgroundGenerator_.RegistFunction(ID::Generator::Background::s_pEARTH, []()->C_BaseBackground*{ return newEx C_Earth(ID::GameObject::s_pBACKGROUND, TYPE_BACKGROUND); });
+        backgroundGenerator_.RegistFunction(ID::Generator::Background::s_pBACKGROUND_METEOR, []()->C_BaseBackground*{ return newEx C_BackgroundMeteor(ID::GameObject::s_pBACKGROUND, TYPE_BACKGROUND); });
+
+        assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_BACKGROUND_DATA));
+        auto pBackgroundData = JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_BACKGROUND_DATA).get();
+        
+        backgroundGenerator_.SetBackgroundData(&(*pBackgroundData)["Stage01BackgroundData"]);
+        backgroundGenerator_.SetAutoCreateMaxCount((*pBackgroundData)["DataCount"].GetValue<JSON::Integer>());
+
 
         return true;
     }

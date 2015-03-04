@@ -1,5 +1,6 @@
 /* ヘッダファイル */
 #include "BaseBackground.h"
+#include "BackgroundStraightMoveLogic.h"
 
 
 //-------------------------------------------------------------
@@ -19,6 +20,7 @@ namespace ConnectWars
      ****************************************************************/
     C_BaseBackground::C_BaseBackground(const std::string& rId, int32_t type) : C_GameObject(rId, type)
     {
+        upMoveLogic_ = std::make_unique<C_BackgroundStraightMoveLogic>();
     }
 
 
@@ -44,6 +46,8 @@ namespace ConnectWars
     bool C_BaseBackground::Update()
     {
         DoUpdate();
+
+        upMoveLogic_->Process(this);
 
         if (lifeFrame_ == frameCounter_.GetCount())
         {
@@ -87,6 +91,45 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  座標を取得する
+     *  @param  なし
+     *  @return 座標
+     *
+     ****************************************************************/
+    const Vector3& C_BaseBackground::GetPosition() const
+    {
+        return position_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  回転量を取得する
+     *  @param  なし
+     *  @return 回転量
+     *
+     ****************************************************************/
+    const Vector3& C_BaseBackground::GetRotation() const
+    {
+        return rotation_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  移動ロジックを取得する
+     *  @param  なし
+     *  @return 移動ロジック
+     *
+     ****************************************************************/
+    C_BackgroundMoveLogic* C_BaseBackground::GetMoveLogic() const
+    {
+        return upMoveLogic_.get();
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  座標を設定する
      *  @param  座標
      *  @return なし
@@ -95,6 +138,32 @@ namespace ConnectWars
     void C_BaseBackground::SetPosition(const Vector3& rPosition)
     {
         position_ = rPosition;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  回転量を設定する
+     *  @param  回転量
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseBackground::SetRotation(const Vector3& rRotation)
+    {
+        rotation_ = rRotation;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  拡大率を設定する
+     *  @param  拡大率
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseBackground::SetScale(const Vector3& rScale)
+    {
+        scale_ = rScale;
     }
 
 

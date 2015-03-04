@@ -116,8 +116,17 @@ namespace ConnectWars
          || (pGamepadManager_->GetButtonPressingCount(Input::C_Gamepad::BUTTON_CROSS_RIGHT) > 0)
          || (pGamepadManager_->GetStickXComponent(Input::C_Gamepad::STICK_LEFT) > s_GAMEPAD_ENABLE_PUT_STICK))
         {
-            addPosition.setX(movement);
-            inputHorizontalFlag == false ? true : false;
+
+            if (inputHorizontalFlag == false)
+            {
+                addPosition.setX(movement);
+                inputHorizontalFlag = true;
+            }
+            else
+            {
+                addPosition.setX(0.0f);
+                inputHorizontalFlag = false;
+            }
         }
 
         if ((pKeyboardManager_->GetPressingCount(Input::KeyCode::SDL_SCANCODE_UP) > 0)
@@ -132,8 +141,17 @@ namespace ConnectWars
          || (pGamepadManager_->GetButtonPressingCount(Input::C_Gamepad::BUTTON_CROSS_DOWN) > 0)
          || (pGamepadManager_->GetStickYComponent(Input::C_Gamepad::STICK_LEFT) > s_GAMEPAD_ENABLE_PUT_STICK))
         {
-            addPosition.setY(-movement);
-            inputHorizontalFlag == false ? true : false;
+
+            if (inputVerticalFlag == false)
+            {
+                addPosition.setY(-movement);
+                inputVerticalFlag = true;
+            }
+            else
+            {
+                addPosition.setY(0.0f);
+                inputVerticalFlag = false;
+            }
         }
 
         // Î‚ßˆÚ“®‚É‚ÍˆÚ“®—Ê‚ğã2‚ÅŠ„‚é

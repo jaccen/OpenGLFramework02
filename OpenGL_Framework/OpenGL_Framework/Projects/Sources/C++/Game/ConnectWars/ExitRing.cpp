@@ -32,18 +32,6 @@ namespace ConnectWars
         assert(Light::C_LightManager::s_GetInstance()->GetLight(ID::Light::s_pSHELTER));
         pLight_ = Light::C_LightManager::s_GetInstance()->GetLight(ID::Light::s_pSHELTER).get();
 
-        // シェルターの情報を取得
-        assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSHELTER));
-        auto pShelterData = JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSHELTER).get();
-
-        // モデル行列を作成
-        modelMatrix_ = Matrix4x4::s_CreateScaling(static_cast<float>((*pShelterData)["ShelterData"]["Size"][0].GetValue<JSON::Real>() * 0.25f), 
-                                                  static_cast<float>((*pShelterData)["ShelterData"]["Size"][1].GetValue<JSON::Real>() * 0.25f),
-                                                  static_cast<float>((*pShelterData)["ShelterData"]["Size"][2].GetValue<JSON::Real>() * 0.15f));
-
-        modelMatrix_ *= Matrix4x4::s_CreateRotationY(static_cast<float>(Math::s_PI_DIVISION2));
-
-        // モデル情報を取得
         assert(OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pEXIT_RING));
         pModelData_ = OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pEXIT_RING).get();
 
@@ -101,10 +89,8 @@ namespace ConnectWars
         pGlslObject_->BeginWithUnifomBuffer(pUniformBuffer_->GetHandle(), uniformBlockIndex_);
         pGlslObject_->BindActiveSubroutine(cameraSubroutineIndex_, Shader::GLSL::Type::s_VERTEX);
 
-        modelMatrix_.a41_ = position_.x_;
-        modelMatrix_.a42_ = position_.y_;
-        modelMatrix_.a43_ = position_.z_;
-
+        Matrix4x4 originOffset = Matrix4x4::s_CreateTranslation(-0.25f, 0.0f, 0.0f);
+        modelMatrix_ = Matrix4x4::s_CreateTRS(position_, rotation_, scale_) * originOffset;
         pGlslObject_->SetUniformMatrix4x4("u_modelMatrix", modelMatrix_);
 
         // ライトとマテリアルを設定
@@ -114,8 +100,6 @@ namespace ConnectWars
         auto pOpenGlManager = OpenGL::C_OpenGlManager::s_GetInstance();
         auto pTextureManager = Texture::C_TextureManager::s_GetInstance();
 
-        pOpenGlManager->SetCullingFace(OpenGL::Face::s_FRONT);
-
         // アクティブなテクスチャユニットを設定し、テクスチャをバインド
         pOpenGlManager->DrawPrimitiveWithIndices(OpenGL::Primitive::s_TRIANGLE,
                                                  pModelData_->GetVertexArrayObjectHandle(), 
@@ -124,8 +108,6 @@ namespace ConnectWars
                                                  static_cast<int32_t>(pModelData_->GetIndexCount()));
 
         pTextureManager->Unbind(Texture::Type::s_2D);
-
-        pOpenGlManager->SetCullingFace(OpenGL::Face::s_BACK);
 
         pGlslObject_->End();
     }

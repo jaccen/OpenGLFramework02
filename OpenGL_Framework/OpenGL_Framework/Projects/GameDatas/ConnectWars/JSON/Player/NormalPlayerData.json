@@ -3,15 +3,14 @@
   {
     "Position" :
     [
-      0.0,
-      0.0,
-      0.0
+      -2.0,
+      -30.0,
+      -35.0
     ],
     "HitPoint" : 5000,
     "RemainLife" : 3,
     "Radius" : 1.2,
     "MoveSpeedLevel" : 0,
-    "Movement" : 0.2,
     "MoveSpeedUpInterval" : 0.5,
     "ConnectPetrifyFrame" : 10,
     "BombChargeFrame" : 60,

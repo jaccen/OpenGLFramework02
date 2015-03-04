@@ -1,29 +1,39 @@
 {
-  "GameUiData" :
-  {
-    "HitPointBar" :
-    {
-      "Position" : [ 0.0, 0.0 ],
-      "Size" : [ 0.0, 0.0 ],
-      "Color" : [ 1.0, 1.0, 1.0, 1.0 ],
-      "TextureUpperLeft" : [ 0.0, 0.0 ],
-      "TextureLowerRight" : [ 0.0, 0.0 ]
-    },
-    "Life" :
-    {
-      "Words" : "Life :",
-      "Position" : [ 0.0, 0.0 ],
-      "Size" : [ 0.0, 0.0 ],
-      "Color" : [ 1.0, 1.0, 1.0, 1.0 ],
-      "WordOffset" : 0.0
-    },
-    "Score" :
-    {
-      "Words" : "Score :",
-      "Position" : [ 0.0, 0.0 ],
-      "Size" : [ 0.0, 0.0 ],
-      "Color" : [ 1.0, 1.0, 1.0, 1.0 ],
-      "WordOffset" : 0.0
+    "GameUiData": {
+        "HitPointBar": {
+            "Position": [ 250.0, 75.0 ],
+            "Size": [ 412.5, 26.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 0.7 ],
+            "TextureUpperLeft": [ 5.0, 5.0 ],
+            "TextureLowerRight": [ 555.0, 57.0 ]
+        },
+        "PlayerHpGauge": {
+            "Position": [ 250.0, 76.0 ],
+            "Size": [ 385.5, 15.5 ],
+            "Color": [ 1.0, 1.0, 1.0, 0.7 ],
+            "TextureUpperLeft": [ 23.0, 80.0 ],
+            "TextureLowerRight": [ 536.0, 111.0 ]
+        },
+        "PlayerIcon": {
+            "Position": [ 150.0, 27.5 ],
+            "Size": [ 35.0, 28.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 0.7 ],
+            "TextureUpperLeft": [ 0.0, 128.0 ],
+            "TextureLowerRight": [ 80.0, 192.0 ]
+        },
+        "Life": {
+            "Words": "Life :",
+            "Position": [ 50.0, 30.0 ],
+            "Size": [ 24.0, 24.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 0.7 ],
+            "WordOffset": -10.0
+        },
+        "Score": {
+            "Words": "Score :",
+            "Position": [ 350.0, 30.0 ],
+            "Size": [ 24.0, 24.0 ],
+            "Color": [ 1.0, 1.0, 1.0, 0.7 ],
+            "WordOffset": -10.0
+        }
     }
-  }
 }

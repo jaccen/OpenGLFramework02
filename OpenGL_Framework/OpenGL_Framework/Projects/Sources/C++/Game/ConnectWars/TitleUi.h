@@ -52,7 +52,6 @@ namespace ConnectWars
         int32_t configItemNumber_ = 0;                                              ///< @brief コンフィグ項目番号
         S_ConfigData configData_;                                                   ///< @brief コンフィグデータ
 
-
         void DoUpdate() override;                                                   // 非公開の更新処理
         void DoDraw() override;                                                     // 非公開の描画処理
         bool DoMessageProcess(const Telegram& rTelegram) override;                  // 非公開のメッセージ処理

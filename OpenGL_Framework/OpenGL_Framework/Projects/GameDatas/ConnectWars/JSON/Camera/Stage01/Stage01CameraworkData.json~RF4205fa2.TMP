@@ -1,0 +1,133 @@
+{
+    "BackgroundCameraData": {
+        "EyePointDataCount": 8,
+        "TargetPointDataCount": 11,
+        "UpVectorDataCount": 1,
+        "EyePoint": [
+            {
+                "Frame": 0,
+                "Type": "Constant",
+                "Point": [ 0.0, -120.0, 0.0 ],
+                "Tangent": [ 0.0, 0.0, 1.0 ]
+            },
+            {
+                "Frame": 400,
+                "Type": "Linear",
+                "Point": [ 0.0, -120.0, 0.0 ],
+                "Tangent": [ 1.0, 0.0, 0.0 ]
+            },
+            {
+                "Frame": 600,
+                "Type": "Linear",
+                "Point": [ 0.0, 0.0, 0.0 ],
+                "Tangent": [ 1.0, 0.0, 0.0 ]
+            },
+            {
+                "Frame": 650,
+                "Type": "Linear",
+                "Point": [ 0.0, 0.0, 350.0 ],
+                "Tangent": [ 1.0, 0.0, 0.0 ]
+            },
+            {
+                "Frame": 750,
+                "Type": "Linear",
+                "Point": [ 0.0, 0.0, 650.0 ],
+                "Tangent": [ 1.0, 0.0, 0.0 ]
+            },
+            {
+                "Frame": 850,
+                "Type": "Linear",
+                "Point": [ 20.0, 0.0, 950.0 ],
+                "Tangent": [ 1.0, 0.0, 0.0 ]
+            },
+            {
+                "Frame": 1000,
+                "Type": "Linear",
+                "Point": [ -50.0, 0.0, 1100.0 ],
+                "Tangent": [ 1.0, 0.0, 0.0 ]
+            },
+            {
+                "Frame": 1300,
+                "Type": "Linear",
+                "Point": [ -250.0, 0.0, 1250.0 ],
+                "Tangent": [ 1.0, 0.0, 0.0 ]
+            }
+        ],
+        "TargetPoint": [
+            {
+                "Frame": 0,
+                "Type": "Linear",
+                "Point": [ 0.0, -120.0, -100.0 ],
+                "Tangent": [ 0.0, 0.0, 1.0 ]
+            },
+            {
+                "Frame": 100,
+                "Type": "Linear",
+                "Point": [ 30.0, -80.0, -100.0 ],
+                "Tangent": [ 1.0, 0.0, 0.0 ]
+            },
+            {
+                "Frame": 200,
+                "Type": "Linear",
+                "Point": [ 100.0, -50.0, 0.0 ],
+                "Tangent": [ 0.0, 0.0, -10.0 ]
+            },
+            {
+                "Frame": 300,
+                "Type": "Linear",
+                "Point": [ 40.0, -50.0, 70.0 ],
+                "Tangent": [ 0.0, 0.0, 10.0 ]
+            },
+            {
+                "Frame": 400,
+                "Type": "Linear",
+                "Point": [ 0.0, -50.0, 100.0 ],
+                "Tangent": [ 0.0, 0.0, 10.0 ]
+            },
+            {
+                "Frame": 600,
+                "Type": "Linear",
+                "Point": [ 0.0, -10.0, 50.0 ],
+                "Tangent": [ 0.0, 0.0, 10.0 ]
+            },
+            {
+                "Frame": 650,
+                "Type": "Linear",
+                "Point": [ 0.0, -10.0, 400.0 ],
+                "Tangent": [ 0.0, 0.0, 10.0 ]
+            },
+            {
+                "Frame": 750,
+                "Type": "Linear",
+                "Point": [ 0.0, 0.0, 750.0 ],
+                "Tangent": [ 0.0, 0.0, 10.0 ]
+            },
+            {
+                "Frame": 850,
+                "Type": "Linear",
+                "Point": [ -150.0, 0.0, 1000.0 ],
+                "Tangent": [ 0.0, 0.0, 10.0 ]
+            },
+            {
+                "Frame": 1000,
+                "Type": "Linear",
+                "Point": [ -80.0, 0.0, 1050.0 ],
+                "Tangent": [ 0.0, 0.0, 10.0 ]
+            },
+            {
+                "Frame": 1300,
+                "Type": "Linear",
+                "Point": [ -30.0, 0.0, 1200.0 ],
+                "Tangent": [ 0.0, 0.0, 10.0 ]
+            }
+        ],
+        "UpVector": [
+            {
+                "Frame": 0,
+                "Type": "Constant",
+                "Direction": [ 0.0, 1.0, 0.0 ],
+                "Tangent": [ 0.0, 0.0, 0.0 ]
+            }
+        ]
+    }
+}

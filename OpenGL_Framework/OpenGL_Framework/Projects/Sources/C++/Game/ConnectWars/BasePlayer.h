@@ -50,6 +50,13 @@ namespace ConnectWars
         };
 
 
+        enum eMoveType
+        {
+            ADVENT,
+            INPUT,
+        };
+
+
         C_BasePlayer(const std::string& rId, int32_t type);                                             // コンストラクタ
         virtual ~C_BasePlayer() override = 0;                                                           // デストラクタ
         bool Update() override final;                                                                   // 更新処理
@@ -83,6 +90,8 @@ namespace ConnectWars
         const std::string& GetBombChargeEffectId() const;                                               // ボムのチャージエフェクトのID
         const std::string& GetBombId() const;                                                           // ボムのIDを取得
         void SetBombChargeFlag(bool bombChargeFlag);                                                    // ボムのチャージフラグを設定
+        bool IsFinishAdvent() const;                                                                    // 出現し終えたか確認
+        void ChangeMove(eMoveType moveType);                                                            // 移動を変更
     protected:
         std::unique_ptr<State::C_StateMachine<C_BasePlayer>> upStateMachine_;                           ///< @brief ステートマシーン
         Camera::CameraPtr pCamera_;                                                                     ///< @brief カメラ

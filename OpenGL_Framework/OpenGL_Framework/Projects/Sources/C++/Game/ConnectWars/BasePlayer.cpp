@@ -8,6 +8,8 @@
 #include "PlayerConnectState.h"
 #include "PlayerBombChargeState.h"
 #include "RigidBodyInputMoveLogic.h"
+#include "PlayerAdventState.h"
+#include "PlayerAdventMoveLogic.h"
 #include "../../Library/Debug/Helper/DebugHelper.h"
 #include "../../Library/Model/SelfMade/Loader/ModelLoader.h"
 #include "../../Library/OpenGL/Buffer/Primitive/PrimitiveDefine.h"
@@ -34,7 +36,8 @@ namespace ConnectWars
 		upStateMachine_(std::make_unique<State::C_StateMachine<C_BasePlayer>>(this))
 
     {
-		upStateMachine_->SetCurrentState(C_PlayerCombatState::s_GetInstance());
+        enableConnectFlag_ = false;
+		upStateMachine_->SetCurrentState(C_PlayerAdventState::s_GetInstance());
     }
 
 
@@ -560,6 +563,41 @@ namespace ConnectWars
     {
         bombChargeFlag_ = bombChargeFlag;
     }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  出現し終えたか確認する
+     *  @param  なし
+     *  @return 出現し終えた場合    ：true
+     *  @return 出現し終えてない場合：false
+     *
+     ****************************************************************/
+    bool C_BasePlayer::IsFinishAdvent() const
+    {
+        return static_cast<C_PlayerAdventMoveLogic*>(upMoveLogic_.get())->IsMoveFinish();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  移動を変更する
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BasePlayer::ChangeMove(eMoveType moveType)
+    {
+        if (moveType == ADVENT)
+        {
+            upMoveLogic_ = std::make_unique<C_PlayerAdventMoveLogic>();
+        }
+        else if (moveType == INPUT)
+        {
+            upMoveLogic_ = std::make_unique<C_RigidBodyInputMoveLogic>(0.2f, 1.0f);
+        }
+    }
+
 
 
     /*************************************************************//**
