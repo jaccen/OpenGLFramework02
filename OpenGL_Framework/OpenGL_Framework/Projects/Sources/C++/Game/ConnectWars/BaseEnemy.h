@@ -25,13 +25,6 @@ namespace ConnectWars
     class C_BaseGun;
 
 
-    /** ステートの種類 */
-    enum eStateType
-    {
-        ADVENT,                                                                             ///< @brief 出現
-    };
-
-
     //-------------------------------------------------------------
     //!
     //! @brief ベースエネミー
@@ -53,12 +46,17 @@ namespace ConnectWars
         virtual void CollisionProcess(C_BaseBullet* pBullet) override;                      // 弾との衝突時処理
         virtual void CollisionProcess(C_BaseObstacle* pObstacle) override;                  // 障害物との衝突時処理
         virtual void CollisionProcess(C_BaseBomb* pBomb) override;                          // ボムとの衝突時処理
-        virtual void Move();                                                                // 移動処理
+        virtual void Move() = 0;                                                            // 移動処理
         virtual void Shot();                                                                // 射撃処理
         virtual void SetCreateDataWithJson(JSON::JsonObject* pJsonObject) = 0;              // JSONオブジェクトからデータを設定
-        virtual void ChangeState(int32_t stateType) = 0;                                    // ステートの変更処理
+        void SetMaterial(const Material::MaterialPtr& prMaterial) override;                 // マテリアルを設定
+        void SetLight(const Light::LightPtr& prLight) override;                             // ライトを設定
+        virtual bool IsFinishAdvent() const;                                                // 出現が終了しているか確認
+        State::C_StateMachine<C_BaseEnemy>* GetStateMachine() const;                        // ステートマシーンを取得
     protected:
         std::vector<std::unique_ptr<C_BaseGun>> upGuns_;                                    ///< @brief 銃
+        std::unique_ptr<State::C_StateMachine<C_BaseEnemy>> upStateMachine_;                ///< @brief ステートマシーン
+        Vector3 scale_;                                                                     ///< @brief スケール
 
         virtual void DoUpdate() = 0;                                                        // 非公開の更新処理
         virtual void DoDraw() = 0;                                                          // 非公開の描画処理

@@ -80,8 +80,6 @@ namespace ConnectWars
         int32_t defeatedFrame_ = 60;                                                                ///< @brief Œ‚”jó‘Ô‚ÌƒtƒŒ[ƒ€”
         int32_t ownCrashDelayFrame_ = 0;                                                            ///< @brief Ž©”š’x‰„ƒtƒŒ[ƒ€”
         std::vector<std::unique_ptr<C_BaseGun>> upGuns_;                                            ///< @brief e
-        // TODO
-        int32_t frameCount_ = 0;
 
         virtual void DoUpdate();                                                                    // ”ñŒöŠJ‚ÌXVˆ—
         virtual void DoDraw() = 0;                                                                  // ”ñŒöŠJ‚Ì•`‰æˆ—

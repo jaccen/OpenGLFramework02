@@ -108,7 +108,6 @@ function BombChargeEffectLogic(rCircleParticleSystem, rRingParticleSystem, rFram
 
 		rCircleParticleSystem:Entry(particleCreateData)
 
-
 	end
 
 	if  nowFrame >= 1 and nowFrame < 30 then
@@ -122,7 +121,7 @@ function BombChargeEffectLogic(rCircleParticleSystem, rRingParticleSystem, rFram
 			local angle = math.atan2(y,x)
 
 			particleCreateData.lifeFrame_ = 20
-			particleCreateData.position_ = rPosition + S_Vector3(x, y, 5.0)
+			particleCreateData.position_ = rPosition + S_Vector3(x, y, 1.5)
 			particleCreateData.velocity_ = S_Vector3(-x/ particleCreateData.lifeFrame_, -y / particleCreateData.lifeFrame_, 0.0)
 			particleCreateData.startAcceleration_ = S_Vector3()
 			particleCreateData.endAcceleration_ = S_Vector3()

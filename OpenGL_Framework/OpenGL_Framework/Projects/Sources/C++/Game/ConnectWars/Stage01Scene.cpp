@@ -17,9 +17,12 @@
 #include "Earth.h"
 #include "BackgroundMeteor.h"
 #include "GameUi.h"
+#include "BoxEnemy.h"
 #include "PlayerFlarebackEffect.h"
 #include "ConnectEffect.h"
 #include "PlayerExplosionEffect.h"
+#include "PlayerBeamCollisionEffect.h"
+#include "OptionSmallBeamCollisionEffect.h"
 #include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
 #include "../../Library/Texture/Manager/TextureManager.h"
 #include "../../Library/Math/Define/MathDefine.h"
@@ -108,7 +111,6 @@ namespace ConnectWars
         playerGenerator_.Create(ID::Generator::Player::s_pNORMAL);
 
         // オプションを生成
-        optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(0.0f, 2.0f, 0.0f));
         optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(2.0f, 4.0f, 0.0f));
         optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(4.0f, 6.0f, 0.0f));
         optionGenerator_.Create(ID::Generator::Option::s_pSPEED_UP, Physics::Vector3(6.0f, 8.0f, 0.0f));
@@ -124,7 +126,7 @@ namespace ConnectWars
         optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f,10.0f, 0.0f));
         optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f,15.0f, 0.0f));
 
-        //enemyGenerator_.Create(ID::Generator::Enemy::s_pBOX);
+        // enemyGenerator_.Create(ID::Generator::Enemy::s_pBOX);
         
         return Scene::ecSceneReturn::SUCCESSFUL;
     }
@@ -159,7 +161,7 @@ namespace ConnectWars
 
         if (Input::C_KeyboardManager::s_GetInstance()->GetPressingCount(Input::KeyCode::SDL_SCANCODE_E) == 1)
         {
-            effectGenerator_.Create(ID::Generator::Effect::s_pPLAYER_EXPLOSION, Vector3());
+            effectGenerator_.Create(ID::Generator::Effect::ｓ_pOPTION_SMALL_BEAM_COLLISION, Vector3());
         }
 
 
@@ -501,14 +503,11 @@ namespace ConnectWars
         optionGenerator_.RegistFunction(ID::Generator::Option::s_pSMALL_BEAM, []()->C_BaseOption*{ return newEx C_SmallBeamOption(ID::GameObject::s_pOPTION, TYPE_OPTION); });
 
         // 敵生成機の設定
-        /*
         enemyGenerator_.SetTaskSystem(&taskSystem_);
 
         assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_ENEMY_DATA));
         enemyGenerator_.SetEnemyData(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_ENEMY_DATA).get());
-
         enemyGenerator_.RegistFunction(ID::Generator::Enemy::s_pBOX, []()->C_BaseEnemy*{ return newEx C_BoxEnemy(ID::GameObject::s_pENEMY, TYPE_ENEMY); });
-        */
 
         // 弾生成機の設定
         bulletGenerator_.SetTaskSystem(&taskSystem_);
@@ -517,10 +516,12 @@ namespace ConnectWars
 
         // エフェクト生成機の設定
         effectGenerator_.SetTaskSystem(&taskSystem_);
-        effectGenerator_.RegistFunction(ID::Generator::Effect::s_pBOMB_CHARGE, []()->C_BaseEffect*{ return newEx C_BombChargeEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
+        effectGenerator_.RegistFunction(ID::Generator::Effect::s_pNORMAL_BOMB_CHARGE, []()->C_BaseEffect*{ return newEx C_BombChargeEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
         effectGenerator_.RegistFunction(ID::Generator::Effect::s_pPLAYER_FLAREBACK, []()->C_BaseEffect*{ return newEx C_PlayerFlarebackEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
         effectGenerator_.RegistFunction(ID::Generator::Effect::s_pCONNECT, []()->C_BaseEffect*{ return newEx C_ConnectEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
         effectGenerator_.RegistFunction(ID::Generator::Effect::s_pPLAYER_EXPLOSION, []()->C_BaseEffect*{ return newEx C_PlayerExplosionEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
+        effectGenerator_.RegistFunction(ID::Generator::Effect::ｓ_pPLAYER_BEAM_COLLISION, []()->C_BaseEffect*{ return newEx C_PlayerBeamCollisionEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
+        effectGenerator_.RegistFunction(ID::Generator::Effect::ｓ_pOPTION_SMALL_BEAM_COLLISION, []()->C_BaseEffect*{ return newEx C_OptionSmallBeamCollisionEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
 
         // 背景生成機の設定
         backgroundGenerator_.SetTaskSystem(&taskSystem_);

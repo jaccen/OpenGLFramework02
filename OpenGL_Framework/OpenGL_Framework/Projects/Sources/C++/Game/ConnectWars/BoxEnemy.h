@@ -28,6 +28,7 @@ namespace ConnectWars
     public:
         C_BoxEnemy(const std::string& rId, int32_t type);                                   // コンストラクタ
         virtual ~C_BoxEnemy() override;                                                     // デストラクタ
+        void Move() override;                                                               // 移動処理
         void MoveLimitCheck() override;                                                     // 移動制限の確認
         void SetCreateDataWithJson(JSON::JsonObject* pJsonObject);                          // JSONオブジェクトからデータを設定
         const Physics::Vector3& GetPosition() const override;                               // 座標を取得
@@ -36,7 +37,6 @@ namespace ConnectWars
     protected:
         std::unique_ptr<Physics::C_RigidBody> upRigidBody_;                                 ///< @brief 剛体
         std::unique_ptr<C_RigidBodyMoveLogic> upMoveLogic_;                                 ///< @brief 移動ロジック
-        std::unique_ptr<State::C_StateMachine<C_BaseEnemy>> upStateMachine_;                ///< @brief ステートマシーン
         OpenGL::PrimitiveBufferPtr pModelData_;                                             ///< @brief モデル情報
         Vector3 size_;                                                                      ///< @brief サイズ
 

@@ -89,7 +89,7 @@ namespace ConnectWars
 
             // エフェクトのロジックを処理
             existenceFlag_ = luabind::call_function<bool>(pLuaState_.get(),
-                                                          "PlayerFlarebackEffectLogic",
+                                                          "PlayerExplosionEffectLogic",
                                                           boost::ref(*pCircleParticleSystem.get()),
                                                           boost::ref(*pSmokeParticleSystem.get()),
                                                           boost::ref(frameCounter_),

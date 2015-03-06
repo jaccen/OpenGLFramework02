@@ -35,6 +35,7 @@ namespace Particle
                     uint32_t maxParticleCount = 10000);
         void Destroy(const std::string& rId);                                                                   // パーティクルシステムを破棄
         void AllDestroy();                                                                                      // パーティクルシステムを全て破棄
+        void EnableActive(bool validFlag = true);                                                               // アクティブ状態を有効化   
         boost::optional<ParticleSystemWeakPtr> GetParticleSystem(const std::string& rId);                       // パーティクルシステムを取得
     private:
         /* 前方宣言 */

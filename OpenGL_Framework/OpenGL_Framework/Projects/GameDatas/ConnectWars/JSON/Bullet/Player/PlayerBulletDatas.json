@@ -6,24 +6,24 @@
       "HitPoint" : 1,
       "CollisionSize" :
       [
-        0.2,
+        0.15,
         0.5,
-        0.1
+        0.15
       ],
-      "Mass" : 1.0,
+      "Mass" : 10.0,
       "SpriteData" :
       {
         "Size" :
         [
-          0.2,
-          0.5
+          0.3,
+          1.0
         ],
         "Angle" : 0.0,
         "Color" :
         [
+          0.9,
           1.0,
-          1.0,
-          1.0,
+          0.5,
           1.0
         ],
         "Texture" :

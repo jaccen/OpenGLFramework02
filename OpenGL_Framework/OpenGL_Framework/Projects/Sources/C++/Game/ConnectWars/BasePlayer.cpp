@@ -37,7 +37,7 @@ namespace ConnectWars
 
     {
         enableConnectFlag_ = false;
-		upStateMachine_->SetCurrentState(C_PlayerAdventState::s_GetInstance());
+		upStateMachine_->ChangeState(C_PlayerAdventState::s_GetInstance());
     }
 
 
@@ -552,6 +552,33 @@ namespace ConnectWars
     }
 
 
+    
+    /*************************************************************//**
+     *
+     *  @brief  ボムのチャージエフェクトのIDを取得
+     *  @param  なし
+     *  @return ボムのチャージエフェクトのID
+     *
+     ****************************************************************/
+    const std::string& C_BasePlayer::GetBombChargeEffectId() const
+    {
+        return bombChargeEffectId_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ボムのIDを取得
+     *  @param  なし
+     *  @return ボムのID
+     *
+     ****************************************************************/
+    const std::string& C_BasePlayer::GetBombId() const
+    {
+        return bombId_;
+    }
+
+
     /*************************************************************//**
      *
      *  @brief  ボムのチャージフラグを設定する
@@ -598,6 +625,18 @@ namespace ConnectWars
         }
     }
 
+
+    /*************************************************************//**
+     *
+     *  @brief  オプションの数を取得する
+     *  @param  なし
+     *  @return オプションの数
+     *
+     ****************************************************************/
+    int32_t C_BasePlayer::GetConnectOptionCount() const
+    {
+        return connectOptionCount_;
+    }
 
 
     /*************************************************************//**

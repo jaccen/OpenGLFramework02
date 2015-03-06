@@ -43,10 +43,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_PlayerInvincibleState::Enter(C_BasePlayer* pPlayer)
     {
-        if (pPlayer->IsInvincibleFlag() == false)
-        {
-            pPlayer->SetInvincibleFlag(true);
-        }
+        pPlayer->SetInvincibleFlag(true);
     }
 
 
@@ -65,12 +62,11 @@ namespace ConnectWars
         pPlayer->MoveLimitCheck();
         pPlayer->ResetMoveLimitBoundingBox();
         pPlayer->Shot();
+        pPlayer->Bomb();
         pPlayer->ResetConnect();
 
         if (pPlayer->GetBombInvincibleFrame() <= frameCounter_.GetCount())
         {
-            pPlayer->SetInvincibleFlag(false);
-
             pPlayer->GetStateMachine()->ChangeState(C_PlayerCombatState ::s_GetInstance());
 
             frameCounter_.Reset();
@@ -87,6 +83,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_PlayerInvincibleState::Exit(C_BasePlayer* pPlayer)
     {
+        pPlayer->SetInvincibleFlag(false);
     }
 
 

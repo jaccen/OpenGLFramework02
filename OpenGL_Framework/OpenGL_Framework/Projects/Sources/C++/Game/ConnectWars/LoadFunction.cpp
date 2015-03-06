@@ -10,6 +10,7 @@
 #include "../../Library/Light//Light/Point/PointLight.h"
 #include "../../Library/Common/CommonHelper.h"
 
+#include <thread>
 
 
 //-------------------------------------------------------------
@@ -192,7 +193,6 @@ namespace ConnectWars
             ID::JSON::s_pSTAGE_01_BACKGROUND_DATA,
             ID::JSON::s_pGAME_UI_DATA,
         };
-
 
         const char* pJsonPathList[] =
         {

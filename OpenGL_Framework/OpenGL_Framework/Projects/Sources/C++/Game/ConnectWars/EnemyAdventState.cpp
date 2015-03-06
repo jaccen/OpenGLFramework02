@@ -1,5 +1,6 @@
 /* ヘッダファイル */
 #include "EnemyAdventState.h"
+#include "EnemyCombatState.h"
 #include "BaseEnemy.h"
 
 
@@ -54,6 +55,10 @@ namespace ConnectWars
      ****************************************************************/
     void C_EnemyAdventState::Execute(C_BaseEnemy* pEnemy)
     {
+        if (pEnemy->IsFinishAdvent() == true)
+        {
+            pEnemy->GetStateMachine()->ChangeState(C_EnemyCombatState::s_GetInstance());
+        }
     }
 
 

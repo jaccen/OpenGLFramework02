@@ -120,7 +120,7 @@ namespace ConnectWars
 
         if (firstAddTorqueFlag_ == false)
         {
-            pRigidBody->ApplayTorque(*upAddTorque_);
+            pRigidBody->ApplayTorque(*upFirstAddTorque_);
             firstAddTorqueFlag_ = true;
         }
 

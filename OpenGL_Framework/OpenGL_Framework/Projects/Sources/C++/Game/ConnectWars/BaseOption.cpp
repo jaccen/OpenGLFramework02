@@ -31,7 +31,7 @@ namespace ConnectWars
 
     {
         // 現在のステートを設定
-		upStateMachine_->SetCurrentState(C_OptionDropState::s_GetInstance());
+		upStateMachine_->ChangeState(C_OptionDropState::s_GetInstance());
     }
 
 
@@ -66,8 +66,6 @@ namespace ConnectWars
 
         // 衝突したオブジェクトのIDを全てリセット
         ResetCollidedObjectId();
-
-        frameCount_++;
 
         return C_GameObject::existenceFlag_;
     }

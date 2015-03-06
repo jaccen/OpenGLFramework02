@@ -4,6 +4,7 @@
 #include "LoadFunction.h"
 #include "../../Library/Debug/Helper/DebugHelper.h"
 #include "../../Library/Physics/Engine/PhysicsEngine.h"
+#include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
 
 
 //-------------------------------------------------------------
@@ -58,6 +59,7 @@ namespace ConnectWars
                 pNextScece->SetNextSceneId(ID::Scene::s_pTITLE);
                 pNextScece->SetLoadFunction(C_LoadFunction::s_LoadTitleData);
                 Physics::C_PhysicsEngine::s_GetInstance()->EnableActive(true);
+                Particle::C_ParticleSystemManager::s_GetInstance()->EnableActive(true);
             }
         }
 
@@ -99,11 +101,13 @@ namespace ConnectWars
         {
             pSceneChanger_->PopScene();
             Physics::C_PhysicsEngine::s_GetInstance()->EnableActive(true);
+            Particle::C_ParticleSystemManager::s_GetInstance()->EnableActive(true);
         }
         else if (rTelegram.message_ == Message::s_pRESTART_GAME)
         {
             pSceneChanger_->PopScene();
             Physics::C_PhysicsEngine::s_GetInstance()->EnableActive(true);
+            Particle::C_ParticleSystemManager::s_GetInstance()->EnableActive(true);
         }
         return true;
     }

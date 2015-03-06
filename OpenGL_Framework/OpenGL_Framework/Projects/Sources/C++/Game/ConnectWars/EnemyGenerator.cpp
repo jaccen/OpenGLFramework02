@@ -38,8 +38,7 @@ namespace ConnectWars
      *
      *  @brief  生成処理を行う
      *  @param  ID
-     *  @param  座標
-     *  @return 射撃者の種類
+     *  @return 敵
      *
      ****************************************************************/
     EnemyPtr C_EnemyGenerator::Create(const std::string& rId)
@@ -53,7 +52,6 @@ namespace ConnectWars
 
         // タスクシステムに登録
         pTaskSystem_->Entry(pEnemy, Priority::Task::Update::s_bullet, Priority::Task::Draw::s_bullet);
-
         ++number;
 
         return pEnemy;

@@ -13,11 +13,11 @@
       "BulletId": "OptionSmallBeamBullet",
       "BulletPower": 300,
       "BulletMovement": 25.0,
-      "ShotInterval": 5,
+      "ShotInterval": 10,
       "OffsetFromShooter":
       [
         0.0,
-        1.5,
+        1.75,
         0.0
       ],
       "Direction" :

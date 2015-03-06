@@ -33,7 +33,7 @@ namespace ConnectWars
         auto& rPlayerBeamBulletData = (*pPlayerBulletData)["PlayerBulletDatas"]["Beam"];
 
         // ヒットポイントを生成
-        C_BaseBullet::upHitPoint_ = std::make_unique<C_BaseHitPoint>((*pPlayerBulletData)["PlayerBulletDatas"]["Beam"]["HitPoint"].GetValue<JSON::Integer>());
+        C_BaseBullet::upHitPoint_ = std::make_unique<C_BaseHitPoint>(rPlayerBeamBulletData["HitPoint"].GetValue<JSON::Integer>());
 
         // 剛体を作成し、物理エンジンに追加
         Physics::Transform transform;
@@ -45,8 +45,10 @@ namespace ConnectWars
                                                                                         transform,
                                                                                         static_cast<float>(rPlayerBeamBulletData["Mass"].GetValue<JSON::Real>()));
 
+        shooterType_ = shooterType;
+
         // 衝突判定のマスクをかける
-        if (shooterType == TYPE_ENEMY)
+        if (shooterType_ == TYPE_ENEMY)
         {
             int32_t collisionMask = C_CollisionObject::FILTER_TYPE_PLAYER
                                   | C_CollisionObject::FILTER_TYPE_OPTION 

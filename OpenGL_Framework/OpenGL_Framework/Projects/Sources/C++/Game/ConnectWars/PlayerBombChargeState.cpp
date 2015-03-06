@@ -2,8 +2,8 @@
 #include "PlayerBombChargeState.h"
 #include "BasePlayer.h"
 #include "PlayerInvincibleState.h"
-//#include "EffectGenerator.h"
-//#include "BombGenerator.h"
+#include "EffectGenerator.h"
+#include "BombGenerator.h"
 
 
 //-------------------------------------------------------------
@@ -52,7 +52,8 @@ namespace ConnectWars
             pPlayer->SetInvincibleFlag(true);
 
             // チャージエフェクトを生成
-            //C_EffectGenerator::s_GetManagementInstance().Create(pPlayer->GetBombChargeEffectId(), pPlayer->GetPosition());
+            C_EffectGenerator::s_GetInstance()->Create(pPlayer->GetBombChargeEffectId(), 
+                                                       Vector3(pPlayer->GetPosition().x(), pPlayer->GetPosition().y(), pPlayer->GetPosition().z()));
         }
     }
 
@@ -79,7 +80,7 @@ namespace ConnectWars
             pPlayer->GetStateMachine()->ChangeState(C_PlayerInvincibleState::s_GetInstance());
 
             // ボムを生成
-            //C_BombGenerator::s_GetManagementInstance().Create(pPlayer->GetBombId(), pPlayer->GetPosition(), 1 + pPlayer->GetOptionCount() / 5);
+            //C_BombGenerator::s_GetInstance()->Create(pPlayer->GetBombId(), pPlayer->GetPosition(), pPlayer->GetConnectOptionCount() / 5);
         }
     }
 

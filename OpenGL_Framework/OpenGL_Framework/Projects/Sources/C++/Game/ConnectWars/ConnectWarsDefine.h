@@ -148,10 +148,12 @@ namespace ConnectWars
                 /* エフェクト */
                 namespace Effect
                 {
-                    const char* s_pBOMB_CHARGE = "BombChargeEffect";                                                                                ///< @brief ボムチャージ
+                    const char* s_pNORMAL_BOMB_CHARGE = "NormalBombChargeEffect";                                                                   ///< @brief ボムチャージ
                     const char* s_pPLAYER_FLAREBACK = "PlayerFlaerBackEffect";                                                                      ///< @brief プレイヤーフレーヤーバック
                     const char* s_pCONNECT = "ConnectEffect";                                                                                       ///< @brief 連結エフェクト
                     const char* s_pPLAYER_EXPLOSION = "PlayerExplosionEffect";                                                                      ///< @brief プレイヤー爆発エフェクト
+                    const char* ｓ_pPLAYER_BEAM_COLLISION = "PlayerBeamCollisionEffect";                                                            ///< @brief プレイヤービーム衝突エフェクト
+                    const char* ｓ_pOPTION_SMALL_BEAM_COLLISION = "OptionSmallBeamCollisionEffect";                                                 ///< @brief オプションスモールビーム衝突エフェクト
                 }
 
                 /* 背景 */
@@ -162,6 +164,12 @@ namespace ConnectWars
                     const char* s_pEXIT_RING = "ExitRing";                                                                                          ///< @brief エグジットリング 
                     const char* s_pEARTH = "Earth";                                                                                                 ///< @brief 地球
                     const char* s_pBACKGROUND_METEOR = "BackgroundMeteor";                                                                          ///< @brief 背景隕石
+                }
+
+                /* ボム */
+                namespace Bomb
+                {
+                    const char* s_pNORMAL = "NormalBomb";                                                                                           ///< @brief ノーマル
                 }
             }
 
@@ -362,6 +370,8 @@ namespace ConnectWars
                 const char* s_pPLAYER_FLAREBACK_EFFECT = "Projects/Sources/Lua/Effect/PlayerFlarebackEffect.lua";                                   ///< @brief プレイヤーフレーヤーバックエフェクト
                 const char* s_pCONNECT_EFFECT = "Projects/Sources/Lua/Effect/ConnectEffect.lua";                                                    ///< @brief 連結エフェクト
                 const char* s_pPLAYER_EXPLOSION_EFFECT = "Projects/Sources/Lua/Effect/PlayerExplosionEffect.lua";                                   ///< @brief プレイヤーの爆発エフェクト
+                const char* s_pPLAYER_BEAM_COLLISION_EFFECT = "Projects/Sources/Lua/Effect/PlayerBeamCollisionEffect.lua";                          ///< @brief プレイヤーのビーム衝突エフェクト  
+                const char* s_pOPTION_SMALL_BEAM_COLLISION_EFFECT = "Projects/Sources/Lua/Effect/OptionSmallBeamCollisionEffect.lua";               ///< @brief オプションのスモールビーム衝突エフェクト  
             }
         }
 

@@ -43,6 +43,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_PlayerAdventState::Enter(C_BasePlayer* pPlayer)
     {
+        pPlayer->SetInvincibleFlag(true);
     }
 
 
@@ -74,7 +75,8 @@ namespace ConnectWars
      ****************************************************************/
     void C_PlayerAdventState::Exit(C_BasePlayer* pPlayer)
     {
-            pPlayer->SetEnableConnectFlag(true);
+        pPlayer->SetInvincibleFlag(false);
+        pPlayer->SetEnableConnectFlag(true);
     }
 
 

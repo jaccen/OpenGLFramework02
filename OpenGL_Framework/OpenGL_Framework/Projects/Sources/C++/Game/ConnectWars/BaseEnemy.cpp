@@ -2,6 +2,8 @@
 #include "BaseEnemy.h"
 #include "BaseGun.h"
 #include "CollisionProcess.h"
+#include "../../Library/Light/Light/Point/PointLight.h"
+#include "../../Library/Material/Material/Phong/PhongMaterial.h"
 
 
 //-------------------------------------------------------------
@@ -19,8 +21,25 @@ namespace ConnectWars
      *  @param  種類
      *
      ****************************************************************/
-    C_BaseEnemy::C_BaseEnemy(const std::string& rId, int32_t type) : C_Shooter(rId, type)
+    C_BaseEnemy::C_BaseEnemy(const std::string& rId, int32_t type) : C_Shooter(rId, type),
+
+        // ステートマシーン
+        upStateMachine_(std::make_unique<State::C_StateMachine<C_BaseEnemy>>(this))
+
     {
+        // 各マテリアルを取得
+        assert(Material::C_MaterialManager::s_GetInstance()->GetMaterial(ID::Material::s_pBASIC));
+        pBasicMaterial_ = Material::C_MaterialManager::s_GetInstance()->GetMaterial(ID::Material::s_pBASIC).get();
+
+        assert(Material::C_MaterialManager::s_GetInstance()->GetMaterial(ID::Material::s_pDAMAGE));
+        pDamageMaterial_ = Material::C_MaterialManager::s_GetInstance()->GetMaterial(ID::Material::s_pDAMAGE).get();
+
+        // 現在のマテリアルを設定
+        pNowMaterial_ = pBasicMaterial_;
+
+        // 各ライトを取得
+        assert(Light::C_LightManager::s_GetInstance()->GetLight(ID::Light::s_pMAIN));
+        pMainLight_ = Light::C_LightManager::s_GetInstance()->GetLight(ID::Light::s_pMAIN).get();
     }
 
 
@@ -173,18 +192,6 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
-     *  @brief  移動処理を行う
-     *  @param  なし
-     *  @return なし
-     *
-     ****************************************************************/
-    void C_BaseEnemy::Move()
-    {
-    }
-
-
-    /*************************************************************//**
-     *
      *  @brief  射撃処理を行う
      *  @param  なし
      *  @return なし
@@ -192,5 +199,71 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseEnemy::Shot()
     {
+    }
+    
+
+    /*************************************************************//**
+     *
+     *  @brief  マテリアルを設定する
+     *  @param  マテリアル
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseEnemy::SetMaterial(const Material::MaterialPtr& prMaterial)
+    {
+        auto pMaterial = std::static_pointer_cast<Material::S_PhongMaterial>(prMaterial);
+
+        pGlslObject_->SetUniformVector3("u_material.diffuse", pMaterial->diffuse_);
+        pGlslObject_->SetUniformVector3("u_material.ambient", pMaterial->ambient_);
+        pGlslObject_->SetUniformVector3("u_material.specular", pMaterial->specular_);
+        pGlslObject_->SetUniform1f("u_material.shininess", pMaterial->shininess_);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  メインライトを設定する
+     *  @param  ライト
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseEnemy::SetLight(const Light::LightPtr& prLight)
+    {
+        auto pLight = std::static_pointer_cast<Light::S_PointLight>(prLight);
+
+        pGlslObject_->SetUniformVector3("u_light.position", pLight->position_);
+        pGlslObject_->SetUniform1f("u_light.constantAttenuation", pLight->constantAttenuation_);
+        pGlslObject_->SetUniform1f("u_light.linearAttenuation", pLight->linearAttenuation_);
+        pGlslObject_->SetUniform1f("u_light.quadraticAttenuation", pLight->quadraticAttenuation_);
+        pGlslObject_->SetUniformVector3("u_light.diffuse", pLight->diffuse_);
+        pGlslObject_->SetUniformVector3("u_light.ambient", pLight->ambient_);
+        pGlslObject_->SetUniformVector3("u_light.specular", pLight->specular_);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  出現を終了しているか確認する
+     *  @param  なし
+     *  @return 終了している場合  ：true
+     *  @return 終了していない場合：false
+     *
+     ****************************************************************/
+    bool C_BaseEnemy::IsFinishAdvent() const
+    {
+        return true;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ステートマシーンを取得する
+     *  @param  なし
+     *  @return ステートマシーン
+     *
+     ****************************************************************/
+    State::C_StateMachine<C_BaseEnemy>* C_BaseEnemy::GetStateMachine() const
+    {
+        return upStateMachine_.get();
     }
 }

@@ -6,6 +6,7 @@
 #include "../../Library/Debug/Helper/DebugHelper.h"
 #include "../../Library/Physics/Engine/PhysicsEngine.h"
 #include "../../Library/Debug//String/DebugString.h"
+#include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
 
 
 //-------------------------------------------------------------
@@ -67,6 +68,9 @@ namespace ConnectWars
             
             // 物理エンジンの更新を停止
             Physics::C_PhysicsEngine::s_GetInstance()->EnableActive(false);
+
+            // パーティクルシステムの更新を停止
+            Particle::C_ParticleSystemManager::s_GetInstance()->EnableActive(false);
         }
 
         pBackgroundGenerator_->AutoCreate(frameCounter_.GetCount());

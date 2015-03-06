@@ -799,9 +799,6 @@
     <Filter Include="Resources\Shaders\GLSL\CelestialSphere">
       <UniqueIdentifier>{a243c5ca-51eb-45c9-97f0-7208fe9a6ce8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resources\GameDatas\ConnectWars\Background">
-      <UniqueIdentifier>{0abc0bff-cfd1-43db-9f07-fb8b591fa7a7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resources\GameDatas\ConnectWars\Camera">
       <UniqueIdentifier>{8caadc9c-4ea2-4525-97f0-9aba0da66360}</UniqueIdentifier>
     </Filter>
@@ -877,9 +874,6 @@
     <Filter Include="Resources\GameDatas\ConnectWars\Enemy\Stage01">
       <UniqueIdentifier>{a2cd690e-c2de-4778-af1b-07a63b70bd56}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resources\GameDatas\ConnectWars\Background\Stage01">
-      <UniqueIdentifier>{3c71ec78-24ba-4e37-b2e7-42f1528375d0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Background\Earth">
       <UniqueIdentifier>{17e1dd45-5bf8-4804-a591-39d6bd5d700e}</UniqueIdentifier>
     </Filter>
@@ -903,6 +897,18 @@
     </Filter>
     <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Effect\Explosion">
       <UniqueIdentifier>{4a183c8f-9904-46c0-852d-44550fa4a515}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\Bullet\Background">
+      <UniqueIdentifier>{0abc0bff-cfd1-43db-9f07-fb8b591fa7a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\GameDatas\ConnectWars\Bullet\Background\Stage01">
+      <UniqueIdentifier>{3c71ec78-24ba-4e37-b2e7-42f1528375d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Effect\Collision">
+      <UniqueIdentifier>{53172aa1-b5a4-4a8b-a285-b1778f41f3b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\Generator\Bomb">
+      <UniqueIdentifier>{fa4564ad-fb13-4b05-9c44-9958a1d251bd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1674,6 +1680,21 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerExplosionEffect.h">
       <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Explosion</Filter>
     </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EnemyCombatState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Enemy\Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EnemyDestroyedState.h">
+      <Filter>Sources\C++\Game\ConnectWars\State\Enemy\Destroyed</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\PlayerBeamCollisionEffect.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionSmallBeamCollisionEffect.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BombGenerator.h">
+      <Filter>Sources\C++\Game\ConnectWars\Generator\Bomb</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Projects\Sources\C++\Other\Stdafx\Stdafx.cpp">
@@ -2270,6 +2291,21 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerExplosionEffect.cpp">
       <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Explosion</Filter>
     </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EnemyCombatState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Enemy\Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EnemyDestroyedState.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\State\Enemy\Destroyed</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\PlayerBeamCollisionEffect.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionSmallBeamCollisionEffect.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BombGenerator.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\Generator\Bomb</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Projects\Shaders\GLSL\Debug\DebugString.geom">
@@ -2411,7 +2447,7 @@
       <Filter>Resources\GameDatas\ConnectWars\Enemy\Stage01</Filter>
     </None>
     <None Include="Projects\GameDatas\ConnectWars\JSON\Background\Stage01\Stage01BackgroundData.json">
-      <Filter>Resources\GameDatas\ConnectWars\Background\Stage01</Filter>
+      <Filter>Resources\GameDatas\ConnectWars\Bullet\Background\Stage01</Filter>
     </None>
     <None Include="Projects\Sources\Lua\Effect\PlayerFlarebackEffect.lua">
       <Filter>Sources\Lua\Effect</Filter>
@@ -2420,6 +2456,12 @@
       <Filter>Sources\Lua\Effect</Filter>
     </None>
     <None Include="Projects\Sources\Lua\Effect\PlayerExplosionEffect.lua">
+      <Filter>Sources\Lua\Effect</Filter>
+    </None>
+    <None Include="Projects\Sources\Lua\Effect\PlayerBeamCollisionEffect.lua">
+      <Filter>Sources\Lua\Effect</Filter>
+    </None>
+    <None Include="Projects\Sources\Lua\Effect\OptionSmallBeamCollisionEffect.lua">
       <Filter>Sources\Lua\Effect</Filter>
     </None>
   </ItemGroup>

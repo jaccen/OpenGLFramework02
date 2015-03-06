@@ -1,20 +1,51 @@
 {
-  "EnemyCount" : 1,
+  "EnemyCount" : 3,
   "EnemyData" :
   [
     {
-      "ID" : "BoxEnemy",
-      "Frame" : 150,
-      "Position" : [ 0.0, 10.0, 0.0 ],
-      "Power" : 100,
-      "HitPoint" : 100,
-      "FirstAddForce": [ 0.0, 0.0, 0.0 ],
-      "FirstAddTorque": [ 0.0, 0.0, 0.0 ],
-      "Movement" : 0.5,
-      "Direction" : [ 0.0, -1.0, 0.0 ],
-      "AddTorque": [ 0.0, 0.0, 0.0 ],
-      "Mass" : 0.2,
-      "CollisionSize" : [ 0.5, 0.5, 0.5 ]
+        "ID": "BoxEnemy",
+        "Frame": 150,
+        "Position": [ 0.0, 15.0, 0.0 ],
+        "Power": 100,
+        "HitPoint": 100,
+        "FirstAddForce": [ 0.0, -220.0, 0.0 ],
+        "FirstAddTorque": [ 30.0, 0.0, 0.0 ],
+        "Movement": 0.0,
+        "Direction": [ 0.0, 0.0, 0.0 ],
+        "AddTorque": [ 0.0, 0.0, 0.0 ],
+        "Mass": 1.0,
+        "Size": [ 2.0, 2.0, 2.0 ],
+        "CollisionSize": [ 1.0, 1.0, 1.0 ]
+    },
+    {
+        "ID": "BoxEnemy",
+        "Frame": 150,
+        "Position": [ 0.0, 15.0, 0.0 ],
+        "Power": 100,
+        "HitPoint": 100,
+        "FirstAddForce": [ 0.0, -220.0, 0.0 ],
+        "FirstAddTorque": [ 30.0, 0.0, 0.0 ],
+        "Movement": 0.0,
+        "Direction": [ 0.0, 0.0, 0.0 ],
+        "AddTorque": [ 0.0, 0.0, 0.0 ],
+        "Mass": 1.0,
+        "Size": [ 2.0, 2.0, 2.0 ],
+        "CollisionSize": [ 1.0, 1.0, 1.0 ]
+    },
+    {
+        "ID": "BoxEnemy",
+        "Frame": 150,
+        "Position": [ 0.0, 15.0, 0.0 ],
+        "Power": 100,
+        "HitPoint": 100,
+        "FirstAddForce": [ 0.0, -220.0, 0.0 ],
+        "FirstAddTorque": [ 30.0, 0.0, 0.0 ],
+        "Movement": 0.0,
+        "Direction": [ 0.0, 0.0, 0.0 ],
+        "AddTorque": [ 0.0, 0.0, 0.0 ],
+        "Mass": 1.0,
+        "Size": [ 2.0, 2.0, 2.0 ],
+        "CollisionSize": [ 1.0, 1.0, 1.0 ]
     }
   ]
 }

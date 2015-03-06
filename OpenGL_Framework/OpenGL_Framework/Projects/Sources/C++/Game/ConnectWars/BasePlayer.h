@@ -87,11 +87,12 @@ namespace ConnectWars
         int32_t GetBombChargeFrame() const;                                                             // ボムのチャージフレーム数を取得
         int32_t GetBombInvincibleFrame() const;                                                         // ボムの無敵フレーム数を取得
         bool IsBombChargeFlag() const;                                                                  // ボムのチャージフラグを取得
-        const std::string& GetBombChargeEffectId() const;                                               // ボムのチャージエフェクトのID
+        const std::string& GetBombChargeEffectId() const;                                               // ボムチャージエフェクトのIDを取得
         const std::string& GetBombId() const;                                                           // ボムのIDを取得
         void SetBombChargeFlag(bool bombChargeFlag);                                                    // ボムのチャージフラグを設定
         bool IsFinishAdvent() const;                                                                    // 出現し終えたか確認
         void ChangeMove(eMoveType moveType);                                                            // 移動を変更
+        int32_t GetConnectOptionCount() const;                                                          // 連結しているオプションの数を取得
     protected:
         std::unique_ptr<State::C_StateMachine<C_BasePlayer>> upStateMachine_;                           ///< @brief ステートマシーン
         Camera::CameraPtr pCamera_;                                                                     ///< @brief カメラ
@@ -107,6 +108,8 @@ namespace ConnectWars
         Collision::S_Aabb2D<float> moveLimitBoundingBox_;                                               ///< @brief 移動制限境界ボックス
         Input::KeyCode bombKeyCode_ = Input::KeyCode::SDL_SCANCODE_X;                                   ///< @brief ボムのキーコード
         Input::C_Gamepad::eButton bombGamepadButton_ = Input::C_Gamepad::BUTTON_FOUR_RIGHT;             ///< @brief ボムのゲームパッドのボタン
+        std::string bombChargeEffectId_;                                                                ///< @brief ボムチャージエフェクトID
+        std::string bombId_;                                                                            ///< @brief ボムID
 
         virtual void DoUpdate();                                                                        // 非公開の更新処理
         virtual void DoDraw() = 0;                                                                      // 非公開の描画処理

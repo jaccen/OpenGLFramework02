@@ -25,11 +25,7 @@ namespace ConnectWars
      *  @param  種類
      *
      ****************************************************************/
-    C_BoxEnemy::C_BoxEnemy(const std::string& rId, int32_t type) : C_BaseEnemy(rId, type),
-
-        // ステートマシーン
-        upStateMachine_(std::make_unique<State::C_StateMachine<C_BaseEnemy>>(this))
-
+    C_BoxEnemy::C_BoxEnemy(const std::string& rId, int32_t type) : C_BaseEnemy(rId, type)
     {
         // 現在のステートを設定
         upStateMachine_->SetCurrentState(C_EnemyAdventState::s_GetInstance());
@@ -46,6 +42,19 @@ namespace ConnectWars
     {
         // 剛体を物理エンジンから除く
         Physics::C_PhysicsEngine::s_GetInstance()->RemoveRigidBody(upRigidBody_.get());
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  移動処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BoxEnemy::Move()
+    {
+        upMoveLogic_->Process(upRigidBody_.get());
     }
 
 
@@ -86,15 +95,17 @@ namespace ConnectWars
                                                                                         static_cast<float>((*pJsonObject)["CollisionSize"][1].GetValue<JSON::Real>()),
                                                                                         static_cast<float>((*pJsonObject)["CollisionSize"][2].GetValue<JSON::Real>())),
                                                                                         transform,
-                                                                                        static_cast<float>((*pJsonObject)["Mass"].GetValue<JSON::Real>()));
+                                                                                        static_cast<float>((*pJsonObject)["Mass"].GetValue<JSON::Real>()),
+                                                                                        Physics::Vector3(1.0f, 1.0f, 1.0f));
         
         Physics::C_PhysicsEngine::s_GetInstance()->AddRigidBody(upRigidBody_.get(), 
                                                                 C_CollisionObject::FILTER_TYPE_ENEMY,
                                                                 collisionMask);
-        
+
         // 自身を設定
         upRigidBody_->SetUserPointer(this);
-        
+        upRigidBody_->EnableCollisionResponse(false);
+
         // モデル情報を取得
         assert(OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pBOX_ENEMY));
         pModelData_ = OpenGL::C_PrimitiveBufferManager::s_GetInstance()->GetPrimitiveBuffer(ID::Primitive::s_pBOX_ENEMY).get();
@@ -135,6 +146,11 @@ namespace ConnectWars
                                           static_cast<float>((*pJsonObject)["AddTorque"][2].GetValue<JSON::Real>()));
         
         pMoveLogic->SetAddTorque(addTorque);
+        upMoveLogic_.reset(pMoveLogic);
+
+        scale_ = Vector3(static_cast<float>((*pJsonObject)["Size"][0].GetValue<JSON::Real>()),
+                         static_cast<float>((*pJsonObject)["Size"][1].GetValue<JSON::Real>()),
+                         static_cast<float>((*pJsonObject)["Size"][2].GetValue<JSON::Real>()));
     }
 
 
@@ -188,6 +204,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_BoxEnemy::DoUpdate()
     {
+        upRigidBody_->EnableActive(true);
         upStateMachine_->Update();
     }
 
@@ -204,19 +221,12 @@ namespace ConnectWars
         pGlslObject_->BeginWithUnifomBuffer(pUniformBuffer_->GetHandle(), uniformBlockIndex_);
         pGlslObject_->BindActiveSubroutine(cameraSubroutineIndex_, Shader::GLSL::Type::s_VERTEX);
 
-        // マテリアルを設定
-        pGlslObject_->SetUniformVector3("material.diffuse", Vector3(0.5f, 1.0f, 0.5f));
-        pGlslObject_->SetUniformVector3("material.ambient", Vector3(0.1f, 0.1f, 0.1f));
-        pGlslObject_->SetUniformVector3("material.specular", Vector3(0.9f, 0.9f, 0.9f));
-        pGlslObject_->SetUniform1f("material.shininess", 100.0f);
-        pGlslObject_->SetUniformVector3("light.position", Vector3(0.0f, 100.0f, 0.0f));
-        pGlslObject_->SetUniformVector3("light.diffuse", Vector3(0.9f, 0.9f, 0.9f));
-        pGlslObject_->SetUniformVector3("light.ambient", Vector3(0.9f, 0.9f, 0.9f));
-        pGlslObject_->SetUniformVector3("light.specular", Vector3(0.9f, 0.9f, 0.9f));
-
         upRigidBody_->GetTransform().getOpenGLMatrix(modelMatrix_.a_);
-        modelMatrix_ = modelMatrix_ * Matrix4x4::s_CreateScaling(size_);
-        pGlslObject_->SetUniformMatrix4x4("modelMatrix", modelMatrix_);
+        pGlslObject_->SetUniformMatrix4x4("u_modelMatrix", modelMatrix_ * Matrix4x4::s_CreateScaling(scale_));
+
+        // ライトとマテリアルを設定
+        SetLight(pMainLight_);
+        SetMaterial(pNowMaterial_);
 
         auto pOpenGlManager = OpenGL::C_OpenGlManager::s_GetInstance();
 

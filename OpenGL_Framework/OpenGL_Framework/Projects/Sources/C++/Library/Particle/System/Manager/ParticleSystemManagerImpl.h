@@ -35,9 +35,11 @@ namespace Particle
                     uint32_t maxParticleCount);
         void Destroy(const std::string& rId);                                                                       // パーティクルシステムを破棄
         void AllDestroy();                                                                                          // パーティクルシステムを全て破棄
+        void EnableActive(bool validFlag);                                                                          // アクティブ状態を有効化   
         boost::optional<ParticleSystemWeakPtr> GetParticleSystem(const std::string& rId);                           // パーティクルシステムを取得
     private:
         std::deque<std::pair<std::string, ParticleSystemPtr>> pParticleSystems_;                                    ///< @brief パーティクルシステム
+        bool activeFlag_ = true;                                                                                    ///< @brief アクティブフラグ
     };
 
 
@@ -73,6 +75,8 @@ namespace Particle
      ****************************************************************/
     void C_ParticleSystemManager::C_ParticleSystemManagerImpl::Update()
     {
+        if (activeFlag_ == false) return;
+
         for (auto& rParticleSystem : pParticleSystems_)
         {
             if (rParticleSystem.second->GetEnableFlag() == true) rParticleSystem.second->Update();
@@ -181,6 +185,19 @@ namespace Particle
     {
         for (auto& rParticleSystem : pParticleSystems_) rParticleSystem.second->Finalize();
         pParticleSystems_.clear();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  アクティブ状態を有効化する
+     *  @parama 有効か判断するフラグ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_ParticleSystemManager::C_ParticleSystemManagerImpl::EnableActive(bool validFlag)
+    {
+        activeFlag_ = validFlag;
     }
 
 

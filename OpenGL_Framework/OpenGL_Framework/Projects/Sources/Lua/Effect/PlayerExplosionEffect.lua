@@ -88,7 +88,6 @@ function PlayerExplosionEffectLogic(rCircleParticleSystem, rSmokeParticleSystem,
 	local particleCreateData = S_ParticleCreateData()
 	local angle =  rRandomGenerator:Random(-3.14, 3.14)
 
-
 	-- åªç›ÇÃÉtÉåÅ[ÉÄêî
 	local nowFrame = rFrameCounter:GetCount()
 
@@ -107,7 +106,6 @@ function PlayerExplosionEffectLogic(rCircleParticleSystem, rSmokeParticleSystem,
 	particleCreateData.endColor_ = S_Vector4(0.2, 0.4, 1.0, 0.1)
 
 	rSmokeParticleSystem:Entry(particleCreateData)
-
 
     local addPositionX = rRandomGenerator:Random(-0.7, 0.7)
 	local addPositionY = rRandomGenerator:Random(-0.7, 0.7)

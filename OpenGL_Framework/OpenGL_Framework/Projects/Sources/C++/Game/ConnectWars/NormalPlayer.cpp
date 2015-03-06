@@ -114,6 +114,9 @@ namespace ConnectWars
         pGlslObject_->SetUniform1f("u_gamma", 2.2f);
 
         pGlslObject_->End();
+
+        bombChargeEffectId_ = ID::Generator::Effect::s_pNORMAL_BOMB_CHARGE;
+        bombId_ = ID::Generator::Bomb::s_pNORMAL;
     }
 
 
