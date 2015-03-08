@@ -27,6 +27,7 @@ namespace Event
         ~C_EventManagerImpl();                                                      // デストラクタ
         void Update();                                                              // 更新処理
         void EntryWindowEvent(C_BaseWindowEvent* pWindowEvent);                     // ウィンドウのイベントを登録
+        void QuitEvent();                                                           // 終了のイベント処理
         bool IsFinishFlag() const;                                                  // 終了フラグを取得
     private:
         EventData event_;                                                           ///< @brief イベントの情報
@@ -35,7 +36,6 @@ namespace Event
         static bool s_finishFlag;                                                   // 終了を判断するフラグ   
 
         void WindowEvent();                                                         // ウィンドウのイベント処理
-        void QuitEvent();                                                           // 終了のイベント処理
     };
 
 
@@ -133,6 +133,19 @@ namespace Event
 
     /*************************************************************//**
      *
+     *  @brief  終了のイベント処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_EventManager::C_EventManagerImpl::QuitEvent()
+    {
+        s_finishFlag = true;
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  終了フラグを取得
      *  @param  なし
      *  @return 終了フラグ
@@ -174,18 +187,5 @@ namespace Event
                 ++loopCount;
             }
         }
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  終了のイベント処理を行う
-     *  @param  なし
-     *  @return なし
-     *
-     ****************************************************************/
-    void C_EventManager::C_EventManagerImpl::QuitEvent()
-    {
-        s_finishFlag = true;
     }
 }

@@ -3,6 +3,7 @@
 #include "LoadScene.h"
 #include "LoadFunction.h"
 #include "../../Library/Debug/Helper/DebugHelper.h"
+#include "../../Library/Event/Manager/EventManager.h"
 
 
 //-------------------------------------------------------------
@@ -121,6 +122,13 @@ namespace ConnectWars
         {
             toStage01Flag_ = true;
            
+            assert(upFade_);
+            upFade_->FadeOut();
+        }
+        else if (rTelegram.message_ == Message::s_pEXIT_GAME)
+        {
+            Event::C_EventManager::s_GetInstance()->QuitEvent();
+
             assert(upFade_);
             upFade_->FadeOut();
         }

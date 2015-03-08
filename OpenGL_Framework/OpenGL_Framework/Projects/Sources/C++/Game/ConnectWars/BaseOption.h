@@ -7,6 +7,7 @@
 #include "../../Library/State/Machine/StateMachine.h"
 #include "../../Library/OpenGL/Buffer/Primitive/Manager/PrimitiveBufferManager.h"
 #include "../../Library/Camera/Manager/CameraManager.h"
+#include "../../Library/Timer/Counter/Frame/FrameCounter.h"
 
 
 //-------------------------------------------------------------
@@ -57,6 +58,7 @@ namespace ConnectWars
         virtual void ResetEffect();                                                                 // 効果をリセット
         virtual void DispatchOwnCrash();                                                            // 自爆を発送
         virtual void OwnCrash();                                                                    // 自爆処理
+        void DisableConnect();                                                                      // 連結の無効化
         State::C_StateMachine<C_BaseOption>* GetStateMachine() const;                               // ステートマシーンを取得
         const Physics::Vector3& GetOffsetFromPlayer() const;                                        // プレイヤーからのオフセットを取得
         C_BasePlayer* GetPlayer() const;                                                            // プレイヤーを取得
@@ -64,12 +66,15 @@ namespace ConnectWars
         bool IsConnectFlag() const;                                                                 // 連結フラグを取得
         bool IsDefeatedFlag() const;                                                                // 撃破フラグを取得
         int32_t GetDefeatedFrame() const;                                                           // 撃破状態のフレーム数を取得
-        const std::string& GetBombSelfCrashEffectId() const;                                        // ボムの自爆エフェクトのIDを取得
+        const std::string& GetBombOwnCrashEffectId() const;                                         // ボムの自爆エフェクトのIDを取得
         void SetOnceConnectFlag(bool onceConnectFlag);                                              // 一度連結したか判断するフラグを設定
         void SetConnectFlag(bool connectFlag);                                                      // 連結フラグを設定
         void SetOffsetFromPlayer(const Physics::Vector3& rOffsetFromPlayer);                        // プレイヤーからのオフセットを設定
         void SetPlayer(C_BasePlayer* pPlayer);                                                      // プレイヤーを設定
         void SetDefeatedFlag(bool defeatedFlag);                                                    // 撃破フラグを設定
+        bool IsWaitOwnCrashFlag() const;                                                            // 自爆待機フラグを取得
+        void SetWaitOwnCrashFlag(bool waitOwnCrashFlag);                                            // 自爆待機フラグを設定
+        Timer::C_FrameCounter* GetOwnCrashFrameCounter();                                           // 自爆フレームカウンタを取得
     protected:
         std::unique_ptr<State::C_StateMachine<C_BaseOption>> upStateMachine_;                       ///< @brief ステートマシーン
         bool onceConnectFlag_ = false;                                                              ///< @brief 一度連結したか判断するフラグ
@@ -80,6 +85,9 @@ namespace ConnectWars
         int32_t defeatedFrame_ = 60;                                                                ///< @brief 撃破状態のフレーム数
         int32_t ownCrashDelayFrame_ = 0;                                                            ///< @brief 自爆遅延フレーム数
         std::vector<std::unique_ptr<C_BaseGun>> upGuns_;                                            ///< @brief 銃
+        bool waitOwnCrashFlag_ = false;                                                             ///< @brief 自爆待機フラグ
+        std::string bombOwnCrashEffectId_;                                                          ///< @brief ボム自爆エフェクトID
+        Timer::C_FrameCounter ownCrashFrameCounter_;                                                ///< @brief 自爆フレームカウンタ
 
         virtual void DoUpdate();                                                                    // 非公開の更新処理
         virtual void DoDraw() = 0;                                                                  // 非公開の描画処理

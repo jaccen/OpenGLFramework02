@@ -50,6 +50,8 @@ namespace ConnectWars
             if (pPlayer->IsBombChargeFlag() == true)
             {
                 pOption->GetStateMachine()->ChangeState(C_OptionWaitOwnCrashState::s_GetInstance());
+                pOption->SetWaitOwnCrashFlag(true);
+                pOption->ResetConnect();
             }
             else
             {
@@ -68,7 +70,6 @@ namespace ConnectWars
      ****************************************************************/
     void C_OptionConnectState::Execute(C_BaseOption* pOption)
     {
-        pOption->ResetConnect();
     }
 
 

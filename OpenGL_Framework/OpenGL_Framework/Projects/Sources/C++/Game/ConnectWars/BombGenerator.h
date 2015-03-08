@@ -43,7 +43,7 @@ namespace ConnectWars
     {
     public:
         /* 別名 */
-        using CreateFunction = C_BaseBomb*(*)();                                                    // CreateFunction型
+        using CreateFunction = C_BaseBomb*(*)(int32_t level);                                       // CreateFunction型
 
         C_BombGenerator();                                                                          // コンストラクタ
         ~C_BombGenerator() override;                                                                // デストラクタ

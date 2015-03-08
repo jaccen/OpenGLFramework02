@@ -228,12 +228,15 @@ namespace ConnectWars
 
         const char* pLuaPathList[] =
         {
-            Path::Lua::s_pBOMB_CHARGE_EFFECT,
+            Path::Lua::s_pNORMAL_BOMB_CHARGE_EFFECT,
+            Path::Lua::s_pNORMAL_BOMB_EFFECT,
             Path::Lua::s_pPLAYER_FLAREBACK_EFFECT,
             Path::Lua::s_pCONNECT_EFFECT,
             Path::Lua::s_pPLAYER_EXPLOSION_EFFECT,
+            Path::Lua::s_pOPTION_EXPLOSION_EFFECT,
             Path::Lua::s_pPLAYER_BEAM_COLLISION_EFFECT,
             Path::Lua::s_pOPTION_SMALL_BEAM_COLLISION_EFFECT,
+            Path::Lua::s_pOPTION_OWN_CRASH_EFFECT_01,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pLuaPathList); i < arraySize; ++i)
@@ -438,9 +441,6 @@ namespace ConnectWars
     void C_RootScene::PushNextScene()
     {
         auto pNextScene = newEx C_LoadScene;
-
-        // pNextScene->SetLoadFunction(C_LoadFunction::s_LoadStage01Data);
-        // pNextScene->SetNextSceneId(ID::Scene::s_pSTAGE01);
 
         pNextScene->SetLoadFunction(C_LoadFunction::s_LoadTitleData);
         pNextScene->SetNextSceneId(ID::Scene::s_pTITLE);

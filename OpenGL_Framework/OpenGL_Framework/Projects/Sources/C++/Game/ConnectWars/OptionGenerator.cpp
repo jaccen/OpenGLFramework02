@@ -1,5 +1,6 @@
 /* ヘッダファイル */
 #include "OptionGenerator.h"
+#include "../../Library/GameObject/Manager/GameObjectManager.h"
 #include "../../Library/Task/System/General/GeneralTaskSystem.h"
 #include "BaseOption.h"
 
@@ -51,6 +52,9 @@ namespace ConnectWars
 
         // タスクシステムに登録
         pTaskSystem_->Entry(pOption, Priority::Task::Update::s_option, Priority::Task::Draw::s_option);
+
+        // ゲームオブジェクトマネージャーに登録
+        GameObject::C_GameObjectManager::s_GetInstance()->Entry(pOption);
 
         ++number;
         

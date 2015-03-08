@@ -14,6 +14,7 @@
 #include "BulletGenerator.h"
 #include "EffectGenerator.h"
 #include "BackgroundGenerator.h"
+#include "BombGenerator.h"
 #include "GameController.h"
 
 
@@ -42,16 +43,20 @@ namespace ConnectWars
         void Finalize() override;                                       // 終了処理
     private:
         Task::C_GeneralTaskSystem taskSystem_;                          ///< @brief タスクシステム
+
         C_PlayerGenerator playerGenerator_;                             ///< @brief プレイヤー生成機
         C_OptionGenerator optionGenerator_;                             ///< @brief オプション生成機
         C_EnemyGenerator enemyGenerator_;                               ///< @brief エネミー生成機
         C_BulletGenerator bulletGenerator_;                             ///< @brief 弾生成機
         C_EffectGenerator effectGenerator_;                             ///< @brief エフェクト生成機
         C_BackgroundGenerator backgroundGenerator_;                     ///< @brief 背景生成機
+        C_BombGenerator bombGenerator_;                                 ///< @brief ボムジェネレーター
+
         Camera::CameraPtr pMainCamera_;                                 ///< @brief メインカメラ
         Camera::CameraPtr pUiCamera_;                                   ///< @brief UI用カメラ
         Camera::CameraPtr pBackgroundCamera_;                           ///< @brief 背景用カメラ
 
         bool RemainLoadProcess();                                       // 残りのロード処理
+        void SetupGenerator();                                          // ジェネレータの設定
     };
 }

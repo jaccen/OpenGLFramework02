@@ -910,6 +910,12 @@
     <Filter Include="Sources\C++\Game\ConnectWars\Generator\Bomb">
       <UniqueIdentifier>{fa4564ad-fb13-4b05-9c44-9958a1d251bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Effect\Bomb\Normal">
+      <UniqueIdentifier>{ec20efca-bdd8-4545-8226-44fb9bd23c85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\C++\Game\ConnectWars\GameObject\Effect\OwnCrash">
+      <UniqueIdentifier>{c0a07b3c-4427-4a3c-a69f-83b3b044e85d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Projects\Sources\C++\Other\Stdafx\Stdafx.h">
@@ -1524,9 +1530,6 @@
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\ShieldOption.h">
       <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Shooter\ConnectMachine\Option\Shield</Filter>
     </ClInclude>
-    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BombChargeEffect.h">
-      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Bomb</Filter>
-    </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\EffectGenerator.h">
       <Filter>Sources\C++\Game\ConnectWars\Generator\Effect</Filter>
     </ClInclude>
@@ -1694,6 +1697,18 @@
     </ClInclude>
     <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\BombGenerator.h">
       <Filter>Sources\C++\Game\ConnectWars\Generator\Bomb</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\NormalBombChargeEffect.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Bomb\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\NormalBombEffect.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Bomb\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionExplosionEffect.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Explosion</Filter>
+    </ClInclude>
+    <ClInclude Include="Projects\Sources\C++\Game\ConnectWars\OptionOwnCrashEffect01.h">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\OwnCrash</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -2159,9 +2174,6 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\ShieldOption.cpp">
       <Filter>Sources\C++\Game\ConnectWars\GameObject\CollisionObject\Shooter\ConnectMachine\Option\Shield</Filter>
     </ClCompile>
-    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BombChargeEffect.cpp">
-      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Bomb</Filter>
-    </ClCompile>
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\EffectGenerator.cpp">
       <Filter>Sources\C++\Game\ConnectWars\Generator\Effect</Filter>
     </ClCompile>
@@ -2306,6 +2318,18 @@
     <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\BombGenerator.cpp">
       <Filter>Sources\C++\Game\ConnectWars\Generator\Bomb</Filter>
     </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\NormalBombChargeEffect.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Bomb\Normal</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\NormalBombEffect.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Bomb\Normal</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionExplosionEffect.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\Explosion</Filter>
+    </ClCompile>
+    <ClCompile Include="Projects\Sources\C++\Game\ConnectWars\OptionOwnCrashEffect01.cpp">
+      <Filter>Sources\C++\Game\ConnectWars\GameObject\Effect\OwnCrash</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Projects\Shaders\GLSL\Debug\DebugString.geom">
@@ -2367,9 +2391,6 @@
     </None>
     <None Include="Projects\Shaders\GLSL\Sprite\Sprite.frag">
       <Filter>Resources\Shaders\GLSL\Sprite</Filter>
-    </None>
-    <None Include="Projects\Sources\Lua\Effect\BombChargeEffect.lua">
-      <Filter>Sources\Lua\Effect</Filter>
     </None>
     <None Include="Projects\GameDatas\ConnectWars\JSON\Player\NormalPlayerData.json">
       <Filter>Resources\GameDatas\ConnectWars\Player</Filter>
@@ -2449,19 +2470,31 @@
     <None Include="Projects\GameDatas\ConnectWars\JSON\Background\Stage01\Stage01BackgroundData.json">
       <Filter>Resources\GameDatas\ConnectWars\Bullet\Background\Stage01</Filter>
     </None>
+    <None Include="Projects\Sources\Lua\Effect\PlayerBeamCollisionEffect.lua">
+      <Filter>Sources\Lua\Effect</Filter>
+    </None>
+    <None Include="Projects\Sources\Lua\Effect\PlayerExplosionEffect.lua">
+      <Filter>Sources\Lua\Effect</Filter>
+    </None>
     <None Include="Projects\Sources\Lua\Effect\PlayerFlarebackEffect.lua">
       <Filter>Sources\Lua\Effect</Filter>
     </None>
     <None Include="Projects\Sources\Lua\Effect\ConnectEffect.lua">
       <Filter>Sources\Lua\Effect</Filter>
     </None>
-    <None Include="Projects\Sources\Lua\Effect\PlayerExplosionEffect.lua">
+    <None Include="Projects\Sources\Lua\Effect\NormalBombChargeEffect.lua">
       <Filter>Sources\Lua\Effect</Filter>
     </None>
-    <None Include="Projects\Sources\Lua\Effect\PlayerBeamCollisionEffect.lua">
+    <None Include="Projects\Sources\Lua\Effect\NormalBombEffect.lua">
+      <Filter>Sources\Lua\Effect</Filter>
+    </None>
+    <None Include="Projects\Sources\Lua\Effect\OptionExplosionEffect.lua">
       <Filter>Sources\Lua\Effect</Filter>
     </None>
     <None Include="Projects\Sources\Lua\Effect\OptionSmallBeamCollisionEffect.lua">
+      <Filter>Sources\Lua\Effect</Filter>
+    </None>
+    <None Include="Projects\Sources\Lua\Effect\OptionOwnCrashEffect01.lua">
       <Filter>Sources\Lua\Effect</Filter>
     </None>
   </ItemGroup>

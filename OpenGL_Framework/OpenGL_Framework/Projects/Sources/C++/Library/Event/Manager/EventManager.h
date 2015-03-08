@@ -36,6 +36,7 @@ namespace Event
         void Update();                                                              // 更新処理
         void EntryWindowEvent(C_BaseWindowEvent* pWindowEvent);                     // ウィンドウのイベントを登録
         void EnableTextInput(bool validFlag = true);                                // テキスト入力のイベントを有効化
+        void QuitEvent();                                                           // 終了のイベント処理
         bool IsFinishFlag() const;                                                  // 終了フラグを取得
     private:
         /* 前方宣言 */

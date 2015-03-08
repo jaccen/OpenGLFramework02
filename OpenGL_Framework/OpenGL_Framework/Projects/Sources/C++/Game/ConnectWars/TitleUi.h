@@ -40,7 +40,7 @@ namespace ConnectWars
         ~C_TitleUi() override;                                                      // デストラクタ
     private:
         S_ImageUiData imageUis_[2];                                                 ///< @brief 画像UI
-        S_WordUiData initialItems_[3];                                              ///< @brief 初期項目
+        S_WordUiData initialItems_[4];                                              ///< @brief 初期項目
         S_WordUiData stageSelectItems_[4];                                          ///< @brief ステージセレクト項目
         S_WordUiData configItems_[7];                                               ///< @brief コンフィグ項目
         Sprite::SpriteCreaterWeakPtr wpUiSpriteCreater_;                            ///< @brief タイトルスプライトクリエイター

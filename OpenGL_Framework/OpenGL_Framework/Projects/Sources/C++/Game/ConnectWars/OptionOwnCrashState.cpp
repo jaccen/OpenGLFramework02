@@ -1,6 +1,8 @@
 /* ヘッダファイル */
 #include "OptionOwnCrashState.h"
 #include "BaseOption.h"
+#include "EffectGenerator.h"
+#include "../../Library/GameObject/Manager/GameObjectManager.h"
 
 
 //-------------------------------------------------------------
@@ -44,9 +46,6 @@ namespace ConnectWars
     {
         // 撃破フラグを立てる
         pOption->SetDefeatedFlag(true);
-
-        // エフェクトを生成
-        // C_EffectGenerator::s_GetManagementInstance().Create(pOption->GetBombSelfCrashEffectId(), pOption->GetPosition());
     }
 
 
@@ -59,20 +58,21 @@ namespace ConnectWars
      ****************************************************************/
     void C_OptionOwnCrashState::Execute(C_BaseOption* pOption)
     {
-        frameCounter_.CountUp();
+        pOption->GetOwnCrashFrameCounter()->CountUp();
 
-        //pOption->Defeated();
-
-        if (pOption->GetDefeatedFrame() <= frameCounter_.GetCount())
+        if (pOption->GetOwnCrashFrameCounter()->GetCount() == pOption->GetDefeatedFrame())
         {
+            // カウンタをリセット
+            pOption->GetOwnCrashFrameCounter()->Reset();
+
             // 効果をリセット
             pOption->ResetEffect();
 
-            // ゲームオブジェクトマネージャーから除去
-            //C_GameObjectManager::s_GetManagementInstance().Remove(pOption->GetId());
-
             // オプションを破棄
             pOption->SetExistanceFlag(false);
+
+            // ゲームオブジェクトマネージャーから除去
+            GameObject::C_GameObjectManager::s_GetInstance()->Remove(pOption->GetId());
         }
     }
 

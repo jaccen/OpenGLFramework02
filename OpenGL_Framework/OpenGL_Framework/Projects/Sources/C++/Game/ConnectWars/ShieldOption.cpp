@@ -77,6 +77,9 @@ namespace ConnectWars
         upMoveLogic_ = std::make_unique<C_RigidBodyStraightMoveLogic>();
         upMoveLogic_->SetDirection(Physics::Vector3(0.0f, -1.0f, 0.0f));
         upMoveLogic_->SetMovement(static_cast<float>((*pOptionData)["CreateData"]["Movement"].GetValue<JSON::Real>()));
+
+        // 自爆エフェクトのIDを設定
+        bombOwnCrashEffectId_ = ID::Generator::Effect::s_pOPTION_OWN_CRASH_01;
     }
 
 

@@ -16,9 +16,14 @@ namespace ConnectWars
      *  @brief  コンストラクタ
      *  @param  ID
      *  @param  種類
+     *  @param  レベル
      *
      ****************************************************************/
-    C_BaseBomb::C_BaseBomb(const std::string& rId, int32_t type) : C_CollisionObject(rId, type)
+    C_BaseBomb::C_BaseBomb(const std::string& rId, int32_t type, int32_t level) : C_CollisionObject(rId, type),
+
+        // レベル
+        level_(level)
+
     {
     }
 
@@ -170,15 +175,33 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
-     *  @brief  レベルを設定する
-     *  @param  レベル
+     *  @brief  座標を取得する
+     *  @param  なし
+     *  @return 座標
+     *
+     ****************************************************************/
+    const Physics::Vector3& C_BaseBomb::GetPosition() const
+    {
+        return upRigidBody_->GetTransform().getOrigin();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  座標を設定する
+     *  @param  座標
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseBomb::SetLevel(int32_t level)
+    void C_BaseBomb::SetPosition(const Physics::Vector3& rPosition)
     {
-        level_ += level;
+        Physics::Transform transform;
+        transform.setIdentity();
+        transform.setOrigin(rPosition);
+
+        upRigidBody_->SetTransform(transform);
     }
+
 
 
     /*************************************************************//**

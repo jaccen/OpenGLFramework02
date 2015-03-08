@@ -9,6 +9,7 @@
 #include "../../Library/Collision/BoundingBox/AABB/Aabb2D.h"
 #include "../../Library/Input/Keyboard/KeyboardManager.h"
 #include "../../Library/Input/Gamepad/Manager/GamepadManager.h"
+#include "../../Library/Timer/Counter/Frame/FrameCounter.h"
 
 
 //-------------------------------------------------------------
@@ -93,6 +94,14 @@ namespace ConnectWars
         bool IsFinishAdvent() const;                                                                    // 出現し終えたか確認
         void ChangeMove(eMoveType moveType);                                                            // 移動を変更
         int32_t GetConnectOptionCount() const;                                                          // 連結しているオプションの数を取得
+        bool IsDrawFlag() const;                                                                        // 描画フラグを取得
+        void SetDrawFlag(bool drawFlag);                                                                // 描画フラグを設定
+        void DispatchOptionDisableConnect();                                                            // オプションの連結禁止を無効化
+        Timer::C_FrameCounter* GetConnectFrameCounter();                                                // 連結フレームカウンタを取得
+        Timer::C_FrameCounter* GetBombChargeFrameCounter();                                             // 無敵フレームカウンタを取得
+        Timer::C_FrameCounter* GetInvincibleFrameCounter();                                             // ボムチャージフレームカウンタを取得
+        void BombCharge();                                                                              // ボムチャージ処理
+        void FireBomb();                                                                                // ボム発動処理
     protected:
         std::unique_ptr<State::C_StateMachine<C_BasePlayer>> upStateMachine_;                           ///< @brief ステートマシーン
         Camera::CameraPtr pCamera_;                                                                     ///< @brief カメラ
@@ -110,6 +119,10 @@ namespace ConnectWars
         Input::C_Gamepad::eButton bombGamepadButton_ = Input::C_Gamepad::BUTTON_FOUR_RIGHT;             ///< @brief ボムのゲームパッドのボタン
         std::string bombChargeEffectId_;                                                                ///< @brief ボムチャージエフェクトID
         std::string bombId_;                                                                            ///< @brief ボムID
+        bool drawFlag_ = true;                                                                          ///< @brief 描画フラグ
+        Timer::C_FrameCounter connectFrameCounter_;                                                     ///< @brief 連結フレームカウンタ
+        Timer::C_FrameCounter bombChargeFrameCounter_;                                                  ///< @brief ボムチャージフレームカウンタ
+        Timer::C_FrameCounter invincibleFrameCounter_;                                                  ///< @brief 無敵フレームカウンタ
 
         virtual void DoUpdate();                                                                        // 非公開の更新処理
         virtual void DoDraw() = 0;                                                                      // 非公開の描画処理

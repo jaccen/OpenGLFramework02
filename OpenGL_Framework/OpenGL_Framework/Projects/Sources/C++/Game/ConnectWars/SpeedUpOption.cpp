@@ -90,6 +90,9 @@ namespace ConnectWars
         pGlslObject_->SetUniform1f("u_gamma", 2.2f);
         
         pGlslObject_->End();
+
+        // 自爆エフェクトのIDを設定
+        bombOwnCrashEffectId_ = ID::Generator::Effect::s_pOPTION_OWN_CRASH_01;
     }
 
 

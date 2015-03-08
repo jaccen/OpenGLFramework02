@@ -46,11 +46,10 @@ namespace ConnectWars
     BombPtr C_BombGenerator::Create(const std::string& rId, const Physics::Vector3& rPosition, int32_t level)
     {
         // 敵を生成
-        BombPtr pBomb(pCreateFunctions_.at(rId)());
+        BombPtr pBomb(pCreateFunctions_.at(rId)(level));
 
         // 各設定を行う
         pBomb->SetPosition(rPosition);
-        pBomb->SetLevel(level);
 
         // タスクシステムに登録
         pTaskSystem_->Entry(pBomb, Priority::Task::Update::s_bomb, Priority::Task::Draw::s_bomb);

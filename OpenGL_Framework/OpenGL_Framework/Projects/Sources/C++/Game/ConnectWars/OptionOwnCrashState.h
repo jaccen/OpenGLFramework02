@@ -37,8 +37,6 @@ namespace ConnectWars
         void Exit(C_BaseOption* pOption) override;                                          // 終了処理
         bool MessageProcess(C_BaseOption* pOption, const Telegram& rTelegram) override;     // メッセージ処理
     private:
-        Timer::C_FrameCounter frameCounter_;                                                ///< @brief フレームカウンター
-
         C_OptionOwnCrashState();                                                            // コンストラクタ
         ~C_OptionOwnCrashState() override;                                                  // デストラクタ
     };

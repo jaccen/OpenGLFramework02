@@ -13,6 +13,10 @@
 #include "../../Library/Debug/Helper/DebugHelper.h"
 #include "../../Library/Model/SelfMade/Loader/ModelLoader.h"
 #include "../../Library/OpenGL/Buffer/Primitive/PrimitiveDefine.h"
+#include "../../Library/GameObject/Manager/GameObjectManager.h"
+#include "EffectGenerator.h"
+#include "BombGenerator.h"
+#include "PlayerInvincibleState.h"
 
 
 //-------------------------------------------------------------
@@ -49,6 +53,14 @@ namespace ConnectWars
      ****************************************************************/
     C_BasePlayer::~C_BasePlayer()
     {
+        auto pGameObjectManager = GameObject::C_GameObjectManager::s_GetInstance();
+        auto gameObjectList =  pGameObjectManager->GetGameObjectsWithType(TYPE_OPTION);
+
+        for (auto pGameObject : gameObjectList)
+        {
+            auto pOption = std::dynamic_pointer_cast<C_BaseOption>(pGameObject);
+            pOption->SetPlayer(nullptr);
+        }
     }
 
 
@@ -636,6 +648,132 @@ namespace ConnectWars
     int32_t C_BasePlayer::GetConnectOptionCount() const
     {
         return connectOptionCount_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  描画フラグを取得する
+     *  @param  なし
+     *  @return 描画フラグ
+     *
+     ****************************************************************/
+    bool C_BasePlayer::IsDrawFlag() const
+    {
+        return drawFlag_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  描画フラグを設定する
+     *  @param  描画フラグ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BasePlayer::SetDrawFlag(bool drawFlag)
+    {
+        drawFlag_ = drawFlag;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  オプションの連結無効化を発送する
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BasePlayer::DispatchOptionDisableConnect()
+    {
+        for (auto& prOption : pConnectOptionList_) prOption->DisableConnect();
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  連結フレームカウンタを取得する
+     *  @param  なし
+     *  @return 連結フレームカウンタ
+     *
+     ****************************************************************/
+    Timer::C_FrameCounter* C_BasePlayer::GetConnectFrameCounter()
+    {
+        return &connectFrameCounter_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ボムチャージフレームカウンタを取得する
+     *  @param  なし
+     *  @return ボムチャージフレームカウンタ
+     *
+     ****************************************************************/
+    Timer::C_FrameCounter* C_BasePlayer::GetBombChargeFrameCounter()
+    {
+        return &bombChargeFrameCounter_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  連結フレームカウンタを取得する
+     *  @param  なし
+     *  @return 連結フレームカウンタ
+     *
+     ****************************************************************/
+    Timer::C_FrameCounter* C_BasePlayer::GetInvincibleFrameCounter()
+    {
+        return &invincibleFrameCounter_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ボムチャージ処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BasePlayer::BombCharge()
+    {
+        // 各フラグを設定
+        SetBombChargeFlag(true);
+        SetInvincibleFlag(true);
+
+        // チャージエフェクトを生成
+        auto& rPosition = GetPosition();
+
+        C_EffectGenerator::s_GetInstance()->Create(GetBombChargeEffectId(), 
+                                                   Vector3(rPosition.x(), rPosition.y(), rPosition.z()));
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ボム発動処理を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BasePlayer::FireBomb()
+    {
+        // 無敵状態に変更
+        GetStateMachine()->ChangeState(C_PlayerInvincibleState::s_GetInstance());
+
+        // 各フラグを設定
+        SetBombChargeFlag(false);
+        SetInvincibleFlag(false);
+
+        // カウンターをリセット
+        bombChargeFrameCounter_.Reset();
+
+        // オプションの連結を無効化を発送
+        DispatchOptionDisableConnect();
+
+        // ボムを生成
+        C_BombGenerator::s_GetInstance()->Create(GetBombId(), GetPosition(), GetConnectOptionCount() / 5);
     }
 
 

@@ -80,9 +80,6 @@ namespace ConnectWars
 
             // 連結の効果を処理
             pOption->ConnectEffect();
-
-            // 連結しているオプション数を1増加
-            pPlayer->AddConnectOptionCount(1);
         }
 
         // 連結フラグを設定

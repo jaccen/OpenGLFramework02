@@ -90,113 +90,92 @@ function ConnectEffectLogic(rCircleParticleSystem, rRingParticleSystem, rFrameCo
 	-- åªç›ÇÃÉtÉåÅ[ÉÄêî
 	local nowFrame = rFrameCounter:GetCount()
 
+	local PI2 = 6.283185
+	local count = 8
 	local angle = 0.0
-	local piDiv2 = 1.570796
-	local velocityX = 0.23
-	local velocityY = 0.23
+	local addAngle = PI2 /count
+	local velocityX = 0.0
+	local velocityY = 0.0
+	local endWidth = 0.0
 
-	for i = 1, 4 do
+	local velocityFactor = 0.22
 
-		if i % 2 == 1 then
+	for i = 1, count do
 
-			for j = 1, 2 do
+		velocityX = math.cos(angle) * velocityFactor
+		velocityY = math.sin(angle) * velocityFactor
 
-				particleCreateData.lifeFrame_ = 23
-				particleCreateData.position_ = rPosition + S_Vector3(0.0, velocityY * 2.0, 1.5)
-				particleCreateData.velocity_ = S_Vector3(0.0, velocityY, 0.0)
-				particleCreateData.startAcceleration_ = S_Vector3()
-				particleCreateData.endAcceleration_ = S_Vector3()
-				particleCreateData.startAngle_ = angle
-				particleCreateData.endAngle_ = angle
-				particleCreateData.startWidth_ = 0.1
-				particleCreateData.endWidth_ = 0.2
-				particleCreateData.startHeight_ = 0.1
-				particleCreateData.endHeight_ = 4.0
-				particleCreateData.startColor_ = S_Vector4(0.2, 0.9, 0.1, 1.0)
-				particleCreateData.endColor_ = S_Vector4(0.2, 0.9, 0.1, 0.3)
-
-				rCircleParticleSystem:Entry(particleCreateData)
-
-			end
-
-			velocityY = -velocityY;
-
+		if i % 2 == 0 then
+			endWidth = 1.3
 		else
-
-			for j = 1, 2 do
-
-				particleCreateData.lifeFrame_ = 23
-				particleCreateData.position_ = rPosition + S_Vector3(velocityX * 2.0, 0.0, 1.5)
-				particleCreateData.velocity_ = S_Vector3(velocityX, 0.0, 0.0)
-				particleCreateData.startAcceleration_ = S_Vector3()
-				particleCreateData.endAcceleration_ = S_Vector3()
-				particleCreateData.startAngle_ = angle
-				particleCreateData.endAngle_ = angle
-				particleCreateData.startWidth_ = 0.1
-				particleCreateData.endWidth_ = 0.2
-				particleCreateData.startHeight_ = 0.1
-				particleCreateData.endHeight_ = 4.0
-				particleCreateData.startColor_ = S_Vector4(0.2, 0.9, 0.1, 1.0)
-				particleCreateData.endColor_ = S_Vector4(0.2, 0.9, 0.1, 0.3)
-
-				rCircleParticleSystem:Entry(particleCreateData)
-
-			end
-
-			velocityX = -velocityX
-
+			endWidth = 3.0
 		end
 
+		particleCreateData.lifeFrame_ = 15
+		particleCreateData.position_ = rPosition + S_Vector3(velocityX * 2.0, velocityY * 2.0, 1.1)
+		particleCreateData.velocity_ = S_Vector3(velocityX, velocityY, 0.0)
+		particleCreateData.startAcceleration_ = S_Vector3()
+		particleCreateData.endAcceleration_ = S_Vector3()
+		particleCreateData.startAngle_ = angle
+		particleCreateData.endAngle_ = angle
+		particleCreateData.startWidth_ = 0.1
+		particleCreateData.endWidth_ = endWidth
+		particleCreateData.startHeight_ = 0.1
+		particleCreateData.endHeight_ = 0.18
+		particleCreateData.startColor_ = S_Vector4(0.2, 0.9, 0.1, 1.0)
+		particleCreateData.endColor_ = S_Vector4(0.2, 0.9, 0.3, 0.35)
 
-		angle = angle + piDiv2
+		rCircleParticleSystem:Entry(particleCreateData)
+
+		angle = angle + addAngle
 
 	end
 
-	particleCreateData.lifeFrame_ = 20
-	particleCreateData.position_ = rPosition + S_Vector3(0.0, 0.0, 1.5)
+	particleCreateData.lifeFrame_ = 15
+	particleCreateData.position_ = rPosition + S_Vector3(0.0, 0.0, 1.1)
 	particleCreateData.velocity_ = S_Vector3()
 	particleCreateData.startAcceleration_ = S_Vector3()
 	particleCreateData.endAcceleration_ = S_Vector3()
 	particleCreateData.startAngle_ = 0.0
 	particleCreateData.endAngle_ = 0.0
 	particleCreateData.startWidth_ = 0.1
-	particleCreateData.endWidth_ = 8.5
+	particleCreateData.endWidth_ = 6.5
 	particleCreateData.startHeight_ = 0.1
-	particleCreateData.endHeight_ =8.5
-	particleCreateData.startColor_ = S_Vector4(1.0, 1.0, 1.0, 1.0)
-	particleCreateData.endColor_ = S_Vector4(1.0, 1.0, 1.0, 0.7)
+	particleCreateData.endHeight_ = 6.5
+	particleCreateData.startColor_ = S_Vector4(1.0, 1.0, 1.0,  0.4)
+	particleCreateData.endColor_ = S_Vector4(1.0, 1.0, 1.0, 0.2)
 
 	rRingParticleSystem:Entry(particleCreateData)
 
-	particleCreateData.lifeFrame_ = 20
-	particleCreateData.position_ = rPosition + S_Vector3(0.0, 0.0, 1.5)
+	particleCreateData.lifeFrame_ = 15
+	particleCreateData.position_ = rPosition + S_Vector3(0.0, 0.0, 1.1)
 	particleCreateData.velocity_ = S_Vector3()
 	particleCreateData.startAcceleration_ = S_Vector3()
 	particleCreateData.endAcceleration_ = S_Vector3()
 	particleCreateData.startAngle_ = 0.0
 	particleCreateData.endAngle_ = 0.0
 	particleCreateData.startWidth_ = 0.1
-	particleCreateData.endWidth_ = 4.5
+	particleCreateData.endWidth_ = 5.5
 	particleCreateData.startHeight_ = 0.1
-	particleCreateData.endHeight_ =4.5
-	particleCreateData.startColor_ = S_Vector4(1.0, 1.0, 1.0, 0.8)
+	particleCreateData.endHeight_ = 5.5
+	particleCreateData.startColor_ = S_Vector4(1.0, 1.0, 1.0, 0.3)
 	particleCreateData.endColor_ = S_Vector4(1.0, 1.0, 1.0, 0.1)
 
 	rCircleParticleSystem:Entry(particleCreateData)
 
-	particleCreateData.lifeFrame_ = 25
-	particleCreateData.position_ = rPosition + S_Vector3(0.0, 0.0, 1.5)
+	particleCreateData.lifeFrame_ = 15
+	particleCreateData.position_ = rPosition + S_Vector3(0.0, 0.0, 1.1)
 	particleCreateData.velocity_ = S_Vector3()
 	particleCreateData.startAcceleration_ = S_Vector3()
 	particleCreateData.endAcceleration_ = S_Vector3()
 	particleCreateData.startAngle_ = 0.0
 	particleCreateData.endAngle_ = 0.0
 	particleCreateData.startWidth_ = 0.1
-	particleCreateData.endWidth_ = 15.5
+	particleCreateData.endWidth_ = 10.5
 	particleCreateData.startHeight_ = 0.1
-	particleCreateData.endHeight_ =15.5
-	particleCreateData.startColor_ = S_Vector4(0.8, 0.6, 0.1, 0.8)
-	particleCreateData.endColor_ = S_Vector4(0.8, 0.6, 0.1, 0.1)
+	particleCreateData.endHeight_ = 10.5
+	particleCreateData.startColor_ = S_Vector4(0.8, 0.6, 0.1, 0.7)
+	particleCreateData.endColor_ = S_Vector4(0.8, 0.6, 0.1, 0.2)
 
 	rCircleParticleSystem:Entry(particleCreateData)
 

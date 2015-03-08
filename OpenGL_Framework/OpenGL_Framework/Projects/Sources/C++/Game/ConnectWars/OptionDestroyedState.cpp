@@ -59,8 +59,11 @@ namespace ConnectWars
         // 効果をリセット
         pOption->ResetEffect();
 
-        GameObject::C_GameObjectManager::s_GetInstance()->Remove(pOption->GetId());
+        // オプションを破棄
         pOption->SetExistanceFlag(false);
+
+        // ゲームオブジェクトマネージャーから除去
+        GameObject::C_GameObjectManager::s_GetInstance()->Remove(pOption->GetId());
     }
 
 

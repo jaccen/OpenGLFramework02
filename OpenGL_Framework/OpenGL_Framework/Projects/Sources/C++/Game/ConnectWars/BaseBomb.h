@@ -34,7 +34,7 @@ namespace ConnectWars
     class C_BaseBomb : public C_CollisionObject
     {
     public:
-        C_BaseBomb(const std::string& rId, int32_t type);                                           // コンストラクタ
+        C_BaseBomb(const std::string& rId, int32_t type, int32_t level);                            // コンストラクタ
         ~C_BaseBomb() override;                                                                     // デストラクタ
         bool Update() override final;                                                               // 更新処理
         void Draw() override final;                                                                 // 描画処理
@@ -46,7 +46,9 @@ namespace ConnectWars
         virtual void CollisionProcess(C_BaseBullet* pBullet) override;                              // 弾との衝突時処理
         virtual void CollisionProcess(C_BaseObstacle* pObstacle) override;                          // 障害物との衝突時処理
         virtual void CollisionProcess(C_BaseBomb* pBomb) override;                                  // ボムとの衝突時処理
-        void SetLevel(int32_t level);                                                               // ボムのレベルを設定
+        void MoveLimitCheck() override{};                                                           // 移動制限を確認
+        virtual const Physics::Vector3& GetPosition() const override;                               // 座標を取得  
+        virtual void SetPosition(const Physics::Vector3& rPosition) override;                       // 座標を設定
     protected:
         std::unique_ptr<State::C_StateMachine<C_BaseBomb>> upStateMachine_;                         ///< @brief ステートマシーン
         std::unique_ptr<Physics::C_RigidBody> upRigidBody_;                                         ///< @brief 剛体

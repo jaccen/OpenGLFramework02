@@ -4,6 +4,7 @@
 #include "NormalGun.h"
 #include "PlayerGunFactory.h"
 #include "PlayerAdventMoveLogic.h"
+#include "EffectGenerator.h"
 #include "../../Library/Physics/Engine/PhysicsEngine.h"
 #include "../../Library/OpenGL/Manager/OpenGlManager.h"
 #include "../../Library/Shader/GLSL/Uniform/Manager/UniformBufferManager.h"
@@ -86,8 +87,6 @@ namespace ConnectWars
         // 移動のロジックを作成
         moveSpeedLevel_ = (*pPlayerData)["CreateData"]["MoveSpeedLevel"].GetValue<JSON::Integer>();
         moveSpeedUpInterval_ = static_cast<float>((*pPlayerData)["CreateData"]["MoveSpeedUpInterval"].GetValue<JSON::Real>());
-        // upMoveLogic_ = std::make_unique<C_RigidBodyInputMoveLogic>(static_cast<float>((*pPlayerData)["CreateData"]["Movement"].GetValue<JSON::Real>()), 1.0f);
-
         upMoveLogic_ = std::make_unique<C_PlayerAdventMoveLogic>();
 
         // 銃を作成
@@ -142,32 +141,41 @@ namespace ConnectWars
      ****************************************************************/
     void C_NormalPlayer::DoDraw()
     {
-        pGlslObject_->BeginWithUnifomBuffer(pUniformBuffer_->GetHandle(), uniformBlockIndex_);
-        pGlslObject_->BindActiveSubroutine(cameraSubroutineIndex_, Shader::GLSL::Type::s_VERTEX);
+        if (drawFlag_ == true)
+        {
+            pGlslObject_->BeginWithUnifomBuffer(pUniformBuffer_->GetHandle(), uniformBlockIndex_);
+            pGlslObject_->BindActiveSubroutine(cameraSubroutineIndex_, Shader::GLSL::Type::s_VERTEX);
 
-        upRigidBody_->GetTransform().getOpenGLMatrix(modelMatrix_.a_);
-        modelMatrix_ = modelMatrix_ * Matrix4x4::s_CreateScaling(Vector3(radius_));
-        pGlslObject_->SetUniformMatrix4x4("u_modelMatrix", modelMatrix_);
+            upRigidBody_->GetTransform().getOpenGLMatrix(modelMatrix_.a_);
+            modelMatrix_ = modelMatrix_ * Matrix4x4::s_CreateScaling(Vector3(radius_));
+            pGlslObject_->SetUniformMatrix4x4("u_modelMatrix", modelMatrix_);
 
-        // ライトとマテリアルを設定
-        SetLight(pMainLight_);
-        SetMaterial(pNowMaterial_);
+            // ライトとマテリアルを設定
+            SetLight(pMainLight_);
+            SetMaterial(pNowMaterial_);
 
-        auto pOpenGlManager = OpenGL::C_OpenGlManager::s_GetInstance();
-        auto pTextureManager = Texture::C_TextureManager::s_GetInstance();
+            auto pOpenGlManager = OpenGL::C_OpenGlManager::s_GetInstance();
+            auto pTextureManager = Texture::C_TextureManager::s_GetInstance();
 
-        // アクティブなテクスチャユニットを設定し、テクスチャをバインド
-        pTextureManager->SetActiveUnit(0);
-        pTextureManager->Bind(Texture::Type::s_2D, pModelTextureData_->handle_);
+            // アクティブなテクスチャユニットを設定し、テクスチャをバインド
+            pTextureManager->SetActiveUnit(0);
+            pTextureManager->Bind(Texture::Type::s_2D, pModelTextureData_->handle_);
 
-        pOpenGlManager->DrawPrimitiveWithIndices(OpenGL::Primitive::s_TRIANGLE,
-                                                 pModelData_->GetVertexArrayObjectHandle(), 
-                                                 pModelData_->GetIndexBufferObjectHandle(),
-                                                 OpenGL::DataType::s_UNSIGNED_SHORT,
-                                                 static_cast<int32_t>(pModelData_->GetIndexCount()));
+            pOpenGlManager->DrawPrimitiveWithIndices(OpenGL::Primitive::s_TRIANGLE,
+                                                     pModelData_->GetVertexArrayObjectHandle(), 
+                                                     pModelData_->GetIndexBufferObjectHandle(),
+                                                     OpenGL::DataType::s_UNSIGNED_SHORT,
+                                                     static_cast<int32_t>(pModelData_->GetIndexCount()));
 
-        pTextureManager->Unbind(Texture::Type::s_2D);
+            pTextureManager->Unbind(Texture::Type::s_2D);
 
-        pGlslObject_->End();
+            auto& rPosition = GetPosition();
+
+            // 噴射炎のエフェクトを作成
+            C_EffectGenerator::s_GetInstance()->Create(ID::Generator::Effect::s_pPLAYER_FLAREBACK,
+                                                       Vector3(rPosition.x(), rPosition.y() - 1.3f, rPosition.z()));
+
+            pGlslObject_->End();
+        }
     }
 }

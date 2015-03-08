@@ -22,6 +22,7 @@ namespace ConnectWars
         START,
         RANKING,
         CONFIG,
+        EXIT,
     };
 
 
@@ -221,13 +222,13 @@ namespace ConnectWars
         {
             if (isUpButtonFunction() == true)
             {
-                initialItemNumber_ += 2;
-                initialItemNumber_ %= 3;
+                initialItemNumber_ += 3;
+                initialItemNumber_ %= 4;
             }
             if (isDownButtonFunction() == true)
             {
                 ++initialItemNumber_;
-                initialItemNumber_ %= 3;
+                initialItemNumber_ %= 4;
             }
 
             if (isDecisionButtonFunction() == true)
@@ -252,12 +253,25 @@ namespace ConnectWars
                     configItemNumber_ = 0;
 
                     break;
+                case EXIT:
+
+                    GameObject::Message::C_MessageDispatcher::s_GetInstance()->Send(ID::GameObject::s_pUI, ID::GameObject::s_pSCENE_CONTROLLER, Message::s_pEXIT_GAME);
+                    updateLockFlag_ = true;
+
+                    break;
                 default:
 
                     StrongAssert(false && "[ C_TitleUi::DoUpdate ] : €–ÚŠO‚Å‚·B");
 
                     break;
                 }
+            }
+            else if (isUndecisionButtonFunction() == true)
+            {
+                initialItemNumber_ = 3;
+            }
+            else if (Input::C_KeyboardManager::s_GetInstance()->GetPressingCount(Input::KeyCode::SDL_SCANCODE_ESCAPE) == 1)
+            {
             }
         }
         else
@@ -506,6 +520,17 @@ namespace ConnectWars
         initialItems_[2].color_.blue_ = static_cast<float>((*pData)["Config"]["Color"][2].GetValue<JSON::Real>());
         initialItems_[2].color_.alpha_ = static_cast<float>((*pData)["Config"]["Color"][3].GetValue<JSON::Real>());
         initialItems_[2].wordOffset_ = static_cast<float>((*pData)["Config"]["WordOffset"].GetValue<JSON::Real>());
+
+        initialItems_[3].words_ = (*pData)["Exit"]["Words"].GetValue<JSON::String>();
+        initialItems_[3].position_.x_ = static_cast<float>((*pData)["Exit"]["Position"][0].GetValue<JSON::Real>());
+        initialItems_[3].position_.y_ = static_cast<float>((*pData)["Exit"]["Position"][1].GetValue<JSON::Real>());
+        initialItems_[3].size_.x_ = static_cast<float>((*pData)["Exit"]["Size"][0].GetValue<JSON::Real>());
+        initialItems_[3].size_.y_ = static_cast<float>((*pData)["Exit"]["Size"][1].GetValue<JSON::Real>());
+        initialItems_[3].color_.red_ = static_cast<float>((*pData)["Exit"]["Color"][0].GetValue<JSON::Real>());
+        initialItems_[3].color_.green_ = static_cast<float>((*pData)["Exit"]["Color"][1].GetValue<JSON::Real>());
+        initialItems_[3].color_.blue_ = static_cast<float>((*pData)["Exit"]["Color"][2].GetValue<JSON::Real>());
+        initialItems_[3].color_.alpha_ = static_cast<float>((*pData)["Exit"]["Color"][3].GetValue<JSON::Real>());
+        initialItems_[3].wordOffset_ = static_cast<float>((*pData)["Exit"]["WordOffset"].GetValue<JSON::Real>());
     }
 
 

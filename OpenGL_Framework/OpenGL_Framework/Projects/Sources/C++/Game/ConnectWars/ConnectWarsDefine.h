@@ -148,12 +148,15 @@ namespace ConnectWars
                 /* エフェクト */
                 namespace Effect
                 {
-                    const char* s_pNORMAL_BOMB_CHARGE = "NormalBombChargeEffect";                                                                   ///< @brief ボムチャージ
+                    const char* s_pNORMAL_BOMB_CHARGE = "NormalBombChargeEffect";                                                                   ///< @brief ノーマルボムチャージ
+                    const char* s_pNORMAL_BOMB = "NormalBombEffect";                                                                                ///< @brief ノーマルボム   
+                    const char* s_pOPTION_OWN_CRASH_01 = "OptionOwnCrash01Effect";                                                                  ///< @brief オプション自爆01
                     const char* s_pPLAYER_FLAREBACK = "PlayerFlaerBackEffect";                                                                      ///< @brief プレイヤーフレーヤーバック
                     const char* s_pCONNECT = "ConnectEffect";                                                                                       ///< @brief 連結エフェクト
-                    const char* s_pPLAYER_EXPLOSION = "PlayerExplosionEffect";                                                                      ///< @brief プレイヤー爆発エフェクト
-                    const char* ｓ_pPLAYER_BEAM_COLLISION = "PlayerBeamCollisionEffect";                                                            ///< @brief プレイヤービーム衝突エフェクト
-                    const char* ｓ_pOPTION_SMALL_BEAM_COLLISION = "OptionSmallBeamCollisionEffect";                                                 ///< @brief オプションスモールビーム衝突エフェクト
+                    const char* s_pPLAYER_EXPLOSION = "PlayerExplosionEffect";                                                                      ///< @brief プレイヤー爆発
+                    const char* s_pOPTION_EXPLOSION = "OptionExplosionEffect";                                                                      ///< @brief オプション爆発
+                    const char* s_pPLAYER_BEAM_COLLISION = "PlayerBeamCollisionEffect";                                                             ///< @brief プレイヤービーム衝突
+                    const char* s_pOPTION_SMALL_BEAM_COLLISION = "OptionSmallBeamCollisionEffect";                                                  ///< @brief オプションスモールビーム衝突
                 }
 
                 /* 背景 */
@@ -198,6 +201,7 @@ namespace ConnectWars
                 const char* s_pEFFECT = "Effect";                                                                                                   ///< @brief エフェクト
                 const char* s_pBACKGROUND = "Background";                                                                                           ///< @brief 背景
                 const char* s_pFADE = "Fade";                                                                                                       ///< @brief フェード
+                const char* s_pBOMB = "Bomb";                                                                                                       ///< @brief ボム
             }
 
 
@@ -366,10 +370,13 @@ namespace ConnectWars
             /* Lua */
             namespace Lua
             {
-                const char* s_pBOMB_CHARGE_EFFECT = "Projects/Sources/Lua/Effect/BombChargeEffect.lua";                                             ///< @brief ボムのチャージエフェクト
+                const char* s_pNORMAL_BOMB_CHARGE_EFFECT = "Projects/Sources/Lua/Effect/NormalBombChargeEffect.lua";                                ///< @brief ノーマルボムチャージエフェクト
+                const char* s_pNORMAL_BOMB_EFFECT = "Projects/Sources/Lua/Effect/NormalBombEffect.lua";                                             ///< @brief ノーマルボムエフェクト
+                const char* s_pOPTION_OWN_CRASH_EFFECT_01 = "Projects/Sources/Lua/Effect/OptionOwnCrashEffect01.lua";                               ///< @brief オプション自爆エフェクト01
                 const char* s_pPLAYER_FLAREBACK_EFFECT = "Projects/Sources/Lua/Effect/PlayerFlarebackEffect.lua";                                   ///< @brief プレイヤーフレーヤーバックエフェクト
                 const char* s_pCONNECT_EFFECT = "Projects/Sources/Lua/Effect/ConnectEffect.lua";                                                    ///< @brief 連結エフェクト
                 const char* s_pPLAYER_EXPLOSION_EFFECT = "Projects/Sources/Lua/Effect/PlayerExplosionEffect.lua";                                   ///< @brief プレイヤーの爆発エフェクト
+                const char* s_pOPTION_EXPLOSION_EFFECT = "Projects/Sources/Lua/Effect/OptionExplosionEffect.lua";                                   ///< @brief オプションの爆発エフェクト
                 const char* s_pPLAYER_BEAM_COLLISION_EFFECT = "Projects/Sources/Lua/Effect/PlayerBeamCollisionEffect.lua";                          ///< @brief プレイヤーのビーム衝突エフェクト  
                 const char* s_pOPTION_SMALL_BEAM_COLLISION_EFFECT = "Projects/Sources/Lua/Effect/OptionSmallBeamCollisionEffect.lua";               ///< @brief オプションのスモールビーム衝突エフェクト  
             }
@@ -397,7 +404,6 @@ namespace ConnectWars
         namespace Message
         {
             const char* s_pCONNECT_CHECK = "ConnectCheck";                                                                                          ///< @brief 連結確認
-            const char* s_pWAIT = "Wait";                                                                                                           ///< @brief 待機
             const char* s_pTO_TITLE_SCENE = "ToTitleScene";                                                                                         ///< @brief タイトルシーンへ変更
             const char* s_pTO_RANKING_SCENE = "ToRankingScene";                                                                                     ///< @brief ランキングシーンへ変更
             const char* s_pTO_GAME_01_SCENE = "ToGame01Scene";                                                                                      ///< @brief ゲーム01シーンへ変更
@@ -406,6 +412,8 @@ namespace ConnectWars
             const char* s_pTO_PAUSE = "ToPauseScene";                                                                                               ///< @brief ポーズシーンへ変更
             const char* s_pRESUME_GAME = "ResumeGame";                                                                                              ///< @brief ゲームを再開
             const char* s_pRESTART_GAME = "RestartGame";                                                                                            ///< @brief ゲームをリスタート
+            const char* s_pEXIT_GAME = "ExitGame";                                                                                                  ///< @brief ゲーム終了
+            const char* s_pOWN_CRASH = "OwnCrash";                                                                                                  ///< @brief 自爆
         }
 
 

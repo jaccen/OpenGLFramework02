@@ -1,7 +1,7 @@
 /* ヘッダファイル */
 #include "PlayerAdventState.h"
 #include "BasePlayer.h"
-#include "PlayerCombatState.h"
+#include "PlayerInvincibleState.h"
 
 
 //-------------------------------------------------------------
@@ -61,7 +61,7 @@ namespace ConnectWars
         if (pPlayer->IsFinishAdvent() == true)
         {
             pPlayer->ChangeMove(C_BasePlayer::INPUT);
-            pPlayer->GetStateMachine()->ChangeState(C_PlayerCombatState::s_GetInstance());
+            pPlayer->GetStateMachine()->ChangeState(C_PlayerInvincibleState::s_GetInstance());
         }
     }
 

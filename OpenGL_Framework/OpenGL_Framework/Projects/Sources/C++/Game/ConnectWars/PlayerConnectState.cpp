@@ -60,7 +60,7 @@ namespace ConnectWars
     void C_PlayerConnectState::Execute(C_BasePlayer* pPlayer)
     {
         // カウントアップ
-        frameCounter_.CountUp();
+        pPlayer->GetConnectFrameCounter()->CountUp();
 
         if (pPlayer->GetHitPoint()->CheckRemainValue() == false)
         {
@@ -72,15 +72,18 @@ namespace ConnectWars
             // ボムチャージ状態へ変更
             pPlayer->GetStateMachine()->ChangeState(C_PlayerBombChargeState::s_GetInstance());
         }
-        else if (pPlayer->IsInvincibleFlag() == true)
+        else if (pPlayer->GetConnectFrameCounter()->GetCount() >= pPlayer->GetConnectPetrifyFrame())
         {
-            // 無敵状態へ変更
-            pPlayer->GetStateMachine()->ChangeState(C_PlayerInvincibleState::s_GetInstance());
-        }
-        else if (frameCounter_.GetCount() >= pPlayer->GetConnectPetrifyFrame())
-        {
-            // 戦闘状態へ変更
-            pPlayer->GetStateMachine()->ChangeState(C_PlayerCombatState::s_GetInstance());
+            if (pPlayer->IsInvincibleFlag() == true)
+            {
+                // 無敵状態へ変更
+                pPlayer->GetStateMachine()->ChangeState(C_PlayerInvincibleState::s_GetInstance());
+            }
+            else
+            {
+                // 戦闘状態へ変更
+                pPlayer->GetStateMachine()->ChangeState(C_PlayerCombatState::s_GetInstance());
+            }
         }
 
         // 移動制限の確認
@@ -99,7 +102,7 @@ namespace ConnectWars
     void C_PlayerConnectState::Exit(C_BasePlayer* pPlayer)
     {
         // カウンターをリセット
-        frameCounter_.Reset();
+        pPlayer->GetConnectFrameCounter()->Reset();
     }
 
 

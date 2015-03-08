@@ -1,9 +1,6 @@
 /* ヘッダファイル */
 #include "PlayerBombChargeState.h"
 #include "BasePlayer.h"
-#include "PlayerInvincibleState.h"
-#include "EffectGenerator.h"
-#include "BombGenerator.h"
 
 
 //-------------------------------------------------------------
@@ -45,16 +42,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_PlayerBombChargeState::Enter(C_BasePlayer* pPlayer)
     {
-        if (pPlayer->IsBombChargeFlag() == false)
-        {
-            // 各フラグを設定
-            pPlayer->SetBombChargeFlag(true);
-            pPlayer->SetInvincibleFlag(true);
-
-            // チャージエフェクトを生成
-            C_EffectGenerator::s_GetInstance()->Create(pPlayer->GetBombChargeEffectId(), 
-                                                       Vector3(pPlayer->GetPosition().x(), pPlayer->GetPosition().y(), pPlayer->GetPosition().z()));
-        }
+        pPlayer->BombCharge();
     }
 
 
@@ -68,19 +56,12 @@ namespace ConnectWars
     void C_PlayerBombChargeState::Execute(C_BasePlayer* pPlayer)
     {
         // カウントアップ
-        frameCounter_.CountUp();
+        pPlayer->GetBombChargeFrameCounter()->CountUp();
 
-        if (frameCounter_.GetCount() >= pPlayer->GetBombChargeFrame())
+        if (pPlayer->GetBombChargeFrameCounter()->GetCount() >= pPlayer->GetBombChargeFrame())
         {
-            // 各フラグを設定
-            pPlayer->SetBombChargeFlag(false);
-            pPlayer->SetInvincibleFlag(false);
-
-            // 無敵状態に変更
-            pPlayer->GetStateMachine()->ChangeState(C_PlayerInvincibleState::s_GetInstance());
-
-            // ボムを生成
-            //C_BombGenerator::s_GetInstance()->Create(pPlayer->GetBombId(), pPlayer->GetPosition(), pPlayer->GetConnectOptionCount() / 5);
+            pPlayer->FireBomb();
+            
         }
     }
 
@@ -94,8 +75,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_PlayerBombChargeState::Exit(C_BasePlayer* pPlayer)
     {
-        // カウンターをリセット
-        frameCounter_.Reset();
+        pPlayer->GetBombChargeFrameCounter()->Reset();
     }
 
 
@@ -110,6 +90,11 @@ namespace ConnectWars
      ****************************************************************/
     bool C_PlayerBombChargeState::MessageProcess(C_BasePlayer* pPlayer, const Telegram& rTelegram)
     {
+        if (rTelegram.message_ == Message::s_pCONNECT_CHECK)
+        {
+            pPlayer->ConnectCheck();
+        }
+
         return true;
     }
 }

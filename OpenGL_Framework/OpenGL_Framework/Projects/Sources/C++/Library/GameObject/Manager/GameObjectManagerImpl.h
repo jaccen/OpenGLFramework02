@@ -2,7 +2,7 @@
 #include "GameObjectManager.h"
 #include "../GameObject.h"
 #include <unordered_map>
-
+#include <map>
 
 //-------------------------------------------------------------
 //!
@@ -31,7 +31,7 @@ namespace GameObject
         boost::optional<const GameObjectPtr&> FindGameObjectWithId(const std::string& rId);         // IDからゲームオブジェクトを検索
         GameObjectList FindGameObjectsWithType(int32_t type);                                       // 種類からゲームオブジェクトを検索
     private:
-        std::unordered_map<std::string, GameObjectPtr> pGameObjects_;                               // ゲームオブジェクト
+        std::map<std::string, GameObjectPtr> pGameObjects_;                               // ゲームオブジェクト
     };
 
 

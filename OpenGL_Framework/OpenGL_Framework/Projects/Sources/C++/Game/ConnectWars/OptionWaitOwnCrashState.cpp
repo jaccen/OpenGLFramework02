@@ -55,6 +55,7 @@ namespace ConnectWars
      ****************************************************************/
     void C_OptionWaitOwnCrashState::Execute(C_BaseOption* pOption)
     {
+        pOption->ResetConnect();
     }
 
 
@@ -81,6 +82,11 @@ namespace ConnectWars
      ****************************************************************/
     bool C_OptionWaitOwnCrashState::MessageProcess(C_BaseOption* pOption, const Telegram& rTelegram)
     {
+        if (rTelegram.message_ == Message::s_pOWN_CRASH)
+        {
+            pOption->OwnCrash();
+        }
+
         return true;
     }
 }

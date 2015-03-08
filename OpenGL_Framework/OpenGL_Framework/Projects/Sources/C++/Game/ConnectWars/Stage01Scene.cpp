@@ -8,7 +8,7 @@
 #include "SmallBeamOption.h"
 #include "PlayerBullet.h"
 #include "OptionBullet.h"
-#include "BombChargeEffect.h"
+#include "NormalBombChargeEffect.h"
 #include "BoxEnemy.h"
 #include "Space.h"
 #include "Shelter.h"
@@ -21,8 +21,12 @@
 #include "PlayerFlarebackEffect.h"
 #include "ConnectEffect.h"
 #include "PlayerExplosionEffect.h"
+#include "OptionExplosionEffect.h"
 #include "PlayerBeamCollisionEffect.h"
 #include "OptionSmallBeamCollisionEffect.h"
+#include "NormalBombEffect.h"
+#include "NormalBomb.h"
+#include "OptionOwnCrashEffect01.h"
 #include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
 #include "../../Library/Texture/Manager/TextureManager.h"
 #include "../../Library/Math/Define/MathDefine.h"
@@ -83,6 +87,9 @@ namespace ConnectWars
     {
         // 残りのロード処理
         if (RemainLoadProcess() == false) return Scene::ecSceneReturn::ERROR_TERMINATION;
+
+        // ジェネレータの設定
+        SetupGenerator();
 
         // ゲームコントローラを生成
         auto pGameController = std::make_shared<C_GameController>(ID::GameObject::s_pSCENE_CONTROLLER, TYPE_SCENE_CONTROLLER);
@@ -159,13 +166,12 @@ namespace ConnectWars
         }
 
 
+#endif
+
         if (Input::C_KeyboardManager::s_GetInstance()->GetPressingCount(Input::KeyCode::SDL_SCANCODE_E) == 1)
         {
-            effectGenerator_.Create(ID::Generator::Effect::ｓ_pOPTION_SMALL_BEAM_COLLISION, Vector3());
+            effectGenerator_.Create(ID::Generator::Effect::s_pOPTION_OWN_CRASH_01, Vector3());
         }
-
-
-#endif
 
         return Scene::ecSceneReturn::CONTINUATIOIN;
     }
@@ -494,6 +500,19 @@ namespace ConnectWars
             }
         }
 
+        return true;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ジェネレーターの設定を行う
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_Stage01Scene::SetupGenerator()
+    {
         // プレイヤーの生成機の設定
         playerGenerator_.SetTaskSystem(&taskSystem_);
 
@@ -516,12 +535,15 @@ namespace ConnectWars
 
         // エフェクト生成機の設定
         effectGenerator_.SetTaskSystem(&taskSystem_);
-        effectGenerator_.RegistFunction(ID::Generator::Effect::s_pNORMAL_BOMB_CHARGE, []()->C_BaseEffect*{ return newEx C_BombChargeEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
         effectGenerator_.RegistFunction(ID::Generator::Effect::s_pPLAYER_FLAREBACK, []()->C_BaseEffect*{ return newEx C_PlayerFlarebackEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
         effectGenerator_.RegistFunction(ID::Generator::Effect::s_pCONNECT, []()->C_BaseEffect*{ return newEx C_ConnectEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
         effectGenerator_.RegistFunction(ID::Generator::Effect::s_pPLAYER_EXPLOSION, []()->C_BaseEffect*{ return newEx C_PlayerExplosionEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
-        effectGenerator_.RegistFunction(ID::Generator::Effect::ｓ_pPLAYER_BEAM_COLLISION, []()->C_BaseEffect*{ return newEx C_PlayerBeamCollisionEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
-        effectGenerator_.RegistFunction(ID::Generator::Effect::ｓ_pOPTION_SMALL_BEAM_COLLISION, []()->C_BaseEffect*{ return newEx C_OptionSmallBeamCollisionEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
+        effectGenerator_.RegistFunction(ID::Generator::Effect::s_pPLAYER_BEAM_COLLISION, []()->C_BaseEffect*{ return newEx C_PlayerBeamCollisionEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
+        effectGenerator_.RegistFunction(ID::Generator::Effect::s_pOPTION_SMALL_BEAM_COLLISION, []()->C_BaseEffect*{ return newEx C_OptionSmallBeamCollisionEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
+        effectGenerator_.RegistFunction(ID::Generator::Effect::s_pNORMAL_BOMB_CHARGE, []()->C_BaseEffect*{ return newEx C_NormalBombChargeEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
+        effectGenerator_.RegistFunction(ID::Generator::Effect::s_pNORMAL_BOMB, []()->C_BaseEffect*{ return newEx C_NormalBombEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
+        effectGenerator_.RegistFunction(ID::Generator::Effect::s_pOPTION_OWN_CRASH_01, []()->C_BaseEffect*{ return newEx C_OptionOwnCrashEffect01(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
+        effectGenerator_.RegistFunction(ID::Generator::Effect::s_pOPTION_EXPLOSION, []()->C_BaseEffect*{ return newEx C_OptionExplosionEffect(ID::GameObject::s_pEFFECT, TYPE_EFFECT); });
 
         // 背景生成機の設定
         backgroundGenerator_.SetTaskSystem(&taskSystem_);
@@ -531,13 +553,15 @@ namespace ConnectWars
         backgroundGenerator_.RegistFunction(ID::Generator::Background::s_pEARTH, []()->C_BaseBackground*{ return newEx C_Earth(ID::GameObject::s_pBACKGROUND, TYPE_BACKGROUND); });
         backgroundGenerator_.RegistFunction(ID::Generator::Background::s_pBACKGROUND_METEOR, []()->C_BaseBackground*{ return newEx C_BackgroundMeteor(ID::GameObject::s_pBACKGROUND, TYPE_BACKGROUND); });
 
+        // ボム生成機の設定
+        bombGenerator_.SetTaskSystem(&taskSystem_);
+        bombGenerator_.RegistFunction(ID::Generator::Bomb::s_pNORMAL, [](int32_t level)->C_BaseBomb*{ return newEx C_NormalBomb(ID::GameObject::s_pBOMB, TYPE_BOMB, level); });
+
+        // 背景生成機の設定
         assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_BACKGROUND_DATA));
         auto pBackgroundData = JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_BACKGROUND_DATA).get();
         
         backgroundGenerator_.SetBackgroundData(&(*pBackgroundData)["Stage01BackgroundData"]);
         backgroundGenerator_.SetAutoCreateMaxCount((*pBackgroundData)["DataCount"].GetValue<JSON::Integer>());
-
-
-        return true;
     }
 }

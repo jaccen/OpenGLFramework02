@@ -5,8 +5,10 @@
 #include "OptionDropState.h"
 #include "OptionConnectState.h"
 #include "OptionWaitOwnCrashState.h"
+#include "OptionOwnCrashState.h"
 #include "BaseGun.h"
 #include "RigidBodyConnectMoveLogic.h"
+#include "EffectGenerator.h"
 
 
 //-------------------------------------------------------------
@@ -44,7 +46,10 @@ namespace ConnectWars
     C_BaseOption::~C_BaseOption()
     {
         // 連結していた場合は連結されているオプションの数を1減らす
-        if (onceConnectFlag_ == true) pPlayer_->AddConnectOptionCount(-1);
+        if (onceConnectFlag_ == true)
+        {
+            if (pPlayer_) pPlayer_->AddConnectOptionCount(-1);
+        }
     }
 
 
@@ -80,7 +85,12 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseOption::Draw()
     {
-        DoDraw();
+        if (pPlayer_ == nullptr 
+         || waitOwnCrashFlag_ == true
+         || pPlayer_->IsDrawFlag() == true)
+        {
+            DoDraw();
+        }
     }
 
 
@@ -268,6 +278,11 @@ namespace ConnectWars
         // 連結状態へ変更
         upStateMachine_->ChangeState(C_OptionConnectState::s_GetInstance());
 
+        C_EffectGenerator::s_GetInstance()->Create(ID::Generator::Effect::s_pCONNECT,
+                                                   Vector3(upRigidBody_->GetTransform().getOrigin().x(),
+                                                           upRigidBody_->GetTransform().getOrigin().y(),
+                                                           upRigidBody_->GetTransform().getOrigin().z()));
+
         // 剛体に加えられている力をリセット
         upRigidBody_->EnableActive(true);
         upRigidBody_->SetLinearVelocity();
@@ -289,12 +304,10 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseOption::MoveLimitCheck()
     {
-        /*
-        if (position_.y_ < GameDefine::StageSize::s_BORDER_BOTTOM - 5.0f)
+        if (upRigidBody_->GetTransform().getOrigin().y() < StageSize::s_bottom - 10.0f)
         {
             existenceFlag_ = false;
         }
-        */
     }
 
 
@@ -322,8 +335,15 @@ namespace ConnectWars
     {
         if (upStateMachine_->CheckCurrentState(C_OptionWaitOwnCrashState::s_GetInstance()) == false)
         {
-            ResetConnect();
             upStateMachine_->ChangeState(C_OptionWaitOwnCrashState::s_GetInstance());
+            waitOwnCrashFlag_ = true;
+
+            for (auto& prOption : pConnectOptionList_)
+            {
+                prOption->DispatchOwnCrash();
+            }
+
+            ResetConnect();
         }
     }
 
@@ -337,7 +357,30 @@ namespace ConnectWars
      ****************************************************************/
     void C_BaseOption::OwnCrash()
     {
-        //upStateMachine_->ChangeState(C_OptionSelfCrashState::s_GetInstance());
+        upStateMachine_->ChangeState(C_OptionOwnCrashState::s_GetInstance());
+
+        // エフェクトを生成
+        auto& rPosition = GetPosition();
+        C_EffectGenerator::s_GetInstance()->Create(GetBombOwnCrashEffectId(),
+                                                   Vector3(rPosition.x(), rPosition.y(), rPosition.z()));
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  連結の無効化をする
+     *  @param  なし
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseOption::DisableConnect()
+    {
+        if (enableConnectFlag_ == true)
+        {
+            enableConnectFlag_ = false;
+
+            for (auto& prOption : pConnectOptionList_) prOption->DisableConnect();
+        }
     }
 
 
@@ -439,12 +482,9 @@ namespace ConnectWars
      *  @return ボムの自爆エフェクトのID
      *
      ****************************************************************/
-    const std::string& C_BaseOption::GetBombSelfCrashEffectId() const
+    const std::string& C_BaseOption::GetBombOwnCrashEffectId() const
     {
-        // TODO TODO TODO
-        //return bombSelfCrashEffectId_;
-        static std::string s;
-        return s;
+        return bombOwnCrashEffectId_;
     }
 
 
@@ -510,6 +550,45 @@ namespace ConnectWars
     void C_BaseOption::SetDefeatedFlag(bool defeatedFlag)
     {
         defeatedFlag_ = defeatedFlag;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  撃破フラグを設定する
+     *  @param  撃破フラグ
+     *  @return なし
+     *
+     ****************************************************************/
+    bool C_BaseOption::IsWaitOwnCrashFlag() const
+    {
+        return waitOwnCrashFlag_;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  撃破フラグを設定する
+     *  @param  撃破フラグ
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseOption::SetWaitOwnCrashFlag(bool waitOwnCrashFlag)
+    {
+        waitOwnCrashFlag_ = waitOwnCrashFlag;
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  自爆フレームカウンタを取得する
+     *  @param  なし
+     *  @return 自爆フレームカウンタ
+     *
+     ****************************************************************/
+    Timer::C_FrameCounter* C_BaseOption::GetOwnCrashFrameCounter()
+    {
+        return &ownCrashFrameCounter_;
     }
 
 
