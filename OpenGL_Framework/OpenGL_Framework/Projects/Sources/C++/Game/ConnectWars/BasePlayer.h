@@ -26,6 +26,7 @@ namespace ConnectWars
     class C_BaseBullet;
     class C_BaseObstacle;
     class C_BaseBomb;
+    class C_BaseShield;
     class C_BaseGun;
 
 
@@ -70,6 +71,7 @@ namespace ConnectWars
         virtual void CollisionProcess(C_BaseBullet* pBullet) override;                                  // 弾との衝突時処理
         virtual void CollisionProcess(C_BaseObstacle* pObstacle) override;                              // 障害物との衝突時処理
         virtual void CollisionProcess(C_BaseBomb* pBomb) override;                                      // ボムとの衝突時処理
+        virtual void CollisionProcess(C_BaseShield* pShield) override;                                  // シールドとの衝突時処理
         virtual void Move() override;                                                                   // 移動処理
         virtual void Shot() override;                                                                   // 射撃処理
         virtual void Bomb();                                                                            // ボム処理
@@ -113,6 +115,7 @@ namespace ConnectWars
         int32_t moveSpeedLevel_ = 0;                                                                    ///< @brief 移動スピードのレベル
         float moveSpeedUpInterval_ = 0.3f;                                                              ///< @brief 移動スピードのアップ間隔
         int32_t connectOptionCount_ = 0;                                                                ///< @brief オプション数
+        int32_t previousConnectOptionCount_ = 0;                                                        ///< @brief 前のオプションの数
         bool bombChargeFlag_ = false;                                                                   ///< @brief ボムのチャージフラグ
         Collision::S_Aabb2D<float> moveLimitBoundingBox_;                                               ///< @brief 移動制限境界ボックス
         Input::KeyCode bombKeyCode_ = Input::KeyCode::SDL_SCANCODE_X;                                   ///< @brief ボムのキーコード

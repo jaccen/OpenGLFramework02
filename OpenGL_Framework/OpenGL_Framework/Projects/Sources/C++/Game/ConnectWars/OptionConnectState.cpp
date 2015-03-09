@@ -45,6 +45,18 @@ namespace ConnectWars
      ****************************************************************/
     void C_OptionConnectState::Enter(C_BaseOption* pOption)
     {
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  実行処理を行う
+     *  @param  オプション
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_OptionConnectState::Execute(C_BaseOption* pOption)
+    {
         if (auto pPlayer = pOption->GetPlayer())
         {
             if (pPlayer->IsBombChargeFlag() == true)
@@ -58,18 +70,6 @@ namespace ConnectWars
                 pOption->GetStateMachine()->ChangeState(C_OptionCombatState::s_GetInstance());
             }
         }
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  実行処理を行う
-     *  @param  オプション
-     *  @return なし
-     *
-     ****************************************************************/
-    void C_OptionConnectState::Execute(C_BaseOption* pOption)
-    {
     }
 
 

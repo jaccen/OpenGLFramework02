@@ -1,6 +1,6 @@
 /* ヘッダファイル */
-#include "EnemyGenerator.h"
-#include "BaseEnemy.h"
+#include "ShieldGenerator.h"
+#include "BaseShield.h"
 #include "../../Library/Task/System/General/GeneralTaskSystem.h"
 
 
@@ -18,7 +18,7 @@ namespace ConnectWars
      *  @param  なし
      *
      ****************************************************************/
-    C_EnemyGenerator::C_EnemyGenerator()
+    C_ShieldGenerator::C_ShieldGenerator()
     {
     }
 
@@ -29,7 +29,7 @@ namespace ConnectWars
      *  @param  なし
      *
      ****************************************************************/
-    C_EnemyGenerator::~C_EnemyGenerator()
+    C_ShieldGenerator::~C_ShieldGenerator()
     {
     }
 
@@ -38,23 +38,29 @@ namespace ConnectWars
      *
      *  @brief  生成処理を行う
      *  @param  ID
-     *  @return 敵
+     *  @param  座標
+     *  @param  射撃者の種類
+     *  @return シールド
      *
      ****************************************************************/
-    EnemyPtr C_EnemyGenerator::Create(const std::string& rId)
+    ShieldPtr C_ShieldGenerator::Create(const std::string& rId,
+                                        const Physics::Vector3& rPosition,
+                                        int32_t shooterType,
+                                        C_CollisionObject* pTarget)
     {
-        // 敵を生成
-        EnemyPtr pEnemy(pCreateFunctions_.at(rId)());
+        // シールドを生成
+        ShieldPtr pShield(pCreateFunctions_.at(rId)(shooterType, pTarget));
 
         // 各設定を行う
-        pEnemy->SetCreateDataWithJson(&(*pEnemyData_)["EnemyData"][0]);
-        pEnemy->AddStringToId(std::to_string(number));
+        pShield->SetPosition(rPosition);
+        pShield->AddStringToId(std::to_string(number));
 
         // タスクシステムに登録
-        pTaskSystem_->Entry(pEnemy, Priority::Task::Update::s_enemy, Priority::Task::Draw::s_enemy);
+        pTaskSystem_->Entry(pShield, Priority::Task::Update::s_shield, Priority::Task::Draw::s_shield);
+
         ++number;
 
-        return pEnemy;
+        return pShield;
     }
 
 
@@ -66,7 +72,7 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_EnemyGenerator::RegistFunction( const std::string& rId, CreateFunction pCreateFunction)
+    void C_ShieldGenerator::RegistFunction( const std::string& rId, CreateFunction pCreateFunction)
     {
         pCreateFunctions_.emplace(rId, pCreateFunction);
     }
@@ -79,21 +85,8 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_EnemyGenerator::SetTaskSystem(Task::C_GeneralTaskSystem* pTaskSystem)
+    void C_ShieldGenerator::SetTaskSystem(Task::C_GeneralTaskSystem* pTaskSystem)
     {
         pTaskSystem_ = pTaskSystem;
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  敵データを設定する
-     *  @param  敵データ
-     *  @return なし
-     *
-     ****************************************************************/
-    void C_EnemyGenerator::SetEnemyData(const JSON::JsonObjectPtr& prEnemyData)
-    {
-        pEnemyData_ = prEnemyData;
     }
 }

@@ -30,6 +30,7 @@ namespace ConnectWars
     class C_BaseBullet;
     class C_BaseObstacle;
     class C_BaseBomb;
+    class C_BaseShield;
 
 
     //-------------------------------------------------------------
@@ -52,6 +53,7 @@ namespace ConnectWars
             FILTER_TYPE_ENEMY_BULLET = ShiftBit(4),                                         ///< @brief 敵の弾
             FILTER_TYPE_OBSTACLE = ShiftBit(5),                                             ///< @brief 障害物
             FILTER_TYPE_BOMB = ShiftBit(6),                                                 ///< @brief ボム
+            FILTER_TYPE_SHIELD = ShiftBit(7),                                               ///< @brief シールド
         };
 
 
@@ -67,6 +69,7 @@ namespace ConnectWars
         virtual void CollisionProcess(C_BaseBullet* pBullet) = 0;                           // 弾との衝突時処理
         virtual void CollisionProcess(C_BaseObstacle* pObstacle) = 0;                       // 障害物との衝突時処理
         virtual void CollisionProcess(C_BaseBomb* pBomb) = 0;                               // ボムとの衝突時処理
+        virtual void CollisionProcess(C_BaseShield* pShield) = 0;                           // シールドとの衝突時処理
         virtual void MoveLimitCheck() = 0;                                                  // 移動制限を確認
         bool CheckCollidedObjectId(const std::string& rId);                                 // 衝突したオブジェクトのIDが存在するか確認
         void EntryCollidedObjectId(const std::string& rId);                                 // 衝突したオブジェクトのIDを登録

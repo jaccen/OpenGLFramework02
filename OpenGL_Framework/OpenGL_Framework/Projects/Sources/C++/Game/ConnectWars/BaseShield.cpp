@@ -1,5 +1,5 @@
 /* ヘッダファイル */
-#include "BaseBullet.h"
+#include "BaseShield.h"
 #include "CollisionProcess.h"
 #include "BulletFireState.h"
 
@@ -17,18 +17,15 @@ namespace ConnectWars
      *  @brief  コンストラクタ
      *  @param  ID
      *  @param  種類
+     *  @param  射撃者の種類
+     *  @param  ターゲット
      *
      ****************************************************************/
-    C_BaseBullet::C_BaseBullet(const std::string& rId, int32_t type) : C_CollisionObject(rId, type),
-
-        // ステートマシーン
-        upStateMachine_(std::make_unique<State::C_StateMachine<C_BaseBullet>>(this))
-
+    C_BaseShield::C_BaseShield(const std::string& rId,
+                               int32_t type,  
+                               int32_t shooterType,
+                               C_CollisionObject* pTarget) : C_CollisionObject(rId, type)
     {
-		upStateMachine_->SetCurrentState(C_BulletFireState::s_GetInstance());
-
-        // パワーを生成
-        upPower_ = std::make_unique<C_BasePower>();
     }
 
 
@@ -38,7 +35,7 @@ namespace ConnectWars
      *  @param  なし
      *
      ****************************************************************/
-    C_BaseBullet::~C_BaseBullet()
+    C_BaseShield::~C_BaseShield()
     {
     }
 
@@ -51,11 +48,8 @@ namespace ConnectWars
      *  @return タスク終了：false
      *
      ****************************************************************/
-    bool C_BaseBullet::Update()
+    bool C_BaseShield::Update()
     {
-        // 常にアクティブ化をする
-        upRigidBody_->EnableActive(true);
-
         // 非公開の更新処理
         DoUpdate();
 
@@ -73,7 +67,7 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseBullet::Draw()
+    void C_BaseShield::Draw()
     {
         DoDraw();
     }
@@ -87,7 +81,7 @@ namespace ConnectWars
      *  @return 異常終了：false
      *
      ****************************************************************/
-    bool C_BaseBullet::MessageProcess(const Telegram& rTelegram)
+    bool C_BaseShield::MessageProcess(const Telegram& rTelegram)
     {
         if (DoMessageProcess(rTelegram) == false) return false;
 
@@ -102,7 +96,7 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseBullet::DispatchCollision(C_CollisionObject* pCollisionObject)
+    void C_BaseShield::DispatchCollision(C_CollisionObject* pCollisionObject)
     {
         pCollisionObject->CollisionProcess(this);
     }
@@ -115,9 +109,9 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseBullet::CollisionProcess(C_BasePlayer* pPlayer)
+    void C_BaseShield::CollisionProcess(C_BasePlayer* pPlayer)
     {
-        C_CollisionProcess::s_PlayerAndBullet(pPlayer, this);
+        C_CollisionProcess::s_PlayerAndShield(pPlayer, this);
     }
 
 
@@ -128,9 +122,9 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseBullet::CollisionProcess(C_BaseOption* pOption)
+    void C_BaseShield::CollisionProcess(C_BaseOption* pOption)
     {
-        C_CollisionProcess::s_OptionAndBullet(pOption, this);
+        C_CollisionProcess::s_OptionAndShield(pOption, this);
     }
 
 
@@ -141,9 +135,9 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseBullet::CollisionProcess(C_BaseEnemy* pEnemy)
+    void C_BaseShield::CollisionProcess(C_BaseEnemy* pEnemy)
     {
-        C_CollisionProcess::s_EnemyAndBullet(pEnemy, this);
+        C_CollisionProcess::s_EnemyAndShield(pEnemy, this);
     }
 
 
@@ -154,9 +148,9 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseBullet::CollisionProcess(C_BaseBullet* pBullet)
+    void C_BaseShield::CollisionProcess(C_BaseBullet* pBullet)
     {
-        C_CollisionProcess::s_BulletAndBullet(this, pBullet);
+        C_CollisionProcess::s_BulletAndShield(pBullet, this);
     }
 
 
@@ -167,9 +161,9 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseBullet::CollisionProcess(C_BaseObstacle* pObstacle)
+    void C_BaseShield::CollisionProcess(C_BaseObstacle* pObstacle)
     {
-        C_CollisionProcess::s_BulletAndObstale(this, pObstacle);
+        C_CollisionProcess::s_ObstacleAndShield(pObstacle, this);
     }
 
 
@@ -180,9 +174,9 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseBullet::CollisionProcess(C_BaseBomb* pBomb)
+    void C_BaseShield::CollisionProcess(C_BaseBomb* pBomb)
     {
-        C_CollisionProcess::s_BulletAndBomb(this, pBomb);
+        C_CollisionProcess::s_BombAndShield(pBomb, this);
     }
 
 
@@ -193,9 +187,9 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseBullet::CollisionProcess(C_BaseShield* pShield)
+    void C_BaseShield::CollisionProcess(C_BaseShield* pShield)
     {
-        C_CollisionProcess::s_BulletAndShield(this, pShield);
+        C_CollisionProcess::s_ShieldAndShield(this, pShield);
     }
 
 
@@ -206,57 +200,9 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseBullet::Move()
+    void C_BaseShield::Move()
     {
         upMoveLogic_->Process(upRigidBody_.get());
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  移動制限の確認を行う
-     *  @param  なし
-     *  @return なし
-     *
-     ****************************************************************/
-    void C_BaseBullet::MoveLimitCheck()
-    {
-        auto transform = upRigidBody_->GetTransform();
-        auto& rPosition = transform.getOrigin();
-
-        if (rPosition.x() < StageSize::s_left
-         || rPosition.x() > StageSize::s_right
-         || rPosition.y() < StageSize::s_bottom
-         || rPosition.y() > StageSize::s_top)
-        {
-            existenceFlag_ = false;
-        }
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  射撃者の種類を取得する
-     *  @param  なし
-     *  @return 射撃者の種類
-     *
-     ****************************************************************/
-    int32_t C_BaseBullet::GetShooterType() const
-    {
-        return shooterType_;
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  ステートマシーンを取得する
-     *  @param  なし
-     *  @return ステートマシーン
-     *
-     ****************************************************************/
-    State::C_StateMachine<C_BaseBullet>* C_BaseBullet::GetStateMachine() const
-    {
-        return upStateMachine_.get();
     }
 
 
@@ -267,35 +213,9 @@ namespace ConnectWars
      *  @return 座標
      *
      ****************************************************************/
-    const Physics::Vector3& C_BaseBullet::GetPosition() const
+    const Physics::Vector3& C_BaseShield::GetPosition() const
     {
         return upRigidBody_->GetTransform().getOrigin();
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  射撃者の種類を設定する
-     *  @param  射撃者の種類
-     *  @return なし
-     *
-     ****************************************************************/
-    void C_BaseBullet::SetShooterType(int32_t shooterType)
-    {
-        shooterType_ = shooterType;
-    }
-
-
-    /*************************************************************//**
-     *
-     *  @brief  移動のロジックを設定する
-     *  @param  移動のロジック
-     *  @return なし
-     *
-     ****************************************************************/
-    void C_BaseBullet::SetMoveLogic(C_RigidBodyMoveLogic* pMoveLogic)
-    {
-        upMoveLogic_.reset(pMoveLogic);
     }
 
 
@@ -306,7 +226,7 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseBullet::SetPosition(const Physics::Vector3& rPosition)
+    void C_BaseShield::SetPosition(const Physics::Vector3& rPosition)
     {
         auto transform = upRigidBody_->GetTransform();
         transform.setOrigin(rPosition);
@@ -321,9 +241,9 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_BaseBullet::DoUpdate()
+    void C_BaseShield::DoUpdate()
     {
-        upStateMachine_->Update();
+        Move();
     }
 
 
@@ -335,10 +255,8 @@ namespace ConnectWars
      *  @return 異常終了：false
      *
      ****************************************************************/
-    bool C_BaseBullet::DoMessageProcess(const Telegram& rTelegram)
+    bool C_BaseShield::DoMessageProcess(const Telegram& rTelegram)
     {
-        if (upStateMachine_->MessageProcess(rTelegram) == false) return false;
-
         return true;
     }
 }

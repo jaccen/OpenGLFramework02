@@ -87,7 +87,15 @@ namespace ConnectWars
                 const char* s_pNORMAL_PLAYER = "NormalPlayerPrimitive";                                                                             ///< @brief 通常プレイヤー
                 const char* s_pSPEED_UP_OPTION = "SpeedUpOptionPrimitive";                                                                          ///< @brief スピードアップオプション
                 const char* s_pSMALL_BEAM_OPTION = "SmallBeamOptionPrimitive";                                                                      ///< @brief スモールビームオプション
+                const char* s_pSHIELD_OPTION = "ShieldOptionPrimitive";                                                                             ///< @brief シールドオプション
+                const char* s_pLASER_OPTION = "LaserOptionPrimitive";                                                                               ///< @brief レーザーオプション
                 const char* s_pBOX_ENEMY = "BoxEnemyPrimitive";                                                                                     ///< @brief ボックスエネミー
+                const char* s_pSLIME_ENEMY = "SlimeEnemyPrimitive";                                                                                 ///< @brief スライムエネミー
+                const char* s_pROUND_ENEMY = "RoundEnemyPrimitive";                                                                                 ///< @brief ラウンドエネミー
+                const char* s_pGROUP_SHIP_ENEMY = "GroupShipEnemyPrimitive";                                                                        ///< @brief グループシップエネミー
+                const char* s_pPYRAMID_ENEMY = "PyramidEnemyPrimitive";                                                                             ///< @brief ピラミッドエネミー
+                const char* s_pPHALANX_CORE = "PhalanxCoreyPrimitive";                                                                              ///< @brief ファランクス( コア )
+                const char* s_pPHALANX_RING = "PhalanxRingPrimitive";                                                                               ///< @brief ファランクス( リング )
                 const char* s_pSPACE = "SpacePrimitive";                                                                                            ///< @brief 宇宙
                 const char* s_pSHELTER = "ShelterPrimitive";                                                                                        ///< @brief シェルター
                 const char* s_pEXIT_RING = "ExitRingPrimitive";                                                                                     ///< @brief エグジットリング
@@ -120,6 +128,8 @@ namespace ConnectWars
                 {
                     const char* s_pSPEED_UP = "SpeedUpOption";                                                                                      ///< @brief スピードアップオプション
                     const char* s_pSMALL_BEAM = "SmallBeamOption";                                                                                  ///< @brief スモールビームオプション
+                    const char* s_pSHIELD = "ShieldOption";                                                                                         ///< @brief シールドオプション
+                    const char* s_pLASER = "LaserOption";                                                                                           ///< @brief レーザー
                 }
 
                 /* 敵 */
@@ -174,6 +184,12 @@ namespace ConnectWars
                 {
                     const char* s_pNORMAL = "NormalBomb";                                                                                           ///< @brief ノーマル
                 }
+
+                /* シールド */
+                namespace Shield
+                {
+                    const char* s_pNORMAL = "NormalShield";                                                                                         ///< @brief ノーマル
+                }
             }
 
             /* シーン */
@@ -202,6 +218,7 @@ namespace ConnectWars
                 const char* s_pBACKGROUND = "Background";                                                                                           ///< @brief 背景
                 const char* s_pFADE = "Fade";                                                                                                       ///< @brief フェード
                 const char* s_pBOMB = "Bomb";                                                                                                       ///< @brief ボム
+                const char* s_pSHIELD = "Shield";                                                                                                   ///< @brief シールド
             }
 
 
@@ -223,6 +240,7 @@ namespace ConnectWars
                 const char* s_pRANKING_DATA = "RankingData";                                                                                        ///< @brief ランキングデータ
                 const char* s_pPAUSE_UI_DATA = "PauseUiDataJson";                                                                                   ///< @brief ポーズUIデータ
                 const char* s_pSTAGE_01_BACKGROUND_DATA = "Stage01BackgroundDataJson";                                                              ///< @brief ステージ01背景データ
+                const char* s_pSHIELD_DATA = "ShieldDataJson";                                                                                      ///< @brief シールドデータ
             }
 
             /* モデル */
@@ -231,7 +249,15 @@ namespace ConnectWars
                 const char* s_pNORMAL_PLAYER = "NormalPlayerModel";                                                                                 ///< @brief 通常プレイヤー
                 const char* s_pSPPED_UP_OPTION = "SpeedUpOptionModel";                                                                              ///< @brief スピードアップオプション
                 const char* s_pSMALL_BEAM_OPTION = "SmallBeamOptionModel";                                                                          ///< @brief スモールビームオプション
+                const char* s_pSHIELD_OPTION = "ShieldOption";                                                                                      ///< @brief シールドオプション
+                const char* s_pLASER_OPTION = "LaserOption";                                                                                        ///< @brief レーザーオプション
                 const char* s_pBOX_ENEMY = "BoxEnemyModel";                                                                                         ///< @brief ボックスエネミー
+                const char* s_pSLIME_ENEMY = "SlimeEnemyModel";                                                                                     ///< @brief スライムエネミー
+                const char* s_pROUND_ENEMY = "RoundEnemyModel";                                                                                     ///< @brief ラウンドエネミー
+                const char* s_pPYRAMID_ENEMY = "PyramidEnemyModel";                                                                                 ///< @brief ピラミッドエネミー
+                const char* s_pGROUP_SHIP_ENEMY = "GroupShipEnemyModel";                                                                            ///< @brief グループシップエネミー
+                const char* s_pPHALANX_CORE = "PhalanxCoreModel";                                                                                   ///< @brief ファランクス( コア )
+                const char* s_pPHALANX_RING = "PhalanxRingModel";                                                                                   ///< @brief ファランクス( リング )
                 const char* s_pSPACE = "SpaceModel";                                                                                                ///< @brief 宇宙
                 const char* s_pSHELTER = "ShelterModel";                                                                                            ///< @brief シェルター
                 const char* s_pEXIT_RING = "ExitRingModel";                                                                                         ///< @brief エグジットリング
@@ -250,6 +276,7 @@ namespace ConnectWars
                 const char* s_pRANKING_BACKGROUND = "RankingBackgroundSprite";                                                                      ///< @brief ランキング背景
                 const char* s_pPAUSE_BACKGROUND = "PauseBackgroundSprite";                                                                          ///< @brief ポーズ背景
                 const char* s_pGAME_UI = "GameUiSprite";                                                                                            ///< @brief ゲームUI
+                const char* s_pSHIELD = "ShieldSprite";                                                                                             ///< @brief シールド
             }
 
             /* パーティクル */
@@ -320,6 +347,11 @@ namespace ConnectWars
                 const char* s_pROCK_NORMAL = "Projects/Images/ConnectWars/Obstacle/RockNormalMap.png";                                              ///< @brief 岩( 法線マップ )
                 const char* s_pGAME_UI = "Projects/Images/ConnectWars/UI/GameUI.png";                                                               ///< @brief ゲームUI
                 const char* s_pSMOKE_01 = "Projects/Images/ConnectWars/Effect/Smoke01.png";                                                         ///< @brief 煙01
+                const char* s_pSPRITE_SHIELD = "Projects/Images/ConnectWars/Shield/SpriteShield.png";                                               ///< @brief スプライトのシールド
+                const char* s_pROUND_ENEMY = "Projects/Images/ConnectWars/Enemy/Round.png";                                                         ///< @brief ラウンドエネミー
+                const char* s_pGROUD_SHIP_ENEMY = "Projects/Images/ConnectWars/Enemy/GroupShip.png";                                                ///< @brief グループシップエネミー
+                const char* s_pPHALANX_CORE = "Projects/Images/ConnectWars/Enemy/Core.png";                                                         ///< @brief ファランクス( コア )
+                const char* s_pPHALANX_RING = "Projects/Images/ConnectWars/Enemy/Ring.png";                                                         ///< @brief ファランクス( リング )
             }
 
             /* フォント */
@@ -335,12 +367,21 @@ namespace ConnectWars
                 const char* s_pNORMAL_PLAYER = "Projects/Models/ConnectWars/Player/Normal/NormalPlayer.model";                                      ///< @brief 通常プレイヤー
                 const char* s_pSPEED_UP_OPTION = "Projects/Models/ConnectWars/Option/SpeedUp/SpeedUpOption.model";                                  ///< @brief スピードアップオプション
                 const char* s_pSMALL_BEAM_OPTION = "Projects/Models/ConnectWars/Option/SmallBeam/SmallBeamOption.model";                            ///< @brief スモールビームオプション
-                const char* s_pBOX_ENEMY = "Projects/Models/Test/Box/Box.model";                                                                    ///< @brief ボックスエネミー
+                const char* s_pSHIELD_OPTION = "Projects/Models/ConnectWars/Option/Shield/ShieldOption.model";                                      ///< @brief シールドオプション
+                const char* s_pLASER_OPTION = "Projects/Models/ConnectWars/Option/Laser/LaserOption.model";                                         ///< @brief レーザーオプション
+                const char* s_pBOX_ENEMY = "Projects/Models/ConnectWars/Enemy/Box/Box.model";                                                       ///< @brief ボックスエネミー
+                const char* s_pSLIME_ENEMY = "Projects/Models/ConnectWars/Enemy/Slime/Sphere.model";                                                ///< @brief スライムエネミー
+                const char* s_pROUND_ENEMY = "Projects/Models/ConnectWars/Enemy/Round/RoundEnemy.model";                                            ///< @brief ラウンドエネミー
+                const char* s_pPYRAMID_ENEMY = "Projects/Models/ConnectWars/Enemy/Pyramid/Pyramid.model";                                           ///< @brief ピラミッドエネミー
+                const char* s_pGROUP_SHIP_ENEMY = "Projects/Models/ConnectWars/Enemy/GroupShip/GroupShip.model";                                    ///< @brief グループシップエネミー
+                const char* s_pPHALANX_CORE = "Projects/Models/ConnectWars/Enemy/Boss/Phalanx/Core/Core.model";                                     ///< @brief ファランクス( コア )
+                const char* s_pPHALANX_RING = "Projects/Models/ConnectWars/Enemy/Boss/Phalanx/Ring/RingEnemy.model";                                ///< @brief ファランクス( リング )
                 const char* s_pSPACE = "Projects/Models/ConnectWars/Background/Space/Sphere.model";                                                 ///< @brief 宇宙
                 const char* s_pSHELTER = "Projects/Models/ConnectWars/Background/Shelter/Shelter.model";                                            ///< @brief シェルター
                 const char* s_pEXIT_RING = "Projects/Models/ConnectWars/Background/ExitRing/ExitRing.model";                                        ///< @brief エグジットリング
                 const char* s_pMETEOR = "Projects/Models/ConnectWars/Obstacle/Meteor/Meteor.model";                                                 ///< @brief 隕石
                 const char* s_pROCK = "Projects/Models/ConnectWars/Obstacle/Rock/Rock.model";                                                       ///< @brief 岩
+                const char* s_pBACKGROUND_METEOR = "Projects/Models/ConnectWars/Obstacle/Meteor/Rock.model";                                                       ///< @brief 岩
             }
 
 
@@ -365,6 +406,7 @@ namespace ConnectWars
                 const char* s_pCONFIG_DATA = "Projects/GameDatas/ConnectWars/JSON/Config/ConfigData.json";                                          ///< @brief コンフィグデータ
                 const char* s_pPAUSE_UI_DATA = "Projects/GameDatas/ConnectWars/JSON/UI/PauseUiData.json";                                           ///< @brief ポーズUIデータ
                 const char* s_pSTAGE_01_BACKGROUND_DATA = "Projects/GameDatas/ConnectWars/JSON/Background/Stage01/Stage01BackgroundData.json";      ///< @brief ステージ01背景データ
+                const char* s_pSHIELD_DATA = "Projects/GameDatas/ConnectWars/JSON/Shield/ShieldData.json";                                          ///< @brief シールドデータ
             }
 
             /* Lua */
@@ -431,6 +473,7 @@ namespace ConnectWars
                     float s_cameraController = 50.0f;                                                                                               ///< @brief カメラコントローラ
                     float s_player = 10.0f;                                                                                                         ///< @brief プレイヤー
                     float s_option = 9.0f;                                                                                                          ///< @brief オプション
+                    float s_shield = 8.5f;                                                                                                          ///< @brief シールド
                     float s_enemy = 8.0f;                                                                                                           ///< @brief 敵
                     float s_bullet = 7.0f;                                                                                                          ///< @brief 弾
                     float s_obstacle = 6.0f;                                                                                                        ///< @brief 障害物
@@ -451,6 +494,7 @@ namespace ConnectWars
                     float s_obstacle = 8.0f;                                                                                                        ///< @brief 障害物
                     float s_bullet = 7.0f;                                                                                                          ///< @brief 弾
                     float s_enemy = 6.0f;                                                                                                           ///< @brief 敵
+                    float s_shield = 5.5f;                                                                                                          ///< @brief シールド
                     float s_option = 5.0f;                                                                                                          ///< @brief オプション
                     float s_player = 4.0f;                                                                                                          ///< @brief プレイヤー
                 }
@@ -485,6 +529,7 @@ namespace ConnectWars
         TYPE_BACKGROUND,                                                                                                                            ///< @brief 背景
         TYPE_UI,                                                                                                                                    ///< @brief UI
         TYPE_FADE,                                                                                                                                  ///< @brief フェード
+        TYPE_SHIELD,                                                                                                                                ///< @brief シールド
 
         TYPE_TYPE_NUMBER,                                                                                                                           ///< @brief 種類の数
     };

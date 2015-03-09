@@ -45,11 +45,6 @@ namespace ConnectWars
      ****************************************************************/
     C_BaseOption::~C_BaseOption()
     {
-        // 連結していた場合は連結されているオプションの数を1減らす
-        if (onceConnectFlag_ == true)
-        {
-            if (pPlayer_) pPlayer_->AddConnectOptionCount(-1);
-        }
     }
 
 
@@ -198,6 +193,19 @@ namespace ConnectWars
     void C_BaseOption::CollisionProcess(C_BaseBomb* pBomb)
     {
         C_CollisionProcess::s_OptionAndBomb(this, pBomb);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  シールドとの衝突時処理を行う
+     *  @param  シールド
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseOption::CollisionProcess(C_BaseShield* pShield)
+    {
+        C_CollisionProcess::s_OptionAndShield(this, pShield);
     }
 
 

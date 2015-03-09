@@ -24,6 +24,7 @@ namespace ConnectWars
     class C_BaseBullet;
     class C_BaseObstacle;
     class C_BaseBomb;
+    class C_BaseShield;
 
 
     //-------------------------------------------------------------
@@ -49,6 +50,7 @@ namespace ConnectWars
         virtual void CollisionProcess(C_BaseBullet* pBullet) = 0;                               // 弾との衝突時処理
         virtual void CollisionProcess(C_BaseObstacle* pObstacle) = 0;                           // 障害物との衝突時処理
         virtual void CollisionProcess(C_BaseBomb* pBomb) = 0;                                   // ボムとの衝突時処理
+        virtual void CollisionProcess(C_BaseShield* pShield) = 0;                               // シールドとの衝突時処理
         virtual void MoveLimitCheck() override = 0;                                             // 移動制限を確認
         virtual const Physics::Vector3& GetPosition() const override = 0;                       // 座標を取得  
         virtual void SetPosition(const Physics::Vector3& rPosition) override = 0;               // 座標を設定

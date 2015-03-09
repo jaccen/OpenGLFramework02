@@ -22,6 +22,7 @@ namespace ConnectWars
     class C_BaseBullet;
     class C_BaseObstacle;
     class C_BaseBomb;
+    class C_BaseShield;
     class C_BaseGun;
 
 
@@ -46,6 +47,7 @@ namespace ConnectWars
         virtual void CollisionProcess(C_BaseBullet* pBullet) override;                      // 弾との衝突時処理
         virtual void CollisionProcess(C_BaseObstacle* pObstacle) override;                  // 障害物との衝突時処理
         virtual void CollisionProcess(C_BaseBomb* pBomb) override;                          // ボムとの衝突時処理
+        virtual void CollisionProcess(C_BaseShield* pShiled) override;                      // シールドとの衝突時処理
         virtual void Move() = 0;                                                            // 移動処理
         virtual void Shot();                                                                // 射撃処理
         virtual void SetCreateDataWithJson(JSON::JsonObject* pJsonObject) = 0;              // JSONオブジェクトからデータを設定

@@ -273,6 +273,7 @@ namespace ConnectWars
         Priority::Task::Update::s_option = static_cast<float>(taskPriorityData["Priority"]["Update"]["Option"].GetValue<JSON::Real>());
         Priority::Task::Update::s_enemy = static_cast<float>(taskPriorityData["Priority"]["Update"]["Enemy"].GetValue<JSON::Real>());
         Priority::Task::Update::s_bullet = static_cast<float>(taskPriorityData["Priority"]["Update"]["Bullet"].GetValue<JSON::Real>());
+        Priority::Task::Update::s_shield = static_cast<float>(taskPriorityData["Priority"]["Update"]["Shield"].GetValue<JSON::Real>());
         Priority::Task::Update::s_bomb = static_cast<float>(taskPriorityData["Priority"]["Update"]["Bomb"].GetValue<JSON::Real>());
         Priority::Task::Update::s_obstacle = static_cast<float>(taskPriorityData["Priority"]["Update"]["Obstacle"].GetValue<JSON::Real>());
         Priority::Task::Update::s_effect = static_cast<float>(taskPriorityData["Priority"]["Update"]["Effect"].GetValue<JSON::Real>());
@@ -286,6 +287,7 @@ namespace ConnectWars
         Priority::Task::Draw::s_option = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Option"].GetValue<JSON::Real>());
         Priority::Task::Draw::s_enemy = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Enemy"].GetValue<JSON::Real>());
         Priority::Task::Draw::s_bullet = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Bullet"].GetValue<JSON::Real>());
+        Priority::Task::Draw::s_shield = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Shield"].GetValue<JSON::Real>());
         Priority::Task::Draw::s_bomb = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Bomb"].GetValue<JSON::Real>());
         Priority::Task::Draw::s_obstacle = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Obstacle"].GetValue<JSON::Real>());
         Priority::Task::Draw::s_effect = static_cast<float>(taskPriorityData["Priority"]["Draw"]["Effect"].GetValue<JSON::Real>());

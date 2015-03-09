@@ -126,10 +126,18 @@ namespace ConnectWars
         {
             ID::Primitive::s_pNORMAL_PLAYER,
             ID::Primitive::s_pBOX_ENEMY,
+            ID::Primitive::s_pSLIME_ENEMY,
+            ID::Primitive::s_pROUND_ENEMY,
+            ID::Primitive::s_pGROUP_SHIP_ENEMY,
+            ID::Primitive::s_pPYRAMID_ENEMY,
+            ID::Primitive::s_pPHALANX_CORE,
+            ID::Primitive::s_pPHALANX_RING,
             ID::Primitive::s_pSPACE,
             ID::Primitive::s_pSHELTER,
             ID::Primitive::s_pSPEED_UP_OPTION,
             ID::Primitive::s_pSMALL_BEAM_OPTION,
+            ID::Primitive::s_pSHIELD_OPTION,
+            ID::Primitive::s_pLASER_OPTION,
             ID::Primitive::s_pEXIT_RING,
             ID::Primitive::s_pMETEOR,
             ID::Primitive::s_pROCK,
@@ -139,10 +147,18 @@ namespace ConnectWars
         {
             Path::Model::s_pNORMAL_PLAYER,
             Path::Model::s_pBOX_ENEMY,
+            Path::Model::s_pSLIME_ENEMY,
+            Path::Model::s_pROUND_ENEMY,
+            Path::Model::s_pGROUP_SHIP_ENEMY,
+            Path::Model::s_pPYRAMID_ENEMY,
+            Path::Model::s_pPHALANX_CORE,
+            Path::Model::s_pPHALANX_RING,
             Path::Model::s_pSPACE,
             Path::Model::s_pSHELTER,
             Path::Model::s_pSPEED_UP_OPTION,
             Path::Model::s_pSMALL_BEAM_OPTION,
+            Path::Model::s_pSHIELD_OPTION,
+            Path::Model::s_pLASER_OPTION,
             Path::Model::s_pEXIT_RING,
             Path::Model::s_pMETEOR,
             Path::Model::s_pROCK,
@@ -152,10 +168,18 @@ namespace ConnectWars
         {
             ID::Model::s_pNORMAL_PLAYER,
             ID::Model::s_pBOX_ENEMY,
+            ID::Model::s_pSLIME_ENEMY,
+            ID::Model::s_pROUND_ENEMY,
+            ID::Model::s_pGROUP_SHIP_ENEMY,
+            ID::Model::s_pPYRAMID_ENEMY,
+            ID::Model::s_pPHALANX_CORE,
+            ID::Model::s_pPHALANX_RING,
             ID::Model::s_pSPACE,
             ID::Model::s_pSHELTER,
             ID::Model::s_pSPPED_UP_OPTION,
             ID::Model::s_pSMALL_BEAM_OPTION,
+            ID::Model::s_pSHIELD_OPTION,
+            ID::Model::s_pLASER_OPTION,
             ID::Model::s_pEXIT_RING,
             ID::Model::s_pMETEOR,
             ID::Model::s_pROCK,
@@ -192,6 +216,7 @@ namespace ConnectWars
             ID::JSON::s_pPAUSE_UI_DATA,
             ID::JSON::s_pSTAGE_01_BACKGROUND_DATA,
             ID::JSON::s_pGAME_UI_DATA,
+            ID::JSON::s_pSHIELD_DATA,
         };
 
         const char* pJsonPathList[] =
@@ -206,6 +231,7 @@ namespace ConnectWars
             Path::JSON::s_pPAUSE_UI_DATA,
             Path::JSON::s_pSTAGE_01_BACKGROUND_DATA,
             Path::JSON::s_pGAME_UI_DATA,
+            Path::JSON::s_pSHIELD_DATA,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pJsonIdList); i < arraySize; ++i)

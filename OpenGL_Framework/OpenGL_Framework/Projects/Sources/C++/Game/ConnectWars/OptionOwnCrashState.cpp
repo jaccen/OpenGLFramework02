@@ -65,9 +65,6 @@ namespace ConnectWars
             // カウンタをリセット
             pOption->GetOwnCrashFrameCounter()->Reset();
 
-            // 効果をリセット
-            pOption->ResetEffect();
-
             // オプションを破棄
             pOption->SetExistanceFlag(false);
 

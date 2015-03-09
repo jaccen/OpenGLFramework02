@@ -1,6 +1,7 @@
 /* ヘッダファイル */
 #include "OptionWaitOwnCrashState.h"
 #include "BaseOption.h"
+#include "BasePlayer.h"
 
 
 //-------------------------------------------------------------
@@ -42,7 +43,18 @@ namespace ConnectWars
      ****************************************************************/
     void C_OptionWaitOwnCrashState::Enter(C_BaseOption* pOption)
     {
+        // 無敵フラグを設定
         pOption->SetInvincibleFlag(true);
+
+        // 効果をリセット
+        pOption->ResetEffect();
+
+        // 連結していた場合は連結されているオプションの数を1減らす
+        if (pOption->IsOnceConnectFlag() == true)
+        {
+            assert(pOption->GetPlayer());
+            pOption->GetPlayer()->AddConnectOptionCount(-1);
+        }
     }
 
 

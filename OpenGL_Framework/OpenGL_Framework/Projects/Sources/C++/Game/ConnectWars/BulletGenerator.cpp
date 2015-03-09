@@ -41,7 +41,8 @@ namespace ConnectWars
      *  @param  座標
      *  @param  パワー
      *  @param  移動のロジック
-     *  @return 射撃者の種類
+     *  @param  射撃者の種類
+     *  @return 弾
      *
      ****************************************************************/
     BulletPtr C_BulletGenerator::Create(const std::string& rId,

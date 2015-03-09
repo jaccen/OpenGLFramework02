@@ -1,5 +1,5 @@
 /* ヘッダファイル */
-#include "ShieldOption.h"
+#include "LaserOption.h"
 #include "BasePlayer.h"
 #include "RigidBodyStraightMoveLogic.h"
 #include "../../Library/Physics/Engine/PhysicsEngine.h"
@@ -24,7 +24,7 @@ namespace ConnectWars
      *  @param  座標
      *
      ****************************************************************/
-    C_ShieldOption::C_ShieldOption(const std::string& rId, int32_t type) : C_BaseOption(rId, type)
+    C_LaserOption::C_LaserOption(const std::string& rId, int32_t type) : C_BaseOption(rId, type)
     {
         // オプションの情報を取得
         assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSHIELD_OPTION));
@@ -89,7 +89,7 @@ namespace ConnectWars
      *  @param  なし
      *
      ****************************************************************/
-    C_ShieldOption::~C_ShieldOption()
+    C_LaserOption::~C_LaserOption()
     {
         // 剛体を物理エンジンから除く
         Physics::C_PhysicsEngine::s_GetInstance()->RemoveRigidBody(upRigidBody_.get());
@@ -103,7 +103,7 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_ShieldOption::ConnectEffect()
+    void C_LaserOption::ConnectEffect()
     {
         assert(pPlayer_);
     }
@@ -116,7 +116,7 @@ namespace ConnectWars
      *  @return なし
      *
      ****************************************************************/
-    void C_ShieldOption::DoDraw()
+    void C_LaserOption::DoDraw()
     {
         pGlslObject_->BeginWithUnifomBuffer(pUniformBuffer_->GetHandle(), uniformBlockIndex_);
         pGlslObject_->BindActiveSubroutine(cameraSubroutineIndex_, Shader::GLSL::Type::s_VERTEX);

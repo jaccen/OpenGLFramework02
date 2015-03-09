@@ -175,6 +175,19 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  シールドとの衝突時処理を行う
+     *  @param  シールド
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseBomb::CollisionProcess(C_BaseShield* pShield)
+    {
+        C_CollisionProcess::s_BombAndShield(this, pShield);
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  座標を取得する
      *  @param  なし
      *  @return 座標

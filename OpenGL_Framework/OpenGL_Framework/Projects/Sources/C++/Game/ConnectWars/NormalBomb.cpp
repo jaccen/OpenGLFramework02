@@ -60,6 +60,7 @@ namespace ConnectWars
         auto gameObjectList =  pGameObjectManager->GetGameObjectsWithType(TYPE_OPTION);
 
         int32_t crashDelay = 1;
+        int32_t addDelay = 19 - level * 7;
 
         for (auto pGameObject : gameObjectList)
         {
@@ -68,7 +69,7 @@ namespace ConnectWars
             if (pOption->IsWaitOwnCrashFlag() == true)
             {
                 GameObject::Message::C_MessageDispatcher::s_GetInstance()->Send(id_, pOption->GetId(), Message::s_pOWN_CRASH, crashDelay);
-                crashDelay += 7;
+                crashDelay += addDelay;
             }
         }
     }

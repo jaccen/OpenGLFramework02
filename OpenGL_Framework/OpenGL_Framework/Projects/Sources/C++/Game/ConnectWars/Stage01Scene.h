@@ -15,6 +15,7 @@
 #include "EffectGenerator.h"
 #include "BackgroundGenerator.h"
 #include "BombGenerator.h"
+#include "ShieldGenerator.h"
 #include "GameController.h"
 
 
@@ -50,7 +51,8 @@ namespace ConnectWars
         C_BulletGenerator bulletGenerator_;                             ///< @brief 弾生成機
         C_EffectGenerator effectGenerator_;                             ///< @brief エフェクト生成機
         C_BackgroundGenerator backgroundGenerator_;                     ///< @brief 背景生成機
-        C_BombGenerator bombGenerator_;                                 ///< @brief ボムジェネレーター
+        C_BombGenerator bombGenerator_;                                 ///< @brief ボム生成機
+        C_ShieldGenerator shieldGenerator_;                             ///< @brief シールド生成機
 
         Camera::CameraPtr pMainCamera_;                                 ///< @brief メインカメラ
         Camera::CameraPtr pUiCamera_;                                   ///< @brief UI用カメラ

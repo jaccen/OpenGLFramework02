@@ -7,6 +7,7 @@
 #include "BaseBullet.h"
 #include "BaseObstacle.h"
 #include "BaseBomb.h"
+#include "BaseShield.h"
 #include "../../Library/Debug/Helper/DebugHelper.h"
 
 
@@ -153,6 +154,20 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  プレイヤーとシールドの衝突時処理を行う
+     *  @param  プレイヤー
+     *  @param  シールド
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_CollisionProcess::s_PlayerAndShield(C_BasePlayer* pPlayer, C_BaseShield* pShield)
+    {
+        StrongAssert(false && "[ C_CollisionProcess::s_PlayerAndShield ] プレイヤーとシールドが衝突することはありえません。\n");
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  オプション同士の衝突時処理を行う
      *  @param  オプション
      *  @param  もう一つのオプション
@@ -236,6 +251,20 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  オプションとシールドの衝突時処理を行う
+     *  @param  オプション
+     *  @param  シールド
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_CollisionProcess::s_OptionAndShield(C_BaseOption* pOption, C_BaseShield* pShield)
+    {
+        StrongAssert(false && "[ C_CollisionProcess::s_OptionAndShield ] オプションとシールドが衝突することはありえません。\n");
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  敵同士の衝突時処理を行う
      *  @param  敵
      *  @param  敵
@@ -297,6 +326,21 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  敵とシールドの衝突時処理を行う
+     *  @param  敵
+     *  @param  シールド
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_CollisionProcess::s_EnemyAndShield(C_BaseEnemy* pEnemy, C_BaseShield* pShield)
+    {
+        // s_DamageToTarget(pEnemy, pBomb);
+        s_DamageToTarget(pEnemy, pShield);
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  弾同士の衝突時処理を行う
      *  @param  弾
      *  @param  もう一つの弾
@@ -343,6 +387,23 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  弾とシールドの衝突時処理を行う
+     *  @param  弾
+     *  @param  シールド
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_CollisionProcess::s_BulletAndShield(C_BaseBullet* pBullet, C_BaseShield* pShield)
+    {
+        assert(pBullet->GetShooterType() == TYPE_ENEMY);
+
+        s_DamageToTarget(pBullet, pShield);
+        s_DamageToTarget(pShield, pBullet);
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  障害物同士の衝突時処理を行う
      *  @param  障害物
      *  @param  もう一つの障害物
@@ -373,6 +434,21 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  障害物とシールドの衝突時処理を行う
+     *  @param  障害物
+     *  @param  ボム
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_CollisionProcess::s_ObstacleAndShield(C_BaseObstacle* pObstacle, C_BaseShield* pShield)
+    {
+        // s_DamageToTarget(pObstacle, pBomb);
+        s_DamageToTarget(pObstacle, pShield);
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  ボム同士の衝突時処理を行う
      *  @param  ボム
      *  @param  もう一つのボム
@@ -381,6 +457,34 @@ namespace ConnectWars
      ****************************************************************/
     void C_CollisionProcess::s_BombAndBomb(C_BaseBomb* pBomb, C_BaseBomb* pAnotherBomb)
     {
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  ボムとシールドの衝突時処理を行う
+     *  @param  ボム
+     *  @param  シールド
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_CollisionProcess::s_BombAndShield(C_BaseBomb* pBomb, C_BaseShield* pShield)
+    {
+        StrongAssert(false && "[ C_CollisionProcess::s_BombAndShield ] ボムとシールドが衝突することはありえません。\n");
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  シールド同士の衝突時処理を行う
+     *  @param  シールド
+     *  @param  もう一つのシールド
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_CollisionProcess::s_ShieldAndShield(C_BaseShield* pShield, C_BaseShield* pAnotherShield)
+    {
+        StrongAssert(false && "[ C_CollisionProcess::s_ShieldAndShield ] シールド同士が衝突することはありえません。\n");
     }
 
 

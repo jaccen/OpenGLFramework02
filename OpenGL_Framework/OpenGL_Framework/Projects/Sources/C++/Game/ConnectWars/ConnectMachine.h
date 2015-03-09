@@ -23,6 +23,7 @@ namespace ConnectWars
     class C_BaseBullet;
     class C_BaseObstacle;
     class C_BaseBomb;
+    class C_BaseShield;
 
 
     //-------------------------------------------------------------
@@ -49,6 +50,7 @@ namespace ConnectWars
         virtual void CollisionProcess(C_BaseBullet* pBullet) = 0;                               // 弾との衝突時処理
         virtual void CollisionProcess(C_BaseObstacle* pObstacle) = 0;                           // 障害物との衝突時処理
         virtual void CollisionProcess(C_BaseBomb* pBomb) = 0;                                   // ボムとの衝突時処理
+        virtual void CollisionProcess(C_BaseShield* pShield) = 0;                               // シールドとの衝突時処理
         virtual void Move() override = 0;                                                       // 移動処理
         virtual void Shot() override = 0;                                                       // 射撃処理
         virtual void AddConnectOption(C_BaseOption* pOption) = 0;                               // 連結しているオプションを追加

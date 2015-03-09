@@ -72,7 +72,7 @@ namespace ConnectWars
             // ボムチャージ状態へ変更
             pPlayer->GetStateMachine()->ChangeState(C_PlayerBombChargeState::s_GetInstance());
         }
-        else if (pPlayer->GetConnectFrameCounter()->GetCount() >= pPlayer->GetConnectPetrifyFrame())
+        else if (pPlayer->GetConnectFrameCounter()->GetCount() == pPlayer->GetConnectPetrifyFrame())
         {
             if (pPlayer->IsInvincibleFlag() == true)
             {

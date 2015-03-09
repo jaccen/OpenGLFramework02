@@ -61,7 +61,6 @@ namespace ConnectWars
         if (pPlayer->GetBombChargeFrameCounter()->GetCount() >= pPlayer->GetBombChargeFrame())
         {
             pPlayer->FireBomb();
-            
         }
     }
 

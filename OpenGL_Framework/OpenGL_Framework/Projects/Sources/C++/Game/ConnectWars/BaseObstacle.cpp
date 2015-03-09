@@ -159,6 +159,32 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  ボムとの衝突時処理を行う
+     *  @param  ボム
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseObstacle::CollisionProcess(C_BaseBomb* pBomb)
+    {
+        C_CollisionProcess::s_ObstacleAndBomb(this, pBomb);
+    }
+
+
+    /*************************************************************//**
+     *
+     *  @brief  シールドとの衝突時処理を行う
+     *  @param  シールド
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseObstacle::CollisionProcess(C_BaseShield* pShield)
+    {
+        C_CollisionProcess::s_ObstacleAndShield(this, pShield);
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  移動処理を行う
      *  @param  なし
      *  @return なし

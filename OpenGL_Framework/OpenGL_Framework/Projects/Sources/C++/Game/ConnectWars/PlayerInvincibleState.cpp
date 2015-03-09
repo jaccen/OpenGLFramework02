@@ -67,7 +67,7 @@ namespace ConnectWars
         pPlayer->Bomb();
         pPlayer->ResetConnect();
 
-        if (pPlayer->GetBombInvincibleFrame() <= pPlayer->GetInvincibleFrameCounter()->GetCount())
+        if (pPlayer->GetInvincibleFrameCounter()->GetCount() == pPlayer->GetBombInvincibleFrame())
         {
             pPlayer->GetStateMachine()->ChangeState(C_PlayerCombatState ::s_GetInstance());
             pPlayer->SetInvincibleFlag(false);

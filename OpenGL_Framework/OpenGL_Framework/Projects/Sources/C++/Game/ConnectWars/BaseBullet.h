@@ -23,6 +23,7 @@ namespace ConnectWars
     class C_BaseEnemy;
     class C_BaseObstacle;
     class C_BaseBomb;
+    class C_BaseShield;
 
 
     //-------------------------------------------------------------
@@ -45,7 +46,8 @@ namespace ConnectWars
         void CollisionProcess(C_BaseEnemy* pEnemy) override;                                // 敵との衝突時処理
         void CollisionProcess(C_BaseBullet* pBullet) override;                              // 弾との衝突時処理
         void CollisionProcess(C_BaseObstacle* pObstacle) override;                          // 障害物との衝突時処理
-        void CollisionProcess(C_BaseBomb* pBomb) override;                                  // 障害物との衝突時処理
+        void CollisionProcess(C_BaseBomb* pBomb) override;                                  // ボムとの衝突時処理
+        void CollisionProcess(C_BaseShield* pShield) override;                              // シールドとの衝突時処理
         virtual void Move();                                                                // 移動処理
         virtual void MoveLimitCheck() override;                                             // 移動制限を確認
         int32_t GetShooterType() const;                                                     // 射撃者の種類を取得

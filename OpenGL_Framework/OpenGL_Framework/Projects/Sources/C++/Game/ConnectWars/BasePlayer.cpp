@@ -53,6 +53,7 @@ namespace ConnectWars
      ****************************************************************/
     C_BasePlayer::~C_BasePlayer()
     {
+        /*
         auto pGameObjectManager = GameObject::C_GameObjectManager::s_GetInstance();
         auto gameObjectList =  pGameObjectManager->GetGameObjectsWithType(TYPE_OPTION);
 
@@ -61,6 +62,7 @@ namespace ConnectWars
             auto pOption = std::dynamic_pointer_cast<C_BaseOption>(pGameObject);
             pOption->SetPlayer(nullptr);
         }
+        */
     }
 
 
@@ -209,6 +211,19 @@ namespace ConnectWars
 
     /*************************************************************//**
      *
+     *  @brief  シールドとの衝突時処理を行う
+     *  @param  シールド
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BasePlayer::CollisionProcess(C_BaseShield* pShield)
+    {
+        C_CollisionProcess::s_PlayerAndShield(this, pShield);
+    }
+
+
+    /*************************************************************//**
+     *
      *  @brief  移動処理を行う
      *  @param  なし
      *  @return なし
@@ -243,7 +258,6 @@ namespace ConnectWars
     void C_BasePlayer::Bomb()
     {
         if ((connectOptionCount_ > 0)
-         && (upStateMachine_->CheckCurrentState(C_PlayerCombatState::s_GetInstance()) == true)
          && ((Input::C_KeyboardManager::s_GetInstance()->GetPressingCount(bombKeyCode_) == 1)
          ||  (Input::C_GamepadManager::s_GetInstance()->GetButtonPressingCount(bombGamepadButton_) == 1)))
         {
@@ -747,6 +761,9 @@ namespace ConnectWars
 
         C_EffectGenerator::s_GetInstance()->Create(GetBombChargeEffectId(), 
                                                    Vector3(rPosition.x(), rPosition.y(), rPosition.z()));
+
+        // 前のオプションの数を保持
+        previousConnectOptionCount_ = connectOptionCount_;
     }
 
 
@@ -764,7 +781,6 @@ namespace ConnectWars
 
         // 各フラグを設定
         SetBombChargeFlag(false);
-        SetInvincibleFlag(false);
 
         // カウンターをリセット
         bombChargeFrameCounter_.Reset();
@@ -773,7 +789,7 @@ namespace ConnectWars
         DispatchOptionDisableConnect();
 
         // ボムを生成
-        C_BombGenerator::s_GetInstance()->Create(GetBombId(), GetPosition(), GetConnectOptionCount() / 5);
+        C_BombGenerator::s_GetInstance()->Create(GetBombId(), GetPosition(), previousConnectOptionCount_ / 5);
     }
 
 

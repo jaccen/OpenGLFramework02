@@ -24,9 +24,10 @@
 #include "OptionExplosionEffect.h"
 #include "PlayerBeamCollisionEffect.h"
 #include "OptionSmallBeamCollisionEffect.h"
+#include "OptionOwnCrashEffect01.h"
 #include "NormalBombEffect.h"
 #include "NormalBomb.h"
-#include "OptionOwnCrashEffect01.h"
+#include "NormalShield.h"
 #include "../../Library/Particle/System/Manager/ParticleSystemManager.h"
 #include "../../Library/Texture/Manager/TextureManager.h"
 #include "../../Library/Math/Define/MathDefine.h"
@@ -128,10 +129,9 @@ namespace ConnectWars
         optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f, 30.0f, 0.0f));
         optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f, 40.0f, 0.0f));
         optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(5.0f, 0.0f, 0.0f));
-        optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(10.0f, 0.0f, 0.0f));
-        optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f, 5.0f, 0.0f));
-        optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f,10.0f, 0.0f));
-        optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(-5.0f,15.0f, 0.0f));
+        auto p = optionGenerator_.Create(ID::Generator::Option::s_pSMALL_BEAM, Physics::Vector3(10.0f, 0.0f, 0.0f));
+
+        shieldGenerator_.Create(ID::Generator::Shield::s_pNORMAL, p->GetPosition(), p->GetType(), p.get());
 
         // enemyGenerator_.Create(ID::Generator::Enemy::s_pBOX);
         
@@ -271,10 +271,18 @@ namespace ConnectWars
         {
             ID::Primitive::s_pNORMAL_PLAYER,
             ID::Primitive::s_pBOX_ENEMY,
+            ID::Primitive::s_pSLIME_ENEMY,
+            ID::Primitive::s_pROUND_ENEMY,
+            ID::Primitive::s_pGROUP_SHIP_ENEMY,
+            ID::Primitive::s_pPYRAMID_ENEMY,
+            ID::Primitive::s_pPHALANX_CORE,
+            ID::Primitive::s_pPHALANX_RING,
             ID::Primitive::s_pSPACE,
             ID::Primitive::s_pSHELTER,
             ID::Primitive::s_pSPEED_UP_OPTION,
             ID::Primitive::s_pSMALL_BEAM_OPTION,
+            ID::Primitive::s_pSHIELD_OPTION,
+            ID::Primitive::s_pLASER_OPTION,
             ID::Primitive::s_pEXIT_RING,
             ID::Primitive::s_pMETEOR,
             ID::Primitive::s_pROCK,
@@ -285,10 +293,18 @@ namespace ConnectWars
         {
             ID::Model::s_pNORMAL_PLAYER,
             ID::Model::s_pBOX_ENEMY,
+            ID::Model::s_pSLIME_ENEMY,
+            ID::Model::s_pROUND_ENEMY,
+            ID::Model::s_pGROUP_SHIP_ENEMY,
+            ID::Model::s_pPYRAMID_ENEMY,
+            ID::Model::s_pPHALANX_CORE,
+            ID::Model::s_pPHALANX_RING,
             ID::Model::s_pSPACE,
             ID::Model::s_pSHELTER,
             ID::Model::s_pSPPED_UP_OPTION,
             ID::Model::s_pSMALL_BEAM_OPTION,
+            ID::Model::s_pSHIELD_OPTION,
+            ID::Model::s_pLASER_OPTION,
             ID::Model::s_pEXIT_RING,
             ID::Model::s_pMETEOR,
             ID::Model::s_pROCK,
@@ -299,10 +315,18 @@ namespace ConnectWars
         {
             { true, true, true, false, false, false, false },       // ノーマルプレイヤー
             { true, true, false, false, false, false, false },      // ボックスエネミー
+            { true, true, false, false, false, false, false },      // スライムエネミー
+            { true, true, true, false, false, false, false },       // ラウンドエネミー
+            { true, true, true, false, false, false, false },       // グループシップエネミー
+            { true, true, false, false, false, false, false },      // ピラミッドエネミー
+            { true, true, true, false, false, false, false },       // ファランクス( コア )
+            { true, true, true, false, false, false, false },       // ファランクス( リング )
             { true, false, true, false, false, false, false },      // 宇宙
             { true, true, true, false, true, false, false },        // シェルター
             { true, true, true, false, false, false, false },       // スピードアップオプション
             { true, true, true, false, false, false, false },       // スモールビームオプション
+            { true, true, true, false, false, false, false },       // シールドオプション
+            { true, true, true, false, false, false, false },       // レーザーオプション
             { true, true, false, false, false, false, false },      // エグジットリング
             { true, true, true, false, true, false, false },        // 隕石
             { true, true, true, false, true, false, false },        // 岩
@@ -407,6 +431,11 @@ namespace ConnectWars
             Path::Texture::s_pBACKGROND_METEOR,
             Path::Texture::s_pGAME_UI,
             Path::Texture::s_pSMOKE_01,
+            Path::Texture::s_pSPRITE_SHIELD,
+            Path::Texture::s_pROUND_ENEMY,
+            Path::Texture::s_pGROUD_SHIP_ENEMY,
+            Path::Texture::s_pPHALANX_CORE,
+            Path::Texture::s_pPHALANX_RING,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pTexturePathList); i < arraySize; ++i)
@@ -421,11 +450,13 @@ namespace ConnectWars
         const char* pBillboardSpriteIdList[] = 
         {
             ID::Sprite::s_pBULLET,
+            ID::Sprite::s_pSHIELD,
         };
 
         const char* pBillboardSpriteTextureDataIdList[] =
         {
             Path::Texture::s_pSPRITE_BULLET,
+            Path::Texture::s_pSPRITE_SHIELD,
         };
 
         for (size_t i = 0, arraySize = Common::C_CommonHelper::s_ArraySize(pBillboardSpriteIdList); i < arraySize; ++i)
@@ -560,8 +591,12 @@ namespace ConnectWars
         // 背景生成機の設定
         assert(JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_BACKGROUND_DATA));
         auto pBackgroundData = JSON::C_JsonObjectManager::s_GetInstance()->GetJsonObject(ID::JSON::s_pSTAGE_01_BACKGROUND_DATA).get();
-        
+
         backgroundGenerator_.SetBackgroundData(&(*pBackgroundData)["Stage01BackgroundData"]);
         backgroundGenerator_.SetAutoCreateMaxCount((*pBackgroundData)["DataCount"].GetValue<JSON::Integer>());
+
+        // シールド生成機の設定
+        shieldGenerator_.SetTaskSystem(&taskSystem_);
+        shieldGenerator_.RegistFunction(ID::Generator::Shield::s_pNORMAL, [](int32_t shooterType, C_CollisionObject* pTarget)->C_BaseShield*{ return newEx C_NormalShield(ID::GameObject::s_pSHIELD, TYPE_SHIELD, shooterType, pTarget); });
     }
 }

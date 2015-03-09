@@ -190,6 +190,19 @@ namespace ConnectWars
     }
 
 
+     /*************************************************************//**
+     *
+     *  @brief  シールドとの衝突時処理を行う
+     *  @param  シールド
+     *  @return なし
+     *
+     ****************************************************************/
+    void C_BaseEnemy::CollisionProcess(C_BaseShield* pShield)
+    {
+        C_CollisionProcess::s_EnemyAndShield(this, pShield);
+    }
+
+
     /*************************************************************//**
      *
      *  @brief  射撃処理を行う
